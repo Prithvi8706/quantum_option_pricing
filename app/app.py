@@ -202,8 +202,8 @@ _DARK_LAYOUT = dict(
     margin=dict(l=46, r=8, t=8, b=32),
     height=158,
     showlegend=False,
-    xaxis=dict(showgrid=False, color="#6b7280", tickfont=dict(size=9)),
-    yaxis=dict(showgrid=False, color="#6b7280", tickfont=dict(size=9)),
+    xaxis=dict(showgrid=False, color="#888", tickfont=dict(size=9, color="#888")),
+    yaxis=dict(showgrid=False, color="#888", tickfont=dict(size=9, color="#888")),
 )
 
 
