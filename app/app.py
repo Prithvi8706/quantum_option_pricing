@@ -275,7 +275,7 @@ def _scatter_fig(hist, bs_price, bs_ms, qp, qe_ms):
     fig.update_layout(
         template="plotly_dark",
         paper_bgcolor="rgba(0,0,0,0)",
-        plot_bgcolor="rgba(17,24,39,0.7)",
+        plot_bgcolor="rgba(0,0,0,0)",
         title=dict(text="Accuracy vs Compute Time", font=dict(size=15), x=0.5),
         xaxis=dict(type="log", title="Compute Time (ms)",
                    gridcolor="rgba(255,255,255,0.07)"),
@@ -289,4 +289,4 @@ def _scatter_fig(hist, bs_price, bs_ms, qp, qe_ms):
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=8050)
+    app.run_server(debug=False, host="0.0.0.0", port=int(os.environ.get("PORT", 8050)))
