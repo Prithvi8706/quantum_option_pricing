@@ -1,0 +1,172 @@
+:root {
+  --bg:     #0a0e1a;
+  --card:   #111827;
+  --border: rgba(255, 255, 255, 0.07);
+  --text:   #e5e7eb;
+  --muted:  #6b7280;
+  --bs:     #22c55e;
+  --mc:     #f59e0b;
+  --qae:    #818cf8;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+}
+
+.page {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 28px 24px;
+}
+
+/* ── Header ─────────────────────────────────────────────────────────────── */
+.header { text-align: center; margin-bottom: 36px; }
+
+.title {
+  font-size: 2.1rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--bs) 0%, var(--qae) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin-top: 6px;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+}
+
+/* ── Main row ────────────────────────────────────────────────────────────── */
+.main-row {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* ── Sidebar ─────────────────────────────────────────────────────────────── */
+.sidebar {
+  width: 230px;
+  flex-shrink: 0;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px 18px;
+}
+
+.sidebar-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 22px;
+}
+
+.slider-wrap { margin-bottom: 22px; }
+.slider-wrap:last-child { margin-bottom: 0; }
+
+.slider-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+/* ── Cards ───────────────────────────────────────────────────────────────── */
+.cards {
+  flex: 1;
+  display: flex;
+  gap: 16px;
+  min-width: 0;
+}
+
+.card {
+  flex: 1;
+  min-width: 0;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 22px 20px 16px;
+}
+
+.card-bs  { border-top: 3px solid var(--bs); }
+.card-mc  { border-top: 3px solid var(--mc); }
+.card-qae { border-top: 3px solid var(--qae); }
+
+.method-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+.price-big {
+  font-size: 2.1rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  min-height: 2.6rem;
+  margin-bottom: 6px;
+}
+
+.card-bs  .price-big { color: var(--bs); }
+.card-mc  .price-big { color: var(--mc); }
+.card-qae .price-big { color: var(--qae); }
+
+.meta {
+  font-size: 0.75rem;
+  color: var(--muted);
+  min-height: 1.1em;
+  margin-bottom: 4px;
+}
+
+.qae-note {
+  font-size: 0.7rem;
+  color: #fbbf24;
+  font-style: italic;
+  min-height: 1em;
+  margin-top: 4px;
+}
+
+.mini-chart {
+  margin-top: 10px;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+/* ── Scatter ─────────────────────────────────────────────────────────────── */
+.scatter-wrap {
+  margin-top: 20px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 6px 6px 2px;
+}
+
+.fixed-param {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  padding: 4px 0;
+}
+
+/* ── Slider overrides (Dash rc-slider) ───────────────────────────────────── */
+.rc-slider-rail               { background: rgba(255,255,255,0.10) !important; }
+.rc-slider-track              { background: rgba(129,140,248,0.45) !important; }
+.rc-slider-handle             { border-color: var(--qae) !important;
+                                background:   var(--qae) !important;
+                                box-shadow: 0 0 0 4px rgba(129,140,248,0.2) !important; }
+.rc-slider-dot-active         { border-color: var(--qae) !important; }
+.rc-slider-mark-text          { color: var(--muted) !important; font-size: 10px !important; }
+.rc-slider-mark-text-active   { color: var(--text)  !important; }
