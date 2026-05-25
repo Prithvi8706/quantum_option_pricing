@@ -48,7 +48,7 @@ _C_MC = "#f59e0b"
 _C_QA = "#818cf8"
 
 # ── App ───────────────────────────────────────────────────────────────────────
-app = Dash(__name__, suppress_callback_exceptions=True, serve_locally=True)
+app = Dash(__name__, suppress_callback_exceptions=False, serve_locally=True)
 server = app.server  # gunicorn entry point
 
 
@@ -140,57 +140,63 @@ app.layout = html.Div([
     State("mc-store", "data"),
 )
 def _update(n_iv, S0, K, T, sigma, store):
-    r = _R_FIXED
-    params = {"S0": S0, "K": K, "T": T, "sigma": sigma}
+    try:
+        r = _R_FIXED
+        params = {"S0": S0, "K": K, "T": T, "sigma": sigma}
 
-    # Reset animation whenever sliders change
-    if store["params"] != params:
-        store = {"step": 0, "hist": [], "params": params}
+        # Reset animation whenever sliders change
+        if store["params"] != params:
+            store = {"step": 0, "hist": [], "params": params}
 
-    step = store["step"]
-    hist = store["hist"]
+        step = store["step"]
+        hist = store["hist"]
 
-    # Black-Scholes (sub-ms, recompute every tick)
-    t0 = time.perf_counter()
-    bs = black_scholes_call(S0, K, r, sigma, T)
-    bs_ms = (time.perf_counter() - t0) * 1000
+        # Black-Scholes (sub-ms, recompute every tick)
+        t0 = time.perf_counter()
+        bs = black_scholes_call(S0, K, r, sigma, T)
+        bs_ms = (time.perf_counter() - t0) * 1000
 
-    # QAE exact key lookup (sliders snap to grid values)
-    entry = _qae_lookup(S0, K, T, sigma)
-    qp    = entry["price"]   or 0.0
-    qe_ms = (entry["elapsed"] or 0.0) * 1000
+        # QAE exact key lookup (sliders snap to grid values)
+        entry = _qae_lookup(S0, K, T, sigma)
+        qp    = entry["price"]   or 0.0
+        qe_ms = (entry["elapsed"] or 0.0) * 1000
 
-    # Advance MC animation one step
-    if step < len(_N_SCHED):
-        N = _N_SCHED[step]
-        t1 = time.perf_counter()
-        mc_p, mc_err = monte_carlo_call(S0, K, r, sigma, T, N)
-        mc_ms = (time.perf_counter() - t1) * 1000
-        hist.append({"N": N, "p": mc_p, "lo": mc_p - 1.96 * mc_err,
-                     "hi": mc_p + 1.96 * mc_err, "ms": mc_ms})
-        store["step"] = step + 1
-        store["hist"] = hist
+        # Advance MC animation one step
+        if step < len(_N_SCHED):
+            N = _N_SCHED[step]
+            t1 = time.perf_counter()
+            mc_p, mc_err = monte_carlo_call(S0, K, r, sigma, T, N)
+            mc_ms = (time.perf_counter() - t1) * 1000
+            hist.append({"N": N, "p": mc_p, "lo": mc_p - 1.96 * mc_err,
+                         "hi": mc_p + 1.96 * mc_err, "ms": mc_ms})
+            store["step"] = step + 1
+            store["hist"] = hist
 
-    done = store["step"] >= len(_N_SCHED)
-    last = hist[-1] if hist else None
+        done = store["step"] >= len(_N_SCHED)
+        last = hist[-1] if hist else None
 
-    mc_price_str = f"${last['p']:.4f}" if last else "—"
-    mc_ci        = (last["hi"] - last["lo"]) / 2 if last else 0
-    mc_meta_str  = f"N = {last['N']:,} · ±{mc_ci:.4f} (95% CI)" if last else "Starting…"
+        mc_price_str = f"${last['p']:.4f}" if last else "—"
+        mc_ci        = (last["hi"] - last["lo"]) / 2 if last else 0
+        mc_meta_str  = f"N = {last['N']:,} · ±{mc_ci:.4f} (95% CI)" if last else "Starting…"
 
-    return (
-        store,
-        done,
-        _mc_fig(hist, bs),
-        mc_price_str,
-        mc_meta_str,
-        f"${bs:.4f}",
-        "< 1 ms · exact closed-form",
-        f"${qp:.4f}",
-        f"{qe_ms:.0f} ms · pre-computed on Qiskit statevector",
-        "",
-        _scatter_fig(hist, bs, bs_ms, qp, qe_ms),
-    )
+        return (
+            store,
+            done,
+            _mc_fig(hist, bs),
+            mc_price_str,
+            mc_meta_str,
+            f"${bs:.4f}",
+            "< 1 ms · exact closed-form",
+            f"${qp:.4f}",
+            f"{qe_ms:.0f} ms · pre-computed on Qiskit statevector",
+            "",
+            _scatter_fig(hist, bs, bs_ms, qp, qe_ms),
+        )
+    except Exception as exc:
+        import traceback
+        traceback.print_exc()
+        print(f"CALLBACK ERROR: {exc}", flush=True)
+        raise
 
 
 # ── Figures ───────────────────────────────────────────────────────────────────
