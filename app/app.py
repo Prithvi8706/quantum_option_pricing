@@ -54,6 +54,47 @@ _C_BS = "#22c55e"
 _C_MC = "#f59e0b"
 _C_QA = "#818cf8"
 
+# ── Shared chart layout (defined early so layout + figures can both use it) ───
+_DARK_LAYOUT = dict(
+    template="plotly_dark",
+    paper_bgcolor="rgba(0,0,0,0)",
+    plot_bgcolor="rgba(0,0,0,0)",
+    margin=dict(l=46, r=8, t=8, b=32),
+    height=158,
+    showlegend=False,
+    xaxis=dict(showgrid=False, color="#888", tickfont=dict(size=9, color="#888")),
+    yaxis=dict(showgrid=False, color="#888", tickfont=dict(size=9, color="#888")),
+)
+
+
+def _mc_placeholder_fig(bs_price):
+    fig = go.Figure()
+    fig.update_layout(
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)",
+        template="plotly_dark",
+        margin=dict(l=46, r=8, t=8, b=32),
+        height=158,
+        showlegend=False,
+        xaxis=dict(showgrid=False, showticklabels=False, color="#888"),
+        yaxis=dict(showgrid=False, showticklabels=False, color="#888"),
+    )
+    fig.add_hline(y=bs_price, line=dict(color=_C_BS, width=1, dash="dot"))
+    fig.add_annotation(
+        x=0.5, y=0.5, xref="paper", yref="paper",
+        text="Move a slider to start simulation",
+        showarrow=False,
+        font=dict(color="#9ca3af", size=11),
+    )
+    return fig
+
+
+# ── Default values computed once at startup (both sub-millisecond) ─────────────
+_DEF_BS  = black_scholes_call(100.0, 100.0, _R_FIXED, 0.20, 1.0)
+_DEF_QAE = _qae_lookup(100.0, 100.0, 1.0, 0.20)
+_DEF_QP  = _DEF_QAE["price"]   or 0.0
+_DEF_QMS = (_DEF_QAE["elapsed"] or 0.0) * 1000
+
 # ── App ───────────────────────────────────────────────────────────────────────
 app = Dash(__name__, suppress_callback_exceptions=False, serve_locally=True)
 server = app.server  # gunicorn entry point
@@ -95,26 +136,27 @@ app.layout = html.Div([
             # Black-Scholes
             html.Div([
                 html.Div("Black-Scholes", className="method-label"),
-                html.Div(id="bs-price", className="price-big"),
-                html.Div(id="bs-meta",  className="meta"),
+                html.Div(f"${_DEF_BS:.4f}", id="bs-price", className="price-big"),
+                html.Div("< 1 ms · exact closed-form", id="bs-meta", className="meta"),
             ], className="card card-bs"),
 
             # Monte Carlo
             html.Div([
                 html.Div("Monte Carlo", className="method-label"),
-                html.Div(id="mc-price", className="price-big"),
-                html.Div(id="mc-meta",  className="meta"),
-                dcc.Graph(id="mc-graph", config={"displayModeBar": False},
-                          className="mini-chart"),
-                dcc.Interval(id="mc-iv", interval=120, n_intervals=0),
+                html.Div("—", id="mc-price", className="price-big"),
+                html.Div("Move a slider to start simulation", id="mc-meta", className="meta"),
+                dcc.Graph(id="mc-graph", figure=_mc_placeholder_fig(_DEF_BS),
+                          config={"displayModeBar": False}, className="mini-chart"),
+                dcc.Interval(id="mc-iv", interval=120, n_intervals=0, disabled=True),
             ], className="card card-mc"),
 
             # QAE
             html.Div([
                 html.Div("Quantum (QAE)", className="method-label"),
-                html.Div(id="qae-price", className="price-big"),
-                html.Div(id="qae-meta",  className="meta"),
-                html.Div(id="qae-note",  className="qae-note"),
+                html.Div(f"${_DEF_QP:.4f}", id="qae-price", className="price-big"),
+                html.Div(f"{_DEF_QMS:.0f} ms · pre-computed on Qiskit statevector",
+                         id="qae-meta", className="meta"),
+                html.Div("", id="qae-note", className="qae-note"),
             ], className="card card-qae"),
         ], className="cards"),
     ], className="main-row"),
@@ -145,7 +187,7 @@ app.layout = html.Div([
     Input("sl-t",   "value"),
     Input("sl-sg",  "value"),
     State("mc-store", "data"),
-    prevent_initial_call=False,
+    prevent_initial_call=True,
 )
 def _update(n_iv, S0, K, T, sigma, store):
     try:
@@ -153,27 +195,12 @@ def _update(n_iv, S0, K, T, sigma, store):
         params = {"S0": S0, "K": K, "T": T, "sigma": sigma}
         slider_fired = ctx.triggered_id in _SLIDER_IDS
 
-        # ── Initial page load: no slider interaction yet ───────────────────────
+        # ── Interval tick while still in initial state: do nothing ─────────────
         if store["params"] is None and not slider_fired:
-            bs = black_scholes_call(S0, K, r, sigma, T)
-            entry = _qae_lookup(S0, K, T, sigma)
-            qp    = entry["price"]   or 0.0
-            qe_ms = (entry["elapsed"] or 0.0) * 1000
-            return (
-                store,
-                True,                           # interval disabled
-                _mc_placeholder_fig(bs),
-                "—",
-                "Move a slider to start simulation",
-                f"${bs:.4f}",
-                "< 1 ms · exact closed-form",
-                f"${qp:.4f}",
-                f"{qe_ms:.0f} ms · pre-computed on Qiskit statevector",
-                "",
-                _scatter_fig([], bs, 0, qp, qe_ms),
-            )
+            from dash.exceptions import PreventUpdate
+            raise PreventUpdate
 
-        # ── Slider moved: reset animation ──────────────────────────────────────
+        # ── First slider move or params changed: reset animation ───────────────
         if store["params"] != params:
             store = {"step": 0, "hist": [], "params": params}
 
@@ -229,30 +256,6 @@ def _update(n_iv, S0, K, T, sigma, store):
 
 
 # ── Figures ───────────────────────────────────────────────────────────────────
-
-_DARK_LAYOUT = dict(
-    template="plotly_dark",
-    paper_bgcolor="rgba(0,0,0,0)",
-    plot_bgcolor="rgba(0,0,0,0)",
-    margin=dict(l=46, r=8, t=8, b=32),
-    height=158,
-    showlegend=False,
-    xaxis=dict(showgrid=False, color="#888", tickfont=dict(size=9, color="#888")),
-    yaxis=dict(showgrid=False, color="#888", tickfont=dict(size=9, color="#888")),
-)
-
-
-def _mc_placeholder_fig(bs_price):
-    fig = go.Figure(layout=_DARK_LAYOUT)
-    fig.add_hline(y=bs_price, line=dict(color=_C_BS, width=1, dash="dot"))
-    fig.add_annotation(
-        x=0.5, y=0.5, xref="paper", yref="paper",
-        text="Move a slider to start simulation",
-        showarrow=False,
-        font=dict(color="#6b7280", size=11),
-    )
-    return fig
-
 
 def _mc_fig(hist, bs_price):
     fig = go.Figure(layout=_DARK_LAYOUT)
