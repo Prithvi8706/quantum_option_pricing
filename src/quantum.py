@@ -54,12 +54,15 @@ def quantum_call(
     # LogNormalDistribution takes variance (sigma^2), not std
     sigma_var = sigma_ln**2
 
-    # Support bounds: mean ± 3σ in stock-price space
+    # Support bounds: mean ± 3σ in stock-price space.
+    # Also ensure K is within the domain — for deep OTM/ITM + short T + low vol
+    # the ±3σ window can be too narrow to include the strike, causing Qiskit to
+    # raise "Breakpoints must be included in domain" / "must be unique and sorted".
     mean_stock = np.exp(mu_ln + 0.5 * sigma_var)
     var_stock = (np.exp(sigma_var) - 1) * np.exp(2 * mu_ln + sigma_var)
     std_stock = np.sqrt(var_stock)
-    low = max(0.0, mean_stock - 3 * std_stock)
-    high = mean_stock + 3 * std_stock
+    low = max(0.0, min(mean_stock - 3 * std_stock, K * 0.98))
+    high = max(mean_stock + 3 * std_stock, K * 1.02)
     bounds = (low, high)
 
     # State-preparation circuit: discretised log-normal over num_uncertainty_qubits qubits

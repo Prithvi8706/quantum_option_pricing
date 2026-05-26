@@ -22,10 +22,10 @@ with open(_PKL, "rb") as _f:
     _QAE: dict = pickle.load(_f)
 
 _R_FIXED = 0.05
-_S0G = [80.0, 100.0, 120.0]
-_KG  = [95.0, 100.0, 105.0]
-_TG  = [0.5, 1.0]
-_SGG = [0.15, 0.20, 0.30]
+_S0G = [80.0, 90.0, 100.0, 110.0, 120.0]
+_KG  = [90.0, 95.0, 100.0, 105.0, 110.0]
+_TG  = [0.25, 0.5, 0.75, 1.0, 1.5, 2.0]
+_SGG = [0.15, 0.20, 0.25, 0.30]
 
 
 def _snap(v, grid):
@@ -78,10 +78,10 @@ app.layout = html.Div([
         # Sidebar
         html.Div([
             html.H3("Parameters", className="sidebar-title"),
-            _slider("sl-s0", "S₀ — Stock Price ($)", 80, 120, 100, [80, 100, 120]),
-            _slider("sl-k",  "K — Strike Price ($)",  95, 105, 100, [95, 100, 105]),
-            _slider("sl-t",  "T — Expiry (years)",   0.5, 1.0, 1.0, [0.5, 1.0]),
-            _slider("sl-sg", "σ — Volatility",       0.15, 0.30, 0.20, [0.15, 0.20, 0.30]),
+            _slider("sl-s0", "S₀ — Stock Price ($)", 80, 120, 100, [80, 90, 100, 110, 120]),
+            _slider("sl-k",  "K — Strike Price ($)",  90, 110, 100, [90, 95, 100, 105, 110]),
+            _slider("sl-t",  "T — Expiry (years)",   0.25, 2.0, 1.0, [0.25, 0.5, 0.75, 1.0, 1.5, 2.0]),
+            _slider("sl-sg", "σ — Volatility",       0.15, 0.30, 0.20, [0.15, 0.20, 0.25, 0.30]),
             html.Div([
                 html.Label("r — Risk-free Rate", className="slider-label"),
                 html.Div("5% (fixed)", className="fixed-param"),
@@ -149,9 +149,22 @@ def _update(n_iv, S0, K, T, sigma, store):
         r = _R_FIXED
         params = {"S0": S0, "K": K, "T": T, "sigma": sigma}
 
-        # Reset animation whenever sliders change
         if store["params"] != params:
-            store = {"step": 0, "hist": [], "params": params}
+            if store["params"] is None:
+                # First load — show final N=50,000 immediately, skip animation
+                N = _N_SCHED[-1]
+                t1 = time.perf_counter()
+                mc_p, mc_err = monte_carlo_call(S0, K, r, sigma, T, N)
+                mc_ms = (time.perf_counter() - t1) * 1000
+                store = {
+                    "step": len(_N_SCHED),
+                    "hist": [{"N": N, "p": mc_p, "lo": mc_p - 1.96 * mc_err,
+                              "hi": mc_p + 1.96 * mc_err, "ms": mc_ms}],
+                    "params": params,
+                }
+            else:
+                # Slider changed — restart animation from scratch
+                store = {"step": 0, "hist": [], "params": params}
 
         step = store["step"]
         hist = store["hist"]
@@ -166,7 +179,7 @@ def _update(n_iv, S0, K, T, sigma, store):
         qp    = entry["price"]   or 0.0
         qe_ms = (entry["elapsed"] or 0.0) * 1000
 
-        # Advance MC animation one step
+        # Advance MC animation one step (only after slider-triggered resets)
         if step < len(_N_SCHED):
             N = _N_SCHED[step]
             t1 = time.perf_counter()
