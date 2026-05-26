@@ -5,7 +5,7 @@ import time
 
 import numpy as np
 import plotly.graph_objects as go
-from dash import Dash, Input, Output, State, dcc, html
+from dash import Dash, Input, Output, State, ctx, dcc, html
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
@@ -47,23 +47,7 @@ def _qae_lookup(S0, K, T, sigma):
 # ── Animation schedule (log-spaced N from 100 → 50 000) ───────────────────────
 _N_SCHED = np.unique(np.logspace(np.log10(100), np.log10(50_000), 35).astype(int)).tolist()
 
-# ── Pre-compute default scenario at startup so first render is instant ─────────
-_DEFAULT_PARAMS = {"S0": 100.0, "K": 100.0, "T": 1.0, "sigma": 0.20}
-_init_p, _init_err = monte_carlo_call(
-    _DEFAULT_PARAMS["S0"], _DEFAULT_PARAMS["K"], _R_FIXED,
-    _DEFAULT_PARAMS["sigma"], _DEFAULT_PARAMS["T"], _N_SCHED[-1],
-)
-_INITIAL_STORE = {
-    "step": len(_N_SCHED),
-    "hist": [{
-        "N": _N_SCHED[-1],
-        "p": _init_p,
-        "lo": _init_p - 1.96 * _init_err,
-        "hi": _init_p + 1.96 * _init_err,
-        "ms": 0.0,
-    }],
-    "params": _DEFAULT_PARAMS,
-}
+_SLIDER_IDS = {"sl-s0", "sl-k", "sl-t", "sl-sg"}
 
 # ── Colours ───────────────────────────────────────────────────────────────────
 _C_BS = "#22c55e"
@@ -139,7 +123,7 @@ app.layout = html.Div([
         dcc.Graph(id="scatter", config={"displayModeBar": False}),
     ], className="scatter-wrap"),
 
-    dcc.Store(id="mc-store", data=_INITIAL_STORE),
+    dcc.Store(id="mc-store", data={"step": 0, "hist": [], "params": None}),
 ], className="page")
 
 
@@ -167,9 +151,30 @@ def _update(n_iv, S0, K, T, sigma, store):
     try:
         r = _R_FIXED
         params = {"S0": S0, "K": K, "T": T, "sigma": sigma}
+        slider_fired = ctx.triggered_id in _SLIDER_IDS
 
+        # ── Initial page load: no slider interaction yet ───────────────────────
+        if store["params"] is None and not slider_fired:
+            bs = black_scholes_call(S0, K, r, sigma, T)
+            entry = _qae_lookup(S0, K, T, sigma)
+            qp    = entry["price"]   or 0.0
+            qe_ms = (entry["elapsed"] or 0.0) * 1000
+            return (
+                store,
+                True,                           # interval disabled
+                _mc_placeholder_fig(bs),
+                "—",
+                "Move a slider to start simulation",
+                f"${bs:.4f}",
+                "< 1 ms · exact closed-form",
+                f"${qp:.4f}",
+                f"{qe_ms:.0f} ms · pre-computed on Qiskit statevector",
+                "",
+                _scatter_fig([], bs, 0, qp, qe_ms),
+            )
+
+        # ── Slider moved: reset animation ──────────────────────────────────────
         if store["params"] != params:
-            # Slider changed — restart animation from scratch
             store = {"step": 0, "hist": [], "params": params}
 
         step = store["step"]
@@ -185,7 +190,7 @@ def _update(n_iv, S0, K, T, sigma, store):
         qp    = entry["price"]   or 0.0
         qe_ms = (entry["elapsed"] or 0.0) * 1000
 
-        # Advance MC animation one step (only after slider-triggered resets)
+        # Advance MC animation one step
         if step < len(_N_SCHED):
             N = _N_SCHED[step]
             t1 = time.perf_counter()
@@ -235,6 +240,18 @@ _DARK_LAYOUT = dict(
     xaxis=dict(showgrid=False, color="#888", tickfont=dict(size=9, color="#888")),
     yaxis=dict(showgrid=False, color="#888", tickfont=dict(size=9, color="#888")),
 )
+
+
+def _mc_placeholder_fig(bs_price):
+    fig = go.Figure(layout=_DARK_LAYOUT)
+    fig.add_hline(y=bs_price, line=dict(color=_C_BS, width=1, dash="dot"))
+    fig.add_annotation(
+        x=0.5, y=0.5, xref="paper", yref="paper",
+        text="Move a slider to start simulation",
+        showarrow=False,
+        font=dict(color="#6b7280", size=11),
+    )
+    return fig
 
 
 def _mc_fig(hist, bs_price):
