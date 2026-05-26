@@ -33,10 +33,15 @@ def _snap(v, grid):
     return min(grid, key=lambda g: abs(g - v))
 
 
+_QAE_MISSING = {"price": None, "elapsed": None, "conf_int": (None, None), "oracle_queries": None}
+
 def _qae_lookup(S0, K, T, sigma):
-    """Exact pkl lookup; sliders snap to grid so this is always an exact hit."""
     key = (_snap(S0, _S0G), _snap(K, _KG), _snap(T, _TG), _R_FIXED, _snap(sigma, _SGG))
-    return _QAE[key]
+    result = _QAE.get(key)
+    if result is None:
+        print(f"QAE MISS: key={key}, available={list(_QAE.keys())[:3]}…", flush=True)
+        return _QAE_MISSING
+    return result
 
 
 # ── Animation schedule (log-spaced N from 100 → 50 000) ───────────────────────
