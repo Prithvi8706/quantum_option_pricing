@@ -47,6 +47,24 @@ def _qae_lookup(S0, K, T, sigma):
 # ── Animation schedule (log-spaced N from 100 → 50 000) ───────────────────────
 _N_SCHED = np.unique(np.logspace(np.log10(100), np.log10(50_000), 35).astype(int)).tolist()
 
+# ── Pre-compute default scenario at startup so first render is instant ─────────
+_DEFAULT_PARAMS = {"S0": 100.0, "K": 100.0, "T": 1.0, "sigma": 0.20}
+_init_p, _init_err = monte_carlo_call(
+    _DEFAULT_PARAMS["S0"], _DEFAULT_PARAMS["K"], _R_FIXED,
+    _DEFAULT_PARAMS["sigma"], _DEFAULT_PARAMS["T"], _N_SCHED[-1],
+)
+_INITIAL_STORE = {
+    "step": len(_N_SCHED),
+    "hist": [{
+        "N": _N_SCHED[-1],
+        "p": _init_p,
+        "lo": _init_p - 1.96 * _init_err,
+        "hi": _init_p + 1.96 * _init_err,
+        "ms": 0.0,
+    }],
+    "params": _DEFAULT_PARAMS,
+}
+
 # ── Colours ───────────────────────────────────────────────────────────────────
 _C_BS = "#22c55e"
 _C_MC = "#f59e0b"
@@ -121,7 +139,7 @@ app.layout = html.Div([
         dcc.Graph(id="scatter", config={"displayModeBar": False}),
     ], className="scatter-wrap"),
 
-    dcc.Store(id="mc-store", data={"step": 0, "hist": [], "params": None}),
+    dcc.Store(id="mc-store", data=_INITIAL_STORE),
 ], className="page")
 
 
@@ -143,6 +161,7 @@ app.layout = html.Div([
     Input("sl-t",   "value"),
     Input("sl-sg",  "value"),
     State("mc-store", "data"),
+    prevent_initial_call=False,
 )
 def _update(n_iv, S0, K, T, sigma, store):
     try:
@@ -150,21 +169,8 @@ def _update(n_iv, S0, K, T, sigma, store):
         params = {"S0": S0, "K": K, "T": T, "sigma": sigma}
 
         if store["params"] != params:
-            if store["params"] is None:
-                # First load — show final N=50,000 immediately, skip animation
-                N = _N_SCHED[-1]
-                t1 = time.perf_counter()
-                mc_p, mc_err = monte_carlo_call(S0, K, r, sigma, T, N)
-                mc_ms = (time.perf_counter() - t1) * 1000
-                store = {
-                    "step": len(_N_SCHED),
-                    "hist": [{"N": N, "p": mc_p, "lo": mc_p - 1.96 * mc_err,
-                              "hi": mc_p + 1.96 * mc_err, "ms": mc_ms}],
-                    "params": params,
-                }
-            else:
-                # Slider changed — restart animation from scratch
-                store = {"step": 0, "hist": [], "params": params}
+            # Slider changed — restart animation from scratch
+            store = {"step": 0, "hist": [], "params": params}
 
         step = store["step"]
         hist = store["hist"]
