@@ -136,7 +136,10 @@ app.layout = html.Div([
             # Black-Scholes
             html.Div([
                 html.Div("Black-Scholes", className="method-label"),
-                html.Div(f"${_DEF_BS:.4f}", id="bs-price", className="price-big"),
+                dcc.Loading(
+                    html.Div(f"${_DEF_BS:.4f}", id="bs-price", className="price-big"),
+                    type="circle", color="#10b981",
+                ),
                 html.Div("< 1 ms · exact closed-form", id="bs-meta", className="meta"),
             ], className="card card-bs"),
 
@@ -145,15 +148,21 @@ app.layout = html.Div([
                 html.Div("Monte Carlo", className="method-label"),
                 html.Div("—", id="mc-price", className="price-big"),
                 html.Div("Move a slider to start simulation", id="mc-meta", className="meta"),
-                dcc.Graph(id="mc-graph", figure=_mc_placeholder_fig(_DEF_BS),
-                          config={"displayModeBar": False}, className="mini-chart"),
+                dcc.Loading(
+                    dcc.Graph(id="mc-graph", figure=_mc_placeholder_fig(_DEF_BS),
+                              config={"displayModeBar": False}, className="mini-chart"),
+                    type="circle", color="#f59e0b",
+                ),
                 dcc.Interval(id="mc-iv", interval=120, n_intervals=0, disabled=True),
             ], className="card card-mc"),
 
             # QAE
             html.Div([
                 html.Div("Quantum (QAE)", className="method-label"),
-                html.Div(f"${_DEF_QP:.4f}", id="qae-price", className="price-big"),
+                dcc.Loading(
+                    html.Div(f"${_DEF_QP:.4f}", id="qae-price", className="price-big"),
+                    type="circle", color="#818cf8",
+                ),
                 html.Div(f"{_DEF_QMS:.0f} ms · pre-computed on Qiskit statevector",
                          id="qae-meta", className="meta"),
                 html.Div("", id="qae-note", className="qae-note"),
