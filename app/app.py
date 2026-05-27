@@ -165,6 +165,14 @@ app.layout = html.Div([
         dcc.Graph(id="scatter", config={"displayModeBar": False}),
     ], className="scatter-wrap"),
 
+    html.Footer([
+        html.Span("Prithvi"),
+        html.Span(" · "),
+        html.A("GitHub", href="https://github.com/Prithvi8706/quantum_option_pricing",
+               target="_blank", rel="noopener noreferrer"),
+        html.Span(" · Built with Qiskit · Plotly Dash · Railway"),
+    ], className="footer"),
+
     dcc.Store(id="mc-store", data={"step": 0, "hist": [], "params": None}),
 ], className="page")
 
