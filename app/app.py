@@ -96,7 +96,7 @@ _DEF_QP  = _DEF_QAE["price"]   or 0.0
 _DEF_QMS = (_DEF_QAE["elapsed"] or 0.0) * 1000
 
 # ── App ───────────────────────────────────────────────────────────────────────
-app = Dash(__name__, suppress_callback_exceptions=False, serve_locally=True)
+app = Dash(__name__, suppress_callback_exceptions=False, serve_locally=True, title="Quantum Option Pricing")
 server = app.server  # gunicorn entry point
 
 
