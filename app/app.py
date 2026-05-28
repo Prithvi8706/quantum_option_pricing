@@ -90,6 +90,30 @@ def _mc_placeholder_fig(bs_price):
     return fig
 
 
+def _scatter_placeholder():
+    """Dark, titled placeholder so the scatter never flashes a white default
+    figure on first load — populated with real data once a slider moves."""
+    fig = go.Figure()
+    fig.update_layout(
+        template="plotly_dark",
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)",
+        title=dict(text="Accuracy vs Compute Time", font=dict(size=15), x=0.5),
+        xaxis=dict(type="log", title="Compute Time (ms)",
+                   gridcolor="rgba(255,255,255,0.07)", showticklabels=False),
+        yaxis=dict(type="log", title="Error vs Black-Scholes ($)",
+                   gridcolor="rgba(255,255,255,0.07)", showticklabels=False),
+        margin=dict(l=70, r=20, t=55, b=55),
+        height=360,
+    )
+    fig.add_annotation(
+        x=0.5, y=0.5, xref="paper", yref="paper",
+        text="Move a slider to compare methods",
+        showarrow=False, font=dict(color="#9ca3af", size=13),
+    )
+    return fig
+
+
 # ── Default values computed once at startup (both sub-millisecond) ─────────────
 _DEF_BS  = black_scholes_call(100.0, 100.0, _R_FIXED, 0.20, 1.0)
 _DEF_QAE = _qae_lookup(100.0, 100.0, 1.0, 0.20)
@@ -163,7 +187,8 @@ app.layout = html.Div([
     ], className="main-row"),
 
     html.Div([
-        dcc.Graph(id="scatter", config={"displayModeBar": False}),
+        dcc.Graph(id="scatter", figure=_scatter_placeholder(),
+                  config={"displayModeBar": False}),
     ], className="scatter-wrap"),
 
     html.Footer([
