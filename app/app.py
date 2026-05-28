@@ -277,7 +277,19 @@ app.clientside_callback(
         const his = frames.map(d => d.hi);
 
         // ── MC mini-chart traces ─────────────────────────────────────────
+        const xMin = Ns[0];
+        const xMax = Ns[Ns.length - 1];
         const mcData = [
+            {
+                // Black-Scholes reference line as a TRACE so it glides (animate
+                // tweens trace data; layout shapes would snap instantly).
+                x: [xMin, xMax],
+                y: [data.bs, data.bs],
+                mode: "lines",
+                line: {color: C.bs, width: 1, dash: "dot"},
+                hoverinfo: "skip",
+                type: "scatter",
+            },
             {
                 x: Ns.concat(Ns.slice().reverse()),
                 y: his.concat(los.slice().reverse()),
@@ -307,11 +319,6 @@ app.clientside_callback(
                     tickfont: {size: 9, color: "#888"}},
             yaxis: {showgrid: false, color: "#888",
                     tickfont: {size: 9, color: "#888"}},
-            shapes: [{
-                type: "line", xref: "paper", x0: 0, x1: 1,
-                yref: "y", y0: data.bs, y1: data.bs,
-                line: {color: C.bs, width: 1, dash: "dot"},
-            }],
         };
 
         // ── Scatter traces (accuracy vs compute time) ────────────────────
