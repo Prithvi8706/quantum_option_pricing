@@ -45,7 +45,7 @@ def _qae_lookup(S0, K, T, sigma):
     return result
 
 
-# ── Animation schedule (log-spaced N from 100 → 50 000) ───────────────────────
+# ── Monte Carlo sample schedule (log-spaced N from 100 → 50 000) ──────────────
 _N_SCHED = np.unique(np.logspace(np.log10(100), np.log10(50_000), 15).astype(int)).tolist()
 
 # ── Colours ───────────────────────────────────────────────────────────────────
@@ -184,24 +184,24 @@ app.layout = html.Div([
 
     # Full computed dataset for the current params (filled once per slider move)
     dcc.Store(id="mc-data"),
-    # Current animation frame index, driven entirely client-side
-    dcc.Store(id="mc-frame", data=0),
-    # Client-side animation clock — runs in the browser, never hits the server
-    dcc.Interval(id="anim-iv", interval=130, n_intervals=0),
+    # Dummy sink for the imperative animation callback (nothing reads it)
+    html.Div(id="anim-sink", style={"display": "none"}),
 ], className="page")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
 # SERVER CALLBACK — fires ONCE per slider change.
 # Computes the entire MC convergence series + BS + QAE in a single pass and
-# stores it. After this returns, the server is never touched again for the
-# animation, so nothing can queue up or hang.
+# stores it. After this returns, the server is never touched again, so nothing
+# can queue up or hang.
 # ══════════════════════════════════════════════════════════════════════════════
 @app.callback(
     Output("mc-data",  "data"),
     Output("bs-price", "children"),
     Output("qae-price", "children"),
     Output("qae-meta",  "children"),
+    Output("mc-price", "children"),
+    Output("mc-meta",  "children"),
     Input("sl-s0", "value"),
     Input("sl-k",  "value"),
     Input("sl-t",  "value"),
@@ -211,15 +211,12 @@ app.layout = html.Div([
 def _compute(S0, K, T, sigma):
     r = _R_FIXED
 
-    # Black-Scholes (exact, sub-ms)
     bs = black_scholes_call(S0, K, r, sigma, T)
 
-    # QAE pre-computed lookup
     entry = _qae_lookup(S0, K, T, sigma)
     qp    = entry["price"]   or 0.0
     qe_ms = (entry["elapsed"] or 0.0) * 1000
 
-    # Full Monte Carlo convergence series — all frames in one pass
     frames = []
     for N in _N_SCHED:
         t1 = time.perf_counter()
@@ -233,12 +230,16 @@ def _compute(S0, K, T, sigma):
             "ms": float(mc_ms),
         })
 
+    last = frames[-1]
+    ci = (last["hi"] - last["lo"]) / 2
+    mc_price_str = f"${last['p']:.4f}"
+    mc_meta_str  = f"N = {last['N']:,} · ±{ci:.4f} (95% CI)"
+
     data = {
         "bs": float(bs),
         "qp": float(qp),
         "qe_ms": float(qe_ms),
         "frames": frames,
-        "n_frames": len(frames),
         "colors": {"bs": _C_BS, "mc": _C_MC, "qa": _C_QA},
     }
 
@@ -247,101 +248,75 @@ def _compute(S0, K, T, sigma):
         f"${bs:.4f}",
         f"${qp:.4f}",
         f"{qe_ms:.0f} ms · pre-computed on Qiskit statevector",
+        mc_price_str,
+        mc_meta_str,
     )
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# CLIENT-SIDE CALLBACK — frame advancer.
-# On each browser interval tick, bump the frame index until we reach the last
-# frame, then hold. Runs entirely in the browser; no server contact.
+# CLIENT-SIDE CALLBACK — renderer with eased transition.
+# Draws the full curves, and animates markers/line gliding from their previous
+# positions to the new ones via Plotly.animate(). Pure browser-side; never hits
+# the server. Returns no_update for the figure outputs because the actual redraw
+# is done imperatively through Plotly.animate on the existing graph divs.
 # ══════════════════════════════════════════════════════════════════════════════
 app.clientside_callback(
     """
-    function(n_intervals, data, current) {
-        if (!data || !data.frames) {
-            return window.dash_clientside.no_update;
-        }
-        const last = data.n_frames - 1;
-        const cur = (current === null || current === undefined) ? 0 : current;
-        if (cur >= last) {
-            return window.dash_clientside.no_update;  // animation finished
-        }
-        return cur + 1;
-    }
-    """,
-    Output("mc-frame", "data"),
-    Input("anim-iv", "n_intervals"),
-    State("mc-data", "data"),
-    State("mc-frame", "data"),
-    prevent_initial_call=True,
-)
-
-
-# ══════════════════════════════════════════════════════════════════════════════
-# CLIENT-SIDE CALLBACK — renderer.
-# Whenever the frame index OR the dataset changes, redraw both charts + the MC
-# price/meta text. Pure browser-side Plotly; no server contact.
-# ══════════════════════════════════════════════════════════════════════════════
-app.clientside_callback(
-    """
-    function(frame, data) {
+    function(data) {
         const nu = window.dash_clientside.no_update;
         if (!data || !data.frames || data.frames.length === 0) {
-            return [nu, nu, nu, nu];
+            return "";
         }
 
-        const f = (frame === null || frame === undefined) ? 0 : frame;
-        const upto = data.frames.slice(0, f + 1);
-        const last = upto[upto.length - 1];
+        const frames = data.frames;
         const C = data.colors;
 
-        // ── MC mini-chart ────────────────────────────────────────────────
-        const Ns  = upto.map(d => d.N);
-        const ps  = upto.map(d => d.p);
-        const los = upto.map(d => d.lo);
-        const his = upto.map(d => d.hi);
+        const Ns  = frames.map(d => d.N);
+        const ps  = frames.map(d => d.p);
+        const los = frames.map(d => d.lo);
+        const his = frames.map(d => d.hi);
 
-        const mcFig = {
-            data: [
-                {
-                    x: Ns.concat(Ns.slice().reverse()),
-                    y: his.concat(los.slice().reverse()),
-                    fill: "toself",
-                    fillcolor: "rgba(245,158,11,0.12)",
-                    line: {color: "rgba(0,0,0,0)"},
-                    hoverinfo: "skip",
-                    type: "scatter",
-                },
-                {
-                    x: Ns, y: ps,
-                    line: {color: C.mc, width: 2},
-                    type: "scatter",
-                    hovertemplate: "N=%{x:,}<br>$%{y:.4f}<extra></extra>",
-                },
-            ],
-            layout: {
-                template: undefined,
-                paper_bgcolor: "rgba(0,0,0,0)",
-                plot_bgcolor: "rgba(0,0,0,0)",
-                margin: {l: 46, r: 8, t: 8, b: 32},
-                height: 158,
-                showlegend: false,
-                font: {color: "#888"},
-                xaxis: {type: "log", showgrid: false, color: "#888",
-                        tickfont: {size: 9, color: "#888"}},
-                yaxis: {showgrid: false, color: "#888",
-                        tickfont: {size: 9, color: "#888"}},
-                shapes: [{
-                    type: "line", xref: "paper", x0: 0, x1: 1,
-                    yref: "y", y0: data.bs, y1: data.bs,
-                    line: {color: C.bs, width: 1, dash: "dot"},
-                }],
+        // ── MC mini-chart traces ─────────────────────────────────────────
+        const mcData = [
+            {
+                x: Ns.concat(Ns.slice().reverse()),
+                y: his.concat(los.slice().reverse()),
+                fill: "toself",
+                fillcolor: "rgba(245,158,11,0.12)",
+                line: {color: "rgba(0,0,0,0)"},
+                hoverinfo: "skip",
+                type: "scatter",
             },
+            {
+                x: Ns, y: ps,
+                mode: "lines+markers",
+                line: {color: C.mc, width: 2},
+                marker: {color: C.mc, size: 6},
+                type: "scatter",
+                hovertemplate: "N=%{x:,}<br>$%{y:.4f}<extra></extra>",
+            },
+        ];
+        const mcLayout = {
+            paper_bgcolor: "rgba(0,0,0,0)",
+            plot_bgcolor: "rgba(0,0,0,0)",
+            margin: {l: 46, r: 8, t: 8, b: 32},
+            height: 158,
+            showlegend: false,
+            font: {color: "#888"},
+            xaxis: {type: "log", showgrid: false, color: "#888",
+                    tickfont: {size: 9, color: "#888"}},
+            yaxis: {showgrid: false, color: "#888",
+                    tickfont: {size: 9, color: "#888"}},
+            shapes: [{
+                type: "line", xref: "paper", x0: 0, x1: 1,
+                yref: "y", y0: data.bs, y1: data.bs,
+                line: {color: C.bs, width: 1, dash: "dot"},
+            }],
         };
 
-        // ── Scatter: accuracy vs compute time ────────────────────────────
-        const xs = upto.map(d => Math.max(d.ms, 1e-3));
-        const ys = upto.map(d => Math.max(Math.abs(d.p - data.bs), 1e-5));
+        // ── Scatter traces (accuracy vs compute time) ────────────────────
+        const xs = frames.map(d => Math.max(d.ms, 1e-3));
+        const ys = frames.map(d => Math.max(Math.abs(d.p - data.bs), 1e-5));
 
         const scatterData = [
             {
@@ -352,70 +327,82 @@ app.clientside_callback(
                 type: "scatter",
                 hovertemplate: "Black-Scholes<br>~0 ms · exact<extra></extra>",
             },
-        ];
-
-        if (xs.length > 1) {
-            scatterData.push({
+            {
                 x: xs.slice(0, -1), y: ys.slice(0, -1),
                 mode: "markers",
                 marker: {color: C.mc, size: 5, opacity: 0.25},
                 type: "scatter", hoverinfo: "skip",
-            });
-        }
-        scatterData.push({
-            x: [xs[xs.length - 1]], y: [ys[ys.length - 1]],
-            mode: "markers+text", text: ["Monte Carlo"],
-            textposition: "top right",
-            marker: {color: C.mc, size: 15},
-            type: "scatter",
-            hovertemplate: "Monte Carlo<br>N=" + last.N.toLocaleString() +
-                           "<br>Error: $%{y:.4f}<extra></extra>",
-        });
-        scatterData.push({
-            x: [Math.max(data.qe_ms, 0.1)],
-            y: [Math.max(Math.abs(data.qp - data.bs), 1e-5)],
-            mode: "markers+text", text: ["QAE"],
-            textposition: "top right",
-            marker: {color: C.qa, size: 15, symbol: "diamond"},
-            type: "scatter",
-            hovertemplate: "QAE (pre-computed)<br>Time: %{x:.0f} ms<br>" +
-                           "Error: $%{y:.4f}<extra></extra>",
-        });
-
-        const scatterFig = {
-            data: scatterData,
-            layout: {
-                paper_bgcolor: "rgba(0,0,0,0)",
-                plot_bgcolor: "rgba(0,0,0,0)",
-                font: {color: "#e5e7eb"},
-                title: {text: "Accuracy vs Compute Time",
-                        font: {size: 15}, x: 0.5},
-                xaxis: {type: "log", title: {text: "Compute Time (ms)"},
-                        gridcolor: "rgba(255,255,255,0.07)", color: "#e5e7eb"},
-                yaxis: {type: "log",
-                        title: {text: "Error vs Black-Scholes ($)"},
-                        gridcolor: "rgba(255,255,255,0.07)", color: "#e5e7eb"},
-                margin: {l: 70, r: 20, t: 55, b: 55},
-                height: 360,
-                showlegend: false,
             },
+            {
+                x: [xs[xs.length - 1]], y: [ys[ys.length - 1]],
+                mode: "markers+text", text: ["Monte Carlo"],
+                textposition: "top right",
+                marker: {color: C.mc, size: 15},
+                type: "scatter",
+                hovertemplate: "Monte Carlo<br>Error: $%{y:.4f}<extra></extra>",
+            },
+            {
+                x: [Math.max(data.qe_ms, 0.1)],
+                y: [Math.max(Math.abs(data.qp - data.bs), 1e-5)],
+                mode: "markers+text", text: ["QAE"],
+                textposition: "top right",
+                marker: {color: C.qa, size: 15, symbol: "diamond"},
+                type: "scatter",
+                hovertemplate: "QAE (pre-computed)<br>Time: %{x:.0f} ms<br>" +
+                               "Error: $%{y:.4f}<extra></extra>",
+            },
+        ];
+        const scatterLayout = {
+            paper_bgcolor: "rgba(0,0,0,0)",
+            plot_bgcolor: "rgba(0,0,0,0)",
+            font: {color: "#e5e7eb"},
+            title: {text: "Accuracy vs Compute Time", font: {size: 15}, x: 0.5},
+            xaxis: {type: "log", title: {text: "Compute Time (ms)"},
+                    gridcolor: "rgba(255,255,255,0.07)", color: "#e5e7eb"},
+            yaxis: {type: "log", title: {text: "Error vs Black-Scholes ($)"},
+                    gridcolor: "rgba(255,255,255,0.07)", color: "#e5e7eb"},
+            margin: {l: 70, r: 20, t: 55, b: 55},
+            height: 360,
+            showlegend: false,
         };
 
-        // ── MC price + meta text ─────────────────────────────────────────
-        const ci = (last.hi - last.lo) / 2;
-        const priceStr = "$" + last.p.toFixed(4);
-        const metaStr = "N = " + last.N.toLocaleString() +
-                        " · ±" + ci.toFixed(4) + " (95% CI)";
+        const transition = {duration: 700, easing: "cubic-in-out"};
+        const animOpts = {
+            transition: transition,
+            frame: {duration: 700, redraw: false},
+        };
 
-        return [mcFig, scatterFig, priceStr, metaStr];
+        // Defer to let Dash finish its DOM updates, then animate imperatively.
+        setTimeout(function() {
+            const Plotly = window.Plotly;
+            if (!Plotly) { return; }
+
+            function drawOrAnimate(gdId, traceData, layout) {
+                const gd = document.getElementById(gdId);
+                if (!gd) { return; }
+                // The actual plot div is the first child rendered by dcc.Graph.
+                const plotDiv = gd.querySelector(".js-plotly-plot") || gd;
+                const hasPlot = plotDiv && plotDiv.data && plotDiv.data.length > 0;
+                if (!hasPlot) {
+                    // First render for these params: draw fresh (no tween possible).
+                    Plotly.react(plotDiv, traceData, layout, {displayModeBar: false});
+                } else {
+                    // Subsequent render: relayout (axes) then animate traces to glide.
+                    Plotly.relayout(plotDiv, layout);
+                    Plotly.animate(plotDiv, {data: traceData}, animOpts);
+                }
+            }
+
+            drawOrAnimate("mc-graph", mcData, mcLayout);
+            drawOrAnimate("scatter", scatterData, scatterLayout);
+        }, 0);
+
+        // Figures are driven imperatively above; nothing reads this sink.
+        return "";
     }
     """,
-    Output("mc-graph", "figure"),
-    Output("scatter",  "figure"),
-    Output("mc-price", "children"),
-    Output("mc-meta",  "children"),
-    Input("mc-frame", "data"),
-    Input("mc-data",  "data"),
+    Output("anim-sink", "children"),
+    Input("mc-data", "data"),
     prevent_initial_call=True,
 )
 
