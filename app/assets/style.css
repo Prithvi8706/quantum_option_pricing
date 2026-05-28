@@ -161,15 +161,14 @@ body {
   padding: 4px 0;
 }
 
-/* ── Slider overrides (Dash rc-slider) ───────────────────────────────────── */
-.rc-slider-rail               { background: rgba(255,255,255,0.10) !important; }
-.rc-slider-track              { background: rgba(129,140,248,0.45) !important; }
-.rc-slider-handle             { border-color: var(--qae) !important;
+/* ── Slider overrides (Dash 4.x dash-slider-* classes) ──────────────────── */
+.dash-slider-track            { background: rgba(255,255,255,0.10) !important; }
+.dash-slider-range            { background: rgba(129,140,248,0.45) !important; }
+.dash-slider-thumb            { border-color: var(--qae) !important;
                                 background:   var(--qae) !important;
                                 box-shadow: 0 0 0 4px rgba(129,140,248,0.2) !important; }
-.rc-slider-dot-active         { border-color: var(--qae) !important; }
-.rc-slider-mark-text          { color: #cbd5e1 !important; font-size: 11px !important; }
-.rc-slider-mark-text-active   { color: #ffffff !important; font-weight: 600 !important; }
+.dash-slider-mark             { color: #e2e8f0 !important; font-size: 11px !important; }
+.dash-slider-mark:not(.dash-slider-mark-outside-selection) { color: #ffffff !important; font-weight: 600 !important; }
 
 /* ── Footer ──────────────────────────────────────────────────────────────── */
 .footer {

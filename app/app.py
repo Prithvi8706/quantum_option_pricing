@@ -145,11 +145,8 @@ app.layout = html.Div([
                 html.Div("Monte Carlo", className="method-label"),
                 html.Div("—", id="mc-price", className="price-big"),
                 html.Div("Move a slider to start simulation", id="mc-meta", className="meta"),
-                dcc.Loading(
-                    dcc.Graph(id="mc-graph", figure=_mc_placeholder_fig(_DEF_BS),
-                              config={"displayModeBar": False}, className="mini-chart"),
-                    type="circle", color="#f59e0b",
-                ),
+                dcc.Graph(id="mc-graph", figure=_mc_placeholder_fig(_DEF_BS),
+                          config={"displayModeBar": False}, className="mini-chart"),
                 dcc.Interval(id="mc-iv", interval=120, n_intervals=0, disabled=True),
             ], className="card card-mc"),
 
