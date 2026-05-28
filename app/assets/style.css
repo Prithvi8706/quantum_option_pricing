@@ -161,14 +161,49 @@ body {
   padding: 4px 0;
 }
 
-/* ── Slider overrides (Dash 4.x dash-slider-* classes) ──────────────────── */
-.dash-slider-track            { background: rgba(255,255,255,0.10) !important; }
-.dash-slider-range            { background: rgba(129,140,248,0.45) !important; }
-.dash-slider-thumb            { border-color: var(--qae) !important;
-                                background:   var(--qae) !important;
-                                box-shadow: 0 0 0 4px rgba(129,140,248,0.2) !important; }
-.dash-slider-mark             { color: #e2e8f0 !important; font-size: 11px !important; }
-.dash-slider-mark:not(.dash-slider-mark-outside-selection) { color: #ffffff !important; font-weight: 600 !important; }
+/* ── Slider overrides (rc-slider — the actual classes dcc.Slider emits) ──── */
+.rc-slider-rail {
+  background: rgba(255, 255, 255, 0.10) !important;
+}
+
+.rc-slider-track {
+  background: rgba(129, 140, 248, 0.45) !important;
+}
+
+.rc-slider-handle {
+  border-color: var(--qae) !important;
+  background:   var(--qae) !important;
+  opacity: 1 !important;
+  box-shadow: 0 0 0 4px rgba(129, 140, 248, 0.2) !important;
+}
+
+.rc-slider-handle:hover,
+.rc-slider-handle:active,
+.rc-slider-handle-dragging {
+  border-color: var(--qae) !important;
+  box-shadow: 0 0 0 6px rgba(129, 140, 248, 0.28) !important;
+}
+
+.rc-slider-dot {
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  background: var(--card) !important;
+}
+
+.rc-slider-dot-active {
+  border-color: var(--qae) !important;
+}
+
+/* Inactive tick labels — brighter than the old gray-500 */
+.rc-slider-mark-text {
+  color: #9ca3af !important;
+  font-size: 11px !important;
+}
+
+/* Active/selected tick label — white and bold */
+.rc-slider-mark-text-active {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
 
 /* ── Footer ──────────────────────────────────────────────────────────────── */
 .footer {

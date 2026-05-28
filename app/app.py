@@ -6,6 +6,7 @@ import time
 import numpy as np
 import plotly.graph_objects as go
 from dash import Dash, Input, Output, State, ctx, dcc, html
+from dash.exceptions import PreventUpdate
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
@@ -147,7 +148,7 @@ app.layout = html.Div([
                 html.Div("Move a slider to start simulation", id="mc-meta", className="meta"),
                 dcc.Graph(id="mc-graph", figure=_mc_placeholder_fig(_DEF_BS),
                           config={"displayModeBar": False}, className="mini-chart"),
-                dcc.Interval(id="mc-iv", interval=120, n_intervals=0, disabled=True),
+                dcc.Interval(id="mc-iv", interval=120, n_intervals=0),
             ], className="card card-mc"),
 
             # QAE
@@ -179,7 +180,6 @@ app.layout = html.Div([
 
 @app.callback(
     Output("mc-store",  "data"),
-    Output("mc-iv",     "disabled"),
     Output("mc-graph",  "figure"),
     Output("mc-price",  "children"),
     Output("mc-meta",   "children"),
@@ -203,9 +203,13 @@ def _update(n_iv, S0, K, T, sigma, store):
         params = {"S0": S0, "K": K, "T": T, "sigma": sigma}
         slider_fired = ctx.triggered_id in _SLIDER_IDS
 
-        # ── Interval tick while still in initial state: do nothing ─────────────
-        if store["params"] is None and not slider_fired:
-            from dash.exceptions import PreventUpdate
+        # ── Interval tick before any slider moved: do nothing ──────────────────
+        if not slider_fired and store["params"] is None:
+            raise PreventUpdate
+
+        # ── Interval tick, but animation already complete: do nothing ──────────
+        animation_done = store.get("step", 0) >= len(_N_SCHED)
+        if not slider_fired and animation_done and store["params"] == params:
             raise PreventUpdate
 
         # ── First slider move or params changed: reset animation ───────────────
@@ -236,7 +240,6 @@ def _update(n_iv, S0, K, T, sigma, store):
             store["step"] = step + 1
             store["hist"] = hist
 
-        done = store["step"] >= len(_N_SCHED)
         last = hist[-1] if hist else None
 
         mc_price_str = f"${last['p']:.4f}" if last else "—"
@@ -245,7 +248,6 @@ def _update(n_iv, S0, K, T, sigma, store):
 
         return (
             store,
-            done,
             _mc_fig(hist, bs),
             mc_price_str,
             mc_meta_str,
@@ -256,6 +258,8 @@ def _update(n_iv, S0, K, T, sigma, store):
             "",
             _scatter_fig(hist, bs, bs_ms, qp, qe_ms),
         )
+    except PreventUpdate:
+        raise
     except Exception as exc:
         import traceback
         traceback.print_exc()
