@@ -161,48 +161,32 @@ body {
   padding: 4px 0;
 }
 
-/* ── Slider overrides (rc-slider — the actual classes dcc.Slider emits) ──── */
-.rc-slider-rail {
+/* ── Slider overrides ─────────────────────────────────────────────────────
+   Confirmed via devtools: this Dash build renders tick labels as
+   <div class="dash-slider-mark"> — target that directly.            ────── */
+
+/* Tick number labels — brighter than the default dim gray */
+.dash-slider-mark {
+  color: #cbd5e1 !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+}
+
+/* The track, the filled portion, and the thumb.
+   These selectors are best-effort for this slider build; if any one
+   doesn't take after deploy, inspect the element and we adjust that
+   single line. The .dash-slider-mark fix above is the critical one. */
+.dash-slider-container [data-orientation="horizontal"] [class*="track"] {
   background: rgba(255, 255, 255, 0.10) !important;
 }
-
-.rc-slider-track {
+.dash-slider-container [data-orientation="horizontal"] [class*="range"],
+.dash-slider-container [data-orientation="horizontal"] [class*="filled"] {
   background: rgba(129, 140, 248, 0.45) !important;
 }
-
-.rc-slider-handle {
+.dash-slider-container [data-orientation="horizontal"] [class*="thumb"],
+.dash-slider-container [data-orientation="horizontal"] [class*="handle"] {
   border-color: var(--qae) !important;
   background:   var(--qae) !important;
-  opacity: 1 !important;
-  box-shadow: 0 0 0 4px rgba(129, 140, 248, 0.2) !important;
-}
-
-.rc-slider-handle:hover,
-.rc-slider-handle:active,
-.rc-slider-handle-dragging {
-  border-color: var(--qae) !important;
-  box-shadow: 0 0 0 6px rgba(129, 140, 248, 0.28) !important;
-}
-
-.rc-slider-dot {
-  border-color: rgba(255, 255, 255, 0.15) !important;
-  background: var(--card) !important;
-}
-
-.rc-slider-dot-active {
-  border-color: var(--qae) !important;
-}
-
-/* Inactive tick labels — brighter than the old gray-500 */
-.rc-slider-mark-text {
-  color: #9ca3af !important;
-  font-size: 11px !important;
-}
-
-/* Active/selected tick label — white and bold */
-.rc-slider-mark-text-active {
-  color: #ffffff !important;
-  font-weight: 600 !important;
 }
 
 /* ── Footer ──────────────────────────────────────────────────────────────── */
