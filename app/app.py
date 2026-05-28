@@ -46,7 +46,7 @@ def _qae_lookup(S0, K, T, sigma):
 
 
 # ── Animation schedule (log-spaced N from 100 → 50 000) ───────────────────────
-_N_SCHED = np.unique(np.logspace(np.log10(100), np.log10(50_000), 35).astype(int)).tolist()
+_N_SCHED = np.unique(np.logspace(np.log10(100), np.log10(50_000), 15).astype(int)).tolist()
 
 _SLIDER_IDS = {"sl-s0", "sl-k", "sl-t", "sl-sg"}
 
@@ -172,7 +172,7 @@ app.layout = html.Div([
                 html.Div("Move a slider to start simulation", id="mc-meta", className="meta"),
                 dcc.Graph(id="mc-graph", figure=_mc_placeholder_fig(_DEF_BS),
                           config={"displayModeBar": False}, className="mini-chart"),
-                dcc.Interval(id="mc-iv", interval=120, n_intervals=0),
+                dcc.Interval(id="mc-iv", interval=600, n_intervals=0),
             ], className="card card-mc"),
 
             # QAE
