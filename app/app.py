@@ -136,10 +136,7 @@ app.layout = html.Div([
             # Black-Scholes
             html.Div([
                 html.Div("Black-Scholes", className="method-label"),
-                dcc.Loading(
-                    html.Div(f"${_DEF_BS:.4f}", id="bs-price", className="price-big"),
-                    type="circle", color="#10b981",
-                ),
+                html.Div(f"${_DEF_BS:.4f}", id="bs-price", className="price-big"),
                 html.Div("< 1 ms · exact closed-form", id="bs-meta", className="meta"),
             ], className="card card-bs"),
 
@@ -159,10 +156,7 @@ app.layout = html.Div([
             # QAE
             html.Div([
                 html.Div("Quantum (QAE)", className="method-label"),
-                dcc.Loading(
-                    html.Div(f"${_DEF_QP:.4f}", id="qae-price", className="price-big"),
-                    type="circle", color="#818cf8",
-                ),
+                html.Div(f"${_DEF_QP:.4f}", id="qae-price", className="price-big"),
                 html.Div(f"{_DEF_QMS:.0f} ms · pre-computed on Qiskit statevector",
                          id="qae-meta", className="meta"),
                 html.Div("", id="qae-note", className="qae-note"),
