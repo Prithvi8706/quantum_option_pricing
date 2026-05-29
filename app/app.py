@@ -119,6 +119,170 @@ def _scatter_placeholder():
     return fig
 
 
+def _breakeven_placeholder():
+    fig = go.Figure()
+    fig.update_layout(
+        template="plotly_dark",
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)",
+        title=dict(
+            text="QAE Break-Even: Oracle Queries vs Monte Carlo Samples",
+            font=dict(size=15), x=0.5
+        ),
+        xaxis=dict(
+            type="log", title="Required Precision ε (error in option price $)",
+            gridcolor="rgba(255,255,255,0.07)", showticklabels=False,
+        ),
+        yaxis=dict(
+            type="log", title="Compute Cost (samples or oracle queries)",
+            gridcolor="rgba(255,255,255,0.07)", showticklabels=False,
+        ),
+        margin=dict(l=70, r=20, t=55, b=55),
+        height=360,
+    )
+    fig.add_annotation(
+        x=0.5, y=0.5, xref="paper", yref="paper",
+        text="Move a slider to see break-even analysis",
+        showarrow=False, font=dict(color="#9ca3af", size=13),
+    )
+    return fig
+
+
+def _build_breakeven_fig(qae_result: dict, bs_price: float, sigma: float):
+    """
+    QAE vs MC break-even (Stamatopoulos eq.3, Woerner eq.2):
+        QAE error:   ε = π / M         (M = oracle queries)
+        MC error:    ε = 1.96 / √N     (N = samples, 95% CI)
+        Break-even:  M_be = π√N / 1.96 ≈ 1.604 × √N
+    """
+    eps = np.logspace(-3, 0, 200)
+
+    N_mc        = (1.96 / eps) ** 2
+    M_qae       = np.pi / eps
+    M_nisq_lo   = 100  * M_qae
+    M_nisq_hi   = 1000 * M_qae
+
+    oracle_q  = qae_result.get("oracle_queries")
+    qae_price = qae_result.get("price")
+
+    if qae_price is not None and bs_price is not None:
+        eps_current = max(abs(qae_price - bs_price), 1e-3)
+    else:
+        eps_current = None
+
+    fig = go.Figure()
+
+    fig.add_trace(go.Scatter(
+        x=np.concatenate([eps, eps[::-1]]),
+        y=np.concatenate([M_nisq_hi, M_nisq_lo[::-1]]),
+        fill="toself",
+        fillcolor="rgba(129,140,248,0.08)",
+        line=dict(color="rgba(0,0,0,0)"),
+        hoverinfo="skip",
+        name="NISQ overhead band (100×–1000×)",
+        showlegend=True,
+    ))
+
+    fig.add_trace(go.Scatter(
+        x=eps, y=M_qae,
+        mode="lines",
+        line=dict(color=_C_QAE, width=2),
+        name="QAE ideal  O(1/ε)",
+        hovertemplate="ε = $%{x:.4f}<br>Oracle queries = %{y:.0f}<extra>QAE ideal</extra>",
+    ))
+
+    fig.add_trace(go.Scatter(
+        x=eps, y=N_mc,
+        mode="lines",
+        line=dict(color=_C_MC, width=2),
+        name="Monte Carlo  O(1/ε²)",
+        hovertemplate="ε = $%{x:.4f}<br>Samples needed = %{y:.0f}<extra>Monte Carlo</extra>",
+    ))
+
+    eps_ref       = 0.01
+    n_mc_ref      = (1.96 / eps_ref) ** 2
+    m_qae_ref     = np.pi / eps_ref
+    m_nisq_ref_lo = 100 * m_qae_ref
+
+    fig.add_annotation(
+        x=eps_ref, y=m_nisq_ref_lo,
+        text=(
+            f"At ε=$0.01:<br>MC needs {n_mc_ref:,.0f} samples<br>"
+            f"QAE ideal needs {m_qae_ref:.0f} queries<br>"
+            f"NISQ needs >{m_nisq_ref_lo:,.0f} queries"
+        ),
+        showarrow=True,
+        arrowhead=2,
+        arrowcolor="#6b7280",
+        font=dict(color="#9ca3af", size=10),
+        bgcolor="rgba(17,24,39,0.85)",
+        bordercolor="#374151",
+        borderwidth=1,
+        ax=80, ay=-60,
+    )
+
+    if oracle_q is not None and eps_current is not None:
+        fig.add_trace(go.Scatter(
+            x=[eps_current],
+            y=[oracle_q],
+            mode="markers+text",
+            text=["This run"],
+            textposition="top right",
+            marker=dict(color=_C_QAE, size=14, symbol="diamond",
+                        line=dict(color="white", width=1)),
+            name=f"This QAE run ({oracle_q} queries)",
+            hovertemplate=(
+                f"QAE pre-computed<br>"
+                f"Oracle queries: {oracle_q}<br>"
+                f"Error vs BS: $%{{x:.4f}}<extra></extra>"
+            ),
+        ))
+
+    if eps_current is not None:
+        fig.add_vline(
+            x=eps_current,
+            line=dict(color="#6b7280", width=1, dash="dot"),
+            annotation_text="Current ε",
+            annotation_font=dict(color="#6b7280", size=10),
+            annotation_position="top",
+        )
+
+    fig.update_layout(
+        template="plotly_dark",
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)",
+        font=dict(color="#e5e7eb"),
+        title=dict(
+            text="QAE Break-Even: Oracle Queries vs Monte Carlo Samples",
+            font=dict(size=15), x=0.5,
+        ),
+        xaxis=dict(
+            type="log",
+            title="Required Precision ε (error in option price, $)",
+            gridcolor="rgba(255,255,255,0.07)",
+            color="#e5e7eb",
+            autorange="reversed",
+        ),
+        yaxis=dict(
+            type="log",
+            title="Compute Cost (samples or oracle queries)",
+            gridcolor="rgba(255,255,255,0.07)",
+            color="#e5e7eb",
+        ),
+        legend=dict(
+            x=0.02, y=0.98,
+            bgcolor="rgba(17,24,39,0.7)",
+            bordercolor="#374151",
+            borderwidth=1,
+            font=dict(size=11),
+        ),
+        margin=dict(l=70, r=20, t=55, b=55),
+        height=400,
+    )
+
+    return fig
+
+
 app.layout = html.Div([
     html.Div([
         html.H1("Quantum Option Pricing", className="title"),
@@ -176,6 +340,26 @@ app.layout = html.Div([
                   config={"displayModeBar": False}),
     ], className="scatter-wrap"),
 
+    html.Div([
+        dcc.Graph(
+            id="breakeven-chart",
+            figure=_breakeven_placeholder(),
+            config={"displayModeBar": False},
+        ),
+        html.Div([
+            html.Span("Break-even formula: M = π√N / 1.96  ·  ", className="be-citation"),
+            html.A("Stamatopoulos et al. (2020) eq. (3)",
+                   href="https://arxiv.org/abs/1905.02666",
+                   target="_blank", rel="noopener noreferrer",
+                   className="be-citation-link"),
+            html.Span("  ·  ", className="be-citation"),
+            html.A("Woerner & Egger (2019) eq. (2)",
+                   href="https://arxiv.org/abs/1806.06893",
+                   target="_blank", rel="noopener noreferrer",
+                   className="be-citation-link"),
+        ], className="be-citation-row"),
+    ], className="breakeven-wrap"),
+
     html.Footer([
         html.Span("Prithvi"),
         html.Span(" · "),
@@ -204,6 +388,7 @@ app.layout = html.Div([
     Output("qae-note",  "children"),
     Output("mc-price", "children"),
     Output("mc-meta",  "children"),
+    Output("breakeven-chart", "figure"),
     Input("sl-s0", "value"),
     Input("sl-k",  "value"),
     Input("sl-t",  "value"),
@@ -258,6 +443,8 @@ def _compute(S0, K, T, sigma):
         "colors": {"bs": _C_BS, "mc": _C_MC, "qae": _C_QAE},
     }
 
+    be_fig = _build_breakeven_fig(qae_result=entry, bs_price=bs, sigma=sigma)
+
     return (
         data,
         f"${bs:.4f}",
@@ -266,6 +453,7 @@ def _compute(S0, K, T, sigma):
         qae_note,
         mc_price_str,
         mc_meta_str,
+        be_fig,
     )
 
 
