@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-29T00:00:00Z",
+  "title": "Design System: Quantum Option Pricing",
+  "extensions": {
+    "colorMeta": {
+      "bg": {
+        "role": "neutral",
+        "displayName": "Night Console",
+        "canonical": "#0a0e1a",
+        "tonalRamp": ["#020408", "#0a0e1a", "#111827", "#1b2236", "#253049", "#31425f", "#4a5e7e", "#7284a0"]
+      },
+      "card": {
+        "role": "neutral",
+        "displayName": "Working Panel",
+        "canonical": "#111827",
+        "tonalRamp": ["#050810", "#0a0e1a", "#111827", "#1e2a3d", "#2c3c55", "#3d506e", "#5b6f8d", "#8898b4"]
+      },
+      "text-primary": {
+        "role": "neutral",
+        "displayName": "Primary Ink",
+        "canonical": "#e5e7eb",
+        "tonalRamp": ["#4b5563", "#6b7280", "#9ca3af", "#d1d5db", "#e5e7eb", "#f3f4f6", "#f9fafb", "#ffffff"]
+      },
+      "text-secondary": {
+        "role": "neutral",
+        "displayName": "Secondary Ink",
+        "canonical": "#9ca3af",
+        "tonalRamp": ["#1f2937", "#374151", "#4b5563", "#6b7280", "#9ca3af", "#d1d5db", "#e5e7eb", "#f9fafb"]
+      },
+      "formula-green": {
+        "role": "primary",
+        "displayName": "Formula Green",
+        "canonical": "#22c55e",
+        "tonalRamp": ["#052e14", "#064e24", "#0f7535", "#16a34a", "#22c55e", "#4ade80", "#86efac", "#dcfce7"]
+      },
+      "simulation-amber": {
+        "role": "secondary",
+        "displayName": "Simulation Amber",
+        "canonical": "#f59e0b",
+        "tonalRamp": ["#451a03", "#78350f", "#92400e", "#b45309", "#d97706", "#f59e0b", "#fbbf24", "#fde68a"]
+      },
+      "quantum-indigo": {
+        "role": "tertiary",
+        "displayName": "Quantum Indigo",
+        "canonical": "#818cf8",
+        "tonalRamp": ["#1e1b4b", "#312e81", "#3730a3", "#4338ca", "#6366f1", "#818cf8", "#a5b4fc", "#e0e7ff"]
+      },
+      "warning-amber": {
+        "role": "semantic",
+        "displayName": "Warning Amber",
+        "canonical": "#fbbf24",
+        "tonalRamp": ["#451a03", "#78350f", "#b45309", "#d97706", "#f59e0b", "#fbbf24", "#fde68a", "#fef9c3"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Page title only. One instance per page." },
+      "data": { "displayName": "Data", "purpose": "Live price output values. tabular-nums required." },
+      "body": { "displayName": "Body / UI", "purpose": "General UI prose, fixed-rate display, slider labels." },
+      "label": { "displayName": "Label", "purpose": "Method identifiers and system panel names. Uppercase, tight tracking." },
+      "caption": { "displayName": "Caption", "purpose": "Meta text, footer, citations, secondary information." }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "link-hover",
+        "value": "color 150ms ease",
+        "purpose": "Color transition on footer links and citation links. Disabled under prefers-reduced-motion."
+      },
+      {
+        "name": "chart-transition",
+        "value": "cubic-in-out 700ms",
+        "purpose": "Plotly chart data animation on parameter change. Controlled via clientside_callback in app.py; cannot be overridden by CSS prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "tablet",
+        "value": "900px",
+        "purpose": "Sidebar stacks full-width above cards; cards wrap to 2-column grid."
+      },
+      {
+        "name": "mobile",
+        "value": "600px",
+        "purpose": "All columns stack single-column. Page padding reduces to 16px. Title and price scale down to 1.7rem."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Method Card — Black-Scholes",
+      "kind": "card",
+      "refersTo": "card-bs",
+      "description": "Displays the Black-Scholes closed-form price. Identified by Formula Green top border and price color.",
+      "html": "<div class=\"ds-card-bs\"><div class=\"ds-method-label\">Black-Scholes</div><div class=\"ds-price-bs\">$10.4506</div><div class=\"ds-meta\">&lt; 1 ms · exact closed-form</div></div>",
+      "css": ".ds-card-bs { background: #111827; border: 1px solid rgba(255,255,255,0.07); border-top: 3px solid #22c55e; border-radius: 14px; padding: 22px 20px 16px; } .ds-method-label { font-family: Inter, system-ui, sans-serif; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #9ca3af; margin-bottom: 14px; } .ds-price-bs { font-family: Inter, system-ui, sans-serif; font-size: 2.1rem; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; color: #22c55e; margin-bottom: 6px; } .ds-meta { font-family: Inter, system-ui, sans-serif; font-size: 0.75rem; color: #9ca3af; }"
+    },
+    {
+      "name": "Method Card — Monte Carlo",
+      "kind": "card",
+      "refersTo": "card-mc",
+      "description": "Displays the Monte Carlo price estimate. Identified by Simulation Amber top border and price color.",
+      "html": "<div class=\"ds-card-mc\"><div class=\"ds-method-label-mc\">Monte Carlo</div><div class=\"ds-price-mc\">$10.3821</div><div class=\"ds-meta-mc\">N = 50,000 · ±0.0312 (95% CI)</div></div>",
+      "css": ".ds-card-mc { background: #111827; border: 1px solid rgba(255,255,255,0.07); border-top: 3px solid #f59e0b; border-radius: 14px; padding: 22px 20px 16px; } .ds-method-label-mc { font-family: Inter, system-ui, sans-serif; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #9ca3af; margin-bottom: 14px; } .ds-price-mc { font-family: Inter, system-ui, sans-serif; font-size: 2.1rem; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; color: #f59e0b; margin-bottom: 6px; } .ds-meta-mc { font-family: Inter, system-ui, sans-serif; font-size: 0.75rem; color: #9ca3af; }"
+    },
+    {
+      "name": "Method Card — QAE",
+      "kind": "card",
+      "refersTo": "card-qae",
+      "description": "Displays the QAE price from the precomputed grid. Identified by Quantum Indigo top border and price color.",
+      "html": "<div class=\"ds-card-qae\"><div class=\"ds-method-label-qae\">Quantum (QAE)</div><div class=\"ds-price-qae\">$10.1033</div><div class=\"ds-meta-qae\">1847 ms · pre-computed on Qiskit statevector</div></div>",
+      "css": ".ds-card-qae { background: #111827; border: 1px solid rgba(255,255,255,0.07); border-top: 3px solid #818cf8; border-radius: 14px; padding: 22px 20px 16px; } .ds-method-label-qae { font-family: Inter, system-ui, sans-serif; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #9ca3af; margin-bottom: 14px; } .ds-price-qae { font-family: Inter, system-ui, sans-serif; font-size: 2.1rem; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; color: #818cf8; margin-bottom: 6px; } .ds-meta-qae { font-family: Inter, system-ui, sans-serif; font-size: 0.75rem; color: #9ca3af; }"
+    },
+    {
+      "name": "Chart Container",
+      "kind": "card",
+      "refersTo": "card-primary",
+      "description": "Neutral frame for Plotly chart areas. Lighter padding; all visual content comes from the chart itself.",
+      "html": "<div class=\"ds-chart-wrap\"><div style=\"color:#9ca3af;font-family:Inter,sans-serif;font-size:0.8rem;padding:16px;\">Chart content here</div></div>",
+      "css": ".ds-chart-wrap { background: #111827; border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; padding: 6px; }"
+    },
+    {
+      "name": "Muted Link",
+      "kind": "custom",
+      "refersTo": "link-muted",
+      "description": "Footer and attribution links. Secondary Ink at rest; Primary Ink on hover.",
+      "html": "<a class=\"ds-link-muted\" href=\"#\">GitHub</a>",
+      "css": ".ds-link-muted { font-family: Inter, system-ui, sans-serif; font-size: 0.78rem; color: #9ca3af; text-decoration: none; transition: color 150ms ease; } .ds-link-muted:hover { color: #e5e7eb; } .ds-link-muted:focus-visible { outline: 2px solid #818cf8; outline-offset: 2px; border-radius: 3px; }"
+    },
+    {
+      "name": "Accent Link",
+      "kind": "custom",
+      "refersTo": "link-accent",
+      "description": "Academic citation links in the break-even footnote. Quantum Indigo at rest; Primary Ink with underline on hover.",
+      "html": "<a class=\"ds-link-accent\" href=\"#\">Stamatopoulos et al. (2020) eq. (3)</a>",
+      "css": ".ds-link-accent { font-family: Inter, system-ui, sans-serif; font-size: 0.72rem; color: #818cf8; text-decoration: none; font-style: italic; transition: color 150ms ease; } .ds-link-accent:hover { color: #e5e7eb; text-decoration: underline; } .ds-link-accent:focus-visible { outline: 2px solid #818cf8; outline-offset: 2px; border-radius: 3px; }"
+    },
+    {
+      "name": "Sidebar Panel",
+      "kind": "card",
+      "refersTo": "card-primary",
+      "description": "Parameter control panel. Same structural shape as method cards; contains sliders and the fixed-rate display.",
+      "html": "<div class=\"ds-sidebar\"><div class=\"ds-sidebar-title\">Parameters</div><div class=\"ds-slider-label\">S₀ — Stock Price ($)</div></div>",
+      "css": ".ds-sidebar { background: #111827; border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; padding: 20px 18px; width: 230px; } .ds-sidebar-title { font-family: Inter, system-ui, sans-serif; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #9ca3af; margin-bottom: 22px; } .ds-slider-label { font-family: Inter, system-ui, sans-serif; font-size: 0.75rem; font-weight: 500; color: #9ca3af; margin-bottom: 10px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Rigorous Witness",
+    "overview": "The Rigorous Witness observes algorithms without editorializing. It shows what Black-Scholes, Monte Carlo, and Quantum Amplitude Estimation compute — exactly as computed, with their error bars, their timing, their honest limitations. The visual language is a direct extension of the README's intellectual honesty: no gradient implies more than the numbers deliver, no flourish oversells a 600-point precomputed grid as live quantum hardware.\n\nThe system is dark because quant researchers work in low ambient light, staring at terminals and notebooks. The background (#0a0e1a) is deep navy with a trace of blue — not arbitrary black, not a generic 'cool dark.' Card surfaces (#111827) lift one tonal step from the background, and hairline white-alpha borders mark container edges without adding visual noise. No shadows. The chart is the depth.\n\nThree method identity colors carry the entire chromatic load: Formula Green for Black-Scholes, Simulation Amber for Monte Carlo, Quantum Indigo for QAE. Outside those three and the structural neutrals, nothing is colored. This system explicitly rejects generic SaaS dashboard aesthetics and the dark-mode cliché of 2024.",
+    "keyCharacteristics": [
+      "Three-color method vocabulary, used exclusively for method identity — never decoration",
+      "Flat surfaces, hairline borders, zero shadows — the chart is the only depth",
+      "Single sans family (Inter), two weights (800 display / 700 data and labels)",
+      "Uppercase text reserved for method identifiers and the parameters panel label only",
+      "All numeric displays use tabular-nums for column alignment under changing values"
+    ],
+    "rules": [
+      { "name": "The Three Witnesses Rule", "body": "Formula Green, Simulation Amber, and Quantum Indigo are reserved for method identity. Never repurpose them for hover states, decorative borders, or UI elements that don't directly represent one of the three pricing methods.", "section": "colors" },
+      { "name": "The Contrast Floor Rule", "body": "Secondary Ink (#9ca3af) is the lightest text color in the system. It must not be made lighter. It passes WCAG AA on both surface tones; #6b7280 — its predecessor — failed at 4.0:1.", "section": "colors" },
+      { "name": "The Uppercase Restriction Rule", "body": "Uppercase text appears in exactly two contexts: method name labels on cards and the parameters panel header. Any new uppercase text must identify a named system component — not serve as a section header or decorative eyebrow.", "section": "typography" },
+      { "name": "The Tabular-Nums Rule", "body": "Every numeric value that changes at runtime must use font-variant-numeric: tabular-nums. Proportional digits cause layout shift as values animate.", "section": "typography" },
+      { "name": "The No-Shadow Rule", "body": "Shadows are prohibited on all surfaces. Depth is structural (tonal layering) not cosmetic. Adding box-shadow immediately reads as generic SaaS decoration.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do use Formula Green, Simulation Amber, and Quantum Indigo exclusively for their respective method contexts.",
+      "Do use Secondary Ink (#9ca3af) for all secondary text — labels, metadata, captions.",
+      "Do use font-variant-numeric: tabular-nums on all price outputs and numeric values that animate.",
+      "Do keep containers flat: 1px hairline border, no box-shadow.",
+      "Do use text-wrap: balance on any headline that could wrap.",
+      "Do use transition: color 150ms ease on any link that changes color on hover.",
+      "Do cite WCAG AA (4.5:1) as the hard floor for any text color on any surface."
+    ],
+    "donts": [
+      "Don't use background-clip: text with a gradient. The title's original gradient was removed because it is theatrical, not honest.",
+      "Don't add box-shadow to any card, container, or interactive element. The No-Shadow Rule applies universally.",
+      "Don't apply glassmorphism (backdrop-filter, blurred card backgrounds). The system is flat by design.",
+      "Don't use colorful metric cards with gradient accents — the 'generic SaaS dashboard' PRODUCT.md names as the primary anti-reference.",
+      "Don't use neon glow, ambient Quantum Indigo lighting, or purple gradients.",
+      "Don't add uppercase text to any element that isn't a method name or a named system label.",
+      "Don't introduce a second typeface. One family with weight contrast reads as precise; two competing sans-serifs read as indecision."
+    ]
+  }
+}
