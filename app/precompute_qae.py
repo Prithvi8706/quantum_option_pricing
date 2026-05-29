@@ -38,10 +38,6 @@ import time
 # Allow running from project root or from app/
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
-from tqdm import tqdm
-
-from src.quantum import quantum_call
-
 # ---------------------------------------------------------------------------
 # Grid definition (matches design doc)
 # ---------------------------------------------------------------------------
@@ -78,6 +74,9 @@ def save(results: dict, path: str) -> None:
 
 
 def run_grid(points: list, results: dict, desc: str) -> dict:
+    from tqdm import tqdm
+    from src.quantum import quantum_call
+
     pending = [p for p in points if p not in results]
     skipped = len(points) - len(pending)
     if skipped:

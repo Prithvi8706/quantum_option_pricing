@@ -12,6 +12,13 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 from src.black_scholes import black_scholes_call
 from src.classical import monte_carlo_call
+from app.precompute_qae import (
+    K_VALUES as _KG,
+    R_FIXED as _R_FIXED,
+    S0_VALUES as _S0G,
+    SIGMA_VALUES as _SG,
+    T_VALUES as _TG,
+)
 
 # ── QAE grid ──────────────────────────────────────────────────────────────────
 _PKL = os.path.join(os.path.dirname(__file__), "..", "data", "qae_grid.pkl")
@@ -22,11 +29,6 @@ if not os.path.exists(_PKL):
 with open(_PKL, "rb") as _f:
     _QAE: dict = pickle.load(_f)
 
-_R_FIXED = 0.05
-_S0G = [80.0, 90.0, 100.0, 110.0, 120.0]
-_KG  = [90.0, 95.0, 100.0, 105.0, 110.0]
-_TG  = [0.25, 0.5, 0.75, 1.0, 1.5, 2.0]
-_SGG = [0.15, 0.20, 0.25, 0.30]
 
 
 def _snap(v, grid):
@@ -37,7 +39,7 @@ def _snap(v, grid):
 _QAE_MISSING = {"price": None, "elapsed": None, "conf_int": (None, None), "oracle_queries": None}
 
 def _qae_lookup(S0, K, T, sigma):
-    key = (_snap(S0, _S0G), _snap(K, _KG), _snap(T, _TG), _R_FIXED, _snap(sigma, _SGG))
+    key = (_snap(S0, _S0G), _snap(K, _KG), _snap(T, _TG), _R_FIXED, _snap(sigma, _SG))
     result = _QAE.get(key)
     if result is None:
         print(f"QAE MISS: key={key}, available={list(_QAE.keys())[:3]}…", flush=True)
@@ -51,7 +53,7 @@ _N_SCHED = np.unique(np.logspace(np.log10(100), np.log10(50_000), 15).astype(int
 # ── Colours ───────────────────────────────────────────────────────────────────
 _C_BS = "#22c55e"
 _C_MC = "#f59e0b"
-_C_QA = "#818cf8"
+_C_QAE = "#818cf8"
 
 # ── App ───────────────────────────────────────────────────────────────────────
 app = Dash(__name__, suppress_callback_exceptions=False, serve_locally=True, title="Quantum Option Pricing")
@@ -211,7 +213,9 @@ app.layout = html.Div([
 def _compute(S0, K, T, sigma):
     r = _R_FIXED
 
+    t_bs = time.perf_counter()
     bs = black_scholes_call(S0, K, r, sigma, T)
+    bs_ms = (time.perf_counter() - t_bs) * 1000
 
     entry = _qae_lookup(S0, K, T, sigma)
     qp    = entry["price"]   if entry["price"]   is not None else 0.0
@@ -220,7 +224,7 @@ def _compute(S0, K, T, sigma):
     if entry["price"] is None:
         qae_note = "Cache miss — check server logs"
     else:
-        snapped = (_snap(S0, _S0G), _snap(K, _KG), _snap(T, _TG), _snap(sigma, _SGG))
+        snapped = (_snap(S0, _S0G), _snap(K, _KG), _snap(T, _TG), _snap(sigma, _SG))
         inputs  = (S0, K, T, sigma)
         labels  = ("S₀", "K", "T", "σ")
         diffs   = [f"{l}={s} (selected {i})" for l, s, i in zip(labels, snapped, inputs) if abs(s - i) > 1e-9]
@@ -244,13 +248,14 @@ def _compute(S0, K, T, sigma):
     mc_price_str = f"${last['p']:.4f}"
     mc_meta_str  = f"N = {last['N']:,} · ±{ci:.4f} (95% CI)"
 
-    # schema consumed by clientside_callback: {bs, qp, qe_ms, frames:[{N,p,lo,hi,ms}], colors:{bs,mc,qa}}
+    # schema consumed by clientside_callback: {bs, bs_ms, qp, qe_ms, frames:[{N,p,lo,hi,ms}], colors:{bs,mc,qae}}
     data = {
         "bs": float(bs),
+        "bs_ms": float(max(bs_ms, 1e-3)),
         "qp": float(qp),
         "qe_ms": float(qe_ms),
         "frames": frames,
-        "colors": {"bs": _C_BS, "mc": _C_MC, "qa": _C_QA},
+        "colors": {"bs": _C_BS, "mc": _C_MC, "qae": _C_QAE},
     }
 
     return (
@@ -335,10 +340,11 @@ app.clientside_callback(
         // ── Scatter traces (accuracy vs compute time) ────────────────────
         const xs = frames.map(d => Math.max(d.ms, 1e-3));
         const ys = frames.map(d => Math.max(Math.abs(d.p - data.bs), 1e-5));
+        const bsY = Math.min(...ys) / 10;
 
         const scatterData = [
             {
-                x: [0.05], y: [5e-5],
+                x: [data.bs_ms], y: [bsY],
                 mode: "markers+text", text: ["Black-Scholes"],
                 textposition: "top right",
                 marker: {color: C.bs, size: 15},
@@ -364,7 +370,7 @@ app.clientside_callback(
                 y: [Math.max(Math.abs(data.qp - data.bs), 1e-5)],
                 mode: "markers+text", text: ["QAE"],
                 textposition: "top right",
-                marker: {color: C.qa, size: 15, symbol: "diamond"},
+                marker: {color: C.qae, size: 15, symbol: "diamond"},
                 type: "scatter",
                 hovertemplate: "QAE (pre-computed)<br>Time: %{x:.0f} ms<br>" +
                                "Error: $%{y:.4f}<extra></extra>",

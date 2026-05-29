@@ -20,7 +20,6 @@ def test_bs_atm():
 def test_bs_deep_itm():
     """Deep ITM call price exceeds intrinsic value."""
     price = black_scholes_call(S0=120, K=80, r=0.05, sigma=0.20, T=1.0)
-    intrinsic = 120 - 80 * 1.0  # loose lower bound
     assert price > 35, f"Deep ITM price should be > $35, got {price:.4f}"
 
 
