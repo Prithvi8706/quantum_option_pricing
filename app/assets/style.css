@@ -16,6 +16,7 @@ body {
   color: var(--text);
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   min-height: 100vh;
+  border-top: 2px solid var(--qae);
 }
 
 .page {
@@ -25,13 +26,14 @@ body {
 }
 
 /* ── Header ─────────────────────────────────────────────────────────────── */
-.header { text-align: center; margin-bottom: 36px; }
+.header { text-align: center; margin-bottom: 48px; }
 
 .title {
-  font-size: 2.1rem;
+  font-size: 2.8rem;
   font-weight: 800;
   color: #ffffff;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
   text-wrap: balance;
 }
 
@@ -73,7 +75,7 @@ body {
 
 .slider-label {
   display: block;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 500;
   color: var(--muted);
   margin-bottom: 10px;
@@ -96,9 +98,22 @@ body {
   padding: 22px 20px 16px;
 }
 
-.card-bs  { border-top: 3px solid var(--bs); }
-.card-mc  { border-top: 3px solid var(--mc); }
-.card-qae { border-top: 3px solid var(--qae); }
+.card-bs {
+  border-top: 3px solid var(--bs);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--bs) 7%, transparent) 0px, var(--card) 80px);
+}
+.card-mc {
+  border-top: 3px solid var(--mc);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--mc) 7%, transparent) 0px, var(--card) 80px);
+}
+.card-qae {
+  border-top: 3px solid var(--qae);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--qae) 7%, transparent) 0px, var(--card) 80px);
+}
+
+.card-bs  .method-label { color: var(--bs); }
+.card-mc  .method-label { color: var(--mc); }
+.card-qae .method-label { color: var(--qae); }
 
 .method-label {
   font-size: 0.7rem;
@@ -110,12 +125,14 @@ body {
 }
 
 .price-big {
-  font-size: 2.1rem;
+  font-size: 2.5rem;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
-  letter-spacing: -0.02em;
-  min-height: 2.6rem;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  min-height: 2.5rem;
   margin-bottom: 6px;
+  transition: opacity 150ms ease;
 }
 
 .card-bs  .price-big { color: var(--bs); }
@@ -123,7 +140,7 @@ body {
 .card-qae .price-big { color: var(--qae); }
 
 .meta {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: var(--muted);
   min-height: 1.1em;
   margin-bottom: 4px;
@@ -278,7 +295,8 @@ body {
   }
 
   .title {
-    font-size: 1.7rem;
+    font-size: 2rem;
+    letter-spacing: -0.02em;
   }
 
   .cards {
@@ -290,7 +308,8 @@ body {
   }
 
   .price-big {
-    font-size: 1.7rem;
+    font-size: 2rem;
+    letter-spacing: -0.02em;
   }
 
   .scatter-wrap,
@@ -299,10 +318,16 @@ body {
   }
 }
 
+/* ── Loading state ───────────────────────────────────────────────────────── */
+[data-dash-is-loading="true"] .price-big {
+  opacity: 0.4;
+}
+
 /* ── Reduced motion ──────────────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   .footer a,
-  .be-citation-link {
+  .be-citation-link,
+  .price-big {
     transition: none;
   }
 }

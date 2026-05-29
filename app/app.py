@@ -407,7 +407,7 @@ def _compute(S0, K, T, sigma):
     qe_ms = (entry["elapsed"] if entry["elapsed"] is not None else 0.0) * 1000
 
     if entry["price"] is None:
-        qae_note = "Cache miss — check server logs"
+        qae_note = "No precomputed result for this parameter combination"
     else:
         snapped = (_snap(S0, _S0G), _snap(K, _KG), _snap(T, _TG), _snap(sigma, _SG))
         inputs  = (S0, K, T, sigma)
