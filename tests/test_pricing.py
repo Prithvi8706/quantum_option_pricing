@@ -31,14 +31,12 @@ def test_bs_deep_otm():
 
 
 def test_bs_put_call_parity():
-    """Put-call parity: C - P = S0 - K*e^(-rT)."""
+    """C - P = S0 - K*e^(-rT): put via parity should be ~5.57 for ATM 1y 20% vol."""
+    import numpy as np
     S0, K, r, sigma, T = 100, 100, 0.05, 0.20, 1.0
     call = black_scholes_call(S0, K, r, sigma, T)
-    # put via parity
-    put = call - S0 + K * (1 - r * T)   # approximate; exact uses exp
-    import numpy as np
-    put_exact = call - S0 + K * np.exp(-r * T)
-    assert abs(put_exact) > 0  # just verifies parity formula is non-degenerate
+    put = call - S0 + K * np.exp(-r * T)
+    assert 5.0 < put < 6.5, f"Put via parity = {put:.4f}, expected ~5.57"
 
 
 # ── Monte Carlo ───────────────────────────────────────────────────────────────
@@ -67,16 +65,25 @@ def test_mc_nonnegative():
 # ── Sigma floor (quantum clamping logic) ──────────────────────────────────────
 
 def test_sigma_floor_clamps_below_015():
-    """Sigma values below 0.15 are clamped to 0.15 in quantum_call."""
-    # This mirrors the exact logic in src/quantum.py
-    for sigma_user in [0.05, 0.10, 0.14]:
-        assert max(sigma_user, 0.15) == 0.15
+    """quantum_call with sigma < 0.15 returns the same price as sigma=0.15 (clamped)."""
+    pytest.importorskip("qiskit", reason="Qiskit not installed (dev dependency)")
+    from src.quantum import quantum_call
+    p_clamped, _, _, _ = quantum_call(100.0, 100.0, 0.05, 0.10, 1.0)
+    p_floor,   _, _, _ = quantum_call(100.0, 100.0, 0.05, 0.15, 1.0)
+    assert abs(p_clamped - p_floor) < 1e-9, (
+        f"Clamp not applied: sigma=0.10 → {p_clamped:.6f}, sigma=0.15 → {p_floor:.6f}"
+    )
 
 
 def test_sigma_floor_passes_above_015():
-    """Sigma values >= 0.15 are unchanged."""
-    for sigma_user in [0.15, 0.20, 0.30, 0.50]:
-        assert max(sigma_user, 0.15) == sigma_user
+    """quantum_call with sigma=0.20 is not clamped to 0.15 (price differs from sigma=0.15)."""
+    pytest.importorskip("qiskit", reason="Qiskit not installed (dev dependency)")
+    from src.quantum import quantum_call
+    p_at_floor, _, _, _ = quantum_call(100.0, 100.0, 0.05, 0.15, 1.0)
+    p_above,    _, _, _ = quantum_call(100.0, 100.0, 0.05, 0.20, 1.0)
+    assert abs(p_above - p_at_floor) > 0.05, (
+        f"sigma=0.20 should differ from sigma=0.15: {p_above:.4f} vs {p_at_floor:.4f}"
+    )
 
 
 def test_bs_sigma_sensitivity():

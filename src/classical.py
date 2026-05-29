@@ -19,7 +19,7 @@ def monte_carlo_call(S0: float, K: float, r: float, sigma: float, T: float, N: i
     price : float  — discounted expected payoff
     std_err : float — standard error of the estimate
     """
-    rng = np.random.default_rng()
+    rng = np.random.default_rng()  # fresh entropy seed each call — non-reproducible by design; pass seed= in tests if needed
     Z = rng.standard_normal(N)
     S_T = S0 * np.exp((r - 0.5 * sigma ** 2) * T + sigma * np.sqrt(T) * Z)
     payoffs = np.maximum(S_T - K, 0.0)

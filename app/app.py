@@ -41,7 +41,7 @@ def _qae_lookup(S0, K, T, sigma):
     result = _QAE.get(key)
     if result is None:
         print(f"QAE MISS: key={key}, available={list(_QAE.keys())[:3]}…", flush=True)
-        return _QAE_MISSING
+        return dict(_QAE_MISSING)
     return result
 
 
@@ -62,15 +62,15 @@ def _slider(sid, label, mn, mx, val, marks):
     return html.Div([
         html.Label(label, className="slider-label"),
         dcc.Slider(id=sid, min=mn, max=mx, value=val, step=None,
-                   marks={str(m): str(m) for m in marks}),
+                   marks={m: str(m) for m in marks}),
     ], className="slider-wrap")
 
 
 # ── Default values computed once at startup (both sub-millisecond) ─────────────
 _DEF_BS  = black_scholes_call(100.0, 100.0, _R_FIXED, 0.20, 1.0)
 _DEF_QAE = _qae_lookup(100.0, 100.0, 1.0, 0.20)
-_DEF_QP  = _DEF_QAE["price"]   or 0.0
-_DEF_QMS = (_DEF_QAE["elapsed"] or 0.0) * 1000
+_DEF_QP  = _DEF_QAE["price"]   if _DEF_QAE["price"]   is not None else 0.0
+_DEF_QMS = (_DEF_QAE["elapsed"] if _DEF_QAE["elapsed"] is not None else 0.0) * 1000
 
 
 def _mc_placeholder_fig(bs_price):
@@ -184,8 +184,7 @@ app.layout = html.Div([
 
     # Full computed dataset for the current params (filled once per slider move)
     dcc.Store(id="mc-data"),
-    # Dummy sink for the imperative animation callback (nothing reads it)
-    html.Div(id="anim-sink", style={"display": "none"}),
+    html.Div(id="anim-sink", style={"display": "none"}),  # Output sink for clientside_callback; never read back
 ], className="page")
 
 
@@ -200,6 +199,7 @@ app.layout = html.Div([
     Output("bs-price", "children"),
     Output("qae-price", "children"),
     Output("qae-meta",  "children"),
+    Output("qae-note",  "children"),
     Output("mc-price", "children"),
     Output("mc-meta",  "children"),
     Input("sl-s0", "value"),
@@ -214,8 +214,17 @@ def _compute(S0, K, T, sigma):
     bs = black_scholes_call(S0, K, r, sigma, T)
 
     entry = _qae_lookup(S0, K, T, sigma)
-    qp    = entry["price"]   or 0.0
-    qe_ms = (entry["elapsed"] or 0.0) * 1000
+    qp    = entry["price"]   if entry["price"]   is not None else 0.0
+    qe_ms = (entry["elapsed"] if entry["elapsed"] is not None else 0.0) * 1000
+
+    if entry["price"] is None:
+        qae_note = "Cache miss — check server logs"
+    else:
+        snapped = (_snap(S0, _S0G), _snap(K, _KG), _snap(T, _TG), _snap(sigma, _SGG))
+        inputs  = (S0, K, T, sigma)
+        labels  = ("S₀", "K", "T", "σ")
+        diffs   = [f"{l}={s} (selected {i})" for l, s, i in zip(labels, snapped, inputs) if abs(s - i) > 1e-9]
+        qae_note = f"Nearest match used: {', '.join(diffs)}" if diffs else ""
 
     frames = []
     for N in _N_SCHED:
@@ -235,6 +244,7 @@ def _compute(S0, K, T, sigma):
     mc_price_str = f"${last['p']:.4f}"
     mc_meta_str  = f"N = {last['N']:,} · ±{ci:.4f} (95% CI)"
 
+    # schema consumed by clientside_callback: {bs, qp, qe_ms, frames:[{N,p,lo,hi,ms}], colors:{bs,mc,qa}}
     data = {
         "bs": float(bs),
         "qp": float(qp),
@@ -248,6 +258,7 @@ def _compute(S0, K, T, sigma):
         f"${bs:.4f}",
         f"${qp:.4f}",
         f"{qe_ms:.0f} ms · pre-computed on Qiskit statevector",
+        qae_note,
         mc_price_str,
         mc_meta_str,
     )
@@ -387,7 +398,8 @@ app.clientside_callback(
             function drawOrAnimate(gdId, traceData, layout) {
                 const gd = document.getElementById(gdId);
                 if (!gd) { return; }
-                // The actual plot div is the first child rendered by dcc.Graph.
+                // .js-plotly-plot and .data are undocumented Plotly internals — fragile on a
+                // major version bump. If animation breaks after a Plotly upgrade, check here first.
                 const plotDiv = gd.querySelector(".js-plotly-plot") || gd;
                 const hasPlot = plotDiv && plotDiv.data && plotDiv.data.length > 0;
                 if (!hasPlot) {
