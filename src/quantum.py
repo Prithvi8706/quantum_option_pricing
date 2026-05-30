@@ -16,7 +16,7 @@ def quantum_call(
     num_uncertainty_qubits: int = 3,
     epsilon: float = 0.01,
     alpha: float = 0.05,
-) -> tuple[float, tuple[float, float], float]:
+) -> tuple[float, tuple[float, float], float, int]:
     """
     Price a European call option using Iterative Quantum Amplitude Estimation.
 

@@ -16,3 +16,9 @@ Key routing rules:
 - Ship/deploy/PR → invoke /ship or /land-and-deploy
 - Save progress → invoke /context-save
 - Resume context → invoke /context-restore
+
+## Health Stack
+
+- test: venv/Scripts/pytest.exe
+- typecheck: mypy src/ app/ tests/
+- lint: venv/Scripts/ruff.exe check .

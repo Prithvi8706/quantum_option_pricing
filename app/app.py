@@ -5,8 +5,7 @@ import time
 
 import numpy as np
 import plotly.graph_objects as go
-from dash import Dash, Input, Output, State, ctx, dcc, html
-from dash.exceptions import PreventUpdate
+from dash import Dash, Input, Output, dcc, html
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
@@ -56,7 +55,12 @@ _C_MC = "#f59e0b"
 _C_QAE = "#818cf8"
 
 # ── App ───────────────────────────────────────────────────────────────────────
-app = Dash(__name__, suppress_callback_exceptions=False, serve_locally=True, title="Quantum Option Pricing")
+app = Dash(
+    __name__,
+    suppress_callback_exceptions=False,
+    serve_locally=True,
+    title="Quantum Option Pricing",
+)
 server = app.server  # gunicorn entry point
 
 
@@ -298,7 +302,8 @@ app.layout = html.Div([
             html.H3("Parameters", className="sidebar-title"),
             _slider("sl-s0", "S₀ — Stock Price ($)", 80, 120, 100, [80, 90, 100, 110, 120]),
             _slider("sl-k",  "K — Strike Price ($)",  90, 110, 100, [90, 95, 100, 105, 110]),
-            _slider("sl-t",  "T — Expiry (years)",   0.25, 2.0, 1.0, [0.25, 0.5, 0.75, 1.0, 1.5, 2.0]),
+            _slider("sl-t",  "T — Expiry (years)",   0.25, 2.0, 1.0,
+                    [0.25, 0.5, 0.75, 1.0, 1.5, 2.0]),
             _slider("sl-sg", "σ — Volatility",       0.15, 0.30, 0.20, [0.15, 0.20, 0.25, 0.30]),
             html.Div([
                 html.Label("r — Risk-free Rate", className="slider-label"),
@@ -370,7 +375,7 @@ app.layout = html.Div([
 
     # Full computed dataset for the current params (filled once per slider move)
     dcc.Store(id="mc-data"),
-    html.Div(id="anim-sink", style={"display": "none"}),  # Output sink for clientside_callback; never read back
+    html.Div(id="anim-sink", style={"display": "none"}),  # Output sink for clientside_callback
 ], className="page")
 
 
@@ -412,7 +417,11 @@ def _compute(S0, K, T, sigma):
         snapped = (_snap(S0, _S0G), _snap(K, _KG), _snap(T, _TG), _snap(sigma, _SG))
         inputs  = (S0, K, T, sigma)
         labels  = ("S₀", "K", "T", "σ")
-        diffs   = [f"{l}={s} (selected {i})" for l, s, i in zip(labels, snapped, inputs) if abs(s - i) > 1e-9]
+        diffs = [
+            f"{lbl}={s} (selected {i})"
+            for lbl, s, i in zip(labels, snapped, inputs)
+            if abs(s - i) > 1e-9
+        ]
         qae_note = f"Nearest match used: {', '.join(diffs)}" if diffs else ""
 
     frames = []
@@ -433,7 +442,8 @@ def _compute(S0, K, T, sigma):
     mc_price_str = f"${last['p']:.4f}"
     mc_meta_str  = f"N = {last['N']:,} · ±{ci:.4f} (95% CI)"
 
-    # schema consumed by clientside_callback: {bs, bs_ms, qp, qe_ms, frames:[{N,p,lo,hi,ms}], colors:{bs,mc,qae}}
+    # schema consumed by clientside_callback:
+    # {bs, bs_ms, qp, qe_ms, frames:[{N,p,lo,hi,ms}], colors:{bs,mc,qae}}
     data = {
         "bs": float(bs),
         "bs_ms": float(max(bs_ms, 1e-3)),
