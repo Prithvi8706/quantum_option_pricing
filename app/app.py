@@ -152,7 +152,7 @@ def _breakeven_placeholder():
     return fig
 
 
-def _build_breakeven_fig(qae_result: dict, bs_price: float, sigma: float):
+def _build_breakeven_fig(qae_result: dict, bs_price: float):
     """
     QAE vs MC break-even (Stamatopoulos eq.3, Woerner eq.2):
         QAE error:   ε = π / M         (M = oracle queries)
@@ -453,7 +453,7 @@ def _compute(S0, K, T, sigma):
         "colors": {"bs": _C_BS, "mc": _C_MC, "qae": _C_QAE},
     }
 
-    be_fig = _build_breakeven_fig(qae_result=entry, bs_price=bs, sigma=sigma)
+    be_fig = _build_breakeven_fig(qae_result=entry, bs_price=bs)
 
     return (
         data,
