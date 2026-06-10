@@ -170,20 +170,32 @@ for m in methods:
 
 print()
 
-# ── Section F: QAE epsilon sweep ───────────────────────────────────────────────
-print(f"=== Section F: QAE epsilon sweep (n={QAE_N_QUBITS}) ===\n")
+# ── Section F: QAE theoretical oracle cost (M = pi/eps) ───────────────────────
+# Formula: M = pi/eps, derived from plot_break_even_shift.py line 20:
+#   M = np.pi * np.sqrt(N) / 1.96,  with VRF=1  ->  N = (1.96/eps)^2
+#   -> M = pi * (1.96/eps) / 1.96 = pi / eps
+# This is the oracle cost at which IQAE achieves precision eps; the same
+# relationship that gives the 1.604*sqrt(N) break-even constant (line 48).
+#
+# NOTE: Statevector IQAE collapses to M=2 with zero variance and cannot
+# measure convergence directly. Oracle cost here is theoretical (consistent
+# with break-even analysis in plot_break_even_shift.py), not a measured run.
+print(f"=== Section F: QAE theoretical oracle cost (M = pi/eps, n={QAE_N_QUBITS}) ===\n")
+print(f"  Formula: M = ceil(pi / eps)  [plot_break_even_shift.py line 20, VRF=1]")
+print(f"  NOTE: statevector IQAE collapses to M=2 (zero variance); M is theoretical.")
+print(f"  QAE price = exact grid_true_price (discretization-limited); err_grid ~ 0.\n")
 print(f"  (grid_true_price = {grid_true_price:.6f}  grid_bias = {grid_bias_n5:.2e})\n")
 
+discount = np.exp(-r * T)
 qae_results = []
 for eps in QAE_EPSILONS:
-    price_q, ci_q, elapsed_q, M = quantum_digital_call(
-        S0, K, r, sigma, T, QAE_N_QUBITS, epsilon=eps, alpha=QAE_ALPHA
-    )
-    err_grid  = abs(price_q - grid_true_price)
-    err_exact = abs(price_q - ref)
-    qae_results.append((M, err_grid))
-    print(f"  eps={eps:.3f}  M={M:>5}  qae={price_q:.6f}  "
-          f"err_grid={err_grid:.2e}  err_exact={err_exact:.2e}  ({elapsed_q:.1f}s)")
+    M_theoretical = int(np.ceil(np.pi / eps))
+    err_grid  = 0.0                          # exact vs n=5 grid (discretization-limited)
+    err_exact = abs(grid_true_price - ref)   # = grid_bias_n5 (fixed systematic offset)
+    err_target = eps * discount              # IQAE precision target in price space (for figure)
+    qae_results.append((M_theoretical, err_target))
+    print(f"  eps={eps:.3f}  M=pi/eps={M_theoretical:>5}  price={grid_true_price:.6f}  "
+          f"err_grid={err_grid:.2e}  err_exact={err_exact:.2e}")
 
 qae_M, qae_err = zip(*sorted(qae_results))
 print()
@@ -198,10 +210,13 @@ for m in methods:
     atm = "  *" if m == "Antithetic MC" else ""
     print(f"  {m:<18}  {central[m]:+.3f} [{ci_lo[m]:+.3f}, {ci_hi[m]:+.3f}]{atm}")
 
-print(f"\nQAE (IQAE, n={QAE_N_QUBITS}) oracle queries M vs |err vs grid_true_price|:")
-for M, err in zip(qae_M, qae_err):
-    print(f"  M={M:>5}  err={err:.2e}")
+print(f"\nQAE (n={QAE_N_QUBITS}) theoretical oracle cost M=pi/eps vs IQAE precision target eps*discount:")
+print(f"  (err_grid ~ 0: price = exact grid_true_price; discretization-limited regime)")
+for M, err_tgt in zip(qae_M, qae_err):
+    print(f"  M={M:>5}  eps*discount={err_tgt:.4f}")
 print(f"\nQAE grid bias (n={QAE_N_QUBITS}): {grid_bias_n5:.2e}  (systematic offset vs continuous exact)")
+print(f"NOTE: QAE oracle cost is theoretical (consistent with break-even analysis);")
+print(f"      statevector IQAE collapses to M=2 with zero variance and cannot measure convergence directly.")
 
 # ── Figure ─────────────────────────────────────────────────────────────────────
 fig, ax = plt.subplots(figsize=(10, 6))
@@ -213,7 +228,7 @@ for m in methods:
               linewidth=2.0, markersize=6, label=label, zorder=3)
 
 ax.scatter(qae_M, qae_err, color="#ff7f0e", marker="D", s=60, zorder=4,
-           label=f"QAE IQAE n={QAE_N_QUBITS} (vs grid exact)")
+           label=f"QAE theoretical oracle cost (M=pi/eps, n={QAE_N_QUBITS}); y = eps*discount")
 
 # Reference lines anchored at naive MC first point
 anchor_y = errs["Naive MC"].mean(axis=0)[0]
@@ -228,7 +243,7 @@ ax.set_xlabel("Budget  (paths N for MC/RQMC;  oracle queries M for QAE)", fontsi
 ax.set_ylabel("Mean absolute error  |price - reference|", fontsize=11)
 ax.set_title(
     "Digital Option Convergence: MC vs RQMC vs QAE  [cash-or-nothing call]\n"
-    r"$\it{N\ range\ differs\ from\ Tables\ IV/V\ --\ slopes\ not\ cross-comparable}$",
+    r"$\it{QAE\ oracle\ cost\ is\ theoretical\ (M=\pi/\varepsilon,\ consistent\ with\ break-even\ analysis)}$",
     fontsize=11, pad=10)
 ax.legend(fontsize=8.5, framealpha=0.9)
 ax.grid(True, which="both", alpha=0.3)
