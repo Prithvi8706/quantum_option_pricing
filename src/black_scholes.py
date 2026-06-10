@@ -22,3 +22,23 @@ def black_scholes_call(S0: float, K: float, r: float, sigma: float, T: float) ->
     d2 = d1 - sigma * np.sqrt(T)
     price = S0 * norm.cdf(d1) - K * np.exp(-r * T) * norm.cdf(d2)
     return price
+
+
+def digital_bs_price(S0: float, K: float, r: float, sigma: float, T: float) -> float:
+    """
+    Exact Black-Scholes price for a European cash-or-nothing (digital) call.
+
+    Parameters
+    ----------
+    S0    : Initial stock price
+    K     : Strike price
+    r     : Risk-free interest rate (annualised)
+    sigma : Volatility (annualised)
+    T     : Time to expiry (years)
+
+    Returns
+    -------
+    price : float — e^{-rT} * N(d2)
+    """
+    d2 = (np.log(S0 / K) + (r - 0.5 * sigma**2) * T) / (sigma * np.sqrt(T))
+    return np.exp(-r * T) * norm.cdf(d2)
