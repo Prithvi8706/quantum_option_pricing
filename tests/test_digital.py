@@ -109,3 +109,87 @@ def test_digital_rqmc_reproducible():
     p1, _ = digital_rqmc(100, 100, 0.05, 0.2, 1.0, N=512, n_replications=10, seed=5)
     p2, _ = digital_rqmc(100, 100, 0.05, 0.2, 1.0, N=512, n_replications=10, seed=5)
     assert p1 == p2, "Same seed must produce bit-identical result"
+
+
+# ── QAE digital oracle ────────────────────────────────────────────────────────
+
+def test_build_digital_circuit_qubit_count():
+    """_build_digital_circuit: obj_q == n; circuit has at least n+1 qubits (LinearAmplitudeFunction adds ancillae)."""
+    pytest.importorskip("qiskit", reason="Qiskit not installed")
+    from src.quantum import _build_digital_circuit
+    n = 3
+    circ, obj_q = _build_digital_circuit(100, 100, 0.05, 0.2, 1.0, num_uncertainty_qubits=n)
+    assert obj_q == n, f"Expected objective_qubit={n}, got {obj_q}"
+    assert circ.num_qubits >= n + 1, f"Expected at least {n+1} qubits, got {circ.num_qubits}"
+
+
+def test_digital_circuit_step_encoding():
+    """sv P(obj=|1>) equals classical grid P(S>K) at n=3 — Section D2 check."""
+    pytest.importorskip("qiskit", reason="Qiskit not installed")
+    import numpy as np
+    from qiskit.quantum_info import Statevector
+    from qiskit_finance.circuit.library import LogNormalDistribution
+    from src.quantum import _build_digital_circuit
+
+    S0, K, r, sigma, T = 100.0, 100.0, 0.05, 0.2, 1.0
+    n = 3
+    sigma_c = max(sigma, 0.15)
+    mu_ln = (r - 0.5 * sigma_c**2) * T + np.log(S0)
+    sigma_var = (sigma_c * np.sqrt(T))**2
+    mean_s = np.exp(mu_ln + 0.5 * sigma_var)
+    var_s  = (np.exp(sigma_var) - 1) * np.exp(2 * mu_ln + sigma_var)
+    std_s  = np.sqrt(var_s)
+    low    = max(0.0, min(mean_s - 3 * std_s, K * 0.98))
+    high   = max(mean_s + 3 * std_s, K * 1.02)
+
+    full_circ, _ = _build_digital_circuit(S0, K, r, sigma, T, n)
+    sv_probs = np.abs(np.array(Statevector(full_circ)))**2
+    prob_obj1 = sum(sv_probs[i] for i in range(len(sv_probs)) if (i >> n) & 1)
+
+    lnd = LogNormalDistribution(n, mu=mu_ln, sigma=sigma_var, bounds=(low, high))
+    grid_p = np.dot(lnd._probabilities, (np.array(lnd._values) > K).astype(float))
+
+    assert abs(prob_obj1 - grid_p) < 1e-6, (
+        f"Step encoding mismatch: sv P(obj=1)={prob_obj1:.6f}  grid_p={grid_p:.6f}"
+    )
+
+
+def test_quantum_digital_call_converges_to_grid_price():
+    """quantum_digital_call at n=5, eps=0.01 is within 0.02 of grid_true_price."""
+    pytest.importorskip("qiskit", reason="Qiskit not installed")
+    import numpy as np
+    from qiskit_finance.circuit.library import LogNormalDistribution
+    from src.quantum import quantum_digital_call
+
+    S0, K, r, sigma, T = 100.0, 100.0, 0.05, 0.2, 1.0
+    n = 5
+    sigma_c = max(sigma, 0.15)
+    mu_ln = (r - 0.5 * sigma_c**2) * T + np.log(S0)
+    sigma_var = (sigma_c * np.sqrt(T))**2
+    mean_s = np.exp(mu_ln + 0.5 * sigma_var)
+    var_s  = (np.exp(sigma_var) - 1) * np.exp(2 * mu_ln + sigma_var)
+    std_s  = np.sqrt(var_s)
+    low    = max(0.0, min(mean_s - 3 * std_s, K * 0.98))
+    high   = max(mean_s + 3 * std_s, K * 1.02)
+
+    lnd = LogNormalDistribution(n, mu=mu_ln, sigma=sigma_var, bounds=(low, high))
+    grid_p = np.dot(lnd._probabilities, (np.array(lnd._values) > K).astype(float))
+    grid_true_price = np.exp(-r * T) * grid_p
+
+    price, ci, elapsed, M = quantum_digital_call(S0, K, r, sigma, T, n, epsilon=0.01)
+    assert abs(price - grid_true_price) < 0.02, (
+        f"QAE price={price:.4f}  grid_true={grid_true_price:.4f}  diff={abs(price-grid_true_price):.4f}"
+    )
+    assert M > 0, "oracle_queries must be positive"
+    assert ci[0] <= price <= ci[1], f"price {price:.4f} not in CI ({ci[0]:.4f}, {ci[1]:.4f})"
+
+
+def test_quantum_digital_sigma_clamp():
+    """sigma < 0.15 is clamped: same result as sigma=0.15."""
+    pytest.importorskip("qiskit", reason="Qiskit not installed")
+    from src.quantum import quantum_digital_call
+    p_clamped, _, _, _ = quantum_digital_call(100, 100, 0.05, 0.10, 1.0, num_uncertainty_qubits=3)
+    p_floor,   _, _, _ = quantum_digital_call(100, 100, 0.05, 0.15, 1.0, num_uncertainty_qubits=3)
+    assert abs(p_clamped - p_floor) < 1e-9, (
+        f"Clamp not applied: sigma=0.10 → {p_clamped:.6f}, sigma=0.15 → {p_floor:.6f}"
+    )
