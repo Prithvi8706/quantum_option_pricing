@@ -138,23 +138,36 @@ over the objective qubit equals `grid_p` to numerical precision (see Section D).
 
 `LinearAmplitudeFunction.post_processing` is NOT appropriate for this circuit.
 Its formula `(a − 0.5 + π·c/4) · 2/(π·c)` is designed for a Taylor approximation
-inverse and does not recover P(S>K) from the raw IQAE amplitude.
+inverse and does not recover P(S>K) from the IQAE estimate.
 
-Empirically verified at standard params:
-- n=3: `pp(sqrt(0.454)) = 0.611 ≠ 0.454`
-- n=5: `pp(sqrt(0.537)) = 0.648 ≠ 0.537`
+**How IQAE reports values in Qiskit 0.3.1 (empirically confirmed):**
+`result.estimation` = `P(obj=|1⟩)` **directly** (the probability, not the amplitude
+`sqrt(P(obj=|1⟩))`). Verified: at n=5, `result.estimation = 0.536897 = grid_p`
+exactly. This means `post_processing = lambda a: a**2` would return `grid_p²
+≈ 0.288`, which is wrong. `LinearAmplitudeFunction.post_processing(grid_p)
+= 0.524 ≠ grid_p`, also wrong.
 
-**Correct post_processing**: Since `P(obj=|1⟩) = grid_p` exactly, and IQAE
-estimates amplitude `a = sqrt(P(obj=|1⟩)) = sqrt(grid_p)`:
+**Correct post_processing** is identity:
 
 ```python
 # In quantum_digital_call, NOT in _build_digital_circuit:
-post_processing = lambda a: a**2
+post_processing = lambda a: a   # IQAE returns P(obj=1) = grid_p directly
 ```
 
-The price is then `result.estimation_processed * discount`. CIs from Qiskit's
-`result.confidence_interval_processed` use the same post_processing elementwise:
-`(ci_lo**2, ci_hi**2)`, which is monotone for a ∈ [0, 1]. ✓
+**CI behavior confirmed** (Qiskit 0.3.1): `IterativeAmplitudeEstimation.estimate`
+applies `post_processing` elementwise to both CI bounds automatically:
+`confidence_interval_processed = (pp(ci_lo), pp(ci_hi))`. With identity
+post_processing, CI bounds are already in probability space; multiply by discount
+to get price CI. Verified by inspecting `IterativeAmplitudeEstimation.estimate`
+source: `confidence_interval = tuple(estimation_problem.post_processing(x) for x in
+confidence_interval)`.
+
+Price and CI in `quantum_digital_call`:
+```python
+price    = result.estimation_processed * discount         # grid_p * discount
+conf_int = (result.confidence_interval_processed[0] * discount,
+            result.confidence_interval_processed[1] * discount)
+```
 
 ### `quantum_digital_call`
 
@@ -184,8 +197,8 @@ def quantum_digital_call(
     """
 ```
 
-Uses `EstimationProblem(post_processing=lambda a: a**2)`. Price is
-`result.estimation_processed * discount`.
+Uses `EstimationProblem(post_processing=lambda a: a)`. Price is
+`result.estimation_processed * discount` = `grid_p * discount`.
 
 ---
 
@@ -241,6 +254,10 @@ for n in [3, 4, 5]:
     lnd = LogNormalDistribution(n, mu=mu_ln, sigma=sigma_var, bounds=(low, high))
     x_grid = np.array(lnd._values)        # 2^n evenly spaced points, linspace(low, high, 2^n)
     grid_probs = np.array(lnd._probabilities)  # normalized log-normal mass at each point
+    # Normalization guard: grid_true_price is computed from these private attributes.
+    # A silent renormalization change in a Qiskit update would corrupt the reference.
+    assert np.isclose(grid_probs.sum(), 1.0), \
+        f"n={n}: lnd._probabilities sums to {grid_probs.sum():.8f}, not 1.0"
     grid_p = np.dot(grid_probs, (x_grid > K).astype(float))
     grid_price = np.exp(-r*T) * grid_p
     bias = abs(grid_price - ref)
@@ -408,19 +425,34 @@ watch-item (see `digital_antithetic_mc` docstring).
 
 ---
 
-## Key Technical Finding (from pre-spec validation)
+## Key Technical Findings (from pre-spec validation)
 
-`LinearAmplitudeFunction.post_processing` must NOT be used as the IQAE
-`post_processing` for this oracle. Empirically:
+**Finding 1 — IQAE reports probability, not amplitude.**
+In Qiskit 0.3.1 (statevector Sampler), `result.estimation = P(obj=|1⟩)` directly.
+Empirically confirmed at n=5: `result.estimation = 0.536897 = grid_p`. The correct
+`post_processing` is therefore `lambda a: a` (identity); `lambda a: a**2` would
+return `grid_p² ≈ 0.288`, silently wrong.
 
-| n | `pp(sqrt(grid_p))` | actual `grid_p` |
+**Finding 2 — `LinearAmplitudeFunction.post_processing` is wrong for this oracle.**
+The library function applies `(a − 0.5 + π/4) · (2/π)` — appropriate for its
+internal Taylor approximation but incorrect for the digital step encoding:
+
+| n | `digital_obj.post_processing(grid_p)` | actual `grid_p` |
 |---|---|---|
-| 3 | 0.611 | 0.454 |
-| 5 | 0.648 | 0.537 |
+| 3 | 0.471 | 0.454 |
+| 5 | 0.523 | 0.537 |
 
-The correct `post_processing` is `lambda a: a**2` (then multiply by discount),
-because the circuit encodes P(obj=|1⟩) = grid_p exactly, so IQAE returns
-amplitude a = sqrt(grid_p).
+Both off by ~3–4%. Using the library default would introduce a systematic
+pricing error comparable to the grid bias itself.
+
+**Finding 3 — Step encoding is exact.**
+`sv P(obj=1) = grid_p` to numerical precision (< 1e-6). The circuit correctly
+encodes the digital payoff with `rescaling_factor=1.0`.
+
+**Finding 4 — CI bounds auto-squashed by Qiskit.**
+Qiskit 0.3.1 applies `post_processing` elementwise to CI bounds automatically
+(confirmed in source). With identity post_processing, CI is already in
+probability space; multiply by discount to get the price CI.
 
 ---
 
