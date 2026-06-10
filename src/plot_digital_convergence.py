@@ -210,13 +210,19 @@ for m in methods:
     atm = "  *" if m == "Antithetic MC" else ""
     print(f"  {m:<18}  {central[m]:+.3f} [{ci_lo[m]:+.3f}, {ci_hi[m]:+.3f}]{atm}")
 
-print(f"\nQAE (n={QAE_N_QUBITS}) theoretical oracle cost M=pi/eps vs IQAE precision target eps*discount:")
-print(f"  (err_grid ~ 0: price = exact grid_true_price; discretization-limited regime)")
+print(f"\nQAE (n={QAE_N_QUBITS}) theoretical break-even cost (M=pi/eps) vs IQAE precision target eps*discount:")
+print(f"  err_grid ~ 0: QAE price = exact grid_true_price (discretization-limited).")
 for M, err_tgt in zip(qae_M, qae_err):
     print(f"  M={M:>5}  eps*discount={err_tgt:.4f}")
 print(f"\nQAE grid bias (n={QAE_N_QUBITS}): {grid_bias_n5:.2e}  (systematic offset vs continuous exact)")
-print(f"NOTE: QAE oracle cost is theoretical (consistent with break-even analysis);")
-print(f"      statevector IQAE collapses to M=2 with zero variance and cannot measure convergence directly.")
+print()
+print("INTERPRETATION (important for writeup):")
+print("  RQMC slope above is EMPIRICAL: measured mean |price - exact BS| at each N.")
+print("  QAE line is DEFINITIONAL: y = eps*discount, x = pi/eps => y proportional 1/x by construction.")
+print("  Slope of -1 for QAE is not a measurement -- it follows from the parameterisation.")
+print("  This is a break-even readout (where does QAE theoretical cost cross RQMC measured curve),")
+print("  NOT a measured QAE-vs-RQMC convergence race. Do not interpret the two similar slopes")
+print("  (-0.98 empirical vs -1.0 definitional) as both coming from measurement.")
 
 # ── Figure ─────────────────────────────────────────────────────────────────────
 fig, ax = plt.subplots(figsize=(10, 6))
@@ -228,7 +234,8 @@ for m in methods:
               linewidth=2.0, markersize=6, label=label, zorder=3)
 
 ax.scatter(qae_M, qae_err, color="#ff7f0e", marker="D", s=60, zorder=4,
-           label=f"QAE theoretical oracle cost (M=pi/eps, n={QAE_N_QUBITS}); y = eps*discount")
+           label=(f"QAE break-even cost M=pi/eps (n={QAE_N_QUBITS})\n"
+                  f"  [y=eps*discount: definitional, NOT a measured error]"))
 
 # Reference lines anchored at naive MC first point
 anchor_y = errs["Naive MC"].mean(axis=0)[0]
@@ -240,11 +247,11 @@ ax.loglog(ref_N, anchor_y * (anchor_N / ref_N)**1.0, "k:",  linewidth=1.2,
           alpha=0.55, label=r"$O(1/N)$ -- quantum-parity scaling")
 
 ax.set_xlabel("Budget  (paths N for MC/RQMC;  oracle queries M for QAE)", fontsize=11)
-ax.set_ylabel("Mean absolute error  |price - reference|", fontsize=11)
+ax.set_ylabel("MC/RQMC: mean |price - exact BS|   |   QAE: precision target eps*discount", fontsize=10)
 ax.set_title(
-    "Digital Option Convergence: MC vs RQMC vs QAE  [cash-or-nothing call]\n"
-    r"$\it{QAE\ oracle\ cost\ is\ theoretical\ (M=\pi/\varepsilon,\ consistent\ with\ break-even\ analysis)}$",
-    fontsize=11, pad=10)
+    "Digital Option Convergence: MC vs RQMC [cash-or-nothing call]\n"
+    "RQMC slope: empirical measurement.  QAE line: theoretical break-even cost (slope -1 by construction, not measured)",
+    fontsize=10, pad=10)
 ax.legend(fontsize=8.5, framealpha=0.9)
 ax.grid(True, which="both", alpha=0.3)
 
