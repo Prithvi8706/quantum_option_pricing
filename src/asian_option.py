@@ -160,6 +160,57 @@ def asian_geometric_rqmc(S0, K, r, sigma, T, N, d, n_replications=20, seed=None)
     return rep_prices.mean(), rep_prices.std(ddof=1) / np.sqrt(n_replications)
 
 
+def arithmetic_asian_cv_ref(S0, K, r, sigma, T, d, N_ref=4_194_304, seed=None):
+    """
+    Control-variate reference price for the arithmetic-average Asian call.
+
+    Estimate = MC[ arith_payoff(Z) - geo_payoff(Z) ] * discount
+               + geometric_asian_closed_form(S0, K, r, sigma, T, d)
+
+    Both payoffs are computed from the same Z matrix; because arithmetic and
+    geometric averages are highly correlated on identical paths, the difference
+    has far lower variance than either payoff alone.
+
+    With N_ref = 2^22 = 4,194,304 the residual SE is typically < 1e-4, far
+    below any RQMC error in the dimension-decay sweep.
+
+    Prints reference price and SE on every call so callers can verify the
+    noise floor before trusting measured convergence slopes.
+
+    Parameters
+    ----------
+    N_ref : int
+        MC budget for the difference estimator. Use >= 4_000_000 to keep
+        residual SE below the sweep noise floor; default is 2^22 = 4_194_304.
+    seed : int or None
+        RNG seed. Fix to reproduce the reference across runs.
+
+    Returns
+    -------
+    price : float
+        Estimated arithmetic Asian call price.
+    se : float
+        Standard error of the difference estimator — the residual noise in
+        the reference value, not the SE of any sweep estimator.
+    """
+    rng      = np.random.default_rng(seed)
+    Z        = rng.standard_normal((N_ref, d))
+    S_paths  = simulate_paths(S0, r, sigma, T, Z)
+    discount = np.exp(-r * T)
+
+    arith  = np.maximum(S_paths.mean(axis=1) - K, 0.0)
+    G      = np.exp(np.log(S_paths).mean(axis=1))   # geometric mean of price levels
+    geo    = np.maximum(G - K, 0.0)
+
+    diff   = arith - geo
+    se     = discount * diff.std(ddof=1) / np.sqrt(N_ref)
+    geo_cf = geometric_asian_closed_form(S0, K, r, sigma, T, d)
+    price  = discount * diff.mean() + geo_cf
+
+    print(f"  [ref d={d:>2}]  price={price:.6f}  SE={se:.2e}  geo_exact={geo_cf:.6f}")
+    return price, se
+
+
 if __name__ == "__main__":
     S0, K, r, sigma, T = 100.0, 100.0, 0.05, 0.2, 1.0
     d, N = 4, 100_000
