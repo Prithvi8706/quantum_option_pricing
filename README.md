@@ -50,33 +50,44 @@ The break-even visualizer shows the crossover point where QAE theoretically beat
 This project is the foundation for three research papers, each extending the honest-framing thesis.
 
 ### Paper A — *NISQ Noise Shifts the Break-Even* `[in progress]`
-> **Venue:** EPJ Quantum Technology / arxiv preprint
+> **Venue target:** EPJ Quantum Technology / arXiv preprint
 
-Every existing paper assumes perfect quantum hardware. This paper doesn't.
+Every existing paper assumes perfect quantum hardware. This one doesn't.
 
-Run the IQAE circuit through Qiskit's AerSimulator with `NoiseModel.from_backend()` across 3–4 IBM backends. Sweep noise levels p ∈ {0, 1e-4, 1e-3, 5e-3, 1e-2}. Show the break-even frontier as a 2D heatmap over (ε, p).
+IQAE circuit run through Qiskit's AerSimulator with `NoiseModel.from_backend()` across IBM backends. Sweep noise levels p ∈ {0, 1e-4, 1e-3, 5e-3, 1e-2}. Break-even frontier shown as a 2D heatmap over (ε, p).
 
-**Main claim:** Under current IBM noise levels (~1e-3), QAE's advantage threshold shifts significantly from the ideal case, placing it outside practical tolerances for near-term option pricing.
+**Key finding:** Even at p=0 (noiseless simulation), mean price error is already ~20× above the ε=0.01 target — the state-preparation cost alone is prohibitive before hardware noise enters the picture.
+
+**Open item:** One real IBM hardware run for at least one data point. This is the highest-leverage remaining item in the program — simulation-only results are expected by reviewers to be backed by at least one hardware confirmation.
 
 **Novel contribution:** No existing paper maps break-even vs noise rate for option pricing circuits.
 
 ---
 
-### Paper B — *Fair Break-Even with Variance-Reduced MC* `[planned]`
-> **Venue:** Physica A / Quantitative Finance
+### Paper B — *The Wrong Baseline: How Variance-Reduced Monte Carlo Erases QAE's Advantage in Option Pricing* `[complete — preparing submission]`
+> **Venue target:** Quantitative Finance / Physica A
 
-The QAE literature compares against naive Monte Carlo. Practitioners don't use naive Monte Carlo — they use antithetic variates, Black-Scholes control variates, and quasi-MC (Sobol sequences). This paper re-derives the break-even equation with the right baseline.
+The QAE literature compares against naive Monte Carlo. Practitioners don't use naive Monte Carlo — they use antithetic variates, control variates, and quasi-MC (Sobol sequences). This paper re-derives the break-even equation with the right baseline.
 
-**Main claim:** When QAE is compared against variance-reduced MC — the method quants actually deploy — the advantage threshold increases significantly, making the case for near-term QAE weaker than previously reported.
+**Key findings (all empirically verified with bootstrap 95% CIs, 2000 resamples):**
 
-**Novel contribution:** Methodological critique of the entire QAE option pricing literature. "You've been comparing quantum to the wrong thing."
+| Baseline | Break-even oracle queries | QAE hurdle vs naive |
+|---|---|---|
+| Naive MC | M ≈ 314 | 1× (reference) |
+| Antithetic (VRF 2.0×) | M ≈ 222 | 1.41× harder |
+| Control variate (VRF 6.8×) | M ≈ 120 | 2.61× harder |
+| RQMC (Sobol) | changes convergence *exponent* | asymptotic advantage gone |
+
+RQMC achieves empirical convergence slope −0.94 [−0.80, −1.10] at d=1 — matching QAE's claimed O(1/N) rate. This advantage degrades with dimension (slope −0.71 [−0.60, −0.83] at d=64), with crossover around d≈16–32. Even on discontinuous payoffs (European digital cash-or-nothing), RQMC slope is −0.98 [−0.90, −1.06], consistent with He & Wang (2015) theoretical prediction of −1.0 at d=1.
+
+**Novel contribution:** Methodological critique of the QAE option pricing literature. The classical baseline used in every prior break-even calculation is not the baseline quants deploy.
 
 ---
 
-### Paper C — *Unified Quantum Advantage Frontier* `[planned]`
-> **Venue:** Quantum journal
+### Paper C — *Unified Quantum Advantage Frontier* `[planned — awaiting A and B]`
+> **Venue target:** Quantum journal
 
-Combine Papers A and B. One unified figure: the quantum advantage region as a function of (ε, noise rate p, MC variance reduction factor).
+Combine Papers A and B into one unified figure: the quantum advantage region as a function of (ε, noise rate p, MC variance reduction factor).
 
 **Main claim:** Under joint realistic assumptions — variance-reduced MC and NISQ noise — quantum advantage in European option pricing requires ε < X on hardware with error rate p < Y.
 
@@ -84,26 +95,52 @@ Combine Papers A and B. One unified figure: the quantum advantage region as a fu
 
 ---
 
+## Canonical numbers (Paper B — frozen)
+
+These numbers are verified and frozen. If a re-run produces different values, investigate before updating.
+
+| Experiment | Value |
+|---|---|
+| European call RQMC convergence slope | −1.04 |
+| Dimension sweep d=1 RQMC slope | −0.94 [−1.10, −0.80] |
+| Dimension sweep d=64 RQMC slope | −0.71 [−0.83, −0.60] |
+| Digital RQMC slope | −0.98 [−1.06, −0.90] |
+| QAE grid bias at n=5 qubits (digital) | 2.16×10⁻² |
+| Table IV N window | [1024, 16384] (5 points) |
+
+---
+
 ## How it's built
 
 ```
 app/
-  app.py                  # Dash layout, callbacks, break-even chart
-  precompute_qae.py       # 600-point grid generator
-  assets/style.css        # Dark theme, WCAG AA, responsive
+  app.py                       # Dash layout, callbacks, break-even chart
+  precompute_qae.py            # 600-point grid generator
+  assets/style.css             # Dark theme, WCAG AA, responsive
 src/
-  black_scholes.py        # Closed-form pricer
-  classical.py            # Monte Carlo
-  quantum.py              # QAE circuit (IQAE + Qiskit Finance)
+  black_scholes.py             # Closed-form pricer + digital_bs_price
+  classical.py                 # Monte Carlo
+  quantum.py                   # QAE circuit (IQAE) + quantum_digital_call
+  digital_option.py            # Digital MC, antithetic, RQMC pricers
+  asian_option.py              # Asian pricers + arithmetic CV reference
+  plot_dimension_sweep.py      # Geometric dimension sweep → Table IV (Paper B)
+  plot_digital_convergence.py  # Digital convergence experiment → Section VII (Paper B)
+  plot_break_even_shift.py     # Break-even framing
+  noise_experiments.py         # Paper A noise sweep (AerSampler)
 data/
-  qae_grid.pkl            # 600 points: S₀ × K × T × σ
+  qae_grid.pkl                 # 600 points: S₀ × K × T × σ
 tests/
-  test_pricing.py         # 10 tests, composite health 10/10
+  test_pricing.py              # 10 tests
+  test_digital.py              # 15 tests (all passing)
+  test_asian_cv_ref.py         # 3 tests
+docs/
+  PROJECT_UPDATE_2026-06-10.md # Latest session record
 ```
 
-**QAE grid:** 600 points = 5 S₀ × 5 K × 6 T × 4 σ  
+**QAK grid:** 600 points = 5 S₀ × 5 K × 6 T × 4 σ  
 **Runtime stack:** numpy, scipy, dash, plotly, gunicorn (no Qiskit at runtime)  
-**Dev stack:** + qiskit, qiskit-finance, qiskit-algorithms  
+**Dev stack:** + qiskit==0.45, qiskit-aer==0.12.2, qiskit-finance, qiskit-algorithms  
+**Pinned:** scipy==1.13.1 (Sobol results depend on this version — do not upgrade)  
 **Deployment:** Railway (auto-deploys on push to main)
 
 ---
@@ -122,21 +159,13 @@ tests/
 ε_MC = 1.96 / √N  =  O(N⁻¹ᐟ²)
 ```
 
-**Break-even crossover:**
+**Break-even crossover (naive MC):**
 
 ```
 M_crossover = π√N / 1.96  ≈  1.604 × √N
 ```
 
-At ε = 0.01: Monte Carlo needs N ≈ 38,416 samples. QAE needs M ≈ 314 oracle queries — a ~120x query reduction. The NISQ overhead band (100x–1000x gate overhead) shows why this advantage doesn't hold on today's hardware.
-
----
-
-## References
-
-- Woerner & Egger (2019). *Quantum risk analysis.* npj Quantum Information. [arXiv:1806.06893](https://arxiv.org/abs/1806.06893)
-- Stamatopoulos et al. (2020). *Option pricing using quantum computers.* Quantum. [arXiv:1905.02666](https://arxiv.org/abs/1905.02666)
-- Carrera Vazquez & Woerner (2020). *Efficient state preparation for quantum amplitude estimation.* [arXiv:2009.05756](https://arxiv.org/abs/2009.05756)
+At ε = 0.01: Monte Carlo needs N ≈ 38,416 samples. QAE needs M ≈ 314 oracle queries — a ~120× query reduction **against naive MC**. Paper B shows this crossover shifts significantly when the baseline is variance-reduced Monte Carlo, which is what practitioners actually deploy.
 
 ---
 
@@ -150,11 +179,26 @@ python app/app.py
 ```
 
 Health check:
+
 ```bash
-pytest tests/                 # 10 tests
-mypy src/ app/                # type check
-ruff check .                  # lint
+pytest tests/        # 28 tests
+mypy src/ app/       # type check
+ruff check .         # lint
 ```
+
+> **Note:** Before running any experiment scripts, confirm `scipy==1.13.1` is installed:
+> ```bash
+> python -c "import scipy; print(scipy.__version__)"
+> ```
+
+---
+
+## References
+
+- Woerner & Egger (2019). *Quantum risk analysis.* npj Quantum Information. [arXiv:1806.06893](https://arxiv.org/abs/1806.06893)
+- Stamatopoulos et al. (2020). *Option pricing using quantum computers.* Quantum. [arXiv:1905.02666](https://arxiv.org/abs/1905.02666)
+- Carrera Vazquez & Woerner (2020). *Efficient state preparation for quantum amplitude estimation.* [arXiv:2009.05756](https://arxiv.org/abs/2009.05756)
+- He & Wang (2015). *On the convergence rate of randomized quasi–Monte Carlo for discontinuous functions.* SIAM J. Numer. Anal. 53(5):2488–2503.
 
 ---
 
@@ -165,10 +209,10 @@ ruff check .                  # lint
 | Dashboard (BS + MC + QAE) | ✅ Live |
 | Break-even visualizer | ✅ Live |
 | Design system (WCAG AA) | ✅ Done |
-| Health (pytest/mypy/ruff) | ✅ 10/10 |
-| Paper A — noise sweep | 🔬 In progress |
-| Paper B — fair MC baseline | 📋 Planned |
-| Paper C — unified frontier | 📋 Planned |
+| Health (pytest/mypy/ruff) | ✅ 10/10 — 28 tests passing |
+| Paper B — fair MC baseline | ✅ Complete — preparing submission |
+| Paper A — NISQ noise sweep | 🔬 In progress (IBM hardware run pending) |
+| Paper C — unified frontier | 📋 Planned — awaits A and B |
 
 ---
 
