@@ -5,8 +5,8 @@
 **A deployed dashboard that prices European call options three ways — and honestly shows where quantum loses.**
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Railway-brightgreen?style=for-the-badge)](https://web-production-559db.up.railway.app)
-[![Python](https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&logo=python)](https://python.org)
-[![Qiskit](https://img.shields.io/badge/Qiskit-0.45-purple?style=for-the-badge)](https://qiskit.org)
+[![Python](https://img.shields.io/badge/Python-3.9+-blue?style=for-the-badge&logo=python)](https://python.org)
+[![Qiskit](https://img.shields.io/badge/Qiskit-0.46.3-purple?style=for-the-badge)](https://qiskit.org)
 [![Health](https://img.shields.io/badge/Health-10%2F10-success?style=for-the-badge)](#)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](#)
 
@@ -30,7 +30,7 @@ Three pricing methods run side by side:
 
 The break-even visualizer shows the crossover point where QAE theoretically beats Monte Carlo — and the NISQ overhead band showing how far current hardware sits from that threshold.
 
-**The honest framing is the point.** The QAE advantage is real in theory. On today's noisy hardware, the crossover is out of reach. This project shows both, with citations.
+**The honest framing is the point.** The QAE advantage is real in theory. On today's noisy hardware, the crossover is out of reach. This project shows both, with citations and a real-hardware validation run to back it.
 
 ---
 
@@ -47,20 +47,25 @@ The break-even visualizer shows the crossover point where QAE theoretically beat
 
 ## Research program
 
-This project is the foundation for three research papers, each extending the honest-framing thesis.
+This project is the foundation for three research papers, each extending the honest-framing thesis. **Papers A and B are complete and preparing submission; Paper C is planned.**
 
-### Paper A — *NISQ Noise Shifts the Break-Even* `[in progress]`
+### Paper A — *NISQ Noise Shifts the Break-Even* `[complete — preparing submission]`
 > **Venue target:** EPJ Quantum Technology / arXiv preprint
 
 Every existing paper assumes perfect quantum hardware. This one doesn't.
 
-IQAE circuit run through Qiskit's AerSimulator with `NoiseModel.from_backend()` across IBM backends. Sweep noise levels p ∈ {0, 1e-4, 1e-3, 5e-3, 1e-2}. Break-even frontier shown as a 2D heatmap over (ε, p).
+An IQAE circuit is run through Qiskit's AerSimulator across a noise-rate sweep p ∈ {0, 1e-4, 1e-3, 5e-3, 1e-2} — **50 option configurations × 5 noise levels = 250 runs**. The break-even frontier is reported over option configuration and noise rate, alongside a mean-error-vs-noise curve and a noise-invariant oracle-depth panel.
 
-**Key finding:** Even at p=0 (noiseless simulation), mean price error is already ~20× above the ε=0.01 target — the state-preparation cost alone is prohibitive before hardware noise enters the picture.
+**Key findings:**
+- At current IBM hardware noise (p ≈ 1e-3), mean price error is **$0.657** — roughly **66×** the ε = 0.01 precision target.
+- Even at **p = 0** (noiseless), mean price error is already **$0.203** — about **20×** the target. The 3-qubit discretization imposes an irreducible floor *before* any noise enters.
+- IQAE oracle-query depth is **noise-invariant** (~14 queries, range 13.6–14.5, across every p). The query budget never inflates; accuracy decays silently.
 
-**Open item:** One real IBM hardware run for at least one data point. This is the highest-leverage remaining item in the program — simulation-only results are expected by reviewers to be backed by at least one hardware confirmation.
+**Hardware validation:** A single-qubit state-preparation primitive (Rᵧ(2·arcsin√0.3), encoding p = 0.30) was run on **ibm_marrakesh (Heron r2)** at 1024 shots (Job `d8nvd2bqv2lc7389d9e0`, counts `{"0": 733, "1": 291}`). Empirical **p̂ = 0.2842** — absolute error **0.0158**, within the 1024-shot binomial noise band (σ = √(0.3·0.7/1024) = **0.0143**, deviation **1.1σ**). The amplitude-encoding step is faithful on real hardware, with no detectable device error beyond shot noise.
 
-**Novel contribution:** No existing paper maps break-even vs noise rate for option pricing circuits.
+> Processor family "Heron r2" is a known external fact about `ibm_marrakesh`; it is not stored in the result JSON, which records only the backend name.
+
+**Novel contribution:** No existing paper maps break-even vs noise rate for option pricing circuits, or shows the discretization floor dominates at near-term scale.
 
 ---
 
@@ -69,7 +74,7 @@ IQAE circuit run through Qiskit's AerSimulator with `NoiseModel.from_backend()` 
 
 The QAE literature compares against naive Monte Carlo. Practitioners don't use naive Monte Carlo — they use antithetic variates, control variates, and quasi-MC (Sobol sequences). This paper re-derives the break-even equation with the right baseline.
 
-**Key findings (all empirically verified with bootstrap 95% CIs, 2000 resamples):**
+**Key findings (empirically verified with bootstrap 95% CIs, 2000 resamples):**
 
 | Baseline | Break-even oracle queries | QAE hurdle vs naive |
 |---|---|---|
@@ -78,13 +83,27 @@ The QAE literature compares against naive Monte Carlo. Practitioners don't use n
 | Control variate (VRF 6.8×) | M ≈ 120 | 2.61× harder |
 | RQMC (Sobol) | changes convergence *exponent* | asymptotic advantage gone |
 
-RQMC achieves empirical convergence slope −0.94 [−0.80, −1.10] at d=1 — matching QAE's claimed O(1/N) rate. This advantage degrades with dimension (slope −0.71 [−0.60, −0.83] at d=64), with crossover around d≈16–32. Even on discontinuous payoffs (European digital cash-or-nothing), RQMC slope is −0.98 [−0.90, −1.06], consistent with He & Wang (2015) theoretical prediction of −1.0 at d=1.
+On the European call benchmark, RQMC achieves empirical convergence slope **−1.04** — matching QAE's claimed O(1/N) rate. The advantage **degrades mildly but persists through d = 64** (geometric Asian dimension sweep, below): RQMC stays well steeper than the classical −0.5 rate at *every* dimension tested, sliding only from −0.98 at d = 1 to −0.77 at d = 64. Even on discontinuous payoffs (European digital cash-or-nothing), RQMC slope is **−0.98 [−1.06, −0.90]**, consistent with He & Wang (2015), whose theory predicts −1.0 at d = 1.
+
+**Dimension sweep (Table IV — 100-trial stabilized slopes, supersedes earlier 10-trial estimates):**
+
+| d | RQMC slope | 95% CI |
+|---|---|---|
+| 1 | −0.98 | [−1.04, −0.92] |
+| 2 | −1.06 | [−1.13, −0.99] |
+| 4 | −0.89 | [−0.97, −0.81] |
+| 8 | −0.86 | [−0.93, −0.79] |
+| 16 | −0.79 | [−0.85, −0.71] |
+| 32 | −0.85 | [−0.92, −0.78] |
+| 64 | −0.77 | [−0.84, −0.69] |
+
+The trend is a **mild degradation with dimension, not a crossover** — RQMC's edge over classical Monte Carlo persists across the full range to d = 64.
 
 **Novel contribution:** Methodological critique of the QAE option pricing literature. The classical baseline used in every prior break-even calculation is not the baseline quants deploy.
 
 ---
 
-### Paper C — *Unified Quantum Advantage Frontier* `[planned — awaiting A and B]`
+### Paper C — *Unified Quantum Advantage Frontier* `[planned — A and B complete]`
 > **Venue target:** Quantum journal
 
 Combine Papers A and B into one unified figure: the quantum advantage region as a function of (ε, noise rate p, MC variance reduction factor).
@@ -95,18 +114,22 @@ Combine Papers A and B into one unified figure: the quantum advantage region as 
 
 ---
 
-## Canonical numbers (Paper B — frozen)
+## Canonical numbers (frozen)
 
 These numbers are verified and frozen. If a re-run produces different values, investigate before updating.
 
 | Experiment | Value |
 |---|---|
-| European call RQMC convergence slope | −1.04 |
-| Dimension sweep d=1 RQMC slope | −0.94 [−1.10, −0.80] |
-| Dimension sweep d=64 RQMC slope | −0.71 [−0.83, −0.60] |
-| Digital RQMC slope | −0.98 [−1.06, −0.90] |
-| QAE grid bias at n=5 qubits (digital) | 2.16×10⁻² |
-| Table IV N window | [1024, 16384] (5 points) |
+| Paper A — mean price error @ p = 0 (ideal) | $0.203 |
+| Paper A — mean price error @ p = 1e-3 (current IBM) | $0.657 |
+| Paper A — IQAE oracle depth (all p, noise-invariant) | ~14 (13.6–14.5) |
+| Paper A — hardware validation (ibm_marrakesh, 1024 shots) | p̂ = 0.2842 (1.1σ from 0.30) |
+| Paper B — European call RQMC convergence slope | −1.04 |
+| Paper B — dimension sweep d=1 RQMC slope | −0.98 [−1.04, −0.92] |
+| Paper B — dimension sweep d=64 RQMC slope | −0.77 [−0.84, −0.69] |
+| Paper B — digital RQMC slope | −0.98 [−1.06, −0.90] |
+| Paper B — QAE grid bias at n=5 qubits (digital) | 2.16×10⁻² |
+| Paper B — Table IV N window | [1024, 16384] (5 points) |
 
 ---
 
@@ -123,24 +146,31 @@ src/
   quantum.py                   # QAE circuit (IQAE) + quantum_digital_call
   digital_option.py            # Digital MC, antithetic, RQMC pricers
   asian_option.py              # Asian pricers + arithmetic CV reference
+  plot_convergence.py          # European call convergence → RQMC slope (Paper B)
   plot_dimension_sweep.py      # Geometric dimension sweep → Table IV (Paper B)
   plot_digital_convergence.py  # Digital convergence experiment → Section VII (Paper B)
   plot_break_even_shift.py     # Break-even framing
+  plot_hardware_validation.py  # Hardware validation figure (Paper A)
   noise_experiments.py         # Paper A noise sweep (AerSampler)
+ibm_validation.py              # Paper A real-hardware run (ibm_marrakesh)
 data/
   qae_grid.pkl                 # 600 points: S₀ × K × T × σ
+  noise_sweep_expanded.csv     # Paper A noise sweep: 250 runs (50 pts × 5 levels)
+results/
+  ibm_hardware_validation.json # Hardware run result (Job d8nvd2bqv2lc7389d9e0)
 tests/
   test_pricing.py              # 10 tests
-  test_digital.py              # 15 tests (all passing)
+  test_digital.py              # 15 tests
   test_asian_cv_ref.py         # 3 tests
 docs/
   PROJECT_UPDATE_2026-06-10.md # Latest session record
 ```
 
-**QAK grid:** 600 points = 5 S₀ × 5 K × 6 T × 4 σ  
-**Runtime stack:** numpy, scipy, dash, plotly, gunicorn (no Qiskit at runtime)  
-**Dev stack:** + qiskit==0.45, qiskit-aer==0.12.2, qiskit-finance, qiskit-algorithms  
-**Pinned:** scipy==1.13.1 (Sobol results depend on this version — do not upgrade)  
+**QAE grid:** 600 points = 5 S₀ × 5 K × 6 T × 4 σ (r fixed)
+**Runtime stack:** numpy, scipy, dash, plotly, gunicorn (no Qiskit at runtime)
+**Dev stack:** + qiskit==0.46.3, qiskit-aer==0.12.2, qiskit-finance, qiskit-algorithms
+**Hardware stack (separate env):** qiskit-ibm-runtime — for the `ibm_marrakesh` validation run, in a separate anaconda environment (do not merge it with the pinned dev venv)
+**Pinned:** scipy==1.13.1 (Sobol results depend on this version — do not upgrade)
 **Deployment:** Railway (auto-deploys on push to main)
 
 ---
@@ -191,12 +221,15 @@ ruff check .         # lint
 > python -c "import scipy; print(scipy.__version__)"
 > ```
 
+> **Hardware run:** `ibm_validation.py` runs in a separate environment with `qiskit-ibm-runtime` and an IBM Quantum Platform API key + instance CRN (stored in `.env`, gitignored). The dev env stays pinned to qiskit 0.46.3; do not merge the two.
+
 ---
 
 ## References
 
 - Woerner & Egger (2019). *Quantum risk analysis.* npj Quantum Information. [arXiv:1806.06893](https://arxiv.org/abs/1806.06893)
 - Stamatopoulos et al. (2020). *Option pricing using quantum computers.* Quantum. [arXiv:1905.02666](https://arxiv.org/abs/1905.02666)
+- Grinko et al. (2021). *Iterative quantum amplitude estimation.* npj Quantum Information. [arXiv:1912.05559](https://arxiv.org/abs/1912.05559)
 - Carrera Vazquez & Woerner (2020). *Efficient state preparation for quantum amplitude estimation.* [arXiv:2009.05756](https://arxiv.org/abs/2009.05756)
 - He & Wang (2015). *On the convergence rate of randomized quasi–Monte Carlo for discontinuous functions.* SIAM J. Numer. Anal. 53(5):2488–2503.
 
@@ -210,15 +243,15 @@ ruff check .         # lint
 | Break-even visualizer | ✅ Live |
 | Design system (WCAG AA) | ✅ Done |
 | Health (pytest/mypy/ruff) | ✅ 10/10 — 28 tests passing |
+| Paper A — NISQ noise sweep | ✅ Complete — hardware run done (ibm_marrakesh), preparing submission |
 | Paper B — fair MC baseline | ✅ Complete — preparing submission |
-| Paper A — NISQ noise sweep | 🔬 In progress (IBM hardware run pending) |
-| Paper C — unified frontier | 📋 Planned — awaits A and B |
+| Paper C — unified frontier | 📋 Planned — A and B complete |
 
 ---
 
 <div align="center">
 
-Built by [Prithvi](https://github.com/Prithvi8706) · VIT Chennai · 2026
+Built by [Prithvi](https://github.com/Prithvi8706) · VIT Vellore · 2026
 
 *Quantum advantage is real. On current hardware, it's not here yet. This project shows both.*
 
