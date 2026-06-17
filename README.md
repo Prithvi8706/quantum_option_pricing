@@ -16,6 +16,20 @@
 
 ---
 
+## Contents
+
+- [What this is](#what-this-is)
+- [Live dashboard](#live-dashboard)
+- [Research program](#research-program)
+- [Canonical numbers (frozen)](#canonical-numbers-frozen)
+- [How it's built](#how-its-built)
+- [Math](#math)
+- [Running locally](#running-locally)
+- [References](#references)
+- [Project status](#project-status)
+
+---
+
 ## What this is
 
 Most quantum finance projects claim quantum computers will revolutionize option pricing. This one shows you exactly when — and more importantly, **exactly when they won't.**
