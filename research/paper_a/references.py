@@ -90,3 +90,27 @@ def select_support_rule(contracts: Iterable[Contract],
         ):
             return q
     raise ValueError("no candidate q_total passes all support gates")
+
+
+def grid_points(L: float, U: float, n: int) -> np.ndarray:
+    """x_i = L + i(U-L)/(2^n - 1), the frozen finite point grid."""
+    count = 2 ** n
+    return L + np.arange(count) * (U - L) / (count - 1)
+
+
+def grid_probabilities(c: Contract, L: float, U: float, n: int) -> np.ndarray:
+    """pi_i = f(x_i) / sum_l f(x_l): normalized POINTWISE densities.
+
+    This matches Qiskit's LogNormalDistribution semantics. Integrated bin
+    masses are a different quantity and are never substituted here.
+    """
+    density = _lognormal(c).pdf(grid_points(L, U, n))
+    return density / density.sum()
+
+
+def p_grid(c: Contract, L: float, U: float, n: int) -> float:
+    """P_grid: exact expectation on the frozen grid, exact payoff, classical."""
+    x = grid_points(L, U, n)
+    pi = grid_probabilities(c, L, U, n)
+    payoff = np.maximum(0.0, x - c.K)
+    return math.exp(-c.r * c.T) * float((pi * payoff).sum())
