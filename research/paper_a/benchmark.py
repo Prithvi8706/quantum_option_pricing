@@ -86,3 +86,49 @@ def validate_domain(S0: float, K: float, r: float, T: float, sigma: float,
         raise DomainError("VOLATILITY_OUT_OF_RANGE", f"sigma={sigma}")
     if dividend != 0.0:
         raise DomainError("NONZERO_DIVIDEND_UNSUPPORTED", f"q={dividend}")
+
+
+# --- Annex A.1: frozen nested subsets -------------------------------------
+# Selected before E1 from financial strata only, never from observed results.
+
+C12: tuple[str, ...] = ("E001", "E006", "E009", "E014", "E017", "E022",
+                        "E025", "E030", "E033", "E038", "E042", "E049")
+C6: tuple[str, ...] = ("E001", "E014", "E025", "E030", "E038", "E049")
+N5: tuple[str, ...] = ("E001", "E009", "E030", "E042")
+
+# --- E0 deterministic validation fixtures ---------------------------------
+# Disjoint from BENCHMARK by construction (round spots). Semantics and
+# boundary coverage only: no stochastic claim, no replicate mean, no
+# cross-n comparison ever uses these.
+
+_VALIDATION_ROWS = (
+    ("V01", 80.0, 0.25, 0.20), ("V02", 80.0, 1.00, 0.30),
+    ("V03", 90.0, 0.50, 0.15), ("V04", 90.0, 2.00, 0.30),
+    ("V05", 100.0, 0.25, 0.15), ("V06", 100.0, 0.50, 0.20),
+    ("V07", 100.0, 1.00, 0.20), ("V08", 100.0, 2.00, 0.30),
+    ("V09", 110.0, 0.25, 0.15), ("V10", 110.0, 1.00, 0.25),
+    ("V11", 120.0, 0.50, 0.20), ("V12", 120.0, 2.00, 0.30),
+)
+
+VALIDATION_SET: tuple[Contract, ...] = tuple(
+    Contract(id=vid, S0=S0, K=K_FIXED, r=R_FIXED, T=T, sigma=sigma,
+             m_F=S0 * math.exp(R_FIXED * T) / K_FIXED,
+             m_stratum="fixture", t_stratum="fixture",
+             vol_stratum="fixture", weight=0.0)
+    for vid, S0, T, sigma in _VALIDATION_ROWS
+)
+
+
+def replacement_id(m_stratum: str, t_stratum: str, vol_stratum: str) -> str:
+    """Annex A replacement pool: exactly one candidate per broad cell.
+
+    Usable only before E1 and only for a deterministic construction failure
+    that correcting the implementation does not repair.
+    """
+    if m_stratum not in {"M1", "M2", "M3", "M4", "M5"}:
+        raise ValueError(f"unknown moneyness stratum {m_stratum}")
+    if t_stratum not in {"S", "M", "L"}:
+        raise ValueError(f"unknown broad maturity stratum {t_stratum}")
+    if vol_stratum not in {"V1", "V2"}:
+        raise ValueError(f"unknown volatility stratum {vol_stratum}")
+    return f"R-{m_stratum}-{t_stratum}-{vol_stratum}"

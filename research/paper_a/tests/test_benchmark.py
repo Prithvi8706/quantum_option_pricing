@@ -1,9 +1,11 @@
 import math
+from collections import Counter
 
 import pytest
 
 from research.paper_a.benchmark import (
-    BENCHMARK, DomainError, by_id, validate_domain,
+    BENCHMARK, C6, C12, DomainError, N5, VALIDATION_SET, by_id,
+    replacement_id, validate_domain,
 )
 
 
@@ -105,3 +107,72 @@ def test_strata_labels_are_consistent_with_parameters():
 def test_contract_is_immutable():
     with pytest.raises(Exception):
         BENCHMARK[0].S0 = 1.0
+
+
+def test_frozen_subsets_have_exactly_the_annex_a1_members():
+    assert C12 == ("E001", "E006", "E009", "E014", "E017", "E022",
+                   "E025", "E030", "E033", "E038", "E042", "E049")
+    assert C6 == ("E001", "E014", "E025", "E030", "E038", "E049")
+    assert N5 == ("E001", "E009", "E030", "E042")
+
+
+def test_subsets_are_nested_inside_the_benchmark():
+    ids = {c.id for c in BENCHMARK}
+    assert set(C12) <= ids
+    assert set(C6) <= set(C12)
+    assert set(N5) <= set(C12)
+
+
+def test_c12_balance_matches_the_documented_claim():
+    rows = [by_id(i) for i in C12]
+    assert Counter(r.m_stratum[:2] for r in rows) == {
+        "M1": 3, "M2": 2, "M3": 3, "M4": 2, "M5": 2}
+    assert Counter(r.vol_stratum[:2] for r in rows) == {"V1": 6, "V2": 6}
+    t_counts = Counter(r.t_stratum[:2] for r in rows)
+    assert set(t_counts) == {"T1", "T2", "T3", "T4", "T5"}
+    assert min(t_counts.values()) >= 2
+
+
+def test_c6_covers_every_moneyness_and_maturity_stratum():
+    rows = [by_id(i) for i in C6]
+    assert len({r.m_stratum[:2] for r in rows}) == 5
+    assert len({r.t_stratum[:2] for r in rows}) == 5
+    assert Counter(r.vol_stratum[:2] for r in rows) == {"V1": 3, "V2": 3}
+
+
+def test_c6_contains_the_moneyness_maturity_diagonal():
+    diagonal = {("M1", "T1"), ("M2", "T2"), ("M3", "T3"),
+                ("M4", "T4"), ("M5", "T5")}
+    present = {(by_id(i).m_stratum[:2], by_id(i).t_stratum[:2]) for i in C6}
+    assert diagonal <= present
+
+
+def test_n5_has_balanced_volatility_and_corner_coverage():
+    rows = [by_id(i) for i in N5]
+    assert Counter(r.vol_stratum[:2] for r in rows) == {"V1": 2, "V2": 2}
+    assert {r.t_stratum[:2] for r in rows} == {"T1", "T5"}
+
+
+def test_validation_set_is_disjoint_from_the_benchmark():
+    """V01-V12 are deterministic fixtures only; they carry no stochastic
+    claim and must never be mistaken for benchmark rows."""
+    assert len(VALIDATION_SET) == 12
+    assert {c.S0 for c in VALIDATION_SET} <= {80.0, 90.0, 100.0, 110.0, 120.0}
+    assert not ({c.S0 for c in VALIDATION_SET} & {c.S0 for c in BENCHMARK})
+
+
+def test_validation_set_is_in_domain():
+    for c in VALIDATION_SET:
+        validate_domain(S0=c.S0, K=c.K, r=c.r, T=c.T, sigma=c.sigma)
+
+
+def test_replacement_pool_covers_every_broad_cell_uniquely():
+    seen = set()
+    for m in ("M1", "M2", "M3", "M4", "M5"):
+        for t in ("S", "M", "L"):
+            for v in ("V1", "V2"):
+                rid = replacement_id(m, t, v)
+                assert rid == f"R-{m}-{t}-{v}"
+                assert rid not in seen
+                seen.add(rid)
+    assert len(seen) == 30
