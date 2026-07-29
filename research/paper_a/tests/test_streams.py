@@ -61,9 +61,10 @@ def test_pilot_and_main_namespaces_never_collide():
 
 def test_every_field_changes_the_stream():
     base = generator(stream_key(**ARGS)).random(8)
-    for field, value in [("experiment_uuid", "zzz"), ("phase", "E4"),
+    for field, value in [("namespace", "paper-a/mc/v1"),
+                         ("experiment_uuid", "zzz"), ("phase", "E4"),
                          ("config_id", "E023"), ("n", 4), ("replicate", 8),
-                         ("purpose", "noise")]:
+                         ("condition", "p1e-3"), ("purpose", "noise")]:
         other = generator(stream_key(**{**ARGS, field: value})).random(8)
         assert not np.array_equal(base, other), f"{field} did not change stream"
 
