@@ -6,7 +6,10 @@ from research.paper_a.errors import (
 )
 from research.paper_a.payoff import C_RESCALING
 
-Q = 1e-4
+# The value select_support_rule() actually returns over the 50-contract
+# benchmark (established in Task 5). 1e-4 is NOT the frozen rule: at 1e-4,
+# 14/50 contracts breach the 1e-4*S0 support-bias bound.
+Q = 1e-5
 
 
 def test_ladder_layers_are_stored_separately():
