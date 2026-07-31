@@ -19,10 +19,12 @@ OPTIMIZATION_LEVEL = 1
 
 
 def _qpy_sha256(circuit: QuantumCircuit) -> str:
-    # QuantumCircuit's default name ("circuit-<n>") comes from a global,
-    # incrementing counter and is serialized into QPY, so it must be
-    # normalized here or identical circuit content hashes differently
-    # depending on how many circuits were constructed earlier in the process.
+    # The circuit name is deliberately excluded from circuit identity here:
+    # Qiskit's auto-generated default name ("circuit-<n>") embeds a
+    # process-global counter, not circuit content, so leaving it in would
+    # make hashes non-reproducible across processes/runs. As a consequence,
+    # two structurally identical circuits with different custom names will
+    # also hash identically.
     normalized = circuit.copy()
     normalized.name = "circuit"
     buffer = io.BytesIO()
@@ -89,7 +91,15 @@ class RecordingSampler:
             record.exception = f"{type(exc).__name__}: {exc}"
             raise
 
-        record.effective_shots = int(result.metadata[0].get("shots",
-                                                            self._shots))
+        metadata = result.metadata[0]
+        if "shots" not in metadata:
+            record.status = "failed"
+            record.exception = (
+                "primitive result metadata has no 'shots' key; "
+                "effective shots cannot be established"
+            )
+            raise KeyError(record.exception)
+
+        record.effective_shots = int(metadata["shots"])
         record.status = "complete"
         return job
