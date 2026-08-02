@@ -49,7 +49,7 @@ def run_smoke(output_dir, shots: int = 512) -> dict:
     done = {r["idempotency_key"] for r in read_records(raw_path)} \
         if raw_path.exists() else set()
     environment = capture_environment()
-    attempts = 0
+    planned_attempts = 0
 
     for cid in CONFIGS:
         contract = by_id(cid)
@@ -58,7 +58,9 @@ def run_smoke(output_dir, shots: int = 512) -> dict:
         ec = build_european(contract, L, U, N, C_RESCALING)
 
         for replicate in REPLICATES:
-            attempts += 1
+            # Counts planned config x replicate combinations, including ones
+            # skipped below because they were already done.
+            planned_attempts += 1
             key = idempotency_key(EXPERIMENT_UUID, "SMOKE", cid, N, replicate,
                                   "ideal", "shots")
             if key in done:
@@ -121,9 +123,10 @@ def run_smoke(output_dir, shots: int = 512) -> dict:
     (out / "COMPLETE").write_text(json.dumps({
         "raw_sha256": _sha256(raw_path),
         "resources_sha256": _sha256(res_path),
+        "validation_sha256": _sha256(out / "validation.json"),
         "environment": environment,
     }, indent=2))
-    return {"attempts": attempts, "records": len(violations)}
+    return {"planned_attempts": planned_attempts, "records": len(violations)}
 
 
 if __name__ == "__main__":
