@@ -1,3 +1,9 @@
+> **Superseded research status — 9 September 2026:** Neither manuscript has been
+> submitted or published. Submission-ready and protected/canonical claims below
+> are historical, not current conclusions. Follow the
+> [claim ledger](docs/journal_sprint/CLAIM_LEDGER.md) and
+> [journal sprint results](docs/journal_sprint/WEEK_1_2_RESULTS.md).
+
 # Quantum Option Pricing — Research Roadmap
 > **Repo:** github.com/Prithvi8706/quantum_option_pricing
 > **Live dashboard:** web-production-559db.up.railway.app

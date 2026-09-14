@@ -1,3 +1,17 @@
+> **Research status — 9 September 2026:** Neither paper is submitted or published.
+> The historical numerical claims below are under audit, not submission-ready
+> conclusions. In particular, $0.203 is not an established discretization floor,
+> and Paper B's claimed 100-trial sweep is not reconciled with raw evidence.
+> See the [claim ledger](docs/journal_sprint/CLAIM_LEDGER.md) and
+> [journal sprint](docs/journal_sprint/WEEK_1_2_RESULTS.md). This notice supersedes
+> any protected/canonical treatment of those claims below.
+
+Local journal-reengineering work through week 9 is complete: see the
+[running log](docs/journal_sprint/PROJECT_LOG.md),
+[current manuscript](docs/journal_sprint/MANUSCRIPT_RELIABILITY_DRAFT.md), and
+[PR review scope](docs/journal_sprint/PR_REVIEW_SCOPE.md).
+Contributor confirmation, confirmation studies and publication readiness remain outstanding.
+
 <div align="center">
 
 # ⚛️ Quantum Option Pricing
