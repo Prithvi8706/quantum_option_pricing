@@ -1,5 +1,7 @@
 """V2C fixed and bound-selected finite-shot dollar intervals."""
 
+from .checks import require
+
 import argparse
 import json
 import os
@@ -64,7 +66,7 @@ def main():
     baseline = ROOT / "results/journal_sprint/pricing_gate_v2b"
     original = json.loads((baseline / "rows.json").read_text())
     manifest = json.loads((baseline / "complete.json").read_text())
-    assert all(sha256(baseline / name) == value for name, value in manifest["sha256"].items())
+    require(all(sha256(baseline / name) == value for name, value in manifest["sha256"].items()))
     started = time.perf_counter()
     choices = {}
     for cid in C6:

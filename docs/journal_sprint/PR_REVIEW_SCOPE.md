@@ -1,5 +1,9 @@
 # Journal reengineering PR: weeks 1–9
 
+Current review status: Macroscope completed its user-triggered review. The
+[remediation record](MACROSCOPE_REVIEW_RESPONSE.md) supersedes the historical
+pending/cost-skip status below. New fixes require their own review disposition.
+
 Requested by the user on 14 September 2026 so Macroscope review can follow.
 This supersedes earlier operational instructions to hold PR creation pending
 Macroscope. It does not imply Macroscope approval, merge approval or submission.

@@ -7,6 +7,7 @@ import shutil
 
 import mpmath as mp
 
+from .checks import archive_path, relative_archive_path
 from .numerical_reference import PRECISION, STEPS, case_table
 from .run_numerical_check import compare
 from .storage import ROOT, finish_run, sha256, start_run, write_json
@@ -20,7 +21,7 @@ def require(value, message):
 def checked_archive(folder):
     manifest = json.loads((folder / "complete.json").read_text())
     for name, digest in manifest["sha256"].items():
-        require(sha256(folder / name) == digest, f"hash mismatch: {folder / name}")
+        require(sha256(archive_path(folder, name)) == digest, f"hash mismatch: {name}")
     return manifest
 
 
@@ -47,8 +48,8 @@ def main():
     )
     snap = source / "source_snapshot"
     require(
-        {str(p.relative_to(snap)) for p in snap.rglob("*") if p.is_file()}
-        == set(config["dependency_sha256"]),
+        {p.relative_to(snap).as_posix() for p in snap.rglob("*") if p.is_file()}
+        == {relative_archive_path(n).as_posix() for n in config["dependency_sha256"]},
         "source inventory",
     )
     producing = {
@@ -59,12 +60,13 @@ def main():
         "research/journal_sprint/storage.py",
         "docs/journal_sprint/PROTOCOL_W9_NUMERICAL.md",
     }
-    inventory = {Path(name).as_posix() for name in config["dependency_sha256"]}
+    inventory = {relative_archive_path(name).as_posix() for name in config["dependency_sha256"]}
+    require(len(inventory) == len(config["dependency_sha256"]), "aliased source names")
     require(producing <= inventory, "missing producing dependency")
     for name, digest in config["dependency_sha256"].items():
-        require(sha256(snap / name) == digest, f"snapshot drift: {name}")
-        if Path(name).as_posix() in producing:
-            require(sha256(ROOT / name) == digest, f"producing source drift: {name}")
+        require(sha256(archive_path(snap, name)) == digest, f"snapshot drift: {name}")
+        if relative_archive_path(name).as_posix() in producing:
+            require(sha256(archive_path(ROOT, name)) == digest, f"producing source drift: {name}")
     cases = case_table()
     require(cases == json.loads((source / "cases.json").read_text()), "case matrix")
     rows = [json.loads(line) for line in (source / "records.jsonl").read_text().splitlines()]

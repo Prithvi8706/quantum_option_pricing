@@ -1,5 +1,11 @@
 ## Scope
 
+Update: Macroscope completed its user-triggered review. All 15 findings were
+examined and addressed; see the
+[finding-by-finding response](https://github.com/Prithvi8706/quantum_option_pricing/blob/journal-reengineering-weeks-1-9/docs/journal_sprint/MACROSCOPE_REVIEW_RESPONSE.md).
+Original archives are preserved, with a separately verified historical protocol
+supplement. Approval of these subsequent fixes is not yet established.
+
 Journal reengineering through week 9, including 19 existing prerequisite Paper A
 foundation commits. Adds source/tests, protocols, logs, corrected claims,
 calibration and representation studies, numerical diagnostics and updated manuscript.
@@ -12,6 +18,11 @@ Review entry points:
 - [Full project log](https://github.com/Prithvi8706/quantum_option_pricing/blob/journal-reengineering-weeks-1-9/docs/journal_sprint/PROJECT_LOG.md)
 
 ## Validation
+
+- After Macroscope fixes: **390 passed**, 11 upstream warnings, 142.10 seconds;
+  includes 53 new regression tests. Updated 312-case diagnostic is byte-identical
+  to week 9. Ruff passed on changed production/test code.
+- The following entries describe the earlier pre-review packaging checks:
 
 - Historical local suite: 337 passed. Independent reference: 312 cases replayed.
 - Clean PR-tree full run: 325 passed, 12 failed due to omitted archive fixtures.
@@ -29,6 +40,7 @@ concentrated on E001; paid selection did not improve it. Numerical checks are
 finite diagnostics, not certification. Matched comparisons, fresh confirmation
 and journal novelty remain open. No merge, submission or author addition requested.
 
-Astra-requested bounded review completed. User will initiate Macroscope review.
-Its first automatic check was skipped: estimated 39.12 USD exceeded the 10 USD
-per-review limit. No manual paid retry or limit change was initiated by the agent.
+Astra-requested bounded review covered the pre-fix work, not these new changes.
+Macroscope's first automatic cost skip was superseded by the user's completed
+manual review. No billing-limit change or manual paid retry was initiated by
+the agent. See the response document for current verification results.

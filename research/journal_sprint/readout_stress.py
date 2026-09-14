@@ -1,5 +1,7 @@
 """Declared response-level readout/dependence stress, using saved circuit targets."""
 
+from .checks import require
+
 import argparse
 import json
 import os
@@ -51,7 +53,7 @@ def main(argv=None):
     args = parser.parse_args(argv)
     baseline = ROOT / args.baseline
     manifest = json.loads((baseline / "complete.json").read_text())
-    assert all(sha256(baseline / name) == value for name, value in manifest["sha256"].items())
+    require(all(sha256(baseline / name) == value for name, value in manifest["sha256"].items()))
     groups = defaultdict(list)
     for row in json.loads((baseline / "summary.json").read_text())["rows"]:
         if row["n"] == 3:

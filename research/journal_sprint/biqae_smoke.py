@@ -31,6 +31,11 @@ def main():
     shutil.copy2(__file__, output / "wrapper.py")
     source = checkout / "src/biae.py"
     head = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=checkout, text=True).strip()
+    status = subprocess.check_output(
+        ["git", "status", "--porcelain", "--untracked-files=all"], cwd=checkout, text=True
+    ).strip()
+    if status:
+        raise RuntimeError("BIQAE checkout is not clean")
     if head != "bbd28a3efa659e1c0feec6b86ba13389cb127dbd":
         raise RuntimeError("unexpected BIQAE revision")
     plan = {

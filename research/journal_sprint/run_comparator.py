@@ -1,5 +1,7 @@
 """Reproduce pinned source golden tests and reduced independent benchmarks."""
 
+from .checks import require
+
 import argparse
 import time
 
@@ -71,7 +73,7 @@ def main():
         if name == "noise_matched":
             matched_counts = raw["counts"].copy()
         if name == "noise_ignored":
-            assert np.array_equal(matched_counts, raw["counts"])
+            require(np.array_equal(matched_counts, raw["counts"]))
         out.update(
             name=name,
             depths=depths,

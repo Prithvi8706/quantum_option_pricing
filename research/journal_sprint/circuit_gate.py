@@ -1,5 +1,7 @@
 """Actual amplified pricing circuits: logical resources and exact channel smoke tests."""
 
+from .checks import require
+
 import argparse
 import json
 import os
@@ -72,8 +74,8 @@ def positive_controls():
     pair.u(np.pi, 0, np.pi, 1)
     pair.cx(0, 1)
     depolarized = density_probability(pair, 1, noise_model("depolarizing", 1))
-    assert abs(damped) < 1e-9
-    assert abs(depolarized - 0.5) < 1e-9
+    require(abs(damped) < 1e-9)
+    require(abs(depolarized - 0.5) < 1e-9)
     return {"full_damping_excited": damped, "full_cx_depolarization": depolarized}
 
 
@@ -157,9 +159,9 @@ def main():
                             )
                             statevector_seconds = time.perf_counter() - tick
                             predicted = float(np.sin((2 * depth + 1) * np.arcsin(np.sqrt(a))) ** 2)
-                            assert abs(actual - predicted) < 1e-9, key
+                            require(abs(actual - predicted) < 1e-9, key)
                             ops = dict(compiled.count_ops())
-                            assert set(ops) <= {"u", "cx"}
+                            require(set(ops) <= {"u", "cx"})
                             row = {
                                 "id": key,
                                 "contract": cid,
@@ -185,7 +187,7 @@ def main():
                             if n == 3:
                                 tick = time.perf_counter()
                                 noiseless = density_probability(compiled, ec.objective_qubit)
-                                assert abs(noiseless - actual) < 1e-9
+                                require(abs(noiseless - actual) < 1e-9)
                                 row["density_zero_noise"] = noiseless
                                 for kind, model in models.items():
                                     probability = density_probability(

@@ -1,5 +1,7 @@
 """Snapshot the scoped final handoff without modifying completed experiments."""
 
+from .checks import require
+
 import argparse
 import json
 import re
@@ -23,7 +25,7 @@ def main():
         source = ROOT / "results/journal_sprint" / name
         suite = ET.parse(source).getroot().find("testsuite")
         tests[name] = dict(suite.attrib)
-        assert suite.attrib["errors"] == suite.attrib["failures"] == "0"
+        require(suite.attrib["errors"] == suite.attrib["failures"] == "0")
         files.append(source)
     links = []
     for document in documents:
@@ -31,7 +33,7 @@ def main():
             if "://" in target or target.startswith("#"):
                 continue
             destination = document.parent / target.split("#")[0]
-            assert destination.exists(), (document, target)
+            require(destination.exists(), (document, target))
             links.append({"document": str(document.relative_to(ROOT)), "target": target})
     for source in files:
         destination = path / "snapshot" / source.relative_to(ROOT)
@@ -42,7 +44,7 @@ def main():
         folder = ROOT / "results/journal_sprint" / name
         manifest = folder / "complete.json"
         content = json.loads(manifest.read_text())
-        assert all(sha256(folder / file) == value for file, value in content["sha256"].items())
+        require(all(sha256(folder / file) == value for file, value in content["sha256"].items()))
         provenance[name] = sha256(manifest)
     write_json(
         path / "index.json",

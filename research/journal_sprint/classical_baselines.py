@@ -1,5 +1,7 @@
 """Costed classical discovery baselines with independent pilot streams."""
 
+from .checks import require
+
 import argparse
 import math
 import shutil
@@ -186,7 +188,7 @@ def main(argv=None):
                 )
 
             value, error = quad(integrand, cutoff, np.inf, epsabs=1e-10, epsrel=1e-10)
-            assert abs(bs - value) < 1e-8
+            require(abs(bs - value) < 1e-8)
             references[cid] = {
                 "price": bs,
                 "quadrature": value,

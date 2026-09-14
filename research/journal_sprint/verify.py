@@ -1,5 +1,7 @@
 """Check completed run hashes and preserve the final runnable source package."""
 
+from .checks import require
+
 import json
 import shutil
 import xml.etree.ElementTree as ET
@@ -22,7 +24,7 @@ def main():
     for name in runs:
         manifest = json.loads((base / name / "complete.json").read_text(encoding="utf-8"))
         for relative, expected in manifest["sha256"].items():
-            assert sha256(base / name / relative) == expected, (name, relative)
+            require(sha256(base / name / relative) == expected, (name, relative))
         verified[name] = len(manifest["sha256"])
         if name == "comparator_v1":
             validate_golden(json.loads((base / name / "summary.json").read_text()))
@@ -32,8 +34,8 @@ def main():
         key: sum(int(suite.attrib.get(key, 0)) for suite in suites)
         for key in ("tests", "failures", "errors", "skipped")
     }
-    assert test_summary["tests"] > 0
-    assert test_summary["failures"] == test_summary["errors"] == 0
+    require(test_summary["tests"] > 0)
+    require(test_summary["failures"] == test_summary["errors"] == 0)
     write_json(
         path / "test_evidence.json",
         {
@@ -47,6 +49,7 @@ def main():
     sources += list((ROOT / "docs/journal_sprint").glob("*.md"))
     sources += [
         ROOT / "pyproject.toml",
+        ROOT / "research/journal_sprint/requirements-legacy-circuit.txt",
         ROOT / "research/journal_sprint/vendor/LICENSE-csAE",
         ROOT / "research/journal_sprint/vendor/NOTICE.md",
     ]

@@ -1,5 +1,7 @@
 """Post-run integrity checks and descriptive response-model diagnostics."""
 
+from .checks import require
+
 import importlib.metadata
 import json
 import shutil
@@ -11,15 +13,15 @@ def main():
     source = ROOT / "results/journal_sprint/week3_circuits_v1_retry1"
     manifest = json.loads((source / "complete.json").read_text())
     for name, value in manifest["sha256"].items():
-        assert sha256(source / name) == value, name
+        require(sha256(source / name) == value, name)
     summary = json.loads((source / "summary.json").read_text())
     rows = summary["rows"]
-    assert len(rows) == 24 and len({r["id"] for r in rows}) == 24
+    require(len(rows) == 24 and len({r["id"] for r in rows}) == 24)
     events = [json.loads(line) for line in (source / "events.jsonl").read_text().splitlines()]
-    assert len(events) == 48
+    require(len(events) == 48)
     for row, planned, completed in zip(rows, events[::2], events[1::2]):
-        assert planned == {"event": "planned", "id": row["id"]}
-        assert completed == {"event": "completed", "id": row["id"]}
+        require(planned == {"event": "planned", "id": row["id"]})
+        require(completed == {"event": "completed", "id": row["id"]})
     path = start_run(
         "results/journal_sprint/week3_circuit_analysis_v1",
         {

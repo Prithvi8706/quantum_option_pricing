@@ -1,5 +1,24 @@
 # Journal reengineering: running record
 
+## 2026-09-14: Macroscope review remediation
+
+User reported the completed review and requested necessary fixes. Read all 15
+inline findings, including those the bot subsequently labeled no longer relevant.
+Implemented safety/integrity, batch handling, record validation, smoke recovery,
+independent dollar-gate and archive portability fixes in the separate PR checkout.
+Preserved unrelated user edits and all immutable original experiment evidence.
+See the [finding-by-finding response](MACROSCOPE_REVIEW_RESPONSE.md) for changes,
+tests and limitations; [archive reconstruction](ARCHIVE_REPLAY.md) documents the
+historical protocol supplement instead of rewriting the original snapshot.
+
+Initial 52 new regression tests passed; a 53rd materialization test was then added.
+Reran all 312 numerical cases with zero failures and byte-identical records to
+week 9. Full suite: 390 passed, 11 upstream warnings, 142.10 seconds. Ruff and
+whitespace checks passed. Fixes are pushed to PR #1 from the separate review
+checkout; the main workspace's uncommitted edits remain untouched.
+The prior Macroscope cost skip is superseded by the completed user-triggered
+review, not by a claim of approval. No billing settings or author list changed.
+
 ## 2026-09-14: review PR opened at user request
 
 User explicitly requested publication of the work as a PR so they can initiate

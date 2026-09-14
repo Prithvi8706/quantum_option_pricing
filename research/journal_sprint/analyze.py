@@ -1,5 +1,7 @@
 """Rebuild descriptive tables and validation checks from preserved sprint outputs."""
 
+from .checks import require
+
 import csv
 import json
 from collections import defaultdict
@@ -37,7 +39,7 @@ def main():
         groups[key].append(row)
     expected = {"fixed": 14000, "direct": 11200, "split_pilot": 1400}
     actual = {name: sum(r["experiment"] == name for r in records) for name in expected}
-    assert actual == expected, (actual, expected)
+    require(actual == expected, (actual, expected))
     cells = []
     for (experiment, condition, shots, amplitude), rows in groups.items():
         # Pilot-selected shot subgroups are selection-conditioned. Report only
@@ -73,7 +75,7 @@ def main():
         observed = np.array([float(row["sim_price"]) for row in rows])
         reference = np.array([float(row["ref_price"]) for row in rows])
         bs = np.array([row["independent_black_scholes"] for row in rows])
-        assert np.allclose(stored, abs(observed - reference), atol=1e-12)
+        require(np.allclose(stored, abs(observed - reference), atol=1e-12))
         historic_summary.append(
             dict(
                 p=p,

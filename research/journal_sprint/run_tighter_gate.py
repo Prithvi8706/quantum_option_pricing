@@ -5,6 +5,7 @@ from dataclasses import asdict
 import json
 import shutil
 
+from .checks import archive_path
 from .storage import ROOT, finish_run, sha256, start_run, write_json
 from .tighter_grid import tighter_bounds_for
 from research.paper_a.benchmark import C6, by_id
@@ -17,7 +18,7 @@ def main():
     baseline = ROOT / "results/journal_sprint/pricing_gate_v2a_retry1"
     manifest = json.loads((baseline / "complete.json").read_text())
     for relative, expected in manifest["sha256"].items():
-        if sha256(baseline / relative) != expected:
+        if sha256(archive_path(baseline, relative)) != expected:
             raise ValueError(f"Baseline integrity failure: {relative}")
     inputs = json.loads((baseline / "rows.json").read_text())
     lookup = {(r["contract"], r["n"], r["scale"]): r for r in inputs}

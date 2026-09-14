@@ -1,5 +1,7 @@
 """Read-only verification and separately versioned week-1/2 analysis."""
 
+from .checks import require
+
 import argparse
 from collections import Counter, defaultdict
 import csv
@@ -62,7 +64,7 @@ def main():
         folder = ROOT / "results/journal_sprint" / name
         complete = json.loads((folder / "complete.json").read_text())
         for relative, expected in complete["sha256"].items():
-            assert sha256(folder / relative) == expected, (name, relative)
+            require(sha256(folder / relative) == expected, (name, relative))
         hashes[name] = {
             "artifacts_verified": len(complete["sha256"]),
             "manifest_sha256": sha256(folder / "complete.json"),
@@ -72,7 +74,7 @@ def main():
     lookup = {(r["contract"], r["n"], r["scale"]): r for r in models}
     raw = ROOT / "results/journal_sprint/price_intervals_v2c/records.jsonl"
     rows = [json.loads(line) for line in raw.read_text().splitlines()]
-    assert len(rows) == 43200
+    require(len(rows) == 43200)
     keys = ("arm", "condition", "shots", "contract", "method")
     cells = defaultdict(list)
     identities = set()
@@ -81,42 +83,44 @@ def main():
     for row in rows:
         key = tuple(row[k] for k in keys)
         identity = key + (row["rep"],)
-        assert identity not in identities
+        require(identity not in identities)
         identities.add(identity)
         cells[key].append(row)
         if row["state"] == "pre_refusal":
-            assert row["arm"] == "selected" and row["contract"] in ("E030", "E038")
-            assert not row["counts"] and row["a_queries"] == row["total_shots"] == 0
-            assert not row["declared"] and not row["false_declaration"]
+            require(row["arm"] == "selected" and row["contract"] in ("E030", "E038"))
+            require(not row["counts"] and row["a_queries"] == row["total_shots"] == 0)
+            require(not row["declared"] and not row["false_declaration"])
             continue
         model = lookup[(row["contract"],) + tuple(row["representation"])]
         multi = row["method"] == "multidepth"
         depths = [0, 1, 2, 4, 8] if multi else [0]
         shots = [row["shots"]] * 5 if multi else [35 * row["shots"]]
-        assert len(shots) == len(row["counts"])
-        assert all(isinstance(c, int) and 0 <= c <= n for c, n in zip(row["counts"], shots))
-        assert row["a_queries"] == sum(n * (2 * k + 1) for n, k in zip(shots, depths))
-        assert row["grover_queries"] == sum(n * k for n, k in zip(shots, depths))
-        assert row["total_shots"] == sum(shots)
+        require(len(shots) == len(row["counts"]))
+        require(all(isinstance(c, int) and 0 <= c <= n for c, n in zip(row["counts"], shots)))
+        require(row["a_queries"] == sum(n * (2 * k + 1) for n, k in zip(shots, depths)))
+        require(row["grover_queries"] == sum(n * k for n, k in zip(shots, depths)))
+        require(row["total_shots"] == sum(shots))
         conf = invert(row["counts"], shots, depths, envelopes[row["condition"]])
-        assert [list(c) for c in conf.components] == row["probability_components"]
-        assert conf.contains(model["diagnostic"]["probability"]) == row["probability_contains"]
+        require([list(c) for c in conf.components] == row["probability_components"])
+        require(conf.contains(model["diagnostic"]["probability"]) == row["probability_contains"])
         if not conf.components:
-            assert row["state"] == "incompatible" and not row["declared"]
-            assert row["price_interval"] is None
+            require(row["state"] == "incompatible" and not row["declared"])
+            require(row["price_interval"] is None)
             continue
         bound = model["total_bound"]
         L = model["bounds"]["sensitivity"]
         offset = model["bounds"]["offset"]
         expected = [L * conf.hull[0] + offset - bound, L * conf.hull[1] + offset + bound]
-        assert np.allclose(row["price_interval"], expected, rtol=0, atol=1e-10)
+        require(np.allclose(row["price_interval"], expected, rtol=0, atol=1e-10))
         radius = (expected[1] - expected[0]) / 2
-        assert math.isclose(row["radius"], radius, abs_tol=1e-10)
-        assert row["declared"] == (radius <= 1)
+        require(math.isclose(row["radius"], radius, abs_tol=1e-10))
+        require(row["declared"] == (radius <= 1))
         price = model["diagnostic"]["black_scholes"]
-        assert row["price_contains"] == (expected[0] <= price <= expected[1])
-        assert row["false_declaration"] == (row["declared"] and abs(sum(expected) / 2 - price) > 1)
-    assert len(cells) == 216 and all(len(c) == 200 for c in cells.values())
+        require(row["price_contains"] == (expected[0] <= price <= expected[1]))
+        require(
+            row["false_declaration"] == (row["declared"] and abs(sum(expected) / 2 - price) > 1)
+        )
+    require(len(cells) == 216 and all(len(c) == 200 for c in cells.values()))
     output = []
     pooled = defaultdict(list)
     for key, records in sorted(cells.items()):
@@ -145,7 +149,7 @@ def main():
         tick = time.perf_counter()
         for model in models:
             bounds, _ = tighter_bounds_for(by_id(model["contract"]), model["n"], model["scale"])
-            assert math.isclose(bounds.total, model["total_bound"], rel_tol=1e-12)
+            require(math.isclose(bounds.total, model["total_bound"], rel_tol=1e-12))
         construction.append(time.perf_counter() - tick)
     write_json(
         path / "verification.json",

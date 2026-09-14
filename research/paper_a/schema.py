@@ -3,30 +3,45 @@
 Retries never overwrite a first planned attempt, and reconstructed circuit
 fields never populate actual_* fields (Annex I).
 """
+
 from __future__ import annotations
 
 import json
+import math
+import os
 from pathlib import Path
 from typing import Any
 
 SCHEMA_VERSION = "paper-a-record-v1"
 
 REQUIRED_FIELDS = (
-    "schema_version", "experiment_uuid", "phase", "config_id", "n",
-    "replicate", "condition", "attempt_kind", "raw_estimation",
-    "raw_confidence_interval", "raw_price", "presentation_clipped_price",
-    "completion_state", "environment",
+    "schema_version",
+    "experiment_uuid",
+    "phase",
+    "config_id",
+    "n",
+    "replicate",
+    "condition",
+    "attempt_kind",
+    "raw_estimation",
+    "raw_confidence_interval",
+    "raw_price",
+    "presentation_clipped_price",
+    "completion_state",
+    "environment",
 )
 
 _ACTUAL_PREFIXES = ("actual_circuit_", "actual_isa_", "actual_gate_")
-_RECONSTRUCTED_PREFIXES = ("reconstructed_logical_", "reconstructed_isa_",
-                           "reconstructed_resource_", "reconstructed_circuit_")
+_RECONSTRUCTED_PREFIXES = (
+    "reconstructed_logical_",
+    "reconstructed_isa_",
+    "reconstructed_resource_",
+    "reconstructed_circuit_",
+)
 
 
 def _populated(record: dict, prefixes: tuple[str, ...]) -> bool:
-    return any(record.get(k) is not None
-               for k in record
-               if k.startswith(prefixes))
+    return any(record.get(k) is not None for k in record if k.startswith(prefixes))
 
 
 def validate_record(record: dict[str, Any]) -> list[str]:
@@ -40,30 +55,36 @@ def validate_record(record: dict[str, Any]) -> list[str]:
         return violations
 
     if record["schema_version"] != SCHEMA_VERSION:
-        violations.append(
-            f"schema_version {record['schema_version']} != {SCHEMA_VERSION}")
+        violations.append(f"schema_version {record['schema_version']} != {SCHEMA_VERSION}")
 
     est = record["raw_estimation"]
-    if est is not None and not 0.0 <= est <= 1.0:
+    if est is not None and (not _finite_number(est) or not 0.0 <= est <= 1.0):
         violations.append(f"raw_estimation {est} outside [0,1]")
 
     ci = record["raw_confidence_interval"]
     if ci is not None:
-        lo, hi = ci
-        if not (0.0 <= lo <= hi <= 1.0):
+        if (
+            not isinstance(ci, (list, tuple))
+            or len(ci) != 2
+            or not all(_finite_number(value) for value in ci)
+            or not 0.0 <= ci[0] <= ci[1] <= 1.0
+        ):
             violations.append(f"invalid interval {ci}")
 
     price, clipped = record["raw_price"], record["presentation_clipped_price"]
-    if price is not None and clipped != max(0.0, price):
-        violations.append(
-            f"presentation_clipped_price {clipped} != max(0, {price})")
+    if price is not None and (
+        not _finite_number(price) or not _finite_number(clipped) or clipped != max(0.0, price)
+    ):
+        violations.append(f"presentation_clipped_price {clipped} != max(0, {price})")
 
-    if _populated(record, _ACTUAL_PREFIXES) and _populated(
-            record, _RECONSTRUCTED_PREFIXES):
-        violations.append(
-            "mixed provenance: actual_* and reconstructed_* both populated")
+    if _populated(record, _ACTUAL_PREFIXES) and _populated(record, _RECONSTRUCTED_PREFIXES):
+        violations.append("mixed provenance: actual_* and reconstructed_* both populated")
 
     return violations
+
+
+def _finite_number(value):
+    return isinstance(value, (int, float)) and not isinstance(value, bool) and math.isfinite(value)
 
 
 def append_record(path: Path, record: dict[str, Any]) -> None:
@@ -73,6 +94,7 @@ def append_record(path: Path, record: dict[str, Any]) -> None:
     with path.open("a", encoding="utf-8") as handle:
         handle.write(json.dumps(record, sort_keys=True) + "\n")
         handle.flush()
+        os.fsync(handle.fileno())
 
 
 def read_records(path: Path) -> list[dict[str, Any]]:
@@ -80,7 +102,13 @@ def read_records(path: Path) -> list[dict[str, Any]]:
     return [json.loads(line) for line in text.splitlines()] if text else []
 
 
-def idempotency_key(experiment_uuid: str, phase: str, config_id: str, n: int,
-                    replicate: int, condition: str, purpose: str) -> str:
-    return "/".join([experiment_uuid, phase, config_id, str(n),
-                     str(replicate), condition, purpose])
+def idempotency_key(
+    experiment_uuid: str,
+    phase: str,
+    config_id: str,
+    n: int,
+    replicate: int,
+    condition: str,
+    purpose: str,
+) -> str:
+    return "/".join([experiment_uuid, phase, config_id, str(n), str(replicate), condition, purpose])

@@ -11,6 +11,8 @@ import numpy as np
 from scipy.stats import beta
 
 ROUNDING = 2e-14
+# At most 8194 branch candidates per inversion. Discovery uses depths <= 8.
+MAX_DEPTH = 4096
 
 
 @dataclass(frozen=True)
@@ -42,8 +44,11 @@ def _integers(values, name, minimum):
         or not np.all(np.isfinite(arr))
         or np.any(arr < minimum)
         or np.any(arr != np.floor(arr))
+        or np.any(arr >= 2**63)
     ):
         raise ValueError(f"{name} must be a nonempty vector of integers >= {minimum}")
+    if name == "depths" and np.any(arr > MAX_DEPTH):
+        raise ValueError(f"depths exceed the safe inversion maximum {MAX_DEPTH}")
     return arr.astype(np.int64)
 
 
@@ -77,7 +82,12 @@ def merge(intervals):
 
 def sine_preimage(lo, hi, depth):
     """All theta in [0,pi/2] with sin((2k+1)theta)^2 in [lo,hi]."""
-    if not (0 <= lo <= hi <= 1) or depth < 0 or int(depth) != depth:
+    if (
+        not (0 <= lo <= hi <= 1)
+        or not math.isfinite(depth)
+        or not 0 <= depth <= MAX_DEPTH
+        or int(depth) != depth
+    ):
         raise ValueError("invalid probability interval or depth")
     d = 2 * int(depth) + 1
     left, right = math.asin(math.sqrt(lo)), math.asin(math.sqrt(hi))

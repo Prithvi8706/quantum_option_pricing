@@ -74,6 +74,8 @@ def by_id(cid: str) -> Contract:
 def validate_domain(S0: float, K: float, r: float, T: float, sigma: float,
                     dividend: float = 0.0) -> None:
     """Reject any out-of-domain input with a named error. Never clamps."""
+    if not all(math.isfinite(x) for x in (S0, K, r, T, sigma, dividend)):
+        raise DomainError("NONFINITE_INPUT", "all contract inputs must be finite")
     if S0 <= 0:
         raise DomainError("NONPOSITIVE_SPOT", f"S0={S0}")
     if K <= 0:

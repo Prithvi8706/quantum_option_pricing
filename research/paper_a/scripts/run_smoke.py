@@ -4,10 +4,12 @@ Exercises config -> references -> circuit -> recorded IQAE -> raw records ->
 resources -> validation -> COMPLETE, so the pipeline is proven before any
 full experiment runs.
 """
+
 from __future__ import annotations
 
 import hashlib
 import json
+import os
 from pathlib import Path
 
 from qiskit.primitives import Sampler
@@ -21,11 +23,18 @@ from research.paper_a.payoff import C_RESCALING, presentation_clipped, to_price
 from research.paper_a.recording import RecordingSampler
 from research.paper_a.references import support_bounds
 from research.paper_a.resources import (
-    executed_powers, m_a_executed, m_a_logical, m_q_executed,
-    max_executed_depth, shot_weighted_gates,
+    executed_powers,
+    m_a_executed,
+    m_a_logical,
+    m_q_executed,
+    max_executed_depth,
+    shot_weighted_gates,
 )
 from research.paper_a.schema import (
-    SCHEMA_VERSION, append_record, idempotency_key, read_records,
+    SCHEMA_VERSION,
+    append_record,
+    idempotency_key,
+    read_records,
     validate_record,
 )
 from research.paper_a.streams import stream_key
@@ -41,13 +50,63 @@ def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def _write_state(path, payload):
+    """Flush a replacement before publishing it; never publish a partial marker."""
+    temporary = path.with_name(path.name + ".tmp")
+    with temporary.open("w", encoding="utf-8") as stream:
+        json.dump(payload, stream, allow_nan=False, indent=2)
+        stream.flush()
+        os.fsync(stream.fileno())
+    os.replace(temporary, path)
+
+
+def _indexed_records(path):
+    rows = read_records(path) if path.exists() else []
+    indexed = {r["idempotency_key"]: r for r in rows}
+    if len(indexed) != len(rows):
+        raise ValueError(f"duplicate attempt keys in {path.name}")
+    return indexed
+
+
+def _recover_pairs(out, raw_path, res_path):
+    """Recover only original recorded payloads, never reconstructed resources."""
+    raw, resources = _indexed_records(raw_path), _indexed_records(res_path)
+    for journal in sorted((out / "attempt_journal").glob("*.json")):
+        pair = json.loads(journal.read_text(encoding="utf-8"))
+        key = pair["raw"]["idempotency_key"]
+        if pair["resources"]["idempotency_key"] != key:
+            raise ValueError("journal attempt keys differ")
+        for field, saved, path in (("raw", raw, raw_path), ("resources", resources, res_path)):
+            if key in saved and saved[key] != pair[field]:
+                raise ValueError(f"journal conflicts with {field} record")
+            if key not in saved:
+                append_record(path, pair[field])
+                saved[key] = pair[field]
+    if raw.keys() != resources.keys():
+        raise ValueError("unpaired legacy attempt has no recovery journal; retain and audit")
+    return set(raw)
+
+
+def _persist_pair(out, raw_path, res_path, record, resource):
+    journals = out / "attempt_journal"
+    journals.mkdir(exist_ok=True)
+    key = record["idempotency_key"]
+    path = journals / (hashlib.sha256(key.encode()).hexdigest() + ".json")
+    if path.exists():
+        raise ValueError("attempt journal already exists; recovery must run first")
+    _write_state(path, {"raw": record, "resources": resource})
+    append_record(raw_path, record)
+    append_record(res_path, resource)
+
+
 def run_smoke(output_dir, shots: int = 512) -> dict:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     raw_path, res_path = out / "raw.jsonl", out / "resources.jsonl"
 
-    done = {r["idempotency_key"] for r in read_records(raw_path)} \
-        if raw_path.exists() else set()
+    # Invalidate a stale success marker before any recovery or validation can fail.
+    (out / "COMPLETE").unlink(missing_ok=True)
+    done = _recover_pairs(out, raw_path, res_path)
     environment = capture_environment()
     planned_attempts = 0
 
@@ -61,47 +120,55 @@ def run_smoke(output_dir, shots: int = 512) -> dict:
             # Counts planned config x replicate combinations, including ones
             # skipped below because they were already done.
             planned_attempts += 1
-            key = idempotency_key(EXPERIMENT_UUID, "SMOKE", cid, N, replicate,
-                                  "ideal", "shots")
+            key = idempotency_key(EXPERIMENT_UUID, "SMOKE", cid, N, replicate, "ideal", "shots")
             if key in done:
                 continue
 
-            skey = stream_key("paper-a/pilot/v1", EXPERIMENT_UUID, "SMOKE",
-                              cid, N, replicate, "ideal", "shots")
-            sampler = RecordingSampler(Sampler(options={"seed": replicate}),
-                                       shots=shots)
+            skey = stream_key(
+                "paper-a/pilot/v1", EXPERIMENT_UUID, "SMOKE", cid, N, replicate, "ideal", "shots"
+            )
+            sampler = RecordingSampler(Sampler(options={"seed": replicate}), shots=shots)
             iqae = IterativeAmplitudeEstimation(
-                epsilon_target=0.05, alpha=0.05, confint_method="beta",
-                sampler=sampler)
-            result = iqae.estimate(EstimationProblem(
-                state_preparation=ec.circuit,
-                objective_qubits=[ec.objective_qubit]))
+                epsilon_target=0.05, alpha=0.05, confint_method="beta", sampler=sampler
+            )
+            result = iqae.estimate(
+                EstimationProblem(
+                    state_preparation=ec.circuit, objective_qubits=[ec.objective_qubit]
+                )
+            )
 
-            price = to_price(result.estimation, contract.K, U, C_RESCALING,
-                             contract.r, contract.T)
+            price = to_price(result.estimation, contract.K, U, C_RESCALING, contract.r, contract.T)
             record = {
                 "schema_version": SCHEMA_VERSION,
-                "experiment_uuid": EXPERIMENT_UUID, "phase": "SMOKE",
-                "config_id": cid, "n": N, "replicate": replicate,
-                "condition": "ideal", "attempt_kind": "first_planned",
-                "idempotency_key": key, "stream_key": skey,
+                "experiment_uuid": EXPERIMENT_UUID,
+                "phase": "SMOKE",
+                "config_id": cid,
+                "n": N,
+                "replicate": replicate,
+                "condition": "ideal",
+                "attempt_kind": "first_planned",
+                "idempotency_key": key,
+                "stream_key": skey,
                 "raw_estimation": float(result.estimation),
-                "raw_confidence_interval": [float(x) for x in
-                                            result.confidence_interval],
+                "raw_confidence_interval": [float(x) for x in result.confidence_interval],
                 "raw_price": price,
                 "presentation_clipped_price": presentation_clipped(price),
-                "completion_state": "complete", "environment": environment,
-                "P_BS": ladder.P_BS, "P_support": ladder.P_support,
-                "P_grid": ladder.P_grid, "P_circuit": ladder.P_circuit,
-                "e_support": ladder.e_support, "e_grid": ladder.e_grid,
+                "completion_state": "complete",
+                "environment": environment,
+                "P_BS": ladder.P_BS,
+                "P_support": ladder.P_support,
+                "P_grid": ladder.P_grid,
+                "P_circuit": ladder.P_circuit,
+                "e_support": ladder.e_support,
+                "e_grid": ladder.e_grid,
                 "e_encode": ladder.e_encode,
             }
-            append_record(raw_path, record)
-
             powers = executed_powers(result.powers, sampler.invocations)
             shot_list = [i.effective_shots for i in sampler.invocations]
-            append_record(res_path, {
-                "idempotency_key": key, "config_id": cid, "n": N,
+            resource = {
+                "idempotency_key": key,
+                "config_id": cid,
+                "n": N,
                 "replicate": replicate,
                 "invocations": len(sampler.invocations),
                 "powers": powers,
@@ -109,23 +176,35 @@ def run_smoke(output_dir, shots: int = 512) -> dict:
                 "m_a_executed": m_a_executed(powers, shot_list),
                 "m_q_executed": m_q_executed(powers, shot_list),
                 "max_executed_depth": max_executed_depth(sampler.invocations),
-                "shot_weighted_gates": shot_weighted_gates(
-                    sampler.invocations),
+                "shot_weighted_gates": shot_weighted_gates(sampler.invocations),
                 "provenance": "actual",
-            })
+            }
+            _persist_pair(out, raw_path, res_path, record, resource)
 
-    violations = {r["idempotency_key"]: validate_record(r)
-                  for r in read_records(raw_path)}
-    (out / "validation.json").write_text(json.dumps(
-        {"violations": {k: v for k, v in violations.items() if v},
-         "records": len(violations)}, indent=2))
+    violations = {r["idempotency_key"]: validate_record(r) for r in read_records(raw_path)}
+    _write_state(
+        out / "validation.json",
+        {"violations": {k: v for k, v in violations.items() if v}, "records": len(violations)},
+    )
+    if any(violations.values()):
+        raise ValueError("raw record validation failed; no COMPLETE marker")
+    expected_keys = {
+        idempotency_key(EXPERIMENT_UUID, "SMOKE", cid, N, rep, "ideal", "shots")
+        for cid in CONFIGS
+        for rep in REPLICATES
+    }
+    if _recover_pairs(out, raw_path, res_path) != expected_keys:
+        raise ValueError("unexpected or missing attempt keys; no COMPLETE marker")
 
-    (out / "COMPLETE").write_text(json.dumps({
-        "raw_sha256": _sha256(raw_path),
-        "resources_sha256": _sha256(res_path),
-        "validation_sha256": _sha256(out / "validation.json"),
-        "environment": environment,
-    }, indent=2))
+    _write_state(
+        out / "COMPLETE",
+        {
+            "raw_sha256": _sha256(raw_path),
+            "resources_sha256": _sha256(res_path),
+            "validation_sha256": _sha256(out / "validation.json"),
+            "environment": environment,
+        },
+    )
     return {"planned_attempts": planned_attempts, "records": len(violations)}
 
 

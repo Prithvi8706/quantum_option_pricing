@@ -1,8 +1,10 @@
 """Annex I: ordered append-only sampler recording and frozen transpilation.
 
 Every primitive call is recorded BEFORE execution so that an exception still
-leaves the invocation's logical and ISA resources durable.
+leaves the invocation's logical and ISA resources in the in-memory ledger.
+The caller is responsible for persisting that ledger.
 """
+
 from __future__ import annotations
 
 import hashlib
@@ -37,7 +39,7 @@ def transpile_frozen(circuit: QuantumCircuit) -> tuple[QuantumCircuit, str]:
     isa = transpile(
         circuit,
         basis_gates=FROZEN_BASIS,
-        coupling_map=None,           # all-to-all
+        coupling_map=None,  # all-to-all
         optimization_level=OPTIMIZATION_LEVEL,
         seed_transpiler=TRANSPILER_SEED,
     )
@@ -70,36 +72,44 @@ class RecordingSampler:
         self.invocations: list[Invocation] = []
 
     def run(self, circuits, **kwargs):
-        circuit = circuits[0]
-        isa, isa_hash = transpile_frozen(circuit)
-        record = Invocation(
-            ordinal=len(self.invocations),
-            requested_shots=self._shots,
-            logical_qpy_sha256=_qpy_sha256(circuit),
-            isa_qpy_sha256=isa_hash,
-            isa_depth=isa.depth(),
-            isa_ops=dict(isa.count_ops()),
-            status="running",
-        )
-        self.invocations.append(record)   # durable BEFORE execution
-
-        try:
-            job = self._inner.run([isa], shots=self._shots, **kwargs)
-            result = job.result()
-        except Exception as exc:
-            record.status = "failed"
-            record.exception = f"{type(exc).__name__}: {exc}"
-            raise
-
-        metadata = result.metadata[0]
-        if "shots" not in metadata:
-            record.status = "failed"
-            record.exception = (
-                "primitive result metadata has no 'shots' key; "
-                "effective shots cannot be established"
+        circuits = [circuits] if isinstance(circuits, QuantumCircuit) else list(circuits)
+        if not circuits:
+            raise ValueError("circuit batch must not be empty")
+        if "shots" in kwargs:
+            raise ValueError("shots are fixed on RecordingSampler")
+        batch, records = [], []
+        for circuit in circuits:
+            isa, isa_hash = transpile_frozen(circuit)
+            batch.append(isa)
+            records.append(
+                Invocation(
+                    ordinal=len(self.invocations) + len(records),
+                    requested_shots=self._shots,
+                    logical_qpy_sha256=_qpy_sha256(circuit),
+                    isa_qpy_sha256=isa_hash,
+                    isa_depth=isa.depth(),
+                    isa_ops=dict(isa.count_ops()),
+                    status="running",
+                )
             )
-            raise KeyError(record.exception)
-
-        record.effective_shots = int(metadata["shots"])
-        record.status = "complete"
+        self.invocations.extend(records)  # record the entire batch before submission
+        try:
+            job = self._inner.run(batch, shots=self._shots, **kwargs)
+            result = job.result()
+            if len(result.metadata) != len(records):
+                raise ValueError("sampler metadata length does not match circuit batch")
+            for record, metadata in zip(records, result.metadata):
+                if "shots" not in metadata:
+                    raise KeyError("primitive result metadata has no 'shots' key")
+                value = metadata["shots"]
+                if isinstance(value, bool) or int(value) != value or value <= 0:
+                    raise ValueError("invalid effective shots in primitive metadata")
+                record.effective_shots = int(value)
+                record.status = "complete"
+        except Exception as exc:
+            for record in records:
+                if record.status != "complete":
+                    record.status = "failed"
+                    record.exception = f"{type(exc).__name__}: {exc}"
+            raise
         return job

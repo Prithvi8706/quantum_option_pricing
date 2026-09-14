@@ -246,6 +246,10 @@ def main():
                 )
                 persist(row)
                 pilot_rows.append(row)
+                if time.perf_counter() - started > 3600:
+                    stream.flush()
+                    os.fsync(stream.fileno())
+                    raise TimeoutError("Compute limit reached; pilot records retained")
         pilot_summary = dict(
             experiment="split_pilot_pooled",
             condition="matched",
@@ -257,6 +261,8 @@ def main():
         os.fsync(stream.fileno())
     write_json(path / "summary.json", summary)
     write_json(path / "timing.json", {"wall_seconds": time.perf_counter() - started})
+    if time.perf_counter() - started > 3600:
+        raise TimeoutError("Compute limit reached before completion; records retained")
     finish_run(path)
     print("Completed fixed, direct, and independent split-pilot experiments", flush=True)
 

@@ -16,7 +16,13 @@ start**. See the spec's E0 section for what each gate proves.
     venv/Scripts/python.exe -m research.paper_a.scripts.run_smoke
 
 Writes `data/paper_a/smoke/` with `raw.jsonl`, `resources.jsonl`,
-`validation.json`, and `COMPLETE`. Re-running is idempotent.
+`validation.json`, and `COMPLETE`. New runs also retain per-attempt journals of
+the original result/resource payloads. Interrupted appends recover from those
+journals without resampling or reconstructing actual resources. Legacy partial
+pairs without journals fail closed and must be audited; they are not silently
+repaired. Invalid reruns remove a stale completion marker and never publish a
+new one. File writes are flushed and fsynced; this is not a guarantee against
+every filesystem/power-loss failure or concurrent writers.
 
 ## Frozen values
 
