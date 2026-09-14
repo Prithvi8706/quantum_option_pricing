@@ -1,5 +1,7 @@
 """Audited logical cost ledgers for fixed schedules; excludes hardware routing."""
 
+from .checks import archive_path
+
 import argparse
 import json
 import shutil
@@ -65,7 +67,7 @@ def main():
         folder = ROOT / "results/journal_sprint" / name
         manifest = json.loads((folder / "complete.json").read_text())
         for relative, expected in manifest["sha256"].items():
-            if sha256(folder / relative) != expected:
+            if sha256(archive_path(folder, relative)) != expected:
                 raise ValueError(f"hash mismatch: {name}/{relative}")
         verified[name] = {
             "files": len(manifest["sha256"]),

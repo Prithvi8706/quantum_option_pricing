@@ -1,5 +1,10 @@
 ## Scope
 
+Latest integration gate: [additional review findings, local-edit reconciliation
+and verification](https://github.com/Prithvi8706/quantum_option_pricing/blob/journal-reengineering-weeks-1-9/docs/journal_sprint/MERGE_VERIFICATION.md).
+Neutral checks were investigated, not treated as approval. The user has explicitly
+authorized merge after the final verification. Scientific publication gates remain open.
+
 Update: Macroscope completed its user-triggered review. All 15 findings were
 examined and addressed; see the
 [finding-by-finding response](https://github.com/Prithvi8706/quantum_option_pricing/blob/journal-reengineering-weeks-1-9/docs/journal_sprint/MACROSCOPE_REVIEW_RESPONSE.md).
@@ -18,6 +23,11 @@ Review entry points:
 - [Full project log](https://github.com/Prithvi8706/quantum_option_pricing/blob/journal-reengineering-weeks-1-9/docs/journal_sprint/PROJECT_LOG.md)
 
 ## Validation
+
+- Final reconciled full suite: **410 passed**, 11 upstream warnings, 336.99 seconds.
+  Reproduced 43,200 archived records, verified 926 week-3 artifact hashes, and
+  repeated all 312 numerical cases with byte-identical records to week 9.
+  Ruff and whitespace checks passed. See the merge gate for exact scope.
 
 - After Macroscope fixes: **390 passed**, 11 upstream warnings, 142.10 seconds;
   includes 53 new regression tests. Updated 312-case diagnostic is byte-identical

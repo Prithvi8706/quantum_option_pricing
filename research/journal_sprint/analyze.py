@@ -12,6 +12,17 @@ from .intervals import clopper_pearson
 from .storage import ROOT, finish_run, sha256, start_run, write_json
 
 
+def validate_experiments(records, expected):
+    actual = {name: sum(r["experiment"] == name for r in records) for name in expected}
+    require(
+        actual == expected
+        and len(records) == sum(expected.values())
+        and {r["experiment"] for r in records} == set(expected),
+        (actual, expected),
+    )
+    return actual
+
+
 def main():
     base = ROOT / "results/journal_sprint"
     inputs = [
@@ -38,8 +49,7 @@ def main():
         )
         groups[key].append(row)
     expected = {"fixed": 14000, "direct": 11200, "split_pilot": 1400}
-    actual = {name: sum(r["experiment"] == name for r in records) for name in expected}
-    require(actual == expected, (actual, expected))
+    actual = validate_experiments(records, expected)
     cells = []
     for (experiment, condition, shots, amplitude), rows in groups.items():
         # Pilot-selected shot subgroups are selection-conditioned. Report only

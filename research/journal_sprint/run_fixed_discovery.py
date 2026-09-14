@@ -1,5 +1,7 @@
 """Week-5 fixed-design comparison with distinct calibration/validation streams."""
 
+from .checks import archive_path
+
 import argparse
 from collections import defaultdict
 from dataclasses import asdict
@@ -43,7 +45,7 @@ def checked_inputs():
         folder = base / name
         manifest = json.loads((folder / "complete.json").read_text())
         for relative, expected in manifest["sha256"].items():
-            if sha256(folder / relative) != expected:
+            if sha256(archive_path(folder, relative)) != expected:
                 raise ValueError(f"corrupt input {name}/{relative}")
         manifests[name] = sha256(folder / "complete.json")
         if name != "week5_fixed_costs_v1":

@@ -1,5 +1,7 @@
 """Reconstruct transfer/pricing records and costs; not an independent math proof."""
 
+from .checks import archive_path
+
 import argparse
 from collections import Counter
 import json
@@ -29,7 +31,7 @@ def main():
     source = args.source
     manifest = json.loads((source / "complete.json").read_text())
     for name, expected in manifest["sha256"].items():
-        require(sha256(source / name) == expected, f"hash: {name}")
+        require(sha256(archive_path(source, name)) == expected, f"hash: {name}")
     decisions = json.loads((source / "decisions.json").read_text())
     truths = json.loads((source / "diagnostic_truths.json").read_text())
     seen = set()

@@ -1,5 +1,7 @@
 """Read-only verification and separately versioned week-1/2 analysis."""
 
+from .checks import archive_path, require_archives
+
 from .checks import require
 
 import argparse
@@ -10,6 +12,7 @@ import math
 import shutil
 import subprocess
 import time
+from pathlib import Path
 
 import numpy as np
 from scipy.stats import beta
@@ -56,23 +59,26 @@ def summarize_cell(rows):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", default="results/journal_sprint/week12_closeout_v1")
+    parser.add_argument("--archive-root", type=Path, default=ROOT / "results/journal_sprint")
     args = parser.parse_args()
+    base = args.archive_root
+    require_archives(base, ("price_intervals_v2c", "pricing_gate_v2b", "pricing_gate_v2a_retry1"))
     path = start_run(args.output, {"purpose": "post-experiment verification, not new trials"})
     shutil.copy2(__file__, path / "closeout.py")
     hashes = {}
     for name in ("price_intervals_v2c", "pricing_gate_v2b", "pricing_gate_v2a_retry1"):
-        folder = ROOT / "results/journal_sprint" / name
+        folder = base / name
         complete = json.loads((folder / "complete.json").read_text())
         for relative, expected in complete["sha256"].items():
-            require(sha256(folder / relative) == expected, (name, relative))
+            require(sha256(archive_path(folder, relative)) == expected, (name, relative))
         hashes[name] = {
             "artifacts_verified": len(complete["sha256"]),
             "manifest_sha256": sha256(folder / "complete.json"),
         }
-    baseline = ROOT / "results/journal_sprint/pricing_gate_v2b/rows.json"
+    baseline = base / "pricing_gate_v2b/rows.json"
     models = json.loads(baseline.read_text())
     lookup = {(r["contract"], r["n"], r["scale"]): r for r in models}
-    raw = ROOT / "results/journal_sprint/price_intervals_v2c/records.jsonl"
+    raw = base / "price_intervals_v2c/records.jsonl"
     rows = [json.loads(line) for line in raw.read_text().splitlines()]
     require(len(rows) == 43200)
     keys = ("arm", "condition", "shots", "contract", "method")

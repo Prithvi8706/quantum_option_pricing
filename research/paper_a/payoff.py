@@ -15,8 +15,8 @@ C_RESCALING = 0.25
 
 
 def _check_c(c: float) -> None:
-    if c <= 0:
-        raise ValueError(f"rescaling factor must be positive, got {c}")
+    if not math.isfinite(c) or not 0 < c <= 1:
+        raise ValueError(f"rescaling factor must be in (0,1], got {c}")
 
 
 def objective_amplitudes(x: np.ndarray, K: float, U: float,

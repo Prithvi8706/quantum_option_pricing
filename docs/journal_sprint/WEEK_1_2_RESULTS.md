@@ -1,5 +1,10 @@
 # Weeks 1–2: implemented feasibility sprint
 
+Evidence availability: historical result, reading and test paths below refer to
+the originating local workspace unless explicitly listed as included in the PR.
+See [archive inputs and reconstruction](ARCHIVE_INPUTS.md) for the preserved
+location, exclusions and configurable verification commands.
+
 **Current status:** [10 September week 1–2 closeout](WEEK_1_2_CLOSEOUT.md), including
 the completed [finite-shot dollar experiment](PRICE_INTERVALS_V2C_RESULTS.md),
 [six-paper synthesis](LITERATURE_SUPPLEMENT.md), and

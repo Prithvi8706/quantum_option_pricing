@@ -1,5 +1,7 @@
 """Reconstruct week-5 fixed-design records, diagnostic targets and cost ledgers."""
 
+from .checks import archive_path
+
 import argparse
 from collections import Counter, defaultdict
 from dataclasses import asdict
@@ -86,7 +88,7 @@ def main():
     source = args.source
     manifest = json.loads((source / "complete.json").read_text())
     for name, expected in manifest["sha256"].items():
-        require(sha256(source / name) == expected, f"hash mismatch {name}")
+        require(sha256(archive_path(source, name)) == expected, f"hash mismatch {name}")
     ledger, profiles, manifests = checked_inputs()
     planned = json.loads((source / "planned.json").read_text())["config"]
     validate_config(planned, manifests)

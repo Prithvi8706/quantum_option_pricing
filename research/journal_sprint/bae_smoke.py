@@ -25,6 +25,10 @@ def main():
     output.mkdir(parents=True, exist_ok=False)
     shutil.copy2(__file__, output / "wrapper.py")
     head = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=checkout, text=True).strip()
+    if subprocess.check_output(
+        ["git", "status", "--porcelain", "--untracked-files=all"], cwd=checkout, text=True
+    ).strip():
+        raise RuntimeError("BAE checkout is not clean")
     if head != "4e1e13d6b151c9a3ca02157ebf6963c1c29ea793":
         raise RuntimeError("unexpected BAE source revision")
     metadata = {

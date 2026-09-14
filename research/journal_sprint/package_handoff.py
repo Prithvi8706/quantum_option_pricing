@@ -1,5 +1,7 @@
 """Snapshot the scoped final handoff without modifying completed experiments."""
 
+from .checks import archive_path
+
 from .checks import require
 
 import argparse
@@ -9,6 +11,19 @@ import shutil
 import xml.etree.ElementTree as ET
 
 from .storage import ROOT, finish_run, sha256, start_run, write_json
+
+
+def checked_test_report(source):
+    suites = list(ET.parse(source).getroot().iter("testsuite"))
+    require(bool(suites), "test report contains no suites")
+    totals = {
+        key: sum(int(s.attrib[key]) for s in suites) for key in ("tests", "errors", "failures")
+    }
+    require(
+        totals["tests"] > 0 and totals["errors"] == totals["failures"] == 0,
+        "test report has failures, errors or no tests",
+    )
+    return {key: str(value) for key, value in totals.items()}
 
 
 def main():
@@ -23,9 +38,7 @@ def main():
     tests = {}
     for name in ("tests_week12_closeout.xml", "tests_closeout_sprint.xml"):
         source = ROOT / "results/journal_sprint" / name
-        suite = ET.parse(source).getroot().find("testsuite")
-        tests[name] = dict(suite.attrib)
-        require(suite.attrib["errors"] == suite.attrib["failures"] == "0")
+        tests[name] = checked_test_report(source)
         files.append(source)
     links = []
     for document in documents:
@@ -44,7 +57,12 @@ def main():
         folder = ROOT / "results/journal_sprint" / name
         manifest = folder / "complete.json"
         content = json.loads(manifest.read_text())
-        require(all(sha256(folder / file) == value for file, value in content["sha256"].items()))
+        require(
+            all(
+                sha256(archive_path(folder, file)) == value
+                for file, value in content["sha256"].items()
+            )
+        )
         provenance[name] = sha256(manifest)
     write_json(
         path / "index.json",

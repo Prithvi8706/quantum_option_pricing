@@ -1,5 +1,7 @@
 """Post-run integrity checks and descriptive response-model diagnostics."""
 
+from .checks import archive_path
+
 from .checks import require
 
 import importlib.metadata
@@ -13,7 +15,7 @@ def main():
     source = ROOT / "results/journal_sprint/week3_circuits_v1_retry1"
     manifest = json.loads((source / "complete.json").read_text())
     for name, value in manifest["sha256"].items():
-        require(sha256(source / name) == value, name)
+        require(sha256(archive_path(source, name)) == value, name)
     summary = json.loads((source / "summary.json").read_text())
     rows = summary["rows"]
     require(len(rows) == 24 and len({r["id"] for r in rows}) == 24)

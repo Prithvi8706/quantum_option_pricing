@@ -1,5 +1,7 @@
 """Replay durable selection events and independent final validation; descriptive screen."""
 
+from .checks import archive_names, archive_path
+
 import argparse
 from collections import Counter, defaultdict
 import json
@@ -105,13 +107,13 @@ def main():
     source = args.source
     manifest = json.loads((source / "complete.json").read_text())
     for name, digest in manifest["sha256"].items():
-        require(sha256(source / name) == digest, f"archive hash: {name}")
+        require(sha256(archive_path(source, name)) == digest, f"archive hash: {name}")
     config = json.loads((source / "planned.json").read_text())["config"]
     profiles, manifests = inputs()
     validate_config(config, manifests)
     snap = source / "source_snapshot"
-    names = {str(p.relative_to(snap)) for p in snap.rglob("*") if p.is_file()}
-    require(names == set(config["dependency_sha256"]), "source inventory")
+    names = {p.relative_to(snap).as_posix() for p in snap.rglob("*") if p.is_file()}
+    require(names == archive_names(config["dependency_sha256"]), "source inventory")
     required = {
         "research/journal_sprint/run_representation_pilot.py",
         "research/journal_sprint/calibrated_readout.py",
@@ -120,7 +122,8 @@ def main():
     require(required <= {Path(p).as_posix() for p in names}, "required dependencies")
     for name, digest in config["dependency_sha256"].items():
         require(
-            sha256(snap / name) == digest and sha256(ROOT / name) == digest,
+            sha256(archive_path(snap, name)) == digest
+            and sha256(archive_path(ROOT, name)) == digest,
             f"dependency drift: {name}",
         )
     menu = prepare(profiles)

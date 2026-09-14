@@ -84,7 +84,12 @@ def validate_record(record: dict[str, Any]) -> list[str]:
 
 
 def _finite_number(value):
-    return isinstance(value, (int, float)) and not isinstance(value, bool) and math.isfinite(value)
+    try:
+        return (
+            isinstance(value, (int, float)) and not isinstance(value, bool) and math.isfinite(value)
+        )
+    except OverflowError:
+        return False
 
 
 def append_record(path: Path, record: dict[str, Any]) -> None:

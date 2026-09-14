@@ -1,5 +1,27 @@
 # Journal reengineering: running record
 
+## 2026-09-14: neutral checks, reconciliation and final merge verification
+
+User requested that neutral checks be inspected, blockers resolved, local edits
+reconciled and PR #1 merged after thorough verification. The neutral conclusions
+contained a negative review report, so they were not accepted as a green light.
+See [the merge gate](MERGE_VERIFICATION.md) for each additional finding, two
+non-reproducing reports, reconciliation decisions and verification evidence.
+Six tracked user edits were preserved in a named recovery stash and reconciled;
+unrelated untracked artifacts remain outside this PR. Historical evidence stays
+immutable. Final test/push/merge disposition follows the linked gate and PR log.
+
+Final integrated suite: 410 passed, 11 upstream warnings, 336.99 seconds. The
+43,200-row closeout replay, week-3 926-hash audit and 312-case numerical diagnostic
+passed. Numerical records remain byte-identical to week 9. Ruff, whitespace and
+new documentation links passed. Normal exact-head merge is authorized by the
+user; no administrative bypass or claim of automatic Macroscope approval.
+
+Evidence availability: historical result, reading and test paths below refer to
+the originating local workspace unless explicitly listed as included in the PR.
+See [archive inputs and reconstruction](ARCHIVE_INPUTS.md) for the preserved
+location, exclusions and configurable verification commands.
+
 ## 2026-09-14: Macroscope review remediation
 
 User reported the completed review and requested necessary fixes. Read all 15

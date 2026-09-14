@@ -14,7 +14,7 @@ from qiskit.quantum_info import Statevector
 from qiskit_finance.circuit.library import LogNormalDistribution
 
 from research.paper_a.benchmark import Contract
-from research.paper_a.payoff import h_inverse
+from research.paper_a.payoff import _check_c, h_inverse
 
 
 @dataclass(frozen=True)
@@ -34,6 +34,7 @@ def build_european(c: Contract, L: float, U: float, n: int,
     LinearAmplitudeFunction's `slope` and `image` must share units: the
     payoff is f(x) = x - K on [K, U], so slope is 1.0 and image is (0, U-K).
     """
+    _check_c(rescaling)
     mu_ln = (c.r - 0.5 * c.sigma ** 2) * c.T + math.log(c.S0)
     s_ln = c.sigma * math.sqrt(c.T)
 

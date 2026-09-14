@@ -1,5 +1,7 @@
 """Week-7 exact replay, paired nesting checks and predeclared descriptive analysis."""
 
+from .checks import archive_names, archive_path
+
 import argparse
 from collections import Counter, defaultdict
 from itertools import combinations
@@ -150,16 +152,17 @@ def main():
     source = args.source
     manifest = json.loads((source / "complete.json").read_text())
     for name, digest in manifest["sha256"].items():
-        require(sha256(source / name) == digest, f"archive hash: {name}")
+        require(sha256(archive_path(source, name)) == digest, f"archive hash: {name}")
     config = json.loads((source / "planned.json").read_text())["config"]
     ledger, profiles, manifests = checked_inputs()
     validate_config(config, manifests)
     snapshot = source / "source_snapshot"
-    inventory = {str(p.relative_to(snapshot)) for p in snapshot.rglob("*") if p.is_file()}
-    require(inventory == set(config["dependency_sha256"]), "dependency inventory")
+    inventory = {p.relative_to(snapshot).as_posix() for p in snapshot.rglob("*") if p.is_file()}
+    require(inventory == archive_names(config["dependency_sha256"]), "dependency inventory")
     for name, digest in config["dependency_sha256"].items():
         require(
-            sha256(snapshot / name) == digest and sha256(ROOT / name) == digest,
+            sha256(archive_path(snapshot, name)) == digest
+            and sha256(archive_path(ROOT, name)) == digest,
             f"source drift: {name}",
         )
     required = {

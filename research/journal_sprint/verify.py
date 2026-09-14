@@ -1,5 +1,7 @@
 """Check completed run hashes and preserve the final runnable source package."""
 
+from .checks import archive_path
+
 from .checks import require
 
 import json
@@ -24,7 +26,7 @@ def main():
     for name in runs:
         manifest = json.loads((base / name / "complete.json").read_text(encoding="utf-8"))
         for relative, expected in manifest["sha256"].items():
-            require(sha256(base / name / relative) == expected, (name, relative))
+            require(sha256(archive_path(base / name, relative)) == expected, (name, relative))
         verified[name] = len(manifest["sha256"])
         if name == "comparator_v1":
             validate_golden(json.loads((base / name / "summary.json").read_text()))
@@ -46,6 +48,9 @@ def main():
     )
     shutil.copy2(test_report, path / "tests_final.xml")
     sources = list((ROOT / "research/journal_sprint").rglob("*.py"))
+    sources += list((ROOT / "research/paper_a").rglob("*.py"))
+    sources += list((ROOT / "research/paper_a/configs").glob("*.json"))
+    sources += [ROOT / "research/__init__.py"]
     sources += list((ROOT / "docs/journal_sprint").glob("*.md"))
     sources += [
         ROOT / "pyproject.toml",

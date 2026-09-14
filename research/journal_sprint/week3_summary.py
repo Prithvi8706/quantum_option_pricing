@@ -1,8 +1,11 @@
 """Verify and summarize archived classical and resource discovery results."""
 
+from .checks import archive_path, require_archives
+
 import argparse
 from collections import defaultdict
 import json
+from pathlib import Path
 
 import numpy as np
 
@@ -13,8 +16,9 @@ from .run_comparator import validate_golden
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", default="results/journal_sprint/week3_summary_v1")
+    parser.add_argument("--archive-root", type=Path, default=ROOT / "results/journal_sprint")
     args = parser.parse_args()
-    base = ROOT / "results/journal_sprint"
+    base = args.archive_root
     runs = [
         "week3_classical_v1",
         "week3_resources_v1",
@@ -27,11 +31,12 @@ def main():
         "week3_legacy_environment_v1",
         "week3_biqae_environment_v1",
     ]
+    require_archives(base, runs)
     verified = {}
     for name in runs:
         manifest = json.loads((base / name / "complete.json").read_text())
         for relative, expected in manifest["sha256"].items():
-            if sha256(base / name / relative) != expected:
+            if sha256(archive_path(base / name, relative)) != expected:
                 raise RuntimeError(f"hash mismatch {name}/{relative}")
         verified[name] = len(manifest["sha256"])
     validate_golden(json.loads((base / "comparator_v1/summary.json").read_text()))

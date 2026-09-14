@@ -22,6 +22,7 @@ def materialize(output):
     shutil.copytree(archive / "source_snapshot", output)
     shutil.copy2(supplement, output / "docs/journal_sprint/PROTOCOL_V1.md")
     for name in ("requirements-legacy-circuit.txt", "vendor/LICENSE-csAE", "vendor/NOTICE.md"):
+        (output / "research/journal_sprint" / name).parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(
             ROOT / "research/journal_sprint" / name, output / "research/journal_sprint" / name
         )

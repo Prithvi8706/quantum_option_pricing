@@ -1684,7 +1684,8 @@ from research.paper_a.errors import (
 )
 from research.paper_a.payoff import C_RESCALING
 
-Q = 1e-4
+# The value selected over the full benchmark; 1e-4 breaches the support gate.
+Q = 1e-5
 
 
 def test_ladder_layers_are_stored_separately():

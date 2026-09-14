@@ -1,5 +1,10 @@
 # Week 6: transfer-position and calibration-cost discovery
 
+Evidence availability: historical result, reading and test paths below refer to
+the originating local workspace unless explicitly listed as included in the PR.
+See [archive inputs and reconstruction](ARCHIVE_INPUTS.md) for the preserved
+location, exclusions and configurable verification commands.
+
 Protocol: [locally predeclared grid](PROTOCOL_W6_TRANSFER_GRID.md).
 Discovery selected from week 5, not held-out confirmation or independently
 timestamped preregistration. All numbers below are synthetic model outcomes.

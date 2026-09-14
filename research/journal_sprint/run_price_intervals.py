@@ -1,5 +1,7 @@
 """V2C fixed and bound-selected finite-shot dollar intervals."""
 
+from .checks import archive_path, require_archives
+
 from .checks import require
 
 import argparse
@@ -7,6 +9,7 @@ import json
 import os
 import shutil
 import time
+from pathlib import Path
 
 import numpy as np
 
@@ -62,11 +65,20 @@ def summarize(rows):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", default="results/journal_sprint/price_intervals_v2c")
+    parser.add_argument(
+        "--source", type=Path, default=ROOT / "results/journal_sprint/pricing_gate_v2b"
+    )
     args = parser.parse_args()
-    baseline = ROOT / "results/journal_sprint/pricing_gate_v2b"
+    baseline = args.source
+    require_archives(baseline.parent, [baseline.name])
     original = json.loads((baseline / "rows.json").read_text())
     manifest = json.loads((baseline / "complete.json").read_text())
-    require(all(sha256(baseline / name) == value for name, value in manifest["sha256"].items()))
+    require(
+        all(
+            sha256(archive_path(baseline, name)) == value
+            for name, value in manifest["sha256"].items()
+        )
+    )
     started = time.perf_counter()
     choices = {}
     for cid in C6:

@@ -1,5 +1,10 @@
 # Primary-paper reading ledger
 
+Evidence availability: historical result, reading and test paths below refer to
+the originating local workspace unless explicitly listed as included in the PR.
+See [archive inputs and reconstruction](ARCHIVE_INPUTS.md) for the preserved
+location, exclusions and configurable verification commands.
+
 This is operational evidence, not the final literature supplement. Full PDFs,
 page-delimited extracted text, retrieval URLs and SHA-256 hashes are preserved
 in `results/journal_sprint/primary_pdfs_v1/`.

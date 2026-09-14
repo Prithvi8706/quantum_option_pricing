@@ -2,14 +2,27 @@ import re
 
 from research.paper_a.environment import capture_environment
 
-REQUIRED_PACKAGES = ("qiskit-terra", "qiskit-aer", "qiskit-algorithms",
-                     "qiskit-finance", "numpy", "scipy")
+REQUIRED_PACKAGES = (
+    "qiskit-terra",
+    "qiskit-aer",
+    "qiskit-algorithms",
+    "qiskit-finance",
+    "numpy",
+    "scipy",
+)
 
 
 def test_capture_returns_all_required_keys():
     env = capture_environment()
-    assert set(env) == {"python_version", "packages", "git_commit",
-                        "platform", "captured_at_utc"}
+    assert set(env) == {
+        "python_version",
+        "packages",
+        "git_commit",
+        "git_dirty",
+        "platform",
+        "captured_at_utc",
+    }
+    assert isinstance(env["git_dirty"], bool)
 
 
 def test_capture_records_every_required_package():

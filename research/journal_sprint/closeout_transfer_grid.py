@@ -1,5 +1,7 @@
 """Reconstruct week-6 discovery and calculate descriptive contrasts."""
 
+from .checks import archive_names, archive_path
+
 import argparse
 from collections import Counter, defaultdict
 from dataclasses import asdict
@@ -115,16 +117,16 @@ def main():
     source = args.source
     manifest = json.loads((source / "complete.json").read_text())
     for name, digest in manifest["sha256"].items():
-        require(sha256(source / name) == digest, f"archive hash: {name}")
+        require(sha256(archive_path(source, name)) == digest, f"archive hash: {name}")
     config = json.loads((source / "planned.json").read_text())["config"]
     ledger, profiles, manifests = checked_inputs()
     validate_config(config, manifests)
     snapshots = {
-        str(p.relative_to(source / "source_snapshot"))
+        p.relative_to(source / "source_snapshot").as_posix()
         for p in (source / "source_snapshot").rglob("*")
         if p.is_file()
     }
-    require(snapshots == set(config["dependency_sha256"]), "snapshot inventory")
+    require(snapshots == archive_names(config["dependency_sha256"]), "snapshot inventory")
     required = {
         "research/journal_sprint/run_transfer_grid.py",
         "research/journal_sprint/run_fixed_discovery.py",
@@ -132,8 +134,11 @@ def main():
     }
     require(required <= {Path(p).as_posix() for p in snapshots}, "required source inventory")
     for name, digest in config["dependency_sha256"].items():
-        require(sha256(source / "source_snapshot" / name) == digest, f"planned snapshot: {name}")
-        require(sha256(ROOT / name) == digest, f"live source drift: {name}")
+        require(
+            sha256(archive_path(source / "source_snapshot", name)) == digest,
+            f"planned snapshot: {name}",
+        )
+        require(sha256(archive_path(ROOT, name)) == digest, f"live source drift: {name}")
     prepared, truths = {}, {}
     for cid in C6:
         b, _ = tighter_bounds_for(by_id(cid), 6, 0.125)

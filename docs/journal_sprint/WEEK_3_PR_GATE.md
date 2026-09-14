@@ -1,5 +1,9 @@
 # Week 3 PR gate
 
+Historical week-3 status, not the current merge gate. PR #1 was subsequently
+opened and Macroscope review completed. Follow [the review response](MACROSCOPE_REVIEW_RESPONSE.md)
+and [merge verification](MERGE_VERIFICATION.md) for current decisions.
+
 ## Local discovery deliverables
 
 - Completed: actual-circuit/noise checks; readout/dependence stress; 480-row

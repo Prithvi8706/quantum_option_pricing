@@ -1,5 +1,10 @@
 # Week 1–2 closeout
 
+Evidence availability: historical result, reading and test paths below refer to
+the originating local workspace unless explicitly listed as included in the PR.
+See [archive inputs and reconstruction](ARCHIVE_INPUTS.md) for the preserved
+location, exclusions and configurable verification commands.
+
 Continuation: [week 3 circuit validation and baseline development](WEEK_3_PROGRESS.md).
 
 10 September 2026. **Technical feasibility sprint complete; administrative sign-off pending.** Neither paper has been submitted or published. The outcome is a tested foundation for a stronger study, not a journal-ready paper or a demonstrated quantum advantage.

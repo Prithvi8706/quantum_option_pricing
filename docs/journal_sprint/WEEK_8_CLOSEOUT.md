@@ -1,5 +1,10 @@
 # Week 8 closeout
 
+Evidence availability: historical result, reading and test paths below refer to
+the originating local workspace unless explicitly listed as included in the PR.
+See [archive inputs and reconstruction](ARCHIVE_INPUTS.md) for the preserved
+location, exclusions and configurable verification commands.
+
 13 September 2026. **All five planned local week-8 work items are complete**:
 experiment, reconstruction, analysis, regression, bounded review, fixes and final
 recheck. External Macroscope/PR and confirmation gates remain open.
