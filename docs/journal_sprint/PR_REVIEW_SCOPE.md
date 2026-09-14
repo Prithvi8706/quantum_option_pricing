@@ -15,6 +15,8 @@ Macroscope. It does not imply Macroscope approval, merge approval or submission.
   exports, not complete replay archives. Completion-manifest entries can refer
   to omitted files; the manifests preserve original provenance, not a claim
   that this checkout contains every hashed artifact.
+  Git attributes disable newline conversion for these evidence files so their
+  original bytes, rather than just their parsed JSON values, are retained.
 
 ## Excluded and preserved locally
 
@@ -44,3 +46,8 @@ change, followed by a successful replay. Some unrelated Paper A changes existed
 in that tree; a separate PR-tree check is therefore needed before attributing
 that exact full-suite result to this PR. Astra-requested review was bounded;
 Macroscope review is pending and will be initiated by the user.
+
+After PR creation, the automatic Macroscope check was skipped: estimated cost
+39.12 USD exceeded the workspace's 10 USD per-review limit. No paid retry or
+billing-limit change was requested by the agent. These are the check's estimates,
+not a fee guarantee for a later updated diff.

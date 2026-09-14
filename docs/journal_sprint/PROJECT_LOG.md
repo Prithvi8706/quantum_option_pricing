@@ -1,5 +1,21 @@
 # Journal reengineering: running record
 
+## 2026-09-14: review PR opened at user request
+
+User explicitly requested publication of the work as a PR so they can initiate
+Macroscope review. Opened [PR #1](https://github.com/Prithvi8706/quantum_option_pricing/pull/1)
+from `journal-reengineering-weeks-1-9` against `main`. This supersedes earlier
+PR-hold status; Macroscope approval itself remains pending.
+
+Included 19 pre-existing foundation commits and the sprint source/tests,
+documents, licensed comparator extract and selected small evidence exports.
+[Scope and exclusions](PR_REVIEW_SCOPE.md) explains why original manifests are
+not complete replay archives in this checkout. Unrelated uncommitted Paper A
+edits, local environments, downloaded papers and large archives remain local.
+Sprint Ruff passed. A separate clean PR-tree full-suite check was started;
+its disposition is recorded in the review-scope document and PR description.
+No merge, submission or authorship change was made.
+
 ## 2026-09-14: week 9 started and completed locally
 
 User requested week 9 start to end, then resumed after network interruption.
