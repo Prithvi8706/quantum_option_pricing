@@ -17,6 +17,10 @@ Macroscope. It does not imply Macroscope approval, merge approval or submission.
   that this checkout contains every hashed artifact.
   Git attributes disable newline conversion for these evidence files so their
   original bytes, rather than just their parsed JSON values, are retained.
+- Regression fixtures: week-5/6 planned configurations and the complete small
+  `pricing_gate_v2a_retry1` baseline, including its historical source snapshot.
+  Its archived comparator is covered by `research/journal_sprint/vendor/NOTICE.md`
+  and `LICENSE-csAE`. Other historical snapshots remain excluded.
 
 ## Excluded and preserved locally
 
@@ -42,10 +46,15 @@ matched end-to-end native/classical comparison and journal novelty remain open.
 Week-7 inference arms share observations. Week-8 v2 is not an independent replicate.
 
 The local working-tree integrated run passed 337 tests before a verifier-only
-change, followed by a successful replay. Some unrelated Paper A changes existed
-in that tree; a separate PR-tree check is therefore needed before attributing
-that exact full-suite result to this PR. Astra-requested review was bounded;
-Macroscope review is pending and will be initiated by the user.
+change, followed by a successful replay. The separate clean PR-tree run at
+21c032bb produced 325 passes and 12 missing-fixture failures in 289.34 seconds.
+After adding the omitted evidence fixtures (no source/test changes), all 27
+tests in the three affected modules passed at 332f4796 in 8.97 seconds, including
+all 12 previously failing tests. This is full-run plus targeted-fix evidence,
+not a second all-green full-suite run. Sprint Ruff passed. Local XML reports:
+`tests_pr_tree_v1.xml` and `tests_pr_tree_fixtures_v2.xml` under
+`results/journal_sprint`. Astra-requested review was bounded; Macroscope review
+is pending and will be initiated by the user.
 
 After PR creation, the automatic Macroscope check was skipped: estimated cost
 39.12 USD exceeded the workspace's 10 USD per-review limit. No paid retry or

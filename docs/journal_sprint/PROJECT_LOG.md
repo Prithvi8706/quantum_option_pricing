@@ -14,6 +14,12 @@ not complete replay archives in this checkout. Unrelated uncommitted Paper A
 edits, local environments, downloaded papers and large archives remain local.
 Sprint Ruff passed. A separate clean PR-tree full-suite check was started;
 its disposition is recorded in the review-scope document and PR description.
+The clean run produced 325 passes and 12 missing-fixture failures. Included the
+small required baseline/configuration fixtures; all 27 tests in affected modules
+then passed, including every prior failure. No tests were skipped or weakened.
+Preserved original evidence bytes using Git attributes. Macroscope automatically
+skipped the first review because its 39.12 USD estimate exceeded the 10 USD
+per-review limit; no paid retry or billing change was initiated by the agent.
 No merge, submission or authorship change was made.
 
 ## 2026-09-14: week 9 started and completed locally
