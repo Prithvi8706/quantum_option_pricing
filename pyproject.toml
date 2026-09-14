@@ -1,6 +1,6 @@
 [tool.ruff]
 line-length = 100
-extend-exclude = ["*.ipynb"]
+extend-exclude = ["*.ipynb", "research/journal_sprint/vendor"]
 
 [tool.ruff.lint]
 select = ["E", "F", "W", "N"]
@@ -12,3 +12,8 @@ ignore = [
 [tool.ruff.lint.per-file-ignores]
 "tests/test_pricing.py" = ["E402"]
 "app/app.py" = ["E402"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests", "research/paper_a/tests", "research/journal_sprint/tests"]
+markers = ["slow: full-benchmark sweeps, excluded from the fast loop"]
