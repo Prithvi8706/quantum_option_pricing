@@ -1,5 +1,334 @@
 # Journal reengineering: running record
 
+## 2026-09-15: weeks 10-11 integration packaging and verification
+
+Packaged implementation, protocols, results and prospective week-12 design in
+candidate commit `cf2db2504bc281cf6de5e357aa36d038f9d4ef24`. A lossless ZIP and
+per-file SHA256 index retain 3708 evidence files, including failed/superseded
+attempts, without rewriting producer manifests. Added a safe extractor and 11
+tests. Excluded local environments, private configuration, downloaded papers and
+unrelated outputs/plans; preserved the six-edit user stash and original archives.
+
+A separate source checkout passed 580 tests with 11 legacy Qiskit warnings in
+312.85 seconds using the existing Python environment, not a fresh installation.
+Bundle extraction, 132-row pilot replay, 3240-row allocation verification and
+298 local documentation links passed. Tests regenerated pre-existing tracked
+bytecode in the disposable checkout only; no source differences. Bounded
+credential-pattern and archive-integrity checks found no flagged issues.
+See [integration handoff](PR_WEEKS_10_11_HANDOFF.md) for reproduction and limits.
+Published as [PR #2](https://github.com/Prithvi8706/quantum_option_pricing/pull/2)
+on branch `research/week10-evidence-gate`; opened for review, not merged.
+No quantum advantage or submission readiness is asserted; week 12 is not executed.
+
+## 2026-09-15: week-11 baseline acquisition continuation
+
+Implemented method-specific setup, interleaved/fresh-training deployments,
+durable attempt accounting, telemetry, source/protocol/environment snapshots and
+separate pilot/reference/main gates. See [results](WEEK_11_RESULTS.md).
+39 focused stage-A/shortlist tests and seven stage-B/C tests passed before
+acquisition; Ruff passed after a pre-run line-length correction.
+
+Pilot `w11_baseline_pilot_v1`: 128 measured rows plus four warmups, replayed
+132 rows/234 files. References `w11_references_v1`: 384 estimates, 32 per contract,
+12,582,912 reference evaluations plus 393,216 training evaluations; SE range
+.00003506-.00006125 passes the predeclared diagnostic. Replay checked 384 rows/
+490 files before main acquisition. Main `w11_main_v1`: 2304 measured comparisons
+plus four warmups, all complete; acquisition 557.6676 seconds. Replay verified
+2308 rows/2415 files. Independent raw-row post-processing checked 144 RMSE/cost
+denominators (max RMSE discrepancy 4.663e-16). Two read-only audit-command issues
+were corrected without changing/rerunning any acquired data. No concurrent
+agent-launched test/benchmark during acquisition; external load remains a limit.
+
+Full regression: 569 passed, zero failures/errors/skips, 11 upstream Qiskit
+warnings, 277.76 seconds (`tests_week11_v1.xml`). Regression and main replay ran
+concurrently only AFTER acquisition; their times are not performance evidence.
+Ruff passed all seven week-11 Python/test files. Final documentation checks passed
+116 local links across 11 documents and whitespace validation (only Git's existing
+line-ending conversion warnings). See [week-11 closeout](WEEK_11_CLOSEOUT.md).
+
+Refreshed the [quantum prior-work matrix](WEEK_11_NOVELTY_MATRIX.md) with explicit
+reading depth and prepared the prospective [week-12 manifest](WEEK_12_DESIGN_MANIFEST.md).
+Added a fifth cost-aware fixed-design comparator before any week-12 observations,
+so future gains cannot rely solely on beating a baseline that exhausts its budget.
+Clarified the active roadmap: the primary goal remains a quantum-centered resource
+result; the statistical decision rule supports it rather than replacing it.
+These classical measurements and supporting allocation plans do not establish
+a quantum algorithm or advantage. No asymmetric trial, paid hardware, human
+review, external assignment, commit, push, PR, merge or submission performed.
+
+## 2026-09-15: week 11 started — shared contract and baseline protocol
+
+Implemented the opt-in `price_contract.py` interface and focused tests; archived
+encodings and experiments remain unchanged. Requires explicit componentwise
+price-unit bias/provenance, preserves unknown bounds, blocks unknown-bias planner
+inputs, separates observed error from bounds, and accounts for all acquisition
+stages without mixing cost units or measured/projected evidence. These checks
+do not prove supplied bounds, noise assumptions or absence of caller-side leakage.
+
+Added the prospective [baseline protocol](PROTOCOL_W11_BASELINES_V1.md) and
+[week-11 working record](WEEK_11_WORKING.md), including evidence classification,
+staged compute gates, stronger references, interleaved timing, approximate RQMC
+uncertainty and reserved candidate held-out cases. No new stochastic benchmark
+or quantum experiment has run. Week 11 remains in progress; its runner, reference
+measurements, novelty update and week-12 manifest are still outstanding.
+
+Initial targeted validation: 76 tests passed in 2.97 seconds, including 34 new
+contract cases; Ruff passed both new Python files. Full regression command
+`venv\Scripts\python.exe -m pytest -q`: 538 passed, 11 upstream Qiskit warnings,
+no failures/errors/skips, 287.69 seconds. Checked 76 local documentation links
+and whitespace in the tracked diff/new files. No paid jobs, author assignments,
+external reviews, commits, pushes, PRs or submissions.
+
+## 2026-09-15: revised remaining six-week implementation plan
+
+Added the active [weeks 11-16 plan](WEEKS_11_16_IMPLEMENTATION_PLAN.md) and linked
+it from the original research report and master checklist. Weeks 1-10 remain
+recorded development work; the post-week-10 discovery work is reused without
+being relabeled as completed confirmation or later-week closeouts.
+
+The revised sequence is: error/resource contract and strong classical references;
+unequal-calibration tolerance-delivery policy; bounded Asian encoding and state
+preparation; matched comparisons and novelty gate; fresh confirmation; manuscript
+and submission-readiness review. Heston and genuinely nested pricing receive
+bounded feasibility audits, not promises of two additional complete solvers.
+Every stage has deliverables and explicit go/no-go criteria. The original reserve
+is retained; a failed research gate is not silently converted into completion.
+
+This turn changes documentation only. No experiments, asymmetric allocation,
+new quantum circuits, human reviews, submissions, commits, pushes or PR actions
+were performed. The 504-test result remains the last recorded implementation
+verification, not a new run for this plan. Documentation validation passed:
+88 local links across the four documents, no trailing whitespace, and
+`git diff --check` (only Git's line-ending conversion warnings).
+
+## 2026-09-15: implemented shortlist follow-through and applicability audit
+
+Continued the three shortlisted research directions and examined allocation/
+encoding suggestions. [Full follow-through](SHORTLIST_FOLLOWTHROUGH.md) distinguishes
+implemented numerical results, analytical screens and work not yet implemented.
+Froze [protocol](PROTOCOL_SHORTLIST_V1.md) before observations. No earlier modules
+or archives were overwritten and no stronger manuscript claim was inserted.
+
+Implemented `asian_basket.py`, `shortlist_diagnostics.py`, `run_shortlist.py` and
+15 focused tests. New classical benchmark: twelve discrete Asian baskets (2/4
+assets, 12/52 dates, three strikes), PCA Gaussian generation, independent pilot
+control fitting, raw/control RQMC, antithetic control MC and conditional-control
+RQMC. 768 main estimates plus 192 separate reference estimates; references have
+estimated uncertainty and are not exact truths. Conditional integration improved
+per-sample reference-relative RMSE in the twelve N=4096 cells but cost more local
+evaluation time. Some errors approach the reference uncertainty. Concurrent tests,
+fixed ordering and excluded setup/training make timings indicative, not an isolated
+runtime-crossover study. These remain classical results, not quantum advantage.
+
+Heston deterministic audit: 14 of 72 combinations pass the displayed scalar
+truncation/regularity tests; full theorem applicability remains not established
+in every row. Corrected the emphasis on negative correlation: failure of a displayed
+sufficient condition alone does not establish a new gap; the paper explicitly
+discusses nonnegative correlation as the harder moment regime. No coherent Heston
+sampler or complete proof audit was performed.
+
+Nested diagnostic: an analytically soluble scalar exposure-style negative control,
+40 naive nested estimates and eight coupled antithetic levels. Exact positive bias
+falls from .4887333 at one inner sample to .00304365 at 256; direct analytic inner
+valuation makes that nesting unnecessary. This is not real CVA or a quantum-nested
+implementation. Focused primary PDF readings clarified uniform moment, Lipschitz,
+sampling-access and coupling requirements; failed HTML attempts used PDF fallbacks.
+
+Calculated conservative basket truncation/scale bounds, including retained-mass
+normalization. Tail allowance about .05003 dollars is not the full encoding bias;
+quadrature/loading/synthesis remain missing. Cube-based scale upper bounds are large,
+not lower bounds or impossibility claims. Derived an unequal-calibration planning
+variance and illustrative allocation ratios; NO new asymmetric allocation experiment
+was run, and the earlier pilot tie with fixed_cp remains unchanged.
+
+Archive `results/journal_sprint/shortlist_v1`: replay checked 76 files, all 768 main
+estimates, 192 reference estimates, 72 Heston screens, 40 nested estimates and eight
+level diagnostics. Numeric replay excludes timings and uses 1e-10 tolerances;
+source and archive hashes checked. Final full suite: 504 passed, zero failures/errors/
+skips, 11 upstream warnings, 270.96 seconds (`tests_shortlist_v1.xml`). All four new
+Python/test files passed Ruff; local links and whitespace checked. No failed/retuned
+stochastic run in this stage. No paid hardware job, external peer review, new author,
+commit, push or PR. Novelty and quantum advantage remain unestablished.
+
+## 2026-09-15: 25 harder problems and matched-budget allocation continuation
+
+Completed the requested [25-problem assessment](HARD_PRICING_25.md) BEFORE the
+allocation implementation: distinct payoff/exercise/exposure/model variants,
+each with target, proposed solution, strong classical comparator, first
+experiment and stop criterion. These are proposals, not 25 new open problems
+or implemented quantum solutions. The 28 source groups state reading depth.
+Prioritized Asian/barrier baskets, theorem-compatible multi-asset Heston and
+genuinely nested exposure valuation. Newly inspected Herman et al. 2602.03725v1
+model definitions, Heston theorem, truncation and discussion; restrictions are
+not silently generalized. Full proof/priority verification remains undone.
+
+Added an explicit conditional Gaussian reduction for a restricted positive-factor
+Asian basket. Twelve deterministic identity-versus-direct-quadrature cases agree
+within 1.0658141036401503e-14, with numerical error estimates and tail bound recorded
+in the report. This checks a known conditional-integration component, NOT a full
+option benchmark, novel identity or quantum advantage. The classical comparator
+must benefit from the same conditioning before any quantum comparison.
+
+Then froze [allocation protocol](PROTOCOL_ALLOCATION_V1.md), implemented
+`allocation_rule.py` and `run_allocation.py`, and tested selection, sample splitting,
+terminal CP inversion, forecast/allocation logic and complete shot accounting.
+Encoding is chosen before observations using a design proxy, not an asserted
+noise-robust dominance rule. Only the selected encoding is calibrated. The paid
+pilot chooses allocation; fresh calibration AND fresh pricing provide the final
+interval. Projected counts are forecasts, never measured results.
+
+Fresh `allocation_v1` check: 3240 rows, 1080 per arm, two stationary readout
+scenarios and three guards on the six existing European contracts. The harder
+problems are NOT tested by this run. At a matched 65536 total-shot cap, fixed_cp
+and pilot_cp each deliver 300/1080, with cell-for-cell identical observed delivery;
+single_hoeffding delivers 180/1080. Zero observed interval misses or erroneous
+declarations. E030/E038/E049 remain unresolved. The pilot mostly selects the
+baseline allocation and does not improve delivery; no superiority is claimed.
+Mean calibration shots decline but both CP arms still spend exactly 65536 total.
+See [complete results and conditional-validity argument](ALLOCATION_RESULTS.md).
+
+18 new focused tests passed before acquisition. Final full regression: 489 passed,
+zero failures/errors/skips, 11 upstream warnings, 278.14 seconds
+(`tests_allocation_v1.xml`). Ruff passed all three new Python/test files.
+Deterministic replay verified all 3240 records and 98 archived files, input
+profiles and live source hashes. Separate PowerShell checks verified all shot/CX
+identities, primary-arm equal budgets and declaration radii. Exactly 25 problem
+entries and new local Markdown links checked. No allocation-stage failed run or
+post-result retuning; old modules and archives preserved. No external peer review,
+paid hardware jobs, new author, manuscript advantage claim, commit, push or PR.
+
+## 2026-09-15: calibration-first encoding decision rule
+
+User asked whether the lack of advantage invalidates the project, requested
+directions for their own research, and authorized developing the encoding-aware
+rule. Explained that the original superiority objective remains unmet; neither
+a literature search nor this negative benchmark proves no advantage can exist.
+No application-family pivot or positive novelty claim was silently adopted.
+
+Added [research directions](ADVANTAGE_RESEARCH_DIRECTIONS.md) with checked primary
+abstracts on multidimensional pricing, nonlinear/nested quantum Monte Carlo,
+QSP payoff encoding and the finite-window quantum-QMC proposal. These are
+reading directions and hypotheses, not new full-paper readings or discoveries.
+
+Implemented `encoding_decision.py`: a finite-menu calibration-first selector,
+simultaneous CP rectangles, a dollar-scaled Hoeffding certificate, explicit
+approximation and calibration budgets, cost ranking, and one fresh terminal
+pricing interval. Selection does not receive true prices or amplitudes.
+All candidate calibration shots are charged; no-certification outcomes are not
+presented as impossibility results. The [derivation and results](ENCODING_DECISION_RULE.md)
+state the per-invocation model-conditional guarantee and established-method
+attribution. This is k=0 direct sampling, not an amplitude-estimation speedup.
+
+Froze [protocol](PROTOCOL_ENCODING_DECISION_V1.md) before new observations.
+Fresh synthetic check: 1080 trial identities, 180 exact-table selections and
+declarations (all E001), 900 refusals, zero observed interval misses or erroneous
+declarations. E014/E025 are NOT rescued by this conservative planner, despite
+their earlier fixed-interval successes. E001 zero-guard shots-axis mean pricing
+shots 376.43, but mean TOTAL 65912.43 after 65536 menu-calibration shots. No
+overall efficiency gain is claimed; certificate conservatism and calibration
+overhead are explicit remaining weaknesses.
+
+Preserved `encoding_decision_v1`: experiment completed, but its verifier wrongly
+excluded the nested input complete.json manifest. Fixed the inventory exclusion,
+added a regression, and reran as `encoding_decision_v2` with identical seeds.
+All 1080 records are byte-identical; v2 is not another independent sample.
+Corrected replay passed 1080 rows and 96 archived files, including input/source
+hash checks. Output directories and unrelated work were not overwritten.
+
+Verification: initial full regression passed 469 tests, 11 upstream warnings,
+273.02 seconds (`tests_encoding_decision_v1.xml`). It collected before the two
+additional archive/calibration tests. The post-fix focused suite passed all
+24 tests, including exact binomial coverage sums and propagation checks. Counts
+overlap and must not be added. Ruff passed all three new Python/test files;
+new local Markdown links and `git diff --check` passed. No external peer review,
+paid hardware job, manuscript superiority claim, author change, commit, push
+or PR. Final status: working conservative planner; novelty and advantage unproved.
+
+## 2026-09-15: broad research and measured encoding/sequential intervention
+
+Used the deep-research skill for the requested primary-source field assessment.
+The [research report](QUANTUM_RESCUE_RESEARCH.md) covers modern AE schedules,
+calibrated Bayesian AE, QSP/QSVT, multiplexed rotations, QMC/multilevel methods,
+PDE/variational alternatives and IBM/Google/Quantinuum developments. The July
+2026 contrast-aware CVA paper is close prior art; generic noise-aware adaptive
+pricing is not claimed as new. Source reading depth and limitations are stated.
+
+Implemented an exact finite-grid payoff oracle and calibrated anytime
+Bernoulli inference without changing historical pricing/inference modules.
+Declared [the experiment](PROTOCOL_RESCUE_V1.md) before circuit profiling and
+new stochastic observations. Exact-oracle fixed CP improved E014 and E025
+from 0/30 to 30/30 dollar declarations under equal shots and equal logical CX
+at guard zero. Other hard contracts remain unresolved. The unmodified
+Jeffreys CS improved both axes only on E025, failing its promotion screen.
+Classical 64-term summation still handles all six contracts, so no quantum
+advantage or new primitive is claimed.
+
+Preserved failed `rescue_encoding_v1`: six profiles completed, two rows
+computed but zero JSONL records persisted before NumPy-Boolean serialization
+failed. Added explicit Boolean conversions and regression testing; reran into
+`rescue_encoding_v2` with the same protocol. A typed-cache fix was also tested
+before experiments. Completed archive: 4320 shared-data inference rows,
+720 refusal rows, 810 declarations, zero observed interval misses and erroneous
+declarations. Separate verification replayed all rows, checked 77 files and
+recomputed bound/target arithmetic; see `rescue_verification_v1.json`.
+
+Declared a separate [pilot-mixture follow-up](PROTOCOL_PILOT_CS_V1.md) AFTER
+seeing those results. It excludes the paid 1024-shot pilot from the subsequent
+likelihood and reuses the original paths: 2160 derived rows, 355 declarations,
+zero observed misses/errors. E014 equal-shot delivery is only 1/30: technically
+positive but not a robust fix. No independent replication or selection-adjusted
+coverage claim is made. Separate replay verified all 2160 rows and the original
+4320-row input archive (`rescue_pilot_verification_v1.json`).
+
+A stronger-baseline compiler check found that E001's old k=1 Grover reflection
+can use active qubits only: 992 rather than 13088 CX, versus exact-oracle 566.
+Recorded the correction rather than claiming a generic 23-fold improvement.
+The k=0 experiment is unaffected. Full numbers, assumptions and remaining
+novelty gaps are in [RESCUE_RESULTS.md](RESCUE_RESULTS.md); the explicit
+conditional inference derivation is in [RESCUE_THEORY.md](RESCUE_THEORY.md).
+
+Initial integrated suite: 440 passed, 11 upstream warnings, 273.99 seconds.
+Seven subsequent pilot tests passed. Final integrated suite then passed all
+447 tests, zero failures or skips, 11 upstream warnings, in 280.51 seconds
+(`tests_rescue_final_v1.xml`). Ruff passed all eight new Python/test files;
+local links and whitespace checks passed. No paid hardware execution, external review, new author,
+commit, push or PR was performed. Existing week-10 local changes are preserved.
+
+## 2026-09-15: week 10 evidence-gate results and verification
+
+Completed the scoped methods review, numerical stress diagnostic and concrete
+matched-comparison feasibility assessment. See [closeout](WEEK_10_CLOSEOUT.md)
+and [matched design](WEEK_10_MATCHED_DESIGN.md). Original 80-case stress run
+failed the required disconnected-intersection topology condition despite zero
+enclosure failures; it is retained. A disclosed three-case extension passed
+all 83 numerical comparisons, including three disconnected intersections.
+The final formatted-source v3 reproduces v2 records byte for byte, not as an
+independent experiment. Separate source/inventory/hash verification and replay
+passed all 83 records. Ten focused tests passed; first integrated suite passed
+418 tests with 11 upstream warnings. Final-tree regression then passed all
+420 tests with 11 upstream warnings in 295.86 seconds, including the added
+verifier tests. Ruff, whitespace and local documentation link checks passed.
+Week-10 evidence-gate work is complete and locally verified; its scientific
+decision remains a hold on confirmation/submission, not a claim of readiness.
+
+Decision: continue methodological development, but do not launch frozen
+confirmation or claim submission readiness. Large-count interior tails,
+native adaptive-stopping comparability and journal-level novelty remain
+explicit gaps. The current manuscript now includes the bounded diagnostic and
+links to its limitations. No pricing campaign, new authors, external reviewer
+approval, PR, push or merge is claimed for this week.
+
+## 2026-09-14: week 10 started from merged main
+
+PR #1 is merged; week 10 starts from commit
+`77fd5ec14035094e74f941319560f8a5ab7cc4c0` on
+`research/week10-evidence-gate`. Read the screened basket paper's primary
+methods and results text, recorded overlap and target-matching concerns, and
+outlined a matched comparison in [the week-10 work record](WEEK_10_WORKING.md).
+Numerical stress implementation and execution remain pending; this is not a
+completed week or a frozen confirmation campaign. Existing archives and
+unrelated local files are preserved.
+
 ## 2026-09-14: neutral checks, reconciliation and final merge verification
 
 User requested that neutral checks be inspected, blockers resolved, local edits
