@@ -16,7 +16,8 @@ Bundle extraction, 132-row pilot replay, 3240-row allocation verification and
 bytecode in the disposable checkout only; no source differences. Bounded
 credential-pattern and archive-integrity checks found no flagged issues.
 See [integration handoff](PR_WEEKS_10_11_HANDOFF.md) for reproduction and limits.
-Push/PR publication follows this validation record; no merge is authorized here.
+Published as [PR #2](https://github.com/Prithvi8706/quantum_option_pricing/pull/2)
+on branch `research/week10-evidence-gate`; opened for review, not merged.
 No quantum advantage or submission readiness is asserted; week 12 is not executed.
 
 ## 2026-09-15: week-11 baseline acquisition continuation
