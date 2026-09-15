@@ -79,8 +79,24 @@ bitwise replay is not asserted. See [historical replay](ARCHIVE_REPLAY.md).
 The pre-PR development suite passed 569 tests with zero failures/errors/skips.
 Week-11 replay checked 132 pilot rows, 384 references and 2308 main/warmup rows;
 independent arithmetic checked all 144 summary cells. Those are automated checks,
-not independent human peer review. Clean-checkout packaging validation is recorded
-below when complete. No hosted CI workflow currently exists in this repository.
+not independent human peer review. No hosted CI workflow currently exists in this
+repository.
+
+Clean-source-checkout validation of commit `cf2db2504bc281cf6de5e357aa36d038f9d4ef24`
+passed on 2026-09-15 using the existing validated Python environment (not a fresh
+dependency installation):
+
+- Full suite: **580 passed, 11 legacy Qiskit warnings, 312.85 seconds**; report:
+  `results/journal_sprint/tests_pr_weeks10_11_v1.xml`.
+- Bundle verification and extraction: all 3708 original files preserved.
+- Pilot numerical replay: 132 rows, including 4 warmups; timings not reproduced.
+- Allocation verification: 3240 rows and 98 files.
+- Documentation: 298 local links across 101 sprint Markdown files, none missing.
+
+The tests regenerated one pre-existing tracked pytest bytecode file only in the
+disposable checkout; no source file changed. The original workspace's tracked
+tree remained clean. The bounded pre-commit audit found no flagged credential
+patterns or archive hash/inventory mismatches.
 
 Classical RQMC/control methods are already accurate on the current Asian cases.
 Conditional integration lowers observed error at matched sample count but costs

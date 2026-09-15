@@ -1,5 +1,24 @@
 # Journal reengineering: running record
 
+## 2026-09-15: weeks 10-11 integration packaging and verification
+
+Packaged implementation, protocols, results and prospective week-12 design in
+candidate commit `cf2db2504bc281cf6de5e357aa36d038f9d4ef24`. A lossless ZIP and
+per-file SHA256 index retain 3708 evidence files, including failed/superseded
+attempts, without rewriting producer manifests. Added a safe extractor and 11
+tests. Excluded local environments, private configuration, downloaded papers and
+unrelated outputs/plans; preserved the six-edit user stash and original archives.
+
+A separate source checkout passed 580 tests with 11 legacy Qiskit warnings in
+312.85 seconds using the existing Python environment, not a fresh installation.
+Bundle extraction, 132-row pilot replay, 3240-row allocation verification and
+298 local documentation links passed. Tests regenerated pre-existing tracked
+bytecode in the disposable checkout only; no source differences. Bounded
+credential-pattern and archive-integrity checks found no flagged issues.
+See [integration handoff](PR_WEEKS_10_11_HANDOFF.md) for reproduction and limits.
+Push/PR publication follows this validation record; no merge is authorized here.
+No quantum advantage or submission readiness is asserted; week 12 is not executed.
+
 ## 2026-09-15: week-11 baseline acquisition continuation
 
 Implemented method-specific setup, interleaved/fresh-training deployments,
