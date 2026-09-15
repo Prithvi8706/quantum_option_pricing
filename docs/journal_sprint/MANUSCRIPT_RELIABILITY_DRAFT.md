@@ -1,5 +1,5 @@
 # Model-conditional reliability and resource accounting for quantum option pricing
-Working manuscript, 14 September 2026. Discovery evidence through week 9;
+Working manuscript, 15 September 2026. Discovery and diagnostic evidence through week 10;
 not submission-ready. Authors and contribution statements await actual work,
 accountability and approval. This supersedes the early scientific working draft,
 not the preserved historical DOCX/LaTeX artifacts.
@@ -30,7 +30,9 @@ precede this study ([IQAE](https://www.nature.com/articles/s41534-021-00379-1),
 The candidate contribution is therefore the audited integration of uncertainty,
 refusal and dollar-delivery costs, not a new generic estimator. A newly screened
 [basket-pricing paper](https://arxiv.org/abs/2509.09432) also studies accuracy and
-resource tradeoffs; full methods comparison is pending. See the bounded
+resource tradeoffs; the [week-10 methods comparison](WEEK_10_WORKING.md)
+identifies overlap and a target-matching concern without claiming priority.
+See the bounded
 [research refresh](WEEK_9_RESEARCH_REFRESH.md) and earlier reading ledger.
 
 ## 2. Target and uncertainty model
@@ -127,6 +129,16 @@ diagnostic is finite and uses ordinary high-precision arithmetic, not rigorous
 interval arithmetic. It does not establish universal enclosure, large-count beta-tail
 accuracy, continuous-price bound certification or experimental noise validity.
 See [protocol](PROTOCOL_W9_NUMERICAL.md) and [results](WEEK_9_RESULTS.md).
+
+A subsequent week-10 diagnostic exercised large-shot boundary tails using
+closed-form binomial identities and independent polynomial inversion. Its
+initial 80-case matrix passed enclosure and precision checks but failed the
+required disconnected-intersection topology gate. A disclosed, exploratory
+three-case extension produced 83 cases with zero enclosure failures or
+80-versus-100-digit instabilities, including three disconnected final
+intersections. This closes a finite test-coverage gap, not large-count interior
+beta-tail validation or formal floating-point certification. See
+[week-10 closeout](WEEK_10_CLOSEOUT.md) for preserved runs and qualifications.
 
 ## 7. Limitations and conclusion
 

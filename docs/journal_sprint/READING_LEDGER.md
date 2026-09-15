@@ -1,5 +1,53 @@
 # Primary-paper reading ledger
 
+## 2026-09-15 week-11 prior-work refresh
+
+See [quantum contribution checkpoint](WEEK_11_NOVELTY_MATRIX.md) for primary links
+and exact scope. Publisher/abstract/status refresh of BAE, Labib's schedules,
+Recchia's coherent QMC, Hok/Leitao's pipeline, Herman's sampler results and
+Blanchet's nonlinear Monte Carlo. Focused Kim et al. 2607.14518v1 introduction,
+sample-estimable formulation (fixed-parameter CDF concentration), and depth
+analysis. No full new paper/proof audit or source reproduction this turn.
+Blanchet v2's arXiv metadata lists NeurIPS 2025 proceedings; recorded that status
+rather than continuing an unqualified preprint-only description. No new priority
+claim is inferred from searches or missing HTML keywords.
+
+## 2026-09-15 shortlist follow-through readings
+
+See [follow-through and source-depth notes](SHORTLIST_FOLLOWTHROUGH.md).
+Further focused Herman et al. 2602.03725v1: sections 6.1.1, 6.2.2-6.2.3 and
+adjacent correlation/sampling discussion. Further focused Blanchet et al.
+2502.05094v2 PDF: introduction and section 3 assumptions/algorithm motivation.
+Haji-Ali/Spence 2308.07835 PDF retrieved as v1: introduction and antithetic
+coupling discussion. HTML attempts for the two nested papers failed; PDF fallback
+versions are recorded rather than claiming the guessed HTML versions were read.
+RQMC interval and Grover-Rudolph limitation sources are abstract-level screens.
+These are not complete appendix/proof audits and do not increase the six full
+readings recorded below.
+
+## 2026-09-15 harder-problem screening
+
+See [25-problem report and 28 source groups](HARD_PRICING_25.md).
+New focused reading: Herman et al., arXiv 2602.03725v1, model definitions
+2.3-2.5, contributions, section 6.2 truncation/discretization/theorem 6.6 and
+parameter discussion. This is NOT a complete proof/appendix audit. In particular,
+the restricted correlation structure and displayed sufficient truncation conditions
+must not be generalized to arbitrary Heston models. Other screening is explicitly
+abstract, publisher excerpt or author-resource-description level in the report.
+No increase to the six completed full-paper readings below is claimed.
+
+## 2026-09-15 focused research extension
+
+See [the broad assessment and source inventory](QUANTUM_RESCUE_RESEARCH.md).
+New focused HTML methods readings: CABIQAE/CVA arXiv 2607.12990v1,
+sections 2.2.1-2.2.2 and conclusion interpretation; windowed least-squares AE
+2608.24434v1, measurement model/Algorithm 1/Theorem 1; betting inference
+2010.09686v7, sections 2-2.1. These are NOT claimed as complete full-paper or
+appendix readings. Other new papers are explicitly marked abstract-level
+screening in the report. Company sources remain official claims, not
+independently reproduced experiments. The prior six full readings below are
+unchanged; this extension does not relabel abstract checks as full readings.
+
 Evidence availability: historical result, reading and test paths below refer to
 the originating local workspace unless explicitly listed as included in the PR.
 See [archive inputs and reconstruction](ARCHIVE_INPUTS.md) for the preserved

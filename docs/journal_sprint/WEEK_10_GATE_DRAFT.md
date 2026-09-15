@@ -1,6 +1,8 @@
 # Proposed week 10 evidence gate
 
-Proposal only; no week-10 experiment has been executed or frozen here.
+Historical proposal. Execution and disposition are now recorded in
+[the week-10 closeout](WEEK_10_CLOSEOUT.md). This proposal itself was not a
+frozen confirmation protocol.
 
 1. Review the new manuscript against the newly screened basket-pricing paper's
    full methods, documenting exact overlap and genuinely unmatched requirements.

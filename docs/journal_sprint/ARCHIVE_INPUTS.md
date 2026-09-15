@@ -1,5 +1,11 @@
 # Archive availability and verification inputs
 
+Update: the week-10-through-week-11 integration includes the complete new
+archives enumerated in [the PR handoff](PR_WEEKS_10_11_HANDOFF.md), including
+failed/superseded attempts and their provenance. The older partial-export
+limitations below still apply to the week-1-9 historical inputs, not those
+explicitly bundled new archives.
+
 The repository deliberately includes partial evidence exports. Most historical
 `results/journal_sprint/...` paths in week reports refer to the originating local
 workspace, not files available in a fresh GitHub checkout. This includes the
