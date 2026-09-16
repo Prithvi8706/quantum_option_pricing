@@ -1,5 +1,25 @@
 # Journal reengineering: running record
 
+## 2026-09-16: week-12 policy foundation started
+
+No newly raised PR comments/inline reviews or open GitHub issues were found after
+the PR #2 merge; Macroscope remains skipped. Created branch
+`research/week12-unequal-calibration`. Added the five-arm policy specification,
+unequal-calibration batch planning and fresh terminal CP adapter without modifying
+historical producing modules. The forecast is explicitly heuristic; the documented
+conditional containment argument requires fresh binomial samples and valid bias/
+transfer bounds. No benefit or coverage guarantee beyond those assumptions claimed.
+
+53 new tests pass, including independent unequal-count binomial endpoint checks,
+old-arm equivalence, no-pilot fixed-arm inputs and budget/fallback behavior; Ruff
+passes. Full regression: 633 passed, 11 legacy Qiskit warnings, 302.60 seconds;
+`results/journal_sprint/tests_week12_policy_v1.xml`. No experimental observations or paid jobs
+launched; acquisition/replay infrastructure is the next gate. See
+[week-12 working record](WEEK_12_WORKING.md) and
+[policy specification](PROTOCOL_W12_POLICY_V1.md). Week 12 is in progress.
+Stage-A changes remain local and uncommitted; no push or new PR. Bytecode writes
+were disabled for regression, and historical producing sources remain unchanged.
+
 ## 2026-09-16: PR #2 pre-merge sweep
 
 User requested full verification, merge and a checklist. Tested exact PR source
