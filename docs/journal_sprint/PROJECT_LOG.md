@@ -1,5 +1,40 @@
 # Journal reengineering: running record
 
+## 2026-09-17: table-free raw arithmetic confirmation-unblock attempt
+
+Implemented reversible signed fixed-point affine/Horner/raw-call/comparator
+gates with clean uncompute, explicit overflow/error bounds and an ideal
+controlled-RY Gaussian loader error enclosure. Original frozen producers and
+week13-15 evidence remain unchanged. Forty focused tests passed before the
+large audit. Initial unit-test failures were repaired before acquisition.
+
+Original two-asset/two-date candidate, L4/q10/f24/w40: actual emitted payoff
+program3,637logical qubits,10,102,977X/CX/CCX gates, depth1,597,792. Prospective
+ideal representation bias<=0.203585334 dollars, arithmetic<=0.001514075dollars.
+No path payoff table was constructed. This is not full hardware compilation,
+validated PriceContract, physical error certificate or a quantum-advantage result.
+Large initial basis checks passed. Separate week15-environment regeneration
+reproduced plans, loader angles, all10,102,977gates/hash/resources exactly; an
+additional true-flag case passed with all workspace clean. Final focused suite
+41passed/8legacywarnings in10.74s in that existing isolated environment.
+Full regression886passed/20legacywarnings in426.78s. Subsequent test-only cleanup
+removed three unused imports; the final isolated41test run covers that cleanup.
+
+Same continuous business contract:96development classical repetitions across
+three methods/two sample budgets plus three separately recorded1024path pilots.
+At4096paths, conditional RQMC/control replicateSD0.00031465 across16scrambles.
+No certified interval/continuous truth or unit-mismatched speedup claimed.
+All96prices, pilot values, identities and summaries replay exactly in the
+separate environment, excluding timing fields. F-only Ruff check and staged
+whitespace check passed. Producer hashes are protected against newline conversion
+in new files; no old frozen producer was edited.
+
+See [results and review packet](REVERSIBLE_ARITHMETIC_RESULTS.md),
+[construction protocol](REVERSIBLE_ARITHMETIC_PROTOCOL.md). Confirmation remains
+blocked on integrated scientific/cost/statistical review and a defensible fixed
+primary claim; actual collaborator sign-off cannot be fabricated. No new PR,
+remote push/merge, human review or independent subagent review claimed.
+
 ## 2026-09-16: confirmation-gate numerical development
 
 User requested work toward unblocking confirmation. Kept the existing Asian/PCA

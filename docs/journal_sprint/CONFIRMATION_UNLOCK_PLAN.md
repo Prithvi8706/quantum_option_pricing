@@ -1,5 +1,13 @@
 # Concrete route to unlock confirmation
 
+Update 2026-09-17: a raw-only table-free reversible payoff and ideal Gaussian
+loader error analysis are implemented. The representative emitted payoff uses
+3,637logical qubits/10,102,977gates, with prospective combined bias below$0.204.
+This does not admit confirmation or establish advantage; strong classical
+development comparisons remain favorable. See
+[new results and reviewer packet](REVERSIBLE_ARITHMETIC_RESULTS.md).
+The table below describes the original gate plan; read it with this update.
+
 This is an explicit technical continuation of the current Asian-basket route,
 not a replacement application or a lowered gate. No paper acceptance, novelty
 or advantage can be guaranteed. Human review remains a human task.
