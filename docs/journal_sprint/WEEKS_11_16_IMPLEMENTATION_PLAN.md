@@ -231,6 +231,11 @@ study survives review, remain in development and use/revise the reserve.
 
 ### Week 15 — Fresh confirmation and independent reproduction
 
+Subsequent gate-resolution development: [directed partial bounds](CONFIRMATION_GATE_BOUNDS_RESULTS.md)
+and [explicit unlock sequence](CONFIRMATION_UNLOCK_PLAN.md). This improves
+numerical screening/normalization without admitting an implementation or
+completing the blocked confirmation campaign.
+
 2026-09-16 disposition: fresh-environment reproduction completed under the
 step3/fallback scope; confirmation remains blocked, not completed. New isolated
 environment passed123week13/14 tests, both strict replays, six scalar-formula

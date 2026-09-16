@@ -1,5 +1,28 @@
 # Journal reengineering: running record
 
+## 2026-09-16: confirmation-gate numerical development
+
+User requested work toward unblocking confirmation. Kept the existing Asian/PCA
+route and original evidence. Implemented80digit directed interval primitives,
+sharper tail/conditional midpoint bounds, a Gaussian mean/covariance rounding
+bridge, analytic-control offset enclosure and non-enumerative safe normalization.
+Opt-in screening still preserves unknown implementation components and refuses
+admission. No novelty, full certificate, human sign-off or confirmation claimed.
+
+Frozen producer/protocol e38ee513;38focused tests passed before acquisition.
+Deterministic audit completed/replayed576rows/49files, no sampled prices or
+failed cells. For two assets/two dates atL4, the partial$0.25screen moves raw q13
+under the old float expression to q10 under the new bound (52to40normal bits),
+but still implies2^40entries for a table oracle. Non-enumerative safe scales
+483.835(raw)/237.184(residual) expose a much smaller normalization benefit than
+the coarse table. These are bounds/candidate sizes, not implemented circuits.
+
+Prepared [remaining unlock plan](CONFIRMATION_UNLOCK_PLAN.md), including exact
+zero-event denominator examples and unresolved inference/novelty/human gates.
+See [derivation](CONFIRMATION_GATE_BOUNDS.md) and
+[results/verification](CONFIRMATION_GATE_BOUNDS_RESULTS.md). New work remains
+local; no fresh independent subagent review or remote merge claimed this turn.
+
 ## 2026-09-16: week15 reproduction complete; confirmation blocked
 
 PR#4 merged weeks13-14 atd5e1c3f2 after independent Bacon/Darwin acceptance,
