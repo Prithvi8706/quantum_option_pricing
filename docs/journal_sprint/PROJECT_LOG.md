@@ -1,5 +1,33 @@
 # Journal reengineering: running record
 
+## 2026-09-16: week14 finite-target development completed; confirmation held
+
+User requested full week14 work and independent subagent reviews. Followed the
+week13 gate: no continuous-price encoding was admitted, so the executable scope
+is finite-target development, not a completed continuous end-to-end benchmark.
+Producer/protocol76914458; all93tasks completed,912trial outcomes (including
+paired analyses),20response checks,2022files/2399090bytes,21.931956s elapsed.
+Strict replay passed all files/tasks;58cell prespecified analysis generated.
+
+Added actual nonzero-Grover raw/residual circuits, independent density checks,
+native IQAE and source-faithful noisy csAE, fixed/direct and five-policy ablations,
+finite classical/direct-sum baselines, explicit resource and failure accounting.
+Maximum response discrepancy2.254e-14. Residual scale reduces finite-target effort
+for classical and quantum estimators. EqualA direct/multidepth delivery ties;
+multidepth costs1.9times CX. Ignored-noise residual multidepth yields12empty
+sets and15/16hull misses, all retained. No quantum advantage or new algorithm.
+
+Independent pre-acquisition findings fixed: nested-manifest inventory bypass,
+unenforced native pin, csAE checkpoint durability, depth conventions and coverage
+denominators. Main integration also corrected the Grover constructor, checkpoint
+failure propagation and a fixture-detected analysis category collision, all before
+production. Final review/clean-checkout receipts are in
+[review](WEEK_14_REVIEW.md) and [closeout](WEEK_14_CLOSEOUT.md).
+Human review packet prepared, not sent/signed. Continuous unknown_bias and
+prior-work distinction remain unresolved; week15 NO-GO. Two planned blocks
+remain (weeks15-16), gated. No remote push/PR/merge; unrelated local work preserved.
+See [results](WEEK_14_RESULTS.md) and [claims/gate](WEEK_14_CLAIMS_GATE.md).
+
 ## 2026-09-16: week-13 development completed and independently reviewed
 
 User requested full week13 completion followed by independent subagent review.

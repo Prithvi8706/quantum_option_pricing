@@ -53,7 +53,19 @@ timings and actual native cap status. Worker implemented those changes and tests
 The first integrated focused pass:72tests passed,17upstream warnings,19.08s.
 This is an iteration report, not yet the final frozen source receipt.
 
+The final full-fixture analysis also caught a reporting-category collision:
+policy names fixed_cp/fixed_target matched a substring intended for the fixed
+comparison family. Exact category parsing fixed it before production. The final
+prefreeze focused run passed72tests/17upstream warnings in21.94s; Ruff passed
+after formatting. Producer/protocol frozen at76914458. No study output was used
+to select a fix, method or threshold.
+
 ## Final evidence review
 
-Pending source freeze, production, strict replay, full regression and independent
-scientific/software evidence reviews. Human collaborator review remains pending.
+Production completed93tasks without failure; strict replay passed2022files and
+all tasks. Main journal regression609passed/20warnings in165.62s; remaining
+repository tests and clean-checkout receipt pending. Independent final reviewers
+are Hegel (scientific) and Heisenberg (software/provenance), neither an author
+of the producing implementation. Their initial scientific/software blockers
+were cleared before acquisition. Final evidence dispositions are recorded below
+when returned. Human collaborator review remains pending.

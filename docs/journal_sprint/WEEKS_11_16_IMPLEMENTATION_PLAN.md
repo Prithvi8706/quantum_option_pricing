@@ -193,6 +193,13 @@ solved. Replacing it requires a visible replan, potentially using the reserve.
 
 ### Week 14 — End-to-end comparisons, ablations and pre-confirmation review
 
+2026-09-16 disposition: permitted finite-target development completed; original
+continuous end-to-end comparison remains blocked because week13 admitted no
+encoding. See [week14 closeout](WEEK_14_CLOSEOUT.md),
+[results](WEEK_14_RESULTS.md) and [claim/gate matrix](WEEK_14_CLAIMS_GATE.md).
+Do not interpret the following conditional plan as evidence of work performed.
+Week15 confirmation is NO-GO pending explicit scientific gate resolution.
+
 1. Connect the validated policy to the encodings that passed week 13. Compare
    direct sampling with faithful fixed IQAE, depth-limited AE and at least one
    modern noise-aware comparator where its implementation/model applies.
