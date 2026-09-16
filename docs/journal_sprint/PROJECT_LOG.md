@@ -1,5 +1,62 @@
 # Journal reengineering: running record
 
+## 2026-09-16: week-12 development completed, negative gate retained
+
+User requested complete week 12, separate subagent reviews and merge. Producing
+freeze `9a97228a`; 104 focused/684 full tests passed before production. Reviewers
+Dalton and Carver independently identified statistical/software blockers, corrected
+before launch. Full dispositions include test pilot-v1 exposure and fresh pilot-v2
+amendment; no policy/threshold tuning on production results.
+
+Pilot-v2 completed/replayed 90 rows, projection 1244.864s passed. Main completed
+all 7400 rows (2000 primary +5400 secondary) in 150.700 acquisition seconds,
+297.210s including automatic replay. Verified 7721 files and every event/row;
+independent audit covered 185 cells, 413,220,864 shots and 31,338,155,520 modeled CX.
+Zero unattempted/failed/unresolved production attempts; statistical refusals retained.
+
+Primary unequal-target and cost-aware fixed target both delivered 400/400 at
+8192 shots. Saving versus full-budget CP was 87.5%, but saving versus fixed target
+was zero: predeclared interest gate FAIL. Secondary target delivered 182/1080,
+fixed-target 240/1080, other arms 300/1080. One target primary interval missed;
+no >$1 erroneous declaration observed. Zero events do not prove zero risk.
+No quantum advantage or confirmation promotion. Final separate-agent evidence
+reviews found no remaining blockers with these qualified claims.
+
+See [results](WEEK_12_RESULTS.md), [closeout](WEEK_12_CLOSEOUT.md),
+[reviews](WEEK_12_REVIEW.md) and [handoff](WEEK_12_HANDOFF.md).
+All 7928 evidence files are bundled losslessly; immutable manifests and original
+archives preserved. Clean-checkout verification and authorized PR/merge follow.
+Four planned weeks remain, beginning with week 13 quantum encoding/preparation.
+Separate source checkout `02a369bd` subsequently passed 684 tests, 11 legacy
+warnings, in 345.56s; strict replay rechecked all 7400 rows/7721 files and the
+preserved pilot gate. Independent 185-cell audit and 327 local documentation
+links passed. Full proposed-source/ZIP credential-pattern review flagged no issues.
+Tracked trees stayed clean apart from these intentional verification notes/reports;
+no producing code or original evidence changed. Ready for the authorized PR merge.
+Published as [PR #3](https://github.com/Prithvi8706/quantum_option_pricing/pull/3);
+the PR records the server-side disposition/merge commit. Separate reviews and
+clean-checkout verification support integration, not the failed method claim.
+
+## 2026-09-16: week-12 policy foundation started
+
+No newly raised PR comments/inline reviews or open GitHub issues were found after
+the PR #2 merge; Macroscope remains skipped. Created branch
+`research/week12-unequal-calibration`. Added the five-arm policy specification,
+unequal-calibration batch planning and fresh terminal CP adapter without modifying
+historical producing modules. The forecast is explicitly heuristic; the documented
+conditional containment argument requires fresh binomial samples and valid bias/
+transfer bounds. No benefit or coverage guarantee beyond those assumptions claimed.
+
+53 new tests pass, including independent unequal-count binomial endpoint checks,
+old-arm equivalence, no-pilot fixed-arm inputs and budget/fallback behavior; Ruff
+passes. Full regression: 633 passed, 11 legacy Qiskit warnings, 302.60 seconds;
+`results/journal_sprint/tests_week12_policy_v1.xml`. No experimental observations or paid jobs
+launched; acquisition/replay infrastructure is the next gate. See
+[week-12 working record](WEEK_12_WORKING.md) and
+[policy specification](PROTOCOL_W12_POLICY_V1.md). Week 12 is in progress.
+Stage-A changes remain local and uncommitted; no push or new PR. Bytecode writes
+were disabled for regression, and historical producing sources remain unchanged.
+
 ## 2026-09-16: PR #2 pre-merge sweep
 
 User requested full verification, merge and a checklist. Tested exact PR source

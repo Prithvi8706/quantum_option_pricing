@@ -1,11 +1,12 @@
 # Revised implementation plan: weeks 11-16
 
-Updated 2026-09-16. Week 11 is development-complete; weeks 12-16 remain
-prospective. See [week-11 closeout](WEEK_11_CLOSEOUT.md) for its actual disposition.
+Updated 2026-09-16. Weeks 11-12 are development-complete; weeks 13-16 remain
+prospective. See [week-11 closeout](WEEK_11_CLOSEOUT.md) and
+[week-12 closeout](WEEK_12_CLOSEOUT.md); the latter's method-interest gate failed.
 
 This is the active plan for the six working-week blocks (11-16) of
 the [original roadmap](../JOURNAL_REENGINEERING_RESEARCH_2026-09-09.md).
-Five blocks remain after the week-11 development closeout.
+Four blocks remain after the week-12 development closeout.
 Weeks 1-10 retain their recorded development closeouts; completed development
 does not mean that confirmation or submission gates passed. In particular,
 [week 10](WEEK_10_CLOSEOUT.md) closed with NO-GO for confirmation/submission.
@@ -296,7 +297,6 @@ Distinguish the eventual outcome explicitly:
   finding is genuinely new and sufficiently substantive for a suitable venue.
   Otherwise revise or extend; completing six blocks does not establish novelty.
 
-Immediate next implementation task: week 12, beginning with the unequal-calibration
-policy and cost-aware fixed comparator under the [development manifest](WEEK_12_DESIGN_MANIFEST.md).
-Freeze the forecasting objective and fresh-sample inference argument before the
-bounded runtime pilot; do not jump directly to the full experiment.
+Immediate next implementation task: week 13's small harder-payoff quantum encoding
+and structured preparation feasibility. Preserve week 12's failed two-comparator
+interest gate; do not promote its policy or tune on its primary observations.
