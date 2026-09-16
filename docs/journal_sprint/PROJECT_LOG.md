@@ -1,6 +1,6 @@
 # Journal reengineering: running record
 
-## 2026-09-16: week-13 encoding study completed; final closeout review
+## 2026-09-16: week-13 development completed and independently reviewed
 
 User requested full week13 completion followed by independent subagent review.
 Implemented simulator-feasible Asian raw/beta1 geometric-residual encodings,
@@ -20,7 +20,12 @@ improvements using known identities, not a new algorithm or quantum advantage.
 All12 application contracts remain unknown_bias; no$1 certificate. Two coarse
 residual approximations still differ from numerical references by more than$1;
 all are retained. Product loading leaves the exponential payoff-table bottleneck.
-Final full regression and independent evidence review are in progress. See
+Final independent scientific and software evidence reviews both PASS, with no
+remaining blockers in scope. Full final regression735passed,11legacy warnings,
+355.00s. Separate clean source checkout8dc3f8fe passed51newtests in24.96s and
+strictly replayed104files/24circuits using the same pinned environment. New-source
+Ruff/whitespace checks passed; producing code/original evidence unchanged.
+Three planned blocks remain (weeks14-16), subject to their scientific gates. See
 [results](WEEK_13_RESULTS.md), [review](WEEK_13_REVIEW.md),
 [closeout and handoff](WEEK_13_CLOSEOUT.md), and
 [structured route](WEEK_13_STRUCTURED_ROUTE.md). No remote PR/push/merge this turn.

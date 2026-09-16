@@ -64,5 +64,25 @@ and protocol frozen in local commit `e59782a7` before acquisition. Earlier
 focused v1/v2 reports and 526+198 broad regression reports remain labelled
 iteration/pre-acquisition evidence, not the final 51-test producer revision.
 
-Final fixed-study evidence review remains pending. Do not interpret this working
-record as week completion until the closeout records verification.
+Final scientific evidence review: PASS. Hooke independently checked all six
+prices/reference SEs, scales, variance ratios, resource/depth exceptions,
+diagnostic maxima, bounds, runtime totals, archive size and receipts against
+the report. No blocking correction. Approved development closeout, explicitly
+retaining both >$1 coarse residual discrepancies, all12 unknown_bias contracts,
+the table bottleneck and no advantage/certification claim.
+
+Final software/evidence review: PASS. Euler checked archive/checkpoints/cost
+records, producing-source identity and verification evidence. Confirmed all10
+producing files match frozen hashes, clean-checkout receipt104files/6cases/
+24circuits, and51 passing tests with zero failures/errors/skips. No remaining
+blocker in the review scope. This does not mean Euler independently reran the
+whole regression suite; that remains a separately recorded main-agent check.
+
+Clean source checkout `8dc3f8fe`, using the same pinned environment, passed51
+tests in24.96s and strict replay of all104files/24circuits. It remained tracked
+clean. Main whole-project final regression subsequently passed735tests,
+zero failures,11legacy warnings, in355.00s; see
+[final XML](../../results/journal_sprint/tests_week13_full_final_v1.xml).
+The reviewers did not prematurely attest to that test result while it ran.
+All review findings were resolved before production; no remaining closeout
+blocker. Scientific certification/novelty/advantage gates remain separate.

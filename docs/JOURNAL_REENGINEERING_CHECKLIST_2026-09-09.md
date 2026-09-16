@@ -6,8 +6,11 @@ the week-10 gate and subsequent encoding/allocation/harder-pricing findings.
 This is a prospective revision, not completion of the unchecked publication
 requirements below. Earlier weekly closeouts remain historical evidence.
 
-Weeks 11-12 are development-complete; four planned blocks (13-16) remain. Week 12's
+Weeks 11-13 are development-complete; three planned blocks (14-16) remain. Week 12's
 [negative/tied result](journal_sprint/WEEK_12_CLOSEOUT.md) does not establish novelty.
+[Week13](journal_sprint/WEEK_13_CLOSEOUT.md) completed six cases/24 validated
+finite circuits,735passing tests and independent reviews; no certified
+continuous-price or quantum-advantage admission follows from those checks.
 The
 [PR #2 verification checklist](journal_sprint/PR2_MERGE_CHECKLIST.md) records the
 integration sweep separately from the publication requirements below.
