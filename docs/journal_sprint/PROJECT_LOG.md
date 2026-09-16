@@ -27,6 +27,12 @@ Twenty focused tests passed before follow-up acquisition. Full regression
 906passed/20legacywarnings in378.42s. Follow-up replay reproduced all5numeric
 payloads exactly, including failed phase-fit attempts (timing excluded), and
 checked34hashes. Total66source/artifact hash entries checked across both replays.
+Clean checkout of implementation commit `1f140c3d` in the existing isolated
+week15 environment: 20 focused tests passed (8 legacy warnings, 13.96s), and
+both archive replay checks passed again (11 numeric payloads, 66 hash entries).
+The clean-checkout run did not repeat full regression or acquisition. Its three
+receipts are `combined_clean_tests_v1.xml`, `combined_clean_replay_check_v1.json`
+and `polynomial_residual_clean_replay_check_v1.json` in `results/journal_sprint`.
 F-only Ruff and whitespace checks passed. No independent scientific/subagent
 review claimed. See
 [complete results](COMBINED_DEVELOPMENT_RESULTS.md),

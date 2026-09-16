@@ -161,6 +161,15 @@ is claimed. Original evidence is preserved, including failed synthesis attempts.
 Artifacts: `results/journal_sprint/combined_development_v1` and
 `polynomial_residual_v1`, with separate replay archives/receipts.
 
+Clean-checkout verification at commit `1f140c3d`, using the existing isolated
+week15 environment: 20 focused tests passed (8 legacy warnings, 13.96s).
+Both replay checks passed again: 11 numeric payloads and 66 source/artifact
+hash entries across the two archive pairs. Receipts are
+`combined_clean_tests_v1.xml`, `combined_clean_replay_check_v1.json`, and
+`polynomial_residual_clean_replay_check_v1.json` under the results directory.
+This clean-checkout check did not rerun the full regression or acquisitions;
+those were run separately as described above. No independent reviewer is implied.
+
 The next meaningful implementation target is the control-subtracted QSP route:
 scalable basket signal construction, stable higher-degree synthesis, full dollar
 error certification and a continuous-target comparison. Novelty against existing
