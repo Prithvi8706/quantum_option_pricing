@@ -1,5 +1,16 @@
 # Journal reengineering: running record
 
+## 2026-09-16: new independent weeks13-14 premerge review
+
+User now authorized review and merge, superseding earlier local-only handoffs.
+PR#4 includes both weeks13and14. New independent reviewers Bacon and Darwin
+accepted implementation/provenance and scientific claims respectively, with no
+blockers for finite-target development. Fresh full suite807passed/20warnings,
+389.99s, and both archives strictly replayed (104+2022files). Macroscope skipped
+because credits are exhausted; no hosted-CI or human-review pass is inferred.
+See [merge review](WEEK_14_MERGE_REVIEW.md) for exact scope/checks. Scientific
+week15 confirmation gate remains NO-GO regardless of merge readiness.
+
 ## 2026-09-16: week14 finite-target development completed; confirmation held
 
 User requested full week14 work and independent subagent reviews. Followed the
