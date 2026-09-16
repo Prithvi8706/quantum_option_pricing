@@ -1,5 +1,30 @@
 # Journal reengineering: running record
 
+## 2026-09-16: week-13 encoding study completed; final closeout review
+
+User requested full week13 completion followed by independent subagent review.
+Implemented simulator-feasible Asian raw/beta1 geometric-residual encodings,
+product/dense loaders, explicit finite-versus-continuous offsets, componentwise
+unknown-preserving price contracts and durable per-stage provenance/replay.
+Hooke independently checked formulas; Euler found and verified fixes for five
+software/provenance/audit issues before production. Ampere supplied the bounded
+Heston and signed nested-Asian exposure audit. No alternative was silently promoted.
+
+Frozen producer/protocol `e59782a7`; final pre-acquisition focused suite51passed.
+Fixed study completed6cases/24circuits in28.214414s, no failed/unattempted cases,
+no shots or hardware run. Strict replay verified104files/all24circuits, and a
+separate stdlib audit recomputed all six cases. Nine-qubit total CX510->264 with
+product loading, residual scale68.811691->14.020197. These are small encoding
+improvements using known identities, not a new algorithm or quantum advantage.
+
+All12 application contracts remain unknown_bias; no$1 certificate. Two coarse
+residual approximations still differ from numerical references by more than$1;
+all are retained. Product loading leaves the exponential payoff-table bottleneck.
+Final full regression and independent evidence review are in progress. See
+[results](WEEK_13_RESULTS.md), [review](WEEK_13_REVIEW.md),
+[closeout and handoff](WEEK_13_CLOSEOUT.md), and
+[structured route](WEEK_13_STRUCTURED_ROUTE.md). No remote PR/push/merge this turn.
+
 ## 2026-09-16: week-12 development completed, negative gate retained
 
 User requested complete week 12, separate subagent reviews and merge. Producing

@@ -1,5 +1,19 @@
 # Primary-paper reading ledger
 
+## 2026-09-16 week-13 feasibility readings
+
+See [structured route](WEEK_13_STRUCTURED_ROUTE.md) and
+[bounded alternative audit](WEEK_13_ALTERNATIVE_AUDIT.md) for primary URLs,
+exact applicability restrictions and missing costs. Focused QSP implementation
+sections of Stamatopoulos/Zeng 2307.14310v2; abstract/publisher checks for
+Chakrabarti's resource threshold, Herbert's Grover-Rudolph limitation, and
+Iaconis/Johri/Zhu's normal-distribution MPS preparation. The independent audit
+inspected Herman's Heston theorem/sampler dependencies and Blanchet's five
+assumptions/theorem, plus focused Haji-Ali/Spence coupling requirements. Comparator
+QMC/control/surrogate records were screened at abstract/publisher depth. These
+are bounded readings, not an exhaustive 2026 survey, new full-paper count,
+independent proof certification or reproduction of published experiments.
+
 ## 2026-09-15 week-11 prior-work refresh
 
 See [quantum contribution checkpoint](WEEK_11_NOVELTY_MATRIX.md) for primary links
