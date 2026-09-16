@@ -33,6 +33,9 @@ preserved pilot gate. Independent 185-cell audit and 327 local documentation
 links passed. Full proposed-source/ZIP credential-pattern review flagged no issues.
 Tracked trees stayed clean apart from these intentional verification notes/reports;
 no producing code or original evidence changed. Ready for the authorized PR merge.
+Published as [PR #3](https://github.com/Prithvi8706/quantum_option_pricing/pull/3);
+the PR records the server-side disposition/merge commit. Separate reviews and
+clean-checkout verification support integration, not the failed method claim.
 
 ## 2026-09-16: week-12 policy foundation started
 

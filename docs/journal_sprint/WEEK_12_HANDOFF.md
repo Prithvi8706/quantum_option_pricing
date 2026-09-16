@@ -62,3 +62,8 @@ No code changed after production acquisition. Local environment,
 downloaded articles, private configuration, unrelated outputs and the six-edit
 user stash are excluded/preserved. AI review does not imply Macroscope or human
 approval; PR check state must be recorded as observed, including skipped checks.
+
+Published as [PR #3](https://github.com/Prithvi8706/quantum_option_pricing/pull/3).
+The user explicitly authorized merge after complete verification and separate
+reviews; the PR records the actual server-side merge event and commit. Scientific
+interest gate remains FAILED regardless of software integration status.
