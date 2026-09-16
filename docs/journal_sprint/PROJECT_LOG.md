@@ -28,6 +28,11 @@ All96prices, pilot values, identities and summaries replay exactly in the
 separate environment, excluding timing fields. F-only Ruff check and staged
 whitespace check passed. Producer hashes are protected against newline conversion
 in new files; no old frozen producer was edited.
+Local implementation/evidence commit dfb3e690. Clean checkout of that commit
+passed41focused tests/8legacywarnings in8.48s using the existing isolated week15
+environment; all21source-hash entries and11artifact-hash entries matched.
+This last check did not repeat the full886suite or large gate regeneration;
+those are the separately recorded successful checks above.
 
 See [results and review packet](REVERSIBLE_ARITHMETIC_RESULTS.md),
 [construction protocol](REVERSIBLE_ARITHMETIC_PROTOCOL.md). Confirmation remains

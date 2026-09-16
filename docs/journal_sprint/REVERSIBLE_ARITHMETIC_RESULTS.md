@@ -85,6 +85,9 @@ no empirical support for quantum superiority on this candidate.
   imports were removed during that run; the final isolated41test pass covers
   the resulting test files. Producer code was unchanged throughout acquisition,
   regeneration and verification.
+- Clean checkout dfb3e690:41focused tests passed in8.48s;21source-hash and
+  11artifact-hash entries matched. Used the existing isolated week15 environment.
+  The clean checkout did not rerun the entire886test suite or large gate build.
 - Initial test failures (overly loose zero-stage magnitude accounting and an
   interval coercion mismatch) were fixed before the successful large acquisition.
   No failed research trial was dropped; these were development unit-test failures.
