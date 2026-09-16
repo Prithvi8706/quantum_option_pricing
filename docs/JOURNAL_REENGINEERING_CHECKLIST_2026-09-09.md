@@ -16,6 +16,10 @@ continuous-price or quantum-advantage admission follows from those checks.
 93tasks/2022archived files,807passing tests and independent evidence reviews.
 Its [claim/gate matrix](journal_sprint/WEEK_14_CLAIMS_GATE.md) preserves unresolved
 application validity, prior-work distinction and human confirmation sign-offs.
+[Week15 reproduction](journal_sprint/WEEK_15_CLOSEOUT.md) now passes123focused
+tests and both archive replays in a genuinely fresh installed environment.
+This does not complete the blocked week15 confirmation campaign; week16 remains
+planned and publication-level checkboxes below are not automatically closed.
 The
 [PR #2 verification checklist](journal_sprint/PR2_MERGE_CHECKLIST.md) records the
 integration sweep separately from the publication requirements below.
