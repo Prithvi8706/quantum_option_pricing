@@ -54,6 +54,11 @@ runtime; record any resolver-added packages and their actual versions. The
 existing Windows platform has no installed symengine requirement under Terra's
 case-sensitive machine marker; the new environment must still pass pip check.
 
+Bootstrap note before runtime-package installation: Python3.9.13 creates pip22.0.4,
+which lacks --report. Upgrade **only the new venv** to pinned pip23.2.1, retaining
+pip_bootstrap.log; use its --report for the runtime install. This changes tooling,
+not a producing dependency or numerical tolerance. Original environment untouched.
+
 ## Confirmation prerequisites remain open
 
 Continuous bias/error enclosure; a non-enumerative oracle or visibly replanned
