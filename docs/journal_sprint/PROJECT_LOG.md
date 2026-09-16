@@ -1,5 +1,29 @@
 # Journal reengineering: running record
 
+## 2026-09-16: week15 reproduction complete; confirmation blocked
+
+PR#4 merged weeks13-14 atd5e1c3f2 after independent Bacon/Darwin acceptance,
+807fresh full tests and both replays. User authorized week15 start-to-end with
+review/merge, but its scientific gate remains NO-GO. Executed the explicitly
+permitted fresh-environment reproduction and blocked-confirmation fallback;
+did not invent a held-out campaign or silently replace the application.
+
+Protocol e9c673ef; installer amendment/source checkout958a7a9c. New isolated
+Python3.9.13 environment,22matching pins, module paths inside new prefix,
+pip check0. Fresh123tests passed/17warnings in44.37s; strict week13 replay
+104files/6cases/24circuits and week14 replay2022files/93tasks passed. All6scalar
+formula cases passed and all58analysis cells exactly reproduced. Both original
+archives remain intact. Raw installer logs preserved and losslessly ZIP archived.
+Independent Bacon software/provenance and Darwin scientific/claims reviews
+ACCEPT at7ce21101. Darwin independently reconciled96ideal fixed intervals and
+all six rate numerators/denominators across50confidence cells; main's separate
+tracked-only checkout verified11artifact files and both ZIP-member hashes.
+No algorithm, original seed, tolerance or producer-source change. This is new
+environment reproduction on the same host, not confirmation or a new proof.
+See [week15 closeout](WEEK_15_CLOSEOUT.md), [protocol](WEEK_15_REPRODUCTION_PROTOCOL.md)
+and [independent review](WEEK_15_REVIEW.md) for final dispositions/merge status.
+The original confirmation milestone remains incomplete; week16 remains planned.
+
 ## 2026-09-16: new independent weeks13-14 premerge review
 
 User now authorized review and merge, superseding earlier local-only handoffs.

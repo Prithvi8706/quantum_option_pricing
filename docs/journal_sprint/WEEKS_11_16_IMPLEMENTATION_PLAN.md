@@ -231,6 +231,12 @@ study survives review, remain in development and use/revise the reserve.
 
 ### Week 15 — Fresh confirmation and independent reproduction
 
+2026-09-16 disposition: fresh-environment reproduction completed under the
+step3/fallback scope; confirmation remains blocked, not completed. New isolated
+environment passed123week13/14 tests, both strict replays, six scalar-formula
+cases and exact58cell analysis reproduction. No fresh confirmation seeds/regimes
+or scientific gate promotion. See [week15 closeout](WEEK_15_CLOSEOUT.md).
+
 1. Run only after the week-14 gate passes. Use new seeds and held-out contract/
    noise regimes not used to choose the method; discovery reruns are not fresh
    confirmation. Choose repetitions from the predeclared effect/uncertainty
