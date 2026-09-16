@@ -66,3 +66,22 @@ on passing tests and the pilot runtime gate. Final focused suite: 104 passed in
 from the retained 676-test iteration report.
 That corrected-source suite subsequently passed **684 tests**, with 11 legacy
 Qiskit warnings, in 321.87 seconds. No production acquisition ran alongside it.
+
+## Final sealed-evidence reviews
+
+Dalton independently recomputed all 185 cells' denominators, CP intervals, actual/
+penalized costs and t intervals, plus the integer primary gate. No remaining
+statistical blocker with the negative-result/uncertainty wording. Confirmed the
+target's single noncontaining primary interval has $0.1701 midpoint error, below
+the $1 declaration threshold; the equal-pilot incompatible outcome stays visible.
+Secondary target delivery is particularly poor on E014/E025 design-match/zero-
+guard cells (0/30 versus fixed-target 30/30). No broad benefit is supported.
+
+Carver found no outstanding software/evidence blockers in the sealed acquisition:
+prior defects resolved; 90 pilot and 7400 main attempts complete; no torn/unresolved
+resources; source/input/gate/recovery consistency checked. Saved replay and test
+reports were inspected. This review did not independently rerun the full suite or
+the stdlib arithmetic script. Remaining integration work: fresh-source checkout
+verification and publication/merge state check.
+
+These are actual separate AI subagent reviews, not independent human reproduction.

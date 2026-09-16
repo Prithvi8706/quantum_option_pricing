@@ -6,7 +6,9 @@ the week-10 gate and subsequent encoding/allocation/harder-pricing findings.
 This is a prospective revision, not completion of the unchecked publication
 requirements below. Earlier weekly closeouts remain historical evidence.
 
-Week 11 is development-complete; five planned blocks (12-16) remain. The
+Weeks 11-12 are development-complete; four planned blocks (13-16) remain. Week 12's
+[negative/tied result](journal_sprint/WEEK_12_CLOSEOUT.md) does not establish novelty.
+The
 [PR #2 verification checklist](journal_sprint/PR2_MERGE_CHECKLIST.md) records the
 integration sweep separately from the publication requirements below.
 

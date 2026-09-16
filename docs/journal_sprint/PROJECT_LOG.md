@@ -1,5 +1,33 @@
 # Journal reengineering: running record
 
+## 2026-09-16: week-12 development completed, negative gate retained
+
+User requested complete week 12, separate subagent reviews and merge. Producing
+freeze `9a97228a`; 104 focused/684 full tests passed before production. Reviewers
+Dalton and Carver independently identified statistical/software blockers, corrected
+before launch. Full dispositions include test pilot-v1 exposure and fresh pilot-v2
+amendment; no policy/threshold tuning on production results.
+
+Pilot-v2 completed/replayed 90 rows, projection 1244.864s passed. Main completed
+all 7400 rows (2000 primary +5400 secondary) in 150.700 acquisition seconds,
+297.210s including automatic replay. Verified 7721 files and every event/row;
+independent audit covered 185 cells, 413,220,864 shots and 31,338,155,520 modeled CX.
+Zero unattempted/failed/unresolved production attempts; statistical refusals retained.
+
+Primary unequal-target and cost-aware fixed target both delivered 400/400 at
+8192 shots. Saving versus full-budget CP was 87.5%, but saving versus fixed target
+was zero: predeclared interest gate FAIL. Secondary target delivered 182/1080,
+fixed-target 240/1080, other arms 300/1080. One target primary interval missed;
+no >$1 erroneous declaration observed. Zero events do not prove zero risk.
+No quantum advantage or confirmation promotion. Final separate-agent evidence
+reviews found no remaining blockers with these qualified claims.
+
+See [results](WEEK_12_RESULTS.md), [closeout](WEEK_12_CLOSEOUT.md),
+[reviews](WEEK_12_REVIEW.md) and [handoff](WEEK_12_HANDOFF.md).
+All 7928 evidence files are bundled losslessly; immutable manifests and original
+archives preserved. Clean-checkout verification and authorized PR/merge follow.
+Four planned weeks remain, beginning with week 13 quantum encoding/preparation.
+
 ## 2026-09-16: week-12 policy foundation started
 
 No newly raised PR comments/inline reviews or open GitHub issues were found after

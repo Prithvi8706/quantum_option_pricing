@@ -33,7 +33,38 @@ No claimed performance improvement, quantum novelty or quantum advantage.
 Stage A is complete and locally verified; week 12 remains in progress. Changes
 are local on the work branch, not committed/pushed or included in a new PR.
 
-## Remaining stage gates
+## Stage B: reviewed source freeze and production runtime pilot
+
+The stage-A status above is historical. Subsequent separate reviews are recorded
+in [review dispositions](WEEK_12_REVIEW.md), including the pilot-v1 test-stream
+exposure and prospective fresh pilot-v2 correction. Both reviewers found no
+remaining acquisition blockers after fixes. 104 focused tests and a fresh full
+suite of 684 tests passed (11 legacy Qiskit warnings, 321.87 seconds).
+
+Producing implementation/protocol freeze: commit `9a97228a`. Production pilot-v2
+completed all 90 rows in 1.739 acquisition seconds. The predeclared conservative
+projection was 1244.864 seconds, below the 7200-second main workflow budget.
+Strict source/event/numerical replay verified 90 rows and 205 files. The independent
+audit checked 30 cells, 5,308,416 shots and 399,393,792 modeled logical CX.
+These are synthetic development samples, not executed quantum circuits. The
+optional NumPy environment-report warning about PyYAML did not prevent capture.
+
+Main acquisition was launched only after that gate, with the unchanged 2000-row
+primary and 5400-row secondary schedules. Its completion/result is recorded below
+once acquisition and automatic replay finish; no outcome-based policy changes.
+
+## Stage C: full development closeout
+
+The main run and automatic replay completed: 7400 rows, 7721 files, 150.700s
+acquisition and 297.210s total workflow. Independent arithmetic checked 185 cells.
+Final separate-agent evidence reviews found no outstanding blockers. The primary
+interest gate FAILED because unequal-target tied cost-aware fixed target at
+8192 shots and 400/400 deliveries; secondary target delivery was worse.
+All original observations and negative outcomes are preserved; no tuning/rerun.
+The historical checklist below is now fully dispositioned; see
+[final closeout](WEEK_12_CLOSEOUT.md) and [results](WEEK_12_RESULTS.md).
+
+## Historical stage-A remaining gates (now dispositioned in final closeout)
 
 - [ ] Acquisition runner: evaluator-only truth, purpose-separated random streams,
   exclusive outputs, before/after events, failed/partial attempt reconciliation,
