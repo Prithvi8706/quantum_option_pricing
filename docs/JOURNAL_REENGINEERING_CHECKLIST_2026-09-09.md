@@ -1,5 +1,20 @@
 # Journal Reengineering Checklist
 
+Forward-plan update (16 September 2026): the active schedule is
+[weeks 11-16](journal_sprint/WEEKS_11_16_IMPLEMENTATION_PLAN.md), incorporating
+the week-10 gate and subsequent encoding/allocation/harder-pricing findings.
+This is a prospective revision, not completion of the unchecked publication
+requirements below. Earlier weekly closeouts remain historical evidence.
+
+Week 11 is development-complete; five planned blocks (12-16) remain. The
+[PR #2 verification checklist](journal_sprint/PR2_MERGE_CHECKLIST.md) records the
+integration sweep separately from the publication requirements below.
+
+Week-11 development [closeout](journal_sprint/WEEK_11_CLOSEOUT.md) records the
+shared error/resource contract, refined classical references, full benchmark,
+verification and remaining quantum contribution gate. It does not close the
+publication-level requirements below or establish quantum advantage.
+
 Current weekly evidence is indexed in [PROJECT_LOG.md](journal_sprint/PROJECT_LOG.md).
 Week-6 [results](journal_sprint/WEEK_6_RESULTS.md) extend discovery, not the
 publication-level sign-offs below. Unchecked main-study requirements are not

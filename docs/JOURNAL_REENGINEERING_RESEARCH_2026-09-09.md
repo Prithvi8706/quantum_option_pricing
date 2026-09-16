@@ -1,5 +1,11 @@
 # Reengineering Quantum Option Pricing for Journal Publication
 
+Schedule update (15 September 2026): use the
+[revised weeks 11-16 implementation plan](journal_sprint/WEEKS_11_16_IMPLEMENTATION_PLAN.md)
+for forward work. It incorporates the completed week-10 development gate and
+later research findings. The original assessment and schedule below are retained
+as historical planning context, not assertions that their exit conditions passed.
+
 The strongest route is to turn Paper A into a study of **reliable price accuracy under constrained quantum resources**, with an explicit method for allocating those resources and declining to claim precision that the evidence cannot support. A larger depolarizing-noise sweep alone would be an incremental contribution. A tested decision procedure, supported by conditional statistical guarantees, modern quantum comparators, and credible classical alternatives, has considerably more scientific value.
 
 This assessment covers literature and official publishing information available through **9 September 2026**. It assumes roughly three to six months, three contributing researchers, local simulation, limited IBM access, and a preference for zero publication fees. Timeline and compute estimates below are planning assumptions, not measured forecasts. The author confirmed on 9 September 2026 that neither manuscript has been submitted or published. The project can therefore be redesigned directly for an original journal submission.
