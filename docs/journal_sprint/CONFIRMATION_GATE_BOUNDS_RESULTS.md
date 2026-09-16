@@ -74,7 +74,15 @@ The first iteration had two failing arithmetic reference tests: rounded mpmath
 references differed from exact zero-width decimal results. Replaced those
 references with exact Fractions, not wider production intervals. No evidence
 or method threshold was altered based on study outcomes. New-source Ruff passed.
-Full regression and clean-source receipts are recorded below when complete.
+Full regression passed845tests/20legacy warnings in380.26s
+(tests_encoding_enclosure_full.xml). Clean source checkout52357dac passed38new
+tests/8warnings in15.76s and reproduced49files/576decimal rows exactly using
+the existing isolated week15 environment, not another fresh installation.
+Receipts: tests_encoding_enclosure_clean.xml and
+encoding_enclosure_clean_replay_v1.json. Producing code/protocol remain unchanged
+sincee38ee513; Git whitespace checks pass. Old producers and original evidence
+remain unchanged. The comparison/design sidecars are explicitly supplementary,
+not quietly added inside the frozen49file archive.
 No independent subagent/human review is claimed for this increment; the proof
 and code need that additional scrutiny before scientific promotion.
 

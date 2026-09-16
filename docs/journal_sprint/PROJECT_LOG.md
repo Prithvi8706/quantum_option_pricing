@@ -10,6 +10,9 @@ Opt-in screening still preserves unknown implementation components and refuses
 admission. No novelty, full certificate, human sign-off or confirmation claimed.
 
 Frozen producer/protocol e38ee513;38focused tests passed before acquisition.
+Final full regression845passed/20warnings in380.26s. Clean source checkout52357dac
+passed38newtests in15.76s and exact49file/576row replay using the existing isolated
+week15 environment. No producing-code changes after freeze.
 Deterministic audit completed/replayed576rows/49files, no sampled prices or
 failed cells. For two assets/two dates atL4, the partial$0.25screen moves raw q13
 under the old float expression to q10 under the new bound (52to40normal bits),
