@@ -18,6 +18,8 @@ recorded negative/tied result, not incomplete execution or a submission approval
 - [x] Delivery, conditional/unconditional errors, actual/penalized costs, forecast
   diagnostics, uncertainty and all no-declaration outcomes retained.
 - [x] Original outcomes preserved without post-result policy/threshold changes.
+- [x] Separate-source-checkout full suite: 684 passed; strict main/pilot replay,
+  independent arithmetic and documentation-link checks passed before integration.
 
 Results and quantitative limitations: [WEEK_12_RESULTS.md](WEEK_12_RESULTS.md).
 Review trail: [WEEK_12_REVIEW.md](WEEK_12_REVIEW.md).

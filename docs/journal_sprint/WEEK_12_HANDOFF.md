@@ -44,8 +44,21 @@ must not be reused to claim independent observations.
 
 ## Integration audit
 
-Separate-source-checkout verification and publication/merge disposition are recorded
-here once performed. No code changed after production acquisition. Local environment,
+Separate-source-checkout candidate `02a369bd` successfully extracted all 7928 files,
+strictly replayed 7400 main rows/7721 files (including the preserved pilot gate),
+and independently checked 185 cells and aggregate resources. No producing source
+or original manifest changed. Full suite: **684 passed, 11 legacy Qiskit warnings,
+345.56 seconds**; `results/journal_sprint/tests_week12_clean_checkout_v1.xml`.
+Replay receipt: `results/journal_sprint/w12_clean_checkout_replay_v1.json`.
+All 327 local links across 109 sprint documents resolve. The separate checkout's
+tracked tree stayed clean; bytecode writes were disabled. Tests/replay used the
+existing environment, not a new dependency installation. Parallel replay did not
+measure or replace original acquisition timings.
+All changed Python files pass Ruff; Git whitespace checks and the bounded
+credential-pattern scan of the proposed files/ZIP contents found no flagged issues.
+This bounded scan is not a guarantee against every possible secret representation.
+
+No code changed after production acquisition. Local environment,
 downloaded articles, private configuration, unrelated outputs and the six-edit
 user stash are excluded/preserved. AI review does not imply Macroscope or human
 approval; PR check state must be recorded as observed, including skipped checks.

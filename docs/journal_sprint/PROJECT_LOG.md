@@ -27,6 +27,12 @@ See [results](WEEK_12_RESULTS.md), [closeout](WEEK_12_CLOSEOUT.md),
 All 7928 evidence files are bundled losslessly; immutable manifests and original
 archives preserved. Clean-checkout verification and authorized PR/merge follow.
 Four planned weeks remain, beginning with week 13 quantum encoding/preparation.
+Separate source checkout `02a369bd` subsequently passed 684 tests, 11 legacy
+warnings, in 345.56s; strict replay rechecked all 7400 rows/7721 files and the
+preserved pilot gate. Independent 185-cell audit and 327 local documentation
+links passed. Full proposed-source/ZIP credential-pattern review flagged no issues.
+Tracked trees stayed clean apart from these intentional verification notes/reports;
+no producing code or original evidence changed. Ready for the authorized PR merge.
 
 ## 2026-09-16: week-12 policy foundation started
 
