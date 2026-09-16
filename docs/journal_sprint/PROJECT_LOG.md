@@ -1,5 +1,31 @@
 # Journal reengineering: running record
 
+## 2026-09-16: PR #2 pre-merge sweep
+
+User requested full verification, merge and a checklist. Tested exact PR source
+`0796cb744375fac614c565a8f64fa8420c05b60d` in a separate checkout: 580 tests
+passed, 11 legacy Qiskit warnings, 381.48 seconds. Existing Python environment
+reused; no fresh-install or timing-performance claim. Full ZIP/member integrity,
+bounded credential-pattern review, changed-Python Ruff, independent week-11
+events/counts and 144-cell arithmetic checks passed. No Macroscope approval is
+claimed: its PR check was SKIPPED and there were no review comments.
+
+The historical encoding-v1 strict replay rejects changed live source, and its
+frozen verifier reproduces the documented nested-manifest bug. A supplemental
+frozen-producer audit verified all 1080 rows and hashes without changing evidence;
+the corrected v2 verifier passes. No new implementation fix was required. Corrected
+stale forward-plan status to week 12 next, five blocks remaining. Added the
+[integration and remaining-work checklist](PR2_MERGE_CHECKLIST.md). Original
+archives, unrelated files and the six-edit stash remain untouched.
+
+Final replays completed: week-11 main 2308 rows/2415 files and references
+384 rows/490 files; pilot, week-10, rescue, corrected encoding, allocation,
+shortlist and confidence-sequence reanalysis also passed. Timings are not
+reproduced. Integration decision: GO for the explicitly authorized PR #2 merge;
+the linked PR retains the server-side merge event/commit. Quantum novelty,
+advantage, confirmation and submission gates remain open. No producing-source
+changes followed the tested commit; this sweep adds only docs and reports.
+
 ## 2026-09-15: weeks 10-11 integration packaging and verification
 
 Packaged implementation, protocols, results and prospective week-12 design in

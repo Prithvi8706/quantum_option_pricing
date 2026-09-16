@@ -1,9 +1,11 @@
 # Revised implementation plan: weeks 11-16
 
-Updated 2026-09-15. Status: prospective plan, not executed week closeouts.
+Updated 2026-09-16. Week 11 is development-complete; weeks 12-16 remain
+prospective. See [week-11 closeout](WEEK_11_CLOSEOUT.md) for its actual disposition.
 
-This is the active forward plan for the remaining six working-week blocks of
+This is the active plan for the six working-week blocks (11-16) of
 the [original roadmap](../JOURNAL_REENGINEERING_RESEARCH_2026-09-09.md).
+Five blocks remain after the week-11 development closeout.
 Weeks 1-10 retain their recorded development closeouts; completed development
 does not mean that confirmation or submission gates passed. In particular,
 [week 10](WEEK_10_CLOSEOUT.md) closed with NO-GO for confirmation/submission.
@@ -46,7 +48,12 @@ theorem, useful decision result or substantive reproducible finding must still
 be established against the nearest prior work. A renamed combination is not
 enough. Neither publication readiness nor quantum advantage is guaranteed.
 
-## 2. Starting evidence: reuse, do not rerun as confirmation
+## 2. Historical starting evidence: reuse, do not rerun as confirmation
+
+The table below records the pre-week-11 starting point, not current totals.
+Week 11 subsequently completed 2304 main observations, 384 reference estimates
+and 132 pilot/warmup rows; see [results](WEEK_11_RESULTS.md). The integration
+suite now contains 580 passing tests, including evidence-packaging tests.
 
 | Available component | Evidence and limitation |
 |---|---|
@@ -289,5 +296,7 @@ Distinguish the eventual outcome explicitly:
   finding is genuinely new and sufficiently substantive for a suitable venue.
   Otherwise revise or extend; completing six blocks does not establish novelty.
 
-Immediate next implementation task: week 11, beginning with the shared error/
-resource contract and a frozen, independently timed classical baseline protocol.
+Immediate next implementation task: week 12, beginning with the unequal-calibration
+policy and cost-aware fixed comparator under the [development manifest](WEEK_12_DESIGN_MANIFEST.md).
+Freeze the forecasting objective and fresh-sample inference argument before the
+bounded runtime pilot; do not jump directly to the full experiment.
