@@ -1,5 +1,12 @@
 # Concrete route to unlock confirmation
 
+Latest development2026-09-17: combined representation/QSP/reuse ablations reject
+naive signed-LCU control composition; subtracting an analytic polynomial control
+before QSP normalization gives a finite-model quantum-versus-quantum sampling
+variance improvement. It does not establish classical superiority or continuous
+admission. See [combined results](COMBINED_DEVELOPMENT_RESULTS.md). Scalable
+signal construction and full error certification remain necessary.
+
 Update 2026-09-17: a raw-only table-free reversible payoff and ideal Gaussian
 loader error analysis are implemented. The representative emitted payoff uses
 3,637logical qubits/10,102,977gates, with prospective combined bias below$0.204.

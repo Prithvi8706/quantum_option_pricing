@@ -1,0 +1,25 @@
+{
+  "kind": "combined",
+  "exact_numeric_payloads": [
+    "combined_screen.json",
+    "discovery.json",
+    "integrated_lcu.json",
+    "mps.json",
+    "qsp.json",
+    "representations.json"
+  ],
+  "excluded_timing_fields": {
+    "discovery.json": [
+      "fwht_seconds",
+      "greedy_seconds"
+    ]
+  },
+  "hashes_checked": 32,
+  "manifests": {
+    "results\\journal_sprint\\combined_development_v1": "ac8bb48fea765667d53ce55e2ab287c2fa2e9bf4954e82fca2903b522c470f19",
+    "results\\journal_sprint\\combined_development_replay_v1": "76a2b05daf69a1dfdf6d8c43f48470e5d0657433cdd27094630911750d03c049"
+  },
+  "verifier_sha256": "f3adae00d631f0652d94ccdd4025bc5f369f7af9a0d3f3aaa8d5dd2fa8c250ea",
+  "independent_scientific_review": false,
+  "qualification": "same-producer separate-environment replay, not independent derivation or hardware validation"
+}

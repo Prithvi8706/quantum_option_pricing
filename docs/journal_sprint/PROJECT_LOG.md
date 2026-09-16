@@ -1,5 +1,38 @@
 # Journal reengineering: running record
 
+## 2026-09-17: bounded integration of representation/QSP/reuse proposals
+
+User authorized all-three development and broader Quantum Week research. Added
+actual Fourier-sampling feature circuits, full-pool classical competitors,
+finite-table QSP payoff circuits, coherent signed-control LCU smoke test,
+MPS compression diagnostics and fair setup-reuse ledgers. No old producer edit,
+hardware submission, confirmation, remote push/merge or paper-advantage claim.
+
+Stage1:95representation records,180LCUvariance screens,5strikes,2QSPdegrees.
+Every LCUscreen was worse in Hadamard variance than its raw comparator; the
+actual16path composite circuit was correct within2.59e-11 but normalization
+grew1.937x. Quantum Fourier selection did not beat strong geometric/greedy
+controls on the center case. All6numeric Stage1payloads replay exactly in the
+existing isolated week15environment, excluding timings;32hashes checked.
+
+Explicit adaptive follow-up: subtract degree4polynomial control BEFORE QSP
+normalization; compute/reuse finite-model basket moments through70multinomial
+terms. At strike100, degree8/16gave370.69x/127.96x lower ideal Hadamard price
+variance than raw QSP, with identical per-shotCX counts and identical polynomial
+bias. Classical controls also improve strongly. Degree32residual phase fitting
+failed; every attempt/cap retained. No continuous accuracy or classical speedup
+inferred from this finite256path experiment. MPS circuit remains unimplemented.
+
+Twenty focused tests passed before follow-up acquisition. Full regression
+906passed/20legacywarnings in378.42s. Follow-up replay reproduced all5numeric
+payloads exactly, including failed phase-fit attempts (timing excluded), and
+checked34hashes. Total66source/artifact hash entries checked across both replays.
+F-only Ruff and whitespace checks passed. No independent scientific/subagent
+review claimed. See
+[complete results](COMBINED_DEVELOPMENT_RESULTS.md),
+[bounded protocol](COMBINED_DEVELOPMENT_PROTOCOL.md), and
+[adaptive protocol](COMBINED_FOLLOWUP_PROTOCOL.md).
+
 ## 2026-09-17: table-free raw arithmetic confirmation-unblock attempt
 
 Implemented reversible signed fixed-point affine/Horner/raw-call/comparator
