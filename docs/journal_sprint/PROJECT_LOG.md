@@ -1,5 +1,78 @@
 # Journal reengineering: running record
 
+## 2026-09-16: new independent weeks13-14 premerge review
+
+User now authorized review and merge, superseding earlier local-only handoffs.
+PR#4 includes both weeks13and14. New independent reviewers Bacon and Darwin
+accepted implementation/provenance and scientific claims respectively, with no
+blockers for finite-target development. Fresh full suite807passed/20warnings,
+389.99s, and both archives strictly replayed (104+2022files). Macroscope skipped
+because credits are exhausted; no hosted-CI or human-review pass is inferred.
+See [merge review](WEEK_14_MERGE_REVIEW.md) for exact scope/checks. Scientific
+week15 confirmation gate remains NO-GO regardless of merge readiness.
+
+## 2026-09-16: week14 finite-target development completed; confirmation held
+
+User requested full week14 work and independent subagent reviews. Followed the
+week13 gate: no continuous-price encoding was admitted, so the executable scope
+is finite-target development, not a completed continuous end-to-end benchmark.
+Producer/protocol76914458; all93tasks completed,912trial outcomes (including
+paired analyses),20response checks,2022files/2399090bytes,21.931956s elapsed.
+Strict replay passed all files/tasks;58cell prespecified analysis generated.
+Full807tests passed in two disjoint invocations; clean checkout1fbea8b6 passed
+72newtests and strict replay with the same pinned environment. Independent
+scientific and software evidence reviews ACCEPT; four wording corrections
+applied. Complete review receipts are recorded in the linked closeout/review.
+
+Added actual nonzero-Grover raw/residual circuits, independent density checks,
+native IQAE and source-faithful noisy csAE, fixed/direct and five-policy ablations,
+finite classical/direct-sum baselines, explicit resource and failure accounting.
+Maximum response discrepancy2.254e-14. Residual scale reduces finite-target effort
+for classical and quantum estimators. EqualA direct/multidepth delivery ties;
+multidepth costs1.9times CX. Ignored-noise residual multidepth yields12empty
+sets and15/16hull misses, all retained. No quantum advantage or new algorithm.
+
+Independent pre-acquisition findings fixed: nested-manifest inventory bypass,
+unenforced native pin, csAE checkpoint durability, depth conventions and coverage
+denominators. Main integration also corrected the Grover constructor, checkpoint
+failure propagation and a fixture-detected analysis category collision, all before
+production. Final review/clean-checkout receipts are in
+[review](WEEK_14_REVIEW.md) and [closeout](WEEK_14_CLOSEOUT.md).
+Human review packet prepared, not sent/signed. Continuous unknown_bias and
+prior-work distinction remain unresolved; week15 NO-GO. Two planned blocks
+remain (weeks15-16), gated. No remote push/PR/merge; unrelated local work preserved.
+See [results](WEEK_14_RESULTS.md) and [claims/gate](WEEK_14_CLAIMS_GATE.md).
+
+## 2026-09-16: week-13 development completed and independently reviewed
+
+User requested full week13 completion followed by independent subagent review.
+Implemented simulator-feasible Asian raw/beta1 geometric-residual encodings,
+product/dense loaders, explicit finite-versus-continuous offsets, componentwise
+unknown-preserving price contracts and durable per-stage provenance/replay.
+Hooke independently checked formulas; Euler found and verified fixes for five
+software/provenance/audit issues before production. Ampere supplied the bounded
+Heston and signed nested-Asian exposure audit. No alternative was silently promoted.
+
+Frozen producer/protocol `e59782a7`; final pre-acquisition focused suite51passed.
+Fixed study completed6cases/24circuits in28.214414s, no failed/unattempted cases,
+no shots or hardware run. Strict replay verified104files/all24circuits, and a
+separate stdlib audit recomputed all six cases. Nine-qubit total CX510->264 with
+product loading, residual scale68.811691->14.020197. These are small encoding
+improvements using known identities, not a new algorithm or quantum advantage.
+
+All12 application contracts remain unknown_bias; no$1 certificate. Two coarse
+residual approximations still differ from numerical references by more than$1;
+all are retained. Product loading leaves the exponential payoff-table bottleneck.
+Final independent scientific and software evidence reviews both PASS, with no
+remaining blockers in scope. Full final regression735passed,11legacy warnings,
+355.00s. Separate clean source checkout8dc3f8fe passed51newtests in24.96s and
+strictly replayed104files/24circuits using the same pinned environment. New-source
+Ruff/whitespace checks passed; producing code/original evidence unchanged.
+Three planned blocks remain (weeks14-16), subject to their scientific gates. See
+[results](WEEK_13_RESULTS.md), [review](WEEK_13_REVIEW.md),
+[closeout and handoff](WEEK_13_CLOSEOUT.md), and
+[structured route](WEEK_13_STRUCTURED_ROUTE.md). No remote PR/push/merge this turn.
+
 ## 2026-09-16: week-12 development completed, negative gate retained
 
 User requested complete week 12, separate subagent reviews and merge. Producing

@@ -1,0 +1,97 @@
+{
+  "value": {
+    "method": "qiskit.algorithms.IterativeAmplitudeEstimation",
+    "seed": 3847891016,
+    "alpha": 0.05,
+    "epsilon_target": 0.025136239900582735,
+    "confint_method": "beta",
+    "scale": 39.78319764432297,
+    "offset": 0.0,
+    "tolerance": 1.0,
+    "objective_qubits": [
+      4
+    ],
+    "caps": {
+      "max_k": 16,
+      "max_batches": 64,
+      "max_a_equivalents": 65536
+    },
+    "status": "completed",
+    "delivery": "native_interval",
+    "amplitude_estimate": 0.4745088500679462,
+    "amplitude_interval": [
+      0.4627688754355532,
+      0.48624882470033925
+    ],
+    "price_estimate": 18.877479366233516,
+    "price_interval": [
+      18.410425635093688,
+      19.344533097373347
+    ],
+    "native_querycount": 768,
+    "native_querycount_matches_ledger": true,
+    "seed_transpiler": 14001,
+    "timing_scope": "local_wall_clock_not_device_time",
+    "totals_scope": "completed_batches_only",
+    "depth_conventions": {
+      "compiled_depth": "measurement-inclusive",
+      "max_depth": "measurement-inclusive",
+      "compiled_unitary_depth": "final measurements removed via remove_final_measurements",
+      "max_unitary_depth": "maximum compiled_unitary_depth across completed batches",
+      "decomposition": "native IQAE oracle decomposition; not normalized to fixed-response circuits"
+    },
+    "ledger": [
+      {
+        "batch": 0,
+        "k": 0,
+        "shots": 256,
+        "requested_shots": 256,
+        "stage": "sampler_batch_completed",
+        "seed_transpiler": 14001,
+        "compile_seconds": 0.034943299999998345,
+        "sampler_seconds": 0.005481400000000747,
+        "compiled_u": 12,
+        "compiled_cx": 16,
+        "compiled_depth": 25,
+        "compiled_unitary_depth": 24,
+        "compiled_qubits": 5,
+        "counts": {
+          "0": 131,
+          "1": 125
+        }
+      },
+      {
+        "batch": 1,
+        "k": 3,
+        "shots": 256,
+        "requested_shots": 256,
+        "stage": "sampler_batch_completed",
+        "seed_transpiler": 14001,
+        "compile_seconds": 0.1903427999999998,
+        "sampler_seconds": 0.10857779999999906,
+        "compiled_u": 336,
+        "compiled_cx": 220,
+        "compiled_depth": 433,
+        "compiled_unitary_depth": 432,
+        "compiled_qubits": 5,
+        "counts": {
+          "0": 83,
+          "1": 173
+        }
+      }
+    ],
+    "totals": {
+      "batches": 2,
+      "shots": 512,
+      "a_equivalent_queries": 2048,
+      "grover_queries": 768,
+      "cx": 60416,
+      "max_depth": 433,
+      "max_unitary_depth": 432
+    },
+    "attempted": null,
+    "costs_unknown": false,
+    "preparation_seconds": 0.0016308000000009315
+  },
+  "task_seconds": 0.42854739999999936
+}

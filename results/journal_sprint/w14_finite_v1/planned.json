@@ -1,0 +1,111 @@
+{
+  "started_utc": "2026-09-16T15:41:18.900014+00:00",
+  "config": {
+    "namespace": "week14_development_v1",
+    "trials": 16,
+    "native_trials": 8,
+    "basket": {
+      "assets": 2,
+      "dates": 2,
+      "strike": 100.0,
+      "spot": 100.0,
+      "sigma": 0.3,
+      "rate": 0.03,
+      "maturity": 1.0,
+      "correlation": 0.5
+    },
+    "precision": 1,
+    "cutoff": 3.0,
+    "representations": [
+      "raw",
+      "residual"
+    ],
+    "depths": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "noise_pairs": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.02,
+        0.02
+      ],
+      [
+        0.02,
+        0.0
+      ]
+    ],
+    "transfer_pairs": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.03,
+        0.0
+      ],
+      [
+        0.03,
+        0.03
+      ]
+    ],
+    "arms": [
+      "fixed_cp",
+      "pilot_cp",
+      "unequal_full",
+      "unequal_target",
+      "fixed_target"
+    ],
+    "tolerance": 1.0,
+    "confirmation": false
+  },
+  "git_head": "76914458f5e8ef4ad50b211c292bab1781daa9b2",
+  "environment": {
+    "qiskit": "0.46.3",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "python": "3.9.13",
+    "numpy": "2.0.2",
+    "scipy": "1.13.1",
+    "threads": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1"
+    }
+  },
+  "native_identity": {
+    "Terra_IQAE": "3f5e35af63e251450322c89f064de2730fa57ae045252d04e819fa9b1c059807",
+    "Terra_Sampler": "7379135461d034a98acfdc22e550572309e52f8e178586975254caa6ddbd6608"
+  },
+  "sources": {
+    "research/journal_sprint/run_w14.py": "29b4530ba8274f9cecd2aebdb1e76bbad928a462f5eca0c4d5af61b948e796da",
+    "research/journal_sprint/w14_circuits.py": "6dc13c0d93c5a5e572d27e92e70c78f4f5a080b0ed85e3162203748d6d0fcf1b",
+    "research/journal_sprint/w14_comparators.py": "9bd80c9612645c8759e91bc2c2b31ad64fafe6b8aa874053f23ce6a95a87d0a5",
+    "research/journal_sprint/w14_inference.py": "8a7f7f4e52cdbde9b22ff82a4445b29c1da6615d55e83d66893b72460c24df8f",
+    "research/journal_sprint/w14_analysis.py": "2c98d23f7a50bcc5e1561222b06e1175afe58fb0863097f1076d83b5d274cd4e",
+    "research/journal_sprint/asian_basket.py": "cb23ff2bf2896bcde6d8329e86884c6035b1c088daefc9ddcf848c125c27dbd9",
+    "research/journal_sprint/asian_encoding.py": "617880ff8ce9ea4f3f5b886c3fbcb47657523fa89cfaa563870445d49c2998c5",
+    "research/journal_sprint/price_contract.py": "ba3beac48915f57fd2c6536d8ca76eca25ef967186a3198c85780d7a0bda9a76",
+    "research/journal_sprint/encoding_decision.py": "11ba40b508473dcc9c706405ca0a0ddc99d54fcf3173798068d4c04ba09251f7",
+    "research/journal_sprint/intervals.py": "8890ca6530c2f04167de4292e3e28ca19a13385897d4076327ca431aa4db9adf",
+    "research/journal_sprint/storage.py": "05476de9ce7db12a7f5afeb10c59c6045208318ca31552e3863dd57dfc13bfd3",
+    "research/journal_sprint/run_w13.py": "bdafcd0bf312bc41a7e2c140e5dd7217744a3087949fc8a5fdc35501db9e4715",
+    "research/journal_sprint/unequal_allocation.py": "2db716c1bf3ad592892c74a9ad29d79d2ffe23673e3b70510ba99f521a8feed2",
+    "research/journal_sprint/allocation_rule.py": "b7fec2bb60c2d24d91e9695b2334e60dc1c29086ac48ec5114ef8b9473ebe663",
+    "research/journal_sprint/calibrated_readout.py": "d99aca52dab8e6faf5db3d4fe54dc36711c970635ee1a087c973ed5433bf8dc6",
+    "research/journal_sprint/vendor/mlqae_core.py": "89c1cdfddc5c79ec17423ea54ff5f5c8b1a6258c547288b656e537fae4033d7c",
+    "research/journal_sprint/vendor/__init__.py": "45d4e6c1941e501d09cd428669213734100894fcb87d09009b2e0d6e396555b0",
+    "research/journal_sprint/__init__.py": "d39ec991cd7e8890e6c2146ea7e2b366d23193cfc8eb49fbe897f461116116bc",
+    "research/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/journal_sprint/PROTOCOL_W14_FINITE_V1.md": "539197eb895187a8c84f68051dfb87039840547ca2cbbc24a41bb7c09b571d40"
+  },
+  "input_identity": {
+    "manifest": "a49464abe2f57096a640950b1101e9283e6950c25f779e50cc32df76e88c2694",
+    "case": "b8da4bb2afadf8b3f0aa8a463abb9f4b5cdde9a89e0678e0d830127e0ee7f00a"
+  }
+}

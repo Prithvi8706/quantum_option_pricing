@@ -1,0 +1,4370 @@
+{
+  "cells": [
+    {
+      "name": "raw_classical",
+      "kind": "point_only",
+      "attempts": 16,
+      "mean_absolute_error": 0.29060888216995595,
+      "rmse": 0.35181513800516606,
+      "observed_within_dollar": 16,
+      "delivered_confidence_intervals": 0,
+      "path_evaluations": 3200,
+      "exact_finite_sum": 18.585163266148694
+    },
+    {
+      "name": "raw_csae_0",
+      "kind": "point_only",
+      "attempts": 16,
+      "mean_absolute_error": 0.14498685456958804,
+      "rmse": 0.18366325659416408,
+      "observed_within_dollar": 16,
+      "delivered_confidence_intervals": 0,
+      "per_trial_cost": {
+        "shots": 330,
+        "grover_queries": 650,
+        "a_equivalent_queries": 1630,
+        "source_queries": 718,
+        "logical_cx": 49480,
+        "maximum_depth": 560,
+        "qubits": 5,
+        "maximum_measurement_depth": 561,
+        "depth_convention": "maximum_depth is unitary-only",
+        "evidence_kind": "projected_from_measured_circuit_counts"
+      }
+    },
+    {
+      "name": "raw_csae_1",
+      "kind": "point_only",
+      "attempts": 16,
+      "mean_absolute_error": 0.1484425333542745,
+      "rmse": 0.17846763949973607,
+      "observed_within_dollar": 16,
+      "delivered_confidence_intervals": 0,
+      "per_trial_cost": {
+        "shots": 330,
+        "grover_queries": 650,
+        "a_equivalent_queries": 1630,
+        "source_queries": 718,
+        "logical_cx": 49480,
+        "maximum_depth": 560,
+        "qubits": 5,
+        "maximum_measurement_depth": 561,
+        "depth_convention": "maximum_depth is unitary-only",
+        "evidence_kind": "projected_from_measured_circuit_counts"
+      }
+    },
+    {
+      "name": "raw_csae_2",
+      "kind": "point_only",
+      "attempts": 16,
+      "mean_absolute_error": 0.1540726078672594,
+      "rmse": 0.1928749600133888,
+      "observed_within_dollar": 16,
+      "delivered_confidence_intervals": 0,
+      "per_trial_cost": {
+        "shots": 330,
+        "grover_queries": 650,
+        "a_equivalent_queries": 1630,
+        "source_queries": 718,
+        "logical_cx": 49480,
+        "maximum_depth": 560,
+        "qubits": 5,
+        "maximum_measurement_depth": 561,
+        "depth_convention": "maximum_depth is unitary-only",
+        "evidence_kind": "projected_from_measured_circuit_counts"
+      }
+    },
+    {
+      "name": "raw_fixed_0_depth_limited",
+      "kind": "confidence",
+      "model_valid": true,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 16,
+      "abstentions": 0,
+      "delivery": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "mean_interval_midpoint_error": 0.09218508041789653,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 10240,
+          "mean": 640.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 51200,
+          "mean": 3200.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 1556480,
+          "mean": 97280.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "raw_fixed_0_direct_queries",
+      "kind": "confidence",
+      "model_valid": true,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 16,
+      "abstentions": 0,
+      "delivery": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 15,
+        "denominator": 16,
+        "estimate": 0.9375,
+        "pointwise_cp95": [
+          0.697679261565468,
+          0.9984188882772341
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 1,
+        "denominator": 16,
+        "estimate": 0.0625,
+        "pointwise_cp95": [
+          0.0015811117227658871,
+          0.30232073843453194
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 1,
+        "denominator": 16,
+        "estimate": 0.0625,
+        "pointwise_cp95": [
+          0.0015811117227658871,
+          0.30232073843453194
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "mean_interval_midpoint_error": 0.25158777246689645,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 51200,
+          "mean": 3200.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 51200,
+          "mean": 3200.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 819200,
+          "mean": 51200.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "raw_fixed_0_direct_shots",
+      "kind": "confidence",
+      "model_valid": true,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 0,
+      "abstentions": 16,
+      "delivery": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 15,
+        "denominator": 16,
+        "estimate": 0.9375,
+        "pointwise_cp95": [
+          0.697679261565468,
+          0.9984188882772341
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 1,
+        "denominator": 16,
+        "estimate": 0.0625,
+        "pointwise_cp95": [
+          0.0015811117227658871,
+          0.30232073843453194
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 1,
+        "denominator": 16,
+        "estimate": 0.0625,
+        "pointwise_cp95": [
+          0.0015811117227658871,
+          0.30232073843453194
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 0,
+        "estimate": null,
+        "pointwise_cp95": null
+      },
+      "mean_interval_midpoint_error": 0.7076757894575079,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 10240,
+          "mean": 640.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 10240,
+          "mean": 640.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 163840,
+          "mean": 10240.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "raw_fixed_1_depth_limited",
+      "kind": "confidence",
+      "model_valid": true,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 16,
+      "abstentions": 0,
+      "delivery": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "mean_interval_midpoint_error": 0.1107749101742177,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 10240,
+          "mean": 640.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 51200,
+          "mean": 3200.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 1556480,
+          "mean": 97280.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "raw_fixed_1_direct_queries",
+      "kind": "confidence",
+      "model_valid": true,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 16,
+      "abstentions": 0,
+      "delivery": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "mean_interval_midpoint_error": 0.30223432456451116,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 51200,
+          "mean": 3200.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 51200,
+          "mean": 3200.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 819200,
+          "mean": 51200.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "raw_fixed_1_direct_shots",
+      "kind": "confidence",
+      "model_valid": true,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 0,
+      "abstentions": 16,
+      "delivery": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 15,
+        "denominator": 16,
+        "estimate": 0.9375,
+        "pointwise_cp95": [
+          0.697679261565468,
+          0.9984188882772341
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 1,
+        "denominator": 16,
+        "estimate": 0.0625,
+        "pointwise_cp95": [
+          0.0015811117227658871,
+          0.30232073843453194
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 1,
+        "denominator": 16,
+        "estimate": 0.0625,
+        "pointwise_cp95": [
+          0.0015811117227658871,
+          0.30232073843453194
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 0,
+        "estimate": null,
+        "pointwise_cp95": null
+      },
+      "mean_interval_midpoint_error": 0.7023880606799779,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 10240,
+          "mean": 640.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 10240,
+          "mean": 640.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 163840,
+          "mean": 10240.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "raw_fixed_2_depth_limited",
+      "kind": "confidence",
+      "model_valid": false,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 16,
+      "abstentions": 0,
+      "delivery": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "mean_interval_midpoint_error": 0.1879143296186785,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 10240,
+          "mean": 640.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 51200,
+          "mean": 3200.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 1556480,
+          "mean": 97280.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "raw_fixed_2_direct_queries",
+      "kind": "confidence",
+      "model_valid": false,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 16,
+      "abstentions": 0,
+      "delivery": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "mean_interval_midpoint_error": 0.2863913714031252,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 51200,
+          "mean": 3200.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 51200,
+          "mean": 3200.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 819200,
+          "mean": 51200.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "raw_fixed_2_direct_shots",
+      "kind": "confidence",
+      "model_valid": false,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 0,
+      "abstentions": 16,
+      "delivery": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 0,
+        "estimate": null,
+        "pointwise_cp95": null
+      },
+      "mean_interval_midpoint_error": 0.6883402994663779,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 10240,
+          "mean": 640.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 10240,
+          "mean": 640.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 163840,
+          "mean": 10240.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "raw_policy_0_fixed_cp",
+      "kind": "confidence",
+      "model_valid": true,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 16,
+      "abstentions": 0,
+      "delivery": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "mean_interval_midpoint_error": 0.07188474000663958,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 1048576,
+          "mean": 65536.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 524288,
+          "mean": 32768.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 8388608,
+          "mean": 524288.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "raw_policy_0_fixed_target",
+      "kind": "confidence",
+      "model_valid": true,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 0,
+      "abstentions": 16,
+      "delivery": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 0,
+        "estimate": null,
+        "pointwise_cp95": null
+      },
+      "mean_interval_midpoint_error": 0.29671639440832265,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 131072,
+          "mean": 8192.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 98304,
+          "mean": 6144.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 1572864,
+          "mean": 98304.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "raw_policy_0_pilot_cp",
+      "kind": "confidence",
+      "model_valid": true,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 16,
+      "abstentions": 0,
+      "delivery": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "mean_interval_midpoint_error": 0.08714892557667575,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 1048576,
+          "mean": 65536.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 524288,
+          "mean": 32768.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 8388608,
+          "mean": 524288.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "raw_policy_0_unequal_full",
+      "kind": "confidence",
+      "model_valid": true,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 16,
+      "abstentions": 0,
+      "delivery": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "mean_interval_midpoint_error": 0.1138005622209819,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 1048576,
+          "mean": 65536.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 786432,
+          "mean": 49152.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 12582912,
+          "mean": 786432.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "raw_policy_0_unequal_target",
+      "kind": "confidence",
+      "model_valid": true,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 0,
+      "abstentions": 16,
+      "delivery": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 0,
+        "estimate": null,
+        "pointwise_cp95": null
+      },
+      "mean_interval_midpoint_error": 0.263464685826867,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 131072,
+          "mean": 8192.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 98304,
+          "mean": 6144.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 1572864,
+          "mean": 98304.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "raw_policy_1_fixed_cp",
+      "kind": "confidence",
+      "model_valid": false,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 16,
+      "abstentions": 0,
+      "delivery": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "mean_interval_midpoint_error": 0.14107414058535506,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 1048576,
+          "mean": 65536.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 524288,
+          "mean": 32768.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 8388608,
+          "mean": 524288.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "raw_policy_1_fixed_target",
+      "kind": "confidence",
+      "model_valid": false,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 0,
+      "abstentions": 16,
+      "delivery": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 0,
+        "estimate": null,
+        "pointwise_cp95": null
+      },
+      "mean_interval_midpoint_error": 0.26673694428654815,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 131072,
+          "mean": 8192.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 98304,
+          "mean": 6144.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 1572864,
+          "mean": 98304.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "raw_policy_1_pilot_cp",
+      "kind": "confidence",
+      "model_valid": false,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 16,
+      "abstentions": 0,
+      "delivery": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "mean_interval_midpoint_error": 0.11232234082782444,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 1048576,
+          "mean": 65536.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 524288,
+          "mean": 32768.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 8388608,
+          "mean": 524288.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "raw_policy_1_unequal_full",
+      "kind": "confidence",
+      "model_valid": false,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 16,
+      "abstentions": 0,
+      "delivery": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "mean_interval_midpoint_error": 0.10955325238164093,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 1048576,
+          "mean": 65536.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 786432,
+          "mean": 49152.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 12582912,
+          "mean": 786432.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "raw_policy_1_unequal_target",
+      "kind": "confidence",
+      "model_valid": false,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 0,
+      "abstentions": 16,
+      "delivery": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 0,
+        "estimate": null,
+        "pointwise_cp95": null
+      },
+      "mean_interval_midpoint_error": 0.3499780362095468,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 131072,
+          "mean": 8192.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 98304,
+          "mean": 6144.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 1572864,
+          "mean": 98304.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "raw_policy_2_fixed_cp",
+      "kind": "confidence",
+      "model_valid": true,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 0,
+      "abstentions": 16,
+      "delivery": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 0,
+        "estimate": null,
+        "pointwise_cp95": null
+      },
+      "mean_interval_midpoint_error": 0.13758196643150944,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 1048576,
+          "mean": 65536.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 524288,
+          "mean": 32768.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 8388608,
+          "mean": 524288.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "raw_policy_2_fixed_target",
+      "kind": "confidence",
+      "model_valid": true,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 0,
+      "abstentions": 16,
+      "delivery": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 0,
+        "estimate": null,
+        "pointwise_cp95": null
+      },
+      "mean_interval_midpoint_error": 0.12392650184678922,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 1048576,
+          "mean": 65536.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 786432,
+          "mean": 49152.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 12582912,
+          "mean": 786432.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "raw_policy_2_pilot_cp",
+      "kind": "confidence",
+      "model_valid": true,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 0,
+      "abstentions": 16,
+      "delivery": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 0,
+        "estimate": null,
+        "pointwise_cp95": null
+      },
+      "mean_interval_midpoint_error": 0.12987579733954924,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 1048576,
+          "mean": 65536.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 524288,
+          "mean": 32768.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 8388608,
+          "mean": 524288.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "raw_policy_2_unequal_full",
+      "kind": "confidence",
+      "model_valid": true,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 0,
+      "abstentions": 16,
+      "delivery": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 0,
+        "estimate": null,
+        "pointwise_cp95": null
+      },
+      "mean_interval_midpoint_error": 0.11013788676468717,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 1048576,
+          "mean": 65536.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 786432,
+          "mean": 49152.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 12582912,
+          "mean": 786432.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "raw_policy_2_unequal_target",
+      "kind": "confidence",
+      "model_valid": true,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 0,
+      "abstentions": 16,
+      "delivery": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 0,
+        "estimate": null,
+        "pointwise_cp95": null
+      },
+      "mean_interval_midpoint_error": 0.10195557040752568,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 1048576,
+          "mean": 65536.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 786432,
+          "mean": 49152.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 12582912,
+          "mean": 786432.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "residual_classical",
+      "kind": "point_only",
+      "attempts": 16,
+      "mean_absolute_error": 0.02144778551344051,
+      "rmse": 0.02826703868529676,
+      "observed_within_dollar": 16,
+      "delivered_confidence_intervals": 0,
+      "path_evaluations": 3200,
+      "exact_finite_sum": 18.585163266148694
+    },
+    {
+      "name": "residual_csae_0",
+      "kind": "point_only",
+      "attempts": 16,
+      "mean_absolute_error": 0.012843431784881787,
+      "rmse": 0.01742204881223859,
+      "observed_within_dollar": 16,
+      "delivered_confidence_intervals": 0,
+      "per_trial_cost": {
+        "shots": 330,
+        "grover_queries": 650,
+        "a_equivalent_queries": 1630,
+        "source_queries": 718,
+        "logical_cx": 49480,
+        "maximum_depth": 632,
+        "qubits": 5,
+        "maximum_measurement_depth": 633,
+        "depth_convention": "maximum_depth is unitary-only",
+        "evidence_kind": "projected_from_measured_circuit_counts"
+      }
+    },
+    {
+      "name": "residual_csae_1",
+      "kind": "point_only",
+      "attempts": 16,
+      "mean_absolute_error": 0.021891783410950216,
+      "rmse": 0.031949489150559084,
+      "observed_within_dollar": 16,
+      "delivered_confidence_intervals": 0,
+      "per_trial_cost": {
+        "shots": 330,
+        "grover_queries": 650,
+        "a_equivalent_queries": 1630,
+        "source_queries": 718,
+        "logical_cx": 49480,
+        "maximum_depth": 632,
+        "qubits": 5,
+        "maximum_measurement_depth": 633,
+        "depth_convention": "maximum_depth is unitary-only",
+        "evidence_kind": "projected_from_measured_circuit_counts"
+      }
+    },
+    {
+      "name": "residual_csae_2",
+      "kind": "point_only",
+      "attempts": 16,
+      "mean_absolute_error": 0.09543968419504156,
+      "rmse": 0.17238223761647387,
+      "observed_within_dollar": 16,
+      "delivered_confidence_intervals": 0,
+      "per_trial_cost": {
+        "shots": 330,
+        "grover_queries": 650,
+        "a_equivalent_queries": 1630,
+        "source_queries": 718,
+        "logical_cx": 49480,
+        "maximum_depth": 632,
+        "qubits": 5,
+        "maximum_measurement_depth": 633,
+        "depth_convention": "maximum_depth is unitary-only",
+        "evidence_kind": "projected_from_measured_circuit_counts"
+      }
+    },
+    {
+      "name": "residual_fixed_0_depth_limited",
+      "kind": "confidence",
+      "model_valid": true,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 16,
+      "abstentions": 0,
+      "delivery": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "mean_interval_midpoint_error": 0.013820003884196463,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 10240,
+          "mean": 640.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 51200,
+          "mean": 3200.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 1556480,
+          "mean": 97280.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "residual_fixed_0_direct_queries",
+      "kind": "confidence",
+      "model_valid": true,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 16,
+      "abstentions": 0,
+      "delivery": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "mean_interval_midpoint_error": 0.03916255015251213,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 51200,
+          "mean": 3200.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 51200,
+          "mean": 3200.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 819200,
+          "mean": 51200.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "residual_fixed_0_direct_shots",
+      "kind": "confidence",
+      "model_valid": true,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 16,
+      "abstentions": 0,
+      "delivery": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "mean_interval_midpoint_error": 0.06201366062053393,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 10240,
+          "mean": 640.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 10240,
+          "mean": 640.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 163840,
+          "mean": 10240.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "residual_fixed_1_depth_limited",
+      "kind": "confidence",
+      "model_valid": true,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 16,
+      "abstentions": 0,
+      "delivery": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "mean_interval_midpoint_error": 0.027779587715315746,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 10240,
+          "mean": 640.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 51200,
+          "mean": 3200.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 1556480,
+          "mean": 97280.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "residual_fixed_1_direct_queries",
+      "kind": "confidence",
+      "model_valid": true,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 16,
+      "abstentions": 0,
+      "delivery": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "mean_interval_midpoint_error": 0.03680678117498948,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 51200,
+          "mean": 3200.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 51200,
+          "mean": 3200.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 819200,
+          "mean": 51200.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "residual_fixed_1_direct_shots",
+      "kind": "confidence",
+      "model_valid": true,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 16,
+      "abstentions": 0,
+      "delivery": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 15,
+        "denominator": 16,
+        "estimate": 0.9375,
+        "pointwise_cp95": [
+          0.697679261565468,
+          0.9984188882772341
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 1,
+        "denominator": 16,
+        "estimate": 0.0625,
+        "pointwise_cp95": [
+          0.0015811117227658871,
+          0.30232073843453194
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 1,
+        "denominator": 16,
+        "estimate": 0.0625,
+        "pointwise_cp95": [
+          0.0015811117227658871,
+          0.30232073843453194
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "mean_interval_midpoint_error": 0.05950455323826653,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 10240,
+          "mean": 640.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 10240,
+          "mean": 640.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 163840,
+          "mean": 10240.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "residual_fixed_2_depth_limited",
+      "kind": "confidence",
+      "model_valid": false,
+      "attempts": 16,
+      "returned_intervals": 4,
+      "no_interval": 12,
+      "resource_capped": 0,
+      "declarations": 4,
+      "abstentions": 12,
+      "delivery": {
+        "successes": 4,
+        "denominator": 16,
+        "estimate": 0.25,
+        "pointwise_cp95": [
+          0.07266203825288217,
+          0.5237708198961273
+        ]
+      },
+      "empty_confidence_sets": 12,
+      "hull_containment_unconditional": {
+        "successes": 1,
+        "denominator": 16,
+        "estimate": 0.0625,
+        "pointwise_cp95": [
+          0.0015811117227658871,
+          0.30232073843453194
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 15,
+        "denominator": 16,
+        "estimate": 0.9375,
+        "pointwise_cp95": [
+          0.697679261565468,
+          0.9984188882772341
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 3,
+        "denominator": 4,
+        "estimate": 0.75,
+        "pointwise_cp95": [
+          0.19412044968324338,
+          0.9936905367902902
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 4,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.6023646356164746
+        ]
+      },
+      "mean_interval_midpoint_error": 0.02027480877073362,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 10240,
+          "mean": 640.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 51200,
+          "mean": 3200.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 1556480,
+          "mean": 97280.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "residual_fixed_2_direct_queries",
+      "kind": "confidence",
+      "model_valid": false,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 16,
+      "abstentions": 0,
+      "delivery": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "mean_interval_midpoint_error": 0.041138366623422185,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 51200,
+          "mean": 3200.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 51200,
+          "mean": 3200.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 819200,
+          "mean": 51200.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "residual_fixed_2_direct_shots",
+      "kind": "confidence",
+      "model_valid": false,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 16,
+      "abstentions": 0,
+      "delivery": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 15,
+        "denominator": 16,
+        "estimate": 0.9375,
+        "pointwise_cp95": [
+          0.697679261565468,
+          0.9984188882772341
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 1,
+        "denominator": 16,
+        "estimate": 0.0625,
+        "pointwise_cp95": [
+          0.0015811117227658871,
+          0.30232073843453194
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 1,
+        "denominator": 16,
+        "estimate": 0.0625,
+        "pointwise_cp95": [
+          0.0015811117227658871,
+          0.30232073843453194
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "mean_interval_midpoint_error": 0.05906295948187079,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 10240,
+          "mean": 640.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 10240,
+          "mean": 640.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 163840,
+          "mean": 10240.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "residual_policy_0_fixed_cp",
+      "kind": "confidence",
+      "model_valid": true,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 16,
+      "abstentions": 0,
+      "delivery": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "mean_interval_midpoint_error": 0.012482337991745807,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 1048576,
+          "mean": 65536.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 524288,
+          "mean": 32768.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 8388608,
+          "mean": 524288.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "residual_policy_0_fixed_target",
+      "kind": "confidence",
+      "model_valid": true,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 16,
+      "abstentions": 0,
+      "delivery": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "mean_interval_midpoint_error": 0.03270888469033739,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 131072,
+          "mean": 8192.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 98304,
+          "mean": 6144.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 1572864,
+          "mean": 98304.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "residual_policy_0_pilot_cp",
+      "kind": "confidence",
+      "model_valid": true,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 16,
+      "abstentions": 0,
+      "delivery": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "mean_interval_midpoint_error": 0.01503580138298366,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 1048576,
+          "mean": 65536.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 524288,
+          "mean": 32768.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 8388608,
+          "mean": 524288.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "residual_policy_0_unequal_full",
+      "kind": "confidence",
+      "model_valid": true,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 16,
+      "abstentions": 0,
+      "delivery": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "mean_interval_midpoint_error": 0.013360250403081197,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 1048576,
+          "mean": 65536.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 786432,
+          "mean": 49152.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 12582912,
+          "mean": 786432.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "residual_policy_0_unequal_target",
+      "kind": "confidence",
+      "model_valid": true,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 16,
+      "abstentions": 0,
+      "delivery": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "mean_interval_midpoint_error": 0.042697246919536136,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 131072,
+          "mean": 8192.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 98304,
+          "mean": 6144.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 1572864,
+          "mean": 98304.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "residual_policy_1_fixed_cp",
+      "kind": "confidence",
+      "model_valid": false,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 16,
+      "abstentions": 0,
+      "delivery": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 12,
+        "denominator": 16,
+        "estimate": 0.75,
+        "pointwise_cp95": [
+          0.4762291801038727,
+          0.9273379617471178
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 4,
+        "denominator": 16,
+        "estimate": 0.25,
+        "pointwise_cp95": [
+          0.07266203825288217,
+          0.5237708198961273
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 4,
+        "denominator": 16,
+        "estimate": 0.25,
+        "pointwise_cp95": [
+          0.07266203825288217,
+          0.5237708198961273
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "mean_interval_midpoint_error": 0.04482294589734548,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 1048576,
+          "mean": 65536.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 524288,
+          "mean": 32768.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 8388608,
+          "mean": 524288.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "residual_policy_1_fixed_target",
+      "kind": "confidence",
+      "model_valid": false,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 16,
+      "abstentions": 0,
+      "delivery": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "mean_interval_midpoint_error": 0.04784311113575268,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 131072,
+          "mean": 8192.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 98304,
+          "mean": 6144.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 1572864,
+          "mean": 98304.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "residual_policy_1_pilot_cp",
+      "kind": "confidence",
+      "model_valid": false,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 16,
+      "abstentions": 0,
+      "delivery": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 14,
+        "denominator": 16,
+        "estimate": 0.875,
+        "pointwise_cp95": [
+          0.6165237631507365,
+          0.9844863961845861
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 2,
+        "denominator": 16,
+        "estimate": 0.125,
+        "pointwise_cp95": [
+          0.01551360381541388,
+          0.3834762368492636
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 2,
+        "denominator": 16,
+        "estimate": 0.125,
+        "pointwise_cp95": [
+          0.01551360381541388,
+          0.3834762368492636
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "mean_interval_midpoint_error": 0.03899708175834604,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 1048576,
+          "mean": 65536.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 524288,
+          "mean": 32768.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 8388608,
+          "mean": 524288.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "residual_policy_1_unequal_full",
+      "kind": "confidence",
+      "model_valid": false,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 16,
+      "abstentions": 0,
+      "delivery": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 15,
+        "denominator": 16,
+        "estimate": 0.9375,
+        "pointwise_cp95": [
+          0.697679261565468,
+          0.9984188882772341
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 1,
+        "denominator": 16,
+        "estimate": 0.0625,
+        "pointwise_cp95": [
+          0.0015811117227658871,
+          0.30232073843453194
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 1,
+        "denominator": 16,
+        "estimate": 0.0625,
+        "pointwise_cp95": [
+          0.0015811117227658871,
+          0.30232073843453194
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "mean_interval_midpoint_error": 0.04190724998633755,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 1048576,
+          "mean": 65536.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 786432,
+          "mean": 49152.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 12582912,
+          "mean": 786432.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "residual_policy_1_unequal_target",
+      "kind": "confidence",
+      "model_valid": false,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 16,
+      "abstentions": 0,
+      "delivery": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "mean_interval_midpoint_error": 0.041005917405676495,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 131072,
+          "mean": 8192.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 98304,
+          "mean": 6144.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 1572864,
+          "mean": 98304.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "residual_policy_2_fixed_cp",
+      "kind": "confidence",
+      "model_valid": true,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 16,
+      "abstentions": 0,
+      "delivery": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "mean_interval_midpoint_error": 0.02421195916335206,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 1048576,
+          "mean": 65536.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 524288,
+          "mean": 32768.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 8388608,
+          "mean": 524288.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "residual_policy_2_fixed_target",
+      "kind": "confidence",
+      "model_valid": true,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 16,
+      "abstentions": 0,
+      "delivery": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "mean_interval_midpoint_error": 0.039934058123862526,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 131072,
+          "mean": 8192.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 98304,
+          "mean": 6144.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 1572864,
+          "mean": 98304.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "residual_policy_2_pilot_cp",
+      "kind": "confidence",
+      "model_valid": true,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 16,
+      "abstentions": 0,
+      "delivery": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "mean_interval_midpoint_error": 0.019666981935466454,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 1048576,
+          "mean": 65536.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 524288,
+          "mean": 32768.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 8388608,
+          "mean": 524288.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "residual_policy_2_unequal_full",
+      "kind": "confidence",
+      "model_valid": true,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 16,
+      "abstentions": 0,
+      "delivery": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "mean_interval_midpoint_error": 0.020467465680456876,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 1048576,
+          "mean": 65536.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 786432,
+          "mean": 49152.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 12582912,
+          "mean": 786432.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "residual_policy_2_unequal_target",
+      "kind": "confidence",
+      "model_valid": true,
+      "attempts": 16,
+      "returned_intervals": 16,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 16,
+      "abstentions": 0,
+      "delivery": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 16,
+        "denominator": 16,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.7940927857921772,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 16,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.2059072142078227
+        ]
+      },
+      "mean_interval_midpoint_error": 0.03174741972387962,
+      "containment_scope": "hull intervals; empty sets count as unconditional misses",
+      "costs": {
+        "shots": {
+          "total": 131072,
+          "mean": 8192.0,
+          "denominator": 16
+        },
+        "A_equivalents": {
+          "total": 98304,
+          "mean": 6144.0,
+          "denominator": 16
+        },
+        "logical_cx": {
+          "total": 1572864,
+          "mean": 98304.0,
+          "denominator": 16
+        }
+      }
+    },
+    {
+      "name": "raw_iqae",
+      "kind": "native_confidence",
+      "attempts": 8,
+      "returned_intervals": 8,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 8,
+      "abstentions": 0,
+      "delivery": {
+        "successes": 8,
+        "denominator": 8,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.6305833524471807,
+          1.0
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 8,
+        "denominator": 8,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.6305833524471807,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 8,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.3694166475528192
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 8,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.3694166475528192
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 8,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.3694166475528192
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 8,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.3694166475528192
+        ]
+      },
+      "mean_interval_midpoint_error": 0.16423355533636874,
+      "containment_scope": "hull intervals; caps give no containing output, not an invented interval",
+      "costs": {
+        "shots": {
+          "total": 4096,
+          "mean": 512.0,
+          "denominator": 8
+        },
+        "A_equivalents": {
+          "total": 14848,
+          "mean": 1856.0,
+          "denominator": 8
+        },
+        "logical_cx": {
+          "total": 431104,
+          "mean": 53888.0,
+          "denominator": 8
+        }
+      }
+    },
+    {
+      "name": "residual_iqae",
+      "kind": "native_confidence",
+      "attempts": 8,
+      "returned_intervals": 8,
+      "no_interval": 0,
+      "resource_capped": 0,
+      "declarations": 8,
+      "abstentions": 0,
+      "delivery": {
+        "successes": 8,
+        "denominator": 8,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.6305833524471807,
+          1.0
+        ]
+      },
+      "empty_confidence_sets": 0,
+      "hull_containment_unconditional": {
+        "successes": 8,
+        "denominator": 8,
+        "estimate": 1.0,
+        "pointwise_cp95": [
+          0.6305833524471807,
+          1.0
+        ]
+      },
+      "interval_miss_unconditional": {
+        "successes": 0,
+        "denominator": 8,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.3694166475528192
+        ]
+      },
+      "interval_miss_given_return": {
+        "successes": 0,
+        "denominator": 8,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.3694166475528192
+        ]
+      },
+      "erroneous_declaration_unconditional": {
+        "successes": 0,
+        "denominator": 8,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.3694166475528192
+        ]
+      },
+      "erroneous_given_declaration": {
+        "successes": 0,
+        "denominator": 8,
+        "estimate": 0.0,
+        "pointwise_cp95": [
+          0.0,
+          0.3694166475528192
+        ]
+      },
+      "mean_interval_midpoint_error": 0.08435166298033447,
+      "containment_scope": "hull intervals; caps give no containing output, not an invented interval",
+      "costs": {
+        "shots": {
+          "total": 2048,
+          "mean": 256.0,
+          "denominator": 8
+        },
+        "A_equivalents": {
+          "total": 2048,
+          "mean": 256.0,
+          "denominator": 8
+        },
+        "logical_cx": {
+          "total": 32768,
+          "mean": 4096.0,
+          "denominator": 8
+        }
+      }
+    }
+  ],
+  "truth": 18.585163266148694,
+  "response_cases": 20,
+  "max_response_error": 2.2537527399890678e-14,
+  "application_admitted": false,
+  "confirmation_authorized": false,
+  "inference_scope": "pointwise descriptive development; no significance test"
+}

@@ -1,12 +1,14 @@
 # Revised implementation plan: weeks 11-16
 
-Updated 2026-09-16. Weeks 11-12 are development-complete; weeks 13-16 remain
+Updated 2026-09-16. Weeks 11-13 are development-complete; weeks 14-16 remain
 prospective. See [week-11 closeout](WEEK_11_CLOSEOUT.md) and
-[week-12 closeout](WEEK_12_CLOSEOUT.md); the latter's method-interest gate failed.
+[week-12 closeout](WEEK_12_CLOSEOUT.md); its method-interest gate failed.
+[Week-13 closeout](WEEK_13_CLOSEOUT.md) records validated finite circuits,
+independent reviews and the still-blocked continuous-price admission gate.
 
 This is the active plan for the six working-week blocks (11-16) of
 the [original roadmap](../JOURNAL_REENGINEERING_RESEARCH_2026-09-09.md).
-Four blocks remain after the week-12 development closeout.
+Three blocks remain after the week-13 development closeout.
 Weeks 1-10 retain their recorded development closeouts; completed development
 does not mean that confirmation or submission gates passed. In particular,
 [week 10](WEEK_10_CLOSEOUT.md) closed with NO-GO for confirmation/submission.
@@ -160,6 +162,10 @@ effect, narrow the method claim and reassess novelty before a large campaign.
 
 ### Week 13 — Harder-payoff encoding and state-preparation feasibility
 
+Development completed: [results](WEEK_13_RESULTS.md), [review](WEEK_13_REVIEW.md),
+[closeout](WEEK_13_CLOSEOUT.md). The following is the retained scope, not a
+claim that any continuous-price encoding passed its admission gate.
+
 1. Build a small Asian-basket quantum encoding with independently checked
    semantics. Start at simulator-feasible assets/dates/precision selected by
    the week-11 pilot; the existing 2/4-asset, 12/52-date classical sweep does
@@ -186,6 +192,13 @@ retain it as a documented limitation; do not pretend a research blocker was
 solved. Replacing it requires a visible replan, potentially using the reserve.
 
 ### Week 14 — End-to-end comparisons, ablations and pre-confirmation review
+
+2026-09-16 disposition: permitted finite-target development completed; original
+continuous end-to-end comparison remains blocked because week13 admitted no
+encoding. See [week14 closeout](WEEK_14_CLOSEOUT.md),
+[results](WEEK_14_RESULTS.md) and [claim/gate matrix](WEEK_14_CLAIMS_GATE.md).
+Do not interpret the following conditional plan as evidence of work performed.
+Week15 confirmation is NO-GO pending explicit scientific gate resolution.
 
 1. Connect the validated policy to the encodings that passed week 13. Compare
    direct sampling with faithful fixed IQAE, depth-limited AE and at least one

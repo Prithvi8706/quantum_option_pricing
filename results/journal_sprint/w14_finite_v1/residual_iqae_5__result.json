@@ -1,0 +1,78 @@
+{
+  "value": {
+    "method": "qiskit.algorithms.IterativeAmplitudeEstimation",
+    "seed": 1184967025,
+    "alpha": 0.05,
+    "epsilon_target": 0.19669059628307106,
+    "confint_method": "beta",
+    "scale": 5.08412714637781,
+    "offset": 16.71328592428006,
+    "tolerance": 1.0,
+    "objective_qubits": [
+      4
+    ],
+    "caps": {
+      "max_k": 16,
+      "max_batches": 64,
+      "max_a_equivalents": 65536
+    },
+    "status": "completed",
+    "delivery": "native_interval",
+    "amplitude_estimate": 0.3422209227021077,
+    "amplitude_interval": [
+      0.27430803886093114,
+      0.41013380654328424
+    ],
+    "price_estimate": 18.45318060744831,
+    "price_interval": [
+      18.10790287112258,
+      18.798458343774037
+    ],
+    "native_querycount": 0,
+    "native_querycount_matches_ledger": true,
+    "seed_transpiler": 14001,
+    "timing_scope": "local_wall_clock_not_device_time",
+    "totals_scope": "completed_batches_only",
+    "depth_conventions": {
+      "compiled_depth": "measurement-inclusive",
+      "max_depth": "measurement-inclusive",
+      "compiled_unitary_depth": "final measurements removed via remove_final_measurements",
+      "max_unitary_depth": "maximum compiled_unitary_depth across completed batches",
+      "decomposition": "native IQAE oracle decomposition; not normalized to fixed-response circuits"
+    },
+    "ledger": [
+      {
+        "batch": 0,
+        "k": 0,
+        "shots": 256,
+        "requested_shots": 256,
+        "stage": "sampler_batch_completed",
+        "seed_transpiler": 14001,
+        "compile_seconds": 0.021178200000001368,
+        "sampler_seconds": 0.005501299999998821,
+        "compiled_u": 20,
+        "compiled_cx": 16,
+        "compiled_depth": 33,
+        "compiled_unitary_depth": 32,
+        "compiled_qubits": 5,
+        "counts": {
+          "0": 169,
+          "1": 87
+        }
+      }
+    ],
+    "totals": {
+      "batches": 1,
+      "shots": 256,
+      "a_equivalent_queries": 256,
+      "grover_queries": 0,
+      "cx": 4096,
+      "max_depth": 33,
+      "max_unitary_depth": 32
+    },
+    "attempted": null,
+    "costs_unknown": false,
+    "preparation_seconds": 0.0006304999999997563
+  },
+  "task_seconds": 0.049950199999997835
+}
