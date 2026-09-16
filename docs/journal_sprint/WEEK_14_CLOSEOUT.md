@@ -19,7 +19,10 @@ claimed. Week15 confirmation remains NO-GO; see the explicit
   and caps without discarding negative outcomes; no hardware timing claim.
 - [x] Complete93tasks/912trial outcomes and20response checks; archive2022files.
 - [x] Strict numerical replay,58cell analysis, claims/resource report.
-- [ ] Final independent scientific/software evidence review and clean checkout.
+- [x] Clean checkout72focused tests and93task/2022file strict replay; same environment.
+- [x] Independent scientific evidence review ACCEPT after wording corrections.
+- [x] Independent software/provenance evidence review ACCEPT; final half-width
+  terminology correction applied to claim matrix.
 - [x] Prepare bounded collaborator-review packet; explicitly leave signatures pending.
 - [ ] Continuous application admission, defensible prior-work distinction and
   signed confirmation protocol. These remain scientific gates, not completed tasks.
@@ -50,6 +53,15 @@ Producing freeze76914458; evidence/review commits are recorded in Git. Branch
 `research/week14-comparisons` includes preceding local week13 work. No push,
 PR or merge was requested for this turn and none was performed. Unrelated
 untracked archives, user files, stash and existing worktrees are preserved.
+
+Verification:807repository tests passed in two disjoint invocations
+(609journal tests,198tests/paper_a tests); clean checkout1fbea8b6 passed72new
+tests and the full strict replay. Producing code is unchanged since76914458;
+the clean checkout used the same existing environment, not a fresh installation.
+Scientific and software evidence reviews accepted; four documented wording
+corrections applied. No remaining implementation/archive/review blocker within
+the declared finite-target development scope. Scientific application and
+confirmation gates remain unresolved as listed above.
 
 Two planned blocks remain (weeks15-16), subject to the unresolved gate. Safe
 next work is explicit gate-resolution research/replanning, not an automatic

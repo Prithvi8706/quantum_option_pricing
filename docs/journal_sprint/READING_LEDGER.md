@@ -1,5 +1,17 @@
 # Primary-paper reading ledger
 
+## 2026-09-16 week14 comparator implementation audit
+
+Bounded primary-paper/native-source audit of IQAE (1912.05559v3), csAE
+(2609.02715v1), BAE (2412.04394v5) and BIQAE (2507.23074v2), with exact links,
+noise/count conventions and applicability in
+[comparator audit](WEEK_14_COMPARATOR_AUDIT.md). Inspected installed Terra0.46.3
+IQAE/Sampler and vendored csAE implementations; no new exhaustive field survey,
+full-paper proof certification, dependency upgrade or external BAE/BIQAE Asian
+experiment claimed. Week14 executes pinned native IQAE and source csAE only
+within the finite-target/model restrictions in the frozen protocol. Known
+controls, confidence inversion and query ledgers are not claimed as new theory.
+
 ## 2026-09-16 week-13 feasibility readings
 
 See [structured route](WEEK_13_STRUCTURED_ROUTE.md) and

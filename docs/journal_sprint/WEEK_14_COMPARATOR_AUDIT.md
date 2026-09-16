@@ -1,5 +1,13 @@
 # Week 14 comparator implementation and research audit
 
+Post-acquisition cross-reference: the body below preserves the pre-implementation
+audit snapshot. Its then-pending native IQAE integration and circuit checks are
+now completed in [week14 results](WEEK_14_RESULTS.md). Source csAE remains a
+response-model comparator, not actual-count circuit fitting. BAE/BIQAE Asian
+integration, continuous certification and native stopping proof remain unclaimed.
+See [final review](WEEK_14_REVIEW.md) and [claim/gate matrix](WEEK_14_CLAIMS_GATE.md)
+for current dispositions; audit-only statements below describe the audit itself.
+
 2026-09-16; branch `research/week14-comparisons`. Bounded source/document audit only: no experiments, dependency changes, commits or human review performed. Existing results below are historical evidence, not rerun results. Main-agent Week 14 implementation may advance independently of this snapshot.
 
 ## Integration decision

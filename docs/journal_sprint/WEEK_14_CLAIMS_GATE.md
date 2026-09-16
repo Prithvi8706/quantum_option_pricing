@@ -6,7 +6,7 @@
 |---|---|
 | Actual small nonzero-Grover circuits implement the intended finite encoding | Supported by20statevector/density characterizations; model-specific,5qubits, k<=4 |
 | Raw/residual finite price identities and offsets agree | Supported by immutable week13 case3 and setup replay; not continuous-price certification |
-| Residual encoding lowers required finite precision effort | Supported locally; known control improves classical sampling too; no new algorithm |
+| Residual encoding achieves observed interval half-width <=$1 delivery at smaller tested acquisition budgets | Supported locally; no claim of minimum required effort; known control improves classical sampling too; no new algorithm |
 | Native IQAE and modern noisy csAE are connected | Supported for pinned ideal finite-shot IQAE and source csAE response-model outputs; csAE is not actual-count circuit fitting |
 | Calibration, pilot, allocation and transfer affect delivery/cost | Supported descriptive ablations; unequal_target ties fixed_target here |
 | Ignoring the stipulated noise can invalidate interval output | Supported paired residual case; no claim of failure within the correct model |

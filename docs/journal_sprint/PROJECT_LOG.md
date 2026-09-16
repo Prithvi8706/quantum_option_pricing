@@ -8,6 +8,10 @@ is finite-target development, not a completed continuous end-to-end benchmark.
 Producer/protocol76914458; all93tasks completed,912trial outcomes (including
 paired analyses),20response checks,2022files/2399090bytes,21.931956s elapsed.
 Strict replay passed all files/tasks;58cell prespecified analysis generated.
+Full807tests passed in two disjoint invocations; clean checkout1fbea8b6 passed
+72newtests and strict replay with the same pinned environment. Independent
+scientific and software evidence reviews ACCEPT; four wording corrections
+applied. Complete review receipts are recorded in the linked closeout/review.
 
 Added actual nonzero-Grover raw/residual circuits, independent density checks,
 native IQAE and source-faithful noisy csAE, fixed/direct and five-policy ablations,

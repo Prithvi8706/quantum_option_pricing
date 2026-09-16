@@ -63,9 +63,46 @@ to select a fix, method or threshold.
 ## Final evidence review
 
 Production completed93tasks without failure; strict replay passed2022files and
-all tasks. Main journal regression609passed/20warnings in165.62s; remaining
-repository tests and clean-checkout receipt pending. Independent final reviewers
+all tasks. Full repository regression807passed in two disjoint invocations:
+609journal tests/20warnings in165.62s and198other tests/9warnings in240.44s.
+Receipts: tests_week14_full.xml (journal subset despite filename) and
+tests_week14_other.xml. Clean source checkout1fbea8b6 passed72focused tests,
+17warnings,23.06s and strict replay93tasks/2022files with the same existing
+environment. Receipts: tests_week14_clean.xml and w14_clean_replay_v1.json.
+No producer changes since freeze; Ruff and git whitespace checks pass.
+Independent final reviewers
 are Hegel (scientific) and Heisenberg (software/provenance), neither an author
 of the producing implementation. Their initial scientific/software blockers
-were cleared before acquisition. Final evidence dispositions are recorded below
-when returned. Human collaborator review remains pending.
+were cleared before acquisition. Human collaborator review remains pending.
+
+### Hegel: final scientific evidence review ACCEPT
+
+Independently checked task/file/byte/time totals, all resource-table entries,
+point-estimator errors, allocation ties, native stopping observations, finite/
+continuous offsets, noise-failure counts and uncertainty qualifications. No
+numerical discrepancy. Three wording changes requested and applied:
+
+1. Hull membership is weaker than membership in the original union of confidence
+   components, not membership in every disconnected component.
+2. Oracle construction enumerates payoffs; that makes direct finite summation
+   available with minimal extra work, not a mandatory summation construction step.
+   The finite numerical target is not a certified real-arithmetic enclosure.
+3. Smaller tested delivery budgets are observed; minimum required effort is not
+   established by the tested budget grid.
+
+Reviewer rechecked all three corrections and returned ACCEPT for the declared
+finite-target development scope, no remaining scientific reporting blocker.
+Week15 NO-GO, lack of continuous certification/novelty/advantage and pending
+human approval were explicitly retained. Reviewer did not edit files.
+
+### Heisenberg: final software evidence review
+
+ACCEPTED with no remaining implementation/archive blockers. Independently
+verified producer hashes, archive inventory and receipts for807regression tests,
+72clean-checkout tests and93task/2022file clean replay, zero failures/errors/skips.
+No long tests rerun at this final receipt stage. Requested one final wording
+correction: delivery is interval **half-width <=$1**, not full width <=$1.
+Applied in the claim matrix; observed native full widths may exceed$1.
+Acceptance covers bounded finite-target development only, not continuous-price
+certification, confirmation, novelty or advantage. No producing code/evidence
+changed during final reviews.

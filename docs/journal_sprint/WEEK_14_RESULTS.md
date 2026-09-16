@@ -78,8 +78,10 @@ gives0.154073/0.095440. These descriptive errors are not tolerance certificates.
 
 Classical IID finite-path sampling at3200evaluations has raw/residual mean
 absolute errors0.290609/0.021448. The known control helps the classical estimator
-too. Direct summation computes this entire16-path finite target exactly and is
-already needed to construct the table oracle. A quantum end-to-end advantage
+too. Oracle construction already enumerates all16payoffs and their weights,
+making direct finite summation available with minimal additional work. This
+evaluates the finite numerical target, not a certified real-arithmetic enclosure.
+A quantum end-to-end advantage
 over this baseline is unsupported. Week11 continuous MC/control/PCA-RQMC/
 conditional baselines remain important prior evidence, but are not relabeled
 same-target week14 comparisons. Continuous admission is required before that
@@ -91,8 +93,8 @@ For residual depth-limited inversion at eta=.02, matched-model delivery is16/16.
 Ignoring eta on the **same counts** gives12empty confidence sets,15/16
 unconditional hull misses and4/16declarations. None of those four declarations
 has midpoint error above$1. Empty sets count as misses and abstentions, not
-successful missing observations. Hull containment is weaker than containment
-in every component of a disconnected confidence set.
+successful missing observations. Hull containment is weaker than membership
+in the original confidence set (the union of its components): the hull fills gaps.
 
 All five unchanged week12 policy arms were run for stationary readout, unguarded
 .03transfer and guarded .03transfer. The guard changes planning and inversion:
