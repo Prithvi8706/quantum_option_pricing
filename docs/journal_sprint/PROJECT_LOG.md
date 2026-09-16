@@ -14,6 +14,10 @@ pip check0. Fresh123tests passed/17warnings in44.37s; strict week13 replay
 104files/6cases/24circuits and week14 replay2022files/93tasks passed. All6scalar
 formula cases passed and all58analysis cells exactly reproduced. Both original
 archives remain intact. Raw installer logs preserved and losslessly ZIP archived.
+Independent Bacon software/provenance and Darwin scientific/claims reviews
+ACCEPT at7ce21101. Darwin independently reconciled96ideal fixed intervals and
+all six rate numerators/denominators across50confidence cells; main's separate
+tracked-only checkout verified11artifact files and both ZIP-member hashes.
 No algorithm, original seed, tolerance or producer-source change. This is new
 environment reproduction on the same host, not confirmation or a new proof.
 See [week15 closeout](WEEK_15_CLOSEOUT.md), [protocol](WEEK_15_REPRODUCTION_PROTOCOL.md)
