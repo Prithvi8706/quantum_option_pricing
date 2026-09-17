@@ -27,6 +27,15 @@ are separate archived acquisitions; their payload also replayed exactly with
 14critical-source/artifact hashes checked. Existing signal/execution certification and
 continuous-target advantage barriers remain open; no confirmation promotion.
 
+Clean checkout6c14d69f, using the existing isolated week15 environment:
+21new tests passed/8legacywarnings (5.78s), both stored replay checks passed,
+including the original q10 angle-plan hash. Clean checkout did not rerun the
+full suite or acquisitions. Receipts: `four_paper_clean_tests_v1.xml`,
+`four_paper_clean_probe_replay_check_v2.json`,
+`four_paper_clean_baseline_replay_check_v1.json`. F-only Ruff and whitespace
+checks passed. Local commits only; no push/PR/merge. Legacy untracked user
+archives and existing worktrees preserved.
+
 ## Current-version closure before the four-paper audit
 
 User requested wrap-up first, then exhaustive review of four specific QCE papers.

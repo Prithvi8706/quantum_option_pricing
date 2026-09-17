@@ -95,6 +95,10 @@ human scientific review. Source-acquisition helpers are not runtime dependencies
 of the numeric experiment. The exploratory v1 producer was superseded; its
 results are preserved, but only v2 has a current-producer replay guarantee.
 No remote push, PR, merge or hardware execution was performed.
+Clean checkout `6c14d69f`:21new tests passed in the existing isolated environment;
+both stored replay/hash checks also passed. This did not rerun the full suite
+or acquisition from the clean checkout. Verification receipts are archived
+under `results/journal_sprint/four_paper_clean_*`.
 
 ## How an actual advantage would have to arise
 
