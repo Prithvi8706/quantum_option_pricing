@@ -4,6 +4,10 @@ Snapshot after [PR #6](https://github.com/Prithvi8706/quantum_option_pricing/pul
 merged into `main` at `b074488c`. This checklist is a subsequent documentation
 addition, not a file included in that merge.
 
+Same-day update: [claim assessment and decision](docs/journal_sprint/CLAIM_ASSESSMENT_RESULTS_20260917.md)
+adds restricted proofs, separate AI reviews and a retrospective sensitivity
+study. Human expert novelty review and quantum advantage remain open.
+
 **Bottom line:** the development work, reproduction work and two-week
 minimal-pivot study are complete within their recorded scopes. The candidate
 remains on standby. Scientific confirmation, quantum-over-classical advantage
@@ -137,8 +141,11 @@ Evidence: [integration handoff](docs/journal_sprint/STUDY_MERGE_CLOSEOUT.md),
   work; distinguish an application-specific construction from a new primitive.
 - [ ] Establish a defensible contribution beyond assembling known components:
   a checked theorem, useful decision result, or substantive reproducible finding.
-- [ ] Decide whether to advance the standby candidate, pursue another bounded
-  experiment, or revise the claim/scope explicitly. Do not promote it automatically.
+  Restricted correctness propositions and a reproduced encoding-choice reversal
+  are now documented; publication-level novelty still needs external assessment.
+- [x] Decide whether to advance the standby candidate, pursue another bounded
+  experiment, or revise the claim/scope explicitly. Decision: pursue a bounded
+  external arithmetic-comparator study; keep the candidate on standby.
 - [ ] If quantum-over-classical advantage remains the target, demonstrate it under
   matched task, accuracy, confidence and resource assumptions. It is not established.
 
