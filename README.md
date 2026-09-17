@@ -1,286 +1,236 @@
-> **Research status — 9 September 2026:** Neither paper is submitted or published.
-> The historical numerical claims below are under audit, not submission-ready
-> conclusions. In particular, $0.203 is not an established discretization floor,
-> and Paper B's claimed 100-trial sweep is not reconciled with raw evidence.
-> See the [claim ledger](docs/journal_sprint/CLAIM_LEDGER.md) and
-> [journal sprint](docs/journal_sprint/WEEK_1_2_RESULTS.md). This notice supersedes
-> any protected/canonical treatment of those claims below.
+# Quantum Option Pricing
 
-Local journal-reengineering work through week 9 is complete: see the
-[running log](docs/journal_sprint/PROJECT_LOG.md),
-[current manuscript](docs/journal_sprint/MANUSCRIPT_RELIABILITY_DRAFT.md), and
-[PR review scope](docs/journal_sprint/PR_REVIEW_SCOPE.md).
-Contributor confirmation, confirmation studies and publication readiness remain outstanding.
+Research into encoding-aware quantum option pricing: circuit construction,
+explicit error budgets, amplitude estimation, and comparison with strong
+classical methods.
 
-<div align="center">
+The project has grown from a European-option dashboard into a reproducible
+research codebase. Its primary harder application is **arithmetic Asian-basket
+pricing under risk-neutral geometric Brownian motion**. European and digital
+options remain regression controls and historical experiments.
 
-# ⚛️ Quantum Option Pricing
+**Status — 17 September 2026:** the latest two-week construction and integration
+study is complete within its bounded scope. The reflection-centered candidate
+remains on standby. We have demonstrated improvements over selected quantum
+baseline constructions, **not quantum-over-classical advantage**. Confirmation
+and submission readiness remain open; no paper is recorded as submitted or
+published.
 
-**A deployed dashboard that prices European call options three ways — and honestly shows where quantum loses.**
+## Start here
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Railway-brightgreen?style=for-the-badge)](https://web-production-559db.up.railway.app)
-[![Python](https://img.shields.io/badge/Python-3.9+-blue?style=for-the-badge&logo=python)](https://python.org)
-[![Qiskit](https://img.shields.io/badge/Qiskit-0.46.3-purple?style=for-the-badge)](https://qiskit.org)
-[![Health](https://img.shields.io/badge/Health-10%2F10-success?style=for-the-badge)](#)
-[![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](#)
+- [Completed work and remaining tasks](checklist_17.9.26.md)
+- [Latest integrated study results](docs/journal_sprint/MINIMAL_PIVOT_WEEK2_RESULTS.md)
+- [Signal construction and derivation](docs/journal_sprint/MINIMAL_PIVOT_WEEK1_METHOD.md)
+- [Integration, error budget and precision-cost analysis](docs/journal_sprint/MINIMAL_PIVOT_WEEK2_METHOD.md)
+- [Running project log](docs/journal_sprint/PROJECT_LOG.md)
+- [Verified integration handoff](docs/journal_sprint/STUDY_MERGE_CLOSEOUT.md)
 
-[**→ Open Live Dashboard**](https://web-production-559db.up.railway.app)
+## Research question
 
-</div>
+Can a concrete quantum encoding and estimation procedure provide a defensible
+pricing benefit after charging for state preparation, payoff approximation,
+uncomputation, statistical precision and execution costs?
 
----
+The work separates three questions:
 
-## Contents
+1. Does a circuit implement the intended finite mathematical target?
+2. Can the full error budget support a stated price tolerance and confidence?
+3. Is the resulting cost competitive with the best applicable classical method?
 
-- [What this is](#what-this-is)
-- [Live dashboard](#live-dashboard)
-- [Research program](#research-program)
-- [Canonical numbers (frozen)](#canonical-numbers-frozen)
-- [How it's built](#how-its-built)
-- [Math](#math)
-- [Running locally](#running-locally)
-- [References](#references)
-- [Project status](#project-status)
+A positive answer to the first question does not establish the other two.
+Similarly, reducing one quantum circuit's cost is not a classical speedup.
 
----
+## What is implemented
 
-## What this is
+- **Quantum encodings:** finite reference circuits, structured Gaussian loading,
+  separable basket signals and a shared-reflection centered construction.
+- **Integrated estimation:** residual quantum signal processing (QSP), directed
+  classical offsets, Hadamard readout, explicit canonical amplitude estimation
+  (AE), and interval-based outcome decoding.
+- **Encoding-aware decisions:** accuracy and resource screening, degree/encoding
+  selection among supported logical plans, and explicit refusal when requirements
+  cannot be certified. Physical/production promotion remains disabled.
+- **Classical comparisons:** Monte Carlo, control variates, randomized
+  quasi-Monte Carlo (RQMC), and conditional RQMC, with recorded setup/pilot costs.
+- **Inference and validation:** calibration-aware fixed/sequential methods,
+  transfer checks, finite-target comparator studies, ablations and negative controls.
+- **Evidence tooling:** frozen protocols, source/artifact hashes, exclusive output
+  directories, replay verifiers, tests and preserved failed attempts.
 
-Most quantum finance projects claim quantum computers will revolutionize option pricing. This one shows you exactly when — and more importantly, **exactly when they won't.**
+The [four-paper audit](docs/journal_sprint/FOUR_PAPER_AUDIT.md) and
+[latest prior-art assessment](docs/journal_sprint/MINIMAL_PIVOT_WEEK2_PRIOR_ART.md)
+explain which ideas transfer to this application and which assumptions do not.
+Known primitives are not presented as newly invented algorithms.
 
-Three pricing methods run side by side:
+## Latest results: improvements and limits
 
-| Method | Approach | Error Scaling | Status |
-|---|---|---|---|
-| **Black-Scholes** | Closed-form formula | Exact | ✅ Live |
-| **Monte Carlo** | Simulates thousands of random futures | O(1/√N) | ✅ Live (animated) |
-| **Quantum (QAE)** | Iterative Amplitude Estimation circuit | O(1/M) ideal | ✅ Live (precomputed grid) |
+### Circuit construction
 
-The break-even visualizer shows the crossover point where QAE theoretically beats Monte Carlo — and the NISQ overhead band showing how far current hardware sits from that threshold.
+The shared-reflection signal replaces the earlier subset-centered construction's
+`1 + d * (2^d - 1)` coefficient slots with `d + 1`, where `d` is the model's
+Gaussian-factor dimension. For the four-factor example, that is **61 to 5 slots**.
 
-**The honest framing is the point.** The QAE advantage is real in theory. On today's noisy hardware, the crossover is out of reach. This project shows both, with citations and a real-hardware validation run to back it.
+At four factors and two bits per coordinate, the compiled signal uses **282 CX
+gates versus 1,148** for the optimized subset-centered baseline: about **4.07x
+fewer CX**, with depth reduced from 1,753 to 383. These are signal-component
+counts, excluding probability loading and the complete QSP/AE pipeline. The
+optimized original uncentered signal is cheaper still at 146 CX; the intended
+centering benefit comes from the wider accuracy/resource tradeoff.
 
----
+At four factors and ten bits per coordinate, a **47-qubit signal circuit was
+constructed and compiled**. It was not simulated as a 47-qubit statevector or
+executed as a complete pricing algorithm. See the
+[Week 1 results](docs/journal_sprint/MINIMAL_PIVOT_WEEK1_RESULTS.md).
 
-## Live dashboard
+### Integrated logical-cost study
 
-[**→ web-production-559db.up.railway.app**](https://web-production-559db.up.railway.app)
+The frozen menu contains four contracts, two encodings and four polynomial
+degrees: **32 logical-plan configurations**, alongside **24 classical
+method/budget cells**. Nine quantum configurations pass the ideal-logical
+deterministic-plus-AE planning gate for a $1 tolerance at 95% confidence.
 
-- Adjust S₀, K, T, σ, r with sliders
-- Watch Monte Carlo converge in real time
-- See QAE results from the precomputed 600-point grid
-- Break-even chart: where QAE wins (ideal) vs where it sits (NISQ)
+| Case | Original/reflection projected CX ratio | Approximate selected reflection CX |
+| --- | ---: | ---: |
+| D1 | 4.03x | 3.54e11 |
+| D2 | 2.01x | 1.06e13 |
+| E1 | 4.02x | 4.28e12 |
+| E2 | Neither encoding meets the fixed accuracy menu | No feasible plan |
 
----
+Ratios compare the lowest-cost feasible plan within each implemented encoding
+family, including its selected degree and AE budget. They are **logical
+composition projections**, not measured hardware speedups or globally optimal
+cost ratios. The large absolute costs remain important.
 
-## Research program
+Two complete tiny, 10-qubit AE pipelines were simulated. Their distributions
+agree with an independent Fourier-kernel calculation within `2.25e-12`.
+However, at the same tiny degree and AE schedule, reflection uses **more** CX:
+1,147,295 versus 911,871. These coarse toy runs do not certify $1 continuous-price
+delivery. Classical replicate t intervals are approximate diagnostics, not
+proved coverage guarantees.
 
-This project is the foundation for three research papers, each extending the honest-framing thesis. **Papers A and B are complete and preparing submission; Paper C is planned.**
+See the [full Week 2 results](docs/journal_sprint/MINIMAL_PIVOT_WEEK2_RESULTS.md)
+for the contract definitions, error budgets, unfavorable cases and timing scope.
 
-### Paper A — *NISQ Noise Shifts the Break-Even* `[complete — preparing submission]`
-> **Venue target:** EPJ Quantum Technology / arXiv preprint
+## What is closed, and what remains open?
 
-Every existing paper assumes perfect quantum hardware. This one doesn't.
+Completed development is not kept open merely because an investigation produced
+a negative result or has a stated limitation.
 
-An IQAE circuit is run through Qiskit's AerSimulator across a noise-rate sweep p ∈ {0, 1e-4, 1e-3, 5e-3, 1e-2} — **50 option configurations × 5 noise levels = 250 runs**. The break-even frontier is reported over option configuration and noise rate, alongside a mean-error-vs-noise curve and a noise-invariant oracle-depth panel.
+| Work package | Current disposition |
+| --- | --- |
+| Original Weeks 1–13 | Development closed within recorded scopes; negative gates retained |
+| Original Week 14 | Finite-target study closed; broader continuous-price comparison incomplete |
+| Original Week 15 | Fresh-environment reproduction closed; confirmation campaign blocked |
+| Additional two-week minimal-pivot study | Construction and bounded validation closed; candidate on standby |
+| Original Week 16 | Final integrated manuscript and submission-readiness work remain open |
 
-**Key findings:**
-- At current IBM hardware noise (p ≈ 1e-3), mean price error is **$0.657** — roughly **66×** the ε = 0.01 precision target.
-- Even at **p = 0** (noiseless), mean price error is already **$0.203** — about **20×** the target. The 3-qubit discretization imposes an irreducible floor *before* any noise enters.
-- IQAE oracle-query depth is **noise-invariant** (~14 queries, range 13.6–14.5, across every p). The query budget never inflates; accuracy decays silently.
+The principal open questions are a defensible distinction from nearest prior
+work, an execution/synthesis/noise model for physical claims, and a matched
+continuous-target comparison against strong classical methods. Any confirmation
+campaign needs admission, a frozen analysis and genuinely fresh data first.
 
-**Hardware validation:** A single-qubit state-preparation primitive (Rᵧ(2·arcsin√0.3), encoding p = 0.30) was run on **ibm_marrakesh (Heron r2)** at 1024 shots (Job `d8nvd2bqv2lc7389d9e0`, counts `{"0": 733, "1": 291}`). Empirical **p̂ = 0.2842** — absolute error **0.0158**, within the 1024-shot binomial noise band (σ = √(0.3·0.7/1024) = **0.0143**, deviation **1.1σ**). The amplitude-encoding step is faithful on real hardware, with no detectable device error beyond shot noise.
+A narrower ideal-logical resource/error paper would need an explicit scope
+decision and independent novelty assessment; it is not automatically
+publication-ready. Hardware superiority is not established by this repository.
+The [dated checklist](checklist_17.9.26.md) separates these decisions from finished
+implementation tasks. Older plans and drafts are historical, not current claims.
 
-> Processor family "Heron r2" is a known external fact about `ibm_marrakesh`; it is not stored in the result JSON, which records only the backend name.
+## Reproduce and verify
 
-**Novel contribution:** No existing paper maps break-even vs noise rate for option pricing circuits, or shows the discretization floor dominates at near-term scale.
+### Tested environment
 
----
+The recorded replay environment is **Windows, Python 3.9.13, NumPy 2.0.2,
+SciPy 1.13.1 and qiskit-terra 0.46.3**. The
+[pinned replay requirements](research/journal_sprint/requirements-week15-replay.txt)
+cover the research replay and focused tests, not all legacy app/Aer/Finance
+dependencies. This is a historical reproducibility environment, not a claim of
+compatibility with current Qiskit releases or every operating system.
 
-### Paper B — *The Wrong Baseline: How Variance-Reduced Monte Carlo Erases QAE's Advantage in Option Pricing* `[complete — preparing submission]`
-> **Venue target:** Quantitative Finance / Physica A
+From the repository root, in PowerShell with Python 3.9 available:
 
-The QAE literature compares against naive Monte Carlo. Practitioners don't use naive Monte Carlo — they use antithetic variates, control variates, and quasi-MC (Sobol sequences). This paper re-derives the break-even equation with the right baseline.
-
-**Key findings (empirically verified with bootstrap 95% CIs, 2000 resamples):**
-
-| Baseline | Break-even oracle queries | QAE hurdle vs naive |
-|---|---|---|
-| Naive MC | M ≈ 314 | 1× (reference) |
-| Antithetic (VRF 2.0×) | M ≈ 222 | 1.41× harder |
-| Control variate (VRF 6.8×) | M ≈ 120 | 2.61× harder |
-| RQMC (Sobol) | changes convergence *exponent* | asymptotic advantage gone |
-
-On the European call benchmark, RQMC achieves empirical convergence slope **−1.04** — matching QAE's claimed O(1/N) rate. The advantage **degrades mildly but persists through d = 64** (geometric Asian dimension sweep, below): RQMC stays well steeper than the classical −0.5 rate at *every* dimension tested, sliding only from −0.98 at d = 1 to −0.77 at d = 64. Even on discontinuous payoffs (European digital cash-or-nothing), RQMC slope is **−0.98 [−1.06, −0.90]**, consistent with He & Wang (2015), whose theory predicts −1.0 at d = 1.
-
-**Dimension sweep (Table IV — 100-trial stabilized slopes, supersedes earlier 10-trial estimates):**
-
-| d | RQMC slope | 95% CI |
-|---|---|---|
-| 1 | −0.98 | [−1.04, −0.92] |
-| 2 | −1.06 | [−1.13, −0.99] |
-| 4 | −0.89 | [−0.97, −0.81] |
-| 8 | −0.86 | [−0.93, −0.79] |
-| 16 | −0.79 | [−0.85, −0.71] |
-| 32 | −0.85 | [−0.92, −0.78] |
-| 64 | −0.77 | [−0.84, −0.69] |
-
-The trend is a **mild degradation with dimension, not a crossover** — RQMC's edge over classical Monte Carlo persists across the full range to d = 64.
-
-**Novel contribution:** Methodological critique of the QAE option pricing literature. The classical baseline used in every prior break-even calculation is not the baseline quants deploy.
-
----
-
-### Paper C — *Unified Quantum Advantage Frontier* `[planned — A and B complete]`
-> **Venue target:** Quantum journal
-
-Combine Papers A and B into one unified figure: the quantum advantage region as a function of (ε, noise rate p, MC variance reduction factor).
-
-**Main claim:** Under joint realistic assumptions — variance-reduced MC and NISQ noise — quantum advantage in European option pricing requires ε < X on hardware with error rate p < Y.
-
-**Novel contribution:** The unified honest framework the field has been missing.
-
----
-
-## Canonical numbers (frozen)
-
-These numbers are verified and frozen. If a re-run produces different values, investigate before updating.
-
-| Experiment | Value |
-|---|---|
-| Paper A — mean price error @ p = 0 (ideal) | $0.203 |
-| Paper A — mean price error @ p = 1e-3 (current IBM) | $0.657 |
-| Paper A — IQAE oracle depth (all p, noise-invariant) | ~14 (13.6–14.5) |
-| Paper A — hardware validation (ibm_marrakesh, 1024 shots) | p̂ = 0.2842 (1.1σ from 0.30) |
-| Paper B — European call RQMC convergence slope | −1.04 |
-| Paper B — dimension sweep d=1 RQMC slope | −0.98 [−1.04, −0.92] |
-| Paper B — dimension sweep d=64 RQMC slope | −0.77 [−0.84, −0.69] |
-| Paper B — digital RQMC slope | −0.98 [−1.06, −0.90] |
-| Paper B — QAE grid bias at n=5 qubits (digital) | 2.16×10⁻² |
-| Paper B — Table IV N window | [1024, 16384] (5 points) |
-
----
-
-## How it's built
-
-```
-app/
-  app.py                       # Dash layout, callbacks, break-even chart
-  precompute_qae.py            # 600-point grid generator
-  assets/style.css             # Dark theme, WCAG AA, responsive
-src/
-  black_scholes.py             # Closed-form pricer + digital_bs_price
-  classical.py                 # Monte Carlo
-  quantum.py                   # QAE circuit (IQAE) + quantum_digital_call
-  digital_option.py            # Digital MC, antithetic, RQMC pricers
-  asian_option.py              # Asian pricers + arithmetic CV reference
-  plot_convergence.py          # European call convergence → RQMC slope (Paper B)
-  plot_dimension_sweep.py      # Geometric dimension sweep → Table IV (Paper B)
-  plot_digital_convergence.py  # Digital convergence experiment → Section VII (Paper B)
-  plot_break_even_shift.py     # Break-even framing
-  plot_hardware_validation.py  # Hardware validation figure (Paper A)
-  noise_experiments.py         # Paper A noise sweep (AerSampler)
-ibm_validation.py              # Paper A real-hardware run (ibm_marrakesh)
-data/
-  qae_grid.pkl                 # 600 points: S₀ × K × T × σ
-  noise_sweep_expanded.csv     # Paper A noise sweep: 250 runs (50 pts × 5 levels)
-results/
-  ibm_hardware_validation.json # Hardware run result (Job d8nvd2bqv2lc7389d9e0)
-tests/
-  test_pricing.py              # 10 tests
-  test_digital.py              # 15 tests
-  test_asian_cv_ref.py         # 3 tests
-docs/
-  PROJECT_UPDATE_2026-06-10.md # Latest session record
+```powershell
+py -3.9 -m venv .context/readme_replay_env
+.context/readme_replay_env/Scripts/python.exe -m pip install pip==23.2.1
+.context/readme_replay_env/Scripts/python.exe -m pip install -r research/journal_sprint/requirements-week15-replay.txt
+$env:OPENBLAS_NUM_THREADS = '1'
+$env:OMP_NUM_THREADS = '1'
+$env:MKL_NUM_THREADS = '1'
+$env:PYTHONDONTWRITEBYTECODE = '1'
 ```
 
-**QAE grid:** 600 points = 5 S₀ × 5 K × 6 T × 4 σ (r fixed)
-**Runtime stack:** numpy, scipy, dash, plotly, gunicorn (no Qiskit at runtime)
-**Dev stack:** + qiskit==0.46.3, qiskit-aer==0.12.2, qiskit-finance, qiskit-algorithms
-**Hardware stack (separate env):** qiskit-ibm-runtime — for the `ibm_marrakesh` validation run, in a separate anaconda environment (do not merge it with the pinned dev venv)
-**Pinned:** scipy==1.13.1 (Sobol results depend on this version — do not upgrade)
-**Deployment:** Railway (auto-deploys on push to main)
+Use the recorded Python patch version for environment parity. Do not upgrade or
+mix the legacy research environment with a modern hardware SDK environment.
+The root `requirements.txt` is for the legacy dashboard; it is not the study's
+reproduction specification.
 
----
+### Check the archived study
 
-## Math
-
-**QAE error bound** (Stamatopoulos et al. 2020, eq. 3):
-
-```
-|a - ã| ≤ π/M + π²/M²  =  O(M⁻¹)
+```powershell
+.context/readme_replay_env/Scripts/python.exe -m research.journal_sprint.verify_minimal_pivot_week1 .context/readme_w1_check.json
+.context/readme_replay_env/Scripts/python.exe -m research.journal_sprint.verify_week2_final .context/readme_w2_check.json
+.context/readme_replay_env/Scripts/python.exe -m research.journal_sprint.analyze_week2 .context/readme_w2_analysis.json
 ```
 
-**Monte Carlo error:**
+Choose **new output filenames** for each invocation; evidence writers refuse
+overwrites. These commands verify recorded source/artifact integrity, compare
+stored numerical replays and regenerate analysis. They do not reacquire the
+expensive experiments and do not constitute independent scientific peer review.
+The Week 2 final verifier uses the named authoritative archive directories.
 
-```
-ε_MC = 1.96 / √N  =  O(N⁻¹ᐟ²)
-```
+### Run focused study tests
 
-**Break-even crossover (naive MC):**
-
-```
-M_crossover = π√N / 1.96  ≈  1.604 × √N
-```
-
-At ε = 0.01: Monte Carlo needs N ≈ 38,416 samples. QAE needs M ≈ 314 oracle queries — a ~120× query reduction **against naive MC**. Paper B shows this crossover shifts significantly when the baseline is variance-reduced Monte Carlo, which is what practitioners actually deploy.
-
----
-
-## Running locally
-
-```bash
-git clone https://github.com/Prithvi8706/quantum_option_pricing
-cd quantum_option_pricing
-pip install -r requirements-dev.txt
-python app/app.py
+```powershell
+.context/readme_replay_env/Scripts/python.exe -m pytest -q tests/test_reflection_centered_signal.py tests/test_week1_subset_control.py tests/test_week2_pipeline.py tests/test_week2_explicit_ae.py tests/test_week2_decoding.py tests/test_week2_analysis.py
 ```
 
-Health check:
+These **51 tests** passed in the separate pinned environment. The latest full
+repository suite passed **1,143 tests**, with 12 legacy warnings, in the original
+full environment from a clean checkout. That full suite also exercises older
+dependencies absent from the minimal replay environment; the test totals overlap.
+See the [verification handoff](docs/journal_sprint/STUDY_MERGE_CLOSEOUT.md).
 
-```bash
-pytest tests/        # 28 tests
-mypy src/ app/       # type check
-ruff check .         # lint
+For fresh acquisitions, follow the
+[frozen study protocol](docs/journal_sprint/MINIMAL_PIVOT_WEEK2_PROTOCOL.md) and
+[producer instructions](docs/journal_sprint/MINIMAL_PIVOT_WEEK2_RESULTS.md).
+Use new output directories, retain failed runs, and freeze source files during
+provenance-sensitive tests. Use `run_week2_explicit_ae` for tiny AE acquisition,
+not the original runner's superseded `tiny` option. Final analysis v2 includes
+the inverse-QFT swap-cost correction; raw projections alone are not the final
+comparison.
+
+## Repository map
+
+```text
+research/journal_sprint/   Active research implementations, runners and verifiers
+research/paper_a/          Earlier research package and regression tests
+docs/journal_sprint/       Protocols, methods, results, audits and project log
+results/journal_sprint/    Versioned evidence, replay records and test receipts
+tests/                    Pricing and research regression tests
+src/                      Earlier pricing models and experiment utilities
+app/                      Legacy dashboard; not the current research interface
+data/, figures/           Historical datasets and generated figures
+checklist_17.9.26.md       Dated completion and remaining-work checklist
 ```
 
-> **Note:** Before running any experiment scripts, confirm `scipy==1.13.1` is installed:
-> ```bash
-> python -c "import scipy; print(scipy.__version__)"
-> ```
+The old dashboard and Paper A/B/C framing are retained only as historical code
+and documents. Earlier “canonical numbers,” submission-ready labels and broad
+novelty assertions are not endorsed as current conclusions; consult the
+[claim ledger](docs/journal_sprint/CLAIM_LEDGER.md) and later closeouts.
+The historical single-qubit hardware primitive is not validation of the current
+Asian-basket pipeline or evidence of an end-to-end pricing advantage.
 
-> **Hardware run:** `ibm_validation.py` runs in a separate environment with `qiskit-ibm-runtime` and an IBM Quantum Platform API key + instance CRN (stored in `.env`, gitignored). The dev env stays pinned to qiskit 0.46.3; do not merge the two.
+## Evidence and contribution standards
 
----
+- Separate compiled circuits, simulations, projections and device executions.
+- Preserve protocols, source hashes, failed attempts and negative findings.
+- Do not use reference truths or held-out outcomes to tune a supposedly frozen
+  policy, and do not relabel deterministic replay as fresh confirmation.
+- Keep commits reviewable and attribute only work actually performed.
+- Latest integration: [PR #6](https://github.com/Prithvi8706/quantum_option_pricing/pull/6).
+  Macroscope skipped its review because credits were exhausted; local verification
+  is documented, but a successful external review is not claimed for that PR.
 
-## References
+## License
 
-- Woerner & Egger (2019). *Quantum risk analysis.* npj Quantum Information. [arXiv:1806.06893](https://arxiv.org/abs/1806.06893)
-- Stamatopoulos et al. (2020). *Option pricing using quantum computers.* Quantum. [arXiv:1905.02666](https://arxiv.org/abs/1905.02666)
-- Grinko et al. (2021). *Iterative quantum amplitude estimation.* npj Quantum Information. [arXiv:1912.05559](https://arxiv.org/abs/1912.05559)
-- Carrera Vazquez & Woerner (2020). *Efficient state preparation for quantum amplitude estimation.* [arXiv:2009.05756](https://arxiv.org/abs/2009.05756)
-- He & Wang (2015). *On the convergence rate of randomized quasi–Monte Carlo for discontinuous functions.* SIAM J. Numer. Anal. 53(5):2488–2503.
-
----
-
-## Project status
-
-| Component | Status |
-|---|---|
-| Dashboard (BS + MC + QAE) | ✅ Live |
-| Break-even visualizer | ✅ Live |
-| Design system (WCAG AA) | ✅ Done |
-| Health (pytest/mypy/ruff) | ✅ 10/10 — 28 tests passing |
-| Paper A — NISQ noise sweep | ✅ Complete — hardware run done (ibm_marrakesh), preparing submission |
-| Paper B — fair MC baseline | ✅ Complete — preparing submission |
-| Paper C — unified frontier | 📋 Planned — A and B complete |
-
----
-
-<div align="center">
-
-Built by [Prithvi](https://github.com/Prithvi8706) · VIT Vellore · 2026
-
-*Quantum advantage is real. On current hardware, it's not here yet. This project shows both.*
-
-</div>
+Project code is available under the [MIT license](LICENSE). Consult the separate
+license notices for any third-party material retained in the repository.
