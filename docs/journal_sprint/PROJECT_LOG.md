@@ -1,5 +1,14 @@
 # Journal reengineering: running record
 
+## Current-version closure before the four-paper audit
+
+User requested wrap-up first, then exhaustive review of four specific QCE papers.
+Baseline72622546 tracked tree clean; stored replay recheck15payloads/74hashes
+passed. Existing1071-test full receipt and102-test clean receipt retained, not
+rerun/relabelled. See [closeout](PRE_LITERATURE_CLOSEOUT.md). Development version
+is closed; signal/execution certification, full pricing admission and quantum
+advantage remain open research requirements, not completed work.
+
 ## 2026-09-17: tighter approximation, centered signal and control-offset enclosure
 
 Added bounded d<=4 centered subset LCU, discrete minimax candidate generation
