@@ -1,5 +1,32 @@
 # Journal reengineering: running record
 
+## 2026-09-17: four-paper equation audit and deterministic loader transfer
+
+After closeout7dc91d66, read32pages across four pinned author PDFs, including
+appendices and figure captions. Added equation-by-equation ledgers and transfer
+decisions in [FOUR_PAPER_AUDIT.md](FOUR_PAPER_AUDIT.md). Walsh publisher PDF
+inaccessible; author preprint reviewed, no publisher-equivalence claim. Selected
+pinned author source inspected read-only, not executed/copied. Full experiment
+reproduction, independent human/subagent review and quantum advantage NOT claimed.
+
+Independent probes check geometric loading, inclusive endpoints, Walsh's missing
+mean phase, state-preparation success and controlled-unitary equivalence.
+Implemented deterministic marginal Gray-code synthesis with exact rational angle
+accounting. q6 prefix1876CX->62CX (unoptimized), but standard dense loader also
+uses62CX and is slightly shallower after optimization. q10 marginal1022CX/999RY,
+depth2012, extra ideal-operator error<=3.78604e-16. No physical synthesis claim.
+Initial library-pruning result6.17443e-10 retained in v1; explicit final v2 avoids
+hidden angle pruning. Old producers/archives unchanged; no remote/hardware calls.
+
+Full regression:1092passed,12legacywarnings,429.55s; receipt
+`results/journal_sprint/four_paper_full_tests_v1.xml`. New21tests included.
+Separate existing week15 environment replay reproduced both final probe payloads
+exactly, with16critical-source/artifact hash checks. Same-producer replay is not
+independent scientific review. Strong-loader comparison and endpoint diagnostics
+are separate archived acquisitions; their payload also replayed exactly with
+14critical-source/artifact hashes checked. Existing signal/execution certification and
+continuous-target advantage barriers remain open; no confirmation promotion.
+
 ## Current-version closure before the four-paper audit
 
 User requested wrap-up first, then exhaustive review of four specific QCE papers.
