@@ -1,5 +1,9 @@
 # Claim-specific prior-art and separate AI assessment
 
+Subsequent same-day follow-up: the proposed bounded comparator below was
+implemented and acquired. See [results and the retained standby decision](MATCHED_ARITHMETIC_RESULTS_20260917.md).
+The proposal text is retained as the historical assessment, not a current task status.
+
 Date: 2026-09-17. This is a targeted review, not exhaustive novelty clearance.
 The lead inspected the existing method/code, primary source passages and new
 search results. A separate AI reviewer, Darwin (agent

@@ -1,5 +1,34 @@
 # Journal reengineering: running record
 
+## 2026-09-17: matched arithmetic comparison and explicit standby decision
+
+Completed the approved bounded D1/D2 comparator acquisition, without changing
+the Asian-basket financial target. Added efficient zero-start Cuccaro and
+Fourier aggregators, explicit conversion/payoff component accounting, a signed
+post-strike overflow guard, directed angle/decoder bridges, and a matched
+control-cancelled ledger. Frozen protocol/code commit:68e78e3f.
+
+See [results and decision](MATCHED_ARITHMETIC_RESULTS_20260917.md),
+[method](MATCHED_ARITHMETIC_METHOD_20260917.md),
+[protocol](MATCHED_ARITHMETIC_PROTOCOL_20260917.md) and
+[separate AI review/verification record](MATCHED_ARITHMETIC_REVIEW_20260917.md).
+
+Twelve logical configurations, eight feasible; four exhaustive finite grids
+cover292 inputs. Primary and isolated replay results are byte-identical.
+Reflection's lowest projections remain below the explicit arithmetic routes:
+ripple/reflection ratios13.5381/1.8237, or15.3572/2.0413 after standard control
+cancellation. These are not runtime speedups. Arithmetic retains nonoptimized
+Horner scratch; compiler models differ as declared in the method. Fourier uses
+more CX than efficient ripple; aggregation accounts for under0.061% of arithmetic
+A-circuit CX. No physical execution or quantum-over-classical advantage established.
+
+Independent design review identified adder/control simplifications and the
+post-strike/decoder checks. Independent implementation review found verifier
+omission attacks; fixed before acquisition with mandatory provenance/menus and
+full deterministic component reconstruction. Candidate stays on standby and
+production choice remains unset. Final test/review/merge receipts are maintained
+in the linked review record; acquisition completion is not confirmation admission.
+
 ## 2026-09-17: claim assessment, restricted proofs and encoding-choice reversal
 
 User requested the remaining claim/novelty work. Implementation and evidence are

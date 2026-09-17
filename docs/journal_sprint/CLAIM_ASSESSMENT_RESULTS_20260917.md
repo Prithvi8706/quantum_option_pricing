@@ -1,5 +1,10 @@
 # Claim assessment and next-stage decision
 
+Follow-up completed at the bounded acquisition level: see the
+[matched arithmetic comparison and explicit standby decision](MATCHED_ARITHMETIC_RESULTS_20260917.md)
+and its linked final verification/review record. The decision below records
+why that follow-up was commissioned, not an unstarted task.
+
 Date: 2026-09-17. This work addresses checklist section5A. Scope and analysis
 were fixed in [the secondary-analysis protocol](CLAIM_ASSESSMENT_PROTOCOL_20260917.md).
 
