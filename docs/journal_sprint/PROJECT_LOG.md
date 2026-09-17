@@ -1,5 +1,43 @@
 # Journal reengineering: running record
 
+## 2026-09-17: minimal-pivot study W1, shared-reflection basket signal
+
+Split the new study into W1 construction/feasibility and W2 integrated pricing
+validation; historical weeks13/14 merged, week15 reproduction completed with
+confirmation still blocked. Same arithmetic Asian basket, no contract pivot.
+See [study plan](MINIMAL_PIVOT_STUDY_PLAN.md),
+[method/proof](MINIMAL_PIVOT_WEEK1_METHOD.md) and
+[results/limitations](MINIMAL_PIVOT_WEEK1_RESULTS.md).
+
+Implemented centered signal with d+1 LCU slots, avoiding centered coordinate
+subset enumeration. Added a directed-interval logical operator certificate,
+equally multiplexed original baseline, and an adaptively added stronger subset
+baseline. On d4/q2, subset1148CX/18qubits becomes reflection282CX/15qubits at
+the same centered scale:4.07x fewer CX. Original146CX remains cheaper per call;
+fixed-error proxy loses at tolerances1 and2. No selective omission of losses.
+
+Actually compiled d4/q10 signal:47qubits,65562CX,depth91665, logical signal
+operator bound<=1.6492655e-14. This is not a large statevector/hardware run,
+physical synthesis certificate, complete price-error budget or classical
+advantage. Keep original and reflection as competing W2 encodings. Reflection,
+LCU and QSP primitives are prior art; candidate application novelty provisional.
+
+Main and stronger-subset v2 acquisitions replayed with identical numeric
+payloads in the existing isolated week15 environment. All172 recorded sources
+per archive and6/2 artifact hashes per main/subset archive verified; receipt
+`results/journal_sprint/minimal_pivot_week1_verification_v2.json`. New22 tests
+pass in both environments. Preliminary v1 results preserved; protocol amendment
+and stored-binary-radius envelope correction disclosed. Automated verification
+is not independent scientific review. No remote PR/merge or hardware action.
+
+Additional d4/q2 statevector spot check on basis words0,37,128,255 matched
+the direct basket good block within3.331e-16; four inputs, not exhaustive.
+
+Final full regression:1114passed,12legacywarnings,437.78s, receipt
+`results/journal_sprint/minimal_pivot_week1_full_tests_v2.xml`. Earlier full
+run1111passed before the final three baseline tests; superseded by v2.
+Ruff F checks and Git whitespace checks passed. W1 complete; W2 not started.
+
 ## 2026-09-17: four-paper equation audit and deterministic loader transfer
 
 After closeout7dc91d66, read32pages across four pinned author PDFs, including

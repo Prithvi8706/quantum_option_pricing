@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "records": [
+    {
+      "original": "minimal_pivot_week1_v2",
+      "replay": "minimal_pivot_week1_replay_v2",
+      "checks": [
+        {
+          "artifacts": 6,
+          "sources": 172
+        },
+        {
+          "artifacts": 6,
+          "sources": 172
+        }
+      ],
+      "identical_payloads": [
+        "inputs.json",
+        "circuits.json",
+        "structure.json",
+        "production.json",
+        "payoff.json"
+      ],
+      "manifest_sha256": {
+        "minimal_pivot_week1_v2": "569303f9e7d225200d87f55a91c733675a5bcb7776b442f7cb44d61be5d304d4",
+        "minimal_pivot_week1_replay_v2": "bba4aa312a82785c79323a8c9fd8dc9ba662b315b6cd904168c0a07e1e23e73d"
+      }
+    },
+    {
+      "original": "minimal_pivot_week1_subset_v2",
+      "replay": "minimal_pivot_week1_subset_replay_v2",
+      "checks": [
+        {
+          "artifacts": 2,
+          "sources": 172
+        },
+        {
+          "artifacts": 2,
+          "sources": 172
+        }
+      ],
+      "identical_payloads": [
+        "results.json"
+      ],
+      "manifest_sha256": {
+        "minimal_pivot_week1_subset_v2": "3a86bebd9e58b46de8b2f344e6a4c30a1a013b18b2f0e643b9e7d58b76bd4cec",
+        "minimal_pivot_week1_subset_replay_v2": "03ce69fcf46a7a7db911563fd415b77cc58e8f2a4d99364c0556db462bfbd51e"
+      }
+    }
+  ],
+  "verifier_sha256": "ea3d048877441dddae0bd350e9e01ac51401c2ac382bd66d9883105b30cd5c73",
+  "scope": "integrity and deterministic replay; not independent scientific review"
+}
