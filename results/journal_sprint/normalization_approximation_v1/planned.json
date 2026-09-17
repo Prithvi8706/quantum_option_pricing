@@ -1,0 +1,139 @@
+{
+  "config": {
+    "degrees": [
+      16,
+      32,
+      64,
+      128
+    ],
+    "low": 4,
+    "cutoff": 4,
+    "finite_q": 2,
+    "budget_q": 10,
+    "assets": 2,
+    "dates": 2,
+    "strike": 100,
+    "fit_points": 8193,
+    "synthesis_cap": 150,
+    "phase_tolerance": 1e-08,
+    "numerical_comparison_allowance": 1e-08,
+    "adaptive_development": true,
+    "confirmation": false
+  },
+  "source_sha256": {
+    "research/journal_sprint/run_normalization_approximation.py": "b7a2db0c8c02879f81054778b4abe5081c9986a7bfccfd5af6f908d364d4f892",
+    "research/journal_sprint/normalization_study.py": "3a142ec5371d666684408ebf16cb7a98da2056df2b1747983a60abbd12ff318e",
+    "research/journal_sprint/certified_payoff.py": "33f1112d1314f680644702758de0ce8822c03ba53b416bc43e5e89bf71e0ab4a",
+    "research/journal_sprint/centered_factorized_signal.py": "81c5ed787992cbaff275df1a020394c32316bd28cb2aaf34a9f0ef086e2fc08b",
+    "research/journal_sprint/control_offset_enclosure.py": "9a3ef1df5272a669edf8f8ccd49933fc91618948755fdfe021dd8d9fcf8ab31b",
+    "research/journal_sprint/factorized_signal.py": "d589d89c3bd3e7b365ee438de0df5650006666334a5ddcf7ea8d64bf039d2e4d",
+    "research/journal_sprint/symmetric_phase.py": "8ad296b58568a1d1a04e03e2d883d34fc4e121aa8c5286697a2cf7b4a57c3f9f",
+    "research/journal_sprint/qsp_error_budget.py": "174c0eea3fba46b73e3ab3169c0175f25f43d8607c6638e0451e4e18c8c1c47e",
+    "research/journal_sprint/combined_qsp.py": "cd35f213fd1a0f248e5fa76b429d5a6eca503e695dc3d9298469cb3cd6fdd14b",
+    "research/journal_sprint/polynomial_residual.py": "afb841844c65b8f1d2c8c87840488f366791b92d4f03272cb7692a55b5620d2b",
+    "research/journal_sprint/decimal_enclosure.py": "f064f0e553688efff9cf21a6543115cbbaf22956a53a8e2105bd6fc97c668b74",
+    "research/journal_sprint/encoding_enclosure.py": "a196d34550f52aa35aab90c4dc924fb08592cf803a9c82548d93eac2bcce1bea",
+    "research/journal_sprint/normal_loader_budget.py": "045335a71da02058f3575d1c2ee40761e3dbd78e8d1e4bc403bd45f968f25902",
+    "research/journal_sprint/asian_basket.py": "cb23ff2bf2896bcde6d8329e86884c6035b1c088daefc9ddcf848c125c27dbd9",
+    "research/journal_sprint/asian_encoding.py": "617880ff8ce9ea4f3f5b886c3fbcb47657523fa89cfaa563870445d49c2998c5",
+    "research/journal_sprint/price_contract.py": "ba3beac48915f57fd2c6536d8ca76eca25ef967186a3198c85780d7a0bda9a76",
+    "research/journal_sprint/encoding_decision.py": "11ba40b508473dcc9c706405ca0a0ddc99d54fcf3173798068d4c04ba09251f7",
+    "research/journal_sprint/combined_representation.py": "6d4f1a218fd25fe79ffba749a42e9a1895ce0fa692942516a6f77e8c27c19b44",
+    "research/journal_sprint/run_combined_development.py": "e69d8424ff12d4af6931daf3afb7e324b4faeeefb85fcc961452ef67b19e0ccf",
+    "research/journal_sprint/storage.py": "05476de9ce7db12a7f5afeb10c59c6045208318ca31552e3863dd57dfc13bfd3",
+    "docs/journal_sprint/NORMALIZATION_APPROXIMATION_PROTOCOL.md": "b00ebcc80ffc7083a58700f08568c8a713c4400568fe4fae30ca777300cdc12b"
+  },
+  "python": "3.9.13",
+  "numpy": "2.0.2",
+  "scipy": "1.13.1",
+  "mpmath": "1.3.0",
+  "qiskit": "0.46.3",
+  "numerical_backend": {
+    "Compilers": {
+      "c": {
+        "name": "msvc",
+        "linker": "link",
+        "version": "19.29.30154",
+        "commands": "cl"
+      },
+      "cython": {
+        "name": "cython",
+        "linker": "cython",
+        "version": "3.0.11",
+        "commands": "cython"
+      },
+      "c++": {
+        "name": "msvc",
+        "linker": "link",
+        "version": "19.29.30154",
+        "commands": "cl"
+      }
+    },
+    "Machine Information": {
+      "host": {
+        "cpu": "x86_64",
+        "family": "x86_64",
+        "endian": "little",
+        "system": "windows"
+      },
+      "build": {
+        "cpu": "x86_64",
+        "family": "x86_64",
+        "endian": "little",
+        "system": "windows"
+      }
+    },
+    "Build Dependencies": {
+      "blas": {
+        "name": "scipy-openblas",
+        "found": true,
+        "version": "0.3.27",
+        "detection method": "pkgconfig",
+        "include directory": "C:/Users/runneradmin/AppData/Local/Temp/cibw-run-vclkdodh/cp39-win_amd64/build/venv/Lib/site-packages/scipy_openblas64/include",
+        "lib directory": "C:/Users/runneradmin/AppData/Local/Temp/cibw-run-vclkdodh/cp39-win_amd64/build/venv/Lib/site-packages/scipy_openblas64/lib",
+        "openblas configuration": "OpenBLAS 0.3.27  USE64BITINT DYNAMIC_ARCH NO_AFFINITY Zen MAX_THREADS=24",
+        "pc file directory": "D:/a/numpy/numpy/.openblas"
+      },
+      "lapack": {
+        "name": "scipy-openblas",
+        "found": true,
+        "version": "0.3.27",
+        "detection method": "pkgconfig",
+        "include directory": "C:/Users/runneradmin/AppData/Local/Temp/cibw-run-vclkdodh/cp39-win_amd64/build/venv/Lib/site-packages/scipy_openblas64/include",
+        "lib directory": "C:/Users/runneradmin/AppData/Local/Temp/cibw-run-vclkdodh/cp39-win_amd64/build/venv/Lib/site-packages/scipy_openblas64/lib",
+        "openblas configuration": "OpenBLAS 0.3.27  USE64BITINT DYNAMIC_ARCH NO_AFFINITY Zen MAX_THREADS=24",
+        "pc file directory": "D:/a/numpy/numpy/.openblas"
+      }
+    },
+    "Python Information": {
+      "path": "C:\\Users\\runneradmin\\AppData\\Local\\Temp\\build-env-le8kd45u\\Scripts\\python.exe",
+      "version": "3.9"
+    },
+    "SIMD Extensions": {
+      "baseline": [
+        "SSE",
+        "SSE2",
+        "SSE3"
+      ],
+      "found": [
+        "SSSE3",
+        "SSE41",
+        "POPCNT",
+        "SSE42",
+        "AVX",
+        "F16C",
+        "FMA3",
+        "AVX2"
+      ],
+      "not found": [
+        "AVX512F",
+        "AVX512CD",
+        "AVX512_SKX",
+        "AVX512_CLX",
+        "AVX512_CNL",
+        "AVX512_ICL"
+      ]
+    }
+  },
+  "started_utc": "2026-09-17T02:45:48.575570+00:00"
+}

@@ -1,0 +1,151 @@
+{
+  "candidate": {
+    "degree": 16,
+    "fit_points": 8193,
+    "solver_success": true,
+    "solver_status": 0,
+    "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "iterations": 35,
+    "continuous_minimax_proven": false,
+    "coefficients": [
+      0.6363902630890503,
+      0.0,
+      0.4248765963863291,
+      0.0,
+      -0.085359637122513,
+      0.0,
+      0.03687942751793816,
+      0.0,
+      -0.02074857766057938,
+      0.0,
+      0.01345429630368018,
+      0.0,
+      -0.009577171242081515,
+      0.0,
+      0.007321628404337717,
+      0.0,
+      -0.020704877063876505
+    ],
+    "sampled_lp_error": 0.01746805138771479,
+    "uniform_certificate": {
+      "uniform_error_upper": 0.019963487300250184,
+      "grid_error": 0.01746805138771501,
+      "evaluation_error_upper": 3.8980472256831165e-15,
+      "segments": 2048,
+      "markov_denominator_lower": "0.87500000000",
+      "domain": [
+        -1,
+        1
+      ],
+      "exact_binary_coefficients": true,
+      "assumptions": "IEEE binary64 round-to-nearest with gradual underflow, no reassociation; explicit NumPy multiply/subtract/add",
+      "certificate": "Chebyshev recurrence rounding enclosure plus Markov grid-to-uniform bound"
+    },
+    "uniform_error_upper": 0.019963487300250184
+  },
+  "residual": {
+    "coefficients": [
+      -0.0020870976624118203,
+      0.0,
+      0.004214173686450142,
+      0.0,
+      -0.004337721225419657,
+      0.0,
+      0.3353719181046626,
+      0.0,
+      -0.18868216662494147,
+      0.0,
+      0.12234986988122205,
+      0.0,
+      -0.08709230336917285,
+      0.0,
+      0.06658098367763383,
+      0.0,
+      -0.18828476476908476
+    ],
+    "rho": 0.10996575898888725,
+    "coefficient_bridge_upper": 6.017907942881585e-18
+  },
+  "synthesis": {
+    "degree": 16,
+    "coefficients": [
+      -0.0020870976624118203,
+      0.0,
+      0.004214173686450142,
+      0.0,
+      -0.004337721225419657,
+      0.0,
+      0.3353719181046626,
+      0.0,
+      -0.18868216662494147,
+      0.0,
+      0.12234986988122205,
+      0.0,
+      -0.08709230336917285,
+      0.0,
+      0.06658098367763383,
+      0.0,
+      -0.18828476476908476
+    ],
+    "phases": [
+      -0.10290327595407806,
+      0.05000833541701279,
+      -0.06470116235187338,
+      0.08849749999448107,
+      -0.1298329073265009,
+      0.21166754488288306,
+      -0.04678808392767741,
+      0.045866395785923296,
+      -0.04556317785382968,
+      0.045866395785923296,
+      -0.04678808392767741,
+      0.21166754488288306,
+      -0.1298329073265009,
+      0.08849749999448107,
+      -0.06470116235187338,
+      0.05000833541701279,
+      -1.6736996027489746
+    ],
+    "attempts": [
+      {
+        "target_fraction": 0.25,
+        "evaluations": 5,
+        "solver_success": true,
+        "node_error": 2.8449465006019636e-16
+      },
+      {
+        "target_fraction": 0.5,
+        "evaluations": 5,
+        "solver_success": true,
+        "node_error": 5.551115123125783e-16
+      },
+      {
+        "target_fraction": 0.75,
+        "evaluations": 6,
+        "solver_success": true,
+        "node_error": 9.43689570931383e-16
+      },
+      {
+        "target_fraction": 1.0,
+        "evaluations": 9,
+        "solver_success": true,
+        "node_error": 1.2212453270876722e-15
+      }
+    ],
+    "sampled_phase_error": 1.4432899320127035e-15,
+    "fit_accepted": true,
+    "method": "palindromic imaginary response, analytic Jacobian, continuation least squares"
+  },
+  "phase_certificate": {
+    "uniform_error_upper": 1.1383162279242202e-15,
+    "interval_decimal_precision": 70,
+    "domain": [
+      -1,
+      1
+    ],
+    "scope": "ideal response to exact binary archived coefficients/phases",
+    "method": "directed interval Laurent coefficient l1 bound",
+    "hardware_error_included": false
+  },
+  "accepted": true
+}

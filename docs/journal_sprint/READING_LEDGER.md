@@ -1,5 +1,16 @@
 # Primary-paper reading ledger
 
+## 2026-09-16 confirmation-gate numerical development
+
+Focused [Python3.9 Decimal specification](https://docs.python.org/3.9/library/decimal.html)
+check for directed operations, exp/ln/sqrt and representable neighbors. Matrix
+square-root perturbation publisher abstract checked; a self-contained Sylvester
+argument is supplied in [the derivation](CONFIRMATION_GATE_BOUNDS.md), not inferred
+from an unread full paper. Revisited [QSP derivative pricing](https://arxiv.org/html/2307.14310v2)
+for payoff applicability and [modified IQAE](https://arxiv.org/abs/2208.14612) at
+abstract/theorem-scope level. No latest-field exhaustive survey, new priority
+claim, full native-stopping proof or new comparator reproduction asserted.
+
 ## 2026-09-16 week14 comparator implementation audit
 
 Bounded primary-paper/native-source audit of IQAE (1912.05559v3), csAE

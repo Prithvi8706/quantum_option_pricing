@@ -1,0 +1,722 @@
+[
+  {
+    "case": {
+      "id": "E2",
+      "split": "reserved_evaluation",
+      "assets": 2,
+      "dates": 2,
+      "sigma": 0.4,
+      "strike": 90.0,
+      "correlation": 0.7
+    },
+    "mode": "original",
+    "plan": {
+      "mode": "original",
+      "d": 4,
+      "q": 10,
+      "qubits": 47,
+      "coefficient_slots": 5,
+      "index_bits": 3,
+      "marginal_input_entries": 16384,
+      "padded_mux_entries": 32768,
+      "radius": 1055.7280946081466,
+      "radius_interval": {
+        "lower": "1055.7280946081465150358519457336518670518080465299177114920060641647434713125393",
+        "upper": "1055.7280946081465150358519457336518670518080465299177114920060641647434713125396"
+      },
+      "joint_path_table": false,
+      "signal_only": true
+    },
+    "budget": {
+      "degree": 16,
+      "offset": 71.93852146145677,
+      "beta": 56.33142335938983,
+      "components": {
+        "representation": 0.2534844340544577,
+        "discount_bridge": 2.1537259228932118e-14,
+        "payoff": 10.226562024219202,
+        "residual_coefficients": 3.082753424205031e-15,
+        "phase_response": 6.412297335206295e-14,
+        "signal": 5.117295845625458e-12,
+        "preparation": 2.3337688887860986e-11,
+        "projector": 1.9324384296472604e-13,
+        "radius_bridge": 7.832774829863577e-13,
+        "offset": 6.707482273664897e-15,
+        "beta_rounding": 1.589011919782439e-15,
+        "decoding_rounding": 8.559652241744199e-13
+      },
+      "deterministic_upper": 10.480046458304043,
+      "logical_scope": "ideal controlled logical gates; exact AE/QFT; not native transpiler or hardware",
+      "physical_execution_error": null,
+      "confirmation_admitted": false,
+      "schedule": {
+        "status": "deterministic_budget_exhausted",
+        "M": null,
+        "a_calls": null
+      }
+    },
+    "resources": {
+      "a_cx_projection": 3987110,
+      "controlled_a_cx_projection": 38202460,
+      "zero_reflection_cx_projection": 282,
+      "total_cx_projection": null,
+      "projection_scope": "conservative gate-by-gate composition with compiled clean-workspace zero reflection; not optimized measured full-circuit cost",
+      "clean_workspace_qubits": 46,
+      "total_qubits": null,
+      "state_preparation_included": true,
+      "inverses_included": true,
+      "qft_included": true
+    },
+    "signal_cost": {
+      "qubits": 47,
+      "cx": 32786,
+      "u": 24542,
+      "depth": 45773
+    },
+    "signal_certificate": {
+      "operator_error_upper": "5.6776657019847654811715037312374176668184664484004524942987472509385823375022480E-15",
+      "prep_error_upper": "2.6944293280684634684225922207154129595973334423954723909825975089030441041761993E-16",
+      "coordinate_error_upper": [
+        "8.5294713920687801867768247606705336932518150005117656236827892564763729879449798E-16",
+        "9.2656145597676790211322454033987776521098902191237536132060225344485263696246185E-16",
+        "1.0114875624861804233519366462082050459330255005720837257102197461405301510629234E-15",
+        "2.3477836787012464433441416244791988944298037373857223667031268239249534298471248E-15"
+      ],
+      "radius_interval": {
+        "lower": "1055.7280946081465150358519457336518670518080465299177114920060641647434713125393",
+        "upper": "1055.7280946081465150358519457336518670518080465299177114920060641647434713125396"
+      },
+      "scope": "exact logical stored-angle RY, X,H,Z,CX,MCX; physical synthesis/noise excluded"
+    }
+  },
+  {
+    "case": {
+      "id": "E2",
+      "split": "reserved_evaluation",
+      "assets": 2,
+      "dates": 2,
+      "sigma": 0.4,
+      "strike": 90.0,
+      "correlation": 0.7
+    },
+    "mode": "original",
+    "plan": {
+      "mode": "original",
+      "d": 4,
+      "q": 10,
+      "qubits": 47,
+      "coefficient_slots": 5,
+      "index_bits": 3,
+      "marginal_input_entries": 16384,
+      "padded_mux_entries": 32768,
+      "radius": 1055.7280946081466,
+      "radius_interval": {
+        "lower": "1055.7280946081465150358519457336518670518080465299177114920060641647434713125393",
+        "upper": "1055.7280946081465150358519457336518670518080465299177114920060641647434713125396"
+      },
+      "joint_path_table": false,
+      "signal_only": true
+    },
+    "budget": {
+      "degree": 32,
+      "offset": 71.93852146145677,
+      "beta": 60.80185863840743,
+      "components": {
+        "representation": 0.2534844340544577,
+        "discount_bridge": 2.1537259228932118e-14,
+        "payoff": 5.122610065361916,
+        "residual_coefficients": 2.821675707346678e-15,
+        "phase_response": 6.177110377266479e-14,
+        "signal": 1.1046804077062786e-11,
+        "preparation": 2.518975690803893e-11,
+        "projector": 6.737862796308456e-13,
+        "radius_bridge": 1.76199308955892e-12,
+        "offset": 6.707482273664897e-15,
+        "beta_rounding": 1.8677599219803783e-15,
+        "decoding_rounding": 9.036117538722944e-13
+      },
+      "deterministic_upper": 5.376094499456044,
+      "logical_scope": "ideal controlled logical gates; exact AE/QFT; not native transpiler or hardware",
+      "physical_execution_error": null,
+      "confirmation_admitted": false,
+      "schedule": {
+        "status": "deterministic_budget_exhausted",
+        "M": null,
+        "a_calls": null
+      }
+    },
+    "resources": {
+      "a_cx_projection": 7968614,
+      "controlled_a_cx_projection": 76362876,
+      "zero_reflection_cx_projection": 282,
+      "total_cx_projection": null,
+      "projection_scope": "conservative gate-by-gate composition with compiled clean-workspace zero reflection; not optimized measured full-circuit cost",
+      "clean_workspace_qubits": 46,
+      "total_qubits": null,
+      "state_preparation_included": true,
+      "inverses_included": true,
+      "qft_included": true
+    },
+    "signal_cost": {
+      "qubits": 47,
+      "cx": 32786,
+      "u": 24542,
+      "depth": 45773
+    },
+    "signal_certificate": {
+      "operator_error_upper": "5.6776657019847654811715037312374176668184664484004524942987472509385823375022480E-15",
+      "prep_error_upper": "2.6944293280684634684225922207154129595973334423954723909825975089030441041761993E-16",
+      "coordinate_error_upper": [
+        "8.5294713920687801867768247606705336932518150005117656236827892564763729879449798E-16",
+        "9.2656145597676790211322454033987776521098902191237536132060225344485263696246185E-16",
+        "1.0114875624861804233519366462082050459330255005720837257102197461405301510629234E-15",
+        "2.3477836787012464433441416244791988944298037373857223667031268239249534298471248E-15"
+      ],
+      "radius_interval": {
+        "lower": "1055.7280946081465150358519457336518670518080465299177114920060641647434713125393",
+        "upper": "1055.7280946081465150358519457336518670518080465299177114920060641647434713125396"
+      },
+      "scope": "exact logical stored-angle RY, X,H,Z,CX,MCX; physical synthesis/noise excluded"
+    }
+  },
+  {
+    "case": {
+      "id": "E2",
+      "split": "reserved_evaluation",
+      "assets": 2,
+      "dates": 2,
+      "sigma": 0.4,
+      "strike": 90.0,
+      "correlation": 0.7
+    },
+    "mode": "original",
+    "plan": {
+      "mode": "original",
+      "d": 4,
+      "q": 10,
+      "qubits": 47,
+      "coefficient_slots": 5,
+      "index_bits": 3,
+      "marginal_input_entries": 16384,
+      "padded_mux_entries": 32768,
+      "radius": 1055.7280946081466,
+      "radius_interval": {
+        "lower": "1055.7280946081465150358519457336518670518080465299177114920060641647434713125393",
+        "upper": "1055.7280946081465150358519457336518670518080465299177114920060641647434713125396"
+      },
+      "joint_path_table": false,
+      "signal_only": true
+    },
+    "budget": {
+      "degree": 64,
+      "offset": 71.93852146145677,
+      "beta": 63.04420838379593,
+      "components": {
+        "representation": 0.2534844340544577,
+        "discount_bridge": 2.1537259228932118e-14,
+        "payoff": 2.5625586184449385,
+        "residual_coefficients": 2.9818575614973577e-15,
+        "phase_response": 9.564828571586059e-14,
+        "signal": 2.290841213756535e-11,
+        "preparation": 2.6118745696441843e-11,
+        "projector": 1.1005571104783953e-12,
+        "radius_bridge": 3.720397035158259e-12,
+        "offset": 6.707482273664897e-15,
+        "beta_rounding": 1.8018858026625686e-15,
+        "decoding_rounding": 9.27511033711584e-13
+      },
+      "deterministic_upper": 2.8160430525543005,
+      "logical_scope": "ideal controlled logical gates; exact AE/QFT; not native transpiler or hardware",
+      "physical_execution_error": null,
+      "confirmation_admitted": false,
+      "schedule": {
+        "status": "deterministic_budget_exhausted",
+        "M": null,
+        "a_calls": null
+      }
+    },
+    "resources": {
+      "a_cx_projection": 15931622,
+      "controlled_a_cx_projection": 152683708,
+      "zero_reflection_cx_projection": 282,
+      "total_cx_projection": null,
+      "projection_scope": "conservative gate-by-gate composition with compiled clean-workspace zero reflection; not optimized measured full-circuit cost",
+      "clean_workspace_qubits": 46,
+      "total_qubits": null,
+      "state_preparation_included": true,
+      "inverses_included": true,
+      "qft_included": true
+    },
+    "signal_cost": {
+      "qubits": 47,
+      "cx": 32786,
+      "u": 24542,
+      "depth": 45773
+    },
+    "signal_certificate": {
+      "operator_error_upper": "5.6776657019847654811715037312374176668184664484004524942987472509385823375022480E-15",
+      "prep_error_upper": "2.6944293280684634684225922207154129595973334423954723909825975089030441041761993E-16",
+      "coordinate_error_upper": [
+        "8.5294713920687801867768247606705336932518150005117656236827892564763729879449798E-16",
+        "9.2656145597676790211322454033987776521098902191237536132060225344485263696246185E-16",
+        "1.0114875624861804233519366462082050459330255005720837257102197461405301510629234E-15",
+        "2.3477836787012464433441416244791988944298037373857223667031268239249534298471248E-15"
+      ],
+      "radius_interval": {
+        "lower": "1055.7280946081465150358519457336518670518080465299177114920060641647434713125393",
+        "upper": "1055.7280946081465150358519457336518670518080465299177114920060641647434713125396"
+      },
+      "scope": "exact logical stored-angle RY, X,H,Z,CX,MCX; physical synthesis/noise excluded"
+    }
+  },
+  {
+    "case": {
+      "id": "E2",
+      "split": "reserved_evaluation",
+      "assets": 2,
+      "dates": 2,
+      "sigma": 0.4,
+      "strike": 90.0,
+      "correlation": 0.7
+    },
+    "mode": "original",
+    "plan": {
+      "mode": "original",
+      "d": 4,
+      "q": 10,
+      "qubits": 47,
+      "coefficient_slots": 5,
+      "index_bits": 3,
+      "marginal_input_entries": 16384,
+      "padded_mux_entries": 32768,
+      "radius": 1055.7280946081466,
+      "radius_interval": {
+        "lower": "1055.7280946081465150358519457336518670518080465299177114920060641647434713125393",
+        "upper": "1055.7280946081465150358519457336518670518080465299177114920060641647434713125396"
+      },
+      "joint_path_table": false,
+      "signal_only": true
+    },
+    "budget": {
+      "degree": 128,
+      "offset": 71.93852146145677,
+      "beta": 64.16628464782302,
+      "components": {
+        "representation": 0.2534844340544577,
+        "discount_bridge": 2.1537259228932118e-14,
+        "payoff": 1.2815635646001784,
+        "residual_coefficients": 3.9057104388781554e-15,
+        "phase_response": 5.416373106953327e-13,
+        "signal": 4.663228333679826e-11,
+        "preparation": 2.6583613530354878e-11,
+        "projector": 2.2461340059610344e-12,
+        "radius_bridge": 7.637702758352604e-12,
+        "offset": 6.707482273664897e-15,
+        "beta_rounding": 6.8032453142434425e-15,
+        "decoding_rounding": 9.394702807871834e-13
+      },
+      "deterministic_upper": 1.5350479987392558,
+      "logical_scope": "ideal controlled logical gates; exact AE/QFT; not native transpiler or hardware",
+      "physical_execution_error": null,
+      "confirmation_admitted": false,
+      "schedule": {
+        "status": "deterministic_budget_exhausted",
+        "M": null,
+        "a_calls": null
+      }
+    },
+    "resources": {
+      "a_cx_projection": 31857638,
+      "controlled_a_cx_projection": 305325372,
+      "zero_reflection_cx_projection": 282,
+      "total_cx_projection": null,
+      "projection_scope": "conservative gate-by-gate composition with compiled clean-workspace zero reflection; not optimized measured full-circuit cost",
+      "clean_workspace_qubits": 46,
+      "total_qubits": null,
+      "state_preparation_included": true,
+      "inverses_included": true,
+      "qft_included": true
+    },
+    "signal_cost": {
+      "qubits": 47,
+      "cx": 32786,
+      "u": 24542,
+      "depth": 45773
+    },
+    "signal_certificate": {
+      "operator_error_upper": "5.6776657019847654811715037312374176668184664484004524942987472509385823375022480E-15",
+      "prep_error_upper": "2.6944293280684634684225922207154129595973334423954723909825975089030441041761993E-16",
+      "coordinate_error_upper": [
+        "8.5294713920687801867768247606705336932518150005117656236827892564763729879449798E-16",
+        "9.2656145597676790211322454033987776521098902191237536132060225344485263696246185E-16",
+        "1.0114875624861804233519366462082050459330255005720837257102197461405301510629234E-15",
+        "2.3477836787012464433441416244791988944298037373857223667031268239249534298471248E-15"
+      ],
+      "radius_interval": {
+        "lower": "1055.7280946081465150358519457336518670518080465299177114920060641647434713125393",
+        "upper": "1055.7280946081465150358519457336518670518080465299177114920060641647434713125396"
+      },
+      "scope": "exact logical stored-angle RY, X,H,Z,CX,MCX; physical synthesis/noise excluded"
+    }
+  },
+  {
+    "case": {
+      "id": "E2",
+      "split": "reserved_evaluation",
+      "assets": 2,
+      "dates": 2,
+      "sigma": 0.4,
+      "strike": 90.0,
+      "correlation": 0.7
+    },
+    "mode": "reflection",
+    "plan": {
+      "mode": "reflection",
+      "d": 4,
+      "q": 10,
+      "qubits": 47,
+      "coefficient_slots": 5,
+      "index_bits": 3,
+      "marginal_input_entries": 16384,
+      "padded_mux_entries": 32768,
+      "radius": 875.7280946081465,
+      "radius_interval": {
+        "lower": "875.72809460814651503585194573365186705180804652991771149200606416474347131253937",
+        "upper": "875.72809460814651503585194573365186705180804652991771149200606416474347131253955"
+      },
+      "joint_path_table": false,
+      "signal_only": true
+    },
+    "budget": {
+      "degree": 16,
+      "offset": 60.973466106536335,
+      "beta": 46.72700319052647,
+      "components": {
+        "representation": 0.2534844340544577,
+        "discount_bridge": 2.1537259228932118e-14,
+        "payoff": 8.482949086606986,
+        "residual_coefficients": 2.5571487546022334e-15,
+        "phase_response": 5.319010601404309e-14,
+        "signal": 1.1278793818857408e-11,
+        "preparation": 1.935864918884248e-11,
+        "projector": 1.6029606795400096e-13,
+        "radius_bridge": 1.1441611468580668e-13,
+        "offset": 2.338452256576144e-15,
+        "beta_rounding": 1.6672677939204332e-15,
+        "decoding_rounding": 7.146442572935845e-13
+      },
+      "deterministic_upper": 8.736433520693152,
+      "logical_scope": "ideal controlled logical gates; exact AE/QFT; not native transpiler or hardware",
+      "physical_execution_error": null,
+      "confirmation_admitted": false,
+      "schedule": {
+        "status": "deterministic_budget_exhausted",
+        "M": null,
+        "a_calls": null
+      }
+    },
+    "resources": {
+      "a_cx_projection": 7920966,
+      "controlled_a_cx_projection": 75969244,
+      "zero_reflection_cx_projection": 282,
+      "total_cx_projection": null,
+      "projection_scope": "conservative gate-by-gate composition with compiled clean-workspace zero reflection; not optimized measured full-circuit cost",
+      "clean_workspace_qubits": 46,
+      "total_qubits": null,
+      "state_preparation_included": true,
+      "inverses_included": true,
+      "qft_included": true
+    },
+    "signal_cost": {
+      "qubits": 47,
+      "cx": 65562,
+      "u": 49147,
+      "depth": 91635
+    },
+    "signal_certificate": {
+      "operator_error_upper": "1.5086022332831863183298465331886965813832769129587324438640291272183622600397467E-14",
+      "prep_error_upper": "1.7038608900442809314386767160344170211914767714066946295281444734480971606652288E-16",
+      "coordinate_error_upper": [
+        "8.3440069343033889558880769101793474579242623171103856273360280980795824446451326E-16",
+        "9.1497538989593867367401917361092337489489830026145218710196143633017029892784649E-16",
+        "1.8915043635423157196426993665487897122827184914763301127220921049153476256860570E-15",
+        "3.6705122905855425507385354665486433189167063919080179856065317282935254150537934E-15"
+      ],
+      "radius_interval": {
+        "lower": "875.72809460814651503585194573365186705180804652991771149200606416474347131253937",
+        "upper": "875.72809460814651503585194573365186705180804652991771149200606416474347131253955"
+      },
+      "scope": "exact logical stored-angle RY, X,H,Z,CX,MCX; physical synthesis/noise excluded"
+    }
+  },
+  {
+    "case": {
+      "id": "E2",
+      "split": "reserved_evaluation",
+      "assets": 2,
+      "dates": 2,
+      "sigma": 0.4,
+      "strike": 90.0,
+      "correlation": 0.7
+    },
+    "mode": "reflection",
+    "plan": {
+      "mode": "reflection",
+      "d": 4,
+      "q": 10,
+      "qubits": 47,
+      "coefficient_slots": 5,
+      "index_bits": 3,
+      "marginal_input_entries": 16384,
+      "padded_mux_entries": 32768,
+      "radius": 875.7280946081465,
+      "radius_interval": {
+        "lower": "875.72809460814651503585194573365186705180804652991771149200606416474347131253937",
+        "upper": "875.72809460814651503585194573365186705180804652991771149200606416474347131253955"
+      },
+      "joint_path_table": false,
+      "signal_only": true
+    },
+    "budget": {
+      "degree": 32,
+      "offset": 60.973466106536335,
+      "beta": 50.435236199534536,
+      "components": {
+        "representation": 0.2534844340544577,
+        "discount_bridge": 2.1537259228932118e-14,
+        "payoff": 4.249213007469477,
+        "residual_coefficients": 2.3405843828698774e-15,
+        "phase_response": 5.1239226544175745e-14,
+        "signal": 2.4347747189370497e-11,
+        "preparation": 2.0894942488867915e-11,
+        "projector": 5.589067657172103e-13,
+        "radius_bridge": 2.5738056792076005e-13,
+        "offset": 2.338452256576144e-15,
+        "beta_rounding": 3.1503597929092695e-15,
+        "decoding_rounding": 7.54167127699432e-13
+      },
+      "deterministic_upper": 4.502697441570828,
+      "logical_scope": "ideal controlled logical gates; exact AE/QFT; not native transpiler or hardware",
+      "physical_execution_error": null,
+      "confirmation_admitted": false,
+      "schedule": {
+        "status": "deterministic_budget_exhausted",
+        "M": null,
+        "a_calls": null
+      }
+    },
+    "resources": {
+      "a_cx_projection": 15836326,
+      "controlled_a_cx_projection": 151896444,
+      "zero_reflection_cx_projection": 282,
+      "total_cx_projection": null,
+      "projection_scope": "conservative gate-by-gate composition with compiled clean-workspace zero reflection; not optimized measured full-circuit cost",
+      "clean_workspace_qubits": 46,
+      "total_qubits": null,
+      "state_preparation_included": true,
+      "inverses_included": true,
+      "qft_included": true
+    },
+    "signal_cost": {
+      "qubits": 47,
+      "cx": 65562,
+      "u": 49147,
+      "depth": 91635
+    },
+    "signal_certificate": {
+      "operator_error_upper": "1.5086022332831863183298465331886965813832769129587324438640291272183622600397467E-14",
+      "prep_error_upper": "1.7038608900442809314386767160344170211914767714066946295281444734480971606652288E-16",
+      "coordinate_error_upper": [
+        "8.3440069343033889558880769101793474579242623171103856273360280980795824446451326E-16",
+        "9.1497538989593867367401917361092337489489830026145218710196143633017029892784649E-16",
+        "1.8915043635423157196426993665487897122827184914763301127220921049153476256860570E-15",
+        "3.6705122905855425507385354665486433189167063919080179856065317282935254150537934E-15"
+      ],
+      "radius_interval": {
+        "lower": "875.72809460814651503585194573365186705180804652991771149200606416474347131253937",
+        "upper": "875.72809460814651503585194573365186705180804652991771149200606416474347131253955"
+      },
+      "scope": "exact logical stored-angle RY, X,H,Z,CX,MCX; physical synthesis/noise excluded"
+    }
+  },
+  {
+    "case": {
+      "id": "E2",
+      "split": "reserved_evaluation",
+      "assets": 2,
+      "dates": 2,
+      "sigma": 0.4,
+      "strike": 90.0,
+      "correlation": 0.7
+    },
+    "mode": "reflection",
+    "plan": {
+      "mode": "reflection",
+      "d": 4,
+      "q": 10,
+      "qubits": 47,
+      "coefficient_slots": 5,
+      "index_bits": 3,
+      "marginal_input_entries": 16384,
+      "padded_mux_entries": 32768,
+      "radius": 875.7280946081465,
+      "radius_interval": {
+        "lower": "875.72809460814651503585194573365186705180804652991771149200606416474347131253937",
+        "upper": "875.72809460814651503585194573365186705180804652991771149200606416474347131253955"
+      },
+      "joint_path_table": false,
+      "signal_only": true
+    },
+    "budget": {
+      "degree": 64,
+      "offset": 60.973466106536335,
+      "beta": 52.29526879694589,
+      "components": {
+        "representation": 0.2534844340544577,
+        "discount_bridge": 2.1537259228932118e-14,
+        "payoff": 2.125646355073474,
+        "residual_coefficients": 2.473455479739039e-15,
+        "phase_response": 7.93404015960909e-14,
+        "signal": 5.0491365950218944e-11,
+        "preparation": 2.1665540132082454e-11,
+        "projector": 9.129138329168184e-13,
+        "radius_bridge": 5.434515648636568e-13,
+        "offset": 2.338452256576144e-15,
+        "beta_rounding": 2.3016941226666127e-15,
+        "decoding_rounding": 7.739916174549465e-13
+      },
+      "deterministic_upper": 2.3791307892024265,
+      "logical_scope": "ideal controlled logical gates; exact AE/QFT; not native transpiler or hardware",
+      "physical_execution_error": null,
+      "confirmation_admitted": false,
+      "schedule": {
+        "status": "deterministic_budget_exhausted",
+        "M": null,
+        "a_calls": null
+      }
+    },
+    "resources": {
+      "a_cx_projection": 31667046,
+      "controlled_a_cx_projection": 303750844,
+      "zero_reflection_cx_projection": 282,
+      "total_cx_projection": null,
+      "projection_scope": "conservative gate-by-gate composition with compiled clean-workspace zero reflection; not optimized measured full-circuit cost",
+      "clean_workspace_qubits": 46,
+      "total_qubits": null,
+      "state_preparation_included": true,
+      "inverses_included": true,
+      "qft_included": true
+    },
+    "signal_cost": {
+      "qubits": 47,
+      "cx": 65562,
+      "u": 49147,
+      "depth": 91635
+    },
+    "signal_certificate": {
+      "operator_error_upper": "1.5086022332831863183298465331886965813832769129587324438640291272183622600397467E-14",
+      "prep_error_upper": "1.7038608900442809314386767160344170211914767714066946295281444734480971606652288E-16",
+      "coordinate_error_upper": [
+        "8.3440069343033889558880769101793474579242623171103856273360280980795824446451326E-16",
+        "9.1497538989593867367401917361092337489489830026145218710196143633017029892784649E-16",
+        "1.8915043635423157196426993665487897122827184914763301127220921049153476256860570E-15",
+        "3.6705122905855425507385354665486433189167063919080179856065317282935254150537934E-15"
+      ],
+      "radius_interval": {
+        "lower": "875.72809460814651503585194573365186705180804652991771149200606416474347131253937",
+        "upper": "875.72809460814651503585194573365186705180804652991771149200606416474347131253955"
+      },
+      "scope": "exact logical stored-angle RY, X,H,Z,CX,MCX; physical synthesis/noise excluded"
+    }
+  },
+  {
+    "case": {
+      "id": "E2",
+      "split": "reserved_evaluation",
+      "assets": 2,
+      "dates": 2,
+      "sigma": 0.4,
+      "strike": 90.0,
+      "correlation": 0.7
+    },
+    "mode": "reflection",
+    "plan": {
+      "mode": "reflection",
+      "d": 4,
+      "q": 10,
+      "qubits": 47,
+      "coefficient_slots": 5,
+      "index_bits": 3,
+      "marginal_input_entries": 16384,
+      "padded_mux_entries": 32768,
+      "radius": 875.7280946081465,
+      "radius_interval": {
+        "lower": "875.72809460814651503585194573365186705180804652991771149200606416474347131253937",
+        "upper": "875.72809460814651503585194573365186705180804652991771149200606416474347131253955"
+      },
+      "joint_path_table": false,
+      "signal_only": true
+    },
+    "budget": {
+      "degree": 128,
+      "offset": 60.973466106536335,
+      "beta": 53.226032801162525,
+      "components": {
+        "representation": 0.2534844340544577,
+        "discount_bridge": 2.1537259228932118e-14,
+        "payoff": 1.0630589678141527,
+        "residual_coefficients": 3.239792876781818e-15,
+        "phase_response": 4.4928899068463245e-13,
+        "signal": 1.0278004729937653e-10,
+        "preparation": 2.2051148722510636e-11,
+        "projector": 1.8631716474353275e-12,
+        "radius_bridge": 1.115666278831347e-12,
+        "offset": 2.338452256576144e-15,
+        "beta_rounding": 2.982481611365831e-15,
+        "decoding_rounding": 7.839118314834931e-13
+      },
+      "deterministic_upper": 1.3165434019976836,
+      "logical_scope": "ideal controlled logical gates; exact AE/QFT; not native transpiler or hardware",
+      "physical_execution_error": null,
+      "confirmation_admitted": false,
+      "schedule": {
+        "status": "deterministic_budget_exhausted",
+        "M": null,
+        "a_calls": null
+      }
+    },
+    "resources": {
+      "a_cx_projection": 63328486,
+      "controlled_a_cx_projection": 607459644,
+      "zero_reflection_cx_projection": 282,
+      "total_cx_projection": null,
+      "projection_scope": "conservative gate-by-gate composition with compiled clean-workspace zero reflection; not optimized measured full-circuit cost",
+      "clean_workspace_qubits": 46,
+      "total_qubits": null,
+      "state_preparation_included": true,
+      "inverses_included": true,
+      "qft_included": true
+    },
+    "signal_cost": {
+      "qubits": 47,
+      "cx": 65562,
+      "u": 49147,
+      "depth": 91635
+    },
+    "signal_certificate": {
+      "operator_error_upper": "1.5086022332831863183298465331886965813832769129587324438640291272183622600397467E-14",
+      "prep_error_upper": "1.7038608900442809314386767160344170211914767714066946295281444734480971606652288E-16",
+      "coordinate_error_upper": [
+        "8.3440069343033889558880769101793474579242623171103856273360280980795824446451326E-16",
+        "9.1497538989593867367401917361092337489489830026145218710196143633017029892784649E-16",
+        "1.8915043635423157196426993665487897122827184914763301127220921049153476256860570E-15",
+        "3.6705122905855425507385354665486433189167063919080179856065317282935254150537934E-15"
+      ],
+      "radius_interval": {
+        "lower": "875.72809460814651503585194573365186705180804652991771149200606416474347131253937",
+        "upper": "875.72809460814651503585194573365186705180804652991771149200606416474347131253955"
+      },
+      "scope": "exact logical stored-angle RY, X,H,Z,CX,MCX; physical synthesis/noise excluded"
+    }
+  }
+]
