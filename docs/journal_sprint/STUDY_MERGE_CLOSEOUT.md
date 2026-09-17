@@ -39,6 +39,26 @@ does not constitute independent scientific peer review. Regression tests must
 run against frozen source files because provenance checks detect concurrent
 source edits.
 
+The initial fresh Windows checkout exposed a real packaging defect: 16 captured
+sources were converted from LF to CRLF by Git, so W1/W2 archive verification
+correctly refused them (`acquire_four_paper_code.py` was the first reported
+mismatch). Commit `42731ad1` adds explicit `-text` attributes for those files.
+Their source bytes and all existing experiment manifests remain unchanged.
+The corrected fresh checkout passes both verifiers, and regenerated Week 2
+analysis has the same SHA-256 as `minimal_pivot_week2_analysis_v2.json`.
+
+Macroscope's PR check was skipped with **Credit balance exhausted**. This is not
+a successful external review. The repository has no required branch checks;
+local regression and clean-checkout verification are the integration evidence.
+
+Final corrected checkout `42731ad1`: **1,143 tests passed**, 12 legacy warnings
+(`merge_study_clean_full_tests_v2.xml`). The working-tree and initial checkout
+regression runs also passed 1,143 tests each. The existing separate pinned
+environment passed 51 focused W1/W2 tests. Earlier development and four-paper
+archive verification passed as well. All 81 changed Python files passed Ruff F
+checks; this is not a full legacy-style lint claim. Final changes after these
+checks contain only documentation and verification receipts.
+
 ## Contribution workflow
 
 Preserve the existing substantive commit history with a normal merge, rather
