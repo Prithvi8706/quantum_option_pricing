@@ -134,6 +134,23 @@ all15numeric payloads exactly except explicitly named timings;74source/artifact
 hash entries checked. Full-suite and clean-checkout receipts are recorded in the
 project log. Same-producer replay is not independent scientific review.
 
+Post-acquisition read-only agent audit recomputed all eight candidate/phase
+certificates, residual coefficient bridges, offsets from archived moments, and
+all sixteen budgets, and recompiled both tiny signals. No blocking finding for
+the stated scope. It checked all21producer hashes and16artifact hashes in the
+original acquisition. This is agent review, not collaborator/human sign-off.
+
+Clean checkout `e6894c82`, using the existing isolated week15 environment:
+102new tests passed (8legacywarnings,22.36s), plus the fifteen-payload/74-hash
+replay check. The clean checkout did not repeat the complete acquisitions or
+the full regression. Receipts are `normalization_clean_tests_v1.xml` and
+`normalization_clean_replay_check_v1.json`.
+
+Full regression on the main tree completed: **1071passed**,12legacywarnings,
+488.91s. All102new tests were included; no producer changes during acquisition,
+replay or regression. F-only Ruff and whitespace checks passed. Full receipt:
+`normalization_full_tests_v1.xml`.
+
 Next: certify the implemented signal block (stored marginal rotations plus LCU
 preparation and normalization), then the execution model. Explore cheaper
 normalization only with full controlled-circuit costs; do not expand the

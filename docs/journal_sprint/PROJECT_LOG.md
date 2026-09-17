@@ -24,7 +24,14 @@ Same classical controls remain strong and target a different exact finite estima
 99focused tests passed before the last discount-bridge and verifier tests were
 added. Independent agents reviewed mathematical components and runner before
 acquisition. Separate-environment replay:15exact numerical payloads (named
-timings excluded),74hash entries checked. Full/clean verification pending closeout.
+timings excluded),74hash entries checked. Full regression completed:
+1071passed/12legacywarnings in488.91s, including all102new tests. No source
+changes during acquisition/replay/regression. F-only Ruff and whitespace pass.
+Post-acquisition independent agent audit recomputed8candidate/phase certificates,
+all16budgets,offsets/bridges and both tiny compiled signals;21source/16artifact
+hashes matched, no blocker for stated partial scope. Clean checkout `e6894c82`:
+102newtests passed/8legacywarnings in22.36s in the existing isolated week15env;
+15payloads/74hashes passed again. No full acquisition/regression rerun there.
 See [results](NORMALIZATION_APPROXIMATION_RESULTS.md) and
 [protocol](NORMALIZATION_APPROXIMATION_PROTOCOL.md).
 
