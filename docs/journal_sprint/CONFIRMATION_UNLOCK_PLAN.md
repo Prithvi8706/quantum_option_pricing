@@ -1,5 +1,12 @@
 # Concrete route to unlock confirmation
 
+Latest normalization development2026-09-17: minimax candidates plus a directed
+uniform certificate roughly halve degree128 payoff approximation bounds.
+Centered LCU reduces the known q10 dollar sum to$0.807293 but increases small
+signal circuit costs. Product preparation and control-offset rounding are now
+bounded in the ideal model; signal implementation/execution remain unknown.
+No confirmation admission. See [normalization results](NORMALIZATION_APPROXIMATION_RESULTS.md).
+
 Latest barrier development2026-09-17: separable marginal signal construction
 removes the joint lookup; symmetric phases now pass uniform interval bounds
 through degree128. The larger paid normalization worsens approximation costs:

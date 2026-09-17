@@ -1,5 +1,33 @@
 # Journal reengineering: running record
 
+## 2026-09-17: tighter approximation, centered signal and control-offset enclosure
+
+Added bounded d<=4 centered subset LCU, discrete minimax candidate generation
+with a separate directed-rounding/Markov uniform certificate, reusable directed
+finite-model moments/control offsets, and a new fully archived acquisition.
+Prior frozen producers/evidence unchanged; no hardware or remote writes.
+
+Eight polynomial/phase candidates and16family/degree outcomes retained.
+Degree128 payoff bound reduced1.672791->0.848004 dollars at original radius;
+centering further reduces it to0.605222. Known q10 dollar-bound sum reduced
+1.874862->1.050076(original/minimax) or0.807293(centered/minimax). Two unknowns
+remain: signal implementation and execution; total_bound=None, no admission.
+Product-loader state error<=2.05632e-13 and q10 offset rounding bounds<=3.20e-15
+now included. q10 moments70terms/579exp/261120cell visits, reused acrossfamilies.
+
+Cost tradeoff retained: original d4 B698.57->centered498.57 but terms5->61,
+reflections16->128. Matched tiny d2/q1 signal-only CX206->1020. Not a full
+controlled-circuit runtime claim. Original/minimax finite bias worsens to+$0.55215
+despite improved uniform bound; centered/minimax bias-$0.03019, not confirmation.
+Same classical controls remain strong and target a different exact finite estimand.
+
+99focused tests passed before the last discount-bridge and verifier tests were
+added. Independent agents reviewed mathematical components and runner before
+acquisition. Separate-environment replay:15exact numerical payloads (named
+timings excluded),74hash entries checked. Full/clean verification pending closeout.
+See [results](NORMALIZATION_APPROXIMATION_RESULTS.md) and
+[protocol](NORMALIZATION_APPROXIMATION_PROTOCOL.md).
+
 ## 2026-09-17: phase and separable-signal barrier development
 
 Implemented new producers without changing earlier evidence: symmetric QSP
