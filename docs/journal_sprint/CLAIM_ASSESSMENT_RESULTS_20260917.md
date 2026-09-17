@@ -126,3 +126,11 @@ Evidence directories: `results/journal_sprint/claim_assessment_v1` and
 `claim_assessment_verification_v1.json`. Both environments produce byte-identical
 results and input records. Original W1/W2 integrity verifiers continue to pass.
 No new confirmation observations or hardware executions were acquired.
+
+Final verification:1168 full-suite tests passed with12 legacy warnings in
+461.60s. The existing separate pinned environment passed76 focused tests;
+clean checkout478415d6 passed25 new tests and archive recomputation. These sets
+overlap. All new Python files passed Ruff F checks, and local documentation links
+and Git whitespace checks passed. Receipts use the `claim_assessment_*` prefix
+under results/journal_sprint. The temporary checkout was removed after testing;
+the evidence is committed on the assessment branch.
