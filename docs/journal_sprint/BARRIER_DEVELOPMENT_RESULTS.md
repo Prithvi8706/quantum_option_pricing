@@ -132,6 +132,12 @@ tests were added after that suite's collection; the final isolated focused run
 covered all 63 new tests, passing in 14.58s. No full-suite rerun after those five
 test additions is implied. F-only Ruff and whitespace checks passed.
 
+Clean checkout of commit `6529472a`, using the existing isolated week15 env:
+63 focused tests passed in 15.88s; both stored archives again passed the eight-
+payload/52-hash replay check. This clean check did not rerun full acquisition or
+the full regression. Receipts: `barrier_clean_tests_v1.xml` and
+`barrier_clean_replay_check_v1.json`.
+
 Independent read-only agent review found no blocking circuit/phase defect for
 the stated partial scope. The signal author separately reviewed the phase/error
 integration; a third agent audited the interval/dollar calculations. Review

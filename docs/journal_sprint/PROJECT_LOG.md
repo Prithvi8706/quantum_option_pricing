@@ -36,6 +36,10 @@ dimensionless phase acceptance versus fixed dollar identity tolerance. Current
 <6e-15 phase fits are unaffected; preserve frozen v1 and fix the next producer's
 dollar-scaled allowance. This does not create false admission. F-only Ruff and
 whitespace checks passed. No hardware submission or remote push/merge.
+Clean checkout `6529472a`:63focused tests passed in15.88s in the existing
+isolated week15environment; eight stored payloads/52hash entries verified again.
+No full acquisition/regression rerun from that checkout. Clean receipts saved
+as `barrier_clean_tests_v1.xml` and `barrier_clean_replay_check_v1.json`.
 See [barrier results](BARRIER_DEVELOPMENT_RESULTS.md) and
 [frozen protocol](BARRIER_DEVELOPMENT_PROTOCOL.md).
 
