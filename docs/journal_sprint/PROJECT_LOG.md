@@ -28,6 +28,10 @@ omission attacks; fixed before acquisition with mandatory provenance/menus and
 full deterministic component reconstruction. Candidate stays on standby and
 production choice remains unset. Final test/review/merge receipts are maintained
 in the linked review record; acquisition completion is not confirmation admission.
+Both independent final reviews approved with no blockers. The integrated suite
+passed1,271 tests; isolated focused103 and clean-checkout focused128 also passed
+(overlapping, not additive). Earlier claim-assessment and W2 archives still
+verify without source changes.
 
 ## 2026-09-17: claim assessment, restricted proofs and encoding-choice reversal
 

@@ -154,6 +154,9 @@ Evidence: [integration handoff](docs/journal_sprint/STUDY_MERGE_CLOSEOUT.md),
 - [x] Implement and acquire the fixed D1/D2 ripple/Fourier comparison, including
   conversion, payoff, inverse, loader, AE and workspace costs; reproduce it in
   the isolated environment. This is not an optimized external solver comparison.
+- [x] Complete separate mathematics and implementation/evidence reviews, fix
+  verifier omissions, pass1,271 integrated tests and re-emit/verify the evidence
+  from a clean checkout. Scientific admission remains a separate open gate.
 - [ ] If quantum-over-classical advantage remains the target, demonstrate it under
   matched task, accuracy, confidence and resource assumptions. It is not established.
 

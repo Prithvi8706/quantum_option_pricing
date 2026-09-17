@@ -1,7 +1,7 @@
 # Bounded matched arithmetic comparison: results and decision
 
-Date: 2026-09-17. The fixed D1/D2 development study is complete at the acquisition
-level; verification and review closeout is recorded in the
+Date: 2026-09-17. The fixed D1/D2 development study is complete, replayed and
+independently AI-reviewed; verification and review closeout is recorded in the
 [review log](MATCHED_ARITHMETIC_REVIEW_20260917.md).
 See the [protocol](MATCHED_ARITHMETIC_PROTOCOL_20260917.md) and
 [method/limitations](MATCHED_ARITHMETIC_METHOD_20260917.md).
@@ -75,7 +75,7 @@ the real-exponential finite target were:
 
 | Case / bits per coordinate | Observed maximum | Directed arithmetic allowance |
 | --- | ---: | ---: |
-| D1 /1 | 0.000246314 | 0.000525338 |
+| D1 /1 | 0.000246313 | 0.000525338 |
 | D1 /2 | 0.000417109 | 0.000796123 |
 | D2 /1 | 0.000358058 | 0.002752618 |
 | D2 /2 | 0.000864481 | 0.003838721 |
@@ -84,6 +84,8 @@ These are binary64 diagnostics within the declared allowance, not measured
 quantum prices or continuous-price certificates by themselves. Reflection's
 scalar approximations to the same finite reference are also archived; they
 are not asserted to equal the arithmetic integer payoff.
+Displayed decimals are rounded summaries; the archive retains exact reported
+binary64 diagnostics and full directed allowance strings.
 
 The larger arithmetic conversion/payoff components were actually emitted and
 counted, with deterministic endpoint basis checks and clean-workspace checks.
@@ -98,6 +100,8 @@ and protocol were frozen at68e78e3f. Evidence:
 - [Finite diagnostics](../../results/journal_sprint/matched_arithmetic_v1/finite.json)
 - [Isolated replay](../../results/journal_sprint/matched_arithmetic_replay_v1/results.json)
 - [Independent AI review and verification closeout](MATCHED_ARITHMETIC_REVIEW_20260917.md)
+- [Full1,271-test receipt](../../results/journal_sprint/matched_arithmetic_full_tests_v1.xml)
+- [Clean-checkout reconstruction receipt](../../results/journal_sprint/matched_arithmetic_clean_verification_v1.json)
 
 Reproduce into new, nonexistent output directories:
 

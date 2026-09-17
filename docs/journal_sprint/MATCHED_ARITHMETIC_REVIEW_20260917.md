@@ -76,7 +76,35 @@ arithmetic implementation or a proof assistant certificate.
   passed all final source/archive hashes, exact replays and32 decisions.
 - Ruff F checks passed for all14 changed/new Python files across both the claim
   assessment and comparator work. Git whitespace checks passed.
+- [Integrated full suite](../../results/journal_sprint/matched_arithmetic_full_tests_v1.xml):
+  **1,271 tests passed**,12 legacy dependency warnings,508.78 seconds. Source
+  files remained frozen throughout; this is the full configured test suite.
+- All184 local documentation links in the branch's changed Markdown files
+  resolved at the review check; no missing targets found.
 
-Final result-review dispositions, integrated-suite total, clean-checkout checks
-and merge status will be appended after they finish. No final approval is
-implied by this interim receipt list.
+## Final independent review dispositions
+
+Huygens: **PASS, no blocking findings** after inspecting completed results and
+documentation. Independently confirmed both sets of ratios, all four aggregation
+percentages, the fixed-workspace restriction, byte-identical primary/replay
+results and the explicit standby/no-advantage claims.
+
+Locke: **approved, no implementation, evidence or documentation blockers** after
+the verifier hardening and completed acquisitions. Confirmed costs, widths,
+percentages and292-input total. Corrected the nonblocking D1/q=1 display rounding
+from0.000246314 to0.000246313; no archived number or source was changed.
+
+[Clean-checkout focused suite](../../results/journal_sprint/matched_arithmetic_clean_tests_v1.xml):
+128 tests passed,17 legacy dependency warnings, at detached commit `df3422c3`.
+This includes the25 earlier claim-assessment tests plus103 comparator tests;
+overlapping suites must not be added together as distinct tests.
+
+[Clean-checkout reconstruction](../../results/journal_sprint/matched_arithmetic_clean_verification_v1.json)
+also passed: both archives, exact replay, all188 source hashes and all12 rows
+per archive, including freshly emitted components. This ran from the detached
+`df3422c3` checkout using the isolated pinned interpreter, with receipts saved
+outside the temporary checkout.
+
+All requested implementation/evidence checks are now complete. These approvals
+concern the declared development implementation/evidence, not scientific
+confirmation admission. The PR/merge reference is recorded below at handoff.
