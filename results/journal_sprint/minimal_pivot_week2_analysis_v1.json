@@ -1,0 +1,230 @@
+{
+  "comparisons": [
+    {
+      "case": {
+        "id": "D1",
+        "split": "development",
+        "assets": 1,
+        "dates": 2,
+        "sigma": 0.2,
+        "strike": 95.0,
+        "correlation": 0.3
+      },
+      "alternatives": {
+        "original": {
+          "degree": 128,
+          "deterministic_upper": 0.5074016720056433,
+          "statistical_upper": 0.2526622247327227,
+          "a_calls": 17391,
+          "projected_cx": 1428076459115,
+          "qubits": 57
+        },
+        "reflection": {
+          "degree": 64,
+          "deterministic_upper": 0.4547374356095953,
+          "statistical_upper": 0.4405225246146329,
+          "a_calls": 4335,
+          "projected_cx": 354203646829,
+          "qubits": 55
+        }
+      },
+      "original_over_reflection_projected_cx": 4.031794906404329,
+      "classical": [
+        {
+          "method": "mc_cv",
+          "price": 10.207718401989787,
+          "approximate_95_halfwidth": 0.0028199288068520008,
+          "paths_with_pilot": 66560
+        },
+        {
+          "method": "rqmc_cv",
+          "price": 10.207115267691336,
+          "approximate_95_halfwidth": 0.00010425657688667843,
+          "paths_with_pilot": 66560
+        },
+        {
+          "method": "conditional_cv",
+          "price": 10.207204210806896,
+          "approximate_95_halfwidth": 6.011093664708455e-05,
+          "paths_with_pilot": 66560
+        }
+      ]
+    },
+    {
+      "case": {
+        "id": "D2",
+        "split": "development",
+        "assets": 2,
+        "dates": 2,
+        "sigma": 0.25,
+        "strike": 105.0,
+        "correlation": 0.4
+      },
+      "alternatives": {
+        "original": {
+          "degree": 128,
+          "deterministic_upper": 0.8553193257624531,
+          "statistical_upper": 0.10482579697394714,
+          "a_calls": 69615,
+          "projected_cx": 21257856190161,
+          "qubits": 105
+        },
+        "reflection": {
+          "degree": 128,
+          "deterministic_upper": 0.600397296204273,
+          "statistical_upper": 0.26363548112850893,
+          "a_calls": 17391,
+          "projected_cx": 10555616671563,
+          "qubits": 103
+        }
+      },
+      "original_over_reflection_projected_cx": 2.013890505083422,
+      "classical": [
+        {
+          "method": "mc_cv",
+          "price": 5.414947753604941,
+          "approximate_95_halfwidth": 0.007469449504531195,
+          "paths_with_pilot": 66560
+        },
+        {
+          "method": "rqmc_cv",
+          "price": 5.411718569632627,
+          "approximate_95_halfwidth": 0.0006109108088375487,
+          "paths_with_pilot": 66560
+        },
+        {
+          "method": "conditional_cv",
+          "price": 5.411857813044666,
+          "approximate_95_halfwidth": 0.000152532180070955,
+          "paths_with_pilot": 66560
+        }
+      ]
+    },
+    {
+      "case": {
+        "id": "E1",
+        "split": "reserved_evaluation",
+        "assets": 1,
+        "dates": 3,
+        "sigma": 0.35,
+        "strike": 110.0,
+        "correlation": 0.6
+      },
+      "alternatives": {
+        "original": {
+          "degree": 128,
+          "deterministic_upper": 0.9192184507916663,
+          "statistical_upper": 0.056874313059234335,
+          "a_calls": 139247,
+          "projected_cx": 17202060077589,
+          "qubits": 82
+        },
+        "reflection": {
+          "degree": 128,
+          "deterministic_upper": 0.65215727696125,
+          "statistical_upper": 0.29233661340395245,
+          "a_calls": 17391,
+          "projected_cx": 4279620036377,
+          "qubits": 79
+        }
+      },
+      "original_over_reflection_projected_cx": 4.0195297552985,
+      "classical": [
+        {
+          "method": "mc_cv",
+          "price": 6.944289733989742,
+          "approximate_95_halfwidth": 0.005708242317903901,
+          "paths_with_pilot": 66560
+        },
+        {
+          "method": "rqmc_cv",
+          "price": 6.9418611463577875,
+          "approximate_95_halfwidth": 0.0004871763008496903,
+          "paths_with_pilot": 66560
+        },
+        {
+          "method": "conditional_cv",
+          "price": 6.941930265280144,
+          "approximate_95_halfwidth": 0.00021533769495046392,
+          "paths_with_pilot": 66560
+        }
+      ]
+    },
+    {
+      "case": {
+        "id": "E2",
+        "split": "reserved_evaluation",
+        "assets": 2,
+        "dates": 2,
+        "sigma": 0.4,
+        "strike": 90.0,
+        "correlation": 0.7
+      },
+      "alternatives": {
+        "original": null,
+        "reflection": null
+      },
+      "original_over_reflection_projected_cx": null,
+      "classical": [
+        {
+          "method": "mc_cv",
+          "price": 17.793655251900873,
+          "approximate_95_halfwidth": 0.008671539871207687,
+          "paths_with_pilot": 66560
+        },
+        {
+          "method": "rqmc_cv",
+          "price": 17.780926708861013,
+          "approximate_95_halfwidth": 0.0008445645162645352,
+          "paths_with_pilot": 66560
+        },
+        {
+          "method": "conditional_cv",
+          "price": 17.780132682766002,
+          "approximate_95_halfwidth": 0.0003053707601022823,
+          "paths_with_pilot": 66560
+        }
+      ]
+    }
+  ],
+  "analytic_ae_checks": [
+    {
+      "mode": "original",
+      "distribution_max_error": 1.531441640167941e-12,
+      "directed_decoder": {
+        "value": 16.516119133413717,
+        "enclosure": {
+          "lower": "16.516119133413717658119064586993471839524421799680396432349235825120570119810031",
+          "upper": "16.516119133413717658119064586993471839524421799680396432349235825120570119810944"
+        },
+        "rounding_upper": "4.78781810094427482345200691330930396432349235825120570119810944E-16",
+        "scope": "exact canonical outcome labels and exact stored binary offset/beta"
+      },
+      "old_libm_decoder_difference": 0.0
+    },
+    {
+      "mode": "reflection",
+      "distribution_max_error": 2.2439827773723664e-12,
+      "directed_decoder": {
+        "value": 20.733062912087288,
+        "enclosure": {
+          "lower": "20.733062912087287799067780724726617336273193359374999999999999999999999999999920",
+          "upper": "20.733062912087287799067780724726617336273193359375000000000000000000000000000077"
+        },
+        "rounding_upper": "8.0E-77",
+        "scope": "exact canonical outcome labels and exact stored binary offset/beta"
+      },
+      "old_libm_decoder_difference": 0.0
+    }
+  ],
+  "inputs_sha256": {
+    "tiny": "b2cf5f4b5f28188918bb312c2500588ac03e1d547f7341009c09e08b7f1aac91",
+    "production": "f5a8892faa0d7d9e1e68577669d50c37ad3780b5c18dc8087c539186b81bc637",
+    "classical": "e646f97c5670c7f0360d797e89be56fef8c5e341eec3607cc66c4261da2a9423"
+  },
+  "analyzer_sha256": "63990fc445d6b50ea7a4e0a9a651fc4a889a276ce2dd7ff661e0fb4fc0def464",
+  "candidate_status": "standby",
+  "quantum_over_classical_advantage_established": false,
+  "confirmation_admitted": false,
+  "scope": "logical composition projections and classical approximate intervals; no matched hardware runtime claim"
+}

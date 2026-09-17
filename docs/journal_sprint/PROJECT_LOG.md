@@ -1,5 +1,54 @@
 # Journal reengineering: running record
 
+## 2026-09-17: study W2 completed; candidate retained on standby
+
+User requested the full second work package without promoting the W1 candidate.
+Same arithmetic Asian basket. Frozen four-case protocol,32 quantum logical-plan
+configurations and24 classical method/budget cells. Implemented loading,
+residual QSP, directed offset/error budget, Hadamard readout, canonical AE,
+clean-workspace reflection accounting, directed outcome decoding and selection.
+See [results](MINIMAL_PIVOT_WEEK2_RESULTS.md),
+[method and precision-cost diagnosis](MINIMAL_PIVOT_WEEK2_METHOD.md),
+[prior art](MINIMAL_PIVOT_WEEK2_PRIOR_ART.md),
+[protocol](MINIMAL_PIVOT_WEEK2_PROTOCOL.md).
+
+Nine of32 configurations yield ideal dollar1/95% plans. Best reflection versus
+best original projected CX ratios: D1=4.0318,D2=2.0139,E1=4.0195. E2 fails the
+fixed menu (degree128 deterministic bound original1.535048/reflection1.316544).
+Absolute reflection projections remain3.54e11,1.06e13,4.28e12CX. These are
+component-composition projections, not full hardware executions or a proved
+ratio of globally optimized costs. All physical/confirmation promotions refused.
+
+Actual tiny10-qubit AE circuits run for both encodings; distribution agrees
+with an independent Fourier-kernel formula within2.25e-12. Fixed-M/degree CX
+is worse for reflection (1,147,295 versus911,871). Finite toy prices are not
+continuous option prices; coarse AE radii do not certify dollar1 delivery.
+Classical conditional-RQMC price halfwidths approximately0.0000601-0.0003054
+at16x4096 paths plus1024 pilots are approximate Student-t diagnostics, not
+rigorous coverage. No quantum-over-classical advantage or Q1 readiness claim.
+
+Initial library-AE controlled-power expansion stalled construction; stopped
+two local runs and retained planned/failure artifacts without completion markers.
+Explicit Grover construction repaired this, preserving the contract/M/shots.
+Final IQFT audit added153-306CX swap charges to reported selected plans in
+analysis v2; raw archives and v1 analysis preserved, selections unchanged.
+
+Verification: six completed archives reproduce exact numeric payloads in the
+existing isolated environment; all recorded source/artifact hashes and32
+decision rows checked. Corrected analysis reproduces exactly too. Final full
+core suite1142passed/12legacywarnings/562.74s; postprocessing-only correction
+then29focusedtests passed (overlap, not additive). Separate-environment28new
+core tests passed. Earlier fullv2 had1 provenance-test failure caused by editing
+the analysis helper during its source-freeze check; hash drift identified,
+isolated test and full frozen rerun passed without weakening any guard.
+Receipts: `minimal_pivot_week2_final_verification_v1.json`,
+`minimal_pivot_week2_analysis_v2.json`, `minimal_pivot_week2_full_tests_v3.xml`
+and `minimal_pivot_week2_final_targeted_tests.xml` under results/journal_sprint.
+
+W2 bounded validation is complete. Standby candidate preserved; independent
+expert novelty review, physical execution validation and historical confirmation
+remain outstanding. No remote push, PR, merge, hardware or manuscript promotion.
+
 ## 2026-09-17: minimal-pivot study W1, shared-reflection basket signal
 
 Split the new study into W1 construction/feasibility and W2 integrated pricing
