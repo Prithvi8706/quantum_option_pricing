@@ -18,6 +18,8 @@ published.
 
 ## Start here
 
+- [Latest matched arithmetic comparison and scientific decision](docs/journal_sprint/MATCHED_ARITHMETIC_RESULTS_20260917.md)
+- [Claim assessment, restricted proofs and prior-art boundaries](docs/journal_sprint/CLAIM_ASSESSMENT_RESULTS_20260917.md)
 - [Completed work and remaining tasks](checklist_17.9.26.md)
 - [Latest integrated study results](docs/journal_sprint/MINIMAL_PIVOT_WEEK2_RESULTS.md)
 - [Signal construction and derivation](docs/journal_sprint/MINIMAL_PIVOT_WEEK1_METHOD.md)
@@ -63,6 +65,20 @@ explain which ideas transfer to this application and which assumptions do not.
 Known primitives are not presented as newly invented algorithms.
 
 ## Latest results: improvements and limits
+
+### Matched arithmetic follow-up
+
+The bounded D1/D2 study now includes explicit fixed-point conversion, efficient
+ripple or Fourier aggregation, payoff encoding, uncomputation and matched AE
+planning. Reflection has lower declared logical CX projections than these
+arithmetic implementations: ripple/reflection ratios are13.54 and1.82, or15.36
+and2.04 with standard control cancellation. These are **ratios of projections,
+not runtime speedups**; the arithmetic baseline is not space- or exponentiation-
+optimal. Fourier aggregation costs more than efficient ripple in this menu and
+aggregation contributes under0.061% of arithmetic A-circuit CX. Primary and
+isolated replay agree exactly. See the
+[full comparison and limitations](docs/journal_sprint/MATCHED_ARITHMETIC_RESULTS_20260917.md).
+The candidate remains on standby; quantum-over-classical advantage is not established.
 
 ### Circuit construction
 

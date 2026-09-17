@@ -4,6 +4,15 @@ Snapshot after [PR #6](https://github.com/Prithvi8706/quantum_option_pricing/pul
 merged into `main` at `b074488c`. This checklist is a subsequent documentation
 addition, not a file included in that merge.
 
+Same-day update: [claim assessment and decision](docs/journal_sprint/CLAIM_ASSESSMENT_RESULTS_20260917.md)
+adds restricted proofs, separate AI reviews and a retrospective sensitivity
+study. Human expert novelty review and quantum advantage remain open.
+The [bounded matched arithmetic follow-up](docs/journal_sprint/MATCHED_ARITHMETIC_RESULTS_20260917.md)
+now supplies explicit comparator evidence; it does not promote confirmation.
+The pending claim assessment and comparator are integrated together in
+[PR#7](https://github.com/Prithvi8706/quantum_option_pricing/pull/7); that record
+gives the authoritative merge/check status.
+
 **Bottom line:** the development work, reproduction work and two-week
 minimal-pivot study are complete within their recorded scopes. The candidate
 remains on standby. Scientific confirmation, quantum-over-classical advantage
@@ -137,8 +146,20 @@ Evidence: [integration handoff](docs/journal_sprint/STUDY_MERGE_CLOSEOUT.md),
   work; distinguish an application-specific construction from a new primitive.
 - [ ] Establish a defensible contribution beyond assembling known components:
   a checked theorem, useful decision result, or substantive reproducible finding.
-- [ ] Decide whether to advance the standby candidate, pursue another bounded
-  experiment, or revise the claim/scope explicitly. Do not promote it automatically.
+  Restricted correctness propositions and a reproduced encoding-choice reversal
+  are now documented, plus a reproduced full-component arithmetic comparison
+  and aggregation-bottleneck finding. Publication-level novelty still needs
+  external assessment; this gate is not automatically checked off.
+- [x] Decide whether to advance the standby candidate, pursue another bounded
+  experiment, or revise the claim/scope explicitly. Decision: close the bounded
+  arithmetic-comparator study with a qualified logical-cost finding; keep the
+  candidate on standby and production choice unset.
+- [x] Implement and acquire the fixed D1/D2 ripple/Fourier comparison, including
+  conversion, payoff, inverse, loader, AE and workspace costs; reproduce it in
+  the isolated environment. This is not an optimized external solver comparison.
+- [x] Complete separate mathematics and implementation/evidence reviews, fix
+  verifier omissions, pass1,271 integrated tests and re-emit/verify the evidence
+  from a clean checkout. Scientific admission remains a separate open gate.
 - [ ] If quantum-over-classical advantage remains the target, demonstrate it under
   matched task, accuracy, confidence and resource assumptions. It is not established.
 

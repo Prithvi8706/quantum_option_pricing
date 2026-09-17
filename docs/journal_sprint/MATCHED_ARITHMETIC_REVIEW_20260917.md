@@ -1,0 +1,127 @@
+# Independent AI review and verification record
+
+Scope: bounded matched arithmetic study, 2026-09-17. AI reviews are not human
+expert novelty assessment or external peer review. No collaborator is credited
+with work performed by an agent. The implementation workers and final reviewers
+are separate agents.
+
+## Design and mathematical review: Huygens
+
+Agent `01a0aeba-332a-7a00-844f-15ed921a091b` independently inspected the existing
+arithmetic and relevant primary-paper passages. Recommended fixes implemented
+before the frozen acquisition:
+
+- Use the same integer payoff in both arithmetic routes; connect reflection
+  to the same real financial target through its distinct error bound.
+- Use a zero-start copy plus efficient modular ripple addition, and a
+  Hadamard-initialized Fourier sum. Uncompute the actual shortened circuit.
+- Add a universal signed post-strike bound; separate operand bounds alone
+  do not guarantee that subtraction cannot wrap.
+- Report standard control cancellation for every route as a secondary ledger.
+- Declare the arithmetic decoder scale and check that its interval bridge and
+  multiplication rounding fit the decoding allowance. Both market cases pass
+  the new regression test; no favorable budget adjustment was needed.
+
+Reviewer independently verified the archived reflection producer's eight
+artifacts and175 sources, its linked inputs, the scope of the decoder bridge,
+and the full-pricing accounting. Conditional mathematical approval to acquire
+was given before the frozen run; final evidence review is recorded below when
+complete.
+
+## Implementation/evidence review: Locke
+
+Agent `01a0aec3-6912-70d3-90a0-70e7f77a0e50` independently read the new modules
+and ran88 focused tests. Found no concrete circuit/composition defect but raised
+two evidence blockers: the initial verifier accepted a rehashed archive with
+duplicate reflection rows and missing arithmetic, and it accepted empty source
+and input manifests.
+
+Before acquisition, the verifier was strengthened to require the exact frozen
+commit's source inventory, separate mandatory input inventory, exact file/menu
+structure, finite diagnostic recomputation, fresh emission/checking of arithmetic
+components, compiled aggregation, reconstructed budgets/resources/qubits, and
+the actual minimizing choices. The source archive hash is byte-exact. Its
+separate comparison to the Git commit allows only historical CRLF/LF conversion;
+old hashed producers were not rewritten. New producer bytes are Git-preserved.
+
+Mutation regressions cover duplicate routes, missing budget/components, a
+fabricated winner, false width, production promotion, absent finite diagnostics,
+empty provenance, artifact tampering and extra/unsafe manifest entries.
+
+## Reproducibility boundaries
+
+The protocol is bounded development, not blinded preregistration. Historical
+reflection results, scalar-precision preflight and implementation-worker endpoint
+checks were known before the final acquisition. The fixed q/width/degree/menu
+were not tuned after matched pricing-cost outcomes. All acquisition code and
+protocol were committed at `68e78e3f` before the two recorded runs.
+
+The normal environment and isolated pinned research environment acquire separate
+exclusive directories. Verification re-emits the components rather than trusting
+supplied cost fields. Reconstruction is cached only within one verifier process
+to avoid rerunning identical first/replay components. It shares tested producer
+primitives: this is deterministic reconstruction, not a separately invented
+arithmetic implementation or a proof assistant certificate.
+
+## Completed verification receipts
+
+- [Acquisition/replay verifier](../../results/journal_sprint/matched_arithmetic_verification_v1.json):
+  passed both archives;12 rows and188 source hashes each, mandatory inventories,
+  fresh gate/component reconstruction, budgets/choices and exact replay.
+- [Isolated focused suite](../../results/journal_sprint/matched_arithmetic_isolated_tests_v1.xml):
+ 103 tests passed,17 legacy dependency warnings. Includes the mutation regressions.
+- [Prior claim-assessment replay](../../results/journal_sprint/matched_prior_claim_verification_v1.json):
+  passed; earlier source/evidence unchanged.
+- [Prior W2 integrity/replay](../../results/journal_sprint/matched_prior_w2_verification_v1.json):
+  passed all final source/archive hashes, exact replays and32 decisions.
+- Ruff F checks passed for all14 changed/new Python files across both the claim
+  assessment and comparator work. Git whitespace checks passed.
+- [Integrated full suite](../../results/journal_sprint/matched_arithmetic_full_tests_v1.xml):
+  **1,271 tests passed**,12 legacy dependency warnings,508.78 seconds. Source
+  files remained frozen throughout; this is the full configured test suite.
+- All184 local documentation links in the branch's changed Markdown files
+  resolved at the review check; no missing targets found.
+
+## Final independent review dispositions
+
+Huygens: **PASS, no blocking findings** after inspecting completed results and
+documentation. Independently confirmed both sets of ratios, all four aggregation
+percentages, the fixed-workspace restriction, byte-identical primary/replay
+results and the explicit standby/no-advantage claims.
+
+Locke: **approved, no implementation, evidence or documentation blockers** after
+the verifier hardening and completed acquisitions. Confirmed costs, widths,
+percentages and292-input total. Corrected the nonblocking D1/q=1 display rounding
+from0.000246314 to0.000246313; no archived number or source was changed.
+
+[Clean-checkout focused suite](../../results/journal_sprint/matched_arithmetic_clean_tests_v1.xml):
+128 tests passed,17 legacy dependency warnings, at detached commit `df3422c3`.
+This includes the25 earlier claim-assessment tests plus103 comparator tests;
+overlapping suites must not be added together as distinct tests.
+
+[Clean-checkout reconstruction](../../results/journal_sprint/matched_arithmetic_clean_verification_v1.json)
+also passed: both archives, exact replay, all188 source hashes and all12 rows
+per archive, including freshly emitted components. This ran from the detached
+`df3422c3` checkout using the isolated pinned interpreter, with receipts saved
+outside the temporary checkout.
+
+All requested implementation/evidence checks are now complete. These approvals
+concern the declared development implementation/evidence, not scientific
+confirmation admission. The PR/merge reference is recorded below at handoff.
+
+## GitHub handoff
+
+[PR#7](https://github.com/Prithvi8706/quantum_option_pricing/pull/7) contains the
+pending claim-assessment commits and this comparator follow-up. Its GitHub
+record is authoritative for the merge commit and final remote-check states.
+Normal merge is authorized only after the reviewed head and latest checks are
+rechecked; no administrator bypass or scientific promotion is authorized.
+Macroscope's check on PR#7 at `21415828` was **SKIPPED**, with the recorded
+reason "Credit balance exhausted." This is not a successful external review.
+The two independent AI reviewers and local verification above remain the
+review evidence; latest-head status must still be inspected before merging.
+
+The temporary `matched_arithmetic_clean_20260917` verification checkout was
+removed after checking its resolved path and clean status. It can be recreated
+from `df3422c3`; all receipts were saved outside it and committed. Unrelated
+untracked work and earlier verification checkouts were preserved.

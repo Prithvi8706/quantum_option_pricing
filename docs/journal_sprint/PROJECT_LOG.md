@@ -1,5 +1,91 @@
 # Journal reengineering: running record
 
+## 2026-09-17: matched arithmetic comparison and explicit standby decision
+
+Completed the approved bounded D1/D2 comparator acquisition, without changing
+the Asian-basket financial target. Added efficient zero-start Cuccaro and
+Fourier aggregators, explicit conversion/payoff component accounting, a signed
+post-strike overflow guard, directed angle/decoder bridges, and a matched
+control-cancelled ledger. Frozen protocol/code commit:68e78e3f.
+
+See [results and decision](MATCHED_ARITHMETIC_RESULTS_20260917.md),
+[method](MATCHED_ARITHMETIC_METHOD_20260917.md),
+[protocol](MATCHED_ARITHMETIC_PROTOCOL_20260917.md) and
+[separate AI review/verification record](MATCHED_ARITHMETIC_REVIEW_20260917.md).
+
+Twelve logical configurations, eight feasible; four exhaustive finite grids
+cover292 inputs. Primary and isolated replay results are byte-identical.
+Reflection's lowest projections remain below the explicit arithmetic routes:
+ripple/reflection ratios13.5381/1.8237, or15.3572/2.0413 after standard control
+cancellation. These are not runtime speedups. Arithmetic retains nonoptimized
+Horner scratch; compiler models differ as declared in the method. Fourier uses
+more CX than efficient ripple; aggregation accounts for under0.061% of arithmetic
+A-circuit CX. No physical execution or quantum-over-classical advantage established.
+
+Independent design review identified adder/control simplifications and the
+post-strike/decoder checks. Independent implementation review found verifier
+omission attacks; fixed before acquisition with mandatory provenance/menus and
+full deterministic component reconstruction. Candidate stays on standby and
+production choice remains unset. Final test/review/merge receipts are maintained
+in the linked review record; acquisition completion is not confirmation admission.
+Both independent final reviews approved with no blockers. The integrated suite
+passed1,271 tests; isolated focused103 and clean-checkout focused128 also passed
+(overlapping, not additive). Earlier claim-assessment and W2 archives still
+verify without source changes.
+
+## 2026-09-17: claim assessment, restricted proofs and encoding-choice reversal
+
+User requested the remaining claim/novelty work. Implementation and evidence are
+on `research/claim-assessment-20260917`; no automatic manuscript, confirmation
+or production promotion. See [assessment and decision](CLAIM_ASSESSMENT_RESULTS_20260917.md),
+[restricted proofs](CLAIM_THEOREMS_20260917.md),
+[nearest prior work](CLAIM_PRIOR_ART_20260917.md) and
+[separate AI reviews](CLAIM_ASSESSMENT_REVIEW_20260917.md).
+
+Formalized sharp normalization on an expressly enlarged independent probability
+cube and a conditional continuous cost-proxy optimum. These are corollaries of
+known theory, not a new quantum primitive or instance/gate optimality theorem.
+Added an independent exact-rational recomputation of32 archived logical schedules
+and corrected composition costs, then576 retrospective sensitivity evaluations
+across72 dependent cells. Frozen tolerances .5/1/2 and hypothetical extra price
+bias0/.01/.025/.05/.1/.2; no new pricing observations or physical-error bound.
+
+Results:38 reflection-lower projections,9 reflection-only menu-feasible cells,
+24 neither-feasible,1 original-lower. E2 at tolerance2/extra.05 flips because
+reflection M doubles512 to1024 while original remains1024. Both compiled
+encoding families remain necessary for the decision rule. This is a descriptive
+model result, not a win probability, runtime ordering or quantum advantage.
+
+Separate AI mathematical reviewer Ampere found the negative constant interval
+touching zero defect. Added opt-in ReviewedReflectionSignal with regression
+tests; frozen experiment producers unchanged. Exact original-radius intervals
+show all four production centered constants positive, so archived results are
+unaffected. Literature reviewer Darwin identified missing Fourier-arithmetic
+and conventional Asian-payoff comparators and the KL running-average alternative.
+Both reviews support a bounded external-comparator study while retaining standby.
+Review wording corrections applied; actual human expert novelty review is open.
+
+Both existing environments produced byte-identical secondary results. Verified
+183 recorded source hashes per archive plus artifacts/inputs and recomputation;
+original W1/W2 integrity checks still pass. Separate pinned environment:76
+focused tests passed,17 warnings,22.23s. Clean checkout478415d6:25 new tests
+passed,8 warnings,5.30s and both secondary archives verified. These test counts
+overlap. Ruff F and local documentation-link checks passed. Temporary clean
+checkout removed after checks; its receipts are retained outside the checkout.
+
+Full integration regression:1168 passed,12 legacy warnings,461.60s, receipt
+`results/journal_sprint/claim_assessment_full_tests_v1.xml`. The25 new tests
+are included in that total. Source remained frozen during the run. Source,
+experiment evidence and review documents are committed; this log and final
+receipts complete the verification handoff. No PR/remote push or merge was
+performed in this assessment task.
+
+Decision: GO for bounded external arithmetic comparison, retain candidate
+standby for confirmation/production/manuscript promotion. Checklist decision
+item closed; publication novelty, human expert assessment and matched
+quantum-over-classical advantage stay open. An unsent expert review brief is
+prepared; no external expert was contacted or credited.
+
 ## 2026-09-17: integration cleanup and PR #6 verification
 
 User authorized cleanup, PR creation and merge of the completed branch, with

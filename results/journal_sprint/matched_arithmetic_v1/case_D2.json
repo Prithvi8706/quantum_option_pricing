@@ -1,0 +1,789 @@
+{
+  "case": {
+    "id": "D2",
+    "split": "development",
+    "assets": 2,
+    "dates": 2,
+    "sigma": 0.25,
+    "strike": 105.0,
+    "correlation": 0.4
+  },
+  "arithmetic_plan": {
+    "schema": "raw_arithmetic_plan_v1",
+    "affine_rows": [
+      [
+        -985480,
+        [
+          1030,
+          2061,
+          4122,
+          8245,
+          16490,
+          32981,
+          65962,
+          131924,
+          263848,
+          527697,
+          674,
+          1349,
+          2698,
+          5397,
+          10795,
+          21591,
+          43182,
+          86364,
+          172729,
+          345459,
+          636,
+          1273,
+          2547,
+          5095,
+          10191,
+          20383,
+          40766,
+          81533,
+          163067,
+          326135,
+          -418,
+          -835,
+          -1669,
+          -3337,
+          -6673,
+          -13345,
+          -26689,
+          -53377,
+          -106753,
+          -213506
+        ]
+      ],
+      [
+        -1343188,
+        [
+          1667,
+          3335,
+          6670,
+          13341,
+          26682,
+          53364,
+          106729,
+          213458,
+          426916,
+          853832,
+          1091,
+          2183,
+          4366,
+          8733,
+          17467,
+          34935,
+          69870,
+          139741,
+          279482,
+          558964,
+          -394,
+          -788,
+          -1575,
+          -3150,
+          -6299,
+          -12598,
+          -25196,
+          -50391,
+          -100782,
+          -201563,
+          257,
+          515,
+          1030,
+          2061,
+          4123,
+          8247,
+          16494,
+          32988,
+          65976,
+          131953
+        ]
+      ],
+      [
+        -721830,
+        [
+          1030,
+          2061,
+          4122,
+          8245,
+          16490,
+          32981,
+          65962,
+          131924,
+          263848,
+          527697,
+          -675,
+          -1350,
+          -2699,
+          -5398,
+          -10796,
+          -21592,
+          -43183,
+          -86365,
+          -172730,
+          -345460,
+          636,
+          1273,
+          2547,
+          5095,
+          10191,
+          20383,
+          40766,
+          81533,
+          163067,
+          326135,
+          417,
+          834,
+          1668,
+          3336,
+          6672,
+          13344,
+          26688,
+          53376,
+          106752,
+          213505
+        ]
+      ],
+      [
+        37299,
+        [
+          1667,
+          3335,
+          6670,
+          13341,
+          26682,
+          53364,
+          106729,
+          213458,
+          426916,
+          853832,
+          -1092,
+          -2184,
+          -4367,
+          -8734,
+          -17468,
+          -34936,
+          -69871,
+          -139742,
+          -279483,
+          -558965,
+          -394,
+          -788,
+          -1575,
+          -3150,
+          -6299,
+          -12598,
+          -25196,
+          -50391,
+          -100782,
+          -201563,
+          -258,
+          -516,
+          -1031,
+          -2062,
+          -4124,
+          -8248,
+          -16495,
+          -32989,
+          -65977,
+          -131954
+        ]
+      ]
+    ],
+    "exp_budget": {
+      "coefficients": [
+        104857600,
+        104857600,
+        52428800,
+        17476266,
+        4369066,
+        873813,
+        145635,
+        20805,
+        2600,
+        288,
+        28,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "domain_upper": "1.6666902409484120633662799365604101353710575494915246963500976562500000000000002",
+      "horner_error_upper": "0.00096178884112967107048093033929442201426673726612030865778771592371803831425312362",
+      "remainder_upper": "1.2010497796376787409687738449472074943462556231334231647728788197037340418868648E-17",
+      "input_error_upper": "0.013420873192520694354522907420363704336731128247947050523273159555195243082310780",
+      "total_error_upper": "0.014382662033650377435501634136445536038736314986142302643617106813144929125352101",
+      "intermediate_magnitude_upper": "529.46131062067268065940327432646829798658350256640610372677558225086015028198361",
+      "overflow_safe": true,
+      "scope": "scalar exponential only; not application admission"
+    },
+    "normal_bits": 10,
+    "normal_qubits": 40,
+    "fraction_bits": 20,
+    "width": 40,
+    "degree": 24,
+    "strike_sum": 440401920,
+    "selector_bits": 31,
+    "discount_lower": "0.97044553354850817693252835195919433348673681552894362053211350044158042970360191",
+    "discount_upper": "0.97044553354850817693252835195919433348673681552894362053211350044158042970360193",
+    "arithmetic_price_error_upper": "0.013957590131093712197560815733798502835371464134729406045747181260401019306516833",
+    "sensitivity_upper": "496.86811317683618658945451620310749874520924955081913371244211222608918000824423",
+    "overflow_safe": true,
+    "payoff_upper_integer": 1473534017,
+    "log_quantization_error_upper": "0.0000253481575767861172477490409616640224712867115178067834418543148547806452951",
+    "application_admitted": false,
+    "missing": [
+      "Gaussian state preparation",
+      "full six-component composition",
+      "production circuit verification/resources",
+      "statistical design and human review"
+    ]
+  },
+  "arithmetic_components": {
+    "schema": "matched_arithmetic_components_v1",
+    "conversion_rows": [
+      {
+        "qubits": 842,
+        "x": 322,
+        "cx": 582404,
+        "ccx": 575280,
+        "logical_depth": 732454
+      },
+      {
+        "qubits": 842,
+        "x": 316,
+        "cx": 582282,
+        "ccx": 575280,
+        "logical_depth": 732446
+      },
+      {
+        "qubits": 842,
+        "x": 324,
+        "cx": 582288,
+        "ccx": 575280,
+        "logical_depth": 732447
+      },
+      {
+        "qubits": 842,
+        "x": 278,
+        "cx": 583410,
+        "ccx": 575280,
+        "logical_depth": 732444
+      }
+    ],
+    "conversion_forward": {
+      "x": 1240,
+      "cx": 2330384,
+      "ccx": 2301120
+    },
+    "postaggregation_payoff": {
+      "qubits": 121,
+      "x": 6,
+      "cx": 160,
+      "ccx": 119,
+      "logical_depth": 241
+    },
+    "comparator": {
+      "qubits": 128,
+      "x": 0,
+      "cx": 381,
+      "ccx": 128,
+      "logical_depth": 324
+    },
+    "total_excluding_aggregation": {
+      "x": 2492,
+      "cx": 4661469,
+      "ccx": 4602606
+    },
+    "compiler_counts": {
+      "u": 41425946,
+      "cx": 32277105,
+      "controlled_u": 539049622,
+      "controlled_cx": 276514522
+    },
+    "native_excluding_aggregation": {
+      "u": 41425946,
+      "cx": 32277105
+    },
+    "A_num_qubits_excluding_loader_ancillas": 3466,
+    "a_qubits_excluding_aggregation_helper": 3466,
+    "poststrike_bounds": {
+      "price_absolute_integer_upper": 555180424,
+      "sum_integer_lower": -2220721696,
+      "sum_integer_upper": 2220721696,
+      "difference_integer_lower": -2661123616,
+      "difference_integer_upper": 1780319776,
+      "signed_word_lower": -549755813888,
+      "signed_word_upper": 549755813887,
+      "proof": "Directed Horner intermediate magnitude times scale, rounded upward; triangle inequality over all rows; subtract exact strike.",
+      "universal_signed_range_safe": true
+    },
+    "wire_layout": {
+      "shared_input": 40,
+      "selector": 31,
+      "flag": 1,
+      "conversion_private": 3208,
+      "total_strike_payoff": 120,
+      "post_carry": 1,
+      "comparator_scratch": 65
+    },
+    "row_checks": [
+      {
+        "row": 0,
+        "packed_input": 0,
+        "log_integer": -985480,
+        "price_integer": 40967385,
+        "clean_workspace": true
+      },
+      {
+        "row": 0,
+        "packed_input": 1099511627775,
+        "log_integer": 984142,
+        "price_integer": 268044807,
+        "clean_workspace": true
+      },
+      {
+        "row": 1,
+        "packed_input": 0,
+        "log_integer": -1343188,
+        "price_integer": 29126235,
+        "clean_workspace": true
+      },
+      {
+        "row": 1,
+        "packed_input": 1099511627775,
+        "log_integer": 1340546,
+        "price_integer": 376548683,
+        "clean_workspace": true
+      },
+      {
+        "row": 2,
+        "packed_input": 0,
+        "log_integer": -721830,
+        "price_integer": 52678768,
+        "clean_workspace": true
+      },
+      {
+        "row": 2,
+        "packed_input": 1099511627775,
+        "log_integer": 720500,
+        "price_integer": 208455497,
+        "clean_workspace": true
+      },
+      {
+        "row": 3,
+        "packed_input": 0,
+        "log_integer": 37299,
+        "price_integer": 108654631,
+        "clean_workspace": true
+      },
+      {
+        "row": 3,
+        "packed_input": 1099511627775,
+        "log_integer": -39939,
+        "price_integer": 100938804,
+        "clean_workspace": true
+      }
+    ],
+    "semantic_checks": [
+      {
+        "packed_input": 0,
+        "sum_integer": 231427019,
+        "payoff_integer": 0,
+        "selectors": [
+          0,
+          2147483647
+        ],
+        "both_initial_flags_checked": true,
+        "clean_workspace": true
+      },
+      {
+        "packed_input": 1099511627775,
+        "sum_integer": 953987791,
+        "payoff_integer": 513585871,
+        "selectors": [
+          0,
+          513585870,
+          513585871,
+          2147483647
+        ],
+        "both_initial_flags_checked": true,
+        "clean_workspace": true
+      }
+    ],
+    "aggregation_included": false,
+    "loading_included": false,
+    "additional_aggregation_ancillas_included": false,
+    "aggregation_interface": {
+      "spot_registers": 4,
+      "width": 40,
+      "total_initial_value": 0,
+      "preserve_spots": true,
+      "clean_scratch_required": true
+    },
+    "qualification": "Counts include conversion and payoff inverses; comparator is already clean. Add aggregation and its inverse, loader/selector preparation, and any extra ancillas. Disjoint retained workspaces are not space optimal. No physical synthesis or AE included."
+  },
+  "aggregation": {
+    "ripple": {
+      "scope": "aggregation_only",
+      "width": 40,
+      "terms": 4,
+      "mode": "ripple",
+      "basis_gates": [
+        "u",
+        "cx"
+      ],
+      "optimization_level": 0,
+      "zero_initialized": true,
+      "angle_error_upper": "0",
+      "angle_error_scope": "logical_cp_bridge_only",
+      "uncontrolled": {
+        "qubits": 201,
+        "u": 2106,
+        "cx": 1918,
+        "depth": 2815,
+        "global_phase": 0.0
+      },
+      "controlled": {
+        "qubits": 202,
+        "u": 24516,
+        "cx": 15720,
+        "depth": 30064,
+        "global_phase": 0.0
+      }
+    },
+    "fourier": {
+      "scope": "aggregation_only",
+      "width": 40,
+      "terms": 4,
+      "mode": "fourier",
+      "basis_gates": [
+        "u",
+        "cx"
+      ],
+      "optimization_level": 0,
+      "zero_initialized": true,
+      "angle_error_upper": "4.28626379701584750126876753227504329146391864571870713155561086083976355586255E-14",
+      "angle_error_scope": "logical_cp_bridge_only",
+      "uncontrolled": {
+        "qubits": 200,
+        "u": 12260,
+        "cx": 8180,
+        "depth": 953,
+        "global_phase": 0.0
+      },
+      "controlled": {
+        "qubits": 201,
+        "u": 110560,
+        "cx": 73600,
+        "depth": 146351,
+        "global_phase": 0.0
+      }
+    }
+  },
+  "alternatives": [
+    {
+      "mode": "reflection",
+      "degree": 16,
+      "budget": {
+        "degree": 16,
+        "offset": 21.011115263441486,
+        "beta": 18.744813665794112,
+        "components": {
+          "representation": 0.17394490443392,
+          "discount_bridge": 1.0176287620714885e-14,
+          "payoff": 3.402985192876752,
+          "residual_coefficients": 1.025815345471469e-15,
+          "phase_response": 2.1337525585189128e-14,
+          "signal": 6.938178741935847e-12,
+          "preparation": 7.765836606014112e-12,
+          "projector": 6.430371562468192e-14,
+          "radius_bridge": 1.6251133557857745e-14,
+          "offset": 1.6141206532590074e-15,
+          "beta_rounding": 4.593075418829802e-16,
+          "decoding_rounding": 2.744313443543825e-13
+        },
+        "deterministic_upper": 3.5769300973257656,
+        "logical_scope": "ideal controlled logical gates; exact AE/QFT; not native transpiler or hardware",
+        "physical_execution_error": null,
+        "confirmation_admitted": false,
+        "schedule": {
+          "status": "deterministic_budget_exhausted",
+          "M": null,
+          "a_calls": null
+        }
+      },
+      "resources": {
+        "a_cx_projection": 7921286,
+        "controlled_a_cx_projection": 75973084,
+        "zero_reflection_cx_projection": 282,
+        "total_cx_projection": null,
+        "projection_scope": "conservative gate-by-gate composition with compiled clean-workspace zero reflection; not optimized measured full-circuit cost",
+        "clean_workspace_qubits": 46,
+        "total_qubits": null,
+        "state_preparation_included": true,
+        "inverses_included": true,
+        "qft_included": true,
+        "control_cancelled_total_cx_projection": null
+      },
+      "evidence": "archived W2, corrected IQFT swaps, positive sign checked"
+    },
+    {
+      "mode": "reflection",
+      "degree": 32,
+      "budget": {
+        "degree": 32,
+        "offset": 21.011115263441486,
+        "beta": 20.232393267245975,
+        "components": {
+          "representation": 0.17394490443392,
+          "discount_bridge": 1.0176287620714885e-14,
+          "payoff": 1.7045969271025816,
+          "residual_coefficients": 9.389392670244821e-16,
+          "phase_response": 2.055491874866723e-14,
+          "signal": 1.4977578691161137e-11,
+          "preparation": 8.382129748708594e-12,
+          "projector": 2.2420875435137684e-13,
+          "radius_bridge": 3.6557140538844184e-14,
+          "offset": 1.6141206532590074e-15,
+          "beta_rounding": 1.287687736398768e-15,
+          "decoding_rounding": 2.9028617754953037e-13
+        },
+        "deterministic_upper": 1.878541831560447,
+        "logical_scope": "ideal controlled logical gates; exact AE/QFT; not native transpiler or hardware",
+        "physical_execution_error": null,
+        "confirmation_admitted": false,
+        "schedule": {
+          "status": "deterministic_budget_exhausted",
+          "M": null,
+          "a_calls": null
+        }
+      },
+      "resources": {
+        "a_cx_projection": 15836966,
+        "controlled_a_cx_projection": 151904124,
+        "zero_reflection_cx_projection": 282,
+        "total_cx_projection": null,
+        "projection_scope": "conservative gate-by-gate composition with compiled clean-workspace zero reflection; not optimized measured full-circuit cost",
+        "clean_workspace_qubits": 46,
+        "total_qubits": null,
+        "state_preparation_included": true,
+        "inverses_included": true,
+        "qft_included": true,
+        "control_cancelled_total_cx_projection": null
+      },
+      "evidence": "archived W2, corrected IQFT swaps, positive sign checked"
+    },
+    {
+      "mode": "reflection",
+      "degree": 64,
+      "budget": {
+        "degree": 64,
+        "offset": 21.011115263441486,
+        "beta": 20.97855634362849,
+        "components": {
+          "representation": 0.17394490443392,
+          "discount_bridge": 1.0176287620714885e-14,
+          "payoff": 0.8527156060653366,
+          "residual_coefficients": 9.922412933116522e-16,
+          "phase_response": 3.182787130653223e-14,
+          "signal": 3.105989235315247e-11,
+          "preparation": 8.691259550473523e-12,
+          "projector": 3.662207828988499e-13,
+          "radius_bridge": 7.7189336371703e-14,
+          "offset": 1.6141206532590074e-15,
+          "beta_rounding": 3.509056517728869e-16,
+          "decoding_rounding": 2.9823888885377045e-13
+        },
+        "deterministic_upper": 1.0266605105397943,
+        "logical_scope": "ideal controlled logical gates; exact AE/QFT; not native transpiler or hardware",
+        "physical_execution_error": null,
+        "confirmation_admitted": false,
+        "schedule": {
+          "status": "deterministic_budget_exhausted",
+          "M": null,
+          "a_calls": null
+        }
+      },
+      "resources": {
+        "a_cx_projection": 31668326,
+        "controlled_a_cx_projection": 303766204,
+        "zero_reflection_cx_projection": 282,
+        "total_cx_projection": null,
+        "projection_scope": "conservative gate-by-gate composition with compiled clean-workspace zero reflection; not optimized measured full-circuit cost",
+        "clean_workspace_qubits": 46,
+        "total_qubits": null,
+        "state_preparation_included": true,
+        "inverses_included": true,
+        "qft_included": true,
+        "control_cancelled_total_cx_projection": null
+      },
+      "evidence": "archived W2, corrected IQFT swaps, positive sign checked"
+    },
+    {
+      "mode": "reflection",
+      "degree": 128,
+      "budget": {
+        "degree": 128,
+        "offset": 21.011115263441486,
+        "beta": 21.35193782830728,
+        "components": {
+          "representation": 0.17394490443392,
+          "discount_bridge": 1.0176287620714885e-14,
+          "payoff": 0.4264523916968791,
+          "residual_coefficients": 1.2996620721303744e-15,
+          "phase_response": 1.8023493563532452e-13,
+          "signal": 6.322540785127464e-11,
+          "preparation": 8.84594871695042e-12,
+          "projector": 7.474223248634654e-13,
+          "radius_bridge": 1.5846405686012614e-13,
+          "offset": 1.6141206532590074e-15,
+          "beta_rounding": 1.1151529131941468e-15,
+          "decoding_rounding": 3.0221844137785796e-13
+        },
+        "deterministic_upper": 0.600397296204273,
+        "logical_scope": "ideal controlled logical gates; exact AE/QFT; not native transpiler or hardware",
+        "physical_execution_error": null,
+        "confirmation_admitted": false,
+        "schedule": {
+          "status": "ideal_plan",
+          "M": 512,
+          "a_calls": 17391,
+          "phase_qubits": 9,
+          "repetitions": 17,
+          "statistical_upper_rational": "48176336866215672563521587021626582910690884486365739075748698867274099931143183505346576742887089578735480035226282254314825513255547648557313931175402342568917732029356085489267299846717926042210159239847015366420745303986177072073415446198029618083907003419408308146131989448690853022929322621139093335126066816909651228146829724313/182738441199165295716759671710485318649026068749160775757918275847260916043189161661129976014719266893757943949240575931112154906399170563339190853275542504861210949438017538763645788862999234568619559328746691708463152802963768796274603048272744398872191595728509128093719482421875000000000000000000000000000000000000000000000000000000",
+          "fixed_schedule_margin_rational": "24846438324387260471691615555524005376541622371340211758272310605732244534450195783220771368247432132798266382252067981747235680144012523917454395514558137508571805751145366307755443464323537484886483268255093887685393558141108862515148694611920840466424725382545207741072975006951242493244351070445418067526357477591891816897115588187/182738441199165295716759671710485318649026068749160775757918275847260916043189161661129976014719266893757943949240575931112154906399170563339190853275542504861210949438017538763645788862999234568619559328746691708463152802963768796274603048272744398872191595728509128093719482421875000000000000000000000000000000000000000000000000000000"
+        }
+      },
+      "resources": {
+        "a_cx_projection": 63331046,
+        "controlled_a_cx_projection": 607490364,
+        "zero_reflection_cx_projection": 282,
+        "total_cx_projection": 10555616671767,
+        "projection_scope": "conservative gate-by-gate composition with compiled clean-workspace zero reflection; not optimized measured full-circuit cost",
+        "clean_workspace_qubits": 46,
+        "total_qubits": 103,
+        "state_preparation_included": true,
+        "inverses_included": true,
+        "qft_included": true,
+        "control_cancelled_total_cx_projection": 1101392680835
+      },
+      "evidence": "archived W2, corrected IQFT swaps, positive sign checked"
+    },
+    {
+      "mode": "ripple",
+      "degree": 24,
+      "budget": {
+        "components": {
+          "representation": "0.17394490443391997571339736842480538704162582177258005979786505316784957751126837",
+          "arithmetic": "0.013957590131093712197560815733798502835371464134729406045747181260401019306516833",
+          "preparation": "2.0584875637953533365537652592439656134652956020109821245155380187667771489915427E-10",
+          "aggregation": "0E-76",
+          "decoding": "1.7652301422431413392269466420824652841233488571177870117610173118766041256159990E-12"
+        },
+        "deterministic_upper": "0.18790249477262767443273665915320736244347631253796237490182823389156541600633954",
+        "sensitivity_upper": "496.86811317683618658945451620310749874520924955081913371244211222608918000824423",
+        "beta_upper": 248.43405658841812,
+        "schedule": {
+          "status": "ideal_plan",
+          "M": 2048,
+          "a_calls": 69615,
+          "phase_qubits": 11,
+          "repetitions": 17,
+          "statistical_upper_rational": "21374135960591349924522303596441968328683143574409127532422934630050483090503551585805605265408322734249376751616228127551497042790850943049485156235096983163810747498942771415134570407309326534037790135074788297227119561177989762293477478659456953065451044526857630919542154897472785710321827342433204453342316176830178826340186605667/28000245022452746924342207762090492373641091179306893059681026137886753264682210254527980195803758636946781734157830182992991477593421295995521179130929899938411355155825268036365080551588592393578803445533767277909676639163803283300140789654694706278803550958400592207908630371093750000000000000000000000000000000000000000000000000000",
+          "fixed_schedule_margin_rational": "183179438185148563611828178090217129214636918161395555527452796136405750416098585632700145194342796044561600759994861997724064552250909880116326637531501460539311898066154306724270017943505425487831243432757750932599326823007757320995715283913819039408064895308017599027047188966393363952567530013773892175313970905615437100832578336118726049/3758129270356916679544199020331750416791434345527411801209355732935774744482228902381047214309775618111373901270563960571143556045951914095334350838834425697000912018415953440831942490171207661784228787418113991321781387723241496523485238867579028010368347167968750000000000000000000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "decoder_scale": 496.86811317683623,
+        "decoder_bridge_upper": "1.5575189545108254598170051413255978020456973316240202713266134596554718017578126E-13",
+        "probability_decoding": "ideal sin-squared AE label; one binary64 scale multiplication",
+        "physical_execution_error": null,
+        "confirmation_admitted": false
+      },
+      "resources": {
+        "a_cx_projection": 32285029,
+        "a_u_projection": 41432446,
+        "controlled_a_cx_projection": 276575066,
+        "zero_reflection_cx_projection": 20796,
+        "clean_workspace_qubits": 3465,
+        "a_qubits": 3467,
+        "total_qubits": 6943,
+        "total_cx_projection": 19250344005889,
+        "state_preparation_included": true,
+        "inverses_included": true,
+        "qft_included": true,
+        "physical_execution_error": null,
+        "scope": "conservative component composition, not a full transpiled or simulated AE circuit",
+        "control_cancelled_total_cx_projection": 2248246010763
+      }
+    },
+    {
+      "mode": "fourier",
+      "degree": 24,
+      "budget": {
+        "components": {
+          "representation": "0.17394490443391997571339736842480538704162582177258005979786505316784957751126837",
+          "arithmetic": "0.013957590131093712197560815733798502835371464134729406045747181260401019306516833",
+          "preparation": "2.0584875637953533365537652592439656134652956020109821245155380187667771489915427E-10",
+          "aggregation": "8.5188312216057828945275833442721492820614386210724430460243465977000216236151818E-11",
+          "decoding": "1.7652301422431413392269466420824652841233488571177870117610173118766041256159990E-12"
+        },
+        "deterministic_upper": "0.18790249485781598664879448809848319588619780535857676111255266435180888198333976",
+        "sensitivity_upper": "496.86811317683618658945451620310749874520924955081913371244211222608918000824423",
+        "beta_upper": 248.43405658841812,
+        "schedule": {
+          "status": "ideal_plan",
+          "M": 2048,
+          "a_calls": 69615,
+          "phase_qubits": 11,
+          "repetitions": 17,
+          "statistical_upper_rational": "21374135960591349924522303596441968328683143574409127532422934630050483090503551585805605265408322734249376751616228127551497042790850943049485156235096983163810747498942771415134570407309326534037790135074788297227119561177989762293477478659456953065451044526857630919542154897472785710321827342433204453342316176830178826340186605667/28000245022452746924342207762090492373641091179306893059681026137886753264682210254527980195803758636946781734157830182992991477593421295995521179130929899938411355155825268036365080551588592393578803445533767277909676639163803283300140789654694706278803550958400592207908630371093750000000000000000000000000000000000000000000000000000",
+          "fixed_schedule_margin_rational": "45794859466249968495089389396548226124777131866008428609805996906790664299422287655763853410107835898402674424361634907607494632341736313305252155183110288630424223273288750318780123972862335007594006703578265368094434603332044486451129416449932141386717803025044108090032217678907751757727096940430962735583430563635268778355150618880755731/939532317589229169886049755082937604197858586381852950302338933233943686120557225595261803577443904527843475317640990142785889011487978523833587709708606424250228004603988360207985622542801915446057196854528497830445346930810374130871309716894757002592086791992187500000000000000000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "decoder_scale": 496.86811317683623,
+        "decoder_bridge_upper": "1.5575189545108254598170051413255978020456973316240202713266134596554718017578126E-13",
+        "probability_decoding": "ideal sin-squared AE label; one binary64 scale multiplication",
+        "physical_execution_error": null,
+        "confirmation_admitted": false
+      },
+      "resources": {
+        "a_cx_projection": 32297553,
+        "a_u_projection": 41452754,
+        "controlled_a_cx_projection": 276690826,
+        "zero_reflection_cx_projection": 20790,
+        "clean_workspace_qubits": 3464,
+        "a_qubits": 3466,
+        "total_qubits": 6941,
+        "total_cx_projection": 19258400674483,
+        "state_preparation_included": true,
+        "inverses_included": true,
+        "qft_included": true,
+        "physical_execution_error": null,
+        "scope": "conservative component composition, not a full transpiled or simulated AE circuit",
+        "control_cancelled_total_cx_projection": 2249117660229
+      }
+    }
+  ],
+  "lowest_projection": {
+    "mode": "reflection",
+    "degree": 128
+  },
+  "lowest_control_cancelled_projection": {
+    "mode": "reflection",
+    "degree": 128
+  },
+  "production_choice": null,
+  "quantum_advantage": false,
+  "confirmation": false
+}
