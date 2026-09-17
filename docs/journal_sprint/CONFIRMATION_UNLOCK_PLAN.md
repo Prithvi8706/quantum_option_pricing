@@ -1,5 +1,11 @@
 # Concrete route to unlock confirmation
 
+Latest barrier development2026-09-17: separable marginal signal construction
+removes the joint lookup; symmetric phases now pass uniform interval bounds
+through degree128. The larger paid normalization worsens approximation costs:
+q10/degree128 known-bound sum is$1.874862 with four unknown implementation terms.
+This does not unlock confirmation. See [barrier results](BARRIER_DEVELOPMENT_RESULTS.md).
+
 Latest development2026-09-17: combined representation/QSP/reuse ablations reject
 naive signed-LCU control composition; subtracting an analytic polynomial control
 before QSP normalization gives a finite-model quantum-versus-quantum sampling

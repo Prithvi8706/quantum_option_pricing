@@ -1,5 +1,44 @@
 # Journal reengineering: running record
 
+## 2026-09-17: phase and separable-signal barrier development
+
+Implemented new producers without changing earlier evidence: symmetric QSP
+continuation with analytic Jacobian, directed interval Laurent phase-error
+bounds, separable basket LCU/projected walk, and an unknown-preserving dollar
+error ledger. The joint signal table is absent; marginal lookup still scales
+as O(d^2*2^q). Product loading is separate and paid, not a joint StatePreparation.
+
+All degrees8/16/32/64/128 passed the 1e-8 uniform phase gate; degree128 bound
+5.51e-15. q10 original-model signal plan uses47qubits/16,384marginal entries,
+not a compiled production circuit. Actual q2 signal:3,828CX; tiny integrated
+degree8 product-loader/Hadamard circuit:16,488CX, discrepancy1.32e-14.
+
+Safe ideal radius698.5702 versus old observed109.1852. Degree128 observed
+finite-price bias+$0.04089; q10 partial known dollar bound$1.874862 with four
+unknown implementation terms. Quantum controlled variance652.26 versus same
+classical control18.26; no classical superiority or confirmation inferred.
+
+57 focused mathematical/circuit tests passed before acquisition; runner failure
+and no-overwrite test passed separately. Eight numeric payloads reproduced
+exactly in the existing isolated week15 environment,52hash entries checked.
+Initial interval-complex conjugation API failure was repaired before acquisition.
+Full regression:964passed/12legacywarnings in423.32s. Five supplemental tests
+were added after full-suite collection and passed in the final focused suite;
+no subsequent full-suite rerun is implied.
+Separate-environment final focused suite:63passed in14.58s, including four
+replay-verifier tamper tests and a nonuniform q3 integrated loader check.
+Supplemental q3 degree8 expectation discrepancy3.89e-15. Independent agent
+reviews found no blocker for partial development scope; fixed-config and missing
+contemporaneous model-input archival limitations are documented in results.
+Post-acquisition model hex reconstruction is explicitly not an original snapshot.
+Synthetic review also found a conservative future-run rejection mismatch:
+dimensionless phase acceptance versus fixed dollar identity tolerance. Current
+<6e-15 phase fits are unaffected; preserve frozen v1 and fix the next producer's
+dollar-scaled allowance. This does not create false admission. F-only Ruff and
+whitespace checks passed. No hardware submission or remote push/merge.
+See [barrier results](BARRIER_DEVELOPMENT_RESULTS.md) and
+[frozen protocol](BARRIER_DEVELOPMENT_PROTOCOL.md).
+
 ## 2026-09-17: bounded integration of representation/QSP/reuse proposals
 
 User authorized all-three development and broader Quantum Week research. Added
