@@ -9,6 +9,9 @@ adds restricted proofs, separate AI reviews and a retrospective sensitivity
 study. Human expert novelty review and quantum advantage remain open.
 The [bounded matched arithmetic follow-up](docs/journal_sprint/MATCHED_ARITHMETIC_RESULTS_20260917.md)
 now supplies explicit comparator evidence; it does not promote confirmation.
+The pending claim assessment and comparator are integrated together in
+[PR#7](https://github.com/Prithvi8706/quantum_option_pricing/pull/7); that record
+gives the authoritative merge/check status.
 
 **Bottom line:** the development work, reproduction work and two-week
 minimal-pivot study are complete within their recorded scopes. The candidate

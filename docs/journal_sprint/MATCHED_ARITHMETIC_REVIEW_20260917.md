@@ -108,3 +108,20 @@ outside the temporary checkout.
 All requested implementation/evidence checks are now complete. These approvals
 concern the declared development implementation/evidence, not scientific
 confirmation admission. The PR/merge reference is recorded below at handoff.
+
+## GitHub handoff
+
+[PR#7](https://github.com/Prithvi8706/quantum_option_pricing/pull/7) contains the
+pending claim-assessment commits and this comparator follow-up. Its GitHub
+record is authoritative for the merge commit and final remote-check states.
+Normal merge is authorized only after the reviewed head and latest checks are
+rechecked; no administrator bypass or scientific promotion is authorized.
+Macroscope's check on PR#7 at `21415828` was **SKIPPED**, with the recorded
+reason "Credit balance exhausted." This is not a successful external review.
+The two independent AI reviewers and local verification above remain the
+review evidence; latest-head status must still be inspected before merging.
+
+The temporary `matched_arithmetic_clean_20260917` verification checkout was
+removed after checking its resolved path and clean status. It can be recreated
+from `df3422c3`; all receipts were saved outside it and committed. Unrelated
+untracked work and earlier verification checkouts were preserved.
