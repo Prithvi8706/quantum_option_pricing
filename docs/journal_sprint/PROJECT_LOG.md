@@ -1,5 +1,27 @@
 # Journal reengineering: running record
 
+## 2026-09-20: release-readiness tooling and next-study preparation
+
+User requested25 meaningful commits addressing leftover work without degrading
+the project. Work is isolated on `maintenance/release-readiness-20260920`, based
+on merged PR#7 at103ddfd1. No push/PR/merge is assumed in this request.
+
+Implemented a read-only `research.release_checks` package outside the frozen
+producer directory: safe portable paths, strict JSON, byte hashes, pinned archive
+inventories, source/input provenance, replay dependency/environment comparison,
+license-evidence inventory, claim traceability, explicit scientific gates,
+matched-target/ledger/schedule/budget/finite-grid checks, replay comparison,
+JUnit interpretation, local links, an integrated audit and all-row CSV export.
+Prepared a stronger-arithmetic experiment design and human review/disclosure
+packet. Neither is represented as an executed study or completed human review.
+
+New59-test suite passes in the pinned environment. The audit passes, preserving
+all five open scientific gates; the CSV retains12 rows including four infeasible
+plans. Full regression passed1,330 tests with12 legacy warnings; configured lint
+and formatting checks pass. See the [25-commit ledger and final validation](../release/HANDOFF_20260920.md).
+Existing research producers, archives,
+financial targets, authorship and submission/confirmation status remain unchanged.
+
 ## 2026-09-17: matched arithmetic comparison and explicit standby decision
 
 Completed the approved bounded D1/D2 comparator acquisition, without changing

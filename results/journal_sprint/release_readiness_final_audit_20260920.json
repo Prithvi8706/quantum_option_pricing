@@ -1,0 +1,200 @@
+{
+  "schema": "release_audit_v1",
+  "artifact_checks_passed": true,
+  "archives": [
+    {
+      "path": "results/journal_sprint/claim_assessment_v1",
+      "artifacts": 3,
+      "inputs": 3,
+      "source_files": 183,
+      "protocol_checked": true,
+      "scope": "recorded byte identity; not proof of commit cleanliness"
+    },
+    {
+      "path": "results/journal_sprint/claim_assessment_replay_v1",
+      "artifacts": 3,
+      "inputs": 3,
+      "source_files": 183,
+      "protocol_checked": true,
+      "scope": "recorded byte identity; not proof of commit cleanliness"
+    },
+    {
+      "path": "results/journal_sprint/matched_arithmetic_v1",
+      "artifacts": 6,
+      "inputs": 8,
+      "source_files": 188,
+      "protocol_checked": true,
+      "scope": "recorded byte identity; not proof of commit cleanliness"
+    },
+    {
+      "path": "results/journal_sprint/matched_arithmetic_replay_v1",
+      "artifacts": 6,
+      "inputs": 8,
+      "source_files": 188,
+      "protocol_checked": true,
+      "scope": "recorded byte identity; not proof of commit cleanliness"
+    }
+  ],
+  "replays": [
+    {
+      "compared": [
+        "inputs.json",
+        "results.json"
+      ],
+      "exact_json": true,
+      "exact_bytes": true,
+      "excluded_from_equality": [
+        "complete.json",
+        "planned.json",
+        "timings.json"
+      ]
+    },
+    {
+      "compared": [
+        "case_D1.json",
+        "case_D2.json",
+        "finite.json",
+        "inputs.json",
+        "results.json"
+      ],
+      "exact_json": true,
+      "exact_bytes": true,
+      "excluded_from_equality": [
+        "complete.json",
+        "planned.json",
+        "timings.json"
+      ]
+    }
+  ],
+  "matched_target": {
+    "cases": 2,
+    "configurations": 12,
+    "target_scope": "frozen development menu"
+  },
+  "finite_diagnostics": {
+    "grid_inputs": 292,
+    "independent_trials": false,
+    "continuous_confirmation": false
+  },
+  "claims": {
+    "claims_checked": 4,
+    "novelty_assessed": false
+  },
+  "scientific_status": {
+    "submission_ready": false,
+    "confirmation_admitted": false,
+    "open_gates": [
+      "fresh_confirmation",
+      "human_novelty_review",
+      "human_submission_approval",
+      "matched_quantum_classical_advantage",
+      "physical_execution_budget"
+    ],
+    "reason": "artifact checks cannot establish scientific admission"
+  },
+  "environment": {
+    "python": "3.9.13",
+    "packages_checked": 22,
+    "matches": true,
+    "differences": [],
+    "scope": "version inventory only; not wheel hashes or ABI portability"
+  },
+  "licenses": {
+    "files": [
+      {
+        "path": "LICENSE",
+        "sha256": "b2f816ca24cd9386ce1139ac2705a91acb25f910a56c3342b1b78c3e5542e7b6",
+        "bytes": 1070
+      },
+      {
+        "path": "research/journal_sprint/vendor/LICENSE-csAE",
+        "sha256": "1eb85fc97224598dad1852b5d6483bbcf0aa8608790dcc657a5a2a761ae9c8c6",
+        "bytes": 11558
+      }
+    ],
+    "compatibility_review_complete": false,
+    "dependency_license_review_complete": false
+  },
+  "test_receipts": [
+    {
+      "path": "results/journal_sprint/matched_arithmetic_full_tests_v1.xml",
+      "suites": [
+        {
+          "name": "pytest",
+          "tests": 1271,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1271
+        }
+      ],
+      "independent_test_count": null,
+      "scope": "historical execution receipt"
+    },
+    {
+      "path": "results/journal_sprint/matched_arithmetic_isolated_tests_v1.xml",
+      "suites": [
+        {
+          "name": "pytest",
+          "tests": 103,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 103
+        }
+      ],
+      "independent_test_count": null,
+      "scope": "historical execution receipt"
+    },
+    {
+      "path": "results/journal_sprint/matched_arithmetic_clean_tests_v1.xml",
+      "suites": [
+        {
+          "name": "pytest",
+          "tests": 128,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 128
+        }
+      ],
+      "independent_test_count": null,
+      "scope": "historical execution receipt"
+    }
+  ],
+  "links": {
+    "local_targets_checked": 49,
+    "external_urls_checked": false,
+    "anchors_checked": false,
+    "syntax_scope": "inline links outside backtick fences"
+  },
+  "scope_sha256": "903d6e1b96787f918b2d4cead520d984a970a4ceec1ff5f6f1d8f3c595db8c12",
+  "claim_register_sha256": "daae4c074843f3d52eba7585c0341aafc0b5571ddebc06fdad523e52dc045fe7",
+  "auditor_sha256": {
+    "research/release_checks/__init__.py": "4bc24b719eee379859451070483be6a5bffe9a97a0d0e6e5a788bb8d89e0365e",
+    "research/release_checks/audit.py": "00805aca88be6b11b073c9a2a2e4b31e902ac96fbee74f5c3cc08aa58aac9ad7",
+    "research/release_checks/budgets.py": "e2996fc63972df866e7f9bf925d810cb34fa00aed505fb17399955b56d1f5ece",
+    "research/release_checks/claims.py": "d0fb7d81b4b8c8db6f74fc9882975b7151143df31953d6e3c1a952a15f33ec1f",
+    "research/release_checks/environment.py": "8e53298e5fdd2971024bc6c896df9b828d4be230644ab9fe5b9e3fb56421d926",
+    "research/release_checks/finite.py": "d19d2efadeee9104d6d9667bab5d687ba967ca7c296faf0b9b4f279862c96c10",
+    "research/release_checks/gates.py": "39b25efe92225ff05d4565939420edd59a01205d6de0f2bcd4aa29f05787c1d4",
+    "research/release_checks/hashes.py": "69d60fcd69b8e03fcded87c327151773839a24576c22fcb9afd54feaf82e3edc",
+    "research/release_checks/inputs.py": "188583ac0168ba94b04d13d592e95567acb44ccc52ad70f25a9699079627b6ad",
+    "research/release_checks/inventory.py": "a3a0123d89626c9511f6970e9feb9a60de12de21238c820ad78b8a31698cc091",
+    "research/release_checks/json_io.py": "13735ca98698148f832e38aa98475a0218e23919e325c9ba05b7b5f9318fa4d4",
+    "research/release_checks/ledger.py": "3bbe2a65bcbb584a8d9a4074aa04366184ac12260109db4e7b65501dee8efe91",
+    "research/release_checks/licenses.py": "c49958b1e918b59dd159ad0e8fd1a6b71aa1a16a705233ec87039f42e3c8495c",
+    "research/release_checks/links.py": "416bf354084f3855844cc08304fc1a8f1a4fb84f73fe95c91939f2e63a5f6286",
+    "research/release_checks/paths.py": "08c16fb90dcbc105f74182556fa323d1b90406f26298712dced7e8e2e3080a99",
+    "research/release_checks/pins.py": "81506cd5a8ed0672059316c58e9a88b16a7ec430740db65596ff85ff460361a4",
+    "research/release_checks/receipts.py": "2812a35bbd1ee2c153fae1c42b9c4a3644b47e5d8ef380b26a9f7b9d1a05629a",
+    "research/release_checks/replay.py": "e17f49aa09d5f89e87ebdbe25e35bcd13e6652cc90ae080ee648ad6fb87d821f",
+    "research/release_checks/schedules.py": "947fc2f541c9b22d9bfff2c4bc266b35d4d0b17f0fd1cbeddbd287b7990cff70",
+    "research/release_checks/sources.py": "2f3b0a5e8d212252eb19562f8f42bf4ae56e6736b7e057e901f55681698f2078",
+    "research/release_checks/tables.py": "74895fc7022ae705b23dc7456345b9a0b82729c7df83207337115904cd3eeb2a",
+    "research/release_checks/targets.py": "946c560682d2956c4125f25a6d7fc6eb99e884e26030f8802ea568ed347f0bc1"
+  },
+  "full_circuit_reconstruction_performed": false,
+  "git_head": "251845d2dd9c1c3bcf44c216468a701ec7ae146d",
+  "tracked_tree_dirty": true
+}

@@ -18,6 +18,7 @@ published.
 
 ## Start here
 
+- [Release consistency checks, reproducible tables and next-study preparation](docs/release/README.md)
 - [Latest matched arithmetic comparison and scientific decision](docs/journal_sprint/MATCHED_ARITHMETIC_RESULTS_20260917.md)
 - [Claim assessment, restricted proofs and prior-art boundaries](docs/journal_sprint/CLAIM_ASSESSMENT_RESULTS_20260917.md)
 - [Completed work and remaining tasks](checklist_17.9.26.md)
