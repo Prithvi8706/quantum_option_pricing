@@ -1,0 +1,24 @@
+{
+  "schema": "release_scope_v1",
+  "archives": [
+    "results/journal_sprint/claim_assessment_v1",
+    "results/journal_sprint/claim_assessment_replay_v1",
+    "results/journal_sprint/matched_arithmetic_v1",
+    "results/journal_sprint/matched_arithmetic_replay_v1"
+  ],
+  "replay_pairs": [[0, 1], [2, 3]],
+  "requirements": "research/journal_sprint/requirements-week15-replay.txt",
+  "licenses": ["LICENSE", "research/journal_sprint/vendor/LICENSE-csAE"],
+  "receipts": [
+    "results/journal_sprint/matched_arithmetic_full_tests_v1.xml",
+    "results/journal_sprint/matched_arithmetic_isolated_tests_v1.xml",
+    "results/journal_sprint/matched_arithmetic_clean_tests_v1.xml"
+  ],
+  "scientific_gates": {
+    "human_novelty_review": false,
+    "physical_execution_budget": false,
+    "matched_quantum_classical_advantage": false,
+    "fresh_confirmation": false,
+    "human_submission_approval": false
+  }
+}
