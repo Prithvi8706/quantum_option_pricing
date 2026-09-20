@@ -192,6 +192,12 @@ Evidence: [integration handoff](docs/journal_sprint/STUDY_MERGE_CLOSEOUT.md),
 
 ### D. Finish original Week 16's publication package
 
+- [x] Add read-only release evidence checks and an all-row logical-resource CSV
+  exporter, with regression tests. See [release preparation](docs/release/README.md).
+  This does not complete legal/license clearance, human novelty review or submission.
+- [x] Prepare a [stronger arithmetic baseline design](docs/release/STRONGER_BASELINE_DESIGN.md)
+  and [human review packet](docs/release/HUMAN_REVIEW_PACKET.md). Neither study
+  acquisition nor actual human review is claimed as completed.
 - [ ] Update the integrated quantum-centered manuscript; the earlier reliability
   draft is not a completed account of the new study.
 - [ ] Generate final tables/figures from frozen analysis and trace each claim to

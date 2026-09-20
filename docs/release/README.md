@@ -1,5 +1,7 @@
 # Release preparation tools
 
+See the [25-commit handoff and evidence ledger](HANDOFF_20260920.md) for this batch.
+
 These checks are a fast, read-only overlay on frozen evidence, not a replacement
 for the full circuit-reconstruction verifier or human review.
 

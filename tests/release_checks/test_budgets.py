@@ -4,15 +4,22 @@ from .test_targets import evidence
 
 
 def test_budget_terms_and_totals():
-    rows = [r for c in evidence()['comparisons'] for r in c['alternatives']]
+    rows = [r for c in evidence()["comparisons"] for r in c["alternatives"]]
     assert all(verify_budget(r) for r in rows)
-    rows[-1]['budget']['components'].pop('preparation')
-    with pytest.raises(ValueError, match='components'):
+    rows[-1]["budget"]["components"].pop("preparation")
+    with pytest.raises(ValueError, match="components"):
         verify_budget(rows[-1])
 
 
 def test_understatement_and_false_physical_admission():
-    row = evidence()['comparisons'][0]['alternatives'][-1]
-    row['budget']['deterministic_upper'] = '0'
-    with pytest.raises(ValueError, match='understates'):
+    row = evidence()["comparisons"][0]["alternatives"][-1]
+    row["budget"]["deterministic_upper"] = "0"
+    with pytest.raises(ValueError, match="understates"):
+        verify_budget(row)
+
+
+def test_boolean_allowance_is_not_a_numeric_zero():
+    row = evidence()["comparisons"][0]["alternatives"][-1]
+    row["budget"]["components"]["aggregation"] = False
+    with pytest.raises(ValueError, match="boolean"):
         verify_budget(row)

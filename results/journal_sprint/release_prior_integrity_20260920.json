@@ -1,0 +1,71 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "part": "tiny",
+      "version": 2,
+      "checks": [
+        {
+          "artifacts": 4,
+          "sources": 178
+        },
+        {
+          "artifacts": 4,
+          "sources": 180
+        }
+      ],
+      "exact_numeric_replay": true,
+      "manifest_sha256": {
+        "minimal_pivot_week2_tiny_v2": "ec900cbf457e8f5d9e7532bca1c80d07da97cd3b12235437bbd1a705ad1b145e",
+        "minimal_pivot_week2_tiny_replay_v2": "5a2070ceff897907a65aa2dead983821d47f1b7db33757444aa597cd4838e89e"
+      }
+    },
+    {
+      "part": "production",
+      "version": 1,
+      "checks": [
+        {
+          "artifacts": 8,
+          "sources": 175
+        },
+        {
+          "artifacts": 8,
+          "sources": 175
+        }
+      ],
+      "exact_numeric_replay": true,
+      "manifest_sha256": {
+        "minimal_pivot_week2_production_v1": "33eda80f790fd0ab4c53fa39077361831db7e5ba52e06b2cc5d6f4333dfa20c2",
+        "minimal_pivot_week2_production_replay_v1": "83220a0cece772c67f84b780ffce6eebcd10bf6e1bf881e5c1e9a61f9ff2af3b"
+      }
+    },
+    {
+      "part": "classical",
+      "version": 1,
+      "checks": [
+        {
+          "artifacts": 4,
+          "sources": 175
+        },
+        {
+          "artifacts": 4,
+          "sources": 175
+        }
+      ],
+      "exact_numeric_replay": true,
+      "manifest_sha256": {
+        "minimal_pivot_week2_classical_v1": "664fcf391f29802a282fc1eb2cf86403c67f67a8d8c20c71aaa4c99a3f63f662",
+        "minimal_pivot_week2_classical_replay_v1": "342ee696294a8948e7a26bd11bf95334bb72cd7c26366a5867e84981bd6fe44f"
+      }
+    }
+  ],
+  "decision_rows_checked": 32,
+  "excluded_from_equality": [
+    "timings.json",
+    "planned.json",
+    "complete.json"
+  ],
+  "reason": "wall time/environment/timestamps; all files still hash checked",
+  "independent_peer_review": false,
+  "verifier_sha256": "0115aa953debde7ed5a21e001b07187c5e8f4b20d26309cd8e43a58e10e90684"
+}
