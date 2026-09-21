@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[2]
 ARCHIVE = ROOT / "results/journal_sprint/signed_residual_arithmetic_v1"
 
 
-def pi_upper():
+def pi_bounds():
     """Independent rational Machin enclosure using alternating-series remainder."""
     def arctan_bounds(denominator):
         terms = 100
@@ -27,9 +27,9 @@ def pi_upper():
         remainder = Fraction(1, (2 * terms + 1) * denominator ** (2 * terms + 1))
         return total - remainder, total + remainder
 
-    lo239, _ = arctan_bounds(239)
-    _, hi5 = arctan_bounds(5)
-    return 16 * hi5 - 4 * lo239
+    lo239, hi239 = arctan_bounds(239)
+    lo5, hi5 = arctan_bounds(5)
+    return 16 * lo5 - 4 * hi239, 16 * hi5 - 4 * lo239
 
 
 def verify():
@@ -50,7 +50,7 @@ def verify():
             row = label_amplitude(label, size)
             error = max(error, Fraction(row["conversion_error_upper"]))
         errors[size] = error
-    upper = pi_upper()
+    lower, upper = pi_bounds()
     rows = []
     for path, record in records:
         certificate, budget = record["certificate"], record["budget"]
@@ -61,11 +61,13 @@ def verify():
         charge = scale * err
         deterministic = Fraction(budget["deterministic_upper"]) + charge
 
-        def statistical(m):
-            return scale * (upper / m + upper * upper / (m * m))
+        def statistical(m, pi):
+            return scale * (pi / m + pi * pi / (m * m))
 
-        margin = 1 - deterministic - statistical(size)
-        previous_margin = 1 - deterministic - statistical(size // 2) if size > 2 else None
+        margin = 1 - deterministic - statistical(size, upper)
+        previous_margin = (
+            1 - deterministic - statistical(size // 2, lower) if size > 2 else None
+        )
         if margin < 0:
             raise AssertionError(f"{path.name}: original schedule fails after label bridge")
         if previous_margin is not None and previous_margin >= 0:
@@ -104,7 +106,7 @@ def verify():
         "distinct_M": sizes,
         "rows": rows,
         "all_schedules_unchanged": True,
-        "scope": "Deterministic label conversion and price-budget overlay; no circuits or new pricing data.",
+        "scope": "Deterministic label conversion and budget overlay; no circuits or pricing data.",
         "physical_errors_certified": False,
         "confirmation_admitted": False,
     }
