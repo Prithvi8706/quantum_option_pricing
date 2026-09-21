@@ -1,5 +1,10 @@
 # Project checklist — 17 September 2026
 
+Promotion update — 21 September 2026: after separate user authorization and a
+new independent AI integration review, completed batches 1–4 were fast-forwarded
+to main with original history preserved. [Verified promotion](docs/release/MAIN_PROMOTION_20260921.md).
+The future common-policy comparison, manuscript and human scientific gates remain open.
+
 Assessment update — 21 September 2026: [scientific decision and audits](docs/novelty_assessment/2026-09-21/README.md)
 are complete as an AI-assisted assessment, including 25 primary sources,
 three independent review scopes and a separate narrative review. The verdict

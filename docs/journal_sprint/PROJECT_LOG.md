@@ -1,5 +1,25 @@
 # Journal reengineering: running record
 
+## 2026-09-21: independently reviewed promotion to main
+
+After separate user authorization, a new independent AI agent reviewed completed
+batches 1–4 through `0146372f` and found no actionable integration blocker.
+It independently matched all 13,783 preserved files (254,488,741 bytes) to their
+manifest and reproduced all 166 resource rows/332 ledgers plus two reflection
+references. Fresh lead checks passed 19 targeted tests, Ruff, 300 local links
+and 143 receipt/source/input hash bindings. Historical full-suite receipts
+were inspected, not rerun or combined as independent test populations.
+
+Remote main was fast-forwarded from `da3080d1` to `0146372f` and verified using
+`ls-remote`; the stale local main was then synchronized without force. Original
+producer/acquisition commits and authorship survive. The
+[promotion record](../release/MAIN_PROMOTION_20260921.md) and
+[independent review](../release/MAIN_PROMOTION_REVIEW_20260921.md) document scope,
+conditions and actual delivery. Future experiments/manuscript work remain open;
+this integration does not establish human novelty approval, physical delivery,
+confirmation or quantum advantage. Earlier main-unchanged records correctly
+describe the preceding assessment task and are retained as history.
+
 ## 2026-09-21: scientific assessment, numerical interface and dev consolidation
 
 Completed an [AI-assisted scientific assessment](../novelty_assessment/2026-09-21/README.md)

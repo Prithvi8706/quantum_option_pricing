@@ -296,13 +296,14 @@ Asian-basket pipeline or evidence of an end-to-end pricing advantage.
 - Do not use reference truths or held-out outcomes to tune a supposedly frozen
   policy, and do not relabel deterministic replay as fresh confirmation.
 - Keep commits reviewable and attribute only work actually performed.
-- Latest merged integration: [PR #8](https://github.com/Prithvi8706/quantum_option_pricing/pull/8).
-  Macroscope skipped its review because credits were exhausted. The subsequent
-  stronger-arithmetic work and complete ongoing project are on
+- Latest integration: [independently reviewed main promotion](docs/release/MAIN_PROMOTION_20260921.md)
+  of completed implementation, evidence and assessment batches on 21 September.
+  The previous stable baseline was [PR #8](https://github.com/Prithvi8706/quantum_option_pricing/pull/8),
+  whose Macroscope check skipped because credits were exhausted. Main and dev
+  are the only permanent branches; ongoing work continues on
   [dev](https://github.com/Prithvi8706/quantum_option_pricing/tree/dev).
-  Main and dev are the only permanent branches. Main was left unchanged during
-  the assessment; reviewed snapshots can later be promoted through the
-  [batch plan](docs/novelty_assessment/2026-09-21/MAIN_BATCH_PLAN.md).
+  The original [batch plan](docs/novelty_assessment/2026-09-21/MAIN_BATCH_PLAN.md)
+  is historical; its future experiment and manuscript batches remain open.
 
 ## License
 
