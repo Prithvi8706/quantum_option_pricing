@@ -1,0 +1,19 @@
+[tool.ruff]
+line-length = 100
+extend-exclude = ["*.ipynb", "research/journal_sprint/vendor"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "N"]
+ignore = [
+    "N803",  # argument name should be lowercase — finance notation (S0, K, T, etc.)
+    "N806",  # variable in function should be lowercase — finance notation (Z, S_T, N_mc, etc.)
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/test_pricing.py" = ["E402"]
+"app/app.py" = ["E402"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests", "research/paper_a/tests", "research/journal_sprint/tests"]
+markers = ["slow: full-benchmark sweeps, excluded from the fast loop"]

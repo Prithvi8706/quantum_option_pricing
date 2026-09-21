@@ -1,0 +1,78 @@
+{
+  "result": {
+    "spec": {
+      "phase": "pilot",
+      "contract": "E049",
+      "scenario": "design_match",
+      "guard": 0.0,
+      "rep": 2,
+      "arm": "fixed_target",
+      "attempt": 86
+    },
+    "choice": {
+      "selected": "exact_table",
+      "scores": [
+        {
+          "encoding": "linearized",
+          "log_proxy": 16.285905984423373
+        },
+        {
+          "encoding": "exact_table",
+          "log_proxy": 10.723077434138286
+        }
+      ],
+      "excluded": {}
+    },
+    "plan": {
+      "arm": "fixed_target",
+      "pilot_shots": 0,
+      "m0": 8192,
+      "m1": 8192,
+      "n": 49152,
+      "forecast_radius": 1.3831040056487558,
+      "forecast_target_met": false,
+      "rationale": "minimum forecast radius; no delivery promise"
+    },
+    "status": "unresolved",
+    "interval": [
+      17.677862792689005,
+      21.02930224610485
+    ],
+    "radius": 1.6757197267079231,
+    "pilot_successes": null,
+    "calibration_errors": [
+      180,
+      531
+    ],
+    "successes": 5901,
+    "contains": true,
+    "erroneous": false,
+    "midpoint_error": 1.008675332940065,
+    "pilot_shots": 0,
+    "m0": 8192,
+    "m1": 8192,
+    "n": 49152,
+    "total_shots": 65536,
+    "total_cx": 6193152,
+    "calibration_cx": 0,
+    "penalized_cost": 65536,
+    "selection_forecast_radius": 1.3831040056487558,
+    "diagnostic_forecast_kind": "common_delta_proxy_not_historical_cp_selection",
+    "calibration": {
+      "false_positive": [
+        0.01812977182761165,
+        0.026350424680556782
+      ],
+      "false_negative": [
+        0.05820466185383612,
+        0.07191705547015366
+      ],
+      "positive_contrast_certified": true,
+      "supplied_transfer_bounds": [
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "elapsed_seconds": 0.010419100000000014
+}

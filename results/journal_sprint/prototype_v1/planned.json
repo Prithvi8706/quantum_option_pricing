@@ -1,0 +1,87 @@
+{
+  "started_utc": "2026-09-09T05:32:12.772386+00:00",
+  "config": {
+    "protocol": "PROTOCOL_V1",
+    "amplitudes": [
+      0.01,
+      0.1,
+      0.3,
+      0.5,
+      0.7,
+      0.9,
+      0.99
+    ],
+    "conditions": {
+      "ideal": [
+        0.0,
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "matched": [
+        0.01,
+        [
+          0.01,
+          0.01
+        ]
+      ],
+      "envelope": [
+        0.01,
+        [
+          0.005,
+          0.015
+        ]
+      ],
+      "misspecified": [
+        0.03,
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "inconsistent": [
+        null,
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    "depths": [
+      0,
+      1,
+      2,
+      4,
+      8
+    ],
+    "shots": [
+      128,
+      512
+    ],
+    "replicates": 200,
+    "mle_theta_grid_points": 16385,
+    "pilot_selection": "radius*sqrt(64/128)<=.01 ->128 else512"
+  },
+  "python": "3.9.13",
+  "numpy": "2.0.2",
+  "scipy": "1.13.1",
+  "git_head": "0bc163caa961b1d54528e46fa663e3820b09e56b",
+  "source_sha256": {
+    "research\\journal_sprint\\__init__.py": "f414bb7816fb77b7ca898a9b7a79f1fd629d9747cda26efb6f297b9eb271372f",
+    "research\\journal_sprint\\audit.py": "66ec8c3d7bdb7b85ba3f28001a2ef4930791c7ed6fa37e3c1927f5cded06b309",
+    "research\\journal_sprint\\intervals.py": "d7ada181d34aa3f0c863730f31b47816b1c19d9cd17c46cad060f319e2bef374",
+    "research\\journal_sprint\\run_comparator.py": "6cbdb398b681f21c4357bbe031733e4eeebaee120868e657c693b7d355fecad9",
+    "research\\journal_sprint\\run_prototype.py": "a3bd6cd8403a50ae3ec866087722bdf0a2f3c5d1c5863a4e9fffcdb48a6e68af",
+    "research\\journal_sprint\\storage.py": "143eb57361ca71d42e7e26cf3eb333969a1e35d6a310930635e391fe7546fd91",
+    "research\\journal_sprint\\tests\\test_intervals.py": "606a0ff6513741f1be62723c1b039fd74818b1bfce6cd3e2f433e8839e28d09d",
+    "research\\journal_sprint\\vendor\\__init__.py": "29f32452341e232ea7a7bd775584b32104929ab1cbc8fec63ce8c538dece9957",
+    "research\\journal_sprint\\vendor\\mlqae_core.py": "e45c987ed4de98b189e73bf70dd08cee7ebbfba6bccfc30762194d2b82da7014",
+    "docs\\journal_sprint\\PROTOCOL_V1.md": "a99f2faf3e6e262574dc9099d9eacc0f00d3ef2ab2386bef9a33e9d6ac99912f"
+  },
+  "threads": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  }
+}
