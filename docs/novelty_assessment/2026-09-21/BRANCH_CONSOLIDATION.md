@@ -116,9 +116,23 @@ or deletion. Frozen tracked producers and archives were not edited.
 Assessment implementation commits are `5f96b9ec` (label adapter/protocol/v1)
 and `601ebcdc` (reviewed lower-pi minimality check, v2 receipt and 19-test
 receipt). They preserve the v1 source and evidence rather than overwriting
-history. The complete assessment and independent reports follow on dev.
-Final delivery verification is recorded after the assessment payload is
-committed and pushed; the final response reports the verified delivery SHA.
+history. The complete assessment and independent reports were committed at
+`ece17aed4b179cf863a628fd0ea13bef67b7a15c` and pushed to origin/dev.
+
+The [post-push delivery receipt](provenance/delivery_verification.json) verifies
+that payload's remote SHA equals local HEAD, both main pointers remain
+unchanged, all former branch tips remain reachable, 297 local link targets
+resolve, and 143 receipt/source/input hash bindings match. It records the
+19-test receipt and absence of modifications/deletions to frozen tracked
+source, tests, release methods and evidence. The 14 required assessment
+documents are present. These checks add no pricing data or external-link
+availability guarantee.
+
+The receipt and this factual delivery note are committed afterward as a
+closeout record. Its document hashes refer to the verified `ece17aed` payload;
+they do not purport to hash the subsequent self-referential closeout text.
+The final response reports the separately verified remote SHA after this
+closeout record is pushed.
 
 Main remains the stable integration branch, dev the complete ongoing project.
 [MAIN_BATCH_PLAN.md](MAIN_BATCH_PLAN.md) specifies reviewable future snapshots.

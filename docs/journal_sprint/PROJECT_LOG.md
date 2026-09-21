@@ -43,6 +43,13 @@ the exact history and future integration boundaries. No main merge, new
 hardware result, confirmation admission, completed manuscript or submission
 is implied by this work.
 
+Delivery: assessment payload `ece17aed4b179cf863a628fd0ea13bef67b7a15c`
+was pushed to origin/dev and independently queried to match local HEAD.
+The [post-push receipt](../novelty_assessment/2026-09-21/provenance/delivery_verification.json)
+checks 297 local links, 143 receipt/source/input hash bindings, frozen-file
+preservation and the two-branch state. This factual closeout records that
+verified payload; main remains unchanged.
+
 ## 2026-09-21: stronger arithmetic and signed residual comparison
 
 Implemented the approved follow-up in `research/stronger_arithmetic`, preserving
