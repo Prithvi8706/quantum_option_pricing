@@ -1,7 +1,9 @@
 # Next bounded study: strengthen the arithmetic baseline
 
-Status: design proposal, not an approved/frozen acquisition protocol. No new
-pricing experiments or claimed improvements are supplied by this document.
+Status update, 2026-09-21: this proposal has been implemented as two separately
+frozen studies. See the [results and qualifications](STRONGER_ARITHMETIC_RESULTS_20260921.md).
+The text below preserves the original design; its proposed menu is superseded
+by the executable protocols linked from that closeout.
 This addresses the main open objection to the
 [matched study](../journal_sprint/MATCHED_ARITHMETIC_RESULTS_20260917.md): expensive
 unrecycled Horner arithmetic is not the best available arithmetic baseline.

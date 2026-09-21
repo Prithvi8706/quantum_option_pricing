@@ -9,15 +9,17 @@ research codebase. Its primary harder application is **arithmetic Asian-basket
 pricing under risk-neutral geometric Brownian motion**. European and digital
 options remain regression controls and historical experiments.
 
-**Status — 17 September 2026:** the latest two-week construction and integration
-study is complete within its bounded scope. The reflection-centered candidate
-remains on standby. We have demonstrated improvements over selected quantum
-baseline constructions, **not quantum-over-classical advantage**. Confirmation
-and submission readiness remain open; no paper is recorded as submitted or
-published.
+**Status — 21 September 2026:** the stronger arithmetic study now includes
+scratch reuse, range reduction and a certified signed residual/control oracle.
+Reflection has the lower logical CX projection in D1; signed-residual arithmetic
+has a **65.9% lower projection in D2**, but needs **5,162 versus 103 qubits**.
+These are matched quantum-route resource projections. Quantum-over-classical
+advantage, physical delivery, confirmation and submission readiness remain open.
+Candidate routes remain on standby; no paper has been submitted or published.
 
 ## Start here
 
+- [Latest stronger arithmetic results, tradeoffs and verification](docs/release/STRONGER_ARITHMETIC_RESULTS_20260921.md)
 - [Release consistency checks, reproducible tables and next-study preparation](docs/release/README.md)
 - [Latest matched arithmetic comparison and scientific decision](docs/journal_sprint/MATCHED_ARITHMETIC_RESULTS_20260917.md)
 - [Claim assessment, restricted proofs and prior-art boundaries](docs/journal_sprint/CLAIM_ASSESSMENT_RESULTS_20260917.md)
@@ -50,6 +52,9 @@ Similarly, reducing one quantum circuit's cost is not a classical speedup.
 - **Integrated estimation:** residual quantum signal processing (QSP), directed
   classical offsets, Hadamard readout, explicit canonical amplitude estimation
   (AE), and interval-based outcome decoding.
+- **Stronger arithmetic routes:** shared clean scratch, certified range-reduced
+  exponentials, and a signed residual/control oracle with restored classical
+  offset, full error budgets and emitted compute/uncompute resource accounting.
 - **Encoding-aware decisions:** accuracy and resource screening, degree/encoding
   selection among supported logical plans, and explicit refusal when requirements
   cannot be certified. Physical/production promotion remains disabled.
@@ -67,7 +72,27 @@ Known primitives are not presented as newly invented algorithms.
 
 ## Latest results: improvements and limits
 
-### Matched arithmetic follow-up
+### Stronger arithmetic and comparable control
+
+The new frozen studies retain all **148 primary layout rows and 18 residual
+configurations**. The best raw range-reduced route lowers projected CX about
+18% against the historical arithmetic baseline. Adding the signed control
+reduces it further by factors 4.38 (D1) and 4.91 (D2).
+
+| Case | Selected logical-CX route | Control-cancelled projected CX | Total allocated qubits |
+| --- | --- | ---: | ---: |
+| D1 | Reflection | 36,469,403,102 | 55 |
+| D2 | Signed-residual arithmetic | 375,312,500,844 | 5,162 |
+
+D2 reflection costs 1,101,392,680,835 projected CX and uses 103 qubits. The new
+arithmetic route therefore reverses the earlier D2 cost ordering, with a large
+width tradeoff. D1 reflection remains cheaper than the new arithmetic routes.
+All comparisons use the same $1/95% logical pricing contract and charge loaders,
+inverses and AE. Classical offset preparation is recorded separately; neither
+quantum-over-classical runtime advantage nor global arithmetic optimality is
+established. See the [complete results and scope](docs/release/STRONGER_ARITHMETIC_RESULTS_20260921.md).
+
+### Historical matched arithmetic follow-up
 
 The bounded D1/D2 study now includes explicit fixed-point conversion, efficient
 ripple or Fourier aggregation, payoff encoding, uncomputation and matched AE
@@ -139,6 +164,7 @@ a negative result or has a stated limitation.
 | Original Week 14 | Finite-target study closed; broader continuous-price comparison incomplete |
 | Original Week 15 | Fresh-environment reproduction closed; confirmation campaign blocked |
 | Additional two-week minimal-pivot study | Construction and bounded validation closed; candidate on standby |
+| Stronger arithmetic/control study | Bounded implementation and comparison complete; physical/confirmation gates remain open |
 | Original Week 16 | Final integrated manuscript and submission-readiness work remain open |
 
 The principal open questions are a defensible distinction from nearest prior
@@ -182,6 +208,18 @@ reproduction specification.
 
 ### Check the archived study
 
+For the latest stronger-arithmetic studies, the following commands replay every
+certificate/diagnostic and reconstruct selected gate evidence. The output records
+which configurations were actually re-emitted; it does not claim reconstruction
+of every gate in the menu.
+
+```powershell
+.context/readme_replay_env/Scripts/python.exe -m research.stronger_arithmetic.verify results/journal_sprint/stronger_arithmetic_v1 .context/stronger_check.json --reemit-selected
+.context/readme_replay_env/Scripts/python.exe -m research.stronger_arithmetic.verify_residual results/journal_sprint/signed_residual_arithmetic_v1 .context/residual_check.json --reemit-selected
+```
+
+Earlier construction-study checks remain available:
+
 ```powershell
 .context/readme_replay_env/Scripts/python.exe -m research.journal_sprint.verify_minimal_pivot_week1 .context/readme_w1_check.json
 .context/readme_replay_env/Scripts/python.exe -m research.journal_sprint.verify_week2_final .context/readme_w2_check.json
@@ -200,11 +238,12 @@ The Week 2 final verifier uses the named authoritative archive directories.
 .context/readme_replay_env/Scripts/python.exe -m pytest -q tests/test_reflection_centered_signal.py tests/test_week1_subset_control.py tests/test_week2_pipeline.py tests/test_week2_explicit_ae.py tests/test_week2_decoding.py tests/test_week2_analysis.py
 ```
 
-These **51 tests** passed in the separate pinned environment. The latest full
-repository suite passed **1,143 tests**, with 12 legacy warnings, in the original
-full environment from a clean checkout. That full suite also exercises older
-dependencies absent from the minimal replay environment; the test totals overlap.
-See the [verification handoff](docs/journal_sprint/STUDY_MERGE_CLOSEOUT.md).
+These historical **51 tests** passed in the separate pinned environment. The
+latest full repository suite passed **1,645 tests**, with 12 legacy warnings;
+the new stronger-arithmetic suite separately passed **315 tests** in the pinned
+environment. Totals overlap. The full suite also exercises older dependencies
+absent from the minimal replay environment. See the
+[latest validation receipts](docs/release/STRONGER_ARITHMETIC_RESULTS_20260921.md).
 
 For fresh acquisitions, follow the
 [frozen study protocol](docs/journal_sprint/MINIMAL_PIVOT_WEEK2_PROTOCOL.md) and
@@ -219,6 +258,7 @@ comparison.
 
 ```text
 research/journal_sprint/   Active research implementations, runners and verifiers
+research/stronger_arithmetic/  Versioned stronger baseline and signed-control study
 research/paper_a/          Earlier research package and regression tests
 docs/journal_sprint/       Protocols, methods, results, audits and project log
 results/journal_sprint/    Versioned evidence, replay records and test receipts
@@ -243,9 +283,10 @@ Asian-basket pipeline or evidence of an end-to-end pricing advantage.
 - Do not use reference truths or held-out outcomes to tune a supposedly frozen
   policy, and do not relabel deterministic replay as fresh confirmation.
 - Keep commits reviewable and attribute only work actually performed.
-- Latest integration: [PR #6](https://github.com/Prithvi8706/quantum_option_pricing/pull/6).
-  Macroscope skipped its review because credits were exhausted; local verification
-  is documented, but a successful external review is not claimed for that PR.
+- Latest merged integration: [PR #8](https://github.com/Prithvi8706/quantum_option_pricing/pull/8).
+  Macroscope skipped its review because credits were exhausted. The subsequent
+  stronger-arithmetic work is on `research/stronger-arithmetic-20260921`; its
+  independent AI reviews and validation are recorded in the latest closeout.
 
 ## License
 

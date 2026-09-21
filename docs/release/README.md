@@ -1,5 +1,9 @@
 # Release preparation tools
 
+The [stronger arithmetic/control study](STRONGER_ARITHMETIC_RESULTS_20260921.md)
+now supplies the next bounded scientific comparison. Its evidence and verifiers
+are separate from the historical release-consistency overlay described below.
+
 See the [25-commit handoff and evidence ledger](HANDOFF_20260920.md) for this batch.
 
 These checks are a fast, read-only overlay on frozen evidence, not a replacement

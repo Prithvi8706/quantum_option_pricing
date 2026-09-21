@@ -1,5 +1,43 @@
 # Journal reengineering: running record
 
+## 2026-09-21: stronger arithmetic and signed residual comparison
+
+Implemented the approved follow-up in `research/stronger_arithmetic`, preserving
+the frozen journal-sprint producers and earlier archives. Primary source freeze
+`9511bc0c` covers shared clean scratch, range-reduced exponentials, universal
+directed error/overflow certificates, actual gate/depth accounting and complete
+menu replay. Separate source commit `23f8d948` adds a signed degree-four control,
+strict shifted encoding, restored classical offset and an independent verifier.
+The primary acquisition was committed at `60e735e1` before residual acquisition.
+
+Completed 148 primary layout rows and 18 residual configurations, all feasible
+under their stated ideal-logical budgets. The best raw route lowers historical
+arithmetic CX projections about 18%; reflection still wins both cases at that
+stage. The comparable residual/control route changes the result: reflection
+remains lower-CX in D1; in D2, reflection uses 2.9346 times as many projected CX
+gates as residual arithmetic (3.2892 in the conservative ledger). D2 residual
+arithmetic allocates 5,162 total qubits versus reflection's 103. These are
+resource projections, not runtime or quantum-over-classical superiority.
+
+All 1,645 integrated tests passed (12 legacy warnings); 315 overlapping new tests
+passed in the separate pinned environment. Primary replay checked every
+certificate/finite diagnostic and both resource ledgers, with selected gate
+reconstruction. Residual replay and its exact reconstruction coverage are recorded
+in the [results closeout](../release/STRONGER_ARITHMETIC_RESULTS_20260921.md).
+See the [independent AI review record](../release/STRONGER_ARITHMETIC_REVIEW_20260921.md)
+for review scope, interface/reporting corrections and final dispositions.
+
+Decision: retain both routes for ideal-logical encoding analysis; keep candidate
+status standby, production unset and confirmation unadmitted. Updated the README,
+checklist and prepared human review packet to reflect the stronger comparator.
+Human novelty assessment, matched classical/hardware performance, fresh
+confirmation and the final integrated manuscript remain open. No external
+review request, publication submission, push, PR or merge is claimed for this
+development branch unless a subsequent entry records it.
+
+The prior 25-commit release branch was pushed and merged as PR #8 on 2026-09-20
+at `da3080d1`. Its Macroscope check skipped because credits were exhausted.
+
 ## 2026-09-20: release-readiness tooling and next-study preparation
 
 User requested25 meaningful commits addressing leftover work without degrading

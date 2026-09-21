@@ -1,5 +1,12 @@
 # Project checklist — 17 September 2026
 
+Update — 21 September 2026: the [stronger arithmetic/control study](docs/release/STRONGER_ARITHMETIC_RESULTS_20260921.md)
+implements all three proposed changes and acquires 166 new logical comparison
+rows. Reflection still wins D1's CX comparison; signed-residual arithmetic wins
+D2's with a large qubit tradeoff. This does not close novelty, physical delivery,
+quantum-over-classical advantage, confirmation or submission gates. PR #8 merged
+the prior release tools; this subsequent research is on its own development branch.
+
 Snapshot after [PR #6](https://github.com/Prithvi8706/quantum_option_pricing/pull/6)
 merged into `main` at `b074488c`. This checklist is a subsequent documentation
 addition, not a file included in that merge.
@@ -160,6 +167,10 @@ Evidence: [integration handoff](docs/journal_sprint/STUDY_MERGE_CLOSEOUT.md),
 - [x] Complete separate mathematics and implementation/evidence reviews, fix
   verifier omissions, pass1,271 integrated tests and re-emit/verify the evidence
   from a clean checkout. Scientific admission remains a separate open gate.
+- [x] Implement shared scratch, range-reduced exponential certificates and a
+  comparable signed residual/control oracle; acquire complete frozen D1/D2 menus.
+  The strengthened comparison reverses D2's logical-CX ordering. See the
+  [new results, tradeoffs and verification scope](docs/release/STRONGER_ARITHMETIC_RESULTS_20260921.md).
 - [ ] If quantum-over-classical advantage remains the target, demonstrate it under
   matched task, accuracy, confidence and resource assumptions. It is not established.
 
@@ -196,8 +207,9 @@ Evidence: [integration handoff](docs/journal_sprint/STUDY_MERGE_CLOSEOUT.md),
   exporter, with regression tests. See [release preparation](docs/release/README.md).
   This does not complete legal/license clearance, human novelty review or submission.
 - [x] Prepare a [stronger arithmetic baseline design](docs/release/STRONGER_BASELINE_DESIGN.md)
-  and [human review packet](docs/release/HUMAN_REVIEW_PACKET.md). Neither study
-  acquisition nor actual human review is claimed as completed.
+  and [human review packet](docs/release/HUMAN_REVIEW_PACKET.md). The stronger
+  study has now been acquired; the updated packet has not been sent or reviewed
+  by an independent human expert.
 - [ ] Update the integrated quantum-centered manuscript; the earlier reliability
   draft is not a completed account of the new study.
 - [ ] Generate final tables/figures from frozen analysis and trace each claim to
@@ -221,7 +233,9 @@ Evidence: [integration handoff](docs/journal_sprint/STUDY_MERGE_CLOSEOUT.md),
 - [ ] Keep future commits tied to real implementation, tests, experiments or
   documentation; preserve genuine dates and authorship rather than padding activity.
 
-**Next research action:** review the standby candidate's precise novelty and
-execution/comparison gaps, choose a bounded follow-up with a predeclared success
-criterion, and only then consider unblocking confirmation. A merge or a green
-test suite does not itself establish journal readiness.
+**Next research action:** obtain independent expert assessment of the strengthened
+encoding-choice result and decide the paper's scope. The proposed stronger
+comparator is now implemented; another open-ended optimization search is not a
+substitute for that assessment. Physical/classical-comparison gaps still govern
+any advantage or confirmation claim. A merge or a green test suite does not
+itself establish journal readiness.

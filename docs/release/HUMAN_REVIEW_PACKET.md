@@ -12,7 +12,11 @@ and no human or collaborator is credited with an AI agent's work.
    and [complete results](../journal_sprint/MATCHED_ARITHMETIC_RESULTS_20260917.md).
 5. [Claim register](claims.json), frozen archives and generated all-row resource table.
 6. [Stronger-baseline proposal](STRONGER_BASELINE_DESIGN.md), including known
-   weaknesses of the current arithmetic baseline and compilation differences.
+  weaknesses of the current arithmetic baseline and compilation differences.
+7. [Completed stronger arithmetic/control results](STRONGER_ARITHMETIC_RESULTS_20260921.md)
+   and [signed residual derivation](SIGNED_RESIDUAL_METHOD_20260921.md). These
+   supersede the proposal-only status: D2's logical-CX ordering reverses after a
+   comparable control is added, with a much larger arithmetic qubit allocation.
 
 ## Questions requiring written assessment
 
@@ -26,6 +30,9 @@ and no human or collaborator is credited with an AI agent's work.
   reproducible result? Which nearest comparator would undermine this claim?
 - What is the narrowest supportable paper contribution? Is additional evidence
   essential before drafting, and which experiment should be prioritized?
+- Does the D1/D2 reversal against the strengthened comparator add a substantive
+  encoding-choice result, given that range reduction and classical controls are
+  established techniques? What nearest prior implementation could remove it?
 
 Request references and reasons, not only an approval score. Explicitly disclose
 that no matched quantum-over-classical advantage, physical execution, new
