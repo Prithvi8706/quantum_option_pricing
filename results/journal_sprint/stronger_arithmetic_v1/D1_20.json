@@ -1,0 +1,587 @@
+{
+  "case": "D1",
+  "arm": "range_reduced",
+  "spec": {
+    "fraction_bits": 24,
+    "width": 40,
+    "degree": 8,
+    "reductions": 2
+  },
+  "plan": {
+    "schema": "reduced_raw_arithmetic_plan_v1",
+    "affine_rows": [
+      [
+        -12966085,
+        [
+          15767,
+          31535,
+          63071,
+          126143,
+          252287,
+          504575,
+          1009151,
+          2018302,
+          4036604,
+          8073209,
+          9745,
+          19490,
+          38980,
+          77961,
+          155922,
+          311844,
+          623689,
+          1247379,
+          2494758,
+          4989517
+        ]
+      ],
+      [
+        -9801519,
+        [
+          25513,
+          51026,
+          102052,
+          204105,
+          408210,
+          816420,
+          1632840,
+          3265681,
+          6531363,
+          13062726,
+          -6023,
+          -12046,
+          -24092,
+          -48183,
+          -96366,
+          -192731,
+          -385462,
+          -770923,
+          -1541846,
+          -3083692
+        ]
+      ]
+    ],
+    "exp_budget": {
+      "coefficients": [
+        16777216,
+        16777216,
+        8388608,
+        2796202,
+        699050,
+        139810,
+        23301,
+        3328,
+        416
+      ],
+      "reductions": 2,
+      "spot": 100,
+      "domain_upper": "0.9724022626578407823332125802448013284624922021874265590014540211297095612905902",
+      "reduced_domain_upper": "0.24310061036794377712627189506120033211562305054685663975036350528242739032264755",
+      "shift_error_upper": "5.7005744384028413619221472846093163912756978729897497767331262736272716480799015E-8",
+      "shift_rounding_upper": "4.470348358154296875E-8",
+      "horner_error_upper": "7.9474869558600230145881323956692632971743519268701296652922709451635431281226644E-8",
+      "remainder_upper": "1.0420502546230806568322698875510539404775995767914196686364640915689121690995045E-11",
+      "input_error_upper": "0.00019426158042498153795472148333245113685732629290132559225196846922382697484857041",
+      "total_error_upper": "0.00033281988734100956206297860611968350269125566494412329897574713604630092930882999",
+      "spot_rounding_error_upper": "0",
+      "squaring_stages": [
+        {
+          "stage": 1,
+          "exact_magnitude_upper": "1.6261270284122464006205345482469765905460444986290340917265039253112325924928057",
+          "error_upper": "4.0771054013280033722346288114340871791477170941304632856704445698079624383022071E-7",
+          "product_integer_bounds": [
+            147869928991684,
+            457714018639504
+          ],
+          "output_integer_bounds": [
+            8813734,
+            27281881
+          ],
+          "approximate_magnitude_upper": "1.626126825809478759765625"
+        },
+        {
+          "stage": 2,
+          "exact_magnitude_upper": "2.6442891125328428126594814962489435739063724216646036398021859419434764132746465",
+          "error_upper": "0.0000013855830691602802410825712278723236583392937204279770672377866682247395446025958",
+          "product_integer_bounds": [
+            77681907022756,
+            744301030898161
+          ],
+          "output_integer_bounds": [
+            4630202,
+            44363798
+          ],
+          "approximate_magnitude_upper": "2.644288420677185058593750"
+        }
+      ],
+      "horner_stages": [
+        {
+          "product_integer_bounds": [
+            -1696677216,
+            1696676800
+          ],
+          "multiplied_integer_bounds": [
+            -102,
+            101
+          ],
+          "output_integer_bounds": [
+            3226,
+            3429
+          ]
+        },
+        {
+          "product_integer_bounds": [
+            -13985351379,
+            13985347950
+          ],
+          "multiplied_integer_bounds": [
+            -834,
+            833
+          ],
+          "output_integer_bounds": [
+            22467,
+            24134
+          ]
+        },
+        {
+          "product_integer_bounds": [
+            -98431749834,
+            98431725700
+          ],
+          "multiplied_integer_bounds": [
+            -5867,
+            5866
+          ],
+          "output_integer_bounds": [
+            133943,
+            145676
+          ]
+        },
+        {
+          "product_integer_bounds": [
+            -594146995476,
+            594146849800
+          ],
+          "multiplied_integer_bounds": [
+            -35414,
+            35413
+          ],
+          "output_integer_bounds": [
+            663636,
+            734463
+          ]
+        },
+        {
+          "product_integer_bounds": [
+            -2995544803113,
+            2995544068650
+          ],
+          "multiplied_integer_bounds": [
+            -178549,
+            178548
+          ],
+          "output_integer_bounds": [
+            2617653,
+            2974750
+          ]
+        },
+        {
+          "product_integer_bounds": [
+            -12132669587250,
+            12132666612500
+          ],
+          "multiplied_integer_bounds": [
+            -723164,
+            723163
+          ],
+          "output_integer_bounds": [
+            7665444,
+            9111771
+          ]
+        },
+        {
+          "product_integer_bounds": [
+            -37162822723821,
+            37162813612050
+          ],
+          "multiplied_integer_bounds": [
+            -2215077,
+            2215076
+          ],
+          "output_integer_bounds": [
+            14562139,
+            18992292
+          ]
+        },
+        {
+          "product_integer_bounds": [
+            -77461031528892,
+            77461012536600
+          ],
+          "multiplied_integer_bounds": [
+            -4617038,
+            4617036
+          ],
+          "output_integer_bounds": [
+            12160178,
+            21394252
+          ]
+        }
+      ],
+      "output_integer_bounds": [
+        463020200,
+        4436379800
+      ],
+      "output_nonnegative": true,
+      "spot_prefix_integer_bounds": [
+        0,
+        4436379800
+      ],
+      "intermediate_magnitude_upper": "264.428842067718505859375000",
+      "intermediate_integer_magnitude_upper": 4436379800,
+      "product_integer_magnitude_upper": 744301030898161,
+      "product_width": 80,
+      "overflow_safe": true,
+      "scope": "scalar range-reduced exponential only; not application admission"
+    },
+    "reductions": 2,
+    "spot": 100,
+    "normal_bits": 10,
+    "normal_qubits": 20,
+    "fraction_bits": 24,
+    "width": 40,
+    "degree": 8,
+    "strike_sum": 3187671040,
+    "selector_bits": 33,
+    "discount_lower": "0.97044553354850817693252835195919433348673681552894362053211350044158042970360191",
+    "discount_upper": "0.97044553354850817693252835195919433348673681552894362053211350044158042970360193",
+    "arithmetic_price_error_upper": "0.00032298357314620040686661047891049288252526467421619348883554850267639810673479793",
+    "sensitivity_upper": "248.43405658841809329472725810155374937260462477540956685622105611304459000412210",
+    "overflow_safe": true,
+    "payoff_upper_integer": 4921817395,
+    "sum_integer_bounds": [
+      926040400,
+      8872759600
+    ],
+    "poststrike_integer_bounds": [
+      -2261630640,
+      5685088560
+    ],
+    "affine_prefix_magnitude_upper": 42062819,
+    "log_quantization_error_upper": "7.346457673794500964342228411529593004345719256360681098230648547806452951E-7",
+    "application_admitted": false,
+    "missing": [
+      "Gaussian state preparation",
+      "full six-component composition",
+      "production circuit verification/resources",
+      "statistical design and human review"
+    ]
+  },
+  "budget": {
+    "components": {
+      "representation": "0.098699438256274282337034818903728313719146034533110078176430717423403741186601340",
+      "arithmetic": "0.00032298357314620040686661047891049288252526467421619348883554850267639810673479793",
+      "preparation": "5.1462189094883833413844131481099140336632390050274553112888450469169428724788563E-11",
+      "aggregation": "0E-77",
+      "decoding": "8.8261507112157066961347332104123264206167442855889350588050865593830206280799936E-13"
+    },
+    "deterministic_upper": "0.099022421881765286909906833466096411403811672186020336144099712544849098418443870",
+    "sensitivity_upper": "248.43405658841809329472725810155374937260462477540956685622105611304459000412210",
+    "beta_upper": 124.21702829420906,
+    "schedule": {
+      "status": "ideal_plan",
+      "M": 1024,
+      "a_calls": 34799,
+      "phase_qubits": 10,
+      "repetitions": 17,
+      "statistical_upper_rational": "10703436628065074404360558892817099481438228566834927121178627969201325054346314688441617451536389303285669456729315891039108026907757194459258506066852952871873392585482947981783384557349076260238997085699091622815080679907254943393762905886313839987471135775025295050870770044028785739222922908957963759390824910341149895676124105667/14000122511226373462171103881045246186820545589653446529840513068943376632341105127263990097901879318473390867078915091496495738796710647997760589565464949969205677577912634018182540275794296196789401722766883638954838319581901641650070394827347353139401775479200296103954315185546875000000000000000000000000000000000000000000000000000",
+      "fixed_schedule_margin_rational": "1025616632479345352222421559722569285236170579660099149286814556622232672062491351372126388085660040605089447360343899443753075790682844091325318973930538837467538800767175294963646873029489287819736161821030545983096599748321847643746086638578910903134496518399934478021081487085124613606333636729284542977116769731974396948535906453605763571/7516258540713833359088398040663500833582868691054823602418711465871549488964457804762094428619551236222747802541127921142287112091903828190668701677668851394001824036831906881663884980342415323568457574836227982643562775446482993046970477735158056020736694335937500000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "decoder_scale": 248.43405658841812,
+    "decoder_bridge_upper": "7.7875947725541272990850257066279890102284866581201013566330672977773590087890626E-14",
+    "probability_decoding": "ideal sin-squared AE label; one binary64 scale multiplication",
+    "physical_execution_error": null,
+    "confirmation_admitted": false
+  },
+  "components": {
+    "retained": {
+      "schema": "stronger_arithmetic_components_v1",
+      "reuse": false,
+      "reduced": true,
+      "x": 888,
+      "cx": 2109173,
+      "ccx": 2087682,
+      "qubits": 2007,
+      "logical_depth": 1326140,
+      "total": {
+        "x": 888,
+        "cx": 2109173,
+        "ccx": 2087682
+      },
+      "native": {
+        "u": 18790026,
+        "cx": 14635265
+      },
+      "compiler_counts": {
+        "u": 18790026,
+        "cx": 14635265,
+        "controlled_u": 244457542,
+        "controlled_cx": 125391642
+      },
+      "A_num_qubits_excluding_loader_ancillas": 2007,
+      "workspace_qubits": 1953,
+      "retained_workspace_qubits": 1953,
+      "reused_workspace_qubits": 1151,
+      "conversion_scratch_per_row": 802,
+      "conversion_forward": {
+        "x": 436,
+        "cx": 1054026,
+        "ccx": 1043576
+      },
+      "aggregation": {
+        "qubits": 121,
+        "x": 0,
+        "cx": 198,
+        "ccx": 78,
+        "logical_depth": 198
+      },
+      "postaggregation_payoff": {
+        "qubits": 121,
+        "x": 8,
+        "cx": 160,
+        "ccx": 119,
+        "logical_depth": 241
+      },
+      "comparator": {
+        "qubits": 136,
+        "x": 0,
+        "cx": 405,
+        "ccx": 136,
+        "logical_depth": 344
+      },
+      "emitted_gate_applications": 4197743,
+      "row_checks": [
+        {
+          "row": 0,
+          "packed_input": 0,
+          "log_integer": -12966085,
+          "price_integer": 774604400,
+          "clean_workspace": true,
+          "inverse_checked": true
+        },
+        {
+          "row": 0,
+          "packed_input": 1048575,
+          "log_integer": 13133844,
+          "price_integer": 3670304000,
+          "clean_workspace": true,
+          "inverse_checked": true
+        },
+        {
+          "row": 1,
+          "packed_input": 0,
+          "log_integer": -9801519,
+          "price_integer": 935401400,
+          "clean_workspace": true,
+          "inverse_checked": true
+        },
+        {
+          "row": 1,
+          "packed_input": 1048575,
+          "log_integer": 10137053,
+          "price_integer": 3069920900,
+          "clean_workspace": true,
+          "inverse_checked": true
+        }
+      ],
+      "semantic_checks": [
+        {
+          "packed_input": 0,
+          "sum_integer": 1710005800,
+          "payoff_integer": 0,
+          "selectors": [
+            0,
+            8589934591
+          ],
+          "both_initial_flags_checked": true,
+          "clean_workspace": true
+        },
+        {
+          "packed_input": 1048575,
+          "sum_integer": 6740224900,
+          "payoff_integer": 3552553860,
+          "selectors": [
+            0,
+            3552553859,
+            3552553860,
+            8589934591
+          ],
+          "both_initial_flags_checked": true,
+          "clean_workspace": true
+        }
+      ],
+      "aggregation_included": true,
+      "aggregation_zero_initialized": true,
+      "loading_included": false,
+      "ae_included": false,
+      "native_basis": [
+        "u",
+        "cx"
+      ],
+      "qualification": "Actual emitted/remapped X/CX/CCX dependency depth; exact standard X/CCX decomposition to U/CX, no global optimizer, connectivity or physical synthesis. Includes all arithmetic inverses; excludes loader and selector preparation.",
+      "poststrike_bounds": {
+        "sum_integer_bounds": [
+          926040400,
+          8872759600
+        ],
+        "poststrike_integer_bounds": [
+          -2261630640,
+          5685088560
+        ],
+        "payoff_upper_integer": 4921817395,
+        "universal_signed_range_safe": true,
+        "universal_selector_safe": true
+      }
+    },
+    "reused": {
+      "schema": "stronger_arithmetic_components_v1",
+      "reuse": true,
+      "reduced": true,
+      "x": 888,
+      "cx": 2109173,
+      "ccx": 2087682,
+      "qubits": 1205,
+      "logical_depth": 2643022,
+      "total": {
+        "x": 888,
+        "cx": 2109173,
+        "ccx": 2087682
+      },
+      "native": {
+        "u": 18790026,
+        "cx": 14635265
+      },
+      "compiler_counts": {
+        "u": 18790026,
+        "cx": 14635265,
+        "controlled_u": 244457542,
+        "controlled_cx": 125391642
+      },
+      "A_num_qubits_excluding_loader_ancillas": 1205,
+      "workspace_qubits": 1151,
+      "retained_workspace_qubits": 1953,
+      "reused_workspace_qubits": 1151,
+      "conversion_scratch_per_row": 802,
+      "conversion_forward": {
+        "x": 436,
+        "cx": 1054026,
+        "ccx": 1043576
+      },
+      "aggregation": {
+        "qubits": 121,
+        "x": 0,
+        "cx": 198,
+        "ccx": 78,
+        "logical_depth": 198
+      },
+      "postaggregation_payoff": {
+        "qubits": 121,
+        "x": 8,
+        "cx": 160,
+        "ccx": 119,
+        "logical_depth": 241
+      },
+      "comparator": {
+        "qubits": 136,
+        "x": 0,
+        "cx": 405,
+        "ccx": 136,
+        "logical_depth": 344
+      },
+      "emitted_gate_applications": 4197743,
+      "row_checks": [
+        {
+          "row": 0,
+          "packed_input": 0,
+          "log_integer": -12966085,
+          "price_integer": 774604400,
+          "clean_workspace": true,
+          "inverse_checked": true
+        },
+        {
+          "row": 0,
+          "packed_input": 1048575,
+          "log_integer": 13133844,
+          "price_integer": 3670304000,
+          "clean_workspace": true,
+          "inverse_checked": true
+        },
+        {
+          "row": 1,
+          "packed_input": 0,
+          "log_integer": -9801519,
+          "price_integer": 935401400,
+          "clean_workspace": true,
+          "inverse_checked": true
+        },
+        {
+          "row": 1,
+          "packed_input": 1048575,
+          "log_integer": 10137053,
+          "price_integer": 3069920900,
+          "clean_workspace": true,
+          "inverse_checked": true
+        }
+      ],
+      "semantic_checks": [
+        {
+          "packed_input": 0,
+          "sum_integer": 1710005800,
+          "payoff_integer": 0,
+          "selectors": [
+            0,
+            8589934591
+          ],
+          "both_initial_flags_checked": true,
+          "clean_workspace": true
+        },
+        {
+          "packed_input": 1048575,
+          "sum_integer": 6740224900,
+          "payoff_integer": 3552553860,
+          "selectors": [
+            0,
+            3552553859,
+            3552553860,
+            8589934591
+          ],
+          "both_initial_flags_checked": true,
+          "clean_workspace": true
+        }
+      ],
+      "aggregation_included": true,
+      "aggregation_zero_initialized": true,
+      "loading_included": false,
+      "ae_included": false,
+      "native_basis": [
+        "u",
+        "cx"
+      ],
+      "qualification": "Actual emitted/remapped X/CX/CCX dependency depth; exact standard X/CCX decomposition to U/CX, no global optimizer, connectivity or physical synthesis. Includes all arithmetic inverses; excludes loader and selector preparation.",
+      "poststrike_bounds": {
+        "sum_integer_bounds": [
+          926040400,
+          8872759600
+        ],
+        "poststrike_integer_bounds": [
+          -2261630640,
+          5685088560
+        ],
+        "payoff_upper_integer": 4921817395,
+        "universal_signed_range_safe": true,
+        "universal_selector_safe": true
+      }
+    }
+  },
+  "status": "ideal_plan"
+}

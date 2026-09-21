@@ -1,0 +1,855 @@
+{
+  "case": "D2",
+  "arm": "range_reduced",
+  "spec": {
+    "fraction_bits": 24,
+    "width": 40,
+    "degree": 12,
+    "reductions": 3
+  },
+  "plan": {
+    "schema": "reduced_raw_arithmetic_plan_v1",
+    "affine_rows": [
+      [
+        -15767669,
+        [
+          16490,
+          32981,
+          65962,
+          131924,
+          263848,
+          527697,
+          1055395,
+          2110791,
+          4221582,
+          8443164,
+          10795,
+          21591,
+          43182,
+          86364,
+          172729,
+          345459,
+          690918,
+          1381837,
+          2763674,
+          5527348,
+          10191,
+          20383,
+          40766,
+          81533,
+          163067,
+          326135,
+          652270,
+          1304540,
+          2609081,
+          5218162,
+          -6673,
+          -13345,
+          -26689,
+          -53377,
+          -106753,
+          -213506,
+          -427012,
+          -854023,
+          -1708045,
+          -3416090
+        ]
+      ],
+      [
+        -21491007,
+        [
+          26682,
+          53364,
+          106729,
+          213458,
+          426916,
+          853832,
+          1707665,
+          3415331,
+          6830663,
+          13661326,
+          17467,
+          34935,
+          69870,
+          139741,
+          279482,
+          558964,
+          1117929,
+          2235859,
+          4471718,
+          8943437,
+          -6299,
+          -12598,
+          -25196,
+          -50391,
+          -100782,
+          -201563,
+          -403126,
+          -806251,
+          -1612501,
+          -3225002,
+          4123,
+          8247,
+          16494,
+          32988,
+          65976,
+          131953,
+          263907,
+          527814,
+          1055629,
+          2111259
+        ]
+      ],
+      [
+        -11549274,
+        [
+          16490,
+          32981,
+          65962,
+          131924,
+          263848,
+          527697,
+          1055395,
+          2110791,
+          4221582,
+          8443164,
+          -10796,
+          -21592,
+          -43183,
+          -86365,
+          -172730,
+          -345460,
+          -690919,
+          -1381838,
+          -2763675,
+          -5527349,
+          10191,
+          20383,
+          40766,
+          81533,
+          163067,
+          326135,
+          652270,
+          1304540,
+          2609081,
+          5218162,
+          6672,
+          13344,
+          26688,
+          53376,
+          106752,
+          213505,
+          427011,
+          854022,
+          1708044,
+          3416089
+        ]
+      ],
+      [
+        596796,
+        [
+          26682,
+          53364,
+          106729,
+          213458,
+          426916,
+          853832,
+          1707665,
+          3415331,
+          6830663,
+          13661326,
+          -17468,
+          -34936,
+          -69871,
+          -139742,
+          -279483,
+          -558965,
+          -1117930,
+          -2235860,
+          -4471719,
+          -8943438,
+          -6299,
+          -12598,
+          -25196,
+          -50391,
+          -100782,
+          -201563,
+          -403126,
+          -806251,
+          -1612501,
+          -3225002,
+          -4124,
+          -8248,
+          -16495,
+          -32989,
+          -65977,
+          -131954,
+          -263908,
+          -527815,
+          -1055630,
+          -2111260
+        ]
+      ]
+    ],
+    "exp_budget": {
+      "coefficients": [
+        16777216,
+        16777216,
+        8388608,
+        2796202,
+        699050,
+        139810,
+        23301,
+        3328,
+        416,
+        46,
+        4,
+        0,
+        0
+      ],
+      "reductions": 3,
+      "spot": 100,
+      "domain_upper": "1.6666661450834851872411252610151066733124025631695985794067382812500000000000002",
+      "reduced_domain_upper": "0.20833332028949982687193753262688833416405032039619982242584228515625000000000003",
+      "shift_error_upper": "6.4234177648825142540179184244301131930451703812949762943266272442901041344940083E-8",
+      "shift_rounding_upper": "5.2154064178466796875E-8",
+      "horner_error_upper": "7.5731577519845281068843282457735034493086132210679012602544126242374259754304897E-8",
+      "remainder_upper": "2.7546172045598379284878881826124285830215365193764634393244049522496067579818433E-19",
+      "input_error_upper": "0.00066302475169987050651193215373004243360092770800314191668430670499476893643525455",
+      "total_error_upper": "0.0012609778443130429574544784404406912213938234214376619696464792991349013899676229",
+      "spot_rounding_error_upper": "0",
+      "squaring_stages": [
+        {
+          "stage": 1,
+          "exact_magnitude_upper": "1.5168965985912620324573048697309012875406559649755123081439865399876203810918246",
+          "error_upper": "4.0437490825757248610001174787989789815067299565369412776002856430687958979188456E-7",
+          "product_integer_bounds": [
+            166183449958656,
+            426968412809796
+          ],
+          "output_integer_bounds": [
+            9905305,
+            25449300
+          ],
+          "approximate_magnitude_upper": "1.516896486282348632812500"
+        },
+        {
+          "stage": 2,
+          "exact_magnitude_upper": "2.3009752908177403354716934653128177143387853607245292006258049370414510359240773",
+          "error_upper": "0.0000012863946540775877373894020271526640527985823770379401553321525786437084257522231",
+          "product_integer_bounds": [
+            98115067143025,
+            647666870490000
+          ],
+          "output_integer_bounds": [
+            5848113,
+            38603953
+          ],
+          "approximate_magnitude_upper": "2.300974905490875244140625"
+        },
+        {
+          "stage": 3,
+          "exact_magnitude_upper": "5.2944872889537847117820535725358891318425712075352360320683427192458230550798015",
+          "error_upper": "0.0000059795309261317245094254628671064878779289571343452005296217259414013245353236834",
+          "product_integer_bounds": [
+            34200425660769,
+            1490265187226209
+          ],
+          "output_integer_bounds": [
+            2038504,
+            88826727
+          ],
+          "approximate_magnitude_upper": "5.294485509395599365234375"
+        }
+      ],
+      "horner_stages": [
+        {
+          "product_integer_bounds": [
+            0,
+            0
+          ],
+          "multiplied_integer_bounds": [
+            0,
+            0
+          ],
+          "output_integer_bounds": [
+            0,
+            0
+          ]
+        },
+        {
+          "product_integer_bounds": [
+            0,
+            0
+          ],
+          "multiplied_integer_bounds": [
+            0,
+            0
+          ],
+          "output_integer_bounds": [
+            4,
+            4
+          ]
+        },
+        {
+          "product_integer_bounds": [
+            -13981012,
+            13981008
+          ],
+          "multiplied_integer_bounds": [
+            -1,
+            0
+          ],
+          "output_integer_bounds": [
+            45,
+            46
+          ]
+        },
+        {
+          "product_integer_bounds": [
+            -160781638,
+            160781592
+          ],
+          "multiplied_integer_bounds": [
+            -10,
+            9
+          ],
+          "output_integer_bounds": [
+            406,
+            425
+          ]
+        },
+        {
+          "product_integer_bounds": [
+            -1485482525,
+            1485482100
+          ],
+          "multiplied_integer_bounds": [
+            -89,
+            88
+          ],
+          "output_integer_bounds": [
+            3239,
+            3416
+          ]
+        },
+        {
+          "product_integer_bounds": [
+            -11939784248,
+            11939780832
+          ],
+          "multiplied_integer_bounds": [
+            -712,
+            711
+          ],
+          "output_integer_bounds": [
+            22589,
+            24012
+          ]
+        },
+        {
+          "product_integer_bounds": [
+            -83928015036,
+            83927991024
+          ],
+          "multiplied_integer_bounds": [
+            -5003,
+            5002
+          ],
+          "output_integer_bounds": [
+            134807,
+            144812
+          ]
+        },
+        {
+          "product_integer_bounds": [
+            -506154577436,
+            506154432624
+          ],
+          "multiplied_integer_bounds": [
+            -30170,
+            30169
+          ],
+          "output_integer_bounds": [
+            668880,
+            729219
+          ]
+        },
+        {
+          "product_integer_bounds": [
+            -2548804897407,
+            2548804168188
+          ],
+          "multiplied_integer_bounds": [
+            -151921,
+            151920
+          ],
+          "output_integer_bounds": [
+            2644281,
+            2948122
+          ]
+        },
+        {
+          "product_integer_bounds": [
+            -10304432264866,
+            10304429316744
+          ],
+          "multiplied_integer_bounds": [
+            -614193,
+            614191
+          ],
+          "output_integer_bounds": [
+            7774415,
+            9002799
+          ]
+        },
+        {
+          "product_integer_bounds": [
+            -31467060213147,
+            31467051210348
+          ],
+          "multiplied_integer_bounds": [
+            -1875583,
+            1875582
+          ],
+          "output_integer_bounds": [
+            14901633,
+            18652798
+          ]
+        },
+        {
+          "product_integer_bounds": [
+            -65196248167894,
+            65196229515096
+          ],
+          "multiplied_integer_bounds": [
+            -3886000,
+            3885998
+          ],
+          "output_integer_bounds": [
+            12891216,
+            20663214
+          ]
+        }
+      ],
+      "output_integer_bounds": [
+        203850400,
+        8882672700
+      ],
+      "output_nonnegative": true,
+      "spot_prefix_integer_bounds": [
+        0,
+        8882672700
+      ],
+      "intermediate_magnitude_upper": "529.448550939559936523437500",
+      "intermediate_integer_magnitude_upper": 8882672700,
+      "product_integer_magnitude_upper": 1490265187226209,
+      "product_width": 80,
+      "overflow_safe": true,
+      "scope": "scalar range-reduced exponential only; not application admission"
+    },
+    "reductions": 3,
+    "spot": 100,
+    "normal_bits": 10,
+    "normal_qubits": 40,
+    "fraction_bits": 24,
+    "width": 40,
+    "degree": 12,
+    "strike_sum": 7046430720,
+    "selector_bits": 35,
+    "discount_lower": "0.97044553354850817693252835195919433348673681552894362053211350044158042970360191",
+    "discount_upper": "0.97044553354850817693252835195919433348673681552894362053211350044158042970360193",
+    "arithmetic_price_error_upper": "0.0012237103169172186502352644099877763994559775119494816609454998420744768714536052",
+    "sensitivity_upper": "496.86811317683618658945451620310749874520924955081913371244211222608918000824423",
+    "overflow_safe": true,
+    "payoff_upper_integer": 23575663699,
+    "sum_integer_bounds": [
+      815401600,
+      35530690800
+    ],
+    "poststrike_integer_bounds": [
+      -6231029120,
+      28484260080
+    ],
+    "affine_prefix_magnitude_upper": 77318474,
+    "log_quantization_error_upper": "0.0000012522926499099920930734956582019638163003895916898400824793148547806452951",
+    "application_admitted": false,
+    "missing": [
+      "Gaussian state preparation",
+      "full six-component composition",
+      "production circuit verification/resources",
+      "statistical design and human review"
+    ]
+  },
+  "budget": {
+    "components": {
+      "representation": "0.17394490443391997571339736842480538704162582177258005979786505316784957751126837",
+      "arithmetic": "0.0012237103169172186502352644099877763994559775119494816609454998420744768714536052",
+      "preparation": "2.0584875637953533365537652592439656134652956020109821245155380187667771489915427E-10",
+      "aggregation": "0E-76",
+      "decoding": "1.7652301422431413392269466420824652841233488571177870117610173118766041256159990E-12"
+    },
+    "deterministic_upper": "0.17516861495845118088541110782939663600756082591518245051702655247323887357127631",
+    "sensitivity_upper": "496.86811317683618658945451620310749874520924955081913371244211222608918000824423",
+    "beta_upper": 248.43405658841812,
+    "schedule": {
+      "status": "ideal_plan",
+      "M": 2048,
+      "a_calls": 69615,
+      "phase_qubits": 11,
+      "repetitions": 17,
+      "statistical_upper_rational": "21374135960591349924522303596441968328683143574409127532422934630050483090503551585805605265408322734249376751616228127551497042790850943049485156235096983163810747498942771415134570407309326534037790135074788297227119561177989762293477478659456953065451044526857630919542154897472785710321827342433204453342316176830178826340186605667/28000245022452746924342207762090492373641091179306893059681026137886753264682210254527980195803758636946781734157830182992991477593421295995521179130929899938411355155825268036365080551588592393578803445533767277909676639163803283300140789654694706278803550958400592207908630371093750000000000000000000000000000000000000000000000000000",
+      "fixed_schedule_margin_rational": "462070009280024678117978477711581866229936477417448521283307478302884685138897403924357758851013814598601955894209114639604055599553979949518767778080502579147049725633633623461585525104929447903561387635653604964254314688836718133419970294781245304666051945451210260300124349903566716095381398241010664612844656111169632105539077112911280223/7516258540713833359088398040663500833582868691054823602418711465871549488964457804762094428619551236222747802541127921142287112091903828190668701677668851394001824036831906881663884980342415323568457574836227982643562775446482993046970477735158056020736694335937500000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "decoder_scale": 496.86811317683623,
+    "decoder_bridge_upper": "1.5575189545108254598170051413255978020456973316240202713266134596554718017578126E-13",
+    "probability_decoding": "ideal sin-squared AE label; one binary64 scale multiplication",
+    "physical_execution_error": null,
+    "confirmation_admitted": false
+  },
+  "components": {
+    "retained": {
+      "schema": "stronger_arithmetic_components_v1",
+      "reuse": false,
+      "reduced": true,
+      "x": 1868,
+      "cx": 5502377,
+      "ccx": 5434674,
+      "qubits": 4277,
+      "logical_depth": 1729220,
+      "total": {
+        "x": 1868,
+        "cx": 5502377,
+        "ccx": 5434674
+      },
+      "native": {
+        "u": 48913934,
+        "cx": 38110421
+      },
+      "compiler_counts": {
+        "u": 48913934,
+        "cx": 38110421,
+        "controlled_u": 636477394,
+        "controlled_cx": 326490394
+      },
+      "A_num_qubits_excluding_loader_ancillas": 4277,
+      "workspace_qubits": 4201,
+      "retained_workspace_qubits": 4201,
+      "reused_workspace_qubits": 1435,
+      "conversion_scratch_per_row": 922,
+      "conversion_forward": {
+        "x": 928,
+        "cx": 2750300,
+        "ccx": 2716912
+      },
+      "aggregation": {
+        "qubits": 201,
+        "x": 0,
+        "cx": 514,
+        "ccx": 234,
+        "logical_depth": 592
+      },
+      "postaggregation_payoff": {
+        "qubits": 121,
+        "x": 6,
+        "cx": 160,
+        "ccx": 119,
+        "logical_depth": 241
+      },
+      "comparator": {
+        "qubits": 144,
+        "x": 0,
+        "cx": 429,
+        "ccx": 144,
+        "logical_depth": 364
+      },
+      "emitted_gate_applications": 10938919,
+      "row_checks": [
+        {
+          "row": 0,
+          "packed_input": 0,
+          "log_integer": -15767669,
+          "price_integer": 655478000,
+          "clean_workspace": true,
+          "inverse_checked": true
+        },
+        {
+          "row": 0,
+          "packed_input": 1099511627775,
+          "log_integer": 15746677,
+          "price_integer": 4288817900,
+          "clean_workspace": true,
+          "inverse_checked": true
+        },
+        {
+          "row": 1,
+          "packed_input": 0,
+          "log_integer": -21491007,
+          "price_integer": 466019600,
+          "clean_workspace": true,
+          "inverse_checked": true
+        },
+        {
+          "row": 1,
+          "packed_input": 1099511627775,
+          "log_integer": 21449042,
+          "price_integer": 6024886300,
+          "clean_workspace": true,
+          "inverse_checked": true
+        },
+        {
+          "row": 2,
+          "packed_input": 0,
+          "log_integer": -11549274,
+          "price_integer": 842859800,
+          "clean_workspace": true,
+          "inverse_checked": true
+        },
+        {
+          "row": 2,
+          "packed_input": 1099511627775,
+          "log_integer": 11528284,
+          "price_integer": 3335341900,
+          "clean_workspace": true,
+          "inverse_checked": true
+        },
+        {
+          "row": 3,
+          "packed_input": 0,
+          "log_integer": 596796,
+          "price_integer": 1738474600,
+          "clean_workspace": true,
+          "inverse_checked": true
+        },
+        {
+          "row": 3,
+          "packed_input": 1099511627775,
+          "log_integer": -638759,
+          "price_integer": 1615045500,
+          "clean_workspace": true,
+          "inverse_checked": true
+        }
+      ],
+      "semantic_checks": [
+        {
+          "packed_input": 0,
+          "sum_integer": 3702832000,
+          "payoff_integer": 0,
+          "selectors": [
+            0,
+            34359738367
+          ],
+          "both_initial_flags_checked": true,
+          "clean_workspace": true
+        },
+        {
+          "packed_input": 1099511627775,
+          "sum_integer": 15264091600,
+          "payoff_integer": 8217660880,
+          "selectors": [
+            0,
+            8217660879,
+            8217660880,
+            34359738367
+          ],
+          "both_initial_flags_checked": true,
+          "clean_workspace": true
+        }
+      ],
+      "aggregation_included": true,
+      "aggregation_zero_initialized": true,
+      "loading_included": false,
+      "ae_included": false,
+      "native_basis": [
+        "u",
+        "cx"
+      ],
+      "qualification": "Actual emitted/remapped X/CX/CCX dependency depth; exact standard X/CCX decomposition to U/CX, no global optimizer, connectivity or physical synthesis. Includes all arithmetic inverses; excludes loader and selector preparation.",
+      "poststrike_bounds": {
+        "sum_integer_bounds": [
+          815401600,
+          35530690800
+        ],
+        "poststrike_integer_bounds": [
+          -6231029120,
+          28484260080
+        ],
+        "payoff_upper_integer": 23575663699,
+        "universal_signed_range_safe": true,
+        "universal_selector_safe": true
+      }
+    },
+    "reused": {
+      "schema": "stronger_arithmetic_components_v1",
+      "reuse": true,
+      "reduced": true,
+      "x": 1868,
+      "cx": 5502377,
+      "ccx": 5434674,
+      "qubits": 1511,
+      "logical_depth": 6862562,
+      "total": {
+        "x": 1868,
+        "cx": 5502377,
+        "ccx": 5434674
+      },
+      "native": {
+        "u": 48913934,
+        "cx": 38110421
+      },
+      "compiler_counts": {
+        "u": 48913934,
+        "cx": 38110421,
+        "controlled_u": 636477394,
+        "controlled_cx": 326490394
+      },
+      "A_num_qubits_excluding_loader_ancillas": 1511,
+      "workspace_qubits": 1435,
+      "retained_workspace_qubits": 4201,
+      "reused_workspace_qubits": 1435,
+      "conversion_scratch_per_row": 922,
+      "conversion_forward": {
+        "x": 928,
+        "cx": 2750300,
+        "ccx": 2716912
+      },
+      "aggregation": {
+        "qubits": 201,
+        "x": 0,
+        "cx": 514,
+        "ccx": 234,
+        "logical_depth": 592
+      },
+      "postaggregation_payoff": {
+        "qubits": 121,
+        "x": 6,
+        "cx": 160,
+        "ccx": 119,
+        "logical_depth": 241
+      },
+      "comparator": {
+        "qubits": 144,
+        "x": 0,
+        "cx": 429,
+        "ccx": 144,
+        "logical_depth": 364
+      },
+      "emitted_gate_applications": 10938919,
+      "row_checks": [
+        {
+          "row": 0,
+          "packed_input": 0,
+          "log_integer": -15767669,
+          "price_integer": 655478000,
+          "clean_workspace": true,
+          "inverse_checked": true
+        },
+        {
+          "row": 0,
+          "packed_input": 1099511627775,
+          "log_integer": 15746677,
+          "price_integer": 4288817900,
+          "clean_workspace": true,
+          "inverse_checked": true
+        },
+        {
+          "row": 1,
+          "packed_input": 0,
+          "log_integer": -21491007,
+          "price_integer": 466019600,
+          "clean_workspace": true,
+          "inverse_checked": true
+        },
+        {
+          "row": 1,
+          "packed_input": 1099511627775,
+          "log_integer": 21449042,
+          "price_integer": 6024886300,
+          "clean_workspace": true,
+          "inverse_checked": true
+        },
+        {
+          "row": 2,
+          "packed_input": 0,
+          "log_integer": -11549274,
+          "price_integer": 842859800,
+          "clean_workspace": true,
+          "inverse_checked": true
+        },
+        {
+          "row": 2,
+          "packed_input": 1099511627775,
+          "log_integer": 11528284,
+          "price_integer": 3335341900,
+          "clean_workspace": true,
+          "inverse_checked": true
+        },
+        {
+          "row": 3,
+          "packed_input": 0,
+          "log_integer": 596796,
+          "price_integer": 1738474600,
+          "clean_workspace": true,
+          "inverse_checked": true
+        },
+        {
+          "row": 3,
+          "packed_input": 1099511627775,
+          "log_integer": -638759,
+          "price_integer": 1615045500,
+          "clean_workspace": true,
+          "inverse_checked": true
+        }
+      ],
+      "semantic_checks": [
+        {
+          "packed_input": 0,
+          "sum_integer": 3702832000,
+          "payoff_integer": 0,
+          "selectors": [
+            0,
+            34359738367
+          ],
+          "both_initial_flags_checked": true,
+          "clean_workspace": true
+        },
+        {
+          "packed_input": 1099511627775,
+          "sum_integer": 15264091600,
+          "payoff_integer": 8217660880,
+          "selectors": [
+            0,
+            8217660879,
+            8217660880,
+            34359738367
+          ],
+          "both_initial_flags_checked": true,
+          "clean_workspace": true
+        }
+      ],
+      "aggregation_included": true,
+      "aggregation_zero_initialized": true,
+      "loading_included": false,
+      "ae_included": false,
+      "native_basis": [
+        "u",
+        "cx"
+      ],
+      "qualification": "Actual emitted/remapped X/CX/CCX dependency depth; exact standard X/CCX decomposition to U/CX, no global optimizer, connectivity or physical synthesis. Includes all arithmetic inverses; excludes loader and selector preparation.",
+      "poststrike_bounds": {
+        "sum_integer_bounds": [
+          815401600,
+          35530690800
+        ],
+        "poststrike_integer_bounds": [
+          -6231029120,
+          28484260080
+        ],
+        "payoff_upper_integer": 23575663699,
+        "universal_signed_range_safe": true,
+        "universal_selector_safe": true
+      }
+    }
+  },
+  "status": "ideal_plan"
+}

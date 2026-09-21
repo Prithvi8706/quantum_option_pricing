@@ -1,0 +1,587 @@
+{
+  "case": "D1",
+  "arm": "range_reduced",
+  "spec": {
+    "fraction_bits": 20,
+    "width": 40,
+    "degree": 8,
+    "reductions": 2
+  },
+  "plan": {
+    "schema": "reduced_raw_arithmetic_plan_v1",
+    "affine_rows": [
+      [
+        -810381,
+        [
+          985,
+          1970,
+          3941,
+          7883,
+          15767,
+          31535,
+          63071,
+          126143,
+          252287,
+          504575,
+          609,
+          1218,
+          2436,
+          4872,
+          9745,
+          19490,
+          38980,
+          77961,
+          155922,
+          311844
+        ]
+      ],
+      [
+        -612595,
+        [
+          1594,
+          3189,
+          6378,
+          12756,
+          25513,
+          51026,
+          102052,
+          204105,
+          408210,
+          816420,
+          -377,
+          -753,
+          -1506,
+          -3012,
+          -6023,
+          -12046,
+          -24092,
+          -48183,
+          -96366,
+          -192731
+        ]
+      ]
+    ],
+    "exp_budget": {
+      "coefficients": [
+        1048576,
+        1048576,
+        524288,
+        174762,
+        43690,
+        8738,
+        1456,
+        208,
+        26
+      ],
+      "reductions": 2,
+      "spot": 100,
+      "domain_upper": "0.9724139451682167588957125802448013284624922021874265590014540211297095612905902",
+      "reduced_domain_upper": "0.24310420154779149441142814506120033211562305054685663975036350528242739032264755",
+      "shift_error_upper": "9.1209518563642303149175946862850581505839420806630119253883327551253818165248046E-7",
+      "shift_rounding_upper": "7.152557373046875E-7",
+      "horner_error_upper": "0.0000012715012590509857525439922973916002728031826148258224718213779208618767515669978",
+      "remainder_upper": "1.0421925477676465936110248195151084325507859225722898576806761314559170464515434E-11",
+      "input_error_upper": "0.0032834934390717657307810493944358991564195743748744444136705197420466338051152799",
+      "total_error_upper": "0.0055002423719626505615746343051609815864931546272151382209535744226108021202155918",
+      "spot_rounding_error_upper": "0",
+      "squaring_stages": [
+        {
+          "stage": 1,
+          "exact_magnitude_upper": "1.6261365270629294359045953037429680078825147527059053709194446528956094734323896",
+          "error_upper": "0.0000065227525835474901214192398777958153186847784337432646680640482409395278375864708",
+          "product_integer_bounds": [
+            577609120036,
+            1787951402449
+          ],
+          "output_integer_bounds": [
+            550850,
+            1705123
+          ],
+          "approximate_magnitude_upper": "1.62613201141357421875"
+        },
+        {
+          "stage": 2,
+          "exact_magnitude_upper": "2.6443200046482854376998955350414707625750517154549665740206608445564755118955192",
+          "error_upper": "0.000022167489328908848307935849107250824300735802523406938072830546805641683151003119",
+          "product_integer_bounds": [
+            303435722500,
+            2907444445129
+          ],
+          "output_integer_bounds": [
+            289378,
+            2772755
+          ],
+          "approximate_magnitude_upper": "2.64430522918701171875"
+        }
+      ],
+      "horner_stages": [
+        {
+          "product_integer_bounds": [
+            -6627738,
+            6627712
+          ],
+          "multiplied_integer_bounds": [
+            -7,
+            6
+          ],
+          "output_integer_bounds": [
+            201,
+            214
+          ]
+        },
+        {
+          "product_integer_bounds": [
+            -54551382,
+            54551168
+          ],
+          "multiplied_integer_bounds": [
+            -53,
+            52
+          ],
+          "output_integer_bounds": [
+            1403,
+            1508
+          ]
+        },
+        {
+          "product_integer_bounds": [
+            -384408804,
+            384407296
+          ],
+          "multiplied_integer_bounds": [
+            -367,
+            366
+          ],
+          "output_integer_bounds": [
+            8371,
+            9104
+          ]
+        },
+        {
+          "product_integer_bounds": [
+            -2320727952,
+            2320718848
+          ],
+          "multiplied_integer_bounds": [
+            -2214,
+            2213
+          ],
+          "output_integer_bounds": [
+            41476,
+            45903
+          ]
+        },
+        {
+          "product_integer_bounds": [
+            -11701271439,
+            11701225536
+          ],
+          "multiplied_integer_bounds": [
+            -11160,
+            11159
+          ],
+          "output_integer_bounds": [
+            163602,
+            185921
+          ]
+        },
+        {
+          "product_integer_bounds": [
+            -47393679873,
+            47393493952
+          ],
+          "multiplied_integer_bounds": [
+            -45199,
+            45197
+          ],
+          "output_integer_bounds": [
+            479089,
+            569485
+          ]
+        },
+        {
+          "product_integer_bounds": [
+            -145169129805,
+            145168560320
+          ],
+          "multiplied_integer_bounds": [
+            -138445,
+            138443
+          ],
+          "output_integer_bounds": [
+            910131,
+            1187019
+          ]
+        },
+        {
+          "product_integer_bounds": [
+            -302586574347,
+            302585387328
+          ],
+          "multiplied_integer_bounds": [
+            -288570,
+            288567
+          ],
+          "output_integer_bounds": [
+            760006,
+            1337143
+          ]
+        }
+      ],
+      "output_integer_bounds": [
+        28937800,
+        277275500
+      ],
+      "output_nonnegative": true,
+      "spot_prefix_integer_bounds": [
+        0,
+        277275500
+      ],
+      "intermediate_magnitude_upper": "264.43052291870117187500",
+      "intermediate_integer_magnitude_upper": 277275500,
+      "product_integer_magnitude_upper": 2907444445129,
+      "product_width": 80,
+      "overflow_safe": true,
+      "scope": "scalar range-reduced exponential only; not application admission"
+    },
+    "reductions": 2,
+    "spot": 100,
+    "normal_bits": 10,
+    "normal_qubits": 20,
+    "fraction_bits": 20,
+    "width": 40,
+    "degree": 8,
+    "strike_sum": 199229440,
+    "selector_bits": 29,
+    "discount_lower": "0.97044553354850817693252835195919433348673681552894362053211350044158042970360191",
+    "discount_upper": "0.97044553354850817693252835195919433348673681552894362053211350044158042970360193",
+    "arithmetic_price_error_upper": "0.0053376856433054065964523242617091722548630530945440792753421932728956344903900824",
+    "sensitivity_upper": "248.43405658841809329472725810155374937260462477540956685622105611304459000412210",
+    "overflow_safe": true,
+    "payoff_upper_integer": 307624424,
+    "sum_integer_bounds": [
+      57875600,
+      554551000
+    ],
+    "poststrike_integer_bounds": [
+      -141353840,
+      355321560
+    ],
+    "affine_prefix_magnitude_upper": 2628927,
+    "log_quantization_error_upper": "0.0000124171561433560125964342228411529593004345719256360681098230648547806452951",
+    "application_admitted": false,
+    "missing": [
+      "Gaussian state preparation",
+      "full six-component composition",
+      "production circuit verification/resources",
+      "statistical design and human review"
+    ]
+  },
+  "budget": {
+    "components": {
+      "representation": "0.098699438256274282337034818903728313719146034533110078176430717423403741186601340",
+      "arithmetic": "0.0053376856433054065964523242617091722548630530945440792753421932728956344903900824",
+      "preparation": "5.1462189094883833413844131481099140336632390050274553112888450469169428724788563E-11",
+      "aggregation": "0E-77",
+      "decoding": "8.8261507112157066961347332104123264206167442855889350588050865593830206280799936E-13"
+    },
+    "deterministic_upper": "0.10403712395192449309949254724889509077614946060634822193060635731506833480209917",
+    "sensitivity_upper": "248.43405658841809329472725810155374937260462477540956685622105611304459000412210",
+    "beta_upper": 124.21702829420906,
+    "schedule": {
+      "status": "ideal_plan",
+      "M": 1024,
+      "a_calls": 34799,
+      "phase_qubits": 10,
+      "repetitions": 17,
+      "statistical_upper_rational": "10703436628065074404360558892817099481438228566834927121178627969201325054346314688441617451536389303285669456729315891039108026907757194459258506066852952871873392585482947981783384557349076260238997085699091622815080679907254943393762905886313839987471135775025295050870770044028785739222922908957963759390824910341149895676124105667/14000122511226373462171103881045246186820545589653446529840513068943376632341105127263990097901879318473390867078915091496495738796710647997760589565464949969205677577912634018182540275794296196789401722766883638954838319581901641650070394827347353139401775479200296103954315185546875000000000000000000000000000000000000000000000000000",
+      "fixed_schedule_margin_rational": "987924835215375877916757789784014170096291443872503796256370196483478119461249689124931068395309194656472143007588642817227337108272176556963745696287967099241345176895403041311419104536887971281017641649172132029045717636381070260051274764903004787305768791972672669972757149812245010281773397844052446115595058570061279554684626241203419821/7516258540713833359088398040663500833582868691054823602418711465871549488964457804762094428619551236222747802541127921142287112091903828190668701677668851394001824036831906881663884980342415323568457574836227982643562775446482993046970477735158056020736694335937500000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "decoder_scale": 248.43405658841812,
+    "decoder_bridge_upper": "7.7875947725541272990850257066279890102284866581201013566330672977773590087890626E-14",
+    "probability_decoding": "ideal sin-squared AE label; one binary64 scale multiplication",
+    "physical_execution_error": null,
+    "confirmation_admitted": false
+  },
+  "components": {
+    "retained": {
+      "schema": "stronger_arithmetic_components_v1",
+      "reuse": false,
+      "reduced": true,
+      "x": 792,
+      "cx": 2108965,
+      "ccx": 2087666,
+      "qubits": 1995,
+      "logical_depth": 1326142,
+      "total": {
+        "x": 792,
+        "cx": 2108965,
+        "ccx": 2087666
+      },
+      "native": {
+        "u": 18789786,
+        "cx": 14634961
+      },
+      "compiler_counts": {
+        "u": 18789786,
+        "cx": 14634961,
+        "controlled_u": 244453366,
+        "controlled_cx": 125389338
+      },
+      "A_num_qubits_excluding_loader_ancillas": 1995,
+      "workspace_qubits": 1945,
+      "retained_workspace_qubits": 1945,
+      "reused_workspace_qubits": 1143,
+      "conversion_scratch_per_row": 802,
+      "conversion_forward": {
+        "x": 388,
+        "cx": 1053946,
+        "ccx": 1043576
+      },
+      "aggregation": {
+        "qubits": 121,
+        "x": 0,
+        "cx": 198,
+        "ccx": 78,
+        "logical_depth": 198
+      },
+      "postaggregation_payoff": {
+        "qubits": 121,
+        "x": 8,
+        "cx": 160,
+        "ccx": 119,
+        "logical_depth": 241
+      },
+      "comparator": {
+        "qubits": 120,
+        "x": 0,
+        "cx": 357,
+        "ccx": 120,
+        "logical_depth": 304
+      },
+      "emitted_gate_applications": 4197423,
+      "row_checks": [
+        {
+          "row": 0,
+          "packed_input": 0,
+          "log_integer": -810381,
+          "price_integer": 48412500,
+          "clean_workspace": true,
+          "inverse_checked": true
+        },
+        {
+          "row": 0,
+          "packed_input": 1048575,
+          "log_integer": 820853,
+          "price_integer": 229390800,
+          "clean_workspace": true,
+          "inverse_checked": true
+        },
+        {
+          "row": 1,
+          "packed_input": 0,
+          "log_integer": -612595,
+          "price_integer": 58462300,
+          "clean_workspace": true,
+          "inverse_checked": true
+        },
+        {
+          "row": 1,
+          "packed_input": 1048575,
+          "log_integer": 633559,
+          "price_integer": 191867900,
+          "clean_workspace": true,
+          "inverse_checked": true
+        }
+      ],
+      "semantic_checks": [
+        {
+          "packed_input": 0,
+          "sum_integer": 106874800,
+          "payoff_integer": 0,
+          "selectors": [
+            0,
+            536870911
+          ],
+          "both_initial_flags_checked": true,
+          "clean_workspace": true
+        },
+        {
+          "packed_input": 1048575,
+          "sum_integer": 421258700,
+          "payoff_integer": 222029260,
+          "selectors": [
+            0,
+            222029259,
+            222029260,
+            536870911
+          ],
+          "both_initial_flags_checked": true,
+          "clean_workspace": true
+        }
+      ],
+      "aggregation_included": true,
+      "aggregation_zero_initialized": true,
+      "loading_included": false,
+      "ae_included": false,
+      "native_basis": [
+        "u",
+        "cx"
+      ],
+      "qualification": "Actual emitted/remapped X/CX/CCX dependency depth; exact standard X/CCX decomposition to U/CX, no global optimizer, connectivity or physical synthesis. Includes all arithmetic inverses; excludes loader and selector preparation.",
+      "poststrike_bounds": {
+        "sum_integer_bounds": [
+          57875600,
+          554551000
+        ],
+        "poststrike_integer_bounds": [
+          -141353840,
+          355321560
+        ],
+        "payoff_upper_integer": 307624424,
+        "universal_signed_range_safe": true,
+        "universal_selector_safe": true
+      }
+    },
+    "reused": {
+      "schema": "stronger_arithmetic_components_v1",
+      "reuse": true,
+      "reduced": true,
+      "x": 792,
+      "cx": 2108965,
+      "ccx": 2087666,
+      "qubits": 1193,
+      "logical_depth": 2643022,
+      "total": {
+        "x": 792,
+        "cx": 2108965,
+        "ccx": 2087666
+      },
+      "native": {
+        "u": 18789786,
+        "cx": 14634961
+      },
+      "compiler_counts": {
+        "u": 18789786,
+        "cx": 14634961,
+        "controlled_u": 244453366,
+        "controlled_cx": 125389338
+      },
+      "A_num_qubits_excluding_loader_ancillas": 1193,
+      "workspace_qubits": 1143,
+      "retained_workspace_qubits": 1945,
+      "reused_workspace_qubits": 1143,
+      "conversion_scratch_per_row": 802,
+      "conversion_forward": {
+        "x": 388,
+        "cx": 1053946,
+        "ccx": 1043576
+      },
+      "aggregation": {
+        "qubits": 121,
+        "x": 0,
+        "cx": 198,
+        "ccx": 78,
+        "logical_depth": 198
+      },
+      "postaggregation_payoff": {
+        "qubits": 121,
+        "x": 8,
+        "cx": 160,
+        "ccx": 119,
+        "logical_depth": 241
+      },
+      "comparator": {
+        "qubits": 120,
+        "x": 0,
+        "cx": 357,
+        "ccx": 120,
+        "logical_depth": 304
+      },
+      "emitted_gate_applications": 4197423,
+      "row_checks": [
+        {
+          "row": 0,
+          "packed_input": 0,
+          "log_integer": -810381,
+          "price_integer": 48412500,
+          "clean_workspace": true,
+          "inverse_checked": true
+        },
+        {
+          "row": 0,
+          "packed_input": 1048575,
+          "log_integer": 820853,
+          "price_integer": 229390800,
+          "clean_workspace": true,
+          "inverse_checked": true
+        },
+        {
+          "row": 1,
+          "packed_input": 0,
+          "log_integer": -612595,
+          "price_integer": 58462300,
+          "clean_workspace": true,
+          "inverse_checked": true
+        },
+        {
+          "row": 1,
+          "packed_input": 1048575,
+          "log_integer": 633559,
+          "price_integer": 191867900,
+          "clean_workspace": true,
+          "inverse_checked": true
+        }
+      ],
+      "semantic_checks": [
+        {
+          "packed_input": 0,
+          "sum_integer": 106874800,
+          "payoff_integer": 0,
+          "selectors": [
+            0,
+            536870911
+          ],
+          "both_initial_flags_checked": true,
+          "clean_workspace": true
+        },
+        {
+          "packed_input": 1048575,
+          "sum_integer": 421258700,
+          "payoff_integer": 222029260,
+          "selectors": [
+            0,
+            222029259,
+            222029260,
+            536870911
+          ],
+          "both_initial_flags_checked": true,
+          "clean_workspace": true
+        }
+      ],
+      "aggregation_included": true,
+      "aggregation_zero_initialized": true,
+      "loading_included": false,
+      "ae_included": false,
+      "native_basis": [
+        "u",
+        "cx"
+      ],
+      "qualification": "Actual emitted/remapped X/CX/CCX dependency depth; exact standard X/CCX decomposition to U/CX, no global optimizer, connectivity or physical synthesis. Includes all arithmetic inverses; excludes loader and selector preparation.",
+      "poststrike_bounds": {
+        "sum_integer_bounds": [
+          57875600,
+          554551000
+        ],
+        "poststrike_integer_bounds": [
+          -141353840,
+          355321560
+        ],
+        "payoff_upper_integer": 307624424,
+        "universal_signed_range_safe": true,
+        "universal_selector_safe": true
+      }
+    }
+  },
+  "status": "ideal_plan"
+}

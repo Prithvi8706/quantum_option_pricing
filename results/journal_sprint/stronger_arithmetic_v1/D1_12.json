@@ -1,0 +1,601 @@
+{
+  "case": "D1",
+  "arm": "range_reduced",
+  "spec": {
+    "fraction_bits": 20,
+    "width": 48,
+    "degree": 8,
+    "reductions": 3
+  },
+  "plan": {
+    "schema": "reduced_raw_arithmetic_plan_v1",
+    "affine_rows": [
+      [
+        -810381,
+        [
+          985,
+          1970,
+          3941,
+          7883,
+          15767,
+          31535,
+          63071,
+          126143,
+          252287,
+          504575,
+          609,
+          1218,
+          2436,
+          4872,
+          9745,
+          19490,
+          38980,
+          77961,
+          155922,
+          311844
+        ]
+      ],
+      [
+        -612595,
+        [
+          1594,
+          3189,
+          6378,
+          12756,
+          25513,
+          51026,
+          102052,
+          204105,
+          408210,
+          816420,
+          -377,
+          -753,
+          -1506,
+          -3012,
+          -6023,
+          -12046,
+          -24092,
+          -48183,
+          -96366,
+          -192731
+        ]
+      ]
+    ],
+    "exp_budget": {
+      "coefficients": [
+        1048576,
+        1048576,
+        524288,
+        174762,
+        43690,
+        8738,
+        1456,
+        208,
+        26
+      ],
+      "reductions": 3,
+      "spot": 100,
+      "domain_upper": "0.9724139451682167588957125802448013284624922021874265590014540211297095612905902",
+      "reduced_domain_upper": "0.12155257761105395033071407253060016605781152527342831987518175264121369516132378",
+      "shift_error_upper": "9.4231857811888329408100121486986148596334728485917700847228654011214931390848077E-7",
+      "shift_rounding_upper": "8.3446502685546875E-7",
+      "horner_error_upper": "0.0000010869212515715954816816364966399296611075983778598899791445123147892272190853445",
+      "remainder_upper": "1.8026197961052890313674945289531298718393399423125937610019523486031803918341703E-14",
+      "input_error_upper": "0.0032834934390717657307810493944358991564195743748744444136705197420466338051152799",
+      "total_error_upper": "0.0082815325951599947196683226905143974727790358782069455314968636920682011564618047",
+      "spot_rounding_error_upper": "0",
+      "squaring_stages": [
+        {
+          "stage": 1,
+          "exact_magnitude_upper": "1.2752005830703377763824500623509127026891414306854506440530932561851129157616260",
+          "error_upper": "0.0000055367076823436688544902706963815400863842201409857436813535859004485674632030939",
+          "product_integer_bounds": [
+            833658476401,
+            1402095178201
+          ],
+          "output_integer_bounds": [
+            795038,
+            1337142
+          ],
+          "approximate_magnitude_upper": "1.27519798278808593750"
+        },
+        {
+          "stage": 2,
+          "exact_magnitude_upper": "1.6261365270629294359045953037429680078825147527059053709194446528956094734323902",
+          "error_upper": "0.000015074530701167539796322332945132164734049449245656022406592058661545505530495342",
+          "product_integer_bounds": [
+            632085421444,
+            1787948728164
+          ],
+          "output_integer_bounds": [
+            602803,
+            1705120
+          ],
+          "approximate_magnitude_upper": "1.62612915039062500000"
+        },
+        {
+          "stage": 3,
+          "exact_magnitude_upper": "2.6443200046482854376998955350414707625750517154549665740206608445564755118955211",
+          "error_upper": "0.000049980391560882289888872732960784983163594615033325011178263439500215673513465248",
+          "product_integer_bounds": [
+            363371456809,
+            2907434214400
+          ],
+          "output_integer_bounds": [
+            346538,
+            2772745
+          ],
+          "approximate_magnitude_upper": "2.64429569244384765625"
+        }
+      ],
+      "horner_stages": [
+        {
+          "product_integer_bounds": [
+            -3313882,
+            3313856
+          ],
+          "multiplied_integer_bounds": [
+            -4,
+            3
+          ],
+          "output_integer_bounds": [
+            204,
+            211
+          ]
+        },
+        {
+          "product_integer_bounds": [
+            -26893427,
+            26893216
+          ],
+          "multiplied_integer_bounds": [
+            -26,
+            25
+          ],
+          "output_integer_bounds": [
+            1430,
+            1481
+          ]
+        },
+        {
+          "product_integer_bounds": [
+            -188763817,
+            188762336
+          ],
+          "multiplied_integer_bounds": [
+            -181,
+            180
+          ],
+          "output_integer_bounds": [
+            8557,
+            8918
+          ]
+        },
+        {
+          "product_integer_bounds": [
+            -1136661526,
+            1136652608
+          ],
+          "multiplied_integer_bounds": [
+            -1085,
+            1083
+          ],
+          "output_integer_bounds": [
+            42605,
+            44773
+          ]
+        },
+        {
+          "product_integer_bounds": [
+            -5706632261,
+            5706587488
+          ],
+          "multiplied_integer_bounds": [
+            -5443,
+            5442
+          ],
+          "output_integer_bounds": [
+            169319,
+            180204
+          ]
+        },
+        {
+          "product_integer_bounds": [
+            -22968261228,
+            22968081024
+          ],
+          "multiplied_integer_bounds": [
+            -21905,
+            21904
+          ],
+          "output_integer_bounds": [
+            502383,
+            546192
+          ]
+        },
+        {
+          "product_integer_bounds": [
+            -69615993744,
+            69615447552
+          ],
+          "multiplied_integer_bounds": [
+            -66391,
+            66390
+          ],
+          "output_integer_bounds": [
+            982185,
+            1114966
+          ]
+        },
+        {
+          "product_integer_bounds": [
+            -142110221462,
+            142109106496
+          ],
+          "multiplied_integer_bounds": [
+            -135527,
+            135525
+          ],
+          "output_integer_bounds": [
+            913049,
+            1184101
+          ]
+        }
+      ],
+      "output_integer_bounds": [
+        34653800,
+        277274500
+      ],
+      "output_nonnegative": true,
+      "spot_prefix_integer_bounds": [
+        0,
+        277274500
+      ],
+      "intermediate_magnitude_upper": "264.42956924438476562500",
+      "intermediate_integer_magnitude_upper": 277274500,
+      "product_integer_magnitude_upper": 2907434214400,
+      "product_width": 96,
+      "overflow_safe": true,
+      "scope": "scalar range-reduced exponential only; not application admission"
+    },
+    "reductions": 3,
+    "spot": 100,
+    "normal_bits": 10,
+    "normal_qubits": 20,
+    "fraction_bits": 20,
+    "width": 48,
+    "degree": 8,
+    "strike_sum": 199229440,
+    "selector_bits": 29,
+    "discount_lower": "0.97044553354850817693252835195919433348673681552894362053211350044158042970360191",
+    "discount_upper": "0.97044553354850817693252835195919433348673681552894362053211350044158042970360193",
+    "arithmetic_price_error_upper": "0.0080367763179094026419842300711280410985625543155900782223220312703705882389368247",
+    "sensitivity_upper": "248.43405658841809329472725810155374937260462477540956685622105611304459000412210",
+    "overflow_safe": true,
+    "payoff_upper_integer": 307630256,
+    "sum_integer_bounds": [
+      69307600,
+      554549000
+    ],
+    "poststrike_integer_bounds": [
+      -129921840,
+      355319560
+    ],
+    "affine_prefix_magnitude_upper": 2628927,
+    "log_quantization_error_upper": "0.0000124171561433560125964342228411529593004345719256360681098230648547806452951",
+    "application_admitted": false,
+    "missing": [
+      "Gaussian state preparation",
+      "full six-component composition",
+      "production circuit verification/resources",
+      "statistical design and human review"
+    ]
+  },
+  "budget": {
+    "components": {
+      "representation": "0.098699438256274282337034818903728313719146034533110078176430717423403741186601340",
+      "arithmetic": "0.0080367763179094026419842300711280410985625543155900782223220312703705882389368247",
+      "preparation": "5.1462189094883833413844131481099140336632390050274553112888450469169428724788563E-11",
+      "aggregation": "0E-77",
+      "decoding": "8.8261507112157066961347332104123264206167442855889350588050865593830206280799936E-13"
+    },
+    "deterministic_upper": "0.10673621462652848914502445305831395961984896182739422087758619531254328855064591",
+    "sensitivity_upper": "248.43405658841809329472725810155374937260462477540956685622105611304459000412210",
+    "beta_upper": 124.21702829420906,
+    "schedule": {
+      "status": "ideal_plan",
+      "M": 1024,
+      "a_calls": 34799,
+      "phase_qubits": 10,
+      "repetitions": 17,
+      "statistical_upper_rational": "10703436628065074404360558892817099481438228566834927121178627969201325054346314688441617451536389303285669456729315891039108026907757194459258506066852952871873392585482947981783384557349076260238997085699091622815080679907254943393762905886313839987471135775025295050870770044028785739222922908957963759390824910341149895676124105667/14000122511226373462171103881045246186820545589653446529840513068943376632341105127263990097901879318473390867078915091496495738796710647997760589565464949969205677577912634018182540275794296196789401722766883638954838319581901641650070394827347353139401775479200296103954315185546875000000000000000000000000000000000000000000000000000",
+      "fixed_schedule_margin_rational": "967637771880222530558665633082281107507977787640496839025166154487112225117789646027279433557858417596195407222605711717422547634372875718942845163375870198150501952870496798237097927588663143793386256626208970449993244957810384249864345566873435897725310562725779538664383778464756396019432184535207992448993321529296860192735659261222951071/7516258540713833359088398040663500833582868691054823602418711465871549488964457804762094428619551236222747802541127921142287112091903828190668701677668851394001824036831906881663884980342415323568457574836227982643562775446482993046970477735158056020736694335937500000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "decoder_scale": 248.43405658841812,
+    "decoder_bridge_upper": "7.7875947725541272990850257066279890102284866581201013566330672977773590087890626E-14",
+    "probability_decoding": "ideal sin-squared AE label; one binary64 scale multiplication",
+    "physical_execution_error": null,
+    "confirmation_admitted": false
+  },
+  "components": {
+    "retained": {
+      "schema": "stronger_arithmetic_components_v1",
+      "reuse": false,
+      "reduced": true,
+      "x": 856,
+      "cx": 3321301,
+      "ccx": 3294722,
+      "qubits": 2467,
+      "logical_depth": 2086400,
+      "total": {
+        "x": 856,
+        "cx": 3321301,
+        "ccx": 3294722
+      },
+      "native": {
+        "u": 29653354,
+        "cx": 23089633
+      },
+      "compiler_counts": {
+        "u": 29653354,
+        "cx": 23089633,
+        "controlled_u": 385726822,
+        "controlled_cx": 197844506
+      },
+      "A_num_qubits_excluding_loader_ancillas": 2467,
+      "workspace_qubits": 2417,
+      "retained_workspace_qubits": 2417,
+      "reused_workspace_qubits": 1407,
+      "conversion_scratch_per_row": 1010,
+      "conversion_forward": {
+        "x": 420,
+        "cx": 1660042,
+        "ccx": 1647064
+      },
+      "aggregation": {
+        "qubits": 145,
+        "x": 0,
+        "cx": 238,
+        "ccx": 94,
+        "logical_depth": 238
+      },
+      "postaggregation_payoff": {
+        "qubits": 145,
+        "x": 8,
+        "cx": 192,
+        "ccx": 143,
+        "logical_depth": 289
+      },
+      "comparator": {
+        "qubits": 120,
+        "x": 0,
+        "cx": 357,
+        "ccx": 120,
+        "logical_depth": 304
+      },
+      "emitted_gate_applications": 6616879,
+      "row_checks": [
+        {
+          "row": 0,
+          "packed_input": 0,
+          "log_integer": -810381,
+          "price_integer": 48412300,
+          "clean_workspace": true,
+          "inverse_checked": true
+        },
+        {
+          "row": 0,
+          "packed_input": 1048575,
+          "log_integer": 820853,
+          "price_integer": 229388400,
+          "clean_workspace": true,
+          "inverse_checked": true
+        },
+        {
+          "row": 1,
+          "packed_input": 0,
+          "log_integer": -612595,
+          "price_integer": 58462000,
+          "clean_workspace": true,
+          "inverse_checked": true
+        },
+        {
+          "row": 1,
+          "packed_input": 1048575,
+          "log_integer": 633559,
+          "price_integer": 191866800,
+          "clean_workspace": true,
+          "inverse_checked": true
+        }
+      ],
+      "semantic_checks": [
+        {
+          "packed_input": 0,
+          "sum_integer": 106874300,
+          "payoff_integer": 0,
+          "selectors": [
+            0,
+            536870911
+          ],
+          "both_initial_flags_checked": true,
+          "clean_workspace": true
+        },
+        {
+          "packed_input": 1048575,
+          "sum_integer": 421255200,
+          "payoff_integer": 222025760,
+          "selectors": [
+            0,
+            222025759,
+            222025760,
+            536870911
+          ],
+          "both_initial_flags_checked": true,
+          "clean_workspace": true
+        }
+      ],
+      "aggregation_included": true,
+      "aggregation_zero_initialized": true,
+      "loading_included": false,
+      "ae_included": false,
+      "native_basis": [
+        "u",
+        "cx"
+      ],
+      "qualification": "Actual emitted/remapped X/CX/CCX dependency depth; exact standard X/CCX decomposition to U/CX, no global optimizer, connectivity or physical synthesis. Includes all arithmetic inverses; excludes loader and selector preparation.",
+      "poststrike_bounds": {
+        "sum_integer_bounds": [
+          69307600,
+          554549000
+        ],
+        "poststrike_integer_bounds": [
+          -129921840,
+          355319560
+        ],
+        "payoff_upper_integer": 307630256,
+        "universal_signed_range_safe": true,
+        "universal_selector_safe": true
+      }
+    },
+    "reused": {
+      "schema": "stronger_arithmetic_components_v1",
+      "reuse": true,
+      "reduced": true,
+      "x": 856,
+      "cx": 3321301,
+      "ccx": 3294722,
+      "qubits": 1457,
+      "logical_depth": 4161704,
+      "total": {
+        "x": 856,
+        "cx": 3321301,
+        "ccx": 3294722
+      },
+      "native": {
+        "u": 29653354,
+        "cx": 23089633
+      },
+      "compiler_counts": {
+        "u": 29653354,
+        "cx": 23089633,
+        "controlled_u": 385726822,
+        "controlled_cx": 197844506
+      },
+      "A_num_qubits_excluding_loader_ancillas": 1457,
+      "workspace_qubits": 1407,
+      "retained_workspace_qubits": 2417,
+      "reused_workspace_qubits": 1407,
+      "conversion_scratch_per_row": 1010,
+      "conversion_forward": {
+        "x": 420,
+        "cx": 1660042,
+        "ccx": 1647064
+      },
+      "aggregation": {
+        "qubits": 145,
+        "x": 0,
+        "cx": 238,
+        "ccx": 94,
+        "logical_depth": 238
+      },
+      "postaggregation_payoff": {
+        "qubits": 145,
+        "x": 8,
+        "cx": 192,
+        "ccx": 143,
+        "logical_depth": 289
+      },
+      "comparator": {
+        "qubits": 120,
+        "x": 0,
+        "cx": 357,
+        "ccx": 120,
+        "logical_depth": 304
+      },
+      "emitted_gate_applications": 6616879,
+      "row_checks": [
+        {
+          "row": 0,
+          "packed_input": 0,
+          "log_integer": -810381,
+          "price_integer": 48412300,
+          "clean_workspace": true,
+          "inverse_checked": true
+        },
+        {
+          "row": 0,
+          "packed_input": 1048575,
+          "log_integer": 820853,
+          "price_integer": 229388400,
+          "clean_workspace": true,
+          "inverse_checked": true
+        },
+        {
+          "row": 1,
+          "packed_input": 0,
+          "log_integer": -612595,
+          "price_integer": 58462000,
+          "clean_workspace": true,
+          "inverse_checked": true
+        },
+        {
+          "row": 1,
+          "packed_input": 1048575,
+          "log_integer": 633559,
+          "price_integer": 191866800,
+          "clean_workspace": true,
+          "inverse_checked": true
+        }
+      ],
+      "semantic_checks": [
+        {
+          "packed_input": 0,
+          "sum_integer": 106874300,
+          "payoff_integer": 0,
+          "selectors": [
+            0,
+            536870911
+          ],
+          "both_initial_flags_checked": true,
+          "clean_workspace": true
+        },
+        {
+          "packed_input": 1048575,
+          "sum_integer": 421255200,
+          "payoff_integer": 222025760,
+          "selectors": [
+            0,
+            222025759,
+            222025760,
+            536870911
+          ],
+          "both_initial_flags_checked": true,
+          "clean_workspace": true
+        }
+      ],
+      "aggregation_included": true,
+      "aggregation_zero_initialized": true,
+      "loading_included": false,
+      "ae_included": false,
+      "native_basis": [
+        "u",
+        "cx"
+      ],
+      "qualification": "Actual emitted/remapped X/CX/CCX dependency depth; exact standard X/CCX decomposition to U/CX, no global optimizer, connectivity or physical synthesis. Includes all arithmetic inverses; excludes loader and selector preparation.",
+      "poststrike_bounds": {
+        "sum_integer_bounds": [
+          69307600,
+          554549000
+        ],
+        "poststrike_integer_bounds": [
+          -129921840,
+          355319560
+        ],
+        "payoff_upper_integer": 307630256,
+        "universal_signed_range_safe": true,
+        "universal_selector_safe": true
+      }
+    }
+  },
+  "status": "ideal_plan"
+}
