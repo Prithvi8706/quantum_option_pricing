@@ -1,0 +1,505 @@
+{
+  "scope": "read-only independent archival arithmetic and provenance check; no new acquisition or gate emission",
+  "date": "2026-09-21",
+  "archives": {
+    "stronger_arithmetic_v1": {
+      "files_hashed": 78,
+      "source_and_input_entries_hashed": 223,
+      "source_commit_files_checked": 216,
+      "newline_normalized_files": 74,
+      "acquisition_head": "9511bc0c8cb25421707428abec8ca8f22ba02cfc",
+      "tracked_tree_dirty_at_acquisition": false
+    },
+    "signed_residual_arithmetic_v1": {
+      "files_hashed": 23,
+      "source_and_input_entries_hashed": 310,
+      "source_commit_files_checked": 222,
+      "newline_normalized_files": 74,
+      "acquisition_head": "60e735e1783a9aadec2fe42acfc007c16030fac2",
+      "tracked_tree_dirty_at_acquisition": false
+    }
+  },
+  "primary_rows_checked": 148,
+  "residual_rows_checked": 18,
+  "cx_ledgers_checked": 332,
+  "primary_distinct_circuit_parameter_groups": 50,
+  "primary_duplicate_groups": [
+    [
+      "D1_04.json",
+      "D1_07.json"
+    ],
+    [
+      "D1_05.json",
+      "D1_08.json"
+    ],
+    [
+      "D1_06.json",
+      "D1_09.json"
+    ],
+    [
+      "D1_13.json",
+      "D1_16.json"
+    ],
+    [
+      "D1_14.json",
+      "D1_17.json"
+    ],
+    [
+      "D1_15.json",
+      "D1_18.json"
+    ],
+    [
+      "D1_22.json",
+      "D1_25.json"
+    ],
+    [
+      "D1_23.json",
+      "D1_26.json"
+    ],
+    [
+      "D1_24.json",
+      "D1_27.json"
+    ],
+    [
+      "D1_31.json",
+      "D1_34.json"
+    ],
+    [
+      "D1_32.json",
+      "D1_35.json"
+    ],
+    [
+      "D1_33.json",
+      "D1_36.json"
+    ],
+    [
+      "D2_04.json",
+      "D2_07.json"
+    ],
+    [
+      "D2_05.json",
+      "D2_08.json"
+    ],
+    [
+      "D2_06.json",
+      "D2_09.json"
+    ],
+    [
+      "D2_13.json",
+      "D2_16.json"
+    ],
+    [
+      "D2_14.json",
+      "D2_17.json"
+    ],
+    [
+      "D2_15.json",
+      "D2_18.json"
+    ],
+    [
+      "D2_22.json",
+      "D2_25.json"
+    ],
+    [
+      "D2_23.json",
+      "D2_26.json"
+    ],
+    [
+      "D2_24.json",
+      "D2_27.json"
+    ],
+    [
+      "D2_31.json",
+      "D2_34.json"
+    ],
+    [
+      "D2_32.json",
+      "D2_35.json"
+    ],
+    [
+      "D2_33.json",
+      "D2_36.json"
+    ]
+  ],
+  "residual_distinct_circuit_parameter_groups": 12,
+  "residual_duplicate_groups": [
+    [
+      "D1_03.json",
+      "D1_06.json"
+    ],
+    [
+      "D1_04.json",
+      "D1_07.json"
+    ],
+    [
+      "D1_05.json",
+      "D1_08.json"
+    ],
+    [
+      "D2_03.json",
+      "D2_06.json"
+    ],
+    [
+      "D2_04.json",
+      "D2_07.json"
+    ],
+    [
+      "D2_05.json",
+      "D2_08.json"
+    ]
+  ],
+  "selected": {
+    "D1": {
+      "raw_best": {
+        "deterministic_upper": 0.10284620107076944,
+        "slope_upper": 248.4340565884181,
+        "M": 1024,
+        "a_calls": 34799,
+        "a_cx": 13184525,
+        "conservative_cx": 3929199363049,
+        "control_cancelled_cx": 458928511243,
+        "total_qubits": 2314,
+        "one_dollar_remaining_margin": 0.13262930141270984
+      },
+      "raw_matched_parent": {
+        "deterministic_upper": 0.09895017060178676,
+        "slope_upper": 248.4340565884181,
+        "M": 1024,
+        "a_calls": 34799,
+        "a_cx": 18917901,
+        "conservative_cx": 5638261566513,
+        "control_cancelled_cx": 658467218787,
+        "total_qubits": 2754,
+        "one_dollar_remaining_margin": 0.13652533188169252
+      },
+      "residual": {
+        "deterministic_upper": 0.10296484386504934,
+        "slope_upper": 31.05425707355226,
+        "M": 128,
+        "a_calls": 4335,
+        "a_cx": 24149637,
+        "conservative_cx": 893945932501,
+        "control_cancelled_cx": 104719289723,
+        "total_qubits": 4733,
+        "one_dollar_remaining_margin": 0.11614215408657079
+      },
+      "reflection": {
+        "deterministic_upper": 0.4547374356095953,
+        "slope_upper": 17.51853287222251,
+        "M": 128,
+        "a_calls": 4335,
+        "a_cx": 8412708,
+        "conservative_cx": 354203646982,
+        "control_cancelled_cx": 36469403102,
+        "total_qubits": 55,
+        "one_dollar_remaining_margin": 0.10474003977577181
+      },
+      "ratios": {
+        "reflection_over_residual_cx": 0.3482586942526793,
+        "reflection_over_residual_conservative": 0.3962249103713034,
+        "residual_over_reflection_width": 86.05454545454545,
+        "parent_over_residual_cx": 6.28792670890679,
+        "residual_over_parent_a_cx": 1.2765494966909912
+      }
+    },
+    "D2": {
+      "raw_best": {
+        "deterministic_upper": 0.19044329676811933,
+        "slope_upper": 496.8681131768362,
+        "M": 2048,
+        "a_calls": 69615,
+        "a_cx": 26476261,
+        "conservative_cx": 15784372872929,
+        "control_cancelled_cx": 1843424312811,
+        "total_qubits": 2687,
+        "one_dollar_remaining_margin": 0.04620138461049274
+      },
+      "raw_matched_parent": {
+        "deterministic_upper": 0.17532919498203733,
+        "slope_upper": 496.8681131768362,
+        "M": 2048,
+        "a_calls": 69615,
+        "a_cx": 37964541,
+        "conservative_cx": 22635882987169,
+        "control_cancelled_cx": 2643233541099,
+        "total_qubits": 3191,
+        "one_dollar_remaining_margin": 0.061315486396574734
+      },
+      "residual": {
+        "deterministic_upper": 0.20538903965072822,
+        "slope_upper": 62.10851414710452,
+        "M": 256,
+        "a_calls": 8687,
+        "a_cx": 43196209,
+        "conservative_cx": 3209213488374,
+        "control_cancelled_cx": 375312500844,
+        "total_qubits": 5162,
+        "one_dollar_remaining_margin": 0.023071389461954292
+      },
+      "reflection": {
+        "deterministic_upper": 0.600397296204273,
+        "slope_upper": 42.70387565661456,
+        "M": 512,
+        "a_calls": 17391,
+        "a_cx": 63331046,
+        "conservative_cx": 10555616671767,
+        "control_cancelled_cx": 1101392680835,
+        "total_qubits": 103,
+        "one_dollar_remaining_margin": 0.13596722266721817
+      },
+      "ratios": {
+        "reflection_over_residual_cx": 2.934601640921089,
+        "reflection_over_residual_conservative": 3.289160010702552,
+        "residual_over_reflection_width": 50.116504854368934,
+        "parent_over_residual_cx": 7.042753798914013,
+        "residual_over_parent_a_cx": 1.1378040630071098
+      }
+    }
+  },
+  "fixed_route_extra_dollar_allowance_sensitivity": [
+    {
+      "case": "D1",
+      "extra_deterministic_dollars": "0",
+      "scope": "fixed selected circuits; no route/menu reoptimization or measured physical error",
+      "reflection": {
+        "M": 128,
+        "control_cancelled_cx": 36469403102
+      },
+      "residual": {
+        "M": 128,
+        "control_cancelled_cx": 104719289723
+      },
+      "reflection_over_residual_cx": 0.3482586942526793
+    },
+    {
+      "case": "D1",
+      "extra_deterministic_dollars": ".025",
+      "scope": "fixed selected circuits; no route/menu reoptimization or measured physical error",
+      "reflection": {
+        "M": 128,
+        "control_cancelled_cx": 36469403102
+      },
+      "residual": {
+        "M": 128,
+        "control_cancelled_cx": 104719289723
+      },
+      "reflection_over_residual_cx": 0.3482586942526793
+    },
+    {
+      "case": "D1",
+      "extra_deterministic_dollars": ".05",
+      "scope": "fixed selected circuits; no route/menu reoptimization or measured physical error",
+      "reflection": {
+        "M": 128,
+        "control_cancelled_cx": 36469403102
+      },
+      "residual": {
+        "M": 128,
+        "control_cancelled_cx": 104719289723
+      },
+      "reflection_over_residual_cx": 0.3482586942526793
+    },
+    {
+      "case": "D1",
+      "extra_deterministic_dollars": ".1",
+      "scope": "fixed selected circuits; no route/menu reoptimization or measured physical error",
+      "reflection": {
+        "M": 128,
+        "control_cancelled_cx": 36469403102
+      },
+      "residual": {
+        "M": 128,
+        "control_cancelled_cx": 104719289723
+      },
+      "reflection_over_residual_cx": 0.3482586942526793
+    },
+    {
+      "case": "D1",
+      "extra_deterministic_dollars": ".15",
+      "scope": "fixed selected circuits; no route/menu reoptimization or measured physical error",
+      "reflection": {
+        "M": 256,
+        "control_cancelled_cx": 73081824127
+      },
+      "residual": {
+        "M": 256,
+        "control_cancelled_cx": 209849363740
+      },
+      "reflection_over_residual_cx": 0.3482584975456357
+    },
+    {
+      "case": "D1",
+      "extra_deterministic_dollars": ".2",
+      "scope": "fixed selected circuits; no route/menu reoptimization or measured physical error",
+      "reflection": {
+        "M": 256,
+        "control_cancelled_cx": 73081824127
+      },
+      "residual": {
+        "M": 256,
+        "control_cancelled_cx": 209849363740
+      },
+      "reflection_over_residual_cx": 0.3482584975456357
+    },
+    {
+      "case": "D2",
+      "extra_deterministic_dollars": "0",
+      "scope": "fixed selected circuits; no route/menu reoptimization or measured physical error",
+      "reflection": {
+        "M": 512,
+        "control_cancelled_cx": 1101392680835
+      },
+      "residual": {
+        "M": 256,
+        "control_cancelled_cx": 375312500844
+      },
+      "reflection_over_residual_cx": 2.934601640921089
+    },
+    {
+      "case": "D2",
+      "extra_deterministic_dollars": ".025",
+      "scope": "fixed selected circuits; no route/menu reoptimization or measured physical error",
+      "reflection": {
+        "M": 512,
+        "control_cancelled_cx": 1101392680835
+      },
+      "residual": {
+        "M": 512,
+        "control_cancelled_cx": 751359599228
+      },
+      "reflection_over_residual_cx": 1.4658662536109857
+    },
+    {
+      "case": "D2",
+      "extra_deterministic_dollars": ".05",
+      "scope": "fixed selected circuits; no route/menu reoptimization or measured physical error",
+      "reflection": {
+        "M": 512,
+        "control_cancelled_cx": 1101392680835
+      },
+      "residual": {
+        "M": 512,
+        "control_cancelled_cx": 751359599228
+      },
+      "reflection_over_residual_cx": 1.4658662536109857
+    },
+    {
+      "case": "D2",
+      "extra_deterministic_dollars": ".1",
+      "scope": "fixed selected circuits; no route/menu reoptimization or measured physical error",
+      "reflection": {
+        "M": 512,
+        "control_cancelled_cx": 1101392680835
+      },
+      "residual": {
+        "M": 512,
+        "control_cancelled_cx": 751359599228
+      },
+      "reflection_over_residual_cx": 1.4658662536109857
+    },
+    {
+      "case": "D2",
+      "extra_deterministic_dollars": ".15",
+      "scope": "fixed selected circuits; no route/menu reoptimization or measured physical error",
+      "reflection": {
+        "M": 1024,
+        "control_cancelled_cx": 2203861993192
+      },
+      "residual": {
+        "M": 512,
+        "control_cancelled_cx": 751359599228
+      },
+      "reflection_over_residual_cx": 2.933165418338175
+    },
+    {
+      "case": "D2",
+      "extra_deterministic_dollars": ".2",
+      "scope": "fixed selected circuits; no route/menu reoptimization or measured physical error",
+      "reflection": {
+        "M": 1024,
+        "control_cancelled_cx": 2203861993192
+      },
+      "residual": {
+        "M": 512,
+        "control_cancelled_cx": 751359599228
+      },
+      "reflection_over_residual_cx": 2.933165418338175
+    }
+  ],
+  "reflections_checked": 2,
+  "confidence_bound": {
+    "repetitions": 17,
+    "assumed_independent_single_run_success_lower": 0.8,
+    "hoeffding_failure_upper": 0.046887695219988486
+  },
+  "test_receipts": {
+    "stronger_arithmetic_full_tests_20260921.xml": {
+      "actual_testcase_elements": 1645,
+      "sha256": "26070333f6e9a8f51fe53015def212d2bfa877c1a469af273d48654ecc31f255",
+      "scope": "historical receipt; not rerun"
+    },
+    "stronger_arithmetic_pinned_tests_20260921.xml": {
+      "actual_testcase_elements": 315,
+      "sha256": "d80598819dee2a6795ad4ccfd72c6f6cf0f15bd66be1a9097eee4490dff27393",
+      "scope": "historical receipt; not rerun"
+    }
+  },
+  "classical_existing_development": [
+    {
+      "case": "D1",
+      "method": "mc_cv",
+      "power": 12,
+      "price": 10.207718401989787,
+      "approximate_95_halfwidth": 0.0028199288068520008,
+      "paths_with_pilot": 66560,
+      "rigorous_coverage_certificate": false
+    },
+    {
+      "case": "D1",
+      "method": "rqmc_cv",
+      "power": 12,
+      "price": 10.207115267691336,
+      "approximate_95_halfwidth": 0.00010425657688667843,
+      "paths_with_pilot": 66560,
+      "rigorous_coverage_certificate": false
+    },
+    {
+      "case": "D1",
+      "method": "conditional_cv",
+      "power": 12,
+      "price": 10.207204210806896,
+      "approximate_95_halfwidth": 6.011093664708455e-05,
+      "paths_with_pilot": 66560,
+      "rigorous_coverage_certificate": false
+    },
+    {
+      "case": "D2",
+      "method": "mc_cv",
+      "power": 12,
+      "price": 5.414947753604941,
+      "approximate_95_halfwidth": 0.007469449504531195,
+      "paths_with_pilot": 66560,
+      "rigorous_coverage_certificate": false
+    },
+    {
+      "case": "D2",
+      "method": "rqmc_cv",
+      "power": 12,
+      "price": 5.411718569632627,
+      "approximate_95_halfwidth": 0.0006109108088375487,
+      "paths_with_pilot": 66560,
+      "rigorous_coverage_certificate": false
+    },
+    {
+      "case": "D2",
+      "method": "conditional_cv",
+      "power": 12,
+      "price": 5.411857813044666,
+      "approximate_95_halfwidth": 0.000152532180070955,
+      "paths_with_pilot": 66560,
+      "rigorous_coverage_certificate": false
+    }
+  ],
+  "passed": true,
+  "checker_sha256": "a0380e36499149316e269d1fb04dbc03bc3e9a5a325840b796e248e039b8a4b2"
+}

@@ -17,11 +17,22 @@ These are matched quantum-route resource projections. Quantum-over-classical
 advantage, physical delivery, confirmation and submission readiness remain open.
 Candidate routes remain on standby; no paper has been submitted or published.
 
+The [21 September scientific assessment](docs/novelty_assessment/2026-09-21/README.md)
+recommends a **certified comparator case study**, with a conditional go for
+drafting. Residual estimation, signed shifting and QSP are established methods;
+the defensible result is the local resource-order change and its explanation.
+Three separate AI reviews and a final narrative review support that limited
+framing. Human significance review and a common-policy compilation comparison
+remain open. A separately tested exact-label conversion adapter adds a tiny
+classical numerical allowance without changing the archived schedules.
+
 ## Start here
 
+- [Publication decision, primary literature and mathematical/comparator audits](docs/novelty_assessment/2026-09-21/PUBLICATION_DECISION.md)
+- [Verified main/dev consolidation and later promotion batches](docs/novelty_assessment/2026-09-21/BRANCH_CONSOLIDATION.md)
 - [Latest stronger arithmetic results, tradeoffs and verification](docs/release/STRONGER_ARITHMETIC_RESULTS_20260921.md)
 - [Release consistency checks, reproducible tables and next-study preparation](docs/release/README.md)
-- [Latest matched arithmetic comparison and scientific decision](docs/journal_sprint/MATCHED_ARITHMETIC_RESULTS_20260917.md)
+- [Historical raw-arithmetic comparison and scientific decision](docs/journal_sprint/MATCHED_ARITHMETIC_RESULTS_20260917.md)
 - [Claim assessment, restricted proofs and prior-art boundaries](docs/journal_sprint/CLAIM_ASSESSMENT_RESULTS_20260917.md)
 - [Completed work and remaining tasks](checklist_17.9.26.md)
 - [Latest integrated study results](docs/journal_sprint/MINIMAL_PIVOT_WEEK2_RESULTS.md)
@@ -259,8 +270,10 @@ comparison.
 ```text
 research/journal_sprint/   Active research implementations, runners and verifiers
 research/stronger_arithmetic/  Versioned stronger baseline and signed-control study
+research/assessment_20260921/  Opt-in certified classical AE-label conversion
 research/paper_a/          Earlier research package and regression tests
 docs/journal_sprint/       Protocols, methods, results, audits and project log
+docs/novelty_assessment/   Current scientific assessment and independent AI reviews
 results/journal_sprint/    Versioned evidence, replay records and test receipts
 tests/                    Pricing and research regression tests
 src/                      Earlier pricing models and experiment utilities
@@ -285,8 +298,11 @@ Asian-basket pipeline or evidence of an end-to-end pricing advantage.
 - Keep commits reviewable and attribute only work actually performed.
 - Latest merged integration: [PR #8](https://github.com/Prithvi8706/quantum_option_pricing/pull/8).
   Macroscope skipped its review because credits were exhausted. The subsequent
-  stronger-arithmetic work is on `research/stronger-arithmetic-20260921`; its
-  independent AI reviews and validation are recorded in the latest closeout.
+  stronger-arithmetic work and complete ongoing project are on
+  [dev](https://github.com/Prithvi8706/quantum_option_pricing/tree/dev).
+  Main and dev are the only permanent branches. Main was left unchanged during
+  the assessment; reviewed snapshots can later be promoted through the
+  [batch plan](docs/novelty_assessment/2026-09-21/MAIN_BATCH_PLAN.md).
 
 ## License
 

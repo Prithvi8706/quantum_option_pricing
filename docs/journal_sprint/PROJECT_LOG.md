@@ -1,5 +1,48 @@
 # Journal reengineering: running record
 
+## 2026-09-21: scientific assessment, numerical interface and dev consolidation
+
+Completed an [AI-assisted scientific assessment](../novelty_assessment/2026-09-21/README.md)
+with 25 substantive primary sources, eight closest-source formula comparisons,
+separate A–H contribution judgments, mathematical/resource audits and sixteen
+skeptical comparator objections. Three separate AI agents reviewed prior art,
+mathematics and resources; the literature agent then independently reviewed
+the lead's publication narrative. Corrected a missing real part in explanatory
+Hadamard notation and clarified evidence-publication wording. No human expert
+review, contact or endorsement occurred.
+
+Verdict: conditional go for a narrow certified comparator case-study draft.
+The signed shift, QSP pipeline and classical-control/quantum-residual principle
+have direct precedents. D2's reversal mainly corrects a weaker comparator:
+against the identical raw-conversion parent, per-A CX rises 13.78% but M falls
+eightfold. Both resource ledgers retain the D1/reflection, D2/residual ordering;
+the large width penalty and compiler dependence remain explicit. A bounded
+common-policy selected-oracle comparison is recommended, not yet executed.
+
+The independent math review found a missing exact-AE-label-to-binary64
+interface allowance. Added an opt-in adapter outside frozen producers at
+`5f96b9ec`; reviewed lower-pi schedule verification and final receipt are at
+`601ebcdc`. All 384 possible M=128/256 labels and all 18 schedules pass;
+added dollar allowances are below 3.5e-15 and no resource ranking changes.
+Nineteen targeted tests passed (15 new, four existing decoder tests), and Ruff
+passed. Historical 1,645/315 receipts were inspected rather than rerun or
+added to the fresh test count. Independent rational checks and limited q10
+diagnostics are deterministic checks, not fresh confirmation data.
+
+Fetched and inspected all branch histories, PR dependencies and protections.
+Created dev from `49b8f0a5`, pushed it, then preserved 13,783 classified
+historical artifacts at `b90c2e30` and verified that push before branch cleanup.
+All removed tips are dev ancestors; only local/remote main and dev remain.
+Local main stays at `103ddfd1`, remote main at PR #8's `da3080d1`. A linked
+dirty review worktree, existing stash, archival reference and local recovery
+bundle are preserved. Environments, external checkouts and downloaded reading
+copies were excluded; frozen producers/evidence were unchanged. The
+[consolidation record](../novelty_assessment/2026-09-21/BRANCH_CONSOLIDATION.md)
+and [batch plan](../novelty_assessment/2026-09-21/MAIN_BATCH_PLAN.md) record
+the exact history and future integration boundaries. No main merge, new
+hardware result, confirmation admission, completed manuscript or submission
+is implied by this work.
+
 ## 2026-09-21: stronger arithmetic and signed residual comparison
 
 Implemented the approved follow-up in `research/stronger_arithmetic`, preserving

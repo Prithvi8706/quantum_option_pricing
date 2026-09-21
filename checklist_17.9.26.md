@@ -1,11 +1,19 @@
 # Project checklist — 17 September 2026
 
+Assessment update — 21 September 2026: [scientific decision and audits](docs/novelty_assessment/2026-09-21/README.md)
+are complete as an AI-assisted assessment, including 25 primary sources,
+three independent review scopes and a separate narrative review. The verdict
+is conditional go for a certified comparator case-study draft, not a new
+primitive or advantage paper. Main/dev consolidation is complete; main is
+unchanged. Human significance review and the bounded common-policy comparison
+remain open.
+
 Update — 21 September 2026: the [stronger arithmetic/control study](docs/release/STRONGER_ARITHMETIC_RESULTS_20260921.md)
 implements all three proposed changes and acquires 166 new logical comparison
 rows. Reflection still wins D1's CX comparison; signed-residual arithmetic wins
 D2's with a large qubit tradeoff. This does not close novelty, physical delivery,
 quantum-over-classical advantage, confirmation or submission gates. PR #8 merged
-the prior release tools; this subsequent research is on its own development branch.
+the prior release tools; subsequent research is consolidated on `dev`.
 
 Snapshot after [PR #6](https://github.com/Prithvi8706/quantum_option_pricing/pull/6)
 merged into `main` at `b074488c`. This checklist is a subsequent documentation
@@ -227,15 +235,29 @@ Evidence: [integration handoff](docs/journal_sprint/STUDY_MERGE_CLOSEOUT.md),
 
 ## 6. Practical handoff
 
-- [ ] Review remaining untracked local files individually if further cleanup is
-  wanted; they were deliberately not deleted or indiscriminately committed.
+- [x] Inventory and classify previously untracked material; preserve 13,783
+  legitimate historical project artifacts with byte-level provenance. Local
+  environments, external checkouts, reading copies and settings remain excluded.
+- [x] Preserve all useful branch tips and the original five research commits;
+  consolidate on `dev`, then remove redundant local/remote branch names.
+  [Consolidation record](docs/novelty_assessment/2026-09-21/BRANCH_CONSOLIDATION.md).
+- [x] Complete the current primary-source novelty assessment, mathematical and
+  comparator audits, independent AI reviews and human-review packet.
+- [x] Close the exact-label-to-binary64 interface gap in a separate opt-in
+  adapter; 384 labels/all 18 schedules checked, 19 targeted tests passed.
+- [x] Prepare reviewable [main promotion batches](docs/novelty_assessment/2026-09-21/MAIN_BATCH_PLAN.md)
+  without merging the assessment into main.
+- [ ] Execute the bounded common-policy comparison if pursuing the stronger
+  implementation-level manuscript claim; the plan is not an acquired result.
 - [x] Integrate this checklist through a dedicated documentation commit on `main`.
+  This is the earlier historical integration, not a new main update in this task.
 - [ ] Keep future commits tied to real implementation, tests, experiments or
   documentation; preserve genuine dates and authorship rather than padding activity.
 
-**Next research action:** obtain independent expert assessment of the strengthened
-encoding-choice result and decide the paper's scope. The proposed stronger
-comparator is now implemented; another open-ended optimization search is not a
-substitute for that assessment. Physical/classical-comparison gaps still govern
-any advantage or confirmation claim. A merge or a green test suite does not
-itself establish journal readiness.
+**Next research action:** draft the narrowly scoped comparator case study and
+resolve the [bounded compilation comparison](docs/novelty_assessment/2026-09-21/BOUNDED_FOLLOWUP_PLAN.md)
+before making a stronger implementation claim. A qualified human must still
+judge significance; the packet is prepared but has not been sent. Another
+open-ended optimization search is not a substitute. Physical/classical gaps
+still govern any advantage or confirmation claim, and a green test suite does
+not establish journal readiness.
