@@ -1,0 +1,109 @@
+{
+  "rows": [
+    {
+      "tag": "C4_f24",
+      "source_gates": 463531090,
+      "t_count": 1550039218,
+      "unique_leaves": 86,
+      "source_sha256": "f438db56322ce0d3b4bd7c212b62599de90c8419c4e42ada54ad96935f56e784",
+      "target_sha256": "1125779cab39382de106185618a06e4236ad4f44e9caccead644210a8cb604fe",
+      "optimizer_paired_cases": 16
+    },
+    {
+      "tag": "H8_f24",
+      "source_gates": 1721691290,
+      "t_count": 5760827338,
+      "unique_leaves": 125,
+      "source_sha256": "398bbe0a6c7e42c838c9846b35f2f7e7ff3515ff7bbc92a7051489881b41ff80",
+      "target_sha256": "cd7c9070802d6aaf83e278abe92390a3d0bdb79f4b2ea4f7c09e0824dadcca94",
+      "optimizer_paired_cases": 16
+    },
+    {
+      "tag": "C4_f40",
+      "source_gates": 767917624,
+      "t_count": 2567192362,
+      "unique_leaves": 89,
+      "source_sha256": "e75a25dcee6707df301866f6acef4f7433f8a64683dee6021f216abe84b83590",
+      "target_sha256": "40d23527cf1388992a6ef5dd9baa15e4e72e67ebfc7aa1efb23944d1828bea0a",
+      "optimizer_paired_cases": 16
+    },
+    {
+      "tag": "H8_f40",
+      "source_gates": 2846925742,
+      "t_count": 9528390746,
+      "unique_leaves": 127,
+      "source_sha256": "aa9346b8dce0533be246bc7464eced8302af4fd8df679f28ff7be72bbb07255a",
+      "target_sha256": "80729f8a8485c640eefe1cb26d3651a914bbb75cfd3c07d08dc478de82ae541a",
+      "optimizer_paired_cases": 16
+    },
+    {
+      "tag": "phase_f64",
+      "source_gates": 6460930,
+      "t_count": 20335560,
+      "unique_leaves": 17,
+      "source_sha256": "d8baf9c88e379eed6625df14be1d55c74070b8d88e7905d2c0b059f243a3f520",
+      "target_sha256": "1ff8138b3f6e6a4c54e8fc4bc930055eae4e0d9876a9e09e40377b21f8959429"
+    }
+  ],
+  "controlled_U_wrappers": [
+    {
+      "tag": "C4_f24",
+      "counts": {
+        "call_graph_half": 4,
+        "cx": 112,
+        "cp": 67,
+        "h": 1920,
+        "x": 1920,
+        "ccx": 1918,
+        "cz": 1,
+        "z": 1
+      },
+      "matches_ledger": true
+    },
+    {
+      "tag": "H8_f24",
+      "counts": {
+        "call_graph_half": 4,
+        "cx": 112,
+        "cp": 67,
+        "h": 6912,
+        "x": 6912,
+        "ccx": 6910,
+        "cz": 1,
+        "z": 1
+      },
+      "matches_ledger": true
+    },
+    {
+      "tag": "C4_f40",
+      "counts": {
+        "call_graph_half": 4,
+        "cx": 144,
+        "cp": 67,
+        "h": 3840,
+        "x": 3840,
+        "ccx": 3838,
+        "cz": 1,
+        "z": 1
+      },
+      "matches_ledger": true
+    },
+    {
+      "tag": "H8_f40",
+      "counts": {
+        "call_graph_half": 4,
+        "cx": 144,
+        "cp": 67,
+        "h": 13824,
+        "x": 13824,
+        "ccx": 13822,
+        "cz": 1,
+        "z": 1
+      },
+      "matches_ledger": true
+    }
+  ],
+  "unique_leaf_files": 324,
+  "unique_gate_library_bytes": 62625488,
+  "method": "Independent NumPy gate-kind counts, wire checks and SHA256; composed copy/forward/inverse counts; no analytic operation-count oracle substituted for emitted gates."
+}

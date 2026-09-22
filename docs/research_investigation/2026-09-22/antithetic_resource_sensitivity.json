@@ -1,0 +1,269 @@
+{
+  "status": "Illustrative sensitivity coordinate; not a lower bound, compiled resource estimate, or feasibility result",
+  "inputs": {
+    "antithetic_logheston_pilot.json": {
+      "sha256": "311f915b7b71afa35d5f5bce4669c711107dd9df288ca94f7ea7e4042c46c651"
+    },
+    "antithetic_logheston_level0.json": {
+      "sha256": "d5f9e8ad7bf1831cda506be23d7bd387799b4f186f2c33283c517b8cc2844aef"
+    }
+  },
+  "epsilon": 0.01,
+  "epsilon_stat": 0.0045000000000000005,
+  "minimum_speedup": 10.0,
+  "coherent_weights": "w0=1; wl=2.5*2^l for l>=1; two fine paths plus one coarse divided by base step count",
+  "assumed_model": "Tq = k*c0*B/epsilon_stat; B=(sum_l sqrt(w_l*sqrt(V_l)))^2; additive per-level statistical error allocation",
+  "c0_units": "seconds per illustrative level-zero coherent oracle; w_l and k dimensionless",
+  "caveats": [
+    "Uses empirical sample variances; no certified variance bounds or remaining-bias proof.",
+    "Weights are an uncompiled arithmetic step-count model ignoring fixed overhead and reversibility details.",
+    "Unknown k stands in for estimator constants, logarithmic factors, repetitions, and confidence allocation; k=1 is not guaranteed.",
+    "No loading, phase, quantile, truncation, precision, or query-floor cost is separately included.",
+    "No classical controls or quantum controls are included; changing controls changes every variance.",
+    "Only levels 0..5 are included, with no justified terminal level or bias certificate.",
+    "Classical total runtimes are illustrative coordinates, not measured strong-comparator price delivery times.",
+    "No fixed setup, measurement, decoding, or physical failure budget is charged; any such costs reduce available c0.",
+    "This conditional algebra is neither a lower bound nor evidence of feasible quantum advantage."
+  ],
+  "cases": [
+    {
+      "assets": 1,
+      "levels": [
+        {
+          "level": 0,
+          "variance": 135.58396601283658,
+          "weight": 1.0,
+          "sigma": 11.64405281733283,
+          "weight_times_sigma": 11.64405281733283,
+          "sqrt_weight_times_sigma": 3.4123383210538822,
+          "formal_additive_error_allocation": 0.0021645648079712306
+        },
+        {
+          "level": 1,
+          "variance": 0.011552699395238005,
+          "weight": 5.0,
+          "sigma": 0.1074834842905551,
+          "weight_times_sigma": 0.5374174214527755,
+          "sqrt_weight_times_sigma": 0.733087594665723,
+          "formal_additive_error_allocation": 0.0004650229430016255
+        },
+        {
+          "level": 2,
+          "variance": 0.0027717900154018284,
+          "weight": 10.0,
+          "sigma": 0.05264779212276454,
+          "weight_times_sigma": 0.5264779212276454,
+          "sqrt_weight_times_sigma": 0.7255879831058707,
+          "formal_additive_error_allocation": 0.00046026567870700624
+        },
+        {
+          "level": 3,
+          "variance": 0.0007340757869847947,
+          "weight": 20.0,
+          "sigma": 0.027093833006512656,
+          "weight_times_sigma": 0.5418766601302532,
+          "sqrt_weight_times_sigma": 0.7361227208354957,
+          "formal_additive_error_allocation": 0.0004669482290303606
+        },
+        {
+          "level": 4,
+          "variance": 0.00018507963158903367,
+          "weight": 40.0,
+          "sigma": 0.013604397509225966,
+          "weight_times_sigma": 0.5441759003690386,
+          "sqrt_weight_times_sigma": 0.7376827911569027,
+          "formal_additive_error_allocation": 0.0004679378358623805
+        },
+        {
+          "level": 5,
+          "variance": 4.9234880527461433e-05,
+          "weight": 80.0,
+          "sigma": 0.0070167571233057105,
+          "weight_times_sigma": 0.5613405698644568,
+          "sqrt_weight_times_sigma": 0.7492266478606169,
+          "formal_additive_error_allocation": 0.0004752605054273974
+        }
+      ],
+      "sum_sqrt_weight_times_sigma": 7.094046058678491,
+      "B": 50.32548948265183,
+      "base_only_B": 11.64405281733283,
+      "base_share_of_root_sum": 0.4810144017713845,
+      "thresholds": [
+        {
+          "classical_total_seconds": 0.1,
+          "unknown_estimator_constant": 1.0,
+          "maximum_c0_seconds": 8.94179082262327e-07,
+          "maximum_c0_microseconds": 0.894179082262327
+        },
+        {
+          "classical_total_seconds": 0.1,
+          "unknown_estimator_constant": 10.0,
+          "maximum_c0_seconds": 8.941790822623272e-08,
+          "maximum_c0_microseconds": 0.08941790822623272
+        },
+        {
+          "classical_total_seconds": 0.1,
+          "unknown_estimator_constant": 100.0,
+          "maximum_c0_seconds": 8.94179082262327e-09,
+          "maximum_c0_microseconds": 0.00894179082262327
+        },
+        {
+          "classical_total_seconds": 1.0,
+          "unknown_estimator_constant": 1.0,
+          "maximum_c0_seconds": 8.94179082262327e-06,
+          "maximum_c0_microseconds": 8.94179082262327
+        },
+        {
+          "classical_total_seconds": 1.0,
+          "unknown_estimator_constant": 10.0,
+          "maximum_c0_seconds": 8.94179082262327e-07,
+          "maximum_c0_microseconds": 0.894179082262327
+        },
+        {
+          "classical_total_seconds": 1.0,
+          "unknown_estimator_constant": 100.0,
+          "maximum_c0_seconds": 8.941790822623269e-08,
+          "maximum_c0_microseconds": 0.08941790822623269
+        },
+        {
+          "classical_total_seconds": 10.0,
+          "unknown_estimator_constant": 1.0,
+          "maximum_c0_seconds": 8.94179082262327e-05,
+          "maximum_c0_microseconds": 89.4179082262327
+        },
+        {
+          "classical_total_seconds": 10.0,
+          "unknown_estimator_constant": 10.0,
+          "maximum_c0_seconds": 8.941790822623271e-06,
+          "maximum_c0_microseconds": 8.941790822623272
+        },
+        {
+          "classical_total_seconds": 10.0,
+          "unknown_estimator_constant": 100.0,
+          "maximum_c0_seconds": 8.941790822623269e-07,
+          "maximum_c0_microseconds": 0.8941790822623269
+        }
+      ]
+    },
+    {
+      "assets": 4,
+      "levels": [
+        {
+          "level": 0,
+          "variance": 63.02783257519245,
+          "weight": 1.0,
+          "sigma": 7.939007027027527,
+          "weight_times_sigma": 7.939007027027527,
+          "sqrt_weight_times_sigma": 2.8176243587510963,
+          "formal_additive_error_allocation": 0.0023658340739179788
+        },
+        {
+          "level": 1,
+          "variance": 0.0028439054124677777,
+          "weight": 5.0,
+          "sigma": 0.053328279669119065,
+          "weight_times_sigma": 0.2666413983455953,
+          "sqrt_weight_times_sigma": 0.5163733129680458,
+          "formal_additive_error_allocation": 0.00043357574436331514
+        },
+        {
+          "level": 2,
+          "variance": 0.0005932301593664096,
+          "weight": 10.0,
+          "sigma": 0.024356316621492867,
+          "weight_times_sigma": 0.24356316621492868,
+          "sqrt_weight_times_sigma": 0.4935211912521373,
+          "formal_additive_error_allocation": 0.0004143878323732367
+        },
+        {
+          "level": 3,
+          "variance": 0.0001552140013371559,
+          "weight": 20.0,
+          "sigma": 0.012458491134048132,
+          "weight_times_sigma": 0.24916982268096266,
+          "sqrt_weight_times_sigma": 0.4991691323398941,
+          "formal_additive_error_allocation": 0.00041913015774084505
+        },
+        {
+          "level": 4,
+          "variance": 4.4198834707552236e-05,
+          "weight": 40.0,
+          "sigma": 0.006648220416589107,
+          "weight_times_sigma": 0.26592881666356427,
+          "sqrt_weight_times_sigma": 0.5156828644269308,
+          "formal_additive_error_allocation": 0.0004329960053786689
+        },
+        {
+          "level": 5,
+          "variance": 1.1160383336172185e-05,
+          "weight": 80.0,
+          "sigma": 0.0033407159915461514,
+          "weight_times_sigma": 0.2672572793236921,
+          "sqrt_weight_times_sigma": 0.516969321453113,
+          "formal_additive_error_allocation": 0.00043407618622595624
+        }
+      ],
+      "sum_sqrt_weight_times_sigma": 5.359340181191217,
+      "B": 28.722527177730708,
+      "base_only_B": 7.939007027027527,
+      "base_share_of_root_sum": 0.5257409053151063,
+      "thresholds": [
+        {
+          "classical_total_seconds": 0.1,
+          "unknown_estimator_constant": 1.0,
+          "maximum_c0_seconds": 1.5667145067544627e-06,
+          "maximum_c0_microseconds": 1.5667145067544628
+        },
+        {
+          "classical_total_seconds": 0.1,
+          "unknown_estimator_constant": 10.0,
+          "maximum_c0_seconds": 1.5667145067544626e-07,
+          "maximum_c0_microseconds": 0.15667145067544627
+        },
+        {
+          "classical_total_seconds": 0.1,
+          "unknown_estimator_constant": 100.0,
+          "maximum_c0_seconds": 1.5667145067544625e-08,
+          "maximum_c0_microseconds": 0.015667145067544623
+        },
+        {
+          "classical_total_seconds": 1.0,
+          "unknown_estimator_constant": 1.0,
+          "maximum_c0_seconds": 1.5667145067544624e-05,
+          "maximum_c0_microseconds": 15.667145067544624
+        },
+        {
+          "classical_total_seconds": 1.0,
+          "unknown_estimator_constant": 10.0,
+          "maximum_c0_seconds": 1.5667145067544623e-06,
+          "maximum_c0_microseconds": 1.5667145067544623
+        },
+        {
+          "classical_total_seconds": 1.0,
+          "unknown_estimator_constant": 100.0,
+          "maximum_c0_seconds": 1.5667145067544623e-07,
+          "maximum_c0_microseconds": 0.15667145067544624
+        },
+        {
+          "classical_total_seconds": 10.0,
+          "unknown_estimator_constant": 1.0,
+          "maximum_c0_seconds": 0.00015667145067544625,
+          "maximum_c0_microseconds": 156.67145067544627
+        },
+        {
+          "classical_total_seconds": 10.0,
+          "unknown_estimator_constant": 10.0,
+          "maximum_c0_seconds": 1.5667145067544624e-05,
+          "maximum_c0_microseconds": 15.667145067544624
+        },
+        {
+          "classical_total_seconds": 10.0,
+          "unknown_estimator_constant": 100.0,
+          "maximum_c0_seconds": 1.5667145067544625e-06,
+          "maximum_c0_microseconds": 1.5667145067544626
+        }
+      ]
+    }
+  ],
+  "source_sha256": "5941af1a5c5f0cf72e34527eff9dc4b706bfe26ae368c5306614751fbee106e1"
+}

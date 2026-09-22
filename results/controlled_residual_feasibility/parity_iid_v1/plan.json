@@ -1,0 +1,30 @@
+{
+  "args": {
+    "out": "results/controlled_residual_feasibility/parity_iid_v1",
+    "cases": "C4,C8,H4,H8",
+    "power": 20,
+    "inner": 4
+  },
+  "outer_samples": 1048576,
+  "inner_samples": 16,
+  "batch_power": 11,
+  "root": 2026092505,
+  "moment_failure": 0.001,
+  "regret_failure": 0.001,
+  "flat_mean_failure": 0.002,
+  "allocation_status": "Fixed before first draw. No data-dependent stopping. Per-price budgets, not simultaneous over twelve prices.",
+  "quantum_error_allocation": {
+    "surrogate_mean": 0.003,
+    "flat_mean": 0.002,
+    "regret": 0.003,
+    "numerical": 0.002
+  },
+  "quantum_failure_allocation": {
+    "surrogate": 0.002,
+    "moment": 0.001,
+    "regret": 0.001,
+    "quantum_mean": 0.004,
+    "physical": 0.002
+  },
+  "scope": "Statistical guarantees assume exact iid sampling and real evaluation. Numerical certificate separate; quantum preprocessing cost charged."
+}
