@@ -9,25 +9,29 @@ research codebase. Its primary harder application is **arithmetic Asian-basket
 pricing under risk-neutral geometric Brownian motion**. European and digital
 options remain regression controls and historical experiments.
 
-**Status — 21 September 2026:** the stronger arithmetic study now includes
-scratch reuse, range reduction and a certified signed residual/control oracle.
-Reflection has the lower logical CX projection in D1; signed-residual arithmetic
-has a **65.9% lower projection in D2**, but needs **5,162 versus 103 qubits**.
-These are matched quantum-route resource projections. Quantum-over-classical
-advantage, physical delivery, confirmation and submission readiness remain open.
-Candidate routes remain on standby; no paper has been submitted or published.
+**Status — 22 September 2026:** the bounded common-policy compiler comparison,
+focused manuscript draft, and evidence-derived figures/tables are complete.
+Under the new fixed six-oracle U/CX policy, reflection remains lower-CX in D1;
+in D2 it uses **3.129 times the residual arithmetic CX**, with **103 versus
+5,162 allocated qubits**. Both AE ledgers preserve this case-dependent ordering.
+These are ideal logical projections, not hardware runtime or quantum advantage.
+Human significance review, physical delivery, confirmation and submission remain
+open. Candidate routes remain on standby; no paper has been submitted.
 
 The [21 September scientific assessment](docs/novelty_assessment/2026-09-21/README.md)
 recommends a **certified comparator case study**, with a conditional go for
 drafting. Residual estimation, signed shifting and QSP are established methods;
 the defensible result is the local resource-order change and its explanation.
 Three separate AI reviews and a final narrative review support that limited
-framing. Human significance review and a common-policy compilation comparison
-remain open. A separately tested exact-label conversion adapter adds a tiny
-classical numerical allowance without changing the archived schedules.
+framing. The [22 September comparison](docs/release/COMMON_COMPILATION_RESULTS_20260922.md)
+now closes the bounded common-policy follow-up with unchanged AE schedules.
+The [manuscript](manuscript/2026-09-22/main.md) presents the narrow comparative
+claim and its limitations; human publication-significance review remains open.
 
 ## Start here
 
+- [New common-policy results, validation and independent AI review](docs/release/COMMON_COMPILATION_RESULTS_20260922.md)
+- [Complete manuscript draft and reproducible artifacts](manuscript/2026-09-22/README.md)
 - [Publication decision, primary literature and mathematical/comparator audits](docs/novelty_assessment/2026-09-21/PUBLICATION_DECISION.md)
 - [Verified main/dev consolidation and later promotion batches](docs/novelty_assessment/2026-09-21/BRANCH_CONSOLIDATION.md)
 - [Latest stronger arithmetic results, tradeoffs and verification](docs/release/STRONGER_ARITHMETIC_RESULTS_20260921.md)
@@ -83,7 +87,7 @@ Known primitives are not presented as newly invented algorithms.
 
 ## Latest results: improvements and limits
 
-### Stronger arithmetic and comparable control
+### Historical stronger arithmetic and comparable control
 
 The new frozen studies retain all **148 primary layout rows and 18 residual
 configurations**. The best raw range-reduced route lowers projected CX about
@@ -176,16 +180,18 @@ a negative result or has a stated limitation.
 | Original Week 15 | Fresh-environment reproduction closed; confirmation campaign blocked |
 | Additional two-week minimal-pivot study | Construction and bounded validation closed; candidate on standby |
 | Stronger arithmetic/control study | Bounded implementation and comparison complete; physical/confirmation gates remain open |
-| Original Week 16 | Final integrated manuscript and submission-readiness work remain open |
+| Common-policy follow-up | Six-oracle comparison, manuscript draft and generated artifacts complete |
+| Original Week 16 | Human author/significance review and release/submission-readiness work remain open |
 
 The principal open questions are a defensible distinction from nearest prior
 work, an execution/synthesis/noise model for physical claims, and a matched
 continuous-target comparison against strong classical methods. Any confirmation
 campaign needs admission, a frozen analysis and genuinely fresh data first.
 
-A narrower ideal-logical resource/error paper would need an explicit scope
-decision and independent novelty assessment; it is not automatically
-publication-ready. Hardware superiority is not established by this repository.
+A narrower ideal-logical comparator paper is now drafted under an explicit
+scope and AI-assisted prior-art assessment. Human significance review remains
+open; the draft is not automatically publication-ready. Hardware superiority
+is not established by this repository.
 The [dated checklist](checklist_17.9.26.md) separates these decisions from finished
 implementation tasks. Older plans and drafts are historical, not current claims.
 
@@ -271,6 +277,9 @@ comparison.
 research/journal_sprint/   Active research implementations, runners and verifiers
 research/stronger_arithmetic/  Versioned stronger baseline and signed-control study
 research/assessment_20260921/  Opt-in certified classical AE-label conversion
+research/common_compilation_20260922/  Fixed six-oracle U/CX comparison
+research/manuscript_20260922/  Evidence-bound figure and table producers
+manuscript/2026-09-22/     Current comparator draft and generated artifacts
 research/paper_a/          Earlier research package and regression tests
 docs/journal_sprint/       Protocols, methods, results, audits and project log
 docs/novelty_assessment/   Current scientific assessment and independent AI reviews
@@ -296,14 +305,18 @@ Asian-basket pipeline or evidence of an end-to-end pricing advantage.
 - Do not use reference truths or held-out outcomes to tune a supposedly frozen
   policy, and do not relabel deterministic replay as fresh confirmation.
 - Keep commits reviewable and attribute only work actually performed.
-- Latest integration: [independently reviewed main promotion](docs/release/MAIN_PROMOTION_20260921.md)
-  of completed implementation, evidence and assessment batches on 21 September.
+- Current integration: [PR #9](https://github.com/Prithvi8706/quantum_option_pricing/pull/9)
+  tracks the common-policy comparison, manuscript and artifacts, with a
+  [separate AI review](docs/release/COMMON_COMPILATION_REVIEW_20260922.md).
+  It builds on the [21 September main promotion](docs/release/MAIN_PROMOTION_20260921.md)
+  of completed implementation, evidence and assessment batches.
   The previous stable baseline was [PR #8](https://github.com/Prithvi8706/quantum_option_pricing/pull/8),
   whose Macroscope check skipped because credits were exhausted. Main and dev
   are the only permanent branches; ongoing work continues on
   [dev](https://github.com/Prithvi8706/quantum_option_pricing/tree/dev).
   The original [batch plan](docs/novelty_assessment/2026-09-21/MAIN_BATCH_PLAN.md)
-  is historical; its future experiment and manuscript batches remain open.
+  is historical; the bounded experiment and manuscript-draft work are now complete,
+  while the final human-approved publication package remains open.
 
 ## License
 
