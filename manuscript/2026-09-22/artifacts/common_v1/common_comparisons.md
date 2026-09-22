@@ -1,0 +1,6 @@
+| case | ledger | winner | reflection_over_residual_exact | reflection_over_residual_display |
+| --- | --- | --- | --- | --- |
+| D1 | control_cancelled | reflection | 2145718516/6159958219 | 0.3483332905378591 |
+| D1 | controlled | reflection | 20313363664/52585496813 | 0.3862921317685108 |
+| D2 | control_cancelled | residual | 69078594115/22077205932 | 3.1289554632850267 |
+| D2 | controlled | residual | 655664653279/188779038822 | 3.473185674481726 |
