@@ -1,0 +1,64 @@
+{
+  "status": "All independent checks passed; this does not close physical or financial obligations.",
+  "seed": 2026092231,
+  "input_sha256": {
+    "estimator_hadamard.json": "551e2219b33f66bfe8d3e853de40e23a94be74bb05dc94f381b5e9782075ac86",
+    "estimator_bounded.json": "d06608a3e490004e732ec526faedb9c03c3a592a29c9ce948351b3ccf2d5771b"
+  },
+  "hadamard": [
+    {
+      "model": "C4",
+      "mode": "continuous_moment_conditional",
+      "exact_tail_union": 0.0023827701634771595,
+      "allocated_failure": 0.003,
+      "direct_matrix_cases": 72,
+      "smallest_matrix_margin": 0.09521409176274609,
+      "controlled_U_calls": 1203320,
+      "all_selected_stage_intervals_checked": 27
+    },
+    {
+      "model": "C4",
+      "mode": "digital_support_bound",
+      "exact_tail_union": 0.0023800413679303644,
+      "allocated_failure": 0.003,
+      "direct_matrix_cases": 72,
+      "smallest_matrix_margin": 0.10165411151080872,
+      "controlled_U_calls": 269909102,
+      "all_selected_stage_intervals_checked": 43
+    },
+    {
+      "model": "H8",
+      "mode": "continuous_moment_conditional",
+      "exact_tail_union": 0.0020174409418958444,
+      "allocated_failure": 0.003,
+      "direct_matrix_cases": 72,
+      "smallest_matrix_margin": 0.07433180522507898,
+      "controlled_U_calls": 2967610,
+      "all_selected_stage_intervals_checked": 25
+    },
+    {
+      "model": "H8",
+      "mode": "digital_support_bound",
+      "exact_tail_union": 0.00236269778474313,
+      "allocated_failure": 0.003,
+      "direct_matrix_cases": 72,
+      "smallest_matrix_margin": 0.09247586319217771,
+      "controlled_U_calls": 268356240,
+      "all_selected_stage_intervals_checked": 54
+    }
+  ],
+  "bounded": [
+    {
+      "model": "C4",
+      "exact_median_failure": 0.002968463429168493,
+      "controlled_grover_calls": 7864305,
+      "independent_reflection_sign_cases": 93
+    },
+    {
+      "model": "H8",
+      "exact_median_failure": 0.002968463429168493,
+      "controlled_grover_calls": 7864305,
+      "independent_reflection_sign_cases": 93
+    }
+  ]
+}
