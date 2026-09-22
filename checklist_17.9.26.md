@@ -1,5 +1,22 @@
 # Project checklist — 17 September 2026
 
+Current update — 22 September 2026:
+
+- [x] Item 1: acquire the bounded common-policy comparison of all six selected
+  oracles. D1 reflection and D2 residual preferences survive both ledgers;
+  [new results and exact scope](docs/release/COMMON_COMPILATION_RESULTS_20260922.md).
+- [x] Item 2: complete the [focused manuscript draft](manuscript/2026-09-22/main.md),
+  including mathematics, prior art, new results, limits and AI-use disclosure.
+- [x] Item 3: generate evidence-bound tables and three PNG/SVG/PDF figures;
+  [artifact guide](manuscript/2026-09-22/README.md). Deterministic replay is separate
+  from fresh scientific confirmation.
+
+The [independent AI review](docs/release/COMMON_COMPILATION_REVIEW_20260922.md)
+and [PR #9](https://github.com/Prithvi8706/quantum_option_pricing/pull/9) record
+the review and integration outcome. Human significance/authorship approval,
+release/license audit, venue choice and submission remain open. Earlier dated
+updates below describe their historical states.
+
 Promotion update — 21 September 2026: after separate user authorization and a
 new independent AI integration review, completed batches 1–4 were fast-forwarded
 to main with original history preserved. [Verified promotion](docs/release/MAIN_PROMOTION_20260921.md).
@@ -223,10 +240,10 @@ Evidence: [integration handoff](docs/journal_sprint/STUDY_MERGE_CLOSEOUT.md),
   and [human review packet](docs/release/HUMAN_REVIEW_PACKET.md). The stronger
   study has now been acquired; the updated packet has not been sent or reviewed
   by an independent human expert.
-- [ ] Update the integrated quantum-centered manuscript; the earlier reliability
-  draft is not a completed account of the new study.
-- [ ] Generate final tables/figures from frozen analysis and trace each claim to
-  a proof, measured result or explicitly labeled resource projection.
+- [x] Complete the integrated comparator-case-study manuscript draft, including
+  the new common-policy study. Human approval and journal packaging remain open.
+- [x] Generate the current draft's tables/figures from frozen evidence and trace
+  claims to proofs, recorded results or explicitly labeled resource projections.
 - [ ] Complete artifact/dependency/license and clean-environment release audits.
 - [ ] Refresh literature and quantum-focused journal fit, current fees/waivers,
   access model and policies from official sources before choosing a venue.
@@ -252,17 +269,16 @@ Evidence: [integration handoff](docs/journal_sprint/STUDY_MERGE_CLOSEOUT.md),
   adapter; 384 labels/all 18 schedules checked, 19 targeted tests passed.
 - [x] Prepare reviewable [main promotion batches](docs/novelty_assessment/2026-09-21/MAIN_BATCH_PLAN.md)
   without merging the assessment into main.
-- [ ] Execute the bounded common-policy comparison if pursuing the stronger
-  implementation-level manuscript claim; the plan is not an acquired result.
+- [x] Execute the bounded common-policy comparison: six selected oracles,
+  twelve ledgers, complete hashes, unchanged schedules and independent AI checks.
 - [x] Integrate this checklist through a dedicated documentation commit on `main`.
   This is the earlier historical integration, not a new main update in this task.
 - [ ] Keep future commits tied to real implementation, tests, experiments or
   documentation; preserve genuine dates and authorship rather than padding activity.
 
-**Next research action:** draft the narrowly scoped comparator case study and
-resolve the [bounded compilation comparison](docs/novelty_assessment/2026-09-21/BOUNDED_FOLLOWUP_PLAN.md)
-before making a stronger implementation claim. A qualified human must still
-judge significance; the packet is prepared but has not been sent. Another
-open-ended optimization search is not a substitute. Physical/classical gaps
-still govern any advantage or confirmation claim, and a green test suite does
-not establish journal readiness.
+**Next research action:** obtain qualified human review of the complete narrow
+comparator draft and its significance, then finish artifact/dependency/license
+checks and author/venue decisions before submission. The common-policy follow-up
+is complete; another open-ended optimization search is not required to state
+its restricted result. Physical/classical gaps still govern any advantage or
+confirmation claim, and passing tests do not establish journal readiness.

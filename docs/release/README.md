@@ -1,5 +1,10 @@
 # Release preparation tools
 
+The [22 September common-policy closeout](COMMON_COMPILATION_RESULTS_20260922.md)
+and [manuscript draft](../../manuscript/2026-09-22/main.md) complete the bounded
+selected-oracle follow-up and evidence-derived paper artifacts. They preserve
+the historical archives and keep physical/confirmation/submission gates open.
+
 The [stronger arithmetic/control study](STRONGER_ARITHMETIC_RESULTS_20260921.md)
 now supplies the next bounded scientific comparison. Its evidence and verifiers
 are separate from the historical release-consistency overlay described below.

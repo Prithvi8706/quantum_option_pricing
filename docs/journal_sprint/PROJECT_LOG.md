@@ -1,5 +1,35 @@
 # Journal reengineering: running record
 
+## 2026-09-22: common compiler comparison and focused manuscript
+
+Completed all six fixed selected-oracle comparisons under a common unoptimized
+U/CX policy frozen at `568b9997`. Retained the initial JSON tuple/list guard
+failure separately; it stopped before any route result. The corrected attempt
+re-emitted arithmetic, rebuilt reflection blocks, checked source/input hashes,
+and preserved every outcome without retuning. Total CPU across attempts was
+395.421875 seconds, below the two-hour cap.
+
+D1 reflection remains lower-CX. D2 reflection/residual ratios are now
+3.1289554633 with control cancellation and 3.4731856745 fully controlled.
+The width tradeoff remains 103 versus 5,162 qubits. These are fixed-policy ideal
+logical counts, with serial depth upper bounds and no new native numerical,
+physical runtime or quantum-advantage guarantee. All six AE schedules remain
+feasible after the separately certified label-conversion allowance.
+
+Completed a focused Markdown manuscript with equations, prior art, both studies,
+limitations and AI-use disclosure. Generated three PNG/SVG/PDF figures and
+CSV/Markdown tables with source/output manifests and byte-identical replay.
+Fresh targeted tests: 33 passes, 17 legacy Qiskit warnings; Ruff passes.
+Historical integrated suites were not rerun or added to that count.
+
+See the [results and evidence](../release/COMMON_COMPILATION_RESULTS_20260922.md),
+[manuscript](../../manuscript/2026-09-22/main.md),
+[independent AI review](../release/COMMON_COMPILATION_REVIEW_20260922.md) and
+[PR #9](https://github.com/Prithvi8706/quantum_option_pricing/pull/9) for the
+actual review/integration disposition. Human significance review, author
+approval, release/license clearance and submission are not completed by this
+draft. Confirmation remains closed and candidate routes remain on standby.
+
 ## 2026-09-21: independently reviewed promotion to main
 
 After separate user authorization, a new independent AI agent reviewed completed

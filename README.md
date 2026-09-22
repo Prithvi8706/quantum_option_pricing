@@ -9,25 +9,29 @@ research codebase. Its primary harder application is **arithmetic Asian-basket
 pricing under risk-neutral geometric Brownian motion**. European and digital
 options remain regression controls and historical experiments.
 
-**Status — 21 September 2026:** the stronger arithmetic study now includes
-scratch reuse, range reduction and a certified signed residual/control oracle.
-Reflection has the lower logical CX projection in D1; signed-residual arithmetic
-has a **65.9% lower projection in D2**, but needs **5,162 versus 103 qubits**.
-These are matched quantum-route resource projections. Quantum-over-classical
-advantage, physical delivery, confirmation and submission readiness remain open.
-Candidate routes remain on standby; no paper has been submitted or published.
+**Status — 22 September 2026:** the bounded common-policy compiler comparison,
+focused manuscript draft, and evidence-derived figures/tables are complete.
+Under the new fixed six-oracle U/CX policy, reflection remains lower-CX in D1;
+in D2 it uses **3.129 times the residual arithmetic CX**, with **103 versus
+5,162 allocated qubits**. Both AE ledgers preserve this case-dependent ordering.
+These are ideal logical projections, not hardware runtime or quantum advantage.
+Human significance review, physical delivery, confirmation and submission remain
+open. Candidate routes remain on standby; no paper has been submitted.
 
 The [21 September scientific assessment](docs/novelty_assessment/2026-09-21/README.md)
 recommends a **certified comparator case study**, with a conditional go for
 drafting. Residual estimation, signed shifting and QSP are established methods;
 the defensible result is the local resource-order change and its explanation.
 Three separate AI reviews and a final narrative review support that limited
-framing. Human significance review and a common-policy compilation comparison
-remain open. A separately tested exact-label conversion adapter adds a tiny
-classical numerical allowance without changing the archived schedules.
+framing. The [22 September comparison](docs/release/COMMON_COMPILATION_RESULTS_20260922.md)
+now closes the bounded common-policy follow-up with unchanged AE schedules.
+The [manuscript](manuscript/2026-09-22/main.md) presents the narrow comparative
+claim and its limitations; human publication-significance review remains open.
 
 ## Start here
 
+- [New common-policy results, validation and independent AI review](docs/release/COMMON_COMPILATION_RESULTS_20260922.md)
+- [Complete manuscript draft and reproducible artifacts](manuscript/2026-09-22/README.md)
 - [Publication decision, primary literature and mathematical/comparator audits](docs/novelty_assessment/2026-09-21/PUBLICATION_DECISION.md)
 - [Verified main/dev consolidation and later promotion batches](docs/novelty_assessment/2026-09-21/BRANCH_CONSOLIDATION.md)
 - [Latest stronger arithmetic results, tradeoffs and verification](docs/release/STRONGER_ARITHMETIC_RESULTS_20260921.md)
@@ -83,7 +87,7 @@ Known primitives are not presented as newly invented algorithms.
 
 ## Latest results: improvements and limits
 
-### Stronger arithmetic and comparable control
+### Historical stronger arithmetic and comparable control
 
 The new frozen studies retain all **148 primary layout rows and 18 residual
 configurations**. The best raw range-reduced route lowers projected CX about
