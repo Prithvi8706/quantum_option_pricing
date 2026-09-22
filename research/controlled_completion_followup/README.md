@@ -62,3 +62,12 @@ recommendations are dated; the current follow-up result is authoritative.
 Downloaded third-party papers remain local and untracked; their primary links
 and hashes are published in the reading-cache provenance file. The original
 manuscript and its release evidence are not rewritten.
+
+The release also uses `replay_checkout.py` to run the tests, archive audit,
+complete arithmetic replay and financial/FT calculations from a clean detached
+worktree. Pass `--checkout`, `--python` (an isolated interpreter) and `--output`
+(a receipt directory outside that worktree). It records the tested commit,
+every return code and hashed log; it fails immediately if a check fails.
+See [release validation](../../docs/controlled_completion_followup/VALIDATION.md)
+for the executed environment and the explicitly incomplete repository-wide
+lint/type-check status.

@@ -36,10 +36,20 @@ experiment outputs are not overwritten by it.
 The machine-readable
 [receipt](../../results/controlled_completion_followup/release_validation/receipt.json)
 records the commit, interpreter, commands, return codes, elapsed verification
-times and SHA-256 hashes of per-command logs. It must have `all_passed: true`
-before merging. Tests and regenerated arithmetic/financial/physical model
+times and SHA-256 hashes of per-command logs. **All six steps passed**, and the
+receipt has `all_passed: true`: isolated environment verification; **109 tests
+passed** with three upstream deprecation warnings; archive/gate audit; all five
+source/phase and four fused emitted-gate replays; the financial bridge; and the
+conditional FT calculation. All six log hashes were checked independently.
+Tests and regenerated arithmetic/financial/physical model
 outputs are verification calculations, not timings of quantum hardware.
 
 The original manuscript has no diff. Historical compilation evidence is
 preserved byte-for-byte, downloaded third-party full texts remain local, and
 the corresponding primary-source URLs/hashes are included in provenance.
+
+The GitHub Macroscope correctness check was **skipped because its credit balance
+was exhausted**. It supplied no review or approval. The independent reviews in
+this package are explicitly AI-agent reviews, supplemented by the executed local
+checks; they are not external human referee reports. The main branch has no
+required status/review protection, and no protection or failed check was bypassed.

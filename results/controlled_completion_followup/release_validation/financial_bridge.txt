@@ -1,0 +1,190 @@
+{
+  "method": "Analytic coupling inequalities, evaluated by 70-digit mpmath interval arithmetic",
+  "normal_tail_method": "Mills inequalities and exponential tilting; no sampled tail or quadrature",
+  "rounding": "Upper interval endpoint converted to binary64 then nextafter toward +infinity",
+  "status": "Partial certificate: law/control bounds closed; arithmetic and policy regret remain",
+  "rows": [
+    {
+      "model": "C4",
+      "random_bits": 16,
+      "one_normal_L1_upper": 0.00010136854291024676,
+      "continuous_to_guarded_price_upper": 2.966967086053678e-76,
+      "guarded_to_finite_price_upper": 0.20287255521759023,
+      "finite_analytic_control_bias_upper": 0.15631568699602372,
+      "law_and_controls_total_upper": 0.35918824221361395,
+      "financial_numerical_budget": 0.002,
+      "remaining_for_arithmetic": -0.357188242213614,
+      "passes_law_and_controls_only": false,
+      "premises": [
+        "Exact real evaluation of the stated finite midpoint/guarded law",
+        "Independent uniform words and the existing even split of Box--Muller pairs at tau",
+        "Exact Gaussian analytic controls and real clipped policy",
+        "Final numerical arithmetic and finite-policy regret are separate obligations"
+      ]
+    },
+    {
+      "model": "C8",
+      "random_bits": 16,
+      "one_normal_L1_upper": 0.00010136854291024676,
+      "continuous_to_guarded_price_upper": 4.0051311734508446e-20,
+      "guarded_to_finite_price_upper": 0.40574511043518047,
+      "finite_analytic_control_bias_upper": 0.31263137399204743,
+      "law_and_controls_total_upper": 0.7183764844272279,
+      "financial_numerical_budget": 0.002,
+      "remaining_for_arithmetic": -0.716376484427228,
+      "passes_law_and_controls_only": false,
+      "premises": [
+        "Exact real evaluation of the stated finite midpoint/guarded law",
+        "Independent uniform words and the existing even split of Box--Muller pairs at tau",
+        "Exact Gaussian analytic controls and real clipped policy",
+        "Final numerical arithmetic and finite-policy regret are separate obligations"
+      ]
+    },
+    {
+      "model": "H4",
+      "random_bits": 16,
+      "one_normal_L1_upper": 0.00010136854291024676,
+      "continuous_to_guarded_price_upper": 7.931677178150477e-07,
+      "guarded_to_finite_price_upper": 0.6829299008189998,
+      "finite_analytic_control_bias_upper": 0.531843403771511,
+      "law_and_controls_total_upper": 1.2147740977582286,
+      "financial_numerical_budget": 0.002,
+      "remaining_for_arithmetic": -1.2127740977582289,
+      "passes_law_and_controls_only": false,
+      "premises": [
+        "Exact real evaluation of the stated finite midpoint/guarded law",
+        "Independent uniform words and the existing even split of Box--Muller pairs at tau",
+        "Exact Gaussian analytic controls and real clipped policy",
+        "Final numerical arithmetic and finite-policy regret are separate obligations"
+      ]
+    },
+    {
+      "model": "H8",
+      "random_bits": 16,
+      "one_normal_L1_upper": 0.00010136854291024676,
+      "continuous_to_guarded_price_upper": 5.884665072751785e-07,
+      "guarded_to_finite_price_upper": 0.8999904724479774,
+      "finite_analytic_control_bias_upper": 0.7092091086931663,
+      "law_and_controls_total_upper": 1.609200169607651,
+      "financial_numerical_budget": 0.002,
+      "remaining_for_arithmetic": -1.6072001696076512,
+      "passes_law_and_controls_only": false,
+      "premises": [
+        "Exact real evaluation of the stated finite midpoint/guarded law",
+        "Independent uniform words and the existing even split of Box--Muller pairs at tau",
+        "Exact Gaussian analytic controls and real clipped policy",
+        "Final numerical arithmetic and finite-policy regret are separate obligations"
+      ]
+    },
+    {
+      "model": "C4",
+      "random_bits": 32,
+      "one_normal_L1_upper": 1.7505925212911147e-09,
+      "continuous_to_guarded_price_upper": 2.966967086053678e-76,
+      "guarded_to_finite_price_upper": 3.5035245426540745e-06,
+      "finite_analytic_control_bias_upper": 2.6995068170015164e-06,
+      "law_and_controls_total_upper": 6.2030313596555905e-06,
+      "financial_numerical_budget": 0.002,
+      "remaining_for_arithmetic": 0.001993796968640344,
+      "passes_law_and_controls_only": true,
+      "premises": [
+        "Exact real evaluation of the stated finite midpoint/guarded law",
+        "Independent uniform words and the existing even split of Box--Muller pairs at tau",
+        "Exact Gaussian analytic controls and real clipped policy",
+        "Final numerical arithmetic and finite-policy regret are separate obligations"
+      ]
+    },
+    {
+      "model": "C8",
+      "random_bits": 32,
+      "one_normal_L1_upper": 1.7505925212911147e-09,
+      "continuous_to_guarded_price_upper": 4.0051311734508446e-20,
+      "guarded_to_finite_price_upper": 7.007049085308149e-06,
+      "finite_analytic_control_bias_upper": 5.399013634003075e-06,
+      "law_and_controls_total_upper": 1.2406062719311264e-05,
+      "financial_numerical_budget": 0.002,
+      "remaining_for_arithmetic": 0.001987593937280688,
+      "passes_law_and_controls_only": true,
+      "premises": [
+        "Exact real evaluation of the stated finite midpoint/guarded law",
+        "Independent uniform words and the existing even split of Box--Muller pairs at tau",
+        "Exact Gaussian analytic controls and real clipped policy",
+        "Final numerical arithmetic and finite-policy regret are separate obligations"
+      ]
+    },
+    {
+      "model": "H4",
+      "random_bits": 32,
+      "one_normal_L1_upper": 1.7505925212911147e-09,
+      "continuous_to_guarded_price_upper": 7.931677178150477e-07,
+      "guarded_to_finite_price_upper": 1.1793914982070581e-05,
+      "finite_analytic_control_bias_upper": 1.0008019282108997e-05,
+      "law_and_controls_total_upper": 2.2595101981994626e-05,
+      "financial_numerical_budget": 0.002,
+      "remaining_for_arithmetic": 0.001977404898018005,
+      "passes_law_and_controls_only": true,
+      "premises": [
+        "Exact real evaluation of the stated finite midpoint/guarded law",
+        "Independent uniform words and the existing even split of Box--Muller pairs at tau",
+        "Exact Gaussian analytic controls and real clipped policy",
+        "Final numerical arithmetic and finite-policy regret are separate obligations"
+      ]
+    },
+    {
+      "model": "H8",
+      "random_bits": 32,
+      "one_normal_L1_upper": 1.7505925212911147e-09,
+      "continuous_to_guarded_price_upper": 5.884665072751785e-07,
+      "guarded_to_finite_price_upper": 1.5542460659572392e-05,
+      "finite_analytic_control_bias_upper": 1.285864366466901e-05,
+      "law_and_controls_total_upper": 2.898957083151658e-05,
+      "financial_numerical_budget": 0.002,
+      "remaining_for_arithmetic": 0.001971010429168483,
+      "passes_law_and_controls_only": true,
+      "premises": [
+        "Exact real evaluation of the stated finite midpoint/guarded law",
+        "Independent uniform words and the existing even split of Box--Muller pairs at tau",
+        "Exact Gaussian analytic controls and real clipped policy",
+        "Final numerical arithmetic and finite-policy regret are separate obligations"
+      ]
+    }
+  ],
+  "exact_control_identity_counterexamples": [
+    {
+      "model": "C8",
+      "random_bits": 32,
+      "radial_word": 0,
+      "angular_word": 536870912,
+      "tau_log_lower": 9.025731161074752,
+      "guard_log_upper": 8.317766166719345,
+      "accrued_lower": 341.33333333333326,
+      "conditional_control_bias_lower_before_outer_discount": 17.749214902256423,
+      "past_word_event_probability_power_of_two": -1728,
+      "reason": "All tau stocks equal 4096 and k<0; finite future A<=4096, Gaussian EA=4096*mean(exp(r*t))>4096"
+    },
+    {
+      "model": "H4",
+      "random_bits": 32,
+      "radial_word": 0,
+      "angular_word": 536870912,
+      "tau_log_lower": 12.475411154066462,
+      "guard_log_upper": 8.317766166719345,
+      "accrued_lower": 341.33333333333326,
+      "conditional_control_bias_lower_before_outer_discount": 52.23980096384612,
+      "past_word_event_probability_power_of_two": -960,
+      "reason": "All tau stocks equal 4096 and k<0; finite future A<=4096, Gaussian EA=4096*mean(exp(r*t))>4096"
+    },
+    {
+      "model": "H8",
+      "random_bits": 32,
+      "radial_word": 0,
+      "angular_word": 536870912,
+      "tau_log_lower": 15.419526195380056,
+      "guard_log_upper": 8.317766166719345,
+      "accrued_lower": 170.66666666666663,
+      "conditional_control_bias_lower_before_outer_discount": 48.47787901894773,
+      "past_word_event_probability_power_of_two": -3456,
+      "reason": "All tau stocks equal 4096 and k<0; finite future A<=4096, Gaussian EA=4096*mean(exp(r*t))>4096"
+    }
+  ]
+}

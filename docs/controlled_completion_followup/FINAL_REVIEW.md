@@ -65,6 +65,13 @@ their historical targets exactly. This supports transfer of the old digital-law
 definition and phase approximation, but not transfer of continuous-model
 financial moments or regret.
 
+A separate fresh emission of all three production-width multipliers matched
+their committed gate arrays and register mappings exactly: 46,664, 86,200 and
+166,624 X/CX/CCX gates at widths 56, 72 and 96. This binds the reviewed generator
+to the actual production leaves, independently of the artifact cache. The
+[receipt](../../results/controlled_completion_followup/review_baseline_p3_binding.json)
+records that additional check.
+
 The artifact audit was rerun with its receipt redirected to the review's own
 [output](../../results/controlled_completion_followup/review_baseline_p3_audit.json).
 It verified all **895 historical artifacts and 25 preserved snapshot files**,
@@ -160,9 +167,33 @@ certificate. Those limitations are part of the result, not hidden passes.
 
 ## Clean-checkout release verification
 
-Pending the coordinating agent's committed clean-worktree receipt. Installation
-of the recorded requirements into a fresh isolated environment has completed,
-with system/user site packages excluded. Historical system-site-package runs
-alone do not prove that the release is self-contained. All requested integration
-corrections above are resolved; the full clean reproduction check remains the
-final release-verification condition.
+**Passed.** I inspected the completed
+[receipt](../../results/controlled_completion_followup/release_validation/receipt.json)
+and independently recomputed all six recorded log SHA-256 values. Every log
+matches its receipt and every subprocess exited zero. The replay began from a
+clean committed worktree at
+`a0a95659ac6f833c475653fecddf8cd67b58a1d2` using a newly installed Python 3.9.13
+environment with system/user site packages excluded. Qiskit loaded from that
+isolated environment, not the original user's roaming site.
+
+The replay passed **109 tests with three upstream Qiskit deprecation warnings**,
+the preserved-archive/gate audit, all five complete source/phase executions,
+all four fused executions, deterministic financial-bridge calculation and
+updated FT calculation. The arithmetic replay took 131.69 seconds of CPU time;
+this is a verification duration, not quantum performance. Recompilation changed
+only new result paths/timing diagnostics inside the disposable checkout, as the
+receipt explicitly records. Original evidence was retained.
+
+I compared the tested commit with the release branch: the only later Python
+addition in these two research packages is the replay harness itself. The
+reviewed scientific source is unchanged. Later review text and validation
+receipts do not change the compiled algorithm. Actual platform replay was on
+Windows; POSIX path behavior is covered by the normalization regressions, not an
+executed Linux replay.
+
+All reviewer-requested corrections are resolved. **No outstanding technical
+review blocker remains for merging this scoped feasibility report.** The
+coordinator reports that the optional external Macroscope review did not run
+because its credit balance was exhausted; it is not counted as a passed review.
+The scientific limitations and unmet advantage/full-price gates above remain
+unchanged by release approval.
