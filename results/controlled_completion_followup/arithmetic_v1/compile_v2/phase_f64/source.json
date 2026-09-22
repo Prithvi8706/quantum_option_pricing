@@ -1,0 +1,665 @@
+{
+  "format": "hierarchical-clean-xor-source-v1",
+  "word_width": 96,
+  "fraction_bits": 64,
+  "values": 58,
+  "inputs": [
+    {
+      "op": "input",
+      "args": [],
+      "params": {
+        "name": "Y",
+        "bits": 96,
+        "preparation": "provided"
+      },
+      "out": [
+        0
+      ]
+    },
+    {
+      "op": "input",
+      "args": [],
+      "params": {
+        "name": "left",
+        "bits": 96,
+        "preparation": "classical"
+      },
+      "out": [
+        1
+      ]
+    },
+    {
+      "op": "input",
+      "args": [],
+      "params": {
+        "name": "scale_exponent",
+        "bits": 96,
+        "preparation": "classical"
+      },
+      "out": [
+        2
+      ]
+    }
+  ],
+  "outputs": {
+    "angle": 57
+  },
+  "forward_calls": [
+    {
+      "leaf": "652b74312d1108be2be3",
+      "args": [
+        0,
+        1
+      ],
+      "out": [
+        3
+      ],
+      "argument_copy_cx": 384
+    },
+    {
+      "leaf": "62b811f9244041d058f3",
+      "args": [],
+      "out": [
+        4
+      ],
+      "argument_copy_cx": 0
+    },
+    {
+      "leaf": "652b74312d1108be2be3",
+      "args": [
+        4,
+        2
+      ],
+      "out": [
+        5
+      ],
+      "argument_copy_cx": 384
+    },
+    {
+      "leaf": "c6a31d8ddc41d2a30ba5",
+      "args": [
+        3,
+        5
+      ],
+      "out": [
+        6
+      ],
+      "argument_copy_cx": 384
+    },
+    {
+      "leaf": "78a4e28b6b8270c4acb7",
+      "args": [
+        6,
+        4
+      ],
+      "out": [
+        7
+      ],
+      "argument_copy_cx": 384
+    },
+    {
+      "leaf": "652b74312d1108be2be3",
+      "args": [
+        4,
+        6
+      ],
+      "out": [
+        8
+      ],
+      "argument_copy_cx": 384
+    },
+    {
+      "leaf": "77c3e78026eab913644e",
+      "args": [
+        7,
+        8,
+        6
+      ],
+      "out": [
+        9
+      ],
+      "argument_copy_cx": 576
+    },
+    {
+      "leaf": "b1f67b57be9790d78413",
+      "args": [],
+      "out": [
+        10
+      ],
+      "argument_copy_cx": 0
+    },
+    {
+      "leaf": "78a4e28b6b8270c4acb7",
+      "args": [
+        10,
+        9
+      ],
+      "out": [
+        11
+      ],
+      "argument_copy_cx": 384
+    },
+    {
+      "leaf": "0e59d01e2230c8459092",
+      "args": [],
+      "out": [
+        12
+      ],
+      "argument_copy_cx": 0
+    },
+    {
+      "leaf": "78a4e28b6b8270c4acb7",
+      "args": [
+        9,
+        12
+      ],
+      "out": [
+        13
+      ],
+      "argument_copy_cx": 384
+    },
+    {
+      "leaf": "77c3e78026eab913644e",
+      "args": [
+        13,
+        12,
+        9
+      ],
+      "out": [
+        14
+      ],
+      "argument_copy_cx": 576
+    },
+    {
+      "leaf": "0184c0b895424d356962",
+      "args": [
+        10,
+        14
+      ],
+      "out": [
+        15
+      ],
+      "argument_copy_cx": 384
+    },
+    {
+      "leaf": "77c3e78026eab913644e",
+      "args": [
+        11,
+        15,
+        9
+      ],
+      "out": [
+        16
+      ],
+      "argument_copy_cx": 576
+    },
+    {
+      "leaf": "3fd74f4b3b1f9e748b01",
+      "args": [],
+      "out": [
+        17
+      ],
+      "argument_copy_cx": 0
+    },
+    {
+      "leaf": "78a4e28b6b8270c4acb7",
+      "args": [
+        16,
+        4
+      ],
+      "out": [
+        18
+      ],
+      "argument_copy_cx": 384
+    },
+    {
+      "leaf": "77c3e78026eab913644e",
+      "args": [
+        18,
+        4,
+        16
+      ],
+      "out": [
+        19
+      ],
+      "argument_copy_cx": 576
+    },
+    {
+      "leaf": "78a4e28b6b8270c4acb7",
+      "args": [
+        19,
+        17
+      ],
+      "out": [
+        20
+      ],
+      "argument_copy_cx": 384
+    },
+    {
+      "leaf": "77c3e78026eab913644e",
+      "args": [
+        20,
+        19,
+        17
+      ],
+      "out": [
+        21
+      ],
+      "argument_copy_cx": 576
+    },
+    {
+      "leaf": "bfcdbbd3e4508cfc8db9",
+      "args": [
+        21
+      ],
+      "out": [
+        22
+      ],
+      "argument_copy_cx": 192
+    },
+    {
+      "leaf": "980ae1b32f05a528e0b9",
+      "args": [
+        22
+      ],
+      "out": [
+        23
+      ],
+      "argument_copy_cx": 192
+    },
+    {
+      "leaf": "6afb798b1bb9e18de291",
+      "args": [],
+      "out": [
+        24
+      ],
+      "argument_copy_cx": 0
+    },
+    {
+      "leaf": "ea5f473976242e8d02bc",
+      "args": [
+        23,
+        24
+      ],
+      "out": [
+        25
+      ],
+      "argument_copy_cx": 384
+    },
+    {
+      "leaf": "652b74312d1108be2be3",
+      "args": [
+        21,
+        25
+      ],
+      "out": [
+        26
+      ],
+      "argument_copy_cx": 384
+    },
+    {
+      "leaf": "cd0707da4cdc28e6e49a",
+      "args": [
+        22
+      ],
+      "out": [
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "argument_copy_cx": 192
+    },
+    {
+      "leaf": "57a6d96ede9083faa08f",
+      "args": [
+        26,
+        35
+      ],
+      "out": [
+        36
+      ],
+      "argument_copy_cx": 384
+    },
+    {
+      "leaf": "ea5f473976242e8d02bc",
+      "args": [
+        34,
+        36
+      ],
+      "out": [
+        37
+      ],
+      "argument_copy_cx": 384
+    },
+    {
+      "leaf": "57a6d96ede9083faa08f",
+      "args": [
+        26,
+        37
+      ],
+      "out": [
+        38
+      ],
+      "argument_copy_cx": 384
+    },
+    {
+      "leaf": "ea5f473976242e8d02bc",
+      "args": [
+        33,
+        38
+      ],
+      "out": [
+        39
+      ],
+      "argument_copy_cx": 384
+    },
+    {
+      "leaf": "57a6d96ede9083faa08f",
+      "args": [
+        26,
+        39
+      ],
+      "out": [
+        40
+      ],
+      "argument_copy_cx": 384
+    },
+    {
+      "leaf": "ea5f473976242e8d02bc",
+      "args": [
+        32,
+        40
+      ],
+      "out": [
+        41
+      ],
+      "argument_copy_cx": 384
+    },
+    {
+      "leaf": "57a6d96ede9083faa08f",
+      "args": [
+        26,
+        41
+      ],
+      "out": [
+        42
+      ],
+      "argument_copy_cx": 384
+    },
+    {
+      "leaf": "ea5f473976242e8d02bc",
+      "args": [
+        31,
+        42
+      ],
+      "out": [
+        43
+      ],
+      "argument_copy_cx": 384
+    },
+    {
+      "leaf": "57a6d96ede9083faa08f",
+      "args": [
+        26,
+        43
+      ],
+      "out": [
+        44
+      ],
+      "argument_copy_cx": 384
+    },
+    {
+      "leaf": "ea5f473976242e8d02bc",
+      "args": [
+        30,
+        44
+      ],
+      "out": [
+        45
+      ],
+      "argument_copy_cx": 384
+    },
+    {
+      "leaf": "57a6d96ede9083faa08f",
+      "args": [
+        26,
+        45
+      ],
+      "out": [
+        46
+      ],
+      "argument_copy_cx": 384
+    },
+    {
+      "leaf": "ea5f473976242e8d02bc",
+      "args": [
+        29,
+        46
+      ],
+      "out": [
+        47
+      ],
+      "argument_copy_cx": 384
+    },
+    {
+      "leaf": "57a6d96ede9083faa08f",
+      "args": [
+        26,
+        47
+      ],
+      "out": [
+        48
+      ],
+      "argument_copy_cx": 384
+    },
+    {
+      "leaf": "ea5f473976242e8d02bc",
+      "args": [
+        28,
+        48
+      ],
+      "out": [
+        49
+      ],
+      "argument_copy_cx": 384
+    },
+    {
+      "leaf": "57a6d96ede9083faa08f",
+      "args": [
+        26,
+        49
+      ],
+      "out": [
+        50
+      ],
+      "argument_copy_cx": 384
+    },
+    {
+      "leaf": "ea5f473976242e8d02bc",
+      "args": [
+        27,
+        50
+      ],
+      "out": [
+        51
+      ],
+      "argument_copy_cx": 384
+    },
+    {
+      "leaf": "142af1fe800ed02b8cae",
+      "args": [],
+      "out": [
+        52
+      ],
+      "argument_copy_cx": 0
+    },
+    {
+      "leaf": "652b74312d1108be2be3",
+      "args": [
+        52,
+        51
+      ],
+      "out": [
+        53
+      ],
+      "argument_copy_cx": 384
+    },
+    {
+      "leaf": "77c3e78026eab913644e",
+      "args": [
+        11,
+        53,
+        51
+      ],
+      "out": [
+        54
+      ],
+      "argument_copy_cx": 576
+    },
+    {
+      "leaf": "652b74312d1108be2be3",
+      "args": [
+        4,
+        54
+      ],
+      "out": [
+        55
+      ],
+      "argument_copy_cx": 384
+    },
+    {
+      "leaf": "77c3e78026eab913644e",
+      "args": [
+        7,
+        55,
+        54
+      ],
+      "out": [
+        56
+      ],
+      "argument_copy_cx": 576
+    },
+    {
+      "leaf": "cb87c2dd0af8ab882346",
+      "args": [
+        56
+      ],
+      "out": [
+        57
+      ],
+      "argument_copy_cx": 192
+    }
+  ],
+  "clean_schedule": [
+    "forward_calls",
+    "CX each named SSA output to its separate output register",
+    "reverse forward_calls with each leaf inverted"
+  ],
+  "invocation_semantics": "Copy every argument to a distinct clean local slot; bind output slots to fresh SSA output registers; execute leaf; uncopy arguments. Shared non-output local slots start/end zero.",
+  "inverse_semantics": "Reverse the clean schedule and invert every leaf; all basis gates are self-inverse.",
+  "library": "C:\\Users\\prith\\quantum_option_pricing\\results\\controlled_completion_followup\\arithmetic_v1\\leaves_f64",
+  "library_workspace_relative": "results\\controlled_completion_followup\\arithmetic_v1\\leaves_f64",
+  "library_keys": [
+    "0184c0b895424d356962",
+    "0e59d01e2230c8459092",
+    "142af1fe800ed02b8cae",
+    "3fd74f4b3b1f9e748b01",
+    "57a6d96ede9083faa08f",
+    "62b811f9244041d058f3",
+    "652b74312d1108be2be3",
+    "6afb798b1bb9e18de291",
+    "77c3e78026eab913644e",
+    "78a4e28b6b8270c4acb7",
+    "980ae1b32f05a528e0b9",
+    "b1f67b57be9790d78413",
+    "bfcdbbd3e4508cfc8db9",
+    "c6a31d8ddc41d2a30ba5",
+    "cb87c2dd0af8ab882346",
+    "cd0707da4cdc28e6e49a",
+    "ea5f473976242e8d02bc"
+  ],
+  "resources": {
+    "source_gates": 4382210,
+    "x": 1584,
+    "cx": 2581466,
+    "ccx": 1799160,
+    "t_count": 12594120,
+    "t_depth": 4428974,
+    "clifford_t_depth": 13285731,
+    "clifford_cx": 13376426,
+    "clifford_h": 3598320,
+    "logical_qubits": 22024,
+    "random_hadamards": 0,
+    "ssa_words": 58,
+    "max_reused_scratch_qubits": 16360,
+    "output_words": 1,
+    "t_depth_schedule": "serial clean leaves, ASAP inside each leaf; valid upper bound, not optimal circuit depth",
+    "ccx_expansion": "exact 7 T and 6 CX, 2 H per CCX; no relative-phase substitution"
+  },
+  "forward_operation_costs": {
+    "sub": {
+      "calls": 6,
+      "t_count": 16128,
+      "t_depth": 9216
+    },
+    "const": {
+      "calls": 6,
+      "t_count": 0,
+      "t_depth": 0
+    },
+    "shift": {
+      "calls": 1,
+      "t_count": 50036,
+      "t_depth": 10800
+    },
+    "lt": {
+      "calls": 5,
+      "t_count": 13580,
+      "t_depth": 7760
+    },
+    "select": {
+      "calls": 7,
+      "t_count": 9408,
+      "t_depth": 4711
+    },
+    "divide": {
+      "calls": 1,
+      "t_count": 1747200,
+      "t_depth": 753216
+    },
+    "bits": {
+      "calls": 2,
+      "t_count": 0,
+      "t_depth": 0
+    },
+    "add": {
+      "calls": 9,
+      "t_count": 24192,
+      "t_depth": 13824
+    },
+    "lookup": {
+      "calls": 1,
+      "t_count": 3136,
+      "t_depth": 1600
+    },
+    "mul": {
+      "calls": 8,
+      "t_count": 4429824,
+      "t_depth": 1411328
+    },
+    "cmul": {
+      "calls": 1,
+      "t_count": 3556,
+      "t_depth": 2032
+    }
+  },
+  "exact_clifford_t": true,
+  "arbitrary_rotations": 0,
+  "meaning": "Arithmetic Y source only; input Hadamards counted separately, phase-estimator envelope separate."
+}

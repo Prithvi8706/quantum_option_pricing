@@ -1,0 +1,99 @@
+{
+  "scope": "Classical simplification and literal-pseudocode diagnostics; no advantage benchmark",
+  "scipy_version": "1.13.1",
+  "compound_black_scholes": [
+    {
+      "k_outer": 2.0,
+      "sigma": 0.15,
+      "price": 5.761603151181331,
+      "quadrature_error_estimate": 4.131292593680628e-11,
+      "analytic_omitted_tail_bound": 3.37625403439568e-17,
+      "function_evaluations": 735,
+      "seconds": 0.005501600000000106
+    },
+    {
+      "k_outer": 2.0,
+      "sigma": 0.3,
+      "price": 11.513418010835473,
+      "quadrature_error_estimate": 8.920082450458722e-10,
+      "analytic_omitted_tail_bound": 7.781103275480885e-17,
+      "function_evaluations": 777,
+      "seconds": 0.0037725000000001785
+    },
+    {
+      "k_outer": 2.0,
+      "sigma": 0.6,
+      "price": 22.94911634318327,
+      "quadrature_error_estimate": 7.1595724380203e-11,
+      "analytic_omitted_tail_bound": 4.924925970458177e-16,
+      "function_evaluations": 777,
+      "seconds": 0.0031078999999998302
+    },
+    {
+      "k_outer": 5.0,
+      "sigma": 0.15,
+      "price": 3.8584484384629096,
+      "quadrature_error_estimate": 2.6486186938827854e-10,
+      "analytic_omitted_tail_bound": 3.37625403439568e-17,
+      "function_evaluations": 861,
+      "seconds": 0.003400099999999906
+    },
+    {
+      "k_outer": 5.0,
+      "sigma": 0.3,
+      "price": 9.360279338675685,
+      "quadrature_error_estimate": 6.533884544523971e-10,
+      "analytic_omitted_tail_bound": 7.781103275480885e-17,
+      "function_evaluations": 819,
+      "seconds": 0.0033199000000001533
+    },
+    {
+      "k_outer": 5.0,
+      "sigma": 0.6,
+      "price": 20.65953421809716,
+      "quadrature_error_estimate": 1.336505840503875e-09,
+      "analytic_omitted_tail_bound": 4.924925970458177e-16,
+      "function_evaluations": 861,
+      "seconds": 0.003736100000000242
+    },
+    {
+      "k_outer": 10.0,
+      "sigma": 0.15,
+      "price": 1.895739937157646,
+      "quadrature_error_estimate": 6.621379000648631e-10,
+      "analytic_omitted_tail_bound": 3.37625403439568e-17,
+      "function_evaluations": 735,
+      "seconds": 0.002995000000000303
+    },
+    {
+      "k_outer": 10.0,
+      "sigma": 0.3,
+      "price": 6.664555077871998,
+      "quadrature_error_estimate": 8.722302879959898e-10,
+      "analytic_omitted_tail_bound": 7.781103275480885e-17,
+      "function_evaluations": 735,
+      "seconds": 0.0028718999999997052
+    },
+    {
+      "k_outer": 10.0,
+      "sigma": 0.6,
+      "price": 17.516199599898016,
+      "quadrature_error_estimate": 1.6760904596495684e-10,
+      "analytic_omitted_tail_bound": 4.924925970458177e-16,
+      "function_evaluations": 861,
+      "seconds": 0.0034399000000000513
+    }
+  ],
+  "repeated_v1_literal_base_diagnostic": {
+    "exact_target": 1.0,
+    "literal_displayed_telescoping_sum": 0.0,
+    "with_explicit_base_term": 1.0,
+    "interpretation": "Apparent missing base-level convention in accessible v1; not a disproof of intended theorem; final ICML PDF inaccessible"
+  },
+  "illustrative_quantum_oracle_budget_seconds": {
+    "0.01": 1.0000000000000002e-07,
+    "1.0": 1e-05,
+    "100.0": 0.001
+  },
+  "crossover_assumptions": "Hypothetical Q=1/eta calls, zero setup, 10x speedup; ignores nonlinear logarithms, confidence amplification, and variance constants; sensitivity calculation, not measured quantum cost."
+}

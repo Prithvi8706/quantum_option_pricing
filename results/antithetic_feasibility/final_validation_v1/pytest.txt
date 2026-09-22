@@ -1,0 +1,20 @@
+C:\Users\prith\AppData\Roaming\Python\Python39\site-packages\pytest_asyncio\plugin.py:217: PytestDeprecationWarning: The configuration option "asyncio_default_fixture_loop_scope" is unset.
+The event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: "function", "class", "module", "package", "session"
+
+  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))
+.................                                                        [100%]
+============================== warnings summary ===============================
+research/antithetic_feasibility/test_reversible.py::test_toffoli_decomposition_matches_unitary_and_ledger
+  C:\Users\prith\AppData\Roaming\Python\Python39\site-packages\qiskit\utils\algorithm_globals.py:170: DeprecationWarning: The class ``qiskit.utils.algorithm_globals.QiskitAlgorithmGlobals`` is deprecated as of qiskit 0.45.0. It will be removed no earlier than 3 months after the release date. This algorithm utility has been migrated to an independent package: https://github.com/qiskit-community/qiskit-algorithms. You can run ``pip install qiskit_algorithms`` and import ``from qiskit_algorithms.utils`` instead. 
+    algorithm_globals = QiskitAlgorithmGlobals()
+
+research/antithetic_feasibility/test_reversible.py::test_toffoli_decomposition_matches_unitary_and_ledger
+  C:\Users\prith\AppData\Roaming\Python\Python39\site-packages\qiskit\utils\algorithm_globals.py:49: DeprecationWarning: The property ``qiskit.utils.algorithm_globals.QiskitAlgorithmGlobals.num_processes`` is deprecated as of qiskit 0.45.0. It will be removed no earlier than 3 months after the release date. This algorithm utility belongs to a legacy workflow and has no replacement.
+    self.num_processes = settings.get("num_processes", QiskitAlgorithmGlobals.CPU_COUNT)
+
+research/antithetic_feasibility/test_reversible.py::test_toffoli_decomposition_matches_unitary_and_ledger
+  C:\Users\prith\AppData\Roaming\Python\Python39\site-packages\qiskit\utils\algorithm_globals.py:120: DeprecationWarning: The property ``qiskit.utils.algorithm_globals.QiskitAlgorithmGlobals.num_processes`` is deprecated as of qiskit 0.45.0. It will be removed no earlier than 3 months after the release date. This algorithm utility belongs to a legacy workflow and has no replacement.
+    parallel.CPU_COUNT = self.num_processes
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+17 passed, 3 warnings in 13.59s

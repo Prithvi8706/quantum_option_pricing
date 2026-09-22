@@ -1,0 +1,66 @@
+{
+  "args": {
+    "out": "results/compound_feasibility/scaling_v1",
+    "cases": "C4,C8,H4,H8",
+    "outer": 13,
+    "inner": "8,10",
+    "replicates": 32,
+    "method": "rqmc",
+    "training": "results/compound_feasibility/pilot_v1/training.json",
+    "root": 2026092405
+  },
+  "models": [
+    {
+      "name": "C4",
+      "assets": 4,
+      "dates": 12,
+      "sigma": 0.2,
+      "rho": 0.2,
+      "maturity": 1.0,
+      "strike": 100.0,
+      "spot": 100.0,
+      "rate": 0.03
+    },
+    {
+      "name": "C8",
+      "assets": 8,
+      "dates": 12,
+      "sigma": 0.4,
+      "rho": 0.2,
+      "maturity": 1.0,
+      "strike": 100.0,
+      "spot": 100.0,
+      "rate": 0.03
+    },
+    {
+      "name": "H4",
+      "assets": 4,
+      "dates": 12,
+      "sigma": 0.4,
+      "rho": 0.7,
+      "maturity": 3.0,
+      "strike": 100.0,
+      "spot": 100.0,
+      "rate": 0.03
+    },
+    {
+      "name": "H8",
+      "assets": 8,
+      "dates": 24,
+      "sigma": 0.4,
+      "rho": 0.2,
+      "maturity": 3.0,
+      "strike": 100.0,
+      "spot": 100.0,
+      "rate": 0.03
+    }
+  ],
+  "platform": "Windows-10-10.0.26200-SP0",
+  "python": "3.9.13",
+  "source_hashes": {
+    "C:\\Users\\prith\\quantum_option_pricing\\research\\compound_feasibility\\acquire.py": "64bf6c9aa47c88274209d814647a2f9e8b50bca28ac620111400a64b7d1542a0",
+    "C:\\Users\\prith\\quantum_option_pricing\\research\\compound_feasibility\\model.py": "6fe960903d265b2a440e9eaf6272739f649072ccefd48315b9026c0056542994",
+    "C:\\Users\\prith\\quantum_option_pricing\\research\\compound_feasibility\\test_model.py": "0144b84f3744d134b2f4582c9f09f4ad8bf5c57f04a996dd4399561a1f3971c5",
+    "C:\\Users\\prith\\quantum_option_pricing\\research\\compound_feasibility\\__init__.py": "647cc7f309957a89e84ccb1331ec25e0337a7082a7bd502c0871118a6ce0ba35"
+  }
+}

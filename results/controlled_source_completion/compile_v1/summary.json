@@ -1,0 +1,558 @@
+[
+  {
+    "model": "C4",
+    "f": 24,
+    "q": 16,
+    "seconds": 29.174149899999996,
+    "resources": {
+      "source_gates": 513372590,
+      "x": 387062,
+      "cx": 268647516,
+      "ccx": 244338012,
+      "t_count": 1710366084,
+      "t_depth": 516430402,
+      "clifford_t_depth": 1545925463,
+      "clifford_cx": 1734675588,
+      "clifford_h": 488676024,
+      "logical_qubits": 570472,
+      "random_hadamards": 960,
+      "ssa_words": 10096,
+      "max_reused_scratch_qubits": 5040,
+      "output_words": 1,
+      "t_depth_schedule": "serial clean leaves, ASAP inside each leaf; valid upper bound, not optimal circuit depth",
+      "ccx_expansion": "exact 7 T and 6 CX, 2 H per CCX; no relative-phase substitution"
+    },
+    "opcost": {
+      "bits": {
+        "calls": 640,
+        "t_count": 0,
+        "t_depth": 0
+      },
+      "const": {
+        "calls": 44,
+        "t_count": 0,
+        "t_depth": 0
+      },
+      "add": {
+        "calls": 2804,
+        "t_count": 4396672,
+        "t_depth": 2512384
+      },
+      "lt": {
+        "calls": 722,
+        "t_count": 1152312,
+        "t_depth": 658464
+      },
+      "select": {
+        "calls": 749,
+        "t_count": 587216,
+        "t_depth": 294357
+      },
+      "msb": {
+        "calls": 58,
+        "t_count": 90944,
+        "t_depth": 26448
+      },
+      "sub": {
+        "calls": 675,
+        "t_count": 1058400,
+        "t_depth": 604800
+      },
+      "shift": {
+        "calls": 132,
+        "t_count": 3463152,
+        "t_depth": 802560
+      },
+      "lookup": {
+        "calls": 172,
+        "t_count": 3181696,
+        "t_depth": 1610368
+      },
+      "mul": {
+        "calls": 2270,
+        "t_count": 804415360,
+        "t_depth": 233900800
+      },
+      "cmul": {
+        "calls": 339,
+        "t_count": 8217300,
+        "t_depth": 4695600
+      },
+      "positive": {
+        "calls": 86,
+        "t_count": 33110,
+        "t_depth": 14276
+      },
+      "sqrt": {
+        "calls": 56,
+        "t_count": 14676480,
+        "t_depth": 7072632
+      },
+      "divide": {
+        "calls": 27,
+        "t_count": 13910400,
+        "t_depth": 6022512
+      }
+    },
+    "meta": {
+      "model": {
+        "name": "C4",
+        "assets": 4,
+        "dates": 12,
+        "sigma": 0.2,
+        "rho": 0.2,
+        "maturity": 1.0,
+        "strike": 100.0,
+        "spot": 100.0,
+        "rate": 0.03
+      },
+      "random_bits": 16,
+      "fit": {
+        "coef": [
+          0.004821215054782458,
+          0.002656533185500274,
+          -0.007318282337662389,
+          0.0006688169523072208,
+          0.04340604483824369,
+          -0.11715056732025829,
+          -0.040681910960723,
+          0.025360488295838382,
+          -0.011551435166037263,
+          0.12129401516895817,
+          0.013812783866832346,
+          0.007902519245265516
+        ],
+        "selected": "moment",
+        "seconds": 1.2952658000000001,
+        "validation_rmse_regression": 0.003161224227485106,
+        "validation_rmse_moment": 0.0026765750383420757,
+        "status": "Independent training/validation; target noisy. Price bracket does not assume policy accuracy."
+      },
+      "spot_guard": [
+        1.52587890625e-05,
+        4096.0
+      ],
+      "root_seed": 2026092601,
+      "law": "independent midpoint uniforms, paired Box-Muller; reset to guarded tau state",
+      "continuous_bridge": "NOT CERTIFIED",
+      "support": 98.51119396030626
+    }
+  },
+  {
+    "model": "H8",
+    "f": 24,
+    "q": 16,
+    "seconds": 4.8577066,
+    "resources": {
+      "source_gates": 1914971682,
+      "x": 1416032,
+      "cx": 1001732862,
+      "ccx": 911822788,
+      "t_count": 6382759516,
+      "t_depth": 1927015674,
+      "clifford_t_depth": 5768278097,
+      "clifford_cx": 6472669590,
+      "clifford_h": 1823645576,
+      "logical_qubits": 2087400,
+      "random_hadamards": 3456,
+      "ssa_words": 37184,
+      "max_reused_scratch_qubits": 5040,
+      "output_words": 1,
+      "t_depth_schedule": "serial clean leaves, ASAP inside each leaf; valid upper bound, not optimal circuit depth",
+      "ccx_expansion": "exact 7 T and 6 CX, 2 H per CCX; no relative-phase substitution"
+    },
+    "opcost": {
+      "bits": {
+        "calls": 2356,
+        "t_count": 0,
+        "t_depth": 0
+      },
+      "const": {
+        "calls": 59,
+        "t_count": 0,
+        "t_depth": 0
+      },
+      "add": {
+        "calls": 10496,
+        "t_count": 16457728,
+        "t_depth": 9404416
+      },
+      "lt": {
+        "calls": 2639,
+        "t_count": 4211844,
+        "t_depth": 2406768
+      },
+      "select": {
+        "calls": 2738,
+        "t_count": 2146592,
+        "t_depth": 1076034
+      },
+      "msb": {
+        "calls": 208,
+        "t_count": 326144,
+        "t_depth": 94848
+      },
+      "sub": {
+        "calls": 2456,
+        "t_count": 3851008,
+        "t_depth": 2200576
+      },
+      "shift": {
+        "calls": 498,
+        "t_count": 13065528,
+        "t_depth": 3027840
+      },
+      "lookup": {
+        "calls": 622,
+        "t_count": 11619328,
+        "t_depth": 5880832
+      },
+      "mul": {
+        "calls": 8473,
+        "t_count": 3002560064,
+        "t_depth": 873057920
+      },
+      "cmul": {
+        "calls": 1244,
+        "t_count": 31251612,
+        "t_depth": 17858064
+      },
+      "positive": {
+        "calls": 310,
+        "t_count": 119350,
+        "t_depth": 51460
+      },
+      "sqrt": {
+        "calls": 207,
+        "t_count": 54250560,
+        "t_depth": 26143479
+      },
+      "divide": {
+        "calls": 100,
+        "t_count": 51520000,
+        "t_depth": 22305600
+      }
+    },
+    "meta": {
+      "model": {
+        "name": "H8",
+        "assets": 8,
+        "dates": 24,
+        "sigma": 0.4,
+        "rho": 0.2,
+        "maturity": 3.0,
+        "strike": 100.0,
+        "spot": 100.0,
+        "rate": 0.03
+      },
+      "random_bits": 16,
+      "fit": {
+        "coef": [
+          -0.003149116527295224,
+          -0.08886317815136725,
+          -0.21020287131635634,
+          0.307693029173191,
+          -0.1162691848992357,
+          0.1687827158895409,
+          0.0006408236460606262,
+          0.07265881166390989,
+          -0.05043833093390118,
+          -0.022209848288186507,
+          -0.12692761981203407,
+          -0.07661676274776182
+        ],
+        "selected": "regression",
+        "seconds": 0.19515839999999862,
+        "validation_rmse_regression": 0.02782893985226589,
+        "validation_rmse_moment": 0.032223186652303504,
+        "status": "Independent training/validation; target noisy. Price bracket does not assume policy accuracy."
+      },
+      "spot_guard": [
+        1.52587890625e-05,
+        4096.0
+      ],
+      "root_seed": 2026092601,
+      "law": "independent midpoint uniforms, paired Box-Muller; reset to guarded tau state",
+      "continuous_bridge": "NOT CERTIFIED",
+      "support": 95.59974818331
+    }
+  },
+  {
+    "model": "C4",
+    "f": 40,
+    "q": 32,
+    "seconds": 31.154486200000008,
+    "resources": {
+      "source_gates": 850556592,
+      "x": 417128,
+      "cx": 445349756,
+      "ccx": 404789708,
+      "t_count": 2833527956,
+      "t_depth": 855739874,
+      "clifford_t_depth": 2564223759,
+      "clifford_cx": 2874088004,
+      "clifford_h": 809579416,
+      "logical_qubits": 735928,
+      "random_hadamards": 1920,
+      "ssa_words": 10098,
+      "max_reused_scratch_qubits": 8800,
+      "output_words": 1,
+      "t_depth_schedule": "serial clean leaves, ASAP inside each leaf; valid upper bound, not optimal circuit depth",
+      "ccx_expansion": "exact 7 T and 6 CX, 2 H per CCX; no relative-phase substitution"
+    },
+    "opcost": {
+      "bits": {
+        "calls": 640,
+        "t_count": 0,
+        "t_depth": 0
+      },
+      "const": {
+        "calls": 46,
+        "t_count": 0,
+        "t_depth": 0
+      },
+      "add": {
+        "calls": 2804,
+        "t_count": 5652864,
+        "t_depth": 3230208
+      },
+      "lt": {
+        "calls": 722,
+        "t_count": 1475768,
+        "t_depth": 843296
+      },
+      "select": {
+        "calls": 749,
+        "t_count": 754992,
+        "t_depth": 378245
+      },
+      "msb": {
+        "calls": 58,
+        "t_count": 116928,
+        "t_depth": 33872
+      },
+      "sub": {
+        "calls": 675,
+        "t_count": 1360800,
+        "t_depth": 777600
+      },
+      "shift": {
+        "calls": 132,
+        "t_count": 4897200,
+        "t_depth": 1153152
+      },
+      "lookup": {
+        "calls": 172,
+        "t_count": 3181696,
+        "t_depth": 1610368
+      },
+      "mul": {
+        "calls": 2270,
+        "t_count": 1327132800,
+        "t_depth": 384410880
+      },
+      "cmul": {
+        "calls": 339,
+        "t_count": 21087836,
+        "t_depth": 12050192
+      },
+      "positive": {
+        "calls": 86,
+        "t_count": 42742,
+        "t_depth": 18404
+      },
+      "sqrt": {
+        "calls": 56,
+        "t_count": 26166784,
+        "t_depth": 12610808
+      },
+      "divide": {
+        "calls": 27,
+        "t_count": 24893568,
+        "t_depth": 10752912
+      }
+    },
+    "meta": {
+      "model": {
+        "name": "C4",
+        "assets": 4,
+        "dates": 12,
+        "sigma": 0.2,
+        "rho": 0.2,
+        "maturity": 1.0,
+        "strike": 100.0,
+        "spot": 100.0,
+        "rate": 0.03
+      },
+      "random_bits": 32,
+      "fit": {
+        "coef": [
+          0.004821215054782458,
+          0.002656533185500274,
+          -0.007318282337662389,
+          0.0006688169523072208,
+          0.04340604483824369,
+          -0.11715056732025829,
+          -0.040681910960723,
+          0.025360488295838382,
+          -0.011551435166037263,
+          0.12129401516895817,
+          0.013812783866832346,
+          0.007902519245265516
+        ],
+        "selected": "moment",
+        "seconds": 1.2952658000000001,
+        "validation_rmse_regression": 0.003161224227485106,
+        "validation_rmse_moment": 0.0026765750383420757,
+        "status": "Independent training/validation; target noisy. Price bracket does not assume policy accuracy."
+      },
+      "spot_guard": [
+        1.52587890625e-05,
+        4096.0
+      ],
+      "root_seed": 2026092601,
+      "law": "independent midpoint uniforms, paired Box-Muller; reset to guarded tau state",
+      "continuous_bridge": "NOT CERTIFIED",
+      "support": 98.51119396030626
+    }
+  },
+  {
+    "model": "H8",
+    "f": 40,
+    "q": 32,
+    "seconds": 6.005548399999995,
+    "resources": {
+      "source_gates": 3167453304,
+      "x": 1525810,
+      "cx": 1657119234,
+      "ccx": 1508808260,
+      "t_count": 10561657820,
+      "t_depth": 3185986778,
+      "clifford_t_depth": 9546384897,
+      "clifford_cx": 10709968794,
+      "clifford_h": 3017616520,
+      "logical_qubits": 2686264,
+      "random_hadamards": 6912,
+      "ssa_words": 37186,
+      "max_reused_scratch_qubits": 8800,
+      "output_words": 1,
+      "t_depth_schedule": "serial clean leaves, ASAP inside each leaf; valid upper bound, not optimal circuit depth",
+      "ccx_expansion": "exact 7 T and 6 CX, 2 H per CCX; no relative-phase substitution"
+    },
+    "opcost": {
+      "bits": {
+        "calls": 2356,
+        "t_count": 0,
+        "t_depth": 0
+      },
+      "const": {
+        "calls": 61,
+        "t_count": 0,
+        "t_depth": 0
+      },
+      "add": {
+        "calls": 10496,
+        "t_count": 21159936,
+        "t_depth": 12091392
+      },
+      "lt": {
+        "calls": 2639,
+        "t_count": 5394116,
+        "t_depth": 3082352
+      },
+      "select": {
+        "calls": 2738,
+        "t_count": 2759904,
+        "t_depth": 1382690
+      },
+      "msb": {
+        "calls": 208,
+        "t_count": 419328,
+        "t_depth": 121472
+      },
+      "sub": {
+        "calls": 2456,
+        "t_count": 4951296,
+        "t_depth": 2829312
+      },
+      "shift": {
+        "calls": 498,
+        "t_count": 18475800,
+        "t_depth": 4350528
+      },
+      "lookup": {
+        "calls": 622,
+        "t_count": 11619328,
+        "t_depth": 5880832
+      },
+      "mul": {
+        "calls": 8473,
+        "t_count": 4953654720,
+        "t_depth": 1434851712
+      },
+      "cmul": {
+        "calls": 1244,
+        "t_count": 73318364,
+        "t_depth": 41896208
+      },
+      "positive": {
+        "calls": 310,
+        "t_count": 154070,
+        "t_depth": 66340
+      },
+      "sqrt": {
+        "calls": 207,
+        "t_count": 96723648,
+        "t_depth": 46614951
+      },
+      "divide": {
+        "calls": 100,
+        "t_count": 92198400,
+        "t_depth": 39825600
+      }
+    },
+    "meta": {
+      "model": {
+        "name": "H8",
+        "assets": 8,
+        "dates": 24,
+        "sigma": 0.4,
+        "rho": 0.2,
+        "maturity": 3.0,
+        "strike": 100.0,
+        "spot": 100.0,
+        "rate": 0.03
+      },
+      "random_bits": 32,
+      "fit": {
+        "coef": [
+          -0.003149116527295224,
+          -0.08886317815136725,
+          -0.21020287131635634,
+          0.307693029173191,
+          -0.1162691848992357,
+          0.1687827158895409,
+          0.0006408236460606262,
+          0.07265881166390989,
+          -0.05043833093390118,
+          -0.022209848288186507,
+          -0.12692761981203407,
+          -0.07661676274776182
+        ],
+        "selected": "regression",
+        "seconds": 0.19515839999999862,
+        "validation_rmse_regression": 0.02782893985226589,
+        "validation_rmse_moment": 0.032223186652303504,
+        "status": "Independent training/validation; target noisy. Price bracket does not assume policy accuracy."
+      },
+      "spot_guard": [
+        1.52587890625e-05,
+        4096.0
+      ],
+      "root_seed": 2026092601,
+      "law": "independent midpoint uniforms, paired Box-Muller; reset to guarded tau state",
+      "continuous_bridge": "NOT CERTIFIED",
+      "support": 95.59974818331
+    }
+  }
+]

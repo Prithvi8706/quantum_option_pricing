@@ -1,0 +1,359 @@
+{
+  "contract": "discounted capped weak Euler N256 Asian; empirical uncertainty only",
+  "environment": {
+    "platform": "Windows-10-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
+    "python": "3.9.13",
+    "numpy": "1.26.4",
+    "scipy": "1.13.1",
+    "thread_limits": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1"
+    }
+  },
+  "training": {
+    "seconds": 0.10906150000000014,
+    "beta": 55.670014791968164,
+    "control_exact_discrete_mean": -0.012205993590711523,
+    "diagnostic": {
+      "cap_exceedances": 0,
+      "max_payoff": 127.3458422976075,
+      "negative_variance": 0,
+      "raw_price": 13.825140382070753
+    }
+  },
+  "methods": {
+    "mc": {
+      "raw": {
+        "price": 13.922531667530187,
+        "replicate_se": 0.02755053358149634,
+        "halfwidth90_empirical_t": 0.04829747269456183,
+        "halfwidth95_empirical_t": 0.05872257228219724,
+        "replicate_prices": [
+          14.004749790574209,
+          13.927042129619458,
+          13.805876108010088,
+          13.941148221529229,
+          13.728272667086458,
+          13.909264895054674,
+          14.057154273397064,
+          13.989202658653653,
+          14.122644804733547,
+          13.967946350678996,
+          13.78511271364859,
+          13.888917959591085,
+          13.983070861460053,
+          13.847140726494766,
+          13.781909264467533,
+          14.02105325548358
+        ]
+      },
+      "controlled": {
+        "price": 13.918898898972682,
+        "replicate_se": 0.02645930772948593,
+        "halfwidth90_empirical_t": 0.04638449882655408,
+        "halfwidth95_empirical_t": 0.05639667943582707,
+        "replicate_prices": [
+          14.041293525476158,
+          13.930720936122396,
+          13.83442240614241,
+          13.961868995525808,
+          13.753379399690854,
+          13.865366618740612,
+          14.082329163683339,
+          13.97804137062992,
+          14.065131547220737,
+          13.979553303263565,
+          13.77189339025659,
+          13.855842287349658,
+          13.962522750340057,
+          13.860511337541762,
+          13.769245922311612,
+          13.990259429267438
+        ]
+      },
+      "run_seconds": 2.3358535000000002,
+      "controlled_total_seconds_with_training": 2.4449150000000004,
+      "replicates": 16,
+      "base_points_per_replicate": 4096,
+      "paths_per_replicate": 8192,
+      "seed_base": 22092026,
+      "diagnostics": [
+        {
+          "cap_exceedances": 0,
+          "max_payoff": 159.60273630691304,
+          "negative_variance": 0,
+          "raw_price": 14.004749790574207
+        },
+        {
+          "cap_exceedances": 0,
+          "max_payoff": 168.33646500794777,
+          "negative_variance": 0,
+          "raw_price": 13.927042129619458
+        },
+        {
+          "cap_exceedances": 0,
+          "max_payoff": 128.73425768369643,
+          "negative_variance": 0,
+          "raw_price": 13.80587610801009
+        },
+        {
+          "cap_exceedances": 0,
+          "max_payoff": 127.88696666921248,
+          "negative_variance": 0,
+          "raw_price": 13.941148221529229
+        },
+        {
+          "cap_exceedances": 0,
+          "max_payoff": 116.01204579791468,
+          "negative_variance": 0,
+          "raw_price": 13.728272667086456
+        },
+        {
+          "cap_exceedances": 0,
+          "max_payoff": 117.05480626827082,
+          "negative_variance": 0,
+          "raw_price": 13.909264895054674
+        },
+        {
+          "cap_exceedances": 0,
+          "max_payoff": 140.7613665828223,
+          "negative_variance": 0,
+          "raw_price": 14.057154273397062
+        },
+        {
+          "cap_exceedances": 0,
+          "max_payoff": 111.65104686685964,
+          "negative_variance": 0,
+          "raw_price": 13.989202658653655
+        },
+        {
+          "cap_exceedances": 0,
+          "max_payoff": 136.25046191955386,
+          "negative_variance": 0,
+          "raw_price": 14.122644804733547
+        },
+        {
+          "cap_exceedances": 0,
+          "max_payoff": 128.5576813232004,
+          "negative_variance": 0,
+          "raw_price": 13.967946350678996
+        },
+        {
+          "cap_exceedances": 0,
+          "max_payoff": 117.14073363999793,
+          "negative_variance": 0,
+          "raw_price": 13.78511271364859
+        },
+        {
+          "cap_exceedances": 0,
+          "max_payoff": 137.15736310094798,
+          "negative_variance": 0,
+          "raw_price": 13.888917959591087
+        },
+        {
+          "cap_exceedances": 0,
+          "max_payoff": 109.59248420212481,
+          "negative_variance": 0,
+          "raw_price": 13.983070861460055
+        },
+        {
+          "cap_exceedances": 0,
+          "max_payoff": 114.32785098482296,
+          "negative_variance": 0,
+          "raw_price": 13.847140726494764
+        },
+        {
+          "cap_exceedances": 0,
+          "max_payoff": 180.70895743487324,
+          "negative_variance": 0,
+          "raw_price": 13.781909264467533
+        },
+        {
+          "cap_exceedances": 0,
+          "max_payoff": 102.24855600024509,
+          "negative_variance": 0,
+          "raw_price": 14.02105325548358
+        }
+      ]
+    },
+    "sobol": {
+      "raw": {
+        "price": 13.91778410174335,
+        "replicate_se": 0.006033005015701521,
+        "halfwidth90_empirical_t": 0.010576161588670517,
+        "halfwidth95_empirical_t": 0.012859045799074122,
+        "replicate_prices": [
+          13.90181834394629,
+          13.96391146166653,
+          13.896042243315547,
+          13.94885052218158,
+          13.924528214565399,
+          13.94332410201349,
+          13.932574438677738,
+          13.896190420475136,
+          13.924231678339623,
+          13.912714774825247,
+          13.893235194329828,
+          13.920810395410008,
+          13.935394677844888,
+          13.912378960031981,
+          13.868204615538033,
+          13.910335584732277
+        ]
+      },
+      "controlled": {
+        "price": 13.917853151586204,
+        "replicate_se": 0.006038447189675932,
+        "halfwidth90_empirical_t": 0.0105857019936921,
+        "halfwidth95_empirical_t": 0.012870645518318735,
+        "replicate_prices": [
+          13.90152959356191,
+          13.96439717405342,
+          13.896070165474002,
+          13.948664789893837,
+          13.924413954482784,
+          13.942810432528033,
+          13.932676021942376,
+          13.895976661585262,
+          13.923783648861516,
+          13.913066173139153,
+          13.893630614527869,
+          13.921319997457497,
+          13.935898051371405,
+          13.912676055679231,
+          13.868176428242315,
+          13.910560662578673
+        ]
+      },
+      "run_seconds": 4.7148785,
+      "controlled_total_seconds_with_training": 4.82394,
+      "replicates": 16,
+      "base_points_per_replicate": 4096,
+      "paths_per_replicate": 8192,
+      "seed_base": 22093026,
+      "diagnostics": [
+        {
+          "cap_exceedances": 0,
+          "max_payoff": 122.52246405764734,
+          "negative_variance": 0,
+          "raw_price": 13.901818343946292
+        },
+        {
+          "cap_exceedances": 0,
+          "max_payoff": 121.89760229031512,
+          "negative_variance": 0,
+          "raw_price": 13.96391146166653
+        },
+        {
+          "cap_exceedances": 0,
+          "max_payoff": 127.32092392018973,
+          "negative_variance": 0,
+          "raw_price": 13.896042243315545
+        },
+        {
+          "cap_exceedances": 0,
+          "max_payoff": 112.60274246099377,
+          "negative_variance": 0,
+          "raw_price": 13.948850522181578
+        },
+        {
+          "cap_exceedances": 0,
+          "max_payoff": 128.05945156043964,
+          "negative_variance": 0,
+          "raw_price": 13.924528214565397
+        },
+        {
+          "cap_exceedances": 0,
+          "max_payoff": 149.59941972002787,
+          "negative_variance": 0,
+          "raw_price": 13.943324102013491
+        },
+        {
+          "cap_exceedances": 0,
+          "max_payoff": 110.2463713854601,
+          "negative_variance": 0,
+          "raw_price": 13.932574438677738
+        },
+        {
+          "cap_exceedances": 0,
+          "max_payoff": 108.47839800084279,
+          "negative_variance": 0,
+          "raw_price": 13.896190420475136
+        },
+        {
+          "cap_exceedances": 0,
+          "max_payoff": 123.22385901529611,
+          "negative_variance": 0,
+          "raw_price": 13.924231678339623
+        },
+        {
+          "cap_exceedances": 0,
+          "max_payoff": 111.58444269581597,
+          "negative_variance": 0,
+          "raw_price": 13.912714774825245
+        },
+        {
+          "cap_exceedances": 0,
+          "max_payoff": 103.48914851004386,
+          "negative_variance": 0,
+          "raw_price": 13.893235194329828
+        },
+        {
+          "cap_exceedances": 0,
+          "max_payoff": 95.56356225277202,
+          "negative_variance": 0,
+          "raw_price": 13.92081039541001
+        },
+        {
+          "cap_exceedances": 0,
+          "max_payoff": 113.61910820122236,
+          "negative_variance": 0,
+          "raw_price": 13.935394677844888
+        },
+        {
+          "cap_exceedances": 0,
+          "max_payoff": 116.62816007448731,
+          "negative_variance": 0,
+          "raw_price": 13.912378960031981
+        },
+        {
+          "cap_exceedances": 0,
+          "max_payoff": 131.39001157359473,
+          "negative_variance": 0,
+          "raw_price": 13.868204615538035
+        },
+        {
+          "cap_exceedances": 0,
+          "max_payoff": 119.63414636458634,
+          "negative_variance": 0,
+          "raw_price": 13.910335584732277
+        }
+      ]
+    }
+  },
+  "published_circuit_sensitivity": {
+    "T_count": 240000000000.0,
+    "T_depth": 120000000000.0,
+    "logical_qubits": 22000,
+    "discounted_dollar_error_excluding_model_bias": 0.2523158387226121,
+    "scenarios": [
+      {
+        "effective_T_layer_seconds": 1e-07,
+        "runtime_lower_bound_seconds": 12000.0,
+        "classical_seconds_required_for_10x_quantum_win": 120000.0
+      },
+      {
+        "effective_T_layer_seconds": 1e-06,
+        "runtime_lower_bound_seconds": 120000.0,
+        "classical_seconds_required_for_10x_quantum_win": 1200000.0
+      },
+      {
+        "effective_T_layer_seconds": 1e-05,
+        "runtime_lower_bound_seconds": 1200000.0,
+        "classical_seconds_required_for_10x_quantum_win": 12000000.000000002
+      }
+    ]
+  }
+}

@@ -1,0 +1,303 @@
+{
+  "purpose": "Independent toy-family falsification and honest query-accounting checks",
+  "paper": "https://arxiv.org/html/2609.03625v1",
+  "scope": "No option-pricing quantum advantage or hardware timing measured",
+  "python": "3.9.13",
+  "numpy": "1.26.4",
+  "scipy": "1.13.1",
+  "linear_family": [
+    {
+      "weights": [
+        1.0
+      ],
+      "q": 1,
+      "classical_points": 2,
+      "exact": 0.5,
+      "sobol": 0.25,
+      "midpoint": 0.5,
+      "antithetic": 0.5,
+      "sobol_bias": -0.25
+    },
+    {
+      "weights": [
+        1.0
+      ],
+      "q": 2,
+      "classical_points": 4,
+      "exact": 0.5,
+      "sobol": 0.375,
+      "midpoint": 0.5,
+      "antithetic": 0.5,
+      "sobol_bias": -0.125
+    },
+    {
+      "weights": [
+        1.0
+      ],
+      "q": 3,
+      "classical_points": 8,
+      "exact": 0.5,
+      "sobol": 0.4375,
+      "midpoint": 0.5,
+      "antithetic": 0.5,
+      "sobol_bias": -0.0625
+    },
+    {
+      "weights": [
+        1.0
+      ],
+      "q": 4,
+      "classical_points": 16,
+      "exact": 0.5,
+      "sobol": 0.46875,
+      "midpoint": 0.5,
+      "antithetic": 0.5,
+      "sobol_bias": -0.03125
+    },
+    {
+      "weights": [
+        1.0
+      ],
+      "q": 5,
+      "classical_points": 32,
+      "exact": 0.5,
+      "sobol": 0.484375,
+      "midpoint": 0.5,
+      "antithetic": 0.5,
+      "sobol_bias": -0.015625
+    },
+    {
+      "weights": [
+        1.0
+      ],
+      "q": 6,
+      "classical_points": 64,
+      "exact": 0.5,
+      "sobol": 0.4921875,
+      "midpoint": 0.5,
+      "antithetic": 0.5,
+      "sobol_bias": -0.0078125
+    },
+    {
+      "weights": [
+        0.9,
+        0.1
+      ],
+      "q": 1,
+      "classical_points": 2,
+      "exact": 0.5,
+      "sobol": 0.25,
+      "midpoint": 0.5,
+      "antithetic": 0.5,
+      "sobol_bias": -0.25
+    },
+    {
+      "weights": [
+        0.9,
+        0.1
+      ],
+      "q": 2,
+      "classical_points": 4,
+      "exact": 0.5,
+      "sobol": 0.37500000000000006,
+      "midpoint": 0.5,
+      "antithetic": 0.5,
+      "sobol_bias": -0.125
+    },
+    {
+      "weights": [
+        0.9,
+        0.1
+      ],
+      "q": 3,
+      "classical_points": 8,
+      "exact": 0.5,
+      "sobol": 0.4375,
+      "midpoint": 0.5,
+      "antithetic": 0.5,
+      "sobol_bias": -0.0625
+    },
+    {
+      "weights": [
+        0.9,
+        0.1
+      ],
+      "q": 4,
+      "classical_points": 16,
+      "exact": 0.5,
+      "sobol": 0.46875,
+      "midpoint": 0.5,
+      "antithetic": 0.5,
+      "sobol_bias": -0.03125
+    },
+    {
+      "weights": [
+        0.9,
+        0.1
+      ],
+      "q": 5,
+      "classical_points": 32,
+      "exact": 0.5,
+      "sobol": 0.484375,
+      "midpoint": 0.5,
+      "antithetic": 0.5,
+      "sobol_bias": -0.015625
+    },
+    {
+      "weights": [
+        0.9,
+        0.1
+      ],
+      "q": 6,
+      "classical_points": 64,
+      "exact": 0.5,
+      "sobol": 0.49218750000000006,
+      "midpoint": 0.5,
+      "antithetic": 0.5,
+      "sobol_bias": -0.0078125
+    }
+  ],
+  "query_accounting": [
+    {
+      "schedule": [
+        1
+      ],
+      "effective_amplification_budget": 1,
+      "full_A_or_Adagger_calls": 6144,
+      "ratio": 6144.0
+    },
+    {
+      "schedule": [
+        1,
+        2
+      ],
+      "effective_amplification_budget": 3,
+      "full_A_or_Adagger_calls": 16384,
+      "ratio": 5461.333333333333
+    },
+    {
+      "schedule": [
+        1,
+        2,
+        4
+      ],
+      "effective_amplification_budget": 7,
+      "full_A_or_Adagger_calls": 34816,
+      "ratio": 4973.714285714285
+    },
+    {
+      "schedule": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "effective_amplification_budget": 15,
+      "full_A_or_Adagger_calls": 69632,
+      "ratio": 4642.133333333333
+    },
+    {
+      "schedule": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "effective_amplification_budget": 31,
+      "full_A_or_Adagger_calls": 137216,
+      "ratio": 4426.322580645161
+    },
+    {
+      "schedule": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        32
+      ],
+      "effective_amplification_budget": 63,
+      "full_A_or_Adagger_calls": 270336,
+      "ratio": 4291.047619047619
+    }
+  ],
+  "hypothetical_10x_latency_thresholds": [
+    {
+      "classical_seconds": 0.001,
+      "full_oracle_calls": 1000,
+      "speedup_required": 10,
+      "max_seconds_per_full_oracle": 1e-07
+    },
+    {
+      "classical_seconds": 0.001,
+      "full_oracle_calls": 100000,
+      "speedup_required": 10,
+      "max_seconds_per_full_oracle": 1e-09
+    },
+    {
+      "classical_seconds": 0.001,
+      "full_oracle_calls": 10000000,
+      "speedup_required": 10,
+      "max_seconds_per_full_oracle": 1.0000000000000001e-11
+    },
+    {
+      "classical_seconds": 0.1,
+      "full_oracle_calls": 1000,
+      "speedup_required": 10,
+      "max_seconds_per_full_oracle": 1e-05
+    },
+    {
+      "classical_seconds": 0.1,
+      "full_oracle_calls": 100000,
+      "speedup_required": 10,
+      "max_seconds_per_full_oracle": 1.0000000000000001e-07
+    },
+    {
+      "classical_seconds": 0.1,
+      "full_oracle_calls": 10000000,
+      "speedup_required": 10,
+      "max_seconds_per_full_oracle": 1e-09
+    },
+    {
+      "classical_seconds": 10.0,
+      "full_oracle_calls": 1000,
+      "speedup_required": 10,
+      "max_seconds_per_full_oracle": 0.001
+    },
+    {
+      "classical_seconds": 10.0,
+      "full_oracle_calls": 100000,
+      "speedup_required": 10,
+      "max_seconds_per_full_oracle": 1e-05
+    },
+    {
+      "classical_seconds": 10.0,
+      "full_oracle_calls": 10000000,
+      "speedup_required": 10,
+      "max_seconds_per_full_oracle": 1e-07
+    }
+  ],
+  "sensitivity": [
+    {
+      "rqmc_rmse_exponent": 0.5,
+      "quantum_relative_speedup_multiplier_when_error_divided_by_10": 10.0
+    },
+    {
+      "rqmc_rmse_exponent": 0.75,
+      "quantum_relative_speedup_multiplier_when_error_divided_by_10": 2.1544346900318834
+    },
+    {
+      "rqmc_rmse_exponent": 1.0,
+      "quantum_relative_speedup_multiplier_when_error_divided_by_10": 1.0
+    },
+    {
+      "rqmc_rmse_exponent": 1.25,
+      "quantum_relative_speedup_multiplier_when_error_divided_by_10": 0.6309573444801934
+    },
+    {
+      "rqmc_rmse_exponent": 1.5,
+      "quantum_relative_speedup_multiplier_when_error_divided_by_10": 0.46415888336127786
+    }
+  ]
+}

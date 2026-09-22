@@ -1,0 +1,92 @@
+{
+  "commit": "a0a95659ac6f833c475653fecddf8cd67b58a1d2",
+  "checkout": "C:\\Users\\prith\\quantum_option_pricing\\.context\\controlled_closeout_checkout",
+  "interpreter": "C:\\Users\\prith\\quantum_option_pricing\\.context\\controlled_closeout_repro\\Scripts\\python.exe",
+  "initial_git_status": "",
+  "steps": [
+    {
+      "name": "environment",
+      "command": [
+        "C:\\Users\\prith\\quantum_option_pricing\\.context\\controlled_closeout_repro\\Scripts\\python.exe",
+        "-c",
+        "import site,sys,numpy,scipy,qiskit; assert site.ENABLE_USER_SITE is False; print(sys.version); print(sys.prefix); print(numpy.__version__,scipy.__version__,qiskit.__version__); print(qiskit.__file__)"
+      ],
+      "returncode": 0,
+      "seconds": 4.9974615,
+      "log": "environment.txt",
+      "log_sha256": "6ce172eec3cbd061a368e98a189854a00e42c0f4945dfe4d935fba5570b96af9"
+    },
+    {
+      "name": "tests",
+      "command": [
+        "C:\\Users\\prith\\quantum_option_pricing\\.context\\controlled_closeout_repro\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "research/antithetic_feasibility",
+        "research/compound_feasibility",
+        "research/controlled_residual_feasibility",
+        "research/controlled_source_completion/test_completion.py",
+        "research/controlled_completion_followup",
+        "-q"
+      ],
+      "returncode": 0,
+      "seconds": 158.4447739,
+      "log": "tests.txt",
+      "log_sha256": "6602858e83ba2aaee313446f1ea78df6a1c4cd01278580b6708465d086d7c83c"
+    },
+    {
+      "name": "archive_and_gate_audit",
+      "command": [
+        "C:\\Users\\prith\\quantum_option_pricing\\.context\\controlled_closeout_repro\\Scripts\\python.exe",
+        "-m",
+        "research.controlled_completion_followup.audit_artifacts"
+      ],
+      "returncode": 0,
+      "seconds": 26.85777090000002,
+      "log": "archive_and_gate_audit.txt",
+      "log_sha256": "8372314ffeda333c64027fc21bd7c21632e7c6e09f0e80915110075d687c05a6"
+    },
+    {
+      "name": "arithmetic_replay",
+      "command": [
+        "C:\\Users\\prith\\quantum_option_pricing\\.context\\controlled_closeout_repro\\Scripts\\python.exe",
+        "-m",
+        "research.controlled_completion_followup.arithmetic_run"
+      ],
+      "returncode": 0,
+      "seconds": 131.68986379999998,
+      "log": "arithmetic_replay.txt",
+      "log_sha256": "e2ea412e75966b2316ca80e076db9fb47bf6c07379d648e96db1ef65f86f635a"
+    },
+    {
+      "name": "financial_bridge",
+      "command": [
+        "C:\\Users\\prith\\quantum_option_pricing\\.context\\controlled_closeout_repro\\Scripts\\python.exe",
+        "-m",
+        "research.controlled_completion_followup.financial_bridge"
+      ],
+      "returncode": 0,
+      "seconds": 4.404496600000016,
+      "log": "financial_bridge.txt",
+      "log_sha256": "369522591a9338ff7ac174c8312f10b256b2046f26a4e62dbae5f0b052f80a20"
+    },
+    {
+      "name": "ft_model",
+      "command": [
+        "C:\\Users\\prith\\quantum_option_pricing\\.context\\controlled_closeout_repro\\Scripts\\python.exe",
+        "-m",
+        "research.controlled_completion_followup.ft_model",
+        "--ledger",
+        "results/controlled_completion_followup/arithmetic_v1/cost_v3_phase64/ledger.json"
+      ],
+      "returncode": 0,
+      "seconds": 1.6694566000000464,
+      "log": "ft_model.txt",
+      "log_sha256": "6050aabbbf320057419862a446d4d34a404a192c02bb2a6ae6ec603f477af0f9"
+    }
+  ],
+  "all_passed": true,
+  "scope": "Fresh isolated environment; tests, preserved evidence, emitted-gate replay and deterministic financial/FT calculations. No quantum hardware or full pricing QPE execution.",
+  "final_git_status": " M results/controlled_completion_followup/arithmetic_v1/compile_v2/C4_f24/source.json\n M results/controlled_completion_followup/arithmetic_v1/compile_v2/C4_f40/source.json\n M results/controlled_completion_followup/arithmetic_v1/compile_v2/H8_f24/source.json\n M results/controlled_completion_followup/arithmetic_v1/compile_v2/H8_f40/source.json\n M results/controlled_completion_followup/arithmetic_v1/compile_v2/phase_f64/source.json\n M results/controlled_completion_followup/arithmetic_v1/cost_v3_phase64/C4_f24_continuous_moment_conditional_circuit.json\n M results/controlled_completion_followup/arithmetic_v1/cost_v3_phase64/C4_f24_controlled_U_gates.json\n M results/controlled_completion_followup/arithmetic_v1/cost_v3_phase64/C4_f24_digital_support_bound_circuit.json\n M results/controlled_completion_followup/arithmetic_v1/cost_v3_phase64/C4_f40_continuous_moment_conditional_circuit.json\n M results/controlled_completion_followup/arithmetic_v1/cost_v3_phase64/C4_f40_controlled_U_gates.json\n M results/controlled_completion_followup/arithmetic_v1/cost_v3_phase64/C4_f40_digital_support_bound_circuit.json\n M results/controlled_completion_followup/arithmetic_v1/cost_v3_phase64/H8_f24_continuous_moment_conditional_circuit.json\n M results/controlled_completion_followup/arithmetic_v1/cost_v3_phase64/H8_f24_controlled_U_gates.json\n M results/controlled_completion_followup/arithmetic_v1/cost_v3_phase64/H8_f24_digital_support_bound_circuit.json\n M results/controlled_completion_followup/arithmetic_v1/cost_v3_phase64/H8_f40_continuous_moment_conditional_circuit.json\n M results/controlled_completion_followup/arithmetic_v1/cost_v3_phase64/H8_f40_controlled_U_gates.json\n M results/controlled_completion_followup/arithmetic_v1/cost_v3_phase64/H8_f40_digital_support_bound_circuit.json\n M results/controlled_completion_followup/arithmetic_v1/summary.json\n M results/controlled_completion_followup/arithmetic_v1/validation_v3/fusion.json\n M results/controlled_completion_followup/ft_scenarios.json\n",
+  "final_status_note": "Recompilation intentionally updates new result paths/timing diagnostics inside this isolated checkout. The original workspace evidence is preserved."
+}

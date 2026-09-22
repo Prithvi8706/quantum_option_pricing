@@ -1,0 +1,902 @@
+[
+  {
+    "case": "C4",
+    "strike": 3.0,
+    "inner_power": 11,
+    "outer_power": 10,
+    "replicates": 16,
+    "cap": 128.0,
+    "cap_tail_bound": 2.644253974682771e-05,
+    "global_analytic_bounds": {
+      "residual_mean_bound": 0.5097379526381659,
+      "residual_second_moment_bound": 0.39309444494349716,
+      "flat_policy_residual_second_moment_bound": 0.7861888898869943,
+      "interpretation": "Analytic population bounds, not fitted to pilot moments. Real arithmetic; capped payoff Lipschitz domination."
+    },
+    "statistics": {
+      "lower": {
+        "mean": 2.249179740181158,
+        "empirical_99_radius": 0.0025143168033402385
+      },
+      "upper": {
+        "mean": 2.249179940905593,
+        "empirical_99_radius": 0.0025144533948454053
+      },
+      "jensen_regret_upper": {
+        "mean": 2.0072443449625032e-07,
+        "empirical_99_radius": 5.914772771605326e-07
+      },
+      "deterministic_regret_envelope_mean": {
+        "mean": 0.0022419690691450143,
+        "empirical_99_radius": 0.0003759617559638152
+      },
+      "unresolved_state_fraction": {
+        "mean": 0.01983642578125,
+        "empirical_99_radius": 0.002345457038282076
+      },
+      "surrogate_price_mean": {
+        "mean": 2.2495693778698542,
+        "empirical_99_radius": 0.0025206630398906965
+      },
+      "flat_residual_mean": {
+        "mean": -0.00038963768869624323,
+        "empirical_99_radius": 6.235229947246065e-05
+      },
+      "flat_residual_second_moment": {
+        "mean": 0.03921975685867099,
+        "empirical_99_radius": 0.0004495985157780348
+      },
+      "flat_conditional_moment_bound_mean": {
+        "mean": 0.06234590598846597,
+        "empirical_99_radius": 0.0014863836607026625
+      },
+      "residual_sample_second_moment": {
+        "mean": 0.2530665406978509,
+        "empirical_99_radius": 0.0015335118143478181
+      },
+      "residual_sample_conditional_variance": {
+        "mean": 0.07235968565860496,
+        "empirical_99_radius": 0.000509405100015418
+      },
+      "raw_sample_second_moment": {
+        "mean": 44.23875178928629,
+        "empirical_99_radius": 0.12541866071879268
+      },
+      "conditional_residual_bound_mean": {
+        "mean": 0.3925710460407325,
+        "empirical_99_radius": 0.0012316324482920264
+      }
+    },
+    "interval_low": 2.2463758898156687,
+    "interval_high": 2.252010386131388,
+    "total_interval_width": 0.005634496315719328,
+    "seconds_with_training": 4.232803800000002,
+    "training_seconds": 1.2952658000000001,
+    "scope": "Empirical RQMC intervals; analytic moment formulas are separate population bounds. Whole three-strike cost charged per strike; no floating certificate."
+  },
+  {
+    "case": "C4",
+    "strike": 6.0,
+    "inner_power": 11,
+    "outer_power": 10,
+    "replicates": 16,
+    "cap": 128.0,
+    "cap_tail_bound": 2.644253974682771e-05,
+    "global_analytic_bounds": {
+      "residual_mean_bound": 0.5097379526381659,
+      "residual_second_moment_bound": 0.39309444494349716,
+      "flat_policy_residual_second_moment_bound": 0.7861888898869943,
+      "interpretation": "Analytic population bounds, not fitted to pilot moments. Real arithmetic; capped payoff Lipschitz domination."
+    },
+    "statistics": {
+      "lower": {
+        "mean": 1.247365618143701,
+        "empirical_99_radius": 0.0025724385232981923
+      },
+      "upper": {
+        "mean": 1.247365618143701,
+        "empirical_99_radius": 0.0025724385232981923
+      },
+      "jensen_regret_upper": {
+        "mean": 0.0,
+        "empirical_99_radius": 0.0
+      },
+      "deterministic_regret_envelope_mean": {
+        "mean": 1.4433174900634959e-05,
+        "empirical_99_radius": 1.0804431742156329e-05
+      },
+      "unresolved_state_fraction": {
+        "mean": 0.001953125,
+        "empirical_99_radius": 0.0009829043567219848
+      },
+      "surrogate_price_mean": {
+        "mean": 1.247418486697482,
+        "empirical_99_radius": 0.0025744001893507856
+      },
+      "flat_residual_mean": {
+        "mean": -5.2868553780876003e-05,
+        "empirical_99_radius": 3.485605431700517e-05
+      },
+      "flat_residual_second_moment": {
+        "mean": 0.02387103522010227,
+        "empirical_99_radius": 0.00032008953001928185
+      },
+      "flat_conditional_moment_bound_mean": {
+        "mean": 0.02524191372220389,
+        "empirical_99_radius": 0.0003796925458112667
+      },
+      "residual_sample_second_moment": {
+        "mean": 0.2530665406978509,
+        "empirical_99_radius": 0.0015335118143478181
+      },
+      "residual_sample_conditional_variance": {
+        "mean": 0.07235968565860496,
+        "empirical_99_radius": 0.000509405100015418
+      },
+      "raw_sample_second_moment": {
+        "mean": 44.23875178928629,
+        "empirical_99_radius": 0.12541866071879268
+      },
+      "conditional_residual_bound_mean": {
+        "mean": 0.3925710460407325,
+        "empirical_99_radius": 0.0012316324482920264
+      }
+    },
+    "interval_low": 1.2444969531114478,
+    "interval_high": 1.250260725715701,
+    "total_interval_width": 0.005763772604253203,
+    "seconds_with_training": 4.252287000000003,
+    "training_seconds": 1.2952658000000001,
+    "scope": "Empirical RQMC intervals; analytic moment formulas are separate population bounds. Whole three-strike cost charged per strike; no floating certificate."
+  },
+  {
+    "case": "C4",
+    "strike": 9.0,
+    "inner_power": 11,
+    "outer_power": 10,
+    "replicates": 16,
+    "cap": 128.0,
+    "cap_tail_bound": 2.644253974682771e-05,
+    "global_analytic_bounds": {
+      "residual_mean_bound": 0.5097379526381659,
+      "residual_second_moment_bound": 0.39309444494349716,
+      "flat_policy_residual_second_moment_bound": 0.7861888898869943,
+      "interpretation": "Analytic population bounds, not fitted to pilot moments. Real arithmetic; capped payoff Lipschitz domination."
+    },
+    "statistics": {
+      "lower": {
+        "mean": 0.6398193630612838,
+        "empirical_99_radius": 0.0023581137971904007
+      },
+      "upper": {
+        "mean": 0.6398193630612838,
+        "empirical_99_radius": 0.0023581137971904007
+      },
+      "jensen_regret_upper": {
+        "mean": 0.0,
+        "empirical_99_radius": 0.0
+      },
+      "deterministic_regret_envelope_mean": {
+        "mean": 0.0,
+        "empirical_99_radius": 0.0
+      },
+      "unresolved_state_fraction": {
+        "mean": 0.0,
+        "empirical_99_radius": 0.0
+      },
+      "surrogate_price_mean": {
+        "mean": 0.6398163170547266,
+        "empirical_99_radius": 0.002359227336829342
+      },
+      "flat_residual_mean": {
+        "mean": 3.046006557294544e-06,
+        "empirical_99_radius": 1.8239833452918778e-05
+      },
+      "flat_residual_second_moment": {
+        "mean": 0.014540471424537113,
+        "empirical_99_radius": 0.00022507248764745848
+      },
+      "flat_conditional_moment_bound_mean": {
+        "mean": 0.01455012459347257,
+        "empirical_99_radius": 0.0002154500204510669
+      },
+      "residual_sample_second_moment": {
+        "mean": 0.2530665406978509,
+        "empirical_99_radius": 0.0015335118143478181
+      },
+      "residual_sample_conditional_variance": {
+        "mean": 0.07235968565860496,
+        "empirical_99_radius": 0.000509405100015418
+      },
+      "raw_sample_second_moment": {
+        "mean": 44.23875178928629,
+        "empirical_99_radius": 0.12541866071879268
+      },
+      "conditional_residual_bound_mean": {
+        "mean": 0.3925710460407325,
+        "empirical_99_radius": 0.0012316324482920264
+      }
+    },
+    "interval_low": 0.6371897030982537,
+    "interval_high": 0.6424754655640608,
+    "total_interval_width": 0.005285762465807031,
+    "seconds_with_training": 4.2669912000000005,
+    "training_seconds": 1.2952658000000001,
+    "scope": "Empirical RQMC intervals; analytic moment formulas are separate population bounds. Whole three-strike cost charged per strike; no floating certificate."
+  },
+  {
+    "case": "C8",
+    "strike": 3.0,
+    "inner_power": 11,
+    "outer_power": 10,
+    "replicates": 16,
+    "cap": 512.0,
+    "cap_tail_bound": 8.764249335713581e-06,
+    "global_analytic_bounds": {
+      "residual_mean_bound": 2.2814962583223117,
+      "residual_second_moment_bound": 6.65835839675936,
+      "flat_policy_residual_second_moment_bound": 13.31671679351872,
+      "interpretation": "Analytic population bounds, not fitted to pilot moments. Real arithmetic; capped payoff Lipschitz domination."
+    },
+    "statistics": {
+      "lower": {
+        "mean": 4.392045536370819,
+        "empirical_99_radius": 0.007043211529838994
+      },
+      "upper": {
+        "mean": 4.392046120024482,
+        "empirical_99_radius": 0.007043240342790499
+      },
+      "jensen_regret_upper": {
+        "mean": 5.836536622293573e-07,
+        "empirical_99_radius": 8.863126589230896e-07
+      },
+      "deterministic_regret_envelope_mean": {
+        "mean": 0.08285813506015616,
+        "empirical_99_radius": 0.0035214081470017664
+      },
+      "unresolved_state_fraction": {
+        "mean": 0.1448974609375,
+        "empirical_99_radius": 0.006098053920331473
+      },
+      "surrogate_price_mean": {
+        "mean": 4.394181469616502,
+        "empirical_99_radius": 0.007124077399496439
+      },
+      "flat_residual_mean": {
+        "mean": -0.0021359332456811677,
+        "empirical_99_radius": 0.00023222213503447403
+      },
+      "flat_residual_second_moment": {
+        "mean": 0.6420051733534942,
+        "empirical_99_radius": 0.008695009405080249
+      },
+      "flat_conditional_moment_bound_mean": {
+        "mean": 1.3319755430882463,
+        "empirical_99_radius": 0.03326244578051575
+      },
+      "residual_sample_second_moment": {
+        "mean": 4.193515843671131,
+        "empirical_99_radius": 0.0239488609470668
+      },
+      "residual_sample_conditional_variance": {
+        "mean": 0.9696710174118108,
+        "empirical_99_radius": 0.005955977452833961
+      },
+      "raw_sample_second_moment": {
+        "mean": 123.3229826806275,
+        "empirical_99_radius": 0.6754914576015649
+      },
+      "conditional_residual_bound_mean": {
+        "mean": 6.6542103025397985,
+        "empirical_99_radius": 0.02025842675068549
+      }
+    },
+    "interval_low": 4.38419127107063,
+    "interval_high": 4.399909181704884,
+    "total_interval_width": 0.015717910634253762,
+    "seconds_with_training": 2.585472800000005,
+    "training_seconds": 0.19827890000000004,
+    "scope": "Empirical RQMC intervals; analytic moment formulas are separate population bounds. Whole three-strike cost charged per strike; no floating certificate."
+  },
+  {
+    "case": "C8",
+    "strike": 6.0,
+    "inner_power": 11,
+    "outer_power": 10,
+    "replicates": 16,
+    "cap": 512.0,
+    "cap_tail_bound": 8.764249335713581e-06,
+    "global_analytic_bounds": {
+      "residual_mean_bound": 2.2814962583223117,
+      "residual_second_moment_bound": 6.65835839675936,
+      "flat_policy_residual_second_moment_bound": 13.31671679351872,
+      "interpretation": "Analytic population bounds, not fitted to pilot moments. Real arithmetic; capped payoff Lipschitz domination."
+    },
+    "statistics": {
+      "lower": {
+        "mean": 3.19503864020629,
+        "empirical_99_radius": 0.009449984828910506
+      },
+      "upper": {
+        "mean": 3.1950421795975448,
+        "empirical_99_radius": 0.009450450763978447
+      },
+      "jensen_regret_upper": {
+        "mean": 3.5393912544271598e-06,
+        "empirical_99_radius": 3.436018211791877e-06
+      },
+      "deterministic_regret_envelope_mean": {
+        "mean": 0.005818800528771182,
+        "empirical_99_radius": 0.0009911115166378584
+      },
+      "unresolved_state_fraction": {
+        "mean": 0.0272216796875,
+        "empirical_99_radius": 0.0033832781982975784
+      },
+      "surrogate_price_mean": {
+        "mean": 3.1960546599433717,
+        "empirical_99_radius": 0.009510058531151246
+      },
+      "flat_residual_mean": {
+        "mean": -0.001016019737081079,
+        "empirical_99_radius": 0.0001794386435256799
+      },
+      "flat_residual_second_moment": {
+        "mean": 0.43002637945598987,
+        "empirical_99_radius": 0.008293809904887728
+      },
+      "flat_conditional_moment_bound_mean": {
+        "mean": 0.6189362987417036,
+        "empirical_99_radius": 0.019042946102871945
+      },
+      "residual_sample_second_moment": {
+        "mean": 4.193515843671131,
+        "empirical_99_radius": 0.0239488609470668
+      },
+      "residual_sample_conditional_variance": {
+        "mean": 0.9696710174118108,
+        "empirical_99_radius": 0.005955977452833961
+      },
+      "raw_sample_second_moment": {
+        "mean": 123.3229826806275,
+        "empirical_99_radius": 0.6754914576015649
+      },
+      "conditional_residual_bound_mean": {
+        "mean": 6.6542103025397985,
+        "empirical_99_radius": 0.02025842675068549
+      }
+    },
+    "interval_low": 3.184500452106362,
+    "interval_high": 3.2055896515361493,
+    "total_interval_width": 0.021089199429787264,
+    "seconds_with_training": 2.599229300000002,
+    "training_seconds": 0.19827890000000004,
+    "scope": "Empirical RQMC intervals; analytic moment formulas are separate population bounds. Whole three-strike cost charged per strike; no floating certificate."
+  },
+  {
+    "case": "C8",
+    "strike": 9.0,
+    "inner_power": 11,
+    "outer_power": 10,
+    "replicates": 16,
+    "cap": 512.0,
+    "cap_tail_bound": 8.764249335713581e-06,
+    "global_analytic_bounds": {
+      "residual_mean_bound": 2.2814962583223117,
+      "residual_second_moment_bound": 6.65835839675936,
+      "flat_policy_residual_second_moment_bound": 13.31671679351872,
+      "interpretation": "Analytic population bounds, not fitted to pilot moments. Real arithmetic; capped payoff Lipschitz domination."
+    },
+    "statistics": {
+      "lower": {
+        "mean": 2.2916762118458935,
+        "empirical_99_radius": 0.008662267605993599
+      },
+      "upper": {
+        "mean": 2.2916771424447977,
+        "empirical_99_radius": 0.008662907234639127
+      },
+      "jensen_regret_upper": {
+        "mean": 9.305989038577649e-07,
+        "empirical_99_radius": 1.9284433064807003e-06
+      },
+      "deterministic_regret_envelope_mean": {
+        "mean": 0.000577427444935528,
+        "empirical_99_radius": 0.00028389079555220963
+      },
+      "unresolved_state_fraction": {
+        "mean": 0.006591796875,
+        "empirical_99_radius": 0.0023715159319777374
+      },
+      "surrogate_price_mean": {
+        "mean": 2.2920903370372536,
+        "empirical_99_radius": 0.00867673251145563
+      },
+      "flat_residual_mean": {
+        "mean": -0.00041412519135967306,
+        "empirical_99_radius": 0.00011100822435019813
+      },
+      "flat_residual_second_moment": {
+        "mean": 0.3037702309501455,
+        "empirical_99_radius": 0.004126190665846581
+      },
+      "flat_conditional_moment_bound_mean": {
+        "mean": 0.34577274945064923,
+        "empirical_99_radius": 0.006490499434886895
+      },
+      "residual_sample_second_moment": {
+        "mean": 4.193515843671131,
+        "empirical_99_radius": 0.0239488609470668
+      },
+      "residual_sample_conditional_variance": {
+        "mean": 0.9696710174118108,
+        "empirical_99_radius": 0.005955977452833961
+      },
+      "raw_sample_second_moment": {
+        "mean": 123.3229826806275,
+        "empirical_99_radius": 0.6754914576015649
+      },
+      "conditional_residual_bound_mean": {
+        "mean": 6.6542103025397985,
+        "empirical_99_radius": 0.02025842675068549
+      }
+    },
+    "interval_low": 2.282016449734466,
+    "interval_high": 2.301346382089984,
+    "total_interval_width": 0.019329932355518054,
+    "seconds_with_training": 2.612327300000003,
+    "training_seconds": 0.19827890000000004,
+    "scope": "Empirical RQMC intervals; analytic moment formulas are separate population bounds. Whole three-strike cost charged per strike; no floating certificate."
+  },
+  {
+    "case": "H4",
+    "strike": 3.0,
+    "inner_power": 11,
+    "outer_power": 10,
+    "replicates": 16,
+    "cap": 2048.0,
+    "cap_tail_bound": 5.029291597311353e-05,
+    "global_analytic_bounds": {
+      "residual_mean_bound": 2.8879056554961373,
+      "residual_second_moment_bound": 15.544912236629598,
+      "flat_policy_residual_second_moment_bound": 31.089824473259196,
+      "interpretation": "Analytic population bounds, not fitted to pilot moments. Real arithmetic; capped payoff Lipschitz domination."
+    },
+    "statistics": {
+      "lower": {
+        "mean": 14.54910883125955,
+        "empirical_99_radius": 0.02030570286897272
+      },
+      "upper": {
+        "mean": 14.54911269286837,
+        "empirical_99_radius": 0.020305078180294287
+      },
+      "jensen_regret_upper": {
+        "mean": 3.861608817673036e-06,
+        "empirical_99_radius": 5.105320259039782e-06
+      },
+      "deterministic_regret_envelope_mean": {
+        "mean": 0.09147707415680614,
+        "empirical_99_radius": 0.0068627181729238465
+      },
+      "unresolved_state_fraction": {
+        "mean": 0.1231689453125,
+        "empirical_99_radius": 0.0041855950668573585
+      },
+      "surrogate_price_mean": {
+        "mean": 14.555411203377197,
+        "empirical_99_radius": 0.0202415884705561
+      },
+      "flat_residual_mean": {
+        "mean": -0.006302372117645435,
+        "empirical_99_radius": 0.0010748850423211926
+      },
+      "flat_residual_second_moment": {
+        "mean": 3.950831184150049,
+        "empirical_99_radius": 0.08216515049444628
+      },
+      "flat_conditional_moment_bound_mean": {
+        "mean": 6.439981606075392,
+        "empirical_99_radius": 0.0411265889007679
+      },
+      "residual_sample_second_moment": {
+        "mean": 12.957833945750053,
+        "empirical_99_radius": 0.29097669879568083
+      },
+      "residual_sample_conditional_variance": {
+        "mean": 4.433138143756157,
+        "empirical_99_radius": 0.09467652687018036
+      },
+      "raw_sample_second_moment": {
+        "mean": 1230.3085207794024,
+        "empirical_99_radius": 10.813635718562368
+      },
+      "conditional_residual_bound_mean": {
+        "mean": 15.673860305452271,
+        "empirical_99_radius": 0.28875997970934497
+      }
+    },
+    "interval_low": 14.52646484608829,
+    "interval_high": 14.571806274331543,
+    "total_interval_width": 0.045341428243252935,
+    "seconds_with_training": 1.9718044,
+    "training_seconds": 0.0664706000000006,
+    "scope": "Empirical RQMC intervals; analytic moment formulas are separate population bounds. Whole three-strike cost charged per strike; no floating certificate."
+  },
+  {
+    "case": "H4",
+    "strike": 6.0,
+    "inner_power": 11,
+    "outer_power": 10,
+    "replicates": 16,
+    "cap": 2048.0,
+    "cap_tail_bound": 5.029291597311353e-05,
+    "global_analytic_bounds": {
+      "residual_mean_bound": 2.8879056554961373,
+      "residual_second_moment_bound": 15.544912236629598,
+      "flat_policy_residual_second_moment_bound": 31.089824473259196,
+      "interpretation": "Analytic population bounds, not fitted to pilot moments. Real arithmetic; capped payoff Lipschitz domination."
+    },
+    "statistics": {
+      "lower": {
+        "mean": 13.105034914417269,
+        "empirical_99_radius": 0.02108625999327647
+      },
+      "upper": {
+        "mean": 13.105038072057724,
+        "empirical_99_radius": 0.021086726197838645
+      },
+      "jensen_regret_upper": {
+        "mean": 3.157640454797744e-06,
+        "empirical_99_radius": 7.852071812289354e-06
+      },
+      "deterministic_regret_envelope_mean": {
+        "mean": 0.05366731557125166,
+        "empirical_99_radius": 0.003380578867085502
+      },
+      "unresolved_state_fraction": {
+        "mean": 0.0701904296875,
+        "empirical_99_radius": 0.003823728957485281
+      },
+      "surrogate_price_mean": {
+        "mean": 13.11135074804858,
+        "empirical_99_radius": 0.020976182025412765
+      },
+      "flat_residual_mean": {
+        "mean": -0.006315833631310722,
+        "empirical_99_radius": 0.0009273834285893555
+      },
+      "flat_residual_second_moment": {
+        "mean": 3.5595896984782147,
+        "empirical_99_radius": 0.08307795626917398
+      },
+      "flat_conditional_moment_bound_mean": {
+        "mean": 5.385175607479616,
+        "empirical_99_radius": 0.065980809651293
+      },
+      "residual_sample_second_moment": {
+        "mean": 12.957833945750053,
+        "empirical_99_radius": 0.29097669879568083
+      },
+      "residual_sample_conditional_variance": {
+        "mean": 4.433138143756157,
+        "empirical_99_radius": 0.09467652687018036
+      },
+      "raw_sample_second_moment": {
+        "mean": 1230.3085207794024,
+        "empirical_99_radius": 10.813635718562368
+      },
+      "conditional_residual_bound_mean": {
+        "mean": 15.673860305452271,
+        "empirical_99_radius": 0.28875997970934497
+      }
+    },
+    "interval_low": 13.081520487869904,
+    "interval_high": 13.12860331141093,
+    "total_interval_width": 0.047082823541027,
+    "seconds_with_training": 1.988173800000002,
+    "training_seconds": 0.0664706000000006,
+    "scope": "Empirical RQMC intervals; analytic moment formulas are separate population bounds. Whole three-strike cost charged per strike; no floating certificate."
+  },
+  {
+    "case": "H4",
+    "strike": 9.0,
+    "inner_power": 11,
+    "outer_power": 10,
+    "replicates": 16,
+    "cap": 2048.0,
+    "cap_tail_bound": 5.029291597311353e-05,
+    "global_analytic_bounds": {
+      "residual_mean_bound": 2.8879056554961373,
+      "residual_second_moment_bound": 15.544912236629598,
+      "flat_policy_residual_second_moment_bound": 31.089824473259196,
+      "interpretation": "Analytic population bounds, not fitted to pilot moments. Real arithmetic; capped payoff Lipschitz domination."
+    },
+    "statistics": {
+      "lower": {
+        "mean": 11.855997655834988,
+        "empirical_99_radius": 0.022634452029056416
+      },
+      "upper": {
+        "mean": 11.856015905017406,
+        "empirical_99_radius": 0.022635229021272622
+      },
+      "jensen_regret_upper": {
+        "mean": 1.8249182417714676e-05,
+        "empirical_99_radius": 1.8239165753444823e-05
+      },
+      "deterministic_regret_envelope_mean": {
+        "mean": 0.03521871609820064,
+        "empirical_99_radius": 0.003358284827533532
+      },
+      "unresolved_state_fraction": {
+        "mean": 0.0447998046875,
+        "empirical_99_radius": 0.0032902137400054854
+      },
+      "surrogate_price_mean": {
+        "mean": 11.860836911245858,
+        "empirical_99_radius": 0.02270093069745464
+      },
+      "flat_residual_mean": {
+        "mean": -0.004839255410869766,
+        "empirical_99_radius": 0.0008043686728812778
+      },
+      "flat_residual_second_moment": {
+        "mean": 3.2755527243629454,
+        "empirical_99_radius": 0.07534821789026838
+      },
+      "flat_conditional_moment_bound_mean": {
+        "mean": 4.570285881445809,
+        "empirical_99_radius": 0.06570157165728134
+      },
+      "residual_sample_second_moment": {
+        "mean": 12.957833945750053,
+        "empirical_99_radius": 0.29097669879568083
+      },
+      "residual_sample_conditional_variance": {
+        "mean": 4.433138143756157,
+        "empirical_99_radius": 0.09467652687018036
+      },
+      "raw_sample_second_moment": {
+        "mean": 1230.3085207794024,
+        "empirical_99_radius": 10.813635718562368
+      },
+      "conditional_residual_bound_mean": {
+        "mean": 15.673860305452271,
+        "empirical_99_radius": 0.28875997970934497
+      }
+    },
+    "interval_low": 11.83075675679235,
+    "interval_high": 11.881307963441971,
+    "total_interval_width": 0.05055120664962054,
+    "seconds_with_training": 2.003576500000003,
+    "training_seconds": 0.0664706000000006,
+    "scope": "Empirical RQMC intervals; analytic moment formulas are separate population bounds. Whole three-strike cost charged per strike; no floating certificate."
+  },
+  {
+    "case": "H8",
+    "strike": 3.0,
+    "inner_power": 11,
+    "outer_power": 10,
+    "replicates": 16,
+    "cap": 2048.0,
+    "cap_tail_bound": 3.980896954314978e-05,
+    "global_analytic_bounds": {
+      "residual_mean_bound": 6.494809181781424,
+      "residual_second_moment_bound": 59.20678924492578,
+      "flat_policy_residual_second_moment_bound": 118.41357848985156,
+      "interpretation": "Analytic population bounds, not fitted to pilot moments. Real arithmetic; capped payoff Lipschitz domination."
+    },
+    "statistics": {
+      "lower": {
+        "mean": 9.106949887982267,
+        "empirical_99_radius": 0.015536666757262532
+      },
+      "upper": {
+        "mean": 9.106967414804949,
+        "empirical_99_radius": 0.015530232648837948
+      },
+      "jensen_regret_upper": {
+        "mean": 1.7526822680791872e-05,
+        "empirical_99_radius": 1.832320242642647e-05
+      },
+      "deterministic_regret_envelope_mean": {
+        "mean": 0.7498313904320606,
+        "empirical_99_radius": 0.015118001369737344
+      },
+      "unresolved_state_fraction": {
+        "mean": 0.364990234375,
+        "empirical_99_radius": 0.006710231451390087
+      },
+      "surrogate_price_mean": {
+        "mean": 9.100401452426471,
+        "empirical_99_radius": 0.015350245067514406
+      },
+      "flat_residual_mean": {
+        "mean": 0.006548435555795696,
+        "empirical_99_radius": 0.0014177281864118949
+      },
+      "flat_residual_second_moment": {
+        "mean": 8.34830213079934,
+        "empirical_99_radius": 0.09932218230303283
+      },
+      "flat_conditional_moment_bound_mean": {
+        "mean": 15.92849946197406,
+        "empirical_99_radius": 0.2842882133543225
+      },
+      "residual_sample_second_moment": {
+        "mean": 42.24522321928965,
+        "empirical_99_radius": 0.25595657967854707
+      },
+      "residual_sample_conditional_variance": {
+        "mean": 9.679391453472402,
+        "empirical_99_radius": 0.09009307817988167
+      },
+      "raw_sample_second_moment": {
+        "mean": 435.4879812402297,
+        "empirical_99_radius": 3.9293890239045677
+      },
+      "conditional_residual_bound_mean": {
+        "mean": 59.03869947842996,
+        "empirical_99_radius": 0.26015333728121365
+      }
+    },
+    "interval_low": 9.089624112364826,
+    "interval_high": 9.124325824370379,
+    "total_interval_width": 0.034701712005553276,
+    "seconds_with_training": 4.820581899999997,
+    "training_seconds": 0.19515839999999862,
+    "scope": "Empirical RQMC intervals; analytic moment formulas are separate population bounds. Whole three-strike cost charged per strike; no floating certificate."
+  },
+  {
+    "case": "H8",
+    "strike": 6.0,
+    "inner_power": 11,
+    "outer_power": 10,
+    "replicates": 16,
+    "cap": 2048.0,
+    "cap_tail_bound": 3.980896954314978e-05,
+    "global_analytic_bounds": {
+      "residual_mean_bound": 6.494809181781424,
+      "residual_second_moment_bound": 59.20678924492578,
+      "flat_policy_residual_second_moment_bound": 118.41357848985156,
+      "interpretation": "Analytic population bounds, not fitted to pilot moments. Real arithmetic; capped payoff Lipschitz domination."
+    },
+    "statistics": {
+      "lower": {
+        "mean": 7.675776790931038,
+        "empirical_99_radius": 0.016114240134787787
+      },
+      "upper": {
+        "mean": 7.675779575312058,
+        "empirical_99_radius": 0.01611695534632704
+      },
+      "jensen_regret_upper": {
+        "mean": 2.784381021384744e-06,
+        "empirical_99_radius": 5.819748314965031e-06
+      },
+      "deterministic_regret_envelope_mean": {
+        "mean": 0.282341866356753,
+        "empirical_99_radius": 0.012427507775922516
+      },
+      "unresolved_state_fraction": {
+        "mean": 0.200927734375,
+        "empirical_99_radius": 0.007041426144872459
+      },
+      "surrogate_price_mean": {
+        "mean": 7.67090428408736,
+        "empirical_99_radius": 0.01606085070005214
+      },
+      "flat_residual_mean": {
+        "mean": 0.004872506843677149,
+        "empirical_99_radius": 0.001264974551068948
+      },
+      "flat_residual_second_moment": {
+        "mean": 6.989559850806148,
+        "empirical_99_radius": 0.14373190325436497
+      },
+      "flat_conditional_moment_bound_mean": {
+        "mean": 10.924488451029848,
+        "empirical_99_radius": 0.3639962651718912
+      },
+      "residual_sample_second_moment": {
+        "mean": 42.24522321928965,
+        "empirical_99_radius": 0.25595657967854707
+      },
+      "residual_sample_conditional_variance": {
+        "mean": 9.679391453472402,
+        "empirical_99_radius": 0.09009307817988167
+      },
+      "raw_sample_second_moment": {
+        "mean": 435.4879812402297,
+        "empirical_99_radius": 3.9293890239045677
+      },
+      "conditional_residual_bound_mean": {
+        "mean": 59.03869947842996,
+        "empirical_99_radius": 0.26015333728121365
+      }
+    },
+    "interval_low": 7.657806932068589,
+    "interval_high": 7.693792271022978,
+    "total_interval_width": 0.03598533895438827,
+    "seconds_with_training": 4.837668199999992,
+    "training_seconds": 0.19515839999999862,
+    "scope": "Empirical RQMC intervals; analytic moment formulas are separate population bounds. Whole three-strike cost charged per strike; no floating certificate."
+  },
+  {
+    "case": "H8",
+    "strike": 9.0,
+    "inner_power": 11,
+    "outer_power": 10,
+    "replicates": 16,
+    "cap": 2048.0,
+    "cap_tail_bound": 3.980896954314978e-05,
+    "global_analytic_bounds": {
+      "residual_mean_bound": 6.494809181781424,
+      "residual_second_moment_bound": 59.20678924492578,
+      "flat_policy_residual_second_moment_bound": 118.41357848985156,
+      "interpretation": "Analytic population bounds, not fitted to pilot moments. Real arithmetic; capped payoff Lipschitz domination."
+    },
+    "statistics": {
+      "lower": {
+        "mean": 6.477087272434894,
+        "empirical_99_radius": 0.017605558235974105
+      },
+      "upper": {
+        "mean": 6.477090606035275,
+        "empirical_99_radius": 0.017605989294749012
+      },
+      "jensen_regret_upper": {
+        "mean": 3.333600380583062e-06,
+        "empirical_99_radius": 6.55552883916305e-06
+      },
+      "deterministic_regret_envelope_mean": {
+        "mean": 0.08553795408817813,
+        "empirical_99_radius": 0.00921676320955152
+      },
+      "unresolved_state_fraction": {
+        "mean": 0.07989501953125,
+        "empirical_99_radius": 0.004490568044972365
+      },
+      "surrogate_price_mean": {
+        "mean": 6.47300860170202,
+        "empirical_99_radius": 0.01777043044071416
+      },
+      "flat_residual_mean": {
+        "mean": 0.004078670732874457,
+        "empirical_99_radius": 0.0010370231431179018
+      },
+      "flat_residual_second_moment": {
+        "mean": 5.883488110830152,
+        "empirical_99_radius": 0.0945913014557004
+      },
+      "flat_conditional_moment_bound_mean": {
+        "mean": 7.8877803741725945,
+        "empirical_99_radius": 0.20221381752190018
+      },
+      "residual_sample_second_moment": {
+        "mean": 42.24522321928965,
+        "empirical_99_radius": 0.25595657967854707
+      },
+      "residual_sample_conditional_variance": {
+        "mean": 9.679391453472402,
+        "empirical_99_radius": 0.09009307817988167
+      },
+      "raw_sample_second_moment": {
+        "mean": 435.4879812402297,
+        "empirical_99_radius": 3.9293890239045677
+      },
+      "conditional_residual_bound_mean": {
+        "mean": 59.03869947842996,
+        "empirical_99_radius": 0.26015333728121365
+      }
+    },
+    "interval_low": 6.4574543642711335,
+    "interval_high": 6.496763803865483,
+    "total_interval_width": 0.03930943959434963,
+    "seconds_with_training": 4.851305899999993,
+    "training_seconds": 0.19515839999999862,
+    "scope": "Empirical RQMC intervals; analytic moment formulas are separate population bounds. Whole three-strike cost charged per strike; no floating certificate."
+  }
+]

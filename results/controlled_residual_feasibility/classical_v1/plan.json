@@ -1,0 +1,66 @@
+{
+  "args": {
+    "out": "results/controlled_residual_feasibility/classical_v1",
+    "mode": "classical",
+    "cases": "C4,C8,H4,H8",
+    "outer": 13,
+    "inner": "4,8",
+    "replicates": 32,
+    "root": 2026092502,
+    "retrain": false
+  },
+  "models": [
+    {
+      "name": "C4",
+      "assets": 4,
+      "dates": 12,
+      "sigma": 0.2,
+      "rho": 0.2,
+      "maturity": 1.0,
+      "strike": 100.0,
+      "spot": 100.0,
+      "rate": 0.03
+    },
+    {
+      "name": "C8",
+      "assets": 8,
+      "dates": 12,
+      "sigma": 0.4,
+      "rho": 0.2,
+      "maturity": 1.0,
+      "strike": 100.0,
+      "spot": 100.0,
+      "rate": 0.03
+    },
+    {
+      "name": "H4",
+      "assets": 4,
+      "dates": 12,
+      "sigma": 0.4,
+      "rho": 0.7,
+      "maturity": 3.0,
+      "strike": 100.0,
+      "spot": 100.0,
+      "rate": 0.03
+    },
+    {
+      "name": "H8",
+      "assets": 8,
+      "dates": 24,
+      "sigma": 0.4,
+      "rho": 0.2,
+      "maturity": 3.0,
+      "strike": 100.0,
+      "spot": 100.0,
+      "rate": 0.03
+    }
+  ],
+  "python": "3.9.13",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "source_hashes": {
+    "C:\\Users\\prith\\quantum_option_pricing\\research\\controlled_residual_feasibility\\acquire.py": "7772a5c36d81eed82e7a1552700e24c96b3a28ede6ac2f08e2f7d0a5cad75146",
+    "C:\\Users\\prith\\quantum_option_pricing\\research\\controlled_residual_feasibility\\bounds.py": "b314bed79b330f47acf231e0e358fd3bc04fa1de2ccea8f7ec5674a4d52273ee",
+    "C:\\Users\\prith\\quantum_option_pricing\\research\\controlled_residual_feasibility\\test_bounds.py": "f785fb1f4596c6f66015c80afc124677d76a59b40b6ecdab9ff5fdb01d648856",
+    "C:\\Users\\prith\\quantum_option_pricing\\research\\controlled_residual_feasibility\\__init__.py": "3481de0d0db7ee76ef99c0b6434d74b60d01fafb12c8cc9182c8a552d9ab394b"
+  }
+}
