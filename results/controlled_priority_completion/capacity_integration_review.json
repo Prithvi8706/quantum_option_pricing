@@ -1,0 +1,67 @@
+{
+  "status": "Combined counts and archived composed basis checks reconcile.",
+  "review_scope": "The author of this review did not author combined_cost or replay.",
+  "input_sha256": {
+    "results/controlled_priority_completion/combined_cost.json": "4abd56989142b1af250b5cd1115df5dbb45e95eab3d37235c43d0f730d839926",
+    "results/controlled_priority_completion/combined_replay.json": "8af5f03fc94bde14ad9a5c39f70b3b7f4ffc2ec8efae6d47d542f3a317337359",
+    "results/controlled_priority_completion/estimator_hadamard.json": "551e2219b33f66bfe8d3e853de40e23a94be74bb05dc94f381b5e9782075ac86",
+    "results/controlled_priority_completion/estimator_bounded.json": "d06608a3e490004e732ec526faedb9c03c3a592a29c9ce948351b3ccf2d5771b",
+    "results/controlled_completion_followup/synthesis_rotations.json": "6bb1a20128a1e0e3ea9e8d244dc509932be9413bf71a523e3f5312969339f29a"
+  },
+  "rows": [
+    {
+      "model": "C4",
+      "method": "hadamard",
+      "mode": "continuous_moment_conditional",
+      "logical_T": 699762085324240,
+      "scheduled_T_depth": 19399520724480,
+      "logical_qubits_upper": 879289,
+      "unused_allocation_slack": 1
+    },
+    {
+      "model": "C4",
+      "method": "hadamard",
+      "mode": "digital_support_bound",
+      "logical_T": 156959209573108564,
+      "scheduled_T_depth": 4351383852985728,
+      "logical_qubits_upper": 879289,
+      "unused_allocation_slack": 1
+    },
+    {
+      "model": "H8",
+      "method": "hadamard",
+      "mode": "continuous_moment_conditional",
+      "logical_T": 6238068915404940,
+      "scheduled_T_depth": 58849178234560,
+      "logical_qubits_upper": 3182449,
+      "unused_allocation_slack": 1
+    },
+    {
+      "model": "H8",
+      "method": "hadamard",
+      "mode": "digital_support_bound",
+      "logical_T": 564098624481972960,
+      "scheduled_T_depth": 5321637343895040,
+      "logical_qubits_upper": 3182449,
+      "unused_allocation_slack": 1
+    },
+    {
+      "model": "C4",
+      "method": "bounded_QAE",
+      "mode": "unconditional_digital_support",
+      "logical_T": 4473763507420080,
+      "scheduled_T_depth": 91501694555070,
+      "logical_qubits_upper": 857599,
+      "unused_allocation_slack": 0
+    },
+    {
+      "model": "H8",
+      "method": "bounded_QAE",
+      "mode": "unconditional_digital_support",
+      "logical_T": 16431638006636040,
+      "scheduled_T_depth": 120669080596830,
+      "logical_qubits_upper": 3160759,
+      "unused_allocation_slack": 0
+    }
+  ]
+}

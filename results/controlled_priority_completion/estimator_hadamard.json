@@ -1,0 +1,5549 @@
+[
+  {
+    "model": "C4",
+    "mode": "continuous_moment_conditional",
+    "financial_fraction_bits": 40,
+    "phase_fraction_bits": 64,
+    "allocation": {
+      "method": "known-moment complex phase with integer Hadamard tests",
+      "moment": 0.19448064336973883,
+      "error": 0.002030226129231438,
+      "ideal_test_failure": 0.003,
+      "endpoint_bits": 64,
+      "initial_radius_exact": [
+        8135006677696192725,
+        18446744073709551616
+      ],
+      "normalizer": 16,
+      "normalized_RMS_upper_exact": [
+        8135006677696192725,
+        147573952589676412928
+      ],
+      "normalizer_factor": 8,
+      "C": 5,
+      "c_exact": [
+        1,
+        8
+      ],
+      "contraction_exact": [
+        9,
+        11
+      ],
+      "final_radius": 0.001956065741244564,
+      "stages": [
+        {
+          "stage": 0,
+          "width_exact": [
+            8135006677696192725,
+            9223372036854775808
+          ],
+          "test_epsilon_exact": [
+            8135006677696192725,
+            202914184810805067776
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 31,
+          "repetitions": 65,
+          "small_if_plus_count_at_least": 43,
+          "p_plus_small_lower_exact": [
+            943098653,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            199498621,
+            536870912
+          ],
+          "failure_allocation_exact": [
+            107221699928436771,
+            36370061784327594704896
+          ],
+          "controlled_U_calls": 2015,
+          "small_failure": 1.1668929414648175e-06,
+          "large_failure": 2.024242520395642e-06,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 1,
+          "width_exact": [
+            73215060099265734525,
+            101457092405402533888
+          ],
+          "test_epsilon_exact": [
+            73215060099265734525,
+            2232056032918855745536
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 38,
+          "repetitions": 62,
+          "small_if_plus_count_at_least": 41,
+          "p_plus_small_lower_exact": [
+            235710035,
+            268435456
+          ],
+          "p_plus_large_upper_exact": [
+            3096701,
+            8388608
+          ],
+          "failure_allocation_exact": [
+            65716525762590279,
+            18185030892163797352448
+          ],
+          "controlled_U_calls": 2356,
+          "small_failure": 1.9379848000197077e-06,
+          "large_failure": 2.915303085863054e-06,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 2,
+          "width_exact": [
+            658935540893391610725,
+            1116028016459427872768
+          ],
+          "test_epsilon_exact": [
+            658935540893391610725,
+            24552616362107413200896
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 46,
+          "repetitions": 63,
+          "small_if_plus_count_at_least": 42,
+          "p_plus_small_lower_exact": [
+            943684453,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            404972441,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            79551583817872443,
+            18185030892163797352448
+          ],
+          "controlled_U_calls": 2898,
+          "small_failure": 2.3652880519891e-06,
+          "large_failure": 3.052341147400461e-06,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 3,
+          "width_exact": [
+            5930419868040524496525,
+            12276308181053706600448
+          ],
+          "test_epsilon_exact": [
+            5930419868040524496525,
+            270078779983181545209856
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 57,
+          "repetitions": 59,
+          "small_if_plus_count_at_least": 39,
+          "p_plus_small_lower_exact": [
+            117809191,
+            134217728
+          ],
+          "p_plus_large_upper_exact": [
+            392685973,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            197149577287770837,
+            36370061784327594704896
+          ],
+          "controlled_U_calls": 3363,
+          "small_failure": 3.2538539576517207e-06,
+          "large_failure": 3.9591704033038295e-06,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 4,
+          "width_exact": [
+            53373778812364720468725,
+            135039389991590772604928
+          ],
+          "test_epsilon_exact": [
+            53373778812364720468725,
+            2970866579814996997308416
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 69,
+          "repetitions": 60,
+          "small_if_plus_count_at_least": 40,
+          "p_plus_small_lower_exact": [
+            235831131,
+            268435456
+          ],
+          "p_plus_large_upper_exact": [
+            401288967,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            238654751453617329,
+            36370061784327594704896
+          ],
+          "controlled_U_calls": 4140,
+          "small_failure": 3.993026567014023e-06,
+          "large_failure": 4.02273789148304e-06,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 5,
+          "width_exact": [
+            480364009311282484218525,
+            1485433289907498498654208
+          ],
+          "test_epsilon_exact": [
+            480364009311282484218525,
+            32679532377964966970392576
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 85,
+          "repetitions": 56,
+          "small_if_plus_count_at_least": 37,
+          "p_plus_small_lower_exact": [
+            471314465,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            394245349,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            293994983674745985,
+            36370061784327594704896
+          ],
+          "controlled_U_calls": 4760,
+          "small_failure": 5.122249724650667e-06,
+          "large_failure": 7.876319827187973e-06,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 6,
+          "width_exact": [
+            4323276083801542357966725,
+            16339766188982483485196288
+          ],
+          "test_epsilon_exact": [
+            4323276083801542357966725,
+            359474856157614636674318336
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 104,
+          "repetitions": 56,
+          "small_if_plus_count_at_least": 37,
+          "p_plus_small_lower_exact": [
+            117816713,
+            134217728
+          ],
+          "p_plus_large_upper_exact": [
+            393288203,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            44963938679667033,
+            4546257723040949338112
+          ],
+          "controlled_U_calls": 5824,
+          "small_failure": 5.179574175798204e-06,
+          "large_failure": 7.383305225219796e-06,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 7,
+          "width_exact": [
+            38909484754213881221700525,
+            179737428078807318337159168
+          ],
+          "test_epsilon_exact": [
+            38909484754213881221700525,
+            3954223417733761003417501696
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 127,
+          "repetitions": 54,
+          "small_if_plus_count_at_least": 36,
+          "p_plus_small_lower_exact": [
+            471305835,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            197035631,
+            536870912
+          ],
+          "failure_allocation_exact": [
+            439263093255208707,
+            36370061784327594704896
+          ],
+          "controlled_U_calls": 6858,
+          "small_failure": 1.125812228304188e-05,
+          "large_failure": 7.567424280484054e-06,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 8,
+          "width_exact": [
+            350185362787924930995304725,
+            1977111708866880501708750848
+          ],
+          "test_epsilon_exact": [
+            350185362787924930995304725,
+            43496457595071371037592518656
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 155,
+          "repetitions": 54,
+          "small_if_plus_count_at_least": 36,
+          "p_plus_small_lower_exact": [
+            942739093,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            98838451,
+            268435456
+          ],
+          "failure_allocation_exact": [
+            536108499642183855,
+            36370061784327594704896
+          ],
+          "controlled_U_calls": 8370,
+          "small_failure": 1.1100751236792136e-05,
+          "large_failure": 8.237548589376912e-06,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 9,
+          "width_exact": [
+            3151668265091324378957742525,
+            21748228797535685518796259328
+          ],
+          "test_epsilon_exact": [
+            3151668265091324378957742525,
+            478461033545785081413517705216
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 190,
+          "repetitions": 53,
+          "small_if_plus_count_at_least": 35,
+          "p_plus_small_lower_exact": [
+            471239155,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            98182995,
+            268435456
+          ],
+          "failure_allocation_exact": [
+            328582628812951395,
+            18185030892163797352448
+          ],
+          "controlled_U_calls": 10070,
+          "small_failure": 8.36308430184845e-06,
+          "large_failure": 1.2744133624247247e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 10,
+          "width_exact": [
+            28365014385821919410619682725,
+            239230516772892540706758852608
+          ],
+          "test_epsilon_exact": [
+            28365014385821919410619682725,
+            5263071369003635895548694757376
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 232,
+          "repetitions": 53,
+          "small_if_plus_count_at_least": 35,
+          "p_plus_small_lower_exact": [
+            471281873,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            24599335,
+            67108864
+          ],
+          "failure_allocation_exact": [
+            100304170900795689,
+            4546257723040949338112
+          ],
+          "controlled_U_calls": 12296,
+          "small_failure": 8.28395974166355e-06,
+          "large_failure": 1.346385462136667e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 11,
+          "width_exact": [
+            255285129472397274695577144525,
+            2631535684501817947774347378688
+          ],
+          "test_epsilon_exact": [
+            255285129472397274695577144525,
+            57893785059039994851035642331136
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 284,
+          "repetitions": 50,
+          "small_if_plus_count_at_least": 33,
+          "p_plus_small_lower_exact": [
+            942423917,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            392186717,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            245572280481258411,
+            9092515446081898676224
+          ],
+          "controlled_U_calls": 14200,
+          "small_failure": 1.350356720784347e-05,
+          "large_failure": 2.2131401898272344e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 12,
+          "width_exact": [
+            2297566165251575472260194300725,
+            28946892529519997425517821165568
+          ],
+          "test_epsilon_exact": [
+            2297566165251575472260194300725,
+            636831635649439943361392065642496
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 347,
+          "repetitions": 48,
+          "small_if_plus_count_at_least": 32,
+          "p_plus_small_lower_exact": [
+            942452539,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            196236739,
+            536870912
+          ],
+          "failure_allocation_exact": [
+            1200191286295727727,
+            36370061784327594704896
+          ],
+          "controlled_U_calls": 16656,
+          "small_failure": 2.9676939912689358e-05,
+          "large_failure": 2.1974996701566038e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 13,
+          "width_exact": [
+            20678095487264179250341748706525,
+            318415817824719971680696032821248
+          ],
+          "test_epsilon_exact": [
+            20678095487264179250341748706525,
+            7005147992143839376975312722067456
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 424,
+          "repetitions": 48,
+          "small_if_plus_count_at_least": 32,
+          "p_plus_small_lower_exact": [
+            471237975,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            392708155,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            183314519232488673,
+            4546257723040949338112
+          ],
+          "controlled_U_calls": 20352,
+          "small_failure": 2.9608113673525262e-05,
+          "large_failure": 2.2283731589788187e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 14,
+          "width_exact": [
+            186102859385377613253075738358725,
+            3502573996071919688487656361033728
+          ],
+          "test_epsilon_exact": [
+            186102859385377613253075738358725,
+            77056627913582233146728439942742016
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 518,
+          "repetitions": 47,
+          "small_if_plus_count_at_least": 31,
+          "p_plus_small_lower_exact": [
+            235628561,
+            268435456
+          ],
+          "p_plus_large_upper_exact": [
+            49136535,
+            134217728
+          ],
+          "failure_allocation_exact": [
+            895820009079520119,
+            18185030892163797352448
+          ],
+          "controlled_U_calls": 24346,
+          "small_failure": 2.1494089868758876e-05,
+          "large_failure": 4.19784546626459e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 15,
+          "width_exact": [
+            1674925734468398519277681645228525,
+            38528313956791116573364219971371008
+          ],
+          "test_epsilon_exact": [
+            1674925734468398519277681645228525,
+            847622907049404564614012839370162176
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 634,
+          "repetitions": 47,
+          "small_if_plus_count_at_least": 31,
+          "p_plus_small_lower_exact": [
+            942388865,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            196326959,
+            536870912
+          ],
+          "failure_allocation_exact": [
+            1096428350881111497,
+            18185030892163797352448
+          ],
+          "controlled_U_calls": 29798,
+          "small_failure": 2.1765616555269644e-05,
+          "large_failure": 4.094445888196407e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 16,
+          "width_exact": [
+            15074331610215586673499134807056725,
+            423811453524702282307006419685081088
+          ],
+          "test_epsilon_exact": [
+            15074331610215586673499134807056725,
+            9323851977543450210754141233071783936
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 774,
+          "repetitions": 45,
+          "small_if_plus_count_at_least": 30,
+          "p_plus_small_lower_exact": [
+            471245731,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            196431847,
+            536870912
+          ],
+          "failure_allocation_exact": [
+            1338541866848549367,
+            18185030892163797352448
+          ],
+          "controlled_U_calls": 34830,
+          "small_failure": 4.7667914211535524e-05,
+          "large_failure": 4.0463754914316296e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 17,
+          "width_exact": [
+            135668984491940280061492213263510525,
+            4661925988771725105377070616535891968
+          ],
+          "test_epsilon_exact": [
+            135668984491940280061492213263510525,
+            102562371752977952318295553563789623296
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 947,
+          "repetitions": 42,
+          "small_if_plus_count_at_least": 28,
+          "p_plus_small_lower_exact": [
+            942397031,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            98117871,
+            268435456
+          ],
+          "failure_allocation_exact": [
+            3275449994588052327,
+            36370061784327594704896
+          ],
+          "controlled_U_calls": 39774,
+          "small_failure": 7.760133555631793e-05,
+          "large_failure": 7.146813659908504e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 18,
+          "width_exact": [
+            1221020860427462520553429919371594725,
+            51281185876488976159147776781894811648
+          ],
+          "test_epsilon_exact": [
+            1221020860427462520553429919371594725,
+            1128186089282757475501251089201685856256
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 1157,
+          "repetitions": 42,
+          "small_if_plus_count_at_least": 28,
+          "p_plus_small_lower_exact": [
+            235607845,
+            268435456
+          ],
+          "p_plus_large_upper_exact": [
+            392261401,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            4001790542490365937,
+            36370061784327594704896
+          ],
+          "controlled_U_calls": 48594,
+          "small_failure": 7.736695533902683e-05,
+          "large_failure": 7.068835063703885e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 19,
+          "width_exact": [
+            10989187743847162684980869274344352525,
+            564093044641378737750625544600842928128
+          ],
+          "test_epsilon_exact": [
+            10989187743847162684980869274344352525,
+            12410046982110332230513761981218544418816
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 1414,
+          "repetitions": 41,
+          "small_if_plus_count_at_least": 27,
+          "p_plus_small_lower_exact": [
+            942438405,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            196165891,
+            536870912
+          ],
+          "failure_allocation_exact": [
+            2445346511271122487,
+            18185030892163797352448
+          ],
+          "controlled_U_calls": 57974,
+          "small_failure": 5.602721272158208e-05,
+          "large_failure": 0.00013106822174575397,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 20,
+          "width_exact": [
+            98902689694624464164827823469099172725,
+            6205023491055166115256880990609272209408
+          ],
+          "test_epsilon_exact": [
+            98902689694624464164827823469099172725,
+            136510516803213654535651381793403988606976
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 1728,
+          "repetitions": 41,
+          "small_if_plus_count_at_least": 27,
+          "p_plus_small_lower_exact": [
+            942449899,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            392446961,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            93386641873154607,
+            568282215380118667264
+          ],
+          "controlled_U_calls": 70848,
+          "small_failure": 5.59699037429691e-05,
+          "large_failure": 0.00013182111652099656,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 21,
+          "width_exact": [
+            890124207251620177483450411221892554525,
+            68255258401606827267825690896701994303488
+          ],
+          "test_epsilon_exact": [
+            890124207251620177483450411221892554525,
+            1501615684835350199892165199727443874676736
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 2113,
+          "repetitions": 39,
+          "small_if_plus_count_at_least": 26,
+          "p_plus_small_lower_exact": [
+            942407575,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            49029661,
+            134217728
+          ],
+          "failure_allocation_exact": [
+            7308369417702803133,
+            36370061784327594704896
+          ],
+          "controlled_U_calls": 82407,
+          "small_failure": 0.00012528434964855759,
+          "large_failure": 0.00012785254471210254,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 22,
+          "width_exact": [
+            8011117865264581597351053700997032990725,
+            750807842417675099946082599863721937338368
+          ],
+          "test_epsilon_exact": [
+            8011117865264581597351053700997032990725,
+            16517772533188852198813817197001882621444096
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 2582,
+          "repetitions": 36,
+          "small_if_plus_count_at_least": 24,
+          "p_plus_small_lower_exact": [
+            942426815,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            24513479,
+            67108864
+          ],
+          "failure_allocation_exact": [
+            4465264987342318431,
+            18185030892163797352448
+          ],
+          "controlled_U_calls": 92952,
+          "small_failure": 0.00020246501096488718,
+          "large_failure": 0.00023191779340562781,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 23,
+          "width_exact": [
+            72100060787381234376159483308973296916525,
+            8258886266594426099406908598500941310722048
+          ],
+          "test_epsilon_exact": [
+            72100060787381234376159483308973296916525,
+            181695497865077374186951989167020708835885056
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 3156,
+          "repetitions": 36,
+          "small_if_plus_count_at_least": 24,
+          "p_plus_small_lower_exact": [
+            942420519,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            392152591,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            2728965201404406849,
+            9092515446081898676224
+          ],
+          "controlled_U_calls": 113616,
+          "small_failure": 0.00020256317055593077,
+          "large_failure": 0.00023126096209032565,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 24,
+          "width_exact": [
+            648900547086431109385435349780759672248725,
+            90847748932538687093475994583510354417942528
+          ],
+          "test_epsilon_exact": [
+            648900547086431109385435349780759672248725,
+            1998650476515851116056471880837227797194735616
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 3857,
+          "repetitions": 36,
+          "small_if_plus_count_at_least": 24,
+          "p_plus_small_lower_exact": [
+            471214123,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            392229999,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            13340454729805826637,
+            36370061784327594704896
+          ],
+          "controlled_U_calls": 138852,
+          "small_failure": 0.0002024427063221624,
+          "large_failure": 0.00023206731286714078,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 25,
+          "width_exact": [
+            5840104923777879984468918148026837050238525,
+            999325238257925558028235940418613898597367808
+          ],
+          "test_epsilon_exact": [
+            5840104923777879984468918148026837050238525,
+            21985155241674362276621190689209505769142091776
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 4715,
+          "repetitions": 35,
+          "small_if_plus_count_at_least": 23,
+          "p_plus_small_lower_exact": [
+            471205693,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            392152867,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            16308074682663850815,
+            36370061784327594704896
+          ],
+          "controlled_U_calls": 165025,
+          "small_failure": 0.00014578259193200657,
+          "large_failure": 0.0004281762491105667,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 26,
+          "width_exact": [
+            52560944314000919860220263332241533452146725,
+            10992577620837181138310595344604752884571045888
+          ],
+          "test_epsilon_exact": [
+            52560944314000919860220263332241533452146725,
+            241836707658417985042833097581304563460563009536
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 5762,
+          "repetitions": 33,
+          "small_if_plus_count_at_least": 22,
+          "p_plus_small_lower_exact": [
+            942423457,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            196091009,
+            536870912
+          ],
+          "failure_allocation_exact": [
+            9964700564316978621,
+            18185030892163797352448
+          ],
+          "controlled_U_calls": 190146,
+          "small_failure": 0.0003283482657060358,
+          "large_failure": 0.00042183010702236665,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        }
+      ],
+      "controlled_U_calls": 1203320,
+      "hadamard_test_executions": 1301,
+      "longest_single_chain": 5762,
+      "certificates_complete": true,
+      "searched_designs": 163,
+      "binomial_refined_designs": 8
+    },
+    "previous_controlled_U_calls": 1540372419,
+    "query_reduction": 1280.1020667819034,
+    "arithmetic_T_count": 1636360294209760,
+    "arithmetic_serial_T_depth": 542257419900960,
+    "single_U": {
+      "t_count": 1359871268,
+      "t_depth": 450634428,
+      "ccx": 194267324,
+      "clifford_cx": 1408294323,
+      "clifford_h": 388538490,
+      "x": 374106,
+      "controlled_bit_phases": 67,
+      "logical_qubits": 659310,
+      "initial_random_hadamards": 1920,
+      "qpe_bits": 22,
+      "fused_compute_phase_uncompute": true,
+      "excluded": "Arbitrary controlled-phase synthesis and inverse-QFT rotations, accounted separately.",
+      "control_method": "Financial graph forward; promote its SSA output; phase graph forward; controlled bit phases; phase graph inverse, uncopy Y, financial graph inverse; signed controlled reflection."
+    },
+    "hadamard_test_controls": 1,
+    "logical_qubits_upper": 659289,
+    "IQFT_gates": 0,
+    "uniform_preparation_H": 2497920,
+    "additional_single_qubit_rotations": 241867320,
+    "controlled_phase_decomposition_CX": 161244880,
+    "arithmetic_clifford_CX": 1694628724752360,
+    "arithmetic_clifford_H": 467536135786800,
+    "arithmetic_X": 450169231920,
+    "reflection_control_Z": 1203320,
+    "test_preparation_and_measurement_H": 2602,
+    "measured_control_bits": 1301,
+    "classical_constant_load_and_unload_X_upper": 499584,
+    "required_each_rotation_operator_error": 1.0336245508487877e-12,
+    "required_uniform_phase_function_error": 2.0775853472060633e-10,
+    "longest_single_chain_arithmetic_T_depth": 2596555574136,
+    "optimistic_serial_seconds_at_1ns_T_layer": 542257.41990096,
+    "optimistic_serial_seconds_at_100ns_T_layer": 54225741.990095995,
+    "required_T_layer_seconds_for_10x": 2.048089577460909e-15,
+    "tenfold_total_budget_seconds": 1.1105917699999999,
+    "actual_full_price_seconds": null,
+    "gate_passes": false,
+    "scope": "Same compiled financial and phase oracle; arithmetic-only implementation schedule, not a hardware runtime or universal lower bound. Full financial/physical obligations remain."
+  },
+  {
+    "model": "C4",
+    "mode": "digital_support_bound",
+    "financial_fraction_bits": 40,
+    "phase_fraction_bits": 64,
+    "allocation": {
+      "method": "known-moment complex phase with integer Hadamard tests",
+      "moment": 9704.455335485154,
+      "error": 0.002030226129231438,
+      "ideal_test_failure": 0.003,
+      "endpoint_bits": 64,
+      "initial_radius_exact": [
+        1817210783381338564819,
+        18446744073709551616
+      ],
+      "normalizer": 4096,
+      "normalized_RMS_upper_exact": [
+        1817210783381338564819,
+        37778931862957161709568
+      ],
+      "normalizer_factor": 32,
+      "C": 5,
+      "c_exact": [
+        1,
+        6
+      ],
+      "contraction_exact": [
+        7,
+        9
+      ],
+      "final_radius": 0.0019965187699236995,
+      "stages": [
+        {
+          "stage": 0,
+          "width_exact": [
+            1817210783381338564819,
+            9223372036854775808
+          ],
+          "test_epsilon_exact": [
+            1817210783381338564819,
+            56668397794435742564352
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 38,
+          "repetitions": 105,
+          "small_if_plus_count_at_least": 67,
+          "p_plus_small_lower_exact": [
+            918872057,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            391326177,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            21905508587530093,
+            1269515303446232803835904
+          ],
+          "controlled_U_calls": 3990,
+          "small_failure": 7.357152515287551e-09,
+          "large_failure": 1.1671532299363658e-08,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 1,
+          "width_exact": [
+            12720475483669369953733,
+            83010348331692982272
+          ],
+          "test_epsilon_exact": [
+            12720475483669369953733,
+            510015580149921683079168
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 49,
+          "repetitions": 100,
+          "small_if_plus_count_at_least": 64,
+          "p_plus_small_lower_exact": [
+            918478303,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            388709729,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            56493153725735503,
+            2539030606892465607671808
+          ],
+          "controlled_U_calls": 4900,
+          "small_failure": 2.124366962444025e-08,
+          "large_failure": 1.5413789257328067e-08,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 2,
+          "width_exact": [
+            89043328385685589676131,
+            747093134985236840448
+          ],
+          "test_epsilon_exact": [
+            89043328385685589676131,
+            4590140221349295147712512
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 63,
+          "repetitions": 99,
+          "small_if_plus_count_at_least": 63,
+          "p_plus_small_lower_exact": [
+            459239285,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            388709729,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            24211351596743787,
+            846343535630821869223936
+          ],
+          "controlled_U_calls": 6237,
+          "small_failure": 1.5552397895284037e-08,
+          "large_failure": 2.7435035260400677e-08,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 3,
+          "width_exact": [
+            623303298699799127732917,
+            6723838214867131564032
+          ],
+          "test_epsilon_exact": [
+            623303298699799127732917,
+            41311261992143656329412608
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 81,
+          "repetitions": 99,
+          "small_if_plus_count_at_least": 63,
+          "p_plus_small_lower_exact": [
+            229619683,
+            268435456
+          ],
+          "p_plus_large_upper_exact": [
+            388709729,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            31128880624384869,
+            846343535630821869223936
+          ],
+          "controlled_U_calls": 8019,
+          "small_failure": 1.555196062840499e-08,
+          "large_failure": 2.7435035260400677e-08,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 4,
+          "width_exact": [
+            4363123090898593894130419,
+            60514543933804184076288
+          ],
+          "test_epsilon_exact": [
+            4363123090898593894130419,
+            371801357929292906964713472
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 104,
+          "repetitions": 97,
+          "small_if_plus_count_at_least": 62,
+          "p_plus_small_lower_exact": [
+            229666107,
+            268435456
+          ],
+          "p_plus_large_upper_exact": [
+            389940009,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            14987979559889011,
+            317378825861558200958976
+          ],
+          "controlled_U_calls": 10088,
+          "small_failure": 2.892090687477459e-08,
+          "large_failure": 3.160818070344626e-08,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 5,
+          "width_exact": [
+            30541861636290157258912933,
+            544630895404237656686592
+          ],
+          "test_epsilon_exact": [
+            30541861636290157258912933,
+            3346212221363636162682421248
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 134,
+          "repetitions": 94,
+          "small_if_plus_count_at_least": 60,
+          "p_plus_small_lower_exact": [
+            918375679,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            388026841,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            77245740808658749,
+            1269515303446232803835904
+          ],
+          "controlled_U_calls": 12596,
+          "small_failure": 4.26200680074211e-08,
+          "large_failure": 4.599812926433803e-08,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 6,
+          "width_exact": [
+            213793031454031100812390531,
+            4901678058638138910179328
+          ],
+          "test_epsilon_exact": [
+            213793031454031100812390531,
+            30115909992272725464141791232
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 172,
+          "repetitions": 94,
+          "small_if_plus_count_at_least": 60,
+          "p_plus_small_lower_exact": [
+            918600391,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            194757285,
+            536870912
+          ],
+          "failure_allocation_exact": [
+            49575624698094421,
+            634757651723116401917952
+          ],
+          "controlled_U_calls": 16168,
+          "small_failure": 4.1078302254783146e-08,
+          "large_failure": 5.389214542071072e-08,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 7,
+          "width_exact": [
+            1496551220178217705686733717,
+            44115102527743250191613952
+          ],
+          "test_epsilon_exact": [
+            1496551220178217705686733717,
+            271043189930454529177276121088
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 222,
+          "repetitions": 91,
+          "small_if_plus_count_at_least": 58,
+          "p_plus_small_lower_exact": [
+            918075645,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            96511597,
+            268435456
+          ],
+          "failure_allocation_exact": [
+            42658095670453339,
+            423171767815410934611968
+          ],
+          "controlled_U_calls": 20202,
+          "small_failure": 6.274009000095058e-08,
+          "large_failure": 6.731843675181402e-08,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 8,
+          "width_exact": [
+            10475858541247523939807136019,
+            397035922749689251724525568
+          ],
+          "test_epsilon_exact": [
+            10475858541247523939807136019,
+            2439388709374090762595485089792
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 285,
+          "repetitions": 91,
+          "small_if_plus_count_at_least": 58,
+          "p_plus_small_lower_exact": [
+            57392497,
+            67108864
+          ],
+          "p_plus_large_upper_exact": [
+            387393799,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            109527542937650465,
+            846343535630821869223936
+          ],
+          "controlled_U_calls": 25935,
+          "small_failure": 6.073197541403205e-08,
+          "large_failure": 7.741349901076509e-08,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 9,
+          "width_exact": [
+            73331009788732667578649952133,
+            3573323304747203265520730112
+          ],
+          "test_epsilon_exact": [
+            73331009788732667578649952133,
+            21954498384366816863359365808128
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 367,
+          "repetitions": 88,
+          "small_if_plus_count_at_least": 56,
+          "p_plus_small_lower_exact": [
+            459034047,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            385996517,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            423122192190712849,
+            2539030606892465607671808
+          ],
+          "controlled_U_calls": 32296,
+          "small_failure": 8.800950466374696e-08,
+          "large_failure": 1.2125803189207503e-07,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 10,
+          "width_exact": [
+            513317068521128673050549664931,
+            32159909742724829389686571008
+          ],
+          "test_epsilon_exact": [
+            513317068521128673050549664931,
+            197590485459301351770234292273152
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 472,
+          "repetitions": 85,
+          "small_if_plus_count_at_least": 54,
+          "p_plus_small_lower_exact": [
+            229506717,
+            268435456
+          ],
+          "p_plus_large_upper_exact": [
+            385725035,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            68022368771803973,
+            317378825861558200958976
+          ],
+          "controlled_U_calls": 40120,
+          "small_failure": 1.2402949946910221e-07,
+          "large_failure": 2.1391686283205894e-07,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 11,
+          "width_exact": [
+            3593219479647900711353847654517,
+            289439187684523464507179139072
+          ],
+          "test_epsilon_exact": [
+            3593219479647900711353847654517,
+            1778314369133712165932108630458368
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 607,
+          "repetitions": 85,
+          "small_if_plus_count_at_least": 54,
+          "p_plus_small_lower_exact": [
+            917994795,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            385513931,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            699823353296356129,
+            2539030606892465607671808
+          ],
+          "controlled_U_calls": 51595,
+          "small_failure": 1.2462938465497023e-07,
+          "large_failure": 2.0959240528012176e-07,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 12,
+          "width_exact": [
+            25152536357535304979476933581619,
+            2604952689160711180564612251648
+          ],
+          "test_epsilon_exact": [
+            25152536357535304979476933581619,
+            16004829322203409493388977674125312
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 780,
+          "repetitions": 83,
+          "small_if_plus_count_at_least": 53,
+          "p_plus_small_lower_exact": [
+            459034815,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            386006573,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            74939897799445055,
+            211585883907705467305984
+          ],
+          "controlled_U_calls": 64740,
+          "small_failure": 2.3710405713568115e-07,
+          "large_failure": 2.2237829901149758e-07,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 13,
+          "width_exact": [
+            176067754502747134856338535071333,
+            23444574202446400625081510264832
+          ],
+          "test_epsilon_exact": [
+            176067754502747134856338535071333,
+            144043463899830685440500799067127808
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 1003,
+          "repetitions": 80,
+          "small_if_plus_count_at_least": 51,
+          "p_plus_small_lower_exact": [
+            459025117,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            385878829,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            1156380269120667541,
+            2539030606892465607671808
+          ],
+          "controlled_U_calls": 80240,
+          "small_failure": 3.335491783712096e-07,
+          "large_failure": 3.9874169529287566e-07,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 14,
+          "width_exact": [
+            1232474281519229943994369745499331,
+            211001167822017605625733592383488
+          ],
+          "test_epsilon_exact": [
+            1232474281519229943994369745499331,
+            1296391175098476168964507191604150272
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 1290,
+          "repetitions": 80,
+          "small_if_plus_count_at_least": 51,
+          "p_plus_small_lower_exact": [
+            918004963,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            96395205,
+            268435456
+          ],
+          "failure_allocation_exact": [
+            247878123490472105,
+            423171767815410934611968
+          ],
+          "controlled_U_calls": 103200,
+          "small_failure": 3.3568346334532074e-07,
+          "large_failure": 3.8798173105517794e-07,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 15,
+          "width_exact": [
+            8627319970634609607960588218495317,
+            1899010510398158450631602331451392
+          ],
+          "test_epsilon_exact": [
+            8627319970634609607960588218495317,
+            11667520575886285520680564724437352448
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 1659,
+          "repetitions": 77,
+          "small_if_plus_count_at_least": 49,
+          "p_plus_small_lower_exact": [
+            917969743,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            96337273,
+            268435456
+          ],
+          "failure_allocation_exact": [
+            637565592047586391,
+            846343535630821869223936
+          ],
+          "controlled_U_calls": 127743,
+          "small_failure": 4.729033107004608e-07,
+          "large_failure": 6.909752501740116e-07,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 16,
+          "width_exact": [
+            60391239794442267255724117529467219,
+            17091094593583426055684420983062528
+          ],
+          "test_epsilon_exact": [
+            60391239794442267255724117529467219,
+            105007685182976569686125082519936172032
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 2133,
+          "repetitions": 77,
+          "small_if_plus_count_at_least": 49,
+          "p_plus_small_lower_exact": [
+            57373109,
+            67108864
+          ],
+          "p_plus_large_upper_exact": [
+            96337273,
+            268435456
+          ],
+          "failure_allocation_exact": [
+            819727189775468217,
+            846343535630821869223936
+          ],
+          "controlled_U_calls": 164241,
+          "small_failure": 4.729032461279856e-07,
+          "large_failure": 6.909752501740116e-07,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 17,
+          "width_exact": [
+            422738678561095870790068822706270533,
+            153819851342250834501159788847562752
+          ],
+          "test_epsilon_exact": [
+            422738678561095870790068822706270533,
+            945069166646789127175125742679425548288
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 2742,
+          "repetitions": 75,
+          "small_if_plus_count_at_least": 48,
+          "p_plus_small_lower_exact": [
+            917991051,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            385489267,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            526885127605329079,
+            423171767815410934611968
+          ],
+          "controlled_U_calls": 205650,
+          "small_failure": 9.084291220772402e-07,
+          "large_failure": 7.07659500514213e-07,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 18,
+          "width_exact": [
+            2959170749927671095530481758943893731,
+            1384378662080257510510438099628064768
+          ],
+          "test_epsilon_exact": [
+            2959170749927671095530481758943893731,
+            8505622499821102144576131684114829934592
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 3526,
+          "repetitions": 72,
+          "small_if_plus_count_at_least": 46,
+          "p_plus_small_lower_exact": [
+            917968955,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            385343901,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            2032600612621871261,
+            1269515303446232803835904
+          ],
+          "controlled_U_calls": 253872,
+          "small_failure": 1.2796351974108733e-06,
+          "large_failure": 1.2738984147955799e-06,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 19,
+          "width_exact": [
+            20714195249493697668713372312607256117,
+            12459407958722317594593942896652582912
+          ],
+          "test_epsilon_exact": [
+            20714195249493697668713372312607256117,
+            76550602498389919301185185157033469411328
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 4533,
+          "repetitions": 72,
+          "small_if_plus_count_at_least": 46,
+          "p_plus_small_lower_exact": [
+            917981845,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            385428695,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            1742064393460945817,
+            846343535630821869223936
+          ],
+          "controlled_U_calls": 326376,
+          "small_failure": 1.277542317321926e-06,
+          "large_failure": 1.2829266999449603e-06,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 20,
+          "width_exact": [
+            144999366746455883680993606188250792819,
+            112134671628500858351345486069873246208
+          ],
+          "test_epsilon_exact": [
+            144999366746455883680993606188250792819,
+            688955422485509273710666666413301224701952
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 5829,
+          "repetitions": 69,
+          "small_if_plus_count_at_least": 44,
+          "p_plus_small_lower_exact": [
+            917961793,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            96324199,
+            268435456
+          ],
+          "failure_allocation_exact": [
+            2240126483451103721,
+            846343535630821869223936
+          ],
+          "controlled_U_calls": 402201,
+          "small_failure": 1.7982467804594659e-06,
+          "large_failure": 2.3148705005491113e-06,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 21,
+          "width_exact": [
+            1014995567225191185766955243317755549733,
+            1009212044656507725162109374628859215872
+          ],
+          "test_epsilon_exact": [
+            1014995567225191185766955243317755549733,
+            6200598802369583463395999997719711022317568
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 7494,
+          "repetitions": 69,
+          "small_if_plus_count_at_least": 44,
+          "p_plus_small_lower_exact": [
+            917969591,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            48168511,
+            134217728
+          ],
+          "failure_allocation_exact": [
+            1439998959253951903,
+            423171767815410934611968
+          ],
+          "controlled_U_calls": 517086,
+          "small_failure": 1.7965270233185945e-06,
+          "large_failure": 2.3243382293153554e-06,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 22,
+          "width_exact": [
+            7104968970576338300368686703224288848131,
+            9082908401908569526458984371659732942848
+          ],
+          "test_epsilon_exact": [
+            7104968970576338300368686703224288848131,
+            55805389221326251170563999979477399200858112
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 9636,
+          "repetitions": 66,
+          "small_if_plus_count_at_least": 42,
+          "p_plus_small_lower_exact": [
+            917957461,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            385268301,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            925795968199298141,
+            211585883907705467305984
+          ],
+          "controlled_U_calls": 635976,
+          "small_failure": 2.524945443761315e-06,
+          "large_failure": 4.2161216955536535e-06,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 23,
+          "width_exact": [
+            49734782794034368102580806922570021936917,
+            81746175617177125738130859344937596485632
+          ],
+          "test_epsilon_exact": [
+            49734782794034368102580806922570021936917,
+            502248502991936260535075999815296592807723008
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 12389,
+          "repetitions": 64,
+          "small_if_plus_count_at_least": 41,
+          "p_plus_small_lower_exact": [
+            917959033,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            96319661,
+            268435456
+          ],
+          "failure_allocation_exact": [
+            14283544520574227483,
+            2539030606892465607671808
+          ],
+          "controlled_U_calls": 792896,
+          "small_failure": 4.88648588061234e-06,
+          "large_failure": 4.273649973358595e-06,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 24,
+          "width_exact": [
+            348143479558240576718065648457990153558419,
+            735715580554594131643177734104438368370688
+          ],
+          "test_epsilon_exact": [
+            348143479558240576718065648457990153558419,
+            4520236526927426344815683998337669335269507072
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 15929,
+          "repetitions": 64,
+          "small_if_plus_count_at_least": 41,
+          "p_plus_small_lower_exact": [
+            917956587,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            385277595,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            18364886646882465863,
+            2539030606892465607671808
+          ],
+          "controlled_U_calls": 1019456,
+          "small_failure": 4.887838194455118e-06,
+          "large_failure": 4.27331523986507e-06,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 25,
+          "width_exact": [
+            2437004356907684037026459539205931074908933,
+            6621440224991347184788599606939945315336192
+          ],
+          "test_epsilon_exact": [
+            2437004356907684037026459539205931074908933,
+            40682128742346837103341155985039024017425563648
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 20480,
+          "repetitions": 63,
+          "small_if_plus_count_at_least": 40,
+          "p_plus_small_lower_exact": [
+            458978769,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            96317203,
+            268435456
+          ],
+          "failure_allocation_exact": [
+            5764607523034235,
+            619880519260855861248
+          ],
+          "controlled_U_calls": 1290240,
+          "small_failure": 3.541523274737217e-06,
+          "large_failure": 7.70092332327888e-06,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 26,
+          "width_exact": [
+            17059030498353788259185216774441517524362531,
+            59592962024922124663097396462459507838025728
+          ],
+          "test_epsilon_exact": [
+            17059030498353788259185216774441517524362531,
+            366139158681121533930070403865351216156830072832
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 26331,
+          "repetitions": 61,
+          "small_if_plus_count_at_least": 39,
+          "p_plus_small_lower_exact": [
+            458979879,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            192641705,
+            536870912
+          ],
+          "failure_allocation_exact": [
+            10119192045934296119,
+            846343535630821869223936
+          ],
+          "controlled_U_calls": 1606191,
+          "small_failure": 6.873723999290303e-06,
+          "large_failure": 7.824123376622881e-06,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 27,
+          "width_exact": [
+            119413213488476517814296517421090622670537717,
+            536336658224299121967876568162135570542231552
+          ],
+          "test_epsilon_exact": [
+            119413213488476517814296517421090622670537717,
+            3295252428130093805370633634788160945411470655488
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 33854,
+          "repetitions": 58,
+          "small_if_plus_count_at_least": 37,
+          "p_plus_small_lower_exact": [
+            458980167,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            385287195,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            19515502308480099169,
+            1269515303446232803835904
+          ],
+          "controlled_U_calls": 1963532,
+          "small_failure": 9.665325405419514e-06,
+          "large_failure": 1.4333928566045054e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 28,
+          "width_exact": [
+            835892494419335624700075621947634358693764019,
+            4827029924018692097710889113459220134880083968
+          ],
+          "test_epsilon_exact": [
+            835892494419335624700075621947634358693764019,
+            29657271853170844248335702713093448508703235899392
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 43527,
+          "repetitions": 56,
+          "small_if_plus_count_at_least": 36,
+          "p_plus_small_lower_exact": [
+            917958991,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            96319591,
+            268435456
+          ],
+          "failure_allocation_exact": [
+            16727738110340743123,
+            846343535630821869223936
+          ],
+          "controlled_U_calls": 2437512,
+          "small_failure": 1.8770003499320288e-05,
+          "large_failure": 1.4496562774111493e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 29,
+          "width_exact": [
+            5851247460935349372900529353633440510856348133,
+            43443269316168228879398002021132981213920755712
+          ],
+          "test_epsilon_exact": [
+            5851247460935349372900529353633440510856348133,
+            266915446678537598235021324417841036578329123094528
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 55964,
+          "repetitions": 56,
+          "small_if_plus_count_at_least": 36,
+          "p_plus_small_lower_exact": [
+            458978625,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            192634041,
+            536870912
+          ],
+          "failure_allocation_exact": [
+            16130524770954396377,
+            634757651723116401917952
+          ],
+          "controlled_U_calls": 3133984,
+          "small_failure": 1.8773248078647202e-05,
+          "large_failure": 1.4486727464457474e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 30,
+          "width_exact": [
+            40958732226547445610303705475434083575994436931,
+            390989423845514059914582018190196830925286801408
+          ],
+          "test_epsilon_exact": [
+            40958732226547445610303705475434083575994436931,
+            2402239020106838384115191919760569329204962107850752
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 71953,
+          "repetitions": 55,
+          "small_if_plus_count_at_least": 35,
+          "p_plus_small_lower_exact": [
+            229489651,
+            268435456
+          ],
+          "p_plus_large_upper_exact": [
+            96318955,
+            268435456
+          ],
+          "failure_allocation_exact": [
+            82956161020976462191,
+            2539030606892465607671808
+          ],
+          "controlled_U_calls": 3957415,
+          "small_failure": 1.3586625249919309e-05,
+          "large_failure": 2.6255950638637425e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 31,
+          "width_exact": [
+            286711125585832119272125938328038585031961058517,
+            3518904814609626539231238163711771478327581212672
+          ],
+          "test_epsilon_exact": [
+            286711125585832119272125938328038585031961058517,
+            21620151180961545457036727277845123962844658970656768
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 92512,
+          "repetitions": 53,
+          "small_if_plus_count_at_least": 34,
+          "p_plus_small_lower_exact": [
+            458978565,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            385269807,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            3333096069818394677,
+            79344706465389550239744
+          ],
+          "controlled_U_calls": 4903136,
+          "small_failure": 2.6477840085677225e-05,
+          "large_failure": 2.6621877738736594e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 32,
+          "width_exact": [
+            2006977879100824834904881568296270095223727409619,
+            31670143331486638853081143473405943304948230914048
+          ],
+          "test_epsilon_exact": [
+            2006977879100824834904881568296270095223727409619,
+            194581360628653909113330545500606115665601930735910912
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 118944,
+          "repetitions": 50,
+          "small_if_plus_count_at_least": 32,
+          "p_plus_small_lower_exact": [
+            458978565,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            385269807,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            1428469744207883433,
+            26448235488463183413248
+          ],
+          "controlled_U_calls": 5947200,
+          "small_failure": 3.733023893151283e-05,
+          "large_failure": 4.897298824061851e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 33,
+          "width_exact": [
+            14048845153705773844334170978073890666566091867333,
+            285031289983379749677730291260653489744534078226432
+          ],
+          "test_epsilon_exact": [
+            14048845153705773844334170978073890666566091867333,
+            1751232245657885182019974909505455040990417376623198208
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 152927,
+          "repetitions": 50,
+          "small_if_plus_count_at_least": 32,
+          "p_plus_small_lower_exact": [
+            458979011,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            192635995,
+            536870912
+          ],
+          "failure_allocation_exact": [
+            176312826935011291169,
+            2539030606892465607671808
+          ],
+          "controlled_U_calls": 7646350,
+          "small_failure": 3.732721892328419e-05,
+          "large_failure": 4.897924667326068e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 34,
+          "width_exact": [
+            98341916075940416910339196846517234665962643071331,
+            2565281609850417747099572621345881407700806704037888
+          ],
+          "test_epsilon_exact": [
+            98341916075940416910339196846517234665962643071331,
+            15761090210920966638179774185549095368913756389608783872
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 196621,
+          "repetitions": 48,
+          "small_if_plus_count_at_least": 31,
+          "p_plus_small_lower_exact": [
+            917957625,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            385269383,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            226688579157302863987,
+            2539030606892465607671808
+          ],
+          "controlled_U_calls": 9437808,
+          "small_failure": 7.277775511705523e-05,
+          "large_failure": 4.9497311071606805e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 35,
+          "width_exact": [
+            688393412531582918372374377925620642661738501499317,
+            23087534488653759723896153592112932669307260336340992
+          ],
+          "test_epsilon_exact": [
+            688393412531582918372374377925620642661738501499317,
+            141849811898288699743617967669941858320223807506479054848
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 252799,
+          "repetitions": 47,
+          "small_if_plus_count_at_least": 30,
+          "p_plus_small_lower_exact": [
+            917957317,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            96316839,
+            268435456
+          ],
+          "failure_allocation_exact": [
+            291457403443106314753,
+            2539030606892465607671808
+          ],
+          "controlled_U_calls": 11881553,
+          "small_failure": 5.2602669665023455e-05,
+          "large_failure": 9.019139722179734e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 36,
+          "width_exact": [
+            4818753887721080428606620645479344498632169510495219,
+            207787810397883837515065382329016394023765343027068928
+          ],
+          "test_epsilon_exact": [
+            4818753887721080428606620645479344498632169510495219,
+            1276648307084598297692561709029476724882014267558311493632
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 325027,
+          "repetitions": 45,
+          "small_if_plus_count_at_least": 29,
+          "p_plus_small_lower_exact": [
+            917957437,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            24079259,
+            67108864
+          ],
+          "failure_allocation_exact": [
+            374730617877849659869,
+            2539030606892465607671808
+          ],
+          "controlled_U_calls": 14626215,
+          "small_failure": 0.00010299664510499231,
+          "large_failure": 9.140992741103518e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 37,
+          "width_exact": [
+            33731277214047563000246344518355411490425186573466533,
+            1870090293580954537635588440961147546213888087243620352
+          ],
+          "test_epsilon_exact": [
+            33731277214047563000246344518355411490425186573466533,
+            11489834763761384679233055381265290523938128408024803442688
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 417892,
+          "repetitions": 42,
+          "small_if_plus_count_at_least": 27,
+          "p_plus_small_lower_exact": [
+            458978695,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            385267837,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            120449168350791126631,
+            634757651723116401917952
+          ],
+          "controlled_U_calls": 17551464,
+          "small_failure": 0.00014572349242434815,
+          "large_failure": 0.00016911573903099822,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 38,
+          "width_exact": [
+            236118940498332941001724411628487880432976306014265731,
+            16830812642228590838720295968650327915924992785192583168
+          ],
+          "test_epsilon_exact": [
+            236118940498332941001724411628487880432976306014265731,
+            103408512873852462113097498431387614715443155672223230984192
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 537290,
+          "repetitions": 42,
+          "small_if_plus_count_at_least": 27,
+          "p_plus_small_lower_exact": [
+            458978659,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            12039605,
+            33554432
+          ],
+          "failure_allocation_exact": [
+            309726597605106412315,
+            1269515303446232803835904
+          ],
+          "controlled_U_calls": 22566180,
+          "small_failure": 0.00014572429844300608,
+          "large_failure": 0.00016911171720438507,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 39,
+          "width_exact": [
+            1652832583488330587012070881399415163030834142099860117,
+            151477313780057317548482663717852951243324935066733248512
+          ],
+          "test_epsilon_exact": [
+            1652832583488330587012070881399415163030834142099860117,
+            930676615864672159017877485882488532438988401050009078857728
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 690801,
+          "repetitions": 39,
+          "small_if_plus_count_at_least": 25,
+          "p_plus_small_lower_exact": [
+            458978701,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            385267917,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            265479776101304838149,
+            846343535630821869223936
+          ],
+          "controlled_U_calls": 26941239,
+          "small_failure": 0.00020608144391431895,
+          "large_failure": 0.00031349796263527535,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 40,
+          "width_exact": [
+            11569828084418314109084496169795906141215838994699020819,
+            1363295824020515857936343973460676561189924415600599236608
+          ],
+          "test_epsilon_exact": [
+            11569828084418314109084496169795906141215838994699020819,
+            8376089542782049431160897372942396791950895609450081709719552
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 888173,
+          "repetitions": 39,
+          "small_if_plus_count_at_least": 25,
+          "p_plus_small_lower_exact": [
+            917957359,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            96316907,
+            268435456
+          ],
+          "failure_allocation_exact": [
+            1023993751511177120531,
+            2539030606892465607671808
+          ],
+          "controlled_U_calls": 34638747,
+          "small_failure": 0.0002060820864869679,
+          "large_failure": 0.00031349378428920674,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 41,
+          "width_exact": [
+            80988796590928198763591473188571342988510872962893145733,
+            12269662416184642721427095761146089050709319740405393129472
+          ],
+          "test_epsilon_exact": [
+            80988796590928198763591473188571342988510872962893145733,
+            75384805885038444880448076356481571127558060485050735387475968
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 1141937,
+          "repetitions": 39,
+          "small_if_plus_count_at_least": 25,
+          "p_plus_small_lower_exact": [
+            229489331,
+            268435456
+          ],
+          "p_plus_large_upper_exact": [
+            96316851,
+            268435456
+          ],
+          "failure_allocation_exact": [
+            1316563724206229042639,
+            2539030606892465607671808
+          ],
+          "controlled_U_calls": 44535543,
+          "small_failure": 0.00020608260951251686,
+          "large_failure": 0.0003134905457444104,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 42,
+          "width_exact": [
+            566921576136497391345140312319999400919576110740252020131,
+            110426961745661784492843861850314801456383877663648538165248
+          ],
+          "test_epsilon_exact": [
+            566921576136497391345140312319999400919576110740252020131,
+            678463252965346003924032687208334140148022544365456618487283712
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 1468205,
+          "repetitions": 34,
+          "small_if_plus_count_at_least": 22,
+          "p_plus_small_lower_exact": [
+            458978649,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            192633699,
+            536870912
+          ],
+          "failure_allocation_exact": [
+            1692725117671295799635,
+            2539030606892465607671808
+          ],
+          "controlled_U_calls": 49918970,
+          "small_failure": 0.0005776399083916713,
+          "large_failure": 0.0005917183249797257,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        }
+      ],
+      "controlled_U_calls": 269909102,
+      "hadamard_test_executions": 2953,
+      "longest_single_chain": 1468205,
+      "certificates_complete": true,
+      "searched_designs": 123,
+      "binomial_refined_designs": 8
+    },
+    "previous_controlled_U_calls": 465206980106,
+    "query_reduction": 1723.5690706940295,
+    "arithmetic_T_count": 367041632781481336,
+    "arithmetic_serial_T_depth": 121630333791763656,
+    "single_U": {
+      "t_count": 1359871268,
+      "t_depth": 450634428,
+      "ccx": 194267324,
+      "clifford_cx": 1408294323,
+      "clifford_h": 388538490,
+      "x": 374106,
+      "controlled_bit_phases": 67,
+      "logical_qubits": 659318,
+      "initial_random_hadamards": 1920,
+      "qpe_bits": 30,
+      "fused_compute_phase_uncompute": true,
+      "excluded": "Arbitrary controlled-phase synthesis and inverse-QFT rotations, accounted separately.",
+      "control_method": "Financial graph forward; promote its SSA output; phase graph forward; controlled bit phases; phase graph inverse, uncopy Y, financial graph inverse; signed controlled reflection."
+    },
+    "hadamard_test_controls": 1,
+    "logical_qubits_upper": 659289,
+    "IQFT_gates": 0,
+    "uniform_preparation_H": 5669760,
+    "additional_single_qubit_rotations": 54251729502,
+    "controlled_phase_decomposition_CX": 36167819668,
+    "arithmetic_clifford_CX": 380111456072627946,
+    "arithmetic_clifford_H": 104870074928335980,
+    "arithmetic_X": 100974614512812,
+    "reflection_control_Z": 269909102,
+    "test_preparation_and_measurement_H": 5906,
+    "measured_control_bits": 2953,
+    "classical_constant_load_and_unload_X_upper": 1133952,
+    "required_each_rotation_operator_error": 4.608148022097318e-15,
+    "required_uniform_phase_function_error": 9.26237752441561e-13,
+    "longest_single_chain_arithmetic_T_depth": 661623720361740,
+    "optimistic_serial_seconds_at_1ns_T_layer": 121630333.79176365,
+    "optimistic_serial_seconds_at_100ns_T_layer": 12163033379.176365,
+    "required_T_layer_seconds_for_10x": 9.130878255266327e-18,
+    "tenfold_total_budget_seconds": 1.1105917699999999,
+    "actual_full_price_seconds": null,
+    "gate_passes": false,
+    "scope": "Same compiled financial and phase oracle; arithmetic-only implementation schedule, not a hardware runtime or universal lower bound. Full financial/physical obligations remain."
+  },
+  {
+    "model": "H8",
+    "mode": "continuous_moment_conditional",
+    "financial_fraction_bits": 40,
+    "phase_fraction_bits": 64,
+    "allocation": {
+      "method": "known-moment complex phase with integer Hadamard tests",
+      "moment": 1.1279224665212153,
+      "error": 0.0020920557198174337,
+      "ideal_test_failure": 0.003,
+      "endpoint_bits": 64,
+      "initial_radius_exact": [
+        9795561834462867049,
+        9223372036854775808
+      ],
+      "normalizer": 64,
+      "normalized_RMS_upper_exact": [
+        9795561834462867049,
+        295147905179352825856
+      ],
+      "normalizer_factor": 32,
+      "C": 6,
+      "c_exact": [
+        1,
+        6
+      ],
+      "contraction_exact": [
+        7,
+        9
+      ],
+      "final_radius": 0.001983937050219811,
+      "stages": [
+        {
+          "stage": 0,
+          "width_exact": [
+            9795561834462867049,
+            4611686018427387904
+          ],
+          "test_epsilon_exact": [
+            9795561834462867049,
+            442721857769029238784
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 56,
+          "repetitions": 52,
+          "small_if_plus_count_at_least": 33,
+          "p_plus_small_lower_exact": [
+            948144633,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            325998429,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            8070450532247929,
+            5105280537587194265600
+          ],
+          "controlled_U_calls": 2912,
+          "small_failure": 6.74686160199775e-07,
+          "large_failure": 8.539627196589756e-07,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 1,
+          "width_exact": [
+            68568932841240069343,
+            41505174165846491136
+          ],
+          "test_epsilon_exact": [
+            68568932841240069343,
+            3984496719921263149056
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 73,
+          "repetitions": 48,
+          "small_if_plus_count_at_least": 30,
+          "p_plus_small_lower_exact": [
+            29573203,
+            33554432
+          ],
+          "p_plus_large_upper_exact": [
+            313297229,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            84163269836299831,
+            40842244300697554124800
+          ],
+          "controlled_U_calls": 3504,
+          "small_failure": 9.441641518497353e-07,
+          "large_failure": 1.7139834933464521e-06,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 2,
+          "width_exact": [
+            479982529888680485401,
+            373546567492618420224
+          ],
+          "test_epsilon_exact": [
+            479982529888680485401,
+            35860470479291368341504
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 94,
+          "repetitions": 46,
+          "small_if_plus_count_at_least": 29,
+          "p_plus_small_lower_exact": [
+            946140957,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            78391537,
+            268435456
+          ],
+          "failure_allocation_exact": [
+            54187310716521809,
+            20421122150348777062400
+          ],
+          "controlled_U_calls": 4324,
+          "small_failure": 2.2644460775922116e-06,
+          "large_failure": 2.0089220245126275e-06,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 3,
+          "width_exact": [
+            3359877709220763397807,
+            3361919107433565782016
+          ],
+          "test_epsilon_exact": [
+            3359877709220763397807,
+            322744234313622315073536
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 120,
+          "repetitions": 46,
+          "small_if_plus_count_at_least": 29,
+          "p_plus_small_lower_exact": [
+            236769919,
+            268435456
+          ],
+          "p_plus_large_upper_exact": [
+            159223605,
+            536870912
+          ],
+          "failure_allocation_exact": [
+            3458764513820541,
+            1021056107517438853120
+          ],
+          "controlled_U_calls": 5520,
+          "small_failure": 2.034430911992666e-06,
+          "large_failure": 2.835957861143061e-06,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 4,
+          "width_exact": [
+            23519143964545343784649,
+            30257271966902092038144
+          ],
+          "test_epsilon_exact": [
+            23519143964545343784649,
+            2904698108822600835661824
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 155,
+          "repetitions": 46,
+          "small_if_plus_count_at_least": 29,
+          "p_plus_small_lower_exact": [
+            946472023,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            157098215,
+            536870912
+          ],
+          "failure_allocation_exact": [
+            35740566642812257,
+            8168448860139510824960
+          ],
+          "controlled_U_calls": 7130,
+          "small_failure": 2.180747375428324e-06,
+          "large_failure": 2.101272509321475e-06,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 5,
+          "width_exact": [
+            164634007751817406492543,
+            272315447702118828343296
+          ],
+          "test_epsilon_exact": [
+            164634007751817406492543,
+            26142282979403407520956416
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 199,
+          "repetitions": 44,
+          "small_if_plus_count_at_least": 28,
+          "p_plus_small_lower_exact": [
+            946661381,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            157758199,
+            536870912
+          ],
+          "failure_allocation_exact": [
+            229431379416762553,
+            40842244300697554124800
+          ],
+          "controlled_U_calls": 8756,
+          "small_failure": 4.999750185574395e-06,
+          "large_failure": 2.6277646793409485e-06,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 6,
+          "width_exact": [
+            1152438054262721845447801,
+            2450839029319069455089664
+          ],
+          "test_epsilon_exact": [
+            1152438054262721845447801,
+            235280546814630667688607744
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 256,
+          "repetitions": 43,
+          "small_if_plus_count_at_least": 27,
+          "p_plus_small_lower_exact": [
+            236646949,
+            268435456
+          ],
+          "p_plus_large_upper_exact": [
+            39375351,
+            134217728
+          ],
+          "failure_allocation_exact": [
+            1152921504606847,
+            159540016799599820800
+          ],
+          "controlled_U_calls": 11008,
+          "small_failure": 3.4765912347377535e-06,
+          "large_failure": 5.556334649740296e-06,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 7,
+          "width_exact": [
+            8067066379839052918134607,
+            22057551263871625095806976
+          ],
+          "test_epsilon_exact": [
+            8067066379839052918134607,
+            2117524921331676009197469696
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 330,
+          "repetitions": 43,
+          "small_if_plus_count_at_least": 27,
+          "p_plus_small_lower_exact": [
+            236560961,
+            268435456
+          ],
+          "p_plus_large_upper_exact": [
+            9769081,
+            33554432
+          ],
+          "failure_allocation_exact": [
+            38046409652025951,
+            4084224430069755412480
+          ],
+          "controlled_U_calls": 14190,
+          "small_failure": 3.608275980334156e-06,
+          "large_failure": 4.741590929766187e-06,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 8,
+          "width_exact": [
+            56469464658873370426942249,
+            198517961374844625862262784
+          ],
+          "test_epsilon_exact": [
+            56469464658873370426942249,
+            19057724291985084082777227264
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 424,
+          "repetitions": 41,
+          "small_if_plus_count_at_least": 26,
+          "p_plus_small_lower_exact": [
+            946333103,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            78307519,
+            268435456
+          ],
+          "failure_allocation_exact": [
+            61104839744162891,
+            5105280537587194265600
+          ],
+          "controlled_U_calls": 17384,
+          "small_failure": 8.396306361419447e-06,
+          "large_failure": 5.672829207330019e-06,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 9,
+          "width_exact": [
+            395286252612113592988595743,
+            1786661652373601632760365056
+          ],
+          "test_epsilon_exact": [
+            395286252612113592988595743,
+            171519518627865756744995045376
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 545,
+          "repetitions": 38,
+          "small_if_plus_count_at_least": 24,
+          "p_plus_small_lower_exact": [
+            946367801,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            313471123,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            1152921504606847,
+            74939897799445053440
+          ],
+          "controlled_U_calls": 20710,
+          "small_failure": 1.3551929905850255e-05,
+          "large_failure": 1.4578550613263229e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 10,
+          "width_exact": [
+            2767003768284795150920170201,
+            16079954871362414694843285504
+          ],
+          "test_epsilon_exact": [
+            2767003768284795150920170201,
+            1543675667650791810704955408384
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 701,
+          "repetitions": 38,
+          "small_if_plus_count_at_least": 24,
+          "p_plus_small_lower_exact": [
+            473156915,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            156548097,
+            536870912
+          ],
+          "failure_allocation_exact": [
+            808197974729399747,
+            40842244300697554124800
+          ],
+          "controlled_U_calls": 26638,
+          "small_failure": 1.3621929851686784e-05,
+          "large_failure": 1.4257183559193223e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 11,
+          "width_exact": [
+            19369026377993566056441191407,
+            144719593842261732253589569536
+          ],
+          "test_epsilon_exact": [
+            19369026377993566056441191407,
+            13893081008857126296344598675456
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 902,
+          "repetitions": 38,
+          "small_if_plus_count_at_least": 24,
+          "p_plus_small_lower_exact": [
+            473104413,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            156238785,
+            536870912
+          ],
+          "failure_allocation_exact": [
+            519967598577687997,
+            20421122150348777062400
+          ],
+          "controlled_U_calls": 34276,
+          "small_failure": 1.3759048741610186e-05,
+          "large_failure": 1.3741230670143642e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 12,
+          "width_exact": [
+            135583184645954962395088339849,
+            1302476344580355590282306125824
+          ],
+          "test_epsilon_exact": [
+            135583184645954962395088339849,
+            125037729079714136667101388079104
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 1159,
+          "repetitions": 36,
+          "small_if_plus_count_at_least": 23,
+          "p_plus_small_lower_exact": [
+            118286313,
+            134217728
+          ],
+          "p_plus_large_upper_exact": [
+            312934245,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            1336236023839335673,
+            40842244300697554124800
+          ],
+          "controlled_U_calls": 41724,
+          "small_failure": 3.2163054444037674e-05,
+          "large_failure": 1.618581464692688e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 13,
+          "width_exact": [
+            949082292521684736765618378943,
+            11722287101223200312540755132416
+          ],
+          "test_epsilon_exact": [
+            949082292521684736765618378943,
+            1125339561717427230003912492711936
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 1491,
+          "repetitions": 35,
+          "small_if_plus_count_at_least": 22,
+          "p_plus_small_lower_exact": [
+            473107137,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            312405453,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            1719005963368808877,
+            40842244300697554124800
+          ],
+          "controlled_U_calls": 52185,
+          "small_failure": 2.2218244500224642e-05,
+          "large_failure": 3.48718068229887e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 14,
+          "width_exact": [
+            6643576047651793157359328652601,
+            105500583911008802812866796191744
+          ],
+          "test_epsilon_exact": [
+            6643576047651793157359328652601,
+            10128056055456845070035212434407424
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 1917,
+          "repetitions": 35,
+          "small_if_plus_count_at_least": 22,
+          "p_plus_small_lower_exact": [
+            473107137,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            312405453,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            2210150524331325699,
+            40842244300697554124800
+          ],
+          "controlled_U_calls": 67095,
+          "small_failure": 2.2218244500224642e-05,
+          "large_failure": 3.48718068229887e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 15,
+          "width_exact": [
+            46505032333562552101515300568207,
+            949505255199079225315801165725696
+          ],
+          "test_epsilon_exact": [
+            46505032333562552101515300568207,
+            91152504499111605630316911909666816
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 2464,
+          "repetitions": 35,
+          "small_if_plus_count_at_least": 22,
+          "p_plus_small_lower_exact": [
+            236563177,
+            268435456
+          ],
+          "p_plus_large_upper_exact": [
+            312671979,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            88774955854727219,
+            1276320134396798566400
+          ],
+          "controlled_U_calls": 86240,
+          "small_failure": 2.21418970189395e-05,
+          "large_failure": 3.5382715125839664e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 16,
+          "width_exact": [
+            325535226334937864710607103977449,
+            8545547296791713027842210491531264
+          ],
+          "test_epsilon_exact": [
+            325535226334937864710607103977449,
+            820372540492004450672852207187001344
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 3169,
+          "repetitions": 32,
+          "small_if_plus_count_at_least": 20,
+          "p_plus_small_lower_exact": [
+            946210857,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            156223973,
+            536870912
+          ],
+          "failure_allocation_exact": [
+            3653608248099098143,
+            40842244300697554124800
+          ],
+          "controlled_U_calls": 101408,
+          "small_failure": 3.582512180718213e-05,
+          "large_failure": 8.925075448182698e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 17,
+          "width_exact": [
+            2278746584344565052974249727842143,
+            76909925671125417250579894423781376
+          ],
+          "test_epsilon_exact": [
+            2278746584344565052974249727842143,
+            7383352864428040056055669864683012096
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 4074,
+          "repetitions": 30,
+          "small_if_plus_count_at_least": 19,
+          "p_plus_small_lower_exact": [
+            946224809,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            312478491,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            2348501104884147339,
+            20421122150348777062400
+          ],
+          "controlled_U_calls": 122220,
+          "small_failure": 8.547196924199245e-05,
+          "large_failure": 0.0001036524773308209,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 18,
+          "width_exact": [
+            15951226090411955370819748094895001,
+            692189331040128755255219049814032384
+          ],
+          "test_epsilon_exact": [
+            15951226090411955370819748094895001,
+            66450175779852360504501028782147108864
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 5238,
+          "repetitions": 30,
+          "small_if_plus_count_at_least": 19,
+          "p_plus_small_lower_exact": [
+            946224809,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            312478491,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            3019501420565332293,
+            20421122150348777062400
+          ],
+          "controlled_U_calls": 157140,
+          "small_failure": 8.547196924199245e-05,
+          "large_failure": 0.0001036524773308209,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 19,
+          "width_exact": [
+            111658582632883687595738236664265007,
+            6229703979361158797296971448326291456
+          ],
+          "test_epsilon_exact": [
+            111658582632883687595738236664265007,
+            598051582018671244540509259039323979776
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 6735,
+          "repetitions": 30,
+          "small_if_plus_count_at_least": 19,
+          "p_plus_small_lower_exact": [
+            946216369,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            312419977,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            1552985266705422909,
+            8168448860139510824960
+          ],
+          "controlled_U_calls": 202050,
+          "small_failure": 8.55275315641457e-05,
+          "large_failure": 0.0001033643893661053,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 20,
+          "width_exact": [
+            781610078430185813170167656649855049,
+            56067335814250429175672743034936623104
+          ],
+          "test_epsilon_exact": [
+            781610078430185813170167656649855049,
+            5382464238168041200864583331353915817984
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 8659,
+          "repetitions": 28,
+          "small_if_plus_count_at_least": 18,
+          "p_plus_small_lower_exact": [
+            473110373,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            312450317,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            9983147308390688173,
+            40842244300697554124800
+          ],
+          "controlled_U_calls": 242452,
+          "small_failure": 0.00020376256025174728,
+          "large_failure": 0.00011907744786747053,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 21,
+          "width_exact": [
+            5471270549011300692191173596548985343,
+            504606022328253862581054687314429607936
+          ],
+          "test_epsilon_exact": [
+            5471270549011300692191173596548985343,
+            48442178143512370807781249982185242361856
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 11133,
+          "repetitions": 27,
+          "small_if_plus_count_at_least": 17,
+          "p_plus_small_lower_exact": [
+            473110373,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            312450317,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            12835475110788027651,
+            40842244300697554124800
+          ],
+          "controlled_U_calls": 300591,
+          "small_failure": 0.00013856542212409962,
+          "large_failure": 0.00026674742298541163,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 22,
+          "width_exact": [
+            38298893843079104845338215175842897401,
+            4541454200954284763229492185829866471424
+          ],
+          "test_epsilon_exact": [
+            38298893843079104845338215175842897401,
+            435979603291611337270031249839667181256704
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 14314,
+          "repetitions": 27,
+          "small_if_plus_count_at_least": 17,
+          "p_plus_small_lower_exact": [
+            473109711,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            78110285,
+            268435456
+          ],
+          "failure_allocation_exact": [
+            8251459208471203979,
+            20421122150348777062400
+          ],
+          "controlled_U_calls": 386478,
+          "small_failure": 0.00013857848108290278,
+          "large_failure": 0.00026664344679485155,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 23,
+          "width_exact": [
+            268092256901553733917367506230900281807,
+            40873087808588562869065429672468798242816
+          ],
+          "test_epsilon_exact": [
+            268092256901553733917367506230900281807,
+            3923816429624502035430281248557004631310336
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 18404,
+          "repetitions": 25,
+          "small_if_plus_count_at_least": 16,
+          "p_plus_small_lower_exact": [
+            946217363,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            312426865,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            5304591842696103047,
+            10210561075174388531200
+          ],
+          "controlled_U_calls": 460100,
+          "small_failure": 0.00033342707045158344,
+          "large_failure": 0.0003086458822176608,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 24,
+          "width_exact": [
+            1876645798310876137421572543616301972649,
+            367857790277297065821588867052219184185344
+          ],
+          "test_epsilon_exact": [
+            1876645798310876137421572543616301972649,
+            35314347866620518318872531237013041681793024
+          ],
+          "anchor_fraction_exact": [
+            1,
+            9
+          ],
+          "T": 23663,
+          "repetitions": 25,
+          "small_if_plus_count_at_least": 16,
+          "p_plus_small_lower_exact": [
+            946213359,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            312413173,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            27281581563511820561,
+            40842244300697554124800
+          ],
+          "controlled_U_calls": 591575,
+          "small_failure": 0.00033351309711908585,
+          "large_failure": 0.0003084746638250667,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        }
+      ],
+      "controlled_U_calls": 2967610,
+      "hadamard_test_executions": 918,
+      "longest_single_chain": 23663,
+      "certificates_complete": true,
+      "searched_designs": 143,
+      "binomial_refined_designs": 8
+    },
+    "previous_controlled_U_calls": 6287324746,
+    "query_reduction": 2118.649265233639,
+    "arithmetic_T_count": 14852593817403720,
+    "arithmetic_serial_T_depth": 4908968101489160,
+    "single_U": {
+      "t_count": 5004900852,
+      "t_depth": 1654182356,
+      "ccx": 714985836,
+      "clifford_cx": 5179352185,
+      "clifford_h": 1429985498,
+      "x": 1353242,
+      "controlled_bit_phases": 67,
+      "logical_qubits": 2328872,
+      "initial_random_hadamards": 6912,
+      "qpe_bits": 24,
+      "fused_compute_phase_uncompute": true,
+      "excluded": "Arbitrary controlled-phase synthesis and inverse-QFT rotations, accounted separately.",
+      "control_method": "Financial graph forward; promote its SSA output; phase graph forward; controlled bit phases; phase graph inverse, uncopy Y, financial graph inverse; signed controlled reflection."
+    },
+    "hadamard_test_controls": 1,
+    "logical_qubits_upper": 2328849,
+    "IQFT_gates": 0,
+    "uniform_preparation_H": 6345216,
+    "additional_single_qubit_rotations": 596489610,
+    "controlled_phase_decomposition_CX": 397659740,
+    "arithmetic_clifford_CX": 15370297337727850,
+    "arithmetic_clifford_H": 4243639263719780,
+    "arithmetic_X": 4015894491620,
+    "reflection_control_Z": 2967610,
+    "test_preparation_and_measurement_H": 1836,
+    "measured_control_bits": 918,
+    "classical_constant_load_and_unload_X_upper": 352512,
+    "required_each_rotation_operator_error": 4.191187839801602e-13,
+    "required_uniform_phase_function_error": 8.42428755800122e-11,
+    "longest_single_chain_arithmetic_T_depth": 39142917090028,
+    "optimistic_serial_seconds_at_1ns_T_layer": 4908968.10148916,
+    "optimistic_serial_seconds_at_100ns_T_layer": 490896810.148916,
+    "required_T_layer_seconds_for_10x": 2.820797714248618e-16,
+    "tenfold_total_budget_seconds": 1.3847206,
+    "actual_full_price_seconds": null,
+    "gate_passes": false,
+    "scope": "Same compiled financial and phase oracle; arithmetic-only implementation schedule, not a hardware runtime or universal lower bound. Full financial/physical obligations remain."
+  },
+  {
+    "model": "H8",
+    "mode": "digital_support_bound",
+    "financial_fraction_bits": 40,
+    "phase_fraction_bits": 64,
+    "allocation": {
+      "method": "known-moment complex phase with integer Hadamard tests",
+      "moment": 9139.311852712306,
+      "error": 0.0020920557198174337,
+      "ideal_test_failure": 0.003,
+      "endpoint_bits": 64,
+      "initial_radius_exact": [
+        1763504088248601378671,
+        18446744073709551616
+      ],
+      "normalizer": 4096,
+      "normalized_RMS_upper_exact": [
+        1763504088248601378671,
+        37778931862957161709568
+      ],
+      "normalizer_factor": 32,
+      "C": 5,
+      "c_exact": [
+        1,
+        8
+      ],
+      "contraction_exact": [
+        9,
+        11
+      ],
+      "final_radius": 0.001880820109189165,
+      "stages": [
+        {
+          "stage": 0,
+          "width_exact": [
+            1763504088248601378671,
+            9223372036854775808
+          ],
+          "test_epsilon_exact": [
+            1763504088248601378671,
+            51946031311566097350656
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 38,
+          "repetitions": 77,
+          "small_if_plus_count_at_least": 49,
+          "p_plus_small_lower_exact": [
+            118096591,
+            134217728
+          ],
+          "p_plus_large_upper_exact": [
+            341641649,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            21905508587530093,
+            1666538811537160449032192
+          ],
+          "controlled_U_calls": 2926,
+          "small_failure": 7.367342357476829e-09,
+          "large_failure": 9.910298424366893e-09,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 1,
+          "width_exact": [
+            15871536794237412408039,
+            101457092405402533888
+          ],
+          "test_epsilon_exact": [
+            15871536794237412408039,
+            571406344427227070857216
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 46,
+          "repetitions": 77,
+          "small_if_plus_count_at_least": 49,
+          "p_plus_small_lower_exact": [
+            118197665,
+            134217728
+          ],
+          "p_plus_large_upper_exact": [
+            171770933,
+            536870912
+          ],
+          "failure_allocation_exact": [
+            26517194605957481,
+            1666538811537160449032192
+          ],
+          "controlled_U_calls": 3542,
+          "small_failure": 6.38409040649532e-09,
+          "large_failure": 1.2125947135953364e-08,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 2,
+          "width_exact": [
+            142843831148136711672351,
+            1116028016459427872768
+          ],
+          "test_epsilon_exact": [
+            142843831148136711672351,
+            6285469788699497779429376
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 56,
+          "repetitions": 75,
+          "small_if_plus_count_at_least": 48,
+          "p_plus_small_lower_exact": [
+            472955017,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            347097825,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            8070450532247929,
+            416634702884290112258048
+          ],
+          "controlled_U_calls": 4200,
+          "small_failure": 1.3701273452918513e-08,
+          "large_failure": 1.8764610151845384e-08,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 3,
+          "width_exact": [
+            1285594480333230405051159,
+            12276308181053706600448
+          ],
+          "test_epsilon_exact": [
+            1285594480333230405051159,
+            69140167675694475573723136
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 69,
+          "repetitions": 74,
+          "small_if_plus_count_at_least": 47,
+          "p_plus_small_lower_exact": [
+            236309153,
+            268435456
+          ],
+          "p_plus_large_upper_exact": [
+            339841181,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            79551583817872443,
+            3333077623074320898064384
+          ],
+          "controlled_U_calls": 5106,
+          "small_failure": 1.088155035019792e-08,
+          "large_failure": 1.7933801646019955e-08,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 4,
+          "width_exact": [
+            11570350322999073645460431,
+            135039389991590772604928
+          ],
+          "test_epsilon_exact": [
+            11570350322999073645460431,
+            760541844432639231310954496
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 84,
+          "repetitions": 72,
+          "small_if_plus_count_at_least": 46,
+          "p_plus_small_lower_exact": [
+            472783957,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            5365551,
+            16777216
+          ],
+          "failure_allocation_exact": [
+            24211351596743787,
+            833269405768580224516096
+          ],
+          "controlled_U_calls": 6048,
+          "small_failure": 2.3393834275544375e-08,
+          "large_failure": 2.768209843438556e-08,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 5,
+          "width_exact": [
+            104133152906991662809143879,
+            1485433289907498498654208
+          ],
+          "test_epsilon_exact": [
+            104133152906991662809143879,
+            8365960288759031544420499456
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 103,
+          "repetitions": 72,
+          "small_if_plus_count_at_least": 46,
+          "p_plus_small_lower_exact": [
+            236324251,
+            268435456
+          ],
+          "p_plus_large_upper_exact": [
+            85121545,
+            268435456
+          ],
+          "failure_allocation_exact": [
+            118750914974505241,
+            3333077623074320898064384
+          ],
+          "controlled_U_calls": 7416,
+          "small_failure": 2.446466121312782e-08,
+          "large_failure": 2.066943038339792e-08,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 6,
+          "width_exact": [
+            937198376162924965282294911,
+            16339766188982483485196288
+          ],
+          "test_epsilon_exact": [
+            937198376162924965282294911,
+            92025563176349346988625494016
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 126,
+          "repetitions": 71,
+          "small_if_plus_count_at_least": 45,
+          "p_plus_small_lower_exact": [
+            945222987,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            339694665,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            72634054790231361,
+            1666538811537160449032192
+          ],
+          "controlled_U_calls": 8946,
+          "small_failure": 1.7477481042081863e-08,
+          "large_failure": 3.8801282098517365e-08,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 7,
+          "width_exact": [
+            8434785385466324687540654199,
+            179737428078807318337159168
+          ],
+          "test_epsilon_exact": [
+            8434785385466324687540654199,
+            1012281194939842816874880434176
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 154,
+          "repetitions": 71,
+          "small_if_plus_count_at_least": 45,
+          "p_plus_small_lower_exact": [
+            118152875,
+            134217728
+          ],
+          "p_plus_large_upper_exact": [
+            339694665,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            88774955854727219,
+            1666538811537160449032192
+          ],
+          "controlled_U_calls": 10934,
+          "small_failure": 1.7477443359408494e-08,
+          "large_failure": 3.8801282098517365e-08,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 8,
+          "width_exact": [
+            75913068469196922187865887791,
+            1977111708866880501708750848
+          ],
+          "test_epsilon_exact": [
+            75913068469196922187865887791,
+            11135093144338270985623684775936
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 189,
+          "repetitions": 69,
+          "small_if_plus_count_at_least": 44,
+          "p_plus_small_lower_exact": [
+            472437631,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            338562481,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            217902164370694083,
+            3333077623074320898064384
+          ],
+          "controlled_U_calls": 13041,
+          "small_failure": 4.20450890473247e-08,
+          "large_failure": 3.7612024954065176e-08,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 9,
+          "width_exact": [
+            683217616222772299690792990119,
+            21748228797535685518796259328
+          ],
+          "test_epsilon_exact": [
+            683217616222772299690792990119,
+            122486024587720980841860532535296
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 230,
+          "repetitions": 69,
+          "small_if_plus_count_at_least": 44,
+          "p_plus_small_lower_exact": [
+            472620521,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            169943633,
+            536870912
+          ],
+          "failure_allocation_exact": [
+            132585973029787405,
+            1666538811537160449032192
+          ],
+          "controlled_U_calls": 15870,
+          "small_failure": 3.9671003181458475e-08,
+          "large_failure": 4.2774344607747735e-08,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 10,
+          "width_exact": [
+            6148958546004950697217136911071,
+            239230516772892540706758852608
+          ],
+          "test_epsilon_exact": [
+            6148958546004950697217136911071,
+            1347346270464930789260465857888256
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 282,
+          "repetitions": 66,
+          "small_if_plus_count_at_least": 42,
+          "p_plus_small_lower_exact": [
+            118121897,
+            134217728
+          ],
+          "p_plus_large_upper_exact": [
+            168527811,
+            536870912
+          ],
+          "failure_allocation_exact": [
+            162561932149565427,
+            1666538811537160449032192
+          ],
+          "controlled_U_calls": 18612,
+          "small_failure": 6.636441545422387e-08,
+          "large_failure": 7.234045287224542e-08,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 11,
+          "width_exact": [
+            55340626914044556274954232199639,
+            2631535684501817947774347378688
+          ],
+          "test_epsilon_exact": [
+            55340626914044556274954232199639,
+            14820808975114238681865124436770816
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 344,
+          "repetitions": 66,
+          "small_if_plus_count_at_least": 42,
+          "p_plus_small_lower_exact": [
+            236284605,
+            268435456
+          ],
+          "p_plus_large_upper_exact": [
+            338791987,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            49575624698094421,
+            416634702884290112258048
+          ],
+          "controlled_U_calls": 22704,
+          "small_failure": 6.472518036238101e-08,
+          "large_failure": 8.50303103068294e-08,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 12,
+          "width_exact": [
+            498065642226401006474588089796751,
+            28946892529519997425517821165568
+          ],
+          "test_epsilon_exact": [
+            498065642226401006474588089796751,
+            163028898726256625500516368804478976
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 421,
+          "repetitions": 66,
+          "small_if_plus_count_at_least": 42,
+          "p_plus_small_lower_exact": [
+            945027153,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            337607675,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            485379953439482587,
+            3333077623074320898064384
+          ],
+          "controlled_U_calls": 27786,
+          "small_failure": 6.583832076640202e-08,
+          "large_failure": 7.616505033725333e-08,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 13,
+          "width_exact": [
+            4482590780037609058271292808170759,
+            318415817824719971680696032821248
+          ],
+          "test_epsilon_exact": [
+            4482590780037609058271292808170759,
+            1793317885988822880505680056849268736
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 515,
+          "repetitions": 63,
+          "small_if_plus_count_at_least": 40,
+          "p_plus_small_lower_exact": [
+            944954249,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            336842161,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            593754574872526205,
+            3333077623074320898064384
+          ],
+          "controlled_U_calls": 32445,
+          "small_failure": 1.0670342964088251e-07,
+          "large_failure": 1.5825288043653095e-07,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 14,
+          "width_exact": [
+            40343317020338481524441635273536831,
+            3502573996071919688487656361033728
+          ],
+          "test_epsilon_exact": [
+            40343317020338481524441635273536831,
+            19726496745877051685562480625341956096
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 629,
+          "repetitions": 63,
+          "small_if_plus_count_at_least": 40,
+          "p_plus_small_lower_exact": [
+            59063369,
+            67108864
+          ],
+          "p_plus_large_upper_exact": [
+            168733427,
+            536870912
+          ],
+          "failure_allocation_exact": [
+            725187626397706763,
+            3333077623074320898064384
+          ],
+          "controlled_U_calls": 39627,
+          "small_failure": 1.0576919442114016e-07,
+          "large_failure": 1.6728245243818452e-07,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 15,
+          "width_exact": [
+            363089853183046333719974717461831479,
+            38528313956791116573364219971371008
+          ],
+          "test_epsilon_exact": [
+            363089853183046333719974717461831479,
+            216991464204647568541187286878761517056
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 769,
+          "repetitions": 63,
+          "small_if_plus_count_at_least": 40,
+          "p_plus_small_lower_exact": [
+            944989505,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            168603841,
+            536870912
+          ],
+          "failure_allocation_exact": [
+            886596637042665343,
+            3333077623074320898064384
+          ],
+          "controlled_U_calls": 48447,
+          "small_failure": 1.0615037326826734e-07,
+          "large_failure": 1.6347837607971704e-07,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 16,
+          "width_exact": [
+            3267808678647417003479772457156483311,
+            423811453524702282307006419685081088
+          ],
+          "test_epsilon_exact": [
+            3267808678647417003479772457156483311,
+            2386906106251123253953060155666376687616
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 940,
+          "repetitions": 63,
+          "small_if_plus_count_at_least": 40,
+          "p_plus_small_lower_exact": [
+            472489761,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            337101683,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            270936553582609045,
+            833269405768580224516096
+          ],
+          "controlled_U_calls": 59220,
+          "small_failure": 1.0630670361686766e-07,
+          "large_failure": 1.6194636309421453e-07,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 17,
+          "width_exact": [
+            29410278107826753031317952114408349799,
+            4661925988771725105377070616535891968
+          ],
+          "test_epsilon_exact": [
+            29410278107826753031317952114408349799,
+            26255967168762355793483661712330143563776
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 1149,
+          "repetitions": 58,
+          "small_if_plus_count_at_least": 37,
+          "p_plus_small_lower_exact": [
+            944971353,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            337014967,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            1324706808793267203,
+            3333077623074320898064384
+          ],
+          "controlled_U_calls": 66642,
+          "small_failure": 3.898059981099329e-07,
+          "large_failure": 3.9048426264197965e-07,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 18,
+          "width_exact": [
+            264692502970440777281861569029675148191,
+            51281185876488976159147776781894811648
+          ],
+          "test_epsilon_exact": [
+            264692502970440777281861569029675148191,
+            288815638856385913728320278835631579201536
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 1404,
+          "repetitions": 58,
+          "small_if_plus_count_at_least": 37,
+          "p_plus_small_lower_exact": [
+            944991403,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            337227833,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            404675448117003297,
+            833269405768580224516096
+          ],
+          "controlled_U_calls": 81432,
+          "small_failure": 3.8875189406011263e-07,
+          "large_failure": 3.9741273627889564e-07,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 19,
+          "width_exact": [
+            2382232526733966995536754121267076333719,
+            564093044641378737750625544600842928128
+          ],
+          "test_epsilon_exact": [
+            2382232526733966995536754121267076333719,
+            3176972027420245051011523067191947371216896
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 1716,
+          "repetitions": 58,
+          "small_if_plus_count_at_least": 37,
+          "p_plus_small_lower_exact": [
+            236247851,
+            268435456
+          ],
+          "p_plus_large_upper_exact": [
+            337227833,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            494603325476337363,
+            833269405768580224516096
+          ],
+          "controlled_U_calls": 99528,
+          "small_failure": 3.8875184155220285e-07,
+          "large_failure": 3.9741273627889564e-07,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 20,
+          "width_exact": [
+            21440092740605702959830787091403687003471,
+            6205023491055166115256880990609272209408
+          ],
+          "test_epsilon_exact": [
+            21440092740605702959830787091403687003471,
+            34946692301622695561126753739111421083385856
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 2098,
+          "repetitions": 58,
+          "small_if_plus_count_at_least": 37,
+          "p_plus_small_lower_exact": [
+            944964559,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            336942853,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            1209414658332582503,
+            1666538811537160449032192
+          ],
+          "controlled_U_calls": 121684,
+          "small_failure": 3.9016378393259567e-07,
+          "large_failure": 3.8816312412512197e-07,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 21,
+          "width_exact": [
+            192960834665451326638477083822633183031239,
+            68255258401606827267825690896701994303488
+          ],
+          "test_epsilon_exact": [
+            192960834665451326638477083822633183031239,
+            384413615317849651172394291130225631917244416
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 2564,
+          "repetitions": 57,
+          "small_if_plus_count_at_least": 36,
+          "p_plus_small_lower_exact": [
+            944971881,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            84255141,
+            268435456
+          ],
+          "failure_allocation_exact": [
+            739022684452988927,
+            833269405768580224516096
+          ],
+          "controlled_U_calls": 146148,
+          "small_failure": 2.7291681818411106e-07,
+          "large_failure": 8.008435408253766e-07,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 22,
+          "width_exact": [
+            1736647511989061939746293754403698647281151,
+            750807842417675099946082599863721937338368
+          ],
+          "test_epsilon_exact": [
+            1736647511989061939746293754403698647281151,
+            4228549768496346162896337202432481951089688576
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 3134,
+          "repetitions": 55,
+          "small_if_plus_count_at_least": 35,
+          "p_plus_small_lower_exact": [
+            472482945,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            168478491,
+            536870912
+          ],
+          "failure_allocation_exact": [
+            1806627997718929249,
+            1666538811537160449032192
+          ],
+          "controlled_U_calls": 172370,
+          "small_failure": 6.266014257332228e-07,
+          "large_failure": 8.700417885497931e-07,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 23,
+          "width_exact": [
+            15629827607901557457716643789633287825530359,
+            8258886266594426099406908598500941310722048
+          ],
+          "test_epsilon_exact": [
+            15629827607901557457716643789633287825530359,
+            46514047453459807791859709226757301461986574336
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 3831,
+          "repetitions": 55,
+          "small_if_plus_count_at_least": 35,
+          "p_plus_small_lower_exact": [
+            944953635,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            84212603,
+            268435456
+          ],
+          "failure_allocation_exact": [
+            4416842284148830857,
+            3333077623074320898064384
+          ],
+          "controlled_U_calls": 210705,
+          "small_failure": 6.275953932714836e-07,
+          "large_failure": 8.628278428819298e-07,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 24,
+          "width_exact": [
+            140668448471114017119449794106699590429773231,
+            90847748932538687093475994583510354417942528
+          ],
+          "test_epsilon_exact": [
+            140668448471114017119449794106699590429773231,
+            511654521988057885710456801494330316081852317696
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 4682,
+          "repetitions": 55,
+          "small_if_plus_count_at_least": 35,
+          "p_plus_small_lower_exact": [
+            236239913,
+            268435456
+          ],
+          "p_plus_large_upper_exact": [
+            168445389,
+            536870912
+          ],
+          "failure_allocation_exact": [
+            2698989242284628827,
+            1666538811537160449032192
+          ],
+          "controlled_U_calls": 257510,
+          "small_failure": 6.27107190213662e-07,
+          "large_failure": 8.655536306148559e-07,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 25,
+          "width_exact": [
+            1266016036240026154075048146960296313867959079,
+            999325238257925558028235940418613898597367808
+          ],
+          "test_epsilon_exact": [
+            1266016036240026154075048146960296313867959079,
+            5628199741868636742815024816437633476900375494656
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 5722,
+          "repetitions": 52,
+          "small_if_plus_count_at_least": 33,
+          "p_plus_small_lower_exact": [
+            472483107,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            336960421,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            3298508424680189267,
+            1666538811537160449032192
+          ],
+          "controlled_U_calls": 297544,
+          "small_failure": 1.0058658389085565e-06,
+          "large_failure": 1.9500579005751963e-06,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 26,
+          "width_exact": [
+            11394144326160235386675433322642666824811631711,
+            10992577620837181138310595344604752884571045888
+          ],
+          "test_epsilon_exact": [
+            11394144326160235386675433322642666824811631711,
+            61910197160555004170965272980813968245904130441216
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 6994,
+          "repetitions": 50,
+          "small_if_plus_count_at_least": 32,
+          "p_plus_small_lower_exact": [
+            944960845,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            21056465,
+            67108864
+          ],
+          "failure_allocation_exact": [
+            4031766501610143959,
+            1666538811537160449032192
+          ],
+          "controlled_U_calls": 349700,
+          "small_failure": 2.3107764883103078e-06,
+          "large_failure": 2.1152776179538094e-06,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 27,
+          "width_exact": [
+            102547298935442118480078899903784001423304685399,
+            120918353829208992521416548790652281730281504768
+          ],
+          "test_epsilon_exact": [
+            102547298935442118480078899903784001423304685399,
+            681012168766105045880618002788953650704945434853376
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 8549,
+          "repetitions": 50,
+          "small_if_plus_count_at_least": 32,
+          "p_plus_small_lower_exact": [
+            236238289,
+            268435456
+          ],
+          "p_plus_large_upper_exact": [
+            336860575,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            9856325942883935003,
+            3333077623074320898064384
+          ],
+          "controlled_U_calls": 427450,
+          "small_failure": 2.3128558319881523e-06,
+          "large_failure": 2.108767908719346e-06,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 28,
+          "width_exact": [
+            922925690418979066320710099134056012809742168591,
+            1330101892121298917735582036697175099033096552448
+          ],
+          "test_epsilon_exact": [
+            922925690418979066320710099134056012809742168591,
+            7491133856427155504686798030678490157754399783387136
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 10448,
+          "repetitions": 50,
+          "small_if_plus_count_at_least": 32,
+          "p_plus_small_lower_exact": [
+            944959447,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            168444303,
+            536870912
+          ],
+          "failure_allocation_exact": [
+            752857742508271091,
+            208317351442145056129024
+          ],
+          "controlled_U_calls": 522400,
+          "small_failure": 2.3111544236081124e-06,
+          "large_failure": 2.113022712566065e-06,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 29,
+          "width_exact": [
+            8306331213770811596886390892206504115287679517319,
+            14631120813334288095091402403668926089364062076928
+          ],
+          "test_epsilon_exact": [
+            8306331213770811596886390892206504115287679517319,
+            82402472420698710551554778337463391735298397617258496
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 12770,
+          "repetitions": 49,
+          "small_if_plus_count_at_least": 31,
+          "p_plus_small_lower_exact": [
+            118119747,
+            134217728
+          ],
+          "p_plus_large_upper_exact": [
+            336873003,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            7361403806914718095,
+            1666538811537160449032192
+          ],
+          "controlled_U_calls": 625730,
+          "small_failure": 1.6150820457214919e-06,
+          "large_failure": 4.347387996197347e-06,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 30,
+          "width_exact": [
+            74756980923937304371977518029858537037589115655871,
+            160942328946677169046005426440358186983004682846208
+          ],
+          "test_epsilon_exact": [
+            74756980923937304371977518029858537037589115655871,
+            906427196627685816067102561712097309088282373789843456
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 15608,
+          "repetitions": 47,
+          "small_if_plus_count_at_least": 30,
+          "p_plus_small_lower_exact": [
+            944956773,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            84215059,
+            268435456
+          ],
+          "failure_allocation_exact": [
+            2249349855487958497,
+            416634702884290112258048
+          ],
+          "controlled_U_calls": 733576,
+          "small_failure": 3.7239053356233286e-06,
+          "large_failure": 4.745947948659799e-06,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 31,
+          "width_exact": [
+            672812828315435739347797662268726833338302040902839,
+            1770365618413448859506059690843940056813051511308288
+          ],
+          "test_epsilon_exact": [
+            672812828315435739347797662268726833338302040902839,
+            9970699162904543976738128178833070399971106111688278016
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 19077,
+          "repetitions": 47,
+          "small_if_plus_count_at_least": 30,
+          "p_plus_small_lower_exact": [
+            118119289,
+            134217728
+          ],
+          "p_plus_large_upper_exact": [
+            84208967,
+            268435456
+          ],
+          "failure_allocation_exact": [
+            21994283543384820219,
+            3333077623074320898064384
+          ],
+          "controlled_U_calls": 896619,
+          "small_failure": 3.72492531439183e-06,
+          "large_failure": 4.738166571217273e-06,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 32,
+          "width_exact": [
+            6055315454838921654130178960418541500044718368125551,
+            19474021802547937454566656599283340624943566624391168
+          ],
+          "test_epsilon_exact": [
+            6055315454838921654130178960418541500044718368125551,
+            109677690791949983744119409967163774399682167228571058176
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 23316,
+          "repetitions": 47,
+          "small_if_plus_count_at_least": 30,
+          "p_plus_small_lower_exact": [
+            7382465,
+            8388608
+          ],
+          "p_plus_large_upper_exact": [
+            336846943,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            6720379450353311163,
+            833269405768580224516096
+          ],
+          "controlled_U_calls": 1095852,
+          "small_failure": 3.7244246185126447e-06,
+          "large_failure": 4.741701644162515e-06,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 33,
+          "width_exact": [
+            54497839093550294887171610643766873500402465313129959,
+            214214239828027312000233222592116746874379232868302848
+          ],
+          "test_epsilon_exact": [
+            54497839093550294887171610643766873500402465313129959,
+            1206454598711449821185313509638801518396503839514281639936
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 28497,
+          "repetitions": 45,
+          "small_if_plus_count_at_least": 29,
+          "p_plus_small_lower_exact": [
+            944956509,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            336857431,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            32854804116781318959,
+            3333077623074320898064384
+          ],
+          "controlled_U_calls": 1282365,
+          "small_failure": 8.55715880068776e-06,
+          "large_failure": 5.1526744263672676e-06,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 34,
+          "width_exact": [
+            490480551841952653984544495793901861503622187818169631,
+            2356356638108300432002565448513284215618171561551331328
+          ],
+          "test_epsilon_exact": [
+            490480551841952653984544495793901861503622187818169631,
+            13271000585825948033038448606026816702361542234657098039296
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 34830,
+          "repetitions": 44,
+          "small_if_plus_count_at_least": 28,
+          "p_plus_small_lower_exact": [
+            236238925,
+            268435456
+          ],
+          "p_plus_large_upper_exact": [
+            168424425,
+            536870912
+          ],
+          "failure_allocation_exact": [
+            20078128002728240505,
+            1666538811537160449032192
+          ],
+          "controlled_U_calls": 1532520,
+          "small_failure": 5.995526353397426e-06,
+          "large_failure": 1.06883940622359e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 35,
+          "width_exact": [
+            4414324966577573885860900462145116753532599690363526679,
+            25919923019191304752028219933646126371799887177064644608
+          ],
+          "test_epsilon_exact": [
+            4414324966577573885860900462145116753532599690363526679,
+            145981006444085428363422934666294983725976964581228078432256
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 42570,
+          "repetitions": 42,
+          "small_if_plus_count_at_least": 27,
+          "p_plus_small_lower_exact": [
+            236238925,
+            268435456
+          ],
+          "p_plus_large_upper_exact": [
+            168424425,
+            536870912
+          ],
+          "failure_allocation_exact": [
+            24539934225556738395,
+            1666538811537160449032192
+          ],
+          "controlled_U_calls": 1787940,
+          "small_failure": 1.3842431958008408e-05,
+          "large_failure": 1.1644084496097211e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 36,
+          "width_exact": [
+            39728924699198164972748104159306050781793397213271740111,
+            285119153211104352272310419270107390089798758947711090688
+          ],
+          "test_epsilon_exact": [
+            39728924699198164972748104159306050781793397213271740111,
+            1605791070884939711997652281329244820985746610393508862754816
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 52031,
+          "repetitions": 42,
+          "small_if_plus_count_at_least": 27,
+          "p_plus_small_lower_exact": [
+            236238519,
+            268435456
+          ],
+          "p_plus_large_upper_exact": [
+            168420457,
+            536870912
+          ],
+          "failure_allocation_exact": [
+            59987658806198856257,
+            3333077623074320898064384
+          ],
+          "controlled_U_calls": 2185302,
+          "small_failure": 1.3844655862858303e-05,
+          "large_failure": 1.1638439718988817e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 37,
+          "width_exact": [
+            357560322292783484754732937433754457036140574919445660999,
+            3136310685322147874995414611971181290987786348424821997568
+          ],
+          "test_epsilon_exact": [
+            357560322292783484754732937433754457036140574919445660999,
+            17663701779734336831974175094621693030843212714328597490302976
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 63593,
+          "repetitions": 42,
+          "small_if_plus_count_at_least": 27,
+          "p_plus_small_lower_exact": [
+            472477333,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            336837883,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            73317737242463221271,
+            3333077623074320898064384
+          ],
+          "controlled_U_calls": 2670906,
+          "small_failure": 1.3843847879972596e-05,
+          "large_failure": 1.1636284478537806e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 38,
+          "width_exact": [
+            3218042900635051362792596436903790113325265174275010948991,
+            34499417538543626624949560731682994200865649832673041973248
+          ],
+          "test_epsilon_exact": [
+            3218042900635051362792596436903790113325265174275010948991,
+            194300719577077705151715926040838623339275339857614572393332736
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 77725,
+          "repetitions": 41,
+          "small_if_plus_count_at_least": 26,
+          "p_plus_small_lower_exact": [
+            944954425,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            336835319,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            89610823945567183075,
+            3333077623074320898064384
+          ],
+          "controlled_U_calls": 3186725,
+          "small_failure": 9.644923903246798e-06,
+          "large_failure": 2.410749831913575e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 39,
+          "width_exact": [
+            28962386105715462265133367932134111019927386568475098540919,
+            379493592923979892874445168048512936209522148159403461705728
+          ],
+          "test_epsilon_exact": [
+            28962386105715462265133367932134111019927386568475098540919,
+            2137307915347854756668875186449224856732028738433760296326660096
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 94997,
+          "repetitions": 39,
+          "small_if_plus_count_at_least": 25,
+          "p_plus_small_lower_exact": [
+            944954623,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            336837417,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            109524084173136644459,
+            3333077623074320898064384
+          ],
+          "controlled_U_calls": 3704883,
+          "small_failure": 2.2385931857261114e-05,
+          "large_failure": 2.6362660466054924e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 40,
+          "width_exact": [
+            260661474951439160386200311389206999179346479116275886868271,
+            4174429522163778821618896848533642298304743629753438078763008
+          ],
+          "test_epsilon_exact": [
+            260661474951439160386200311389206999179346479116275886868271,
+            23510387068826402323357627050941473424052316122771363259593261056
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 116107,
+          "repetitions": 39,
+          "small_if_plus_count_at_least": 25,
+          "p_plus_small_lower_exact": [
+            472477473,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            336840849,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            133862257135387184629,
+            3333077623074320898064384
+          ],
+          "controlled_U_calls": 4528173,
+          "small_failure": 2.2385257867082383e-05,
+          "large_failure": 2.6367775003731234e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 41,
+          "width_exact": [
+            2345953274562952443475802802502862992614118312046482981814439,
+            45918724743801567037807865333870065281352179927287818866393088
+          ],
+          "test_epsilon_exact": [
+            2345953274562952443475802802502862992614118312046482981814439,
+            258614257757090425556933897560356207664575477350484995855525871616
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 141909,
+          "repetitions": 39,
+          "small_if_plus_count_at_least": 25,
+          "p_plus_small_lower_exact": [
+            944954681,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            336838041,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            163609937797253050923,
+            3333077623074320898064384
+          ],
+          "controlled_U_calls": 5534451,
+          "small_failure": 2.2385810829824974e-05,
+          "large_failure": 2.6363590313776693e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 42,
+          "width_exact": [
+            21113579471066571991282225222525766933527064808418346836329951,
+            505105972181817237415886518672570718094873979200166007530323968
+          ],
+          "test_epsilon_exact": [
+            21113579471066571991282225222525766933527064808418346836329951,
+            2844756835327994681126272873163918284310330250855334954410784587776
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 173445,
+          "repetitions": 36,
+          "small_if_plus_count_at_least": 23,
+          "p_plus_small_lower_exact": [
+            236238589,
+            268435456
+          ],
+          "p_plus_large_upper_exact": [
+            336834917,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            199968470366534577915,
+            3333077623074320898064384
+          ],
+          "controlled_U_calls": 6244020,
+          "small_failure": 3.618006407738242e-05,
+          "large_failure": 5.985247704256586e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 43,
+          "width_exact": [
+            190022215239599147921540027002731902401743583275765121526969559,
+            5556165693999989611574751705398277899043613771201826082833563648
+          ],
+          "test_epsilon_exact": [
+            190022215239599147921540027002731902401743583275765121526969559,
+            31292325188607941492389001604803101127413632759408684498518630465536
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 211988,
+          "repetitions": 36,
+          "small_if_plus_count_at_least": 23,
+          "p_plus_small_lower_exact": [
+            944954489,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            84209001,
+            268435456
+          ],
+          "failure_allocation_exact": [
+            61101380979649070459,
+            833269405768580224516096
+          ],
+          "controlled_U_calls": 7631568,
+          "small_failure": 3.617964302369508e-05,
+          "large_failure": 5.9855856711685285e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 44,
+          "width_exact": [
+            1710199937156392331293860243024587121615692249481886093742726031,
+            61117822633999885727322268759381056889479751483220086911169200128
+          ],
+          "test_epsilon_exact": [
+            1710199937156392331293860243024587121615692249481886093742726031,
+            344215577074687356416279017652834112401549960353495529483704935120896
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 259097,
+          "repetitions": 34,
+          "small_if_plus_count_at_least": 22,
+          "p_plus_small_lower_exact": [
+            236238577,
+            268435456
+          ],
+          "p_plus_large_upper_exact": [
+            336835949,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            298718503079120237159,
+            3333077623074320898064384
+          ],
+          "controlled_U_calls": 8809298,
+          "small_failure": 8.420748965420277e-05,
+          "large_failure": 6.520897779611013e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 45,
+          "width_exact": [
+            15391799434407530981644742187221284094541230245336974843684534279,
+            672296048973998743000544956353191625784277266315420956022861201408
+          ],
+          "test_epsilon_exact": [
+            15391799434407530981644742187221284094541230245336974843684534279,
+            3786371347821560920579069194181175236417049563888450824320754286329856
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 316674,
+          "repetitions": 34,
+          "small_if_plus_count_at_least": 22,
+          "p_plus_small_lower_exact": [
+            472477169,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            84208829,
+            268435456
+          ],
+          "failure_allocation_exact": [
+            182550132274934333439,
+            1666538811537160449032192
+          ],
+          "controlled_U_calls": 10766916,
+          "small_failure": 8.420728542344908e-05,
+          "large_failure": 6.520690280182321e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 46,
+          "width_exact": [
+            138526194909667778834802679684991556850871072208032773593160808511,
+            7395256538713986173005994519885107883627049929469630516251473215488
+          ],
+          "test_epsilon_exact": [
+            138526194909667778834802679684991556850871072208032773593160808511,
+            41650084826037170126369761135992927600587545202772959067528297149628416
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 387046,
+          "repetitions": 34,
+          "small_if_plus_count_at_least": 22,
+          "p_plus_small_lower_exact": [
+            472477169,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            84208829,
+            268435456
+          ],
+          "failure_allocation_exact": [
+            223116828336030851981,
+            1666538811537160449032192
+          ],
+          "controlled_U_calls": 13159564,
+          "small_failure": 8.420728542344908e-05,
+          "large_failure": 6.520690280182321e-05,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 47,
+          "width_exact": [
+            1246735754187010009513224117164924011657839649872294962338447276599,
+            81347821925853847903065939718736186719897549224165935678766205370368
+          ],
+          "test_epsilon_exact": [
+            1246735754187010009513224117164924011657839649872294962338447276599,
+            458150933086408871390067372495922203606462997230502549742811268645912576
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 473056,
+          "repetitions": 33,
+          "small_if_plus_count_at_least": 21,
+          "p_plus_small_lower_exact": [
+            472477189,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            168417409,
+            536870912
+          ],
+          "failure_allocation_exact": [
+            17043638602603019201,
+            104158675721072528064512
+          ],
+          "controlled_U_calls": 15610848,
+          "small_failure": 5.842048907727149e-05,
+          "large_failure": 0.00013624980448316,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 48,
+          "width_exact": [
+            11220621787683090085619017054484316104920556848850654661046025489391,
+            894826041184392326933725336906098053918873041465825292466428259074048
+          ],
+          "test_epsilon_exact": [
+            11220621787683090085619017054484316104920556848850654661046025489391,
+            5039660263950497585290741097455144239671092969535528047170923955105038336
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 578179,
+          "repetitions": 31,
+          "small_if_plus_count_at_least": 20,
+          "p_plus_small_lower_exact": [
+            944954459,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            336835679,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            666595002612082191613,
+            3333077623074320898064384
+          ],
+          "controlled_U_calls": 17923549,
+          "small_failure": 0.00013693494191377879,
+          "large_failure": 0.00014912788686705645,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 49,
+          "width_exact": [
+            100985596089147810770571153490358844944285011639655891949414229404519,
+            9843086453028315596270978705967078593107603456124078217130710849814528
+          ],
+          "test_epsilon_exact": [
+            100985596089147810770571153490358844944285011639655891949414229404519,
+            55436262903455473438198152072006586636382022664890808518880163506155421696
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 706664,
+          "repetitions": 31,
+          "small_if_plus_count_at_least": 20,
+          "p_plus_small_lower_exact": [
+            472477183,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            10526085,
+            33554432
+          ],
+          "failure_allocation_exact": [
+            101841015266436616051,
+            416634702884290112258048
+          ],
+          "controlled_U_calls": 21906584,
+          "small_failure": 0.00013693589860603342,
+          "large_failure": 0.0001491213531089407,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 50,
+          "width_exact": [
+            908870364802330296935140381413229604498565104756903027544728064640671,
+            108273950983311471558980765765637864524183638017364860388437819347959808
+          ],
+          "test_epsilon_exact": [
+            908870364802330296935140381413229604498565104756903027544728064640671,
+            609798891938010207820179672792072453000202249313798893707681798567709638656
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 863700,
+          "repetitions": 31,
+          "small_if_plus_count_at_least": 20,
+          "p_plus_small_lower_exact": [
+            944954409,
+            1073741824
+          ],
+          "p_plus_large_upper_exact": [
+            168417577,
+            536870912
+          ],
+          "failure_allocation_exact": [
+            248944575882233438475,
+            833269405768580224516096
+          ],
+          "controlled_U_calls": 26774700,
+          "small_failure": 0.00013693545626373115,
+          "large_failure": 0.00014912430995997947,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 51,
+          "width_exact": [
+            8179833283220972672416263432719066440487085942812127247902552581766039,
+            1191013460816426187148788423422016509766020018191013464272816012827557888
+          ],
+          "test_epsilon_exact": [
+            8179833283220972672416263432719066440487085942812127247902552581766039,
+            6707787811318112286021976400712796983002224742451787830784499784244806025216
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 1055634,
+          "repetitions": 28,
+          "small_if_plus_count_at_least": 18,
+          "p_plus_small_lower_exact": [
+            236238589,
+            268435456
+          ],
+          "p_plus_large_upper_exact": [
+            336834931,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            608531569797072162999,
+            1666538811537160449032192
+          ],
+          "controlled_U_calls": 29557752,
+          "small_failure": 0.00022260024010652788,
+          "large_failure": 0.0003423337112239691,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 52,
+          "width_exact": [
+            73618499548988754051746370894471597964383773485309145231122973235894351,
+            13101148068980688058636672657642181607426220200101148107000976141103136768
+          ],
+          "test_epsilon_exact": [
+            73618499548988754051746370894471597964383773485309145231122973235894351,
+            73785665924499235146241740407840766813024472166969666138629497626692866277376
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 1290219,
+          "repetitions": 28,
+          "small_if_plus_count_at_least": 18,
+          "p_plus_small_lower_exact": [
+            472477189,
+            536870912
+          ],
+          "p_plus_large_upper_exact": [
+            336834819,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            1487521230752341529493,
+            3333077623074320898064384
+          ],
+          "controlled_U_calls": 36126132,
+          "small_failure": 0.00022259990028139568,
+          "large_failure": 0.0003423321352562295,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        },
+        {
+          "stage": 53,
+          "width_exact": [
+            662566495940898786465717338050244381679453961367782307080106759123049159,
+            144112628758787568645003399234063997681688422201112629177010737552134504448
+          ],
+          "test_epsilon_exact": [
+            662566495940898786465717338050244381679453961367782307080106759123049159,
+            811642325169491586608659144486248434943269193836666327524924473893621529051136
+          ],
+          "anchor_fraction_exact": [
+            1,
+            11
+          ],
+          "T": 1576934,
+          "repetitions": 26,
+          "small_if_plus_count_at_least": 17,
+          "p_plus_small_lower_exact": [
+            236238599,
+            268435456
+          ],
+          "p_plus_large_upper_exact": [
+            336835009,
+            1073741824
+          ],
+          "failure_allocation_exact": [
+            909040559972846833549,
+            1666538811537160449032192
+          ],
+          "controlled_U_calls": 41000284,
+          "small_failure": 0.000524509588494835,
+          "large_failure": 0.00037291313036601795,
+          "exact_binomial_tail_certificate": true,
+          "interval_transcendental_certificate": true
+        }
+      ],
+      "controlled_U_calls": 268356240,
+      "hadamard_test_executions": 2778,
+      "longest_single_chain": 1576934,
+      "certificates_complete": true,
+      "searched_designs": 124,
+      "binomial_refined_designs": 8
+    },
+    "previous_controlled_U_calls": 473580908042,
+    "query_reduction": 1764.747143729544,
+    "arithmetic_T_count": 1343096374215516480,
+    "arithmetic_serial_T_depth": 443910157330501440,
+    "single_U": {
+      "t_count": 5004900852,
+      "t_depth": 1654182356,
+      "ccx": 714985836,
+      "clifford_cx": 5179352185,
+      "clifford_h": 1429985498,
+      "x": 1353242,
+      "controlled_bit_phases": 67,
+      "logical_qubits": 2328878,
+      "initial_random_hadamards": 6912,
+      "qpe_bits": 30,
+      "fused_compute_phase_uncompute": true,
+      "excluded": "Arbitrary controlled-phase synthesis and inverse-QFT rotations, accounted separately.",
+      "control_method": "Financial graph forward; promote its SSA output; phase graph forward; controlled bit phases; phase graph inverse, uncopy Y, financial graph inverse; signed controlled reflection."
+    },
+    "hadamard_test_controls": 1,
+    "logical_qubits_upper": 2328849,
+    "IQFT_gates": 0,
+    "uniform_preparation_H": 19201536,
+    "additional_single_qubit_rotations": 53939604240,
+    "controlled_phase_decomposition_CX": 35959736160,
+    "arithmetic_clifford_CX": 1389911478002384400,
+    "arithmetic_clifford_H": 383745531497807520,
+    "arithmetic_X": 363150934930080,
+    "reflection_control_Z": 268356240,
+    "test_preparation_and_measurement_H": 5556,
+    "measured_control_bits": 2778,
+    "classical_constant_load_and_unload_X_upper": 1066752,
+    "required_each_rotation_operator_error": 4.634813390317897e-15,
+    "required_uniform_phase_function_error": 9.315974914538972e-13,
+    "longest_single_chain_arithmetic_T_depth": 2608536399376504,
+    "optimistic_serial_seconds_at_1ns_T_layer": 443910157.3305015,
+    "optimistic_serial_seconds_at_100ns_T_layer": 44391015733.05014,
+    "required_T_layer_seconds_for_10x": 3.11937128973835e-18,
+    "tenfold_total_budget_seconds": 1.3847206,
+    "actual_full_price_seconds": null,
+    "gate_passes": false,
+    "scope": "Same compiled financial and phase oracle; arithmetic-only implementation schedule, not a hardware runtime or universal lower bound. Full financial/physical obligations remain."
+  }
+]

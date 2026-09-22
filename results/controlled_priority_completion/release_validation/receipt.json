@@ -1,0 +1,73 @@
+{
+  "commit": "fcd4b1fa1d087d07c020e6f93ce9f9f423ae0a01",
+  "checkout": "C:\\Users\\prith\\quantum_option_pricing\\.context\\controlled_priority_checkout",
+  "interpreter": "C:\\Users\\prith\\quantum_option_pricing\\.context\\controlled_closeout_repro\\Scripts\\python.exe",
+  "steps": [
+    {
+      "name": "environment",
+      "command": [
+        "C:\\Users\\prith\\quantum_option_pricing\\.context\\controlled_closeout_repro\\Scripts\\python.exe",
+        "-c",
+        "import site,sys,qiskit; assert site.ENABLE_USER_SITE is False; print(sys.version); print(sys.prefix); print(qiskit.__file__)"
+      ],
+      "returncode": 0,
+      "seconds": 4.6270723,
+      "log": "environment.txt",
+      "log_sha256": "47af19c8fc309f1b7d16d652f9a1f26e0fe8bcbe9900b86557404799d60c9e11"
+    },
+    {
+      "name": "focused_tests",
+      "command": [
+        "C:\\Users\\prith\\quantum_option_pricing\\.context\\controlled_closeout_repro\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "research/controlled_priority_completion/test_combined_wrappers.py",
+        "research/controlled_priority_completion/test_estimator_hadamard.py",
+        "research/controlled_priority_completion/test_estimator_bounded.py",
+        "-q"
+      ],
+      "returncode": 0,
+      "seconds": 16.465229100000002,
+      "log": "focused_tests.txt",
+      "log_sha256": "d0d535d0f5e9a3112ed104ab318f8484134ca22024d1cf3981aac8c57a50507a"
+    },
+    {
+      "name": "artifact_audit_before",
+      "command": [
+        "C:\\Users\\prith\\quantum_option_pricing\\.context\\controlled_closeout_repro\\Scripts\\python.exe",
+        "-m",
+        "research.controlled_priority_completion.artifact_audit"
+      ],
+      "returncode": 0,
+      "seconds": 23.035523299999998,
+      "log": "artifact_audit_before.txt",
+      "log_sha256": "5adb26132463b69ebb4a81e44d9eeeee807d1029ef01b0a3ee9b28899495f12d"
+    },
+    {
+      "name": "composed_gate_replay",
+      "command": [
+        "C:\\Users\\prith\\quantum_option_pricing\\.context\\controlled_closeout_repro\\Scripts\\python.exe",
+        "-m",
+        "research.controlled_priority_completion.combined_replay"
+      ],
+      "returncode": 0,
+      "seconds": 78.4308035,
+      "log": "composed_gate_replay.txt",
+      "log_sha256": "a3162343bf99ef88b421ff9a942347dedf289681dc67f57350984477177f7d60"
+    },
+    {
+      "name": "artifact_audit_after",
+      "command": [
+        "C:\\Users\\prith\\quantum_option_pricing\\.context\\controlled_closeout_repro\\Scripts\\python.exe",
+        "-m",
+        "research.controlled_priority_completion.artifact_audit"
+      ],
+      "returncode": 0,
+      "seconds": 5.165570100000011,
+      "log": "artifact_audit_after.txt",
+      "log_sha256": "5adb26132463b69ebb4a81e44d9eeeee807d1029ef01b0a3ee9b28899495f12d"
+    }
+  ],
+  "final_git_status": "",
+  "all_passed": true
+}
