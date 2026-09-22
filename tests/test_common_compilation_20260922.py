@@ -16,6 +16,13 @@ from research.common_compilation_20260922.compiler import (
 from research.journal_sprint.week2_pipeline import controlled_zero
 
 
+def test_archive_comparison_preserves_numbers_but_normalizes_json_arrays():
+    from research.common_compilation_20260922.run import archive_equal
+    assert archive_equal({"a": (1, [2, 3])}, {"a": [1, [2, 3]]})
+    assert not archive_equal({"a": (1, 2)}, {"a": [1, 3]})
+    assert not archive_equal({"a": .125}, {"a": .12500000000000003})
+
+
 @pytest.mark.parametrize(
     "angles,phase",
     [

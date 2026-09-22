@@ -37,6 +37,7 @@ PRIMARY = BASE + "stronger_arithmetic_v1/"
 RESIDUAL = BASE + "signed_residual_arithmetic_v1/"
 APPROX = BASE + "normalization_approximation_v1/"
 PROTOCOL = "docs/release/COMMON_COMPILATION_PROTOCOL_20260922.md"
+CPU_LIMIT = 7140  # Reserve 60 CPU seconds for retained v1 (actual 14.61 s).
 SOURCES = [
     "research/common_compilation_20260922",
     "research/stronger_arithmetic",
@@ -47,6 +48,13 @@ SOURCES = [
 
 def digest(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def archive_equal(actual, expected):
+    """JSON archives replace tuples by lists; compare their canonical values."""
+    return json.dumps(actual, sort_keys=True, allow_nan=False) == json.dumps(
+        expected, sort_keys=True, allow_nan=False
+    )
 
 
 def write(path, value):
@@ -73,7 +81,7 @@ class Acquisition:
         process = psutil.Process()
         while not self.stop.wait(0.5):
             self.peak_rss = max(self.peak_rss, process.memory_info().rss)
-            if time.process_time() - self.started_cpu > 7200 or self.peak_rss > 16 * 1024**3:
+            if time.process_time() - self.started_cpu > CPU_LIMIT or self.peak_rss > 16 * 1024**3:
                 write(
                     self.output / "resource_cap.json",
                     dict(
@@ -115,7 +123,7 @@ class Acquisition:
                     for case in ("D1", "D2")
                     for route in ("reflection", "raw_parent", "residual")
                 ],
-                cpu_limit_seconds=7200,
+                cpu_limit_seconds=CPU_LIMIT,
                 memory_limit_bytes=16 * 1024**3,
                 policy="U/CX opt0 blocks, fixed 5U/2CX controlled-U, no local cancellation",
                 depth_kind="serial_schedule_upper_bound_not_dependency_depth",
@@ -268,13 +276,13 @@ def run(output):
         for case in CASES[:2]:
             primary = acq.read(PRIMARY + case["id"] + "_28.json")
             residual = acq.read(RESIDUAL + case["id"] + "_00.json")
-            if make_plan(case, primary["spec"]) != primary["plan"]:
+            if not archive_equal(make_plan(case, primary["spec"]), primary["plan"]):
                 raise ArithmeticError("model/environment drift from archived parent plan")
             ref = next(s for s in summary["summary"] if s["case"] == case["id"])
             rows.append(reflection(acq, case, ref["reflection_reference"], marginal, errors))
             begin = time.process_time()
             rebuilt = components(primary["plan"], reuse=True, reduced=True)
-            if rebuilt != primary["components"]["reused"]:
+            if not archive_equal(rebuilt, primary["components"]["reused"]):
                 raise ArithmeticError("re-emitted primary component differs from archive")
             count = arithmetic_profile(rebuilt["total"])
             selector = primary["plan"]["selector_bits"]
@@ -318,7 +326,7 @@ def run(output):
                 residual["certificate"],
                 {**rebuilt, "parent_plan": primary["plan"]},
             )
-            if rebuilt_residual != residual["components"]:
+            if not archive_equal(rebuilt_residual, residual["components"]):
                 raise ArithmeticError("re-emitted residual differs from archive")
             count = arithmetic_profile(rebuilt_residual["total"])
             selector = residual["certificate"]["selector_bits"]

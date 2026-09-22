@@ -87,3 +87,17 @@ Command, from repository root in the pinned environment:
 ```powershell
 .context/week15_env_v1/Scripts/python.exe -m research.common_compilation_20260922.run results/journal_sprint/common_compilation_20260922_v1
 ```
+
+## Correction before any six-row observation
+
+The v1 acquisition stopped at its first parent-plan guard: Python tuple/list
+differences from JSON serialization were incorrectly treated as model drift.
+Independent canonical JSON comparison was equal. Preserve v1 planned, loader
+and failure records unchanged. Compare canonical JSON values in the corrected
+producer; numeric changes still fail the guard. No target, menu, compiler,
+cost formula or success criterion changes. Freeze the corrected source and
+regression test before retrying at exclusive
+`results/journal_sprint/common_compilation_20260922_v2/` with the same command
+except that output suffix. Both attempts together remain within two CPU-hours:
+v1 used 14.609375 CPU seconds; corrected producer reserves 60 seconds for it
+and enforces a 7,140-second cap for v2.
