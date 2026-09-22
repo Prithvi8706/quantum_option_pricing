@@ -180,16 +180,18 @@ a negative result or has a stated limitation.
 | Original Week 15 | Fresh-environment reproduction closed; confirmation campaign blocked |
 | Additional two-week minimal-pivot study | Construction and bounded validation closed; candidate on standby |
 | Stronger arithmetic/control study | Bounded implementation and comparison complete; physical/confirmation gates remain open |
-| Original Week 16 | Final integrated manuscript and submission-readiness work remain open |
+| Common-policy follow-up | Six-oracle comparison, manuscript draft and generated artifacts complete |
+| Original Week 16 | Human author/significance review and release/submission-readiness work remain open |
 
 The principal open questions are a defensible distinction from nearest prior
 work, an execution/synthesis/noise model for physical claims, and a matched
 continuous-target comparison against strong classical methods. Any confirmation
 campaign needs admission, a frozen analysis and genuinely fresh data first.
 
-A narrower ideal-logical resource/error paper would need an explicit scope
-decision and independent novelty assessment; it is not automatically
-publication-ready. Hardware superiority is not established by this repository.
+A narrower ideal-logical comparator paper is now drafted under an explicit
+scope and AI-assisted prior-art assessment. Human significance review remains
+open; the draft is not automatically publication-ready. Hardware superiority
+is not established by this repository.
 The [dated checklist](checklist_17.9.26.md) separates these decisions from finished
 implementation tasks. Older plans and drafts are historical, not current claims.
 
@@ -275,6 +277,9 @@ comparison.
 research/journal_sprint/   Active research implementations, runners and verifiers
 research/stronger_arithmetic/  Versioned stronger baseline and signed-control study
 research/assessment_20260921/  Opt-in certified classical AE-label conversion
+research/common_compilation_20260922/  Fixed six-oracle U/CX comparison
+research/manuscript_20260922/  Evidence-bound figure and table producers
+manuscript/2026-09-22/     Current comparator draft and generated artifacts
 research/paper_a/          Earlier research package and regression tests
 docs/journal_sprint/       Protocols, methods, results, audits and project log
 docs/novelty_assessment/   Current scientific assessment and independent AI reviews
@@ -300,14 +305,18 @@ Asian-basket pipeline or evidence of an end-to-end pricing advantage.
 - Do not use reference truths or held-out outcomes to tune a supposedly frozen
   policy, and do not relabel deterministic replay as fresh confirmation.
 - Keep commits reviewable and attribute only work actually performed.
-- Latest integration: [independently reviewed main promotion](docs/release/MAIN_PROMOTION_20260921.md)
-  of completed implementation, evidence and assessment batches on 21 September.
+- Current integration: [PR #9](https://github.com/Prithvi8706/quantum_option_pricing/pull/9)
+  tracks the common-policy comparison, manuscript and artifacts, with a
+  [separate AI review](docs/release/COMMON_COMPILATION_REVIEW_20260922.md).
+  It builds on the [21 September main promotion](docs/release/MAIN_PROMOTION_20260921.md)
+  of completed implementation, evidence and assessment batches.
   The previous stable baseline was [PR #8](https://github.com/Prithvi8706/quantum_option_pricing/pull/8),
   whose Macroscope check skipped because credits were exhausted. Main and dev
   are the only permanent branches; ongoing work continues on
   [dev](https://github.com/Prithvi8706/quantum_option_pricing/tree/dev).
   The original [batch plan](docs/novelty_assessment/2026-09-21/MAIN_BATCH_PLAN.md)
-  is historical; its future experiment and manuscript batches remain open.
+  is historical; the bounded experiment and manuscript-draft work are now complete,
+  while the final human-approved publication package remains open.
 
 ## License
 

@@ -78,7 +78,7 @@ Historical plans contain stale opening summaries; later closeouts and the
 | Week 13 | Small quantum Asian-basket encoding and feasibility audit | Continuous-price admission remained blocked |
 | Week 14 | Finite-target comparisons, ablations, resource analysis and independent reviews | Original continuous end-to-end comparison incomplete |
 | Week 15 | Fresh-environment reproduction and gate assessment | **Fresh confirmation campaign remains incomplete** |
-| Week 16 | Earlier drafts and artifacts provide inputs | **Final manuscript/submission-readiness package remains open** |
+| Week 16 | Focused comparator draft, tables and figures complete on 22 September | **Human author/release/submission-readiness gates remain open** |
 
 References: [original retrospective log](docs/journal_sprint/PROJECT_LOG.md),
 [revised roadmap](docs/journal_sprint/WEEKS_11_16_IMPLEMENTATION_PLAN.md),
