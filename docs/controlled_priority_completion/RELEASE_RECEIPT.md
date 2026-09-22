@@ -32,3 +32,11 @@ Scientific decision: no established significant quantum advantage. Numerical
 component certificates and implementation checks pass; the complete financial
 baseline/regret and physical execution gates remain unmet. This receipt does
 not attest to human author approval, journal submission or held-out confirmation.
+
+Repository review: [PR #11](https://github.com/Prithvi8706/quantum_option_pricing/pull/11).
+GitHub's Macroscope correctness check completed with **SKIPPED** and the message
+"Credit balance exhausted." It supplied no automated review or approval.
+Independent subagent reviews and local verification are the actual review
+evidence. Main has no required branch protection; no failed required check or
+protection was bypassed. The original instruction authorized PR creation and
+merge after review; it did not authorize inventing journal author declarations.
