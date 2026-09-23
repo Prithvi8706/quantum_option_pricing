@@ -1,0 +1,158 @@
+{
+ "purpose": "Pilot P2: can one-step-survival (OSS) conditioning restore the RQMC rate for the\ndiscretely monitored arithmetic-basket knock-out call that defeated first-direction\npreintegration in pilot P1?  Development diagnostic only; same contract as P1.\n\nContract: equal-weight basket of na GBM assets (sigma .3, equicorrelation .4, S0 100,\nr .03, T 1), nt monitoring dates; knocked out if the basket value at any date >= H=140;\npayoff exp(-rT) * (arithmetic average over all asset/date prices - K)+ with K=100.\n\nOSS estimator (Glasserman-Staum 2001, adapted to a basket): at each date the asset\nincrements are driven by asset-PCA normals; the basket value is increasing in the first\nasset principal normal, so survival <=> that normal < root. Replace the indicator by its\nconditional probability p_j = Phi(root) and draw the normal from the survival-truncated\nlaw by inverse transform of the same uniform. Estimator = payoff * prod_j p_j (unbiased).\n",
+ "root_seed": 2026092232,
+ "scrambles": 32,
+ "numpy": "2.0.2",
+ "results": [
+  {
+   "assets": 4,
+   "dates": 12,
+   "dim": 48,
+   "acquisition_seconds": 19.9288425,
+   "seconds_per_point_oss_plus_plain": 1.9533544921874948e-05,
+   "pointwise_std": {
+    "oss": 4.392608281401543,
+    "plain": 5.672594738701356
+   },
+   "methods": {
+    "oss": {
+     "price": 3.516601467014961,
+     "std_error": 0.0015667364785023935,
+     "n": [
+      64,
+      128,
+      256,
+      512,
+      1024,
+      2048,
+      4096,
+      8192,
+      16384,
+      32768
+     ],
+     "rqmc_std_one_scramble": [
+      0.3751754551844138,
+      0.2409808940752757,
+      0.15348876855634466,
+      0.11171141654015083,
+      0.07570008865004106,
+      0.06041380927705595,
+      0.036814201550414836,
+      0.026867136071130237,
+      0.016061011991918242,
+      0.008862799906250992
+     ],
+     "rate_r": 0.571288929675814,
+     "p_C": 1.7504277574002076,
+     "fit_constant": 4.055898879841627
+    },
+    "plain_time_ordered": {
+     "price": 3.5105770815271025,
+     "std_error": 0.00244268694628321,
+     "n": [
+      64,
+      128,
+      256,
+      512,
+      1024,
+      2048,
+      4096,
+      8192,
+      16384,
+      32768
+     ],
+     "rqmc_std_one_scramble": [
+      0.5460949438915399,
+      0.3073159939067523,
+      0.2834802501374365,
+      0.18801423347886576,
+      0.11495555080060649,
+      0.09871322546267916,
+      0.06336711979720867,
+      0.04449492803625841,
+      0.031985080238770044,
+      0.01381792403226174
+     ],
+     "rate_r": 0.5718440640679681,
+     "p_C": 1.7487284783306631,
+     "fit_constant": 6.906904144510461
+    }
+   }
+  },
+  {
+   "assets": 8,
+   "dates": 52,
+   "dim": 416,
+   "acquisition_seconds": 137.7472771,
+   "seconds_per_point_oss_plus_plain": 0.00015350142822265558,
+   "pointwise_std": {
+    "oss": 4.514101265416526,
+    "plain": 5.173081152887524
+   },
+   "methods": {
+    "oss": {
+     "price": 3.2844149927846154,
+     "std_error": 0.0028958683317209127,
+     "n": [
+      64,
+      128,
+      256,
+      512,
+      1024,
+      2048,
+      4096,
+      8192,
+      16384,
+      32768
+     ],
+     "rqmc_std_one_scramble": [
+      0.42629067136995,
+      0.28195757751361883,
+      0.16564358407033233,
+      0.11909222540601078,
+      0.08863802608448434,
+      0.05837681253113309,
+      0.04110198446168419,
+      0.033021180206448,
+      0.022404843897715843,
+      0.016381505078265857
+     ],
+     "rate_r": 0.4785282191545858,
+     "p_C": 2.0897409180313264,
+     "fit_constant": 2.343549859145623
+    },
+    "plain_time_ordered": {
+     "price": 3.285621089908894,
+     "std_error": 0.003655069641722151,
+     "n": [
+      64,
+      128,
+      256,
+      512,
+      1024,
+      2048,
+      4096,
+      8192,
+      16384,
+      32768
+     ],
+     "rqmc_std_one_scramble": [
+      0.5207038626140693,
+      0.33074375021280944,
+      0.2348881093772209,
+      0.16435603833811002,
+      0.11824711465058542,
+      0.07361800314546367,
+      0.055344365445604796,
+      0.03910529102975258,
+      0.03063238831080207,
+      0.02067619623496654
+     ],
+     "rate_r": 0.498341908229523,
+     "p_C": 2.0066544344077655,
+     "fit_constant": 3.614973629650741
+    }
+   }
+  }
+ ]
+}
