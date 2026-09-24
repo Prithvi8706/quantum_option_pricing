@@ -14,8 +14,9 @@ H1 falsifier ([results](../../docs/research_investigation/2026-09-23/H1_FALSIFIE
 | Script | What it measures | Output |
 |---|---|---|
 | `barrier_fast_classical.py` | P3: compiled (numba) 16-process version of the strongest knock-out method, rate to 2^17 and wall time | `barrier_fast_classical.json`, `.log` |
-| `barrier_oracle_depth.py` | Q1: minimal-depth knock-out oracle in the project IR, critical-path T-depth/T-count from certified leaves | `barrier_oracle_depth.json` |
+| `barrier_oracle_depth.py` | Q1: depth-optimized knock-out oracle in the project IR, scored (not emitted) by critical path with cheapest/median certified-leaf costs per operation type; optimistic, see ERRATA E3 | `barrier_oracle_depth.json` |
 | `barrier_decision.py` | Stop/continue rule and full (eps, k, t_layer) grid | `barrier_decision.json` |
+| `provenance_replay_diff.py` | Field-by-field diff of the archive against a replay of the committed scripts | `provenance_replay_20260924.json` |
 
 P3 needs numba (anaconda python was used); Q1 needs the project's numba env
 (`.context/antithetic_feasibility_env`); the decision script runs in `venv`.

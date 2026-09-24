@@ -577,11 +577,15 @@ hardware).**
 
 ## 9. Single next action
 
-**Update, 23 September 2026: executed.** The H1 falsifier below was run, and its
-pre-registered stop rule fired. The minimal compiled knock-out oracle is 1,138–5,765×
-deeper than the 10× budget against the measured compiled classical pricer at $0.001,
-100 ns and k = 3. See [H1_FALSIFIER_RESULTS.md](H1_FALSIFIER_RESULTS.md). The text below
-is kept as originally written.
+**Update, 23 September 2026 (corrected 24 September): executed in reduced form.** The
+H1 falsifier below was run with the deviations listed in
+[PREREGISTRATION_DEVIATIONS.md](PREREGISTRATION_DEVIATIONS.md), and its stated stop rule
+fired. A depth-optimized, leaf-table-scored knock-out oracle is 1,138–5,765× deeper than
+the 10× budget at $0.001, 100 ns and k = 3, against the compiled classical pricer, whose
+time is modelled from measured per-point cost. See
+[H1_FALSIFIER_RESULTS.md](H1_FALSIFIER_RESULTS.md). The frontier figures in §1 and §3 use
+the superseded P1 convention; see [ERRATA.md](ERRATA.md) E6 before reusing them. The text
+below is kept as originally written.
 
 Run the **one-week H1 falsifier** in §6: a compiled CPU/GPU knock-out pricer with the
 strongest smoothing, plus the minimal compiled coherent knock-out oracle, placed on one

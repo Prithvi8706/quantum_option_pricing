@@ -1,21 +1,26 @@
 # H1 falsifier: executed result
 
-23 September 2026. This executes the one-week H1 falsifier specified in
-[DECISION.md §6](DECISION.md#6-recommended-direction-and-staged-experiment). Its stop rule
-was fixed there before any of these runs. All cases are development cases; no held-out
-case was generated, and nothing here is a certified price or a quantum execution.
+23 September 2026, corrected 24 September (see [ERRATA.md](ERRATA.md)). This executes a
+**reduced** version of the one-week H1 falsifier specified in
+[DECISION.md §6](DECISION.md#6-recommended-direction-and-staged-experiment). Deviations
+are listed in [PREREGISTRATION_DEVIATIONS.md](PREREGISTRATION_DEVIATIONS.md). The stop rule
+was stated there before the P3/Q1 runs, according to the working record. It was written
+after the P1/P2 pilots and first committed together with these results, so the ordering is
+not externally time-stamped. All cases are development cases; no held-out case was
+generated, and nothing here is a certified price or a quantum execution.
 
 ## Decision
 
-**STOP H1.** The pre-registered stop condition fires on every case, with a large margin.
+**STOP H1.** The stated stop condition fires on both executed cases, with a large margin.
 
 At a price accuracy of $0.001, 100 ns per logical T-layer and estimator constant k = 3,
-the minimal compiled knock-out oracle is **1,138× (8×52) and 5,765× (4×12) deeper** than
-the budget a 10× win allows against the measured compiled classical pricer. The stop
-threshold was 10×.
+a depth-optimized, leaf-table-scored knock-out oracle is **1,138× (8×52) and 5,765× (4×12)
+deeper** than the budget a 10× win allows against the compiled classical pricer, whose
+time is modelled from measured per-point cost. The stop threshold was 10×. Correcting the
+classical first-chunk overhead would raise the 4×12 figure to about 15,000× (ERRATA E5).
 
-There is no remaining direct-pricing hypothesis from this investigation with a
-surviving region. **No defensible significant quantum advantage established yet.**
+Within the rule's admissible region (ε ≥ $0.001, t ≥ 100 ns, k ≥ 3) no executed case
+survives. **No defensible significant quantum advantage established yet.**
 
 ## Contract
 
@@ -25,7 +30,7 @@ equicorrelation .4, S0 = K = 100, r = .03, T = 1, exact at the dates. Cases are 
 × 12 dates and 8 × 52. Statistical error allowance is 0.45ε with 99% (t, 15 degrees of
 freedom) intervals from 16 independent scrambles.
 
-## Classical side (P3, measured)
+## Classical side (P3, measured per-point cost; T_C modelled)
 
 [`barrier_fast_classical.py`](../../../research/advantage_frontier_20260923/barrier_fast_classical.py)
 implements the strongest measured method from P1: analytic preintegration along the first
@@ -33,7 +38,7 @@ principal direction, with Newton roots for the strike and every date's barrier. 
 numba-compiled kernel with single-thread BLAS gemm, run as one scramble per process across
 16 processes, and it matches the P1 numpy estimator to 10⁻¹³ per point.
 
-| Case | Price (32 scrambles) | RQMC rate r, n = 2⁹…2¹⁷ | Time per scramble to 2¹⁷ points | Classical time to $0.001 |
+| Case | Price (32 scrambles) | RQMC rate r, n = 2⁹…2¹⁷ (point fit) | Time per scramble to 2¹⁷ points | Modelled classical time to $0.001 |
 |---|---:|---:|---:|---:|
 | 4×12 | 3.51889 ± .00009 | 0.633 | 7.7 s | 5.9 s |
 | 8×52 | 3.28162 ± .00010 | 0.527 | 28.4 s | 27.1 s |
@@ -43,22 +48,29 @@ n⁻¹ that smoothing restores for calls and digitals, so the barrier keeps its
 exponent room for quantum. The implementation is CPU-only. No GPU library was installed,
 and a faster classical side would only shrink the quantum budget further.
 
-## Quantum side (Q1, compiled)
+## Quantum side (Q1, built in the IR and scored, not emitted)
 
 [`barrier_oracle_depth.py`](../../../research/advantage_frontier_20260923/barrier_oracle_depth.py)
 builds the knock-out payoff oracle in the project's reversible fixed-point IR. It uses the
 same Box–Muller generator, correlated increments, spot guard and exp range reduction as
-the certified compound source. Every choice minimizes depth:
+the compound source. Its construction choices aim to reduce depth (optimality was not
+tested):
 - Estrin rather than Horner for the degree-12 exp polynomial;
 - a parallel-prefix path;
 - tree sums and a tree maximum over dates.
 
-Each operation is charged the depth of certified leaves from the range-specialized f=40
-library (`results/controlled_priority_completion/range_compile_v1/leaves_f40`). The
+Each IR operation is charged the cheapest (or median) T-depth among certified leaves of
+that operation type in the range-specialized f=40 library
+(`results/controlled_priority_completion/range_compile_v1/leaves_f40`), whatever the
+operand ranges. The oracle itself is not range-certified, emitted or scheduled. The
 critical path assumes unlimited parallelism, no routing, and no factory or reaction
-limits, and a clean call is charged forward plus inverse. The oracle is bit-exact against
-a floating-point knock-out payoff on the same finite inputs: maximum error 2×10⁻⁸, with no
-knock-out misclassification over 52 draws.
+limits, and a clean call is charged forward plus inverse. On the compiled C4 compound
+source, the same cheapest-leaf rule gives 0.61× (median rule 1.08×) of the true
+dependency-only depth. It is therefore optimistic for quantum, although it undercounts
+non-power-of-two constant multiplies and cosine lookups (ERRATA E3). In an interactive
+check, the IR's fixed-point output agreed with a floating-point knock-out payoff on the
+same finite inputs to within 2×10⁻⁸, with no knock-out misclassification in 52 draws.
+That check is not yet archived as a script (ERRATA E4).
 
 | Case | Gaussians | Leaf costs | Clean-call T-depth | Clean-call T-count |
 |---|---|---|---:|---:|
@@ -68,7 +80,8 @@ knock-out misclassification over 52 draws.
 | 8×52 | free (zero cost) | cheapest | 1.82×10⁵ | 5.2×10⁸ |
 | 8×52 | Box–Muller | median leaf per op | 2.10×10⁶ | 3.4×10⁹ |
 
-These are compiler-specific numbers, not lower bounds on every possible circuit.
+These are compiler-specific scores, not emitted-circuit depths and not lower bounds on
+every possible circuit.
 
 ## Comparison
 
@@ -88,15 +101,19 @@ allows:
 
 ### Robustness
 
-- **A Chakrabarti-class oracle** (T-depth ~10⁴ per operator) would still be 13× (8×52)
-  and 65× (4×12) too deep at the stop point, so the decision does not rest on this
-  compiler's constants.
-- **Extreme corner:** free Gaussians, k = 1, 10 ns per T-layer (roughly 100× faster than
-  any projection), and the lower preintegrated σ that this oracle cannot actually
-  realise. Even here the oracle is 1.7× (8×52, $0.001) to 12× (4×12, $0.01) too deep.
-- **Untried classical smoothers** (multi-direction numerical smoothing, conditional
-  pathwise smoothing, barrier importance sampling) and GPU execution could only raise
-  classical speed. They are no longer needed to reach the decision.
+- **A hypothetical oracle with Chakrabarti et al.'s per-operator T-depth** (≈9.5×10³,
+  derived for their smaller autocallable benchmark; not a floor) would still be 13× (8×52)
+  and 65× (4×12) too deep **at the decision point** ($0.001, 100 ns, k = 3). Across the
+  full grid it would fit in 22 rows. Two of those are at 100 ns, and both need k = 1 and
+  the preintegrated σ.
+- **Joint corners** (ERRATA E1): 19 of 192 grid rows have oracle/D_max ≤ 10, and one fits:
+  8×52 at ε = $0.10, k = 1, 10 ns per T-layer (roughly 100× faster than any projection),
+  free Gaussians and a preintegrated σ this oracle cannot realise (ratio 0.92). Every such
+  row needs a 10 ns T-layer and/or k = 1, outside the stop rule's admissible region.
+- **Untried classical methods** (multi-direction numerical smoothing, bridge-ordered
+  one-step survival, conditional pathwise smoothing, barrier importance sampling, GPU
+  execution) could only raise classical speed, which lowers D_max. They were part of the
+  stated protocol and were not run (PREREGISTRATION_DEVIATIONS).
 
 Full grid: [`barrier_decision.json`](../../../results/advantage_frontier_20260923/barrier_decision.json).
 
@@ -104,9 +121,10 @@ Full grid: [`barrier_decision.json`](../../../results/advantage_frontier_2026092
 
 The only payoff class found where the strongest classical smoothing leaves the Monte Carlo
 exponent intact still misses by three orders of magnitude, under assumptions chosen to
-favour quantum. Across the project, six constructions now fail the same inequality:
-- the five earlier feasibility studies;
-- this knock-out oracle.
+favour quantum. Across the project, six constructions over three contracts (Heston
+antithetic MLMC; the compound Asian in four successive refinements; this knock-out), all
+from one toolchain, each fail the 10× latency condition at their own stated operating
+point. They are not six independent confirmations (ERRATA E8).
 
 The defensible next deliverable is the measured-frontier paper described in DECISION.md
 §6. It is a requirements and negative result, not an advantage result. Reopening
