@@ -1,0 +1,42 @@
+{
+ "purpose": "Diff archived advantage-frontier outputs against a replay from the committed scripts.\n\nUsage: provenance_replay_diff.py <replay_checkout_root> [<archive_root>]\nCompares every JSON field recursively. Fields whose key names indicate wall-clock timing\n(and fields derived from timing: classical seconds, D_max, ratios, stop-rule margins) are\nreported as re-measurement fields, not as mismatches. Everything else must match exactly.\nWrites results/advantage_frontier_20260923/provenance_replay_20260924.json in the archive.\n",
+ "replay_root": "C:\\Users\\prith\\quantum_option_pricing\\.context\\advantage_frontier_replay",
+ "files": {
+  "classical_exponent_pilot.json": {
+   "exact_fields": 1611,
+   "exact_mismatches": [],
+   "timing_fields": 1214,
+   "timing_fields_changed": 1194
+  },
+  "barrier_oss_pilot.json": {
+   "exact_fields": 108,
+   "exact_mismatches": [],
+   "timing_fields": 10,
+   "timing_fields_changed": 4
+  },
+  "barrier_fast_classical.json": {
+   "exact_fields": 57,
+   "exact_mismatches": [],
+   "timing_fields": 33,
+   "timing_fields_changed": 24
+  },
+  "barrier_oracle_depth.json": {
+   "exact_fields": 209,
+   "exact_mismatches": [],
+   "timing_fields": 17,
+   "timing_fields_changed": 0
+  },
+  "barrier_decision.json": {
+   "exact_fields": 2112,
+   "exact_mismatches": [],
+   "timing_fields": 592,
+   "timing_fields_changed": 584
+  },
+  "frontier.json": {
+   "exact_fields": 270,
+   "exact_mismatches": [],
+   "timing_fields": 162,
+   "timing_fields_changed": 146
+  }
+ }
+}

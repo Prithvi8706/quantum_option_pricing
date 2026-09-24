@@ -1,0 +1,328 @@
+{
+ "purpose": "Q1: minimal-depth coherent knock-out basket oracle in the project's reversible IR.\n\nBuilds the digital source Y = disc * (A - K)^+ * 1{max_j basket_j < H} with the SSA IR of\nresearch/controlled_source_completion (same Box-Muller Gaussian generator, correlated\nGBM increments, spot guard, fixed-point exp), but with depth-minimising choices:\n  * Estrin (not Horner) evaluation of the degree-12 exp polynomial;\n  * parallel-prefix (Hillis-Steele) accumulation of log-price increments over dates;\n  * balanced-tree sums and a tree maximum over dates.\nEach IR operation is charged the T-depth / T-count of certified leaves from the\nrange-specialised f=40 library of the controlled priority study:\n  favourable     = cheapest leaf of that operation type (any operand ranges)\n  representative = median leaf of that operation type\nCritical path = longest weighted dependency path (unlimited parallelism, no routing,\nno factory or reaction limits). A clean source call is charged forward + inverse = 2x.\nThese are compiler-specific sensitivity numbers, not lower bounds on all circuits.\n",
+ "leaf_library": "results\\controlled_priority_completion\\range_compile_v1\\leaves_f40",
+ "leaf_costs": {
+  "favourable": {
+   "cmul": [
+    1648,
+    2884
+   ],
+   "mul": [
+    11088,
+    35420
+   ],
+   "bits": [
+    0,
+    0
+   ],
+   "const": [
+    0,
+    0
+   ],
+   "lookup": [
+    1600,
+    3136
+   ],
+   "shift": [
+    8736,
+    37100
+   ],
+   "sqrt": [
+    225193,
+    467264
+   ],
+   "msb": [
+    584,
+    2016
+   ],
+   "sub": [
+    1152,
+    2016
+   ],
+   "divide": [
+    398256,
+    921984
+   ],
+   "select": [
+    505,
+    1008
+   ],
+   "positive": [
+    214,
+    497
+   ],
+   "lt": [
+    1168,
+    2044
+   ],
+   "add": [
+    1152,
+    2016
+   ],
+   "input": [
+    0,
+    0
+   ]
+  },
+  "representative": {
+   "cmul": [
+    36704,
+    64232
+   ],
+   "mul": [
+    40880.0,
+    115864.0
+   ],
+   "bits": [
+    0.0,
+    0.0
+   ],
+   "const": [
+    0,
+    0
+   ],
+   "lookup": [
+    4096,
+    8064
+   ],
+   "shift": [
+    8736,
+    37100
+   ],
+   "sqrt": [
+    225193,
+    467264
+   ],
+   "msb": [
+    584,
+    2016
+   ],
+   "sub": [
+    1152,
+    2016
+   ],
+   "divide": [
+    398256,
+    921984
+   ],
+   "select": [
+    505,
+    1008
+   ],
+   "positive": [
+    214,
+    497
+   ],
+   "lt": [
+    1168,
+    2044
+   ],
+   "add": [
+    1152,
+    2016
+   ],
+   "input": [
+    0,
+    0
+   ]
+  }
+ },
+ "rows": [
+  {
+   "case": "B4x12",
+   "gaussians": "box-muller",
+   "leaf_costs": "favourable",
+   "nodes": 5134,
+   "forward_critical_t_depth": 442529,
+   "clean_call_t_depth": 885058,
+   "forward_t_count": 74145127,
+   "clean_call_t_count": 148290254,
+   "op_counts": {
+    "input": 60,
+    "bits": 396,
+    "const": 27,
+    "add": 1761,
+    "lt": 318,
+    "select": 318,
+    "msb": 30,
+    "sub": 289,
+    "shift": 78,
+    "lookup": 90,
+    "mul": 1440,
+    "cmul": 266,
+    "positive": 31,
+    "sqrt": 30
+   }
+  },
+  {
+   "case": "B4x12",
+   "gaussians": "box-muller",
+   "leaf_costs": "representative",
+   "nodes": 5134,
+   "forward_critical_t_depth": 1041715.0,
+   "clean_call_t_depth": 2083430.0,
+   "forward_t_count": 206746575.0,
+   "clean_call_t_count": 413493150.0,
+   "op_counts": {
+    "input": 60,
+    "bits": 396,
+    "const": 27,
+    "add": 1761,
+    "lt": 318,
+    "select": 318,
+    "msb": 30,
+    "sub": 289,
+    "shift": 78,
+    "lookup": 90,
+    "mul": 1440,
+    "cmul": 266,
+    "positive": 31,
+    "sqrt": 30
+   }
+  },
+  {
+   "case": "B4x12",
+   "gaussians": "free",
+   "leaf_costs": "favourable",
+   "nodes": 2306,
+   "forward_critical_t_depth": 84063,
+   "clean_call_t_depth": 168126,
+   "forward_t_count": 30102457,
+   "clean_call_t_count": 60204914,
+   "op_counts": {
+    "input": 60,
+    "const": 19,
+    "cmul": 206,
+    "add": 891,
+    "lt": 108,
+    "select": 108,
+    "bits": 96,
+    "sub": 49,
+    "mul": 720,
+    "shift": 48,
+    "positive": 1
+   }
+  },
+  {
+   "case": "B4x12",
+   "gaussians": "free",
+   "leaf_costs": "representative",
+   "nodes": 2306,
+   "forward_critical_t_depth": 378273.0,
+   "clean_call_t_depth": 756546.0,
+   "forward_t_count": 100659825.0,
+   "clean_call_t_count": 201319650.0,
+   "op_counts": {
+    "input": 60,
+    "const": 19,
+    "cmul": 206,
+    "add": 891,
+    "lt": 108,
+    "select": 108,
+    "bits": 96,
+    "sub": 49,
+    "mul": 720,
+    "shift": 48,
+    "positive": 1
+   }
+  },
+  {
+   "case": "B8x52",
+   "gaussians": "box-muller",
+   "leaf_costs": "favourable",
+   "nodes": 42486,
+   "forward_critical_t_depth": 449331,
+   "clean_call_t_depth": 898662,
+   "forward_t_count": 605824723,
+   "clean_call_t_count": 1211649446,
+   "op_counts": {
+    "input": 468,
+    "bits": 3172,
+    "const": 27,
+    "add": 15389,
+    "lt": 2522,
+    "select": 2522,
+    "msb": 234,
+    "sub": 2289,
+    "shift": 650,
+    "lookup": 702,
+    "mul": 11856,
+    "cmul": 2186,
+    "positive": 235,
+    "sqrt": 234
+   }
+  },
+  {
+   "case": "B8x52",
+   "gaussians": "box-muller",
+   "leaf_costs": "representative",
+   "nodes": 42486,
+   "forward_critical_t_depth": 1047475.0,
+   "clean_call_t_depth": 2094950.0,
+   "forward_t_count": 1697134971.0,
+   "clean_call_t_count": 3394269942.0,
+   "op_counts": {
+    "input": 468,
+    "bits": 3172,
+    "const": 27,
+    "add": 15389,
+    "lt": 2522,
+    "select": 2522,
+    "msb": 234,
+    "sub": 2289,
+    "shift": 650,
+    "lookup": 702,
+    "mul": 11856,
+    "cmul": 2186,
+    "positive": 235,
+    "sqrt": 234
+   }
+  },
+  {
+   "case": "B8x52",
+   "gaussians": "free",
+   "leaf_costs": "favourable",
+   "nodes": 20482,
+   "forward_critical_t_depth": 90865,
+   "clean_call_t_depth": 181730,
+   "forward_t_count": 262291897,
+   "clean_call_t_count": 524583794,
+   "op_counts": {
+    "input": 468,
+    "const": 19,
+    "cmul": 1718,
+    "add": 8603,
+    "lt": 884,
+    "select": 884,
+    "bits": 832,
+    "sub": 417,
+    "mul": 6240,
+    "shift": 416,
+    "positive": 1
+   }
+  },
+  {
+   "case": "B8x52",
+   "gaussians": "free",
+   "leaf_costs": "representative",
+   "nodes": 20482,
+   "forward_critical_t_depth": 384033.0,
+   "clean_call_t_depth": 768066.0,
+   "forward_t_count": 869658321.0,
+   "clean_call_t_count": 1739316642.0,
+   "op_counts": {
+    "input": 468,
+    "const": 19,
+    "cmul": 1718,
+    "add": 8603,
+    "lt": 884,
+    "select": 884,
+    "bits": 832,
+    "sub": 417,
+    "mul": 6240,
+    "shift": 416,
+    "positive": 1
+   }
+  }
+ ]
+}
