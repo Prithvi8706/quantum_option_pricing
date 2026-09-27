@@ -13,9 +13,12 @@ obstacle is, why it holds, and what it would take to remove it. It is a negative
 requirements result, **not** an advantage claim. The verdict remains:
 **no defensible significant quantum advantage established yet.**
 
-All numbers come from this repository's executed studies or from primary sources
-checked during the 22–23 September investigation. The evidence map (§9) gives exact
-file locations.
+This is a working synthesis, not a completed manuscript or a verified literature-wide
+classification. Repository results and the selected 22–23 September source screen are
+its evidence base (§9). Hardware comparisons and literature claims still require the
+source-by-source checks in the implementation plan. The 27 September continuation
+corrects remaining scope errors; new compilation evidence is reported separately in
+[STAGE_A_RESULTS.md](STAGE_A_RESULTS.md).
 
 ---
 
@@ -41,9 +44,9 @@ Four evidence levels are kept separate throughout:
 
 | Level | Meaning | Status for option pricing |
 |---|---|---|
-| L1 | Demonstrated end-to-end hardware advantage | None, anywhere |
-| L2 | Conditional end-to-end fault-tolerant crossover under explicit hardware assumptions | None found; this project's six constructions (three contracts) all fail it |
-| L3 | Algorithmic/query advantage in an access model | Generic quadratic speedup over plain Monte Carlo only |
+| L1 | Demonstrated end-to-end hardware advantage | Not established by this project or the selected source screen |
+| L2 | Conditional end-to-end fault-tolerant crossover under explicit hardware assumptions | Not established here; the tested resource models miss their respective budgets, with incomplete certification disclosed |
+| L3 | Algorithmic/query advantage in an access model | Mean-estimation and nonlinear-estimation results require their specified access models and comparators; they are not end-to-end pricing demonstrations |
 | L4 | Improvement over another quantum implementation | This project's manuscript and circuit improvements |
 
 ---
@@ -56,12 +59,14 @@ Pricing by simulation averages random payoffs. Let σ be the standard deviation 
 payoff sample, and e the statistical error allowance (this project uses e = 0.45ε).
 
 - **Classical Monte Carlo** needs N_C ≈ z²·(σ/e)² samples, with z ≈ 2.6 at 99%.
-- **Quantum amplitude estimation** (and variance-sensitive mean estimators) needs
-  N_Q ≈ k·(σ/e) calls to a coherent oracle.
+- **Variance-sensitive quantum mean estimation** motivates the favourable model
+  N_Q ≈ k·(σ/e). Here k is an unspecified effective constant, including any omitted
+  logarithmic factors and certification costs. It is not a proved schedule for this
+  payoff. Bounded amplitude estimation and variance-sensitive estimation do not
+  automatically share the same normalization or call count.
 
 The constant k collects:
-- the estimator's intrinsic constant (at least about π for canonical amplitude
-  estimation);
+- the chosen estimator's constants and normalization;
 - the source and inverse calls inside every Grover iterate;
 - the median or confidence repetitions needed for 99%;
 - phase-estimation discretization.
@@ -120,7 +125,7 @@ layer (t_layer). The largest T-depth one complete oracle call may have is
 This is the most useful form, because it can be compared directly with a compiled
 circuit.
 
-### 2.5 Worked example (the final experiment)
+### 2.5 Historical worked example (the September 23 score)
 
 Take the 8-asset × 52-date knock-out basket at ε = $0.001. Assume a generous 100 ns
 logical T-layer and k = 3.
@@ -131,20 +136,22 @@ logical T-layer and k = 3.
 | e = 0.45 × $0.001 | $0.00045 |
 | σ/e | ≈ 11,400 |
 | Quantum oracle calls k·σ/e | ≈ 34,000 |
-| Minimal compiled oracle depth (forward + inverse) | 9.0×10⁵ T-layers, i.e. 0.09 s per call at 100 ns |
-| Total quantum time | ≈ 3,100 s |
-| Classical (compiled, 16 cores, strongest method) | **27.1 s** |
+| Cheapest-leaf dependency score (forward + inverse; not compiled) | 9.0×10⁵ T-layers, i.e. 0.09 s per modelled call at 100 ns |
+| Source-only time model at hypothetical k = 3 | ≈ 3,100 s; excludes an implemented estimator and physical overhead |
+| Historical classical time-to-accuracy model (16 workers, best method tested in P3) | **27.1 s**; not a timed run at the required sample count |
 | D_max for a 10× win | **789 T-layers per call** |
 
-The quantum computation is about **110 times slower**. To be 10 times *faster* it needs
-about **1,100× improvement**. At a more realistic 10 µs per T-layer, quantum takes about
-3.6 days against 27 seconds.
+This source-only sensitivity model is about **110 times slower**. Its 10× budget miss
+is about **1,100×**. Substituting 10 µs per T-layer gives about 3.6 days. These are not
+complete runtime predictions. ERRATA E5 records the classical warm-cost correction;
+Stage A replaces the operation-table score with actual compiled source costs.
 
 ---
 
 ## 3. Anatomy of ρ: why one quantum sample is so expensive
 
-ρ is the product of two independent penalties.
+ρ combines arithmetic work and the assumed logical-operation latency. Their costs
+can interact through scheduling, width and magic-state supply.
 
 **How many logical operations an oracle call contains.** A classical path sample is
 written in floating point, discards its intermediates, and runs at native speed. A
@@ -153,12 +160,13 @@ coherent oracle must:
 1. **Prepare randomness coherently.** Every Gaussian needs Box–Muller (a logarithm, a
    square root and a cosine) or an equivalent loader. The 8×52 basket uses 468
    Gaussians per path.
-2. **Do every arithmetic step reversibly in fixed point.** A 72-bit fixed-point
-   multiply is thousands of Toffoli gates. There is no floating-point unit, and no
-   operation may discard information.
+2. **Perform coherent arithmetic.** This implementation uses 72-bit fixed point and
+   thousands of Toffolis per multiply. Fixed point is a design choice; this study
+   does not rule out reversible floating point or other arithmetic representations.
 3. **Evaluate transcendental functions by polynomials.** The exponential uses range
    reduction and a degree-12 polynomial: about 12–15 multiplies, about 7 of them on the
-   critical path when arranged for minimum depth. The 8×52 basket needs 416 exponentials per path.
+   critical path in this arrangement. Optimality is not proved. The 8×52 basket needs
+   416 exponentials per path.
 4. **Uncompute everything.** Every intermediate must be reversed, which doubles the
    work.
 5. **Be controllable.** The oracle sits inside controlled Grover iterates or phase
@@ -323,10 +331,11 @@ Together, that is roughly a 10⁵ improvement.
 - *Memory.* The mapping used 0.9–3.2 million logical qubits, exceeding the physical-qubit
   cap even at distance 3.
 
-**What would fix it.** A further 10⁴–10⁵. Known compilation levers such as
-reaction-limited carry-lookahead arithmetic give about 10². There is no identified
-source for the rest. **This study is the clearest evidence that the obstacle is
-structural, not an implementation shortfall.**
+**What would fix this operating point.** A further combined reduction of roughly
+10⁴–10⁵ in the reported model. Isolated arithmetic improvements have not closed that
+gap. This is evidence against these implementations under the stated assumptions,
+not proof of a structural obstruction: the compiler retains SSA intermediates and
+does not optimize globally over arithmetic, storage, scheduling or algorithms.
 
 ### Failure 6: the discretely monitored knock-out basket
 
@@ -378,26 +387,29 @@ is indicative only.
 
 ### Root cause A: the quadratic ceiling (mathematics)
 
-**Why it holds.** For estimating a mean by queries, quantum algorithms need on the order
-of 1/ε queries, and this is a proven lower bound; classical sampling needs on the order
-of 1/ε². **Quadratic is the maximum, not a starting point.** In smoothness classes
+**Scope.** The generic bounded-mean black-box query problem has quantum and randomized
+classical precision scalings of order 1/ε and 1/ε² under matched access assumptions.
+This does not bound every structured pricing algorithm. In the cited smoothness classes
 (Heinrich; Novak) the quantum gain over randomized classical integration is
 1/(s+½) − 1/(s+1) ≤ 1 in the exponent, and it shrinks to zero as smoothness per
 dimension grows. For smooth integrands, scrambled nets reach an RMSE of about n^(−3/2),
 asymptotically better than generic amplitude estimation.
 
-**What removing it requires.** A financially meaningful price whose *best* classical
-algorithm costs ε⁻³ or worse while a quantum algorithm stays near ε⁻¹. The candidates
-examined:
-- *Nested or compound contracts:* classical multilevel methods reach ε⁻².
-- *Heavy-tailed payoffs:* a change of measure makes classical estimators bounded.
-- *Quantum-walk MCMC:* the only known gap that grows with a problem parameter, but no
-  pricing task genuinely requires a slowly mixing Markov chain.
-- *Discontinuous path payoffs:* the classical exponent stays at 1.6–1.9, a gap of at
-  most about 0.9.
+**What could change the result.** A larger algorithmic separation or sufficiently
+smaller coherent-oracle constants. A cubic classical precision cost is not a necessary
+condition for advantage. In the candidates examined:
+- *Nested or compound contracts:* applicable classical multilevel methods can remove
+  naive nesting costs; their assumptions must be checked contract by contract.
+- *Heavy-tailed payoffs:* changes of measure need integrability and variance analysis;
+  boundedness is not automatic.
+- *Quantum-walk MCMC:* the screen did not identify a pricing workload with a verified
+  mixing-based separation from the strongest applicable classical method.
+- *Discontinuous path payoffs:* the fitted classical exponents on these development
+  cases were 1.6–1.9; these are not lower bounds on classical algorithms.
 
-A new algorithmic discovery would be needed, together with evidence that no classical
-reformulation recovers the structure.
+A larger separation would require new workload-specific evidence, including checks
+that classical reformulation cannot recover the same structure. Smaller implementation
+constants could also change a crossover without a new asymptotic discovery.
 
 ### Root cause B: logical operations are slow (fault-tolerant hardware)
 
@@ -407,8 +419,9 @@ is tens of microseconds, and projections are 1–10 µs. A logical addition cost
 microseconds to milliseconds, against under a nanosecond classically.
 
 **What removing it requires.** Sustained, reaction-limited logical T-layers of about
-1–100 ns, 100–10,000× faster than any published roadmap (IBM, Google, Quantinuum, IonQ,
-PsiQuantum). That in turn needs some combination of:
+1–100 ns in some sensitivity scenarios. Comparisons with roadmaps require the same
+definition of a reaction-limited logical layer, not a physical gate or a code cycle.
+Possible contributors include:
 - much faster physical cycles;
 - sub-microsecond decoding with feedback;
 - cheap non-Clifford gates (for example transversal gates in higher-dimensional codes,
@@ -418,23 +431,26 @@ PsiQuantum). That in turn needs some combination of:
 
 Qubit-count reductions, such as those from qLDPC codes, do not change serial latency
 unless they relieve the scheduled bottleneck. IBM's bivariate-bicycle architecture
-explicitly takes *longer* per T gate. Microsoft's topological approach is the only path
-projecting clocks near 100 ns, and it is not demonstrated.
+requires a separate gate schedule and latency model. The screened topological-qubit
+projections do not establish a sustained 100 ns logical T-layer for this computation.
+They are not the only possible architectural route; none is credited here without a
+verified change in the pricing resource model.
 
 ### Root cause C: reversible fixed-point arithmetic (circuits)
 
-**Why it holds.** Quantum circuits cannot use floating-point units or discard
-intermediates. Multiplication costs quadratically many Toffolis in the word width,
-functions need polynomial evaluation, every intermediate must be uncomputed, and the
-whole oracle must be controllable. A path that takes microseconds on a CPU becomes
-10⁸–10⁹ T gates.
+**What the implementation pays.** The current compiler uses fixed point, schoolbook
+multiplication, polynomial function evaluation and explicit uncomputation. Its
+multiplication work is quadratic in word width. That is not a lower bound on other
+reversible multipliers. The resulting source costs can reach 10⁸–10⁹ T gates;
+representation, precision, pebbling and arithmetic design remain implementation choices.
 
-**What removing it requires.** Arithmetic-free constructions, in which prices are
+**Possible routes.** Better arithmetic, precision and storage schedules, or
+arithmetic-free constructions in which prices are
 encoded directly in amplitudes and the payoff is applied by quantum signal processing.
 This works for simple one-dimensional payoffs; the manuscript's reflection/QSP route is
 an example. For multi-asset path-dependent payoffs (averages of exponentials, maxima over
-dates), no known construction avoids arithmetic without an exponential blow-up. The best
-recent payoff-loading improvement (≈50× on the loading module, arXiv 2507.19039) does
+dates), the screen did not establish a cheaper complete arithmetic-free oracle. The
+screened payoff-loading improvement (≈50× on the loading module, arXiv 2507.19039) does
 not touch the dominant Gaussian and path arithmetic. This remains an open research
 problem.
 
@@ -464,7 +480,9 @@ oracle copies. Even then, classical parallelism remains far cheaper per unit of 
 
 **Why it holds.** A 99% per-price guarantee forces the quantum estimator into repeated
 runs, median amplification and fine phase resolution; that is what inflates k.
-Classical confidence intervals come almost free from independent randomizations.
+Independent randomizations permit inexpensive empirical classical error bars, but
+nominal 99% intervals do not automatically have verified 99% coverage. The coverage
+and reference-price checks in the implementation plan remain necessary on that side.
 Certifying the variance or moment bounds that variance-sensitive quantum estimators need
 can itself cost more than the classical price (Failure 3).
 
@@ -475,9 +493,9 @@ actually built here needed much larger ones.
 
 ---
 
-## 6. Ideas that do not help, and why
+## 6. Ideas not yet shown to close the gap in this investigation
 
-| Idea | Why it does not create advantage |
+| Idea | Current evidence and remaining qualification |
 |---|---|
 | More assets or more dates | Classical cost grows with the path length just as quantum cost does; principal components and preintegration keep classical convergence near 1/n for smooth payoffs |
 | Discontinuous payoffs | Smoothing restores 1/n for digitals; knock-outs keep only 0.6–0.9 of exponent room, far too little (Failure 6) |
@@ -485,16 +503,16 @@ actually built here needed much larger ones.
 | Better compilation | Worth ≈10⁵ in this project and still 10⁴× short; the known levers left are worth ≈10² |
 | Variance reduction or controls | Symmetric, and it shrinks the quadratic advantage factor |
 | Many strikes, portfolios, Greeks | Classical shares paths and uses adjoint differentiation; quantum multi-output estimation costs about √K more for K outputs |
-| Quantum PDE solvers | Reading out a single price costs normalization and success-probability factors that grow with dimension; they beat only full-grid finite differences |
-| Quantum quasi-Monte Carlo "pre-asymptotic window" | Compares an upper bound with the worst-case bound of *unscrambled* Sobol points; against scrambled RQMC the gap is zero or negative |
-| New hardware announcements | None supplies a verified, pricing-relevant ≥10³ cut in latency per logical operation |
+| Quantum PDE solvers | The screen did not establish an end-to-end crossover against the strongest applicable classical method after conditioning, input preparation, discretization and scalar-price extraction; this is not a limitation theorem |
+| Quantum quasi-Monte Carlo "pre-asymptotic window" | The assessed bounds did not establish superiority to the project's tuned scrambled RQMC comparator; this does not prove that every instance has a zero or negative gap |
+| New hardware announcements | The screened evidence has not been connected to a verified pricing-relevant ≥10³ latency reduction; this is not an exhaustive hardware assessment |
 
 ---
 
 ## 7. The requirements frontier
 
-For a tenfold quantum win on a standard multi-asset path-dependent price, **at least one
-row** must become true:
+The following are sensitivity levers for the studied operating points, not individually
+necessary or sufficient conditions for arbitrary option-pricing workloads:
 
 | Requirement | Where things stand today |
 |---|---|
@@ -503,11 +521,13 @@ row** must become true:
 | Sustained logical T-layer of about 1–10 ns | 1–10 µs projected; tens of µs demonstrated for decoding |
 | Best classical cost ≥ ε⁻³ for a real price | No such pricing workload identified |
 | Estimator constant k ≈ 1 at 99% confidence | Certified schedules used far larger constants |
-| Accuracy of about 10⁻⁶ relative | Not required by any market |
+| Accuracy of about 10⁻⁶ relative | No financial need for this stricter tolerance has been established for our selected workload |
 
-Two conclusions follow. The obstacle is the **combination** of a mathematical ceiling (at
-most quadratic, about zero against RQMC) with a **physical cost per logical operation
-10⁴–10⁹ times the classical one**. Removing only one factor is not enough.
+For the tested constructions the obstacle combines modest sampling savings against
+strong classical estimators with expensive coherent arithmetic under the assumed
+logical clock. Neither the fitted classical exponents nor the compiler costs prove
+an impossibility theorem. The unresolved estimator, financial-error and physical
+mapping costs prevent treating the requirements model as a completed L2 comparison.
 
 Independent expert analyses reach the same classification:
 - Babbush et al., PRX Quantum 2021: quadratic speedups need about cubic–quartic

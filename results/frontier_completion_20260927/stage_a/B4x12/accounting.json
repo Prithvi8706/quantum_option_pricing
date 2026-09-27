@@ -1,0 +1,155 @@
+{
+  "case": "B4x12",
+  "original_nodes": 5134,
+  "optimized_nodes": 5038,
+  "optimization": {
+    "original_nodes": 5134,
+    "final_nodes": 5038,
+    "constant_folded_nodes": 0,
+    "reused_nodes": 96,
+    "semantics": "Exact integer constant folding and common-subexpression reuse; no change to input law, output or finite arithmetic."
+  },
+  "exact": {
+    "forward_t_count": 453741659,
+    "forward_calls": 4978,
+    "forward_dependency_t_depth": 1671555
+  },
+  "operation_scores": {
+    "cheapest": {
+      "forward_critical_t_depth": 442529,
+      "clean_call_t_depth": 885058,
+      "forward_t_count": 73920343,
+      "clean_call_t_count": 147840686,
+      "op_counts": {
+        "input": 60,
+        "bits": 396,
+        "const": 27,
+        "add": 1761,
+        "lt": 318,
+        "select": 318,
+        "msb": 30,
+        "sub": 229,
+        "shift": 78,
+        "lookup": 90,
+        "mul": 1440,
+        "cmul": 230,
+        "positive": 31,
+        "sqrt": 30
+      }
+    },
+    "median": {
+      "forward_critical_t_depth": 1041715.0,
+      "clean_call_t_depth": 2083430.0,
+      "forward_t_count": 204313263.0,
+      "clean_call_t_count": 408626526.0,
+      "op_counts": {
+        "input": 60,
+        "bits": 396,
+        "const": 27,
+        "add": 1761,
+        "lt": 318,
+        "select": 318,
+        "msb": 30,
+        "sub": 229,
+        "shift": 78,
+        "lookup": 90,
+        "mul": 1440,
+        "cmul": 230,
+        "positive": 31,
+        "sqrt": 30
+      }
+    }
+  },
+  "serial_resources": {
+    "source_gates": 285639680,
+    "x": 120550,
+    "cx": 155878656,
+    "ccx": 129640474,
+    "t_count": 907483318,
+    "t_depth": 297652556,
+    "clifford_t_depth": 892236573,
+    "clifford_cx": 933721500,
+    "clifford_h": 259280948,
+    "logical_qubits": 414989,
+    "random_hadamards": 1920,
+    "ssa_words": 5698,
+    "max_reused_scratch_qubits": 4661,
+    "output_words": 1,
+    "t_depth_schedule": "serial clean leaves, ASAP inside each leaf; valid upper bound, not optimal circuit depth",
+    "ccx_expansion": "exact 7 T and 6 CX, 2 H per CCX; no relative-phase substitution"
+  },
+  "schedules": {
+    "all": {
+      "source_gates": 285639680,
+      "x": 120550,
+      "cx": 155878656,
+      "ccx": 129640474,
+      "t_count": 907483318,
+      "t_depth": 6032678,
+      "clifford_t_depth": 18068093,
+      "clifford_cx": 933721500,
+      "clifford_h": 259280948,
+      "logical_qubits": 550158,
+      "random_hadamards": 1920,
+      "ssa_words": 5698,
+      "max_reused_scratch_qubits": 139830,
+      "output_words": 1,
+      "t_depth_schedule": "Serial wave batches, disjoint private leaf workspaces; ASAP inside leaves, shared-control copies in separate rounds.",
+      "ccx_expansion": "exact 7 T and 6 CX, 2 H per CCX; no relative-phase substitution"
+    },
+    "128": {
+      "source_gates": 285639680,
+      "x": 120550,
+      "cx": 155878656,
+      "ccx": 129640474,
+      "t_count": 907483318,
+      "t_depth": 6401958,
+      "clifford_t_depth": 19173669,
+      "clifford_cx": 933721500,
+      "clifford_h": 259280948,
+      "logical_qubits": 550158,
+      "random_hadamards": 1920,
+      "ssa_words": 5698,
+      "max_reused_scratch_qubits": 139830,
+      "output_words": 1,
+      "t_depth_schedule": "Serial wave batches, disjoint private leaf workspaces; ASAP inside leaves, shared-control copies in separate rounds.",
+      "ccx_expansion": "exact 7 T and 6 CX, 2 H per CCX; no relative-phase substitution"
+    },
+    "32": {
+      "source_gates": 285639680,
+      "x": 120550,
+      "cx": 155878656,
+      "ccx": 129640474,
+      "t_count": 907483318,
+      "t_depth": 10980938,
+      "clifford_t_depth": 32916413,
+      "clifford_cx": 933721500,
+      "clifford_h": 259280948,
+      "logical_qubits": 550158,
+      "random_hadamards": 1920,
+      "ssa_words": 5698,
+      "max_reused_scratch_qubits": 139830,
+      "output_words": 1,
+      "t_depth_schedule": "Serial wave batches, disjoint private leaf workspaces; ASAP inside leaves, shared-control copies in separate rounds.",
+      "ccx_expansion": "exact 7 T and 6 CX, 2 H per CCX; no relative-phase substitution"
+    }
+  },
+  "logical_width_caps": {
+    "all": {
+      "10000": false,
+      "100000": false
+    },
+    "128": {
+      "10000": false,
+      "100000": false
+    },
+    "32": {
+      "10000": false,
+      "100000": false
+    }
+  },
+  "compile_and_schedule_seconds": 6.456636700000001,
+  "basis_cases_passed": 20,
+  "all_basis_cases_passed": true,
+  "elapsed_seconds": 196.7890069
+}

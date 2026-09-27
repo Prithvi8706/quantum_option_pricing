@@ -1,5 +1,13 @@
 # Three-week implementation plan: the measured requirements-frontier paper
 
+**27 September continuation:** [Stage A results](STAGE_A_RESULTS.md) and its
+[prospective specification](ANALYSIS_SPEC.md) record the first bounded execution.
+Q1/Q2 and generic Q3/Q5 accounting are complete; T0/Q0 and the financial/statistical
+checks remain open. The ~638,000 forward-depth forecast below is not an achieved
+generic compilation result. Cheapest/median scores do not form a general bracket;
+use the reported call-specific dependency and scheduled depths. The fixed verdict
+below describes current evidence, never a required outcome of a future experiment.
+
 Version 2, 24 September 2026. It supersedes version 1 after an internal red-team of 80
 findings (8 critical, 55 major, 17 minor) from four independent critic agents. The
 dispositions are in [reviews/PLAN_REVIEW_R0.md](reviews/PLAN_REVIEW_R0.md), and the raw
