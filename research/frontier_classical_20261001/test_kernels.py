@@ -53,3 +53,12 @@ def test_preintegration_is_unbiased_with_canonical_basis():
     for plain, pre in ((0, 3), (1, 4), (2, 5)):
         diff = got[:, plain] - got[:, pre]
         assert abs(diff.mean()) < 4 * diff.std() / np.sqrt(len(diff)), ESTIMANDS[plain]
+
+
+def test_knockout_plain_matches_six_estimands():
+    from research.frontier_classical_20261001.kernels import knockout_plain
+    L, mu, z, x = points(8, 52)
+    disc = np.exp(-p3.RATE * p3.T)
+    six = six_estimands(x, np.ascontiguousarray(z[:, 0]), np.ascontiguousarray(L[:, 0]), 8, 52,
+                        disc, p3.K, p3.H)
+    assert np.array_equal(knockout_plain(x, 8, 52, disc, p3.K, p3.H), six[:, 2])

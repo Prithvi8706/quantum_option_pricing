@@ -124,3 +124,25 @@ def six_estimands(x, z0, v, na, nt, disc, strike, barrier):
         out[p, 4] = disc * 100.0 * _ndtr(-zs)
         out[p, 5] = disc * (ko_part - strike * (_ndtr(hi) - _ndtr(zs)))
     return out
+
+
+@numba.njit(cache=True)
+def knockout_plain(x, na, nt, disc, strike, barrier):
+    """Plain knock-out payoff per point (item C2 `rqmc` timing; same arithmetic as column 2
+    of `six_estimands`)."""
+    n, dim = x.shape
+    out = np.empty(n)
+    date_idx = _date_index(na, nt)
+    for p in range(n):
+        avg = 0.0
+        alive = True
+        for j in range(nt):
+            b = 0.0
+            for i in range(na):
+                b += math.exp(x[p, date_idx[j, i]])
+            avg += b
+            if b / na >= barrier:
+                alive = False
+        avg /= dim
+        out[p] = disc * max(avg - strike, 0.0) if alive else 0.0
+    return out
