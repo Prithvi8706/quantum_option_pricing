@@ -96,6 +96,9 @@ factor hashes are in `attribution_summary.json`.
   the preintegrated knock-out, far from n⁻¹. The paper reports the basis spread next to
   the rate. Stage C builds a closed-form canonical basis and adds seeded rotation
   sensitivity ([ANALYSIS_SPEC_STAGE_C.md](ANALYSIS_SPEC_STAGE_C.md), section 0).
+- **Not a new observation.** Case, [arXiv:2502.17731](https://arxiv.org/abs/2502.17731) v2
+  (16 September 2026), reports that bases within a degenerate PCA eigenspace can change
+  the measured RQMC exponent. The paper cites it; E10 is a project correction, not a finding.
 
 This closes T0 and records Q0's outcome. It does not establish advantage. Nor does it
 replace author verification or named human-expert review.

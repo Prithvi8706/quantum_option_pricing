@@ -29,3 +29,20 @@ the not-yet-committed Stage C specification. Two background agent workflows (lit
 and venue sweep; Stage C spec critique) were interrupted by a usage limit and are re-run
 separately; their outputs, when complete, are recorded with their own review notes.
 Internal agent work is not external peer review.
+
+## 1 October 2026 — L1/L2 literature screen and Stage C specification
+
+Claude Code subagents ran plan items L1 (prior art) and L2 (venue compliance). Three
+searchers saved rows incrementally; two were cut off by a usage limit after saving, and
+two verifiers then re-opened the primary sources and wrote `literature/L1_PRIOR_ART.md`
+(checkpoint recommendation GO_NARROWED) and `literature/L2_VENUES.md`. The venue verifier
+read some official pages that block automated fetches in the desktop app's browser pane;
+no bot wall was bypassed. The checkpoint and the venue choice are the author's decisions.
+The main agent independently checked one load-bearing citation (Case, arXiv:2502.17731 v2)
+before adding it to ERRATA E10.
+
+Three critic subagents reviewed the Stage C specification draft, and a fourth checked
+closure (`reviews/STAGE_C_SPEC_REVIEW.md`). The main agent wrote both specification
+versions and the Stage C code. A reviewer's claim about SeedSequence key padding was
+tested and found false, and the code follows the specification's five-word keys.
+All of this is internal agent work, not peer review.
