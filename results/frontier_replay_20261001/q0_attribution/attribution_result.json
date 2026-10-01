@@ -1,0 +1,23 @@
+{
+ "purpose": "Q0 attribution diagnostic (ANALYSIS_SPEC_STAGE_B.md): separately labelled, does not replace Q0.\n\nStep 1 (numpy 1.26.4 interpreter): save numpy.linalg.eigh(cov) for the P3 covariances.\nStep 2 (T0 interpreter, numpy 2.0.2): rerun the unchanged P3 with eigh replaced by the\nsaved numpy 1.26.4 decomposition, writing to this directory. If the output equals the\narchive exactly, the Q0 mismatch is attributed entirely to the eigenbasis.\n",
+ "numpy": "2.0.2",
+ "exact_non_timing_equal": {
+  "B4x12": {
+   "price": true,
+   "std_error": true,
+   "rate_r": true,
+   "fit_constant": true,
+   "rqmc_std_one_scramble": true,
+   "n": true
+  },
+  "B8x52": {
+   "price": false,
+   "std_error": false,
+   "rate_r": false,
+   "fit_constant": false,
+   "rqmc_std_one_scramble": false,
+   "n": true
+  }
+ },
+ "all_equal": false
+}

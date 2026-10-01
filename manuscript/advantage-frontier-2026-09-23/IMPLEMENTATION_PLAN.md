@@ -8,6 +8,11 @@ generic compilation result. Cheapest/median scores do not form a general bracket
 use the reported call-specific dependency and scheduled depths. The fixed verdict
 below describes current evidence, never a required outcome of a future experiment.
 
+**1 October continuation:** [Stage B results](STAGE_B_RESULTS.md). T0 passed. Q0 failed
+exact equality on the 8×52 P3 case only; the cause is a non-unique PCA basis (ERRATA E10),
+attributed exactly by diagnostics, and STOP reproduces. The CUDA download and outside-model
+review were approved by the author on Day 1.
+
 Version 2, 24 September 2026. It supersedes version 1 after an internal red-team of 80
 findings (8 critical, 55 major, 17 minor) from four independent critic agents. The
 dispositions are in [reviews/PLAN_REVIEW_R0.md](reviews/PLAN_REVIEW_R0.md), and the raw

@@ -1,0 +1,44 @@
+{
+ "exact_tie_groups_in_computed_eigenvalues": {
+  "B4x12": 0,
+  "B8x52": 12
+ },
+ "argsort_positions_differing_numpy_1264_vs_202_on_identical_values": 11,
+ "factor_L_sha256_8x52": {
+  "numpy1.26.4_MKL_single_thread_(P3 workers, archive)": "f27a6b1dce66aab730d6ac595c268fc2c71aaa07b0ff7e2a389523cece81e16e",
+  "numpy1.26.4_MKL_multithread_(diagnostic 2a, by mistake)": "67d394ae8a640b8c93f13e29a81c934dc3c326b29f55914970d41a774adb4a9e",
+  "numpy2.0.2_OpenBLAS_single_thread_(T0 P3 workers, Q0 replay)": "f980fbabce8234cbf92aa888b02f15004ea53a55e6f456de41980be56b2ebbbf",
+  "numpy2.0.2_OpenBLAS_multithread_(boundary dump)": "9de3a24b1295ec4874ef89d8ef514283ec5439fc2f81369de104538522109b44",
+  "numpy2.0.2_argsort_with_numpy1.26.4_multithread_eigh_(diagnostic 1)": "bb9455b76e39140b010b434ca204ff4af47dd1509d864421d265274f0d9a2bad"
+ },
+ "p3_8x52_by_factor": {
+  "archive (numpy 1.26.4 MKL single-thread L)": {
+   "rate_r": 0.5268016795399072,
+   "price": 3.2816161390608887,
+   "std_error": 0.00010195880966957837
+  },
+  "Q0 replay (T0 OpenBLAS L)": {
+   "rate_r": 0.541295386167135,
+   "price": 3.2816193580246855,
+   "std_error": 0.00010347881467985193
+  },
+  "diagnostic 1 (MKL multithread eigh, numpy 2 argsort)": {
+   "rate_r": 0.5695760629070744,
+   "price": 3.2817120321007716,
+   "std_error": 8.20387111998443e-05
+  },
+  "diagnostic 2a (MKL multithread L)": {
+   "rate_r": 0.5722559306980075,
+   "price": 3.281688927701322,
+   "std_error": 7.881435177463498e-05
+  },
+  "diagnostic 2b (MKL single-thread L)": {
+   "rate_r": 0.5268016795399072,
+   "price": 3.2816161390608887,
+   "std_error": 0.00010195880966957837
+  }
+ },
+ "pooled_run_repeatable_in_T0": true,
+ "inprocess_scrambles_identical_given_same_L": true,
+ "diagnostic_2b_reproduces_archive_exactly": true
+}

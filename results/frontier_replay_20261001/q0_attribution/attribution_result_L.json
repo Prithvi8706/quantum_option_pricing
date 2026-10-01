@@ -1,0 +1,23 @@
+{
+ "purpose": "Q0 attribution diagnostic 2 (separately labelled; does not replace Q0).\n\nDiagnostic 1 injected numpy 1.26.4's eigh output but not its argsort tie order, and did not\nreproduce the archive. This one injects the full 8x52 PCA factor L built by P3's setup under\nnumpy 1.26.4 (dump_conda_1264.npz) into the unchanged P3 run in the T0 environment. If the\noutput equals the archive exactly, the Q0 mismatch is attributed entirely to the factor L.\n",
+ "numpy": "2.0.2",
+ "exact_non_timing_equal": {
+  "B4x12": {
+   "price": true,
+   "std_error": true,
+   "rate_r": true,
+   "fit_constant": true,
+   "rqmc_std_one_scramble": true,
+   "n": true
+  },
+  "B8x52": {
+   "price": false,
+   "std_error": false,
+   "rate_r": false,
+   "fit_constant": false,
+   "rqmc_std_one_scramble": false,
+   "n": true
+  }
+ },
+ "all_equal": false
+}
