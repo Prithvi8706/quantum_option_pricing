@@ -35,3 +35,37 @@ def test_oss_is_unbiased_with_canonical_basis():
     u = np.random.default_rng(4).random((2 ** 17, 48))
     y = oss_paths(u, *oss_params(Case(0, 4, 12)))
     assert abs(y.mean() - 3.5188852273893136) < 4 * y.std() / math.sqrt(len(y))
+
+
+def test_bridge_plan_covers_every_date_once_and_dims_are_a_permutation():
+    from research.frontier_classical_20261001.oss import bridge_plan, oss_bb_dims
+    for na, nt in ((4, 12), (8, 52)):
+        plan = bridge_plan(nt)
+        assert sorted(plan[:, 0].tolist()) == list(range(1, nt + 1))
+        dims = oss_bb_dims(na, nt)
+        assert sorted(dims[1:].ravel().tolist() + list(range(nt))) == list(range(na * nt))
+
+
+def test_bridge_increments_are_iid_standard_normal():
+    from research.frontier_classical_20261001.oss import bridge_plan
+    nt, n = 12, 200_000
+    plan = bridge_plan(nt)
+    g = np.random.default_rng(2).standard_normal((n, nt))
+    w = np.zeros((n, nt + 1))
+    for r, (node, left, right, _) in enumerate(plan):
+        if right < 0:
+            w[:, node] = np.sqrt(node) * g[:, r]
+        else:
+            span = right - left
+            mean = ((right - node) * w[:, left] + (node - left) * w[:, right]) / span
+            w[:, node] = mean + np.sqrt((node - left) * (right - node) / span) * g[:, r]
+    inc = np.diff(w, axis=1)
+    assert np.allclose(np.cov(inc.T), np.eye(nt), atol=0.02)
+
+
+def test_oss_bb_is_unbiased():
+    from research.frontier_classical_20261001.oss import bridge_plan, oss_bb_dims, oss_bb_paths
+    case = Case(0, 4, 12)
+    u = np.random.default_rng(6).random((2 ** 17, 48))
+    y = oss_bb_paths(u, *oss_params(case), bridge_plan(12), oss_bb_dims(4, 12))
+    assert abs(y.mean() - 3.5188852273893136) < 4 * y.std() / math.sqrt(len(y))
