@@ -25,6 +25,9 @@ result; it claims neither advantage nor impossibility.
 | T_C, σ_Q, D_max | Measured classical time to accuracy; per-sample sd of the plain payoff the oracle computes; the largest oracle T-depth per call that still allows a 10× quantum win, D_max = T_C / (10 · k·σ_Q/(0.45ε) · t_layer) |
 | Development cases | Equal-weight basket knock-out call, S0 = K = 100, H = 140, σ = 0.3, ρ = 0.4, r = 0.03, T = 1; shapes 4×12 (assets × dates) and 8×52 |
 | Canonical basis | Closed-form PCA factor (spec §0.1) replacing `numpy.linalg.eigh`, whose basis is build-dependent (E10) |
+| H1, P1–P3, Q1 | H1 is the 23 September hypothesis that discretely monitored basket payoffs defeat classical smoothing (`docs/research_investigation/2026-09-23/DECISION.md` §5); its falsifier said STOP. P1 is the classical exponent pilot, P2 the one-step-survival pilot, P3 the compiled 16-process pilot, Q1 the scored oracle depth (scripts in `research/advantage_frontier_20260923/`) |
+| N1–N6 | The narrowings attached to the L1 GO_NARROWED recommendation (`literature/L1_PRIOR_ART.md` §5) |
+| B4x12 / B8x52 | Development cases: 4 assets × 12 monitoring dates and 8 assets × 52 |
 
 ## Item status at merge
 
@@ -49,7 +52,13 @@ result; it claims neither advantage nor impossibility.
 | C6 GPU | Not started (code not written). Cut deadline 5 October 00:00 IST; if cut, carry g ∈ {1, 10, 100} | — | — |
 | Final decision table | Interim only (`decision_interim_v2/`); rerun `decision.py` once C5/C6/anchors exist | `9d734ff5` | — |
 
-Results produced after the merge go into a follow-up PR from the same branch.
+Results produced after the merge go into a follow-up PR from the same branch. **Merge PRs from this branch with a merge commit, never a squash.** Result files record the commits they ran from (for example `18d0ca31`), and a squash would leave those commits unreachable from `main`.
+
+Why work continued after Q0 failed: the Stage B spec required the mismatch to be reported and added to ERRATA, not tuned away, and the plan stops only if the STOP decision itself fails. The mismatch was fully attributed (E10) and STOP reproduced.
+
+Cut deadlines (spec, "Schedule, exclusivity and cuts"; Day 1 = 1 October 2026): an item not started by its deadline is cut and reported as not done. C5: 3 October 00:00 IST (already started, so it will be completed). C8: 4 October 00:00 IST. C6: 5 October 00:00 IST.
+
+Concurrency at merge: the author's separate limitation-program job was running on the same machine. Timing runs (C5, C7 timing) wait up to 2 hours for an idle machine and are then refused (D6); a refused run is recorded, and it should be re-queued when the machine is idle.
 
 ## How to resume
 

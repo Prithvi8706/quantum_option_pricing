@@ -1,0 +1,48 @@
+== HEAD 9d734ff5 vs main cc3f08e1
+== [1] project pytest (pyproject testpaths, fast loop excludes slow)
+research/journal_sprint/tests/test_circuit_gate.py::test_channels_positive_controls
+  C:\Users\prith\quantum_option_pricing\venv\lib\site-packages\qiskit_aer\backends\backend_utils.py:442: DeprecationWarning: The method ``qiskit.circuit.quantumcircuit.QuantumCircuit.i()`` is deprecated as of qiskit 0.45.0. It will be removed in the Qiskit 1.0.0 release. Use QuantumCircuit.id as direct replacement.
+    dummy_circ.i(0)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+1673 passed, 2 deselected, 20 warnings in 974.56s (0:16:14)
+rc=0
+== [2] mypy src/ app/ tests/
+C:\Users\prith\quantum_option_pricing\venv\Scripts\python.exe: No module named mypy
+== [3] ruff whole repo: branch vs main
+branch: 4675 errors
+main:   4675 errors
+== [4] ruff on Python files changed in this branch
+44
+   |
+
+E501 Line too long (115 > 100)
+  --> results\frontier_replay_20261001\q0_attribution\summarize.py:54:101
+   |
+52 |     },
+53 |     pooled_run_repeatable_in_T0=json.loads((HERE / "pooled_repeat_t0_a.json").read_text())["results"]
+54 |     == json.loads((HERE / "pooled_repeat_t0_b.json").read_text())["results"] or "non-timing fields compared below",
+   |                                                                                                     ^^^^^^^^^^^^^^^
+55 |     inprocess_scrambles_identical_given_same_L=json.loads((HERE / "inproc_conda.json").read_text())
+56 |     == json.loads((HERE / "inproc_t0_L1264.json").read_text()),
+   |
+
+Found 38 errors.
+[*] 4 fixable with the `--fix` option.
+== [5] Stage B/C tests in T0 env
+......................................                                   [100%]
+38 passed in 42.84s
+== [6] Stage A tests and verifier (T0 env, which has numba)
+..                                                                       [100%]
+2 passed in 10.82s
+verify rc=0
+  "post_run_changes": "Formatting; main adds distinct --output, refuses nonempty directories and archives its own source. Original executed source is preserved.",
+  "basis_cases": 24,
+  "complete_pricing_or_physical_certification": false
+}
+== [7] whitespace
+check done
+== [8] mypy (anaconda mypy; project venv has none): branch vs main
+branch: Found 12 errors in 5 files (checked 74 source files)
+main: Found 12 errors in 5 files (checked 74 source files)
+check2 done
