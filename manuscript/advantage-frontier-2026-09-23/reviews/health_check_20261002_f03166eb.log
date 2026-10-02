@@ -1,0 +1,44 @@
+== HEAD f03166eb vs main cc3f08e1
+== [1] project pytest (pyproject testpaths, fast loop excludes slow)
+research/journal_sprint/tests/test_circuit_gate.py::test_channels_positive_controls
+  C:\Users\prith\quantum_option_pricing\venv\lib\site-packages\qiskit_aer\backends\backend_utils.py:442: DeprecationWarning: The method ``qiskit.circuit.quantumcircuit.QuantumCircuit.i()`` is deprecated as of qiskit 0.45.0. It will be removed in the Qiskit 1.0.0 release. Use QuantumCircuit.id as direct replacement.
+    dummy_circ.i(0)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+1672 passed, 2 deselected, 20 warnings in 1762.10s (0:29:22)
+rc=0
+== [2] mypy src/ app/ tests/
+C:\Users\prith\quantum_option_pricing\venv\Scripts\python.exe: No module named mypy
+== [3] ruff whole repo: branch vs main
+branch: 4713 errors
+main:   4675 errors
+== [4] ruff on Python files changed in this branch
+39
+   |
+
+E501 Line too long (115 > 100)
+  --> results\frontier_replay_20261001\q0_attribution\summarize.py:54:101
+   |
+52 |     },
+53 |     pooled_run_repeatable_in_T0=json.loads((HERE / "pooled_repeat_t0_a.json").read_text())["results"]
+54 |     == json.loads((HERE / "pooled_repeat_t0_b.json").read_text())["results"] or "non-timing fields compared below",
+   |                                                                                                     ^^^^^^^^^^^^^^^
+55 |     inprocess_scrambles_identical_given_same_L=json.loads((HERE / "inproc_conda.json").read_text())
+56 |     == json.loads((HERE / "inproc_t0_L1264.json").read_text()),
+   |
+
+Found 38 errors.
+[*] 4 fixable with the `--fix` option.
+== [5] Stage B/C tests in T0 env
+................................                                         [100%]
+32 passed in 46.28s
+== [6] Stage A tests and verifier (pinned py3.9 venv as in Stage A)
+ERROR research/frontier_completion_20260927/test_stage_a.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 2.47s
+  File "C:\Users\prith\quantum_option_pricing\.context\health_f03166eb\research\compound_feasibility\model.py", line 5, in <module>
+    from numba import njit
+ModuleNotFoundError: No module named 'numba'
+verify rc=0
+== [7] whitespace
+check done

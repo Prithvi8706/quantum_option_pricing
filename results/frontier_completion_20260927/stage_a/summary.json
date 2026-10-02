@@ -1,0 +1,477 @@
+{
+  "archive_accounting": [
+    {
+      "case": "C4_f40",
+      "exact": {
+        "forward_t_count": 284419625,
+        "forward_calls": 7579,
+        "forward_dependency_t_depth": 2972154
+      },
+      "operation_scores": {
+        "cheapest": {
+          "forward_critical_t_depth": 1818771,
+          "clean_call_t_depth": 3637542,
+          "forward_t_count": 125907817,
+          "clean_call_t_count": 251815634,
+          "op_counts": {
+            "input": 60,
+            "bits": 565,
+            "const": 51,
+            "add": 2543,
+            "lt": 517,
+            "select": 624,
+            "msb": 33,
+            "sub": 514,
+            "shift": 107,
+            "lookup": 147,
+            "mul": 2070,
+            "cmul": 289,
+            "positive": 61,
+            "sqrt": 31,
+            "divide": 27
+          }
+        },
+        "median": {
+          "forward_critical_t_depth": 3201635.0,
+          "clean_call_t_depth": 6403270.0,
+          "forward_t_count": 310880885.0,
+          "clean_call_t_count": 621761770.0,
+          "op_counts": {
+            "input": 60,
+            "bits": 565,
+            "const": 51,
+            "add": 2543,
+            "lt": 517,
+            "select": 624,
+            "msb": 33,
+            "sub": 514,
+            "shift": 107,
+            "lookup": 147,
+            "mul": 2070,
+            "cmul": 289,
+            "positive": 61,
+            "sqrt": 31,
+            "divide": 27
+          }
+        }
+      },
+      "ratios": {
+        "cheapest": 0.6119369992268233,
+        "median": 1.0772103329773626
+      },
+      "source_sha256": "93eddb18cfc24abcfbd7054ab3997db4439cba48e60e66c0bed76259ed500e31",
+      "target_sha256": "40d23527cf1388992a6ef5dd9baa15e4e72e67ebfc7aa1efb23944d1828bea0a"
+    },
+    {
+      "case": "H8_f40",
+      "exact": {
+        "forward_t_count": 1044647317,
+        "forward_calls": 27818,
+        "forward_dependency_t_depth": 3075738
+      },
+      "operation_scores": {
+        "cheapest": {
+          "forward_critical_t_depth": 1851091,
+          "clean_call_t_depth": 3702182,
+          "forward_t_count": 465076185,
+          "clean_call_t_count": 930152370,
+          "op_counts": {
+            "input": 216,
+            "bits": 2065,
+            "const": 75,
+            "add": 9510,
+            "lt": 1858,
+            "select": 2253,
+            "msb": 111,
+            "sub": 1851,
+            "shift": 401,
+            "lookup": 525,
+            "mul": 7697,
+            "cmul": 1049,
+            "positive": 213,
+            "sqrt": 110,
+            "divide": 100
+          }
+        },
+        "median": {
+          "forward_critical_t_depth": 3298803.0,
+          "clean_call_t_depth": 6597606.0,
+          "forward_t_count": 1151194905.0,
+          "clean_call_t_count": 2302389810.0,
+          "op_counts": {
+            "input": 216,
+            "bits": 2065,
+            "const": 75,
+            "add": 9510,
+            "lt": 1858,
+            "select": 2253,
+            "msb": 111,
+            "sub": 1851,
+            "shift": 401,
+            "lookup": 525,
+            "mul": 7697,
+            "cmul": 1049,
+            "positive": 213,
+            "sqrt": 110,
+            "divide": 100
+          }
+        }
+      },
+      "ratios": {
+        "cheapest": 0.6018363722787832,
+        "median": 1.0725240576408004
+      },
+      "source_sha256": "29c1e001e944b52be15df8ac45a6254637a926afd3c381d133f73a7e5d4bef37",
+      "target_sha256": "80729f8a8485c640eefe1cb26d3651a914bbb75cfd3c07d08dc478de82ae541a"
+    }
+  ],
+  "cases": [
+    {
+      "case": "B4x12",
+      "original_nodes": 5134,
+      "optimized_nodes": 5038,
+      "optimization": {
+        "original_nodes": 5134,
+        "final_nodes": 5038,
+        "constant_folded_nodes": 0,
+        "reused_nodes": 96,
+        "semantics": "Exact integer constant folding and common-subexpression reuse; no change to input law, output or finite arithmetic."
+      },
+      "exact": {
+        "forward_t_count": 453741659,
+        "forward_calls": 4978,
+        "forward_dependency_t_depth": 1671555
+      },
+      "operation_scores": {
+        "cheapest": {
+          "forward_critical_t_depth": 442529,
+          "clean_call_t_depth": 885058,
+          "forward_t_count": 73920343,
+          "clean_call_t_count": 147840686,
+          "op_counts": {
+            "input": 60,
+            "bits": 396,
+            "const": 27,
+            "add": 1761,
+            "lt": 318,
+            "select": 318,
+            "msb": 30,
+            "sub": 229,
+            "shift": 78,
+            "lookup": 90,
+            "mul": 1440,
+            "cmul": 230,
+            "positive": 31,
+            "sqrt": 30
+          }
+        },
+        "median": {
+          "forward_critical_t_depth": 1041715.0,
+          "clean_call_t_depth": 2083430.0,
+          "forward_t_count": 204313263.0,
+          "clean_call_t_count": 408626526.0,
+          "op_counts": {
+            "input": 60,
+            "bits": 396,
+            "const": 27,
+            "add": 1761,
+            "lt": 318,
+            "select": 318,
+            "msb": 30,
+            "sub": 229,
+            "shift": 78,
+            "lookup": 90,
+            "mul": 1440,
+            "cmul": 230,
+            "positive": 31,
+            "sqrt": 30
+          }
+        }
+      },
+      "serial_resources": {
+        "source_gates": 285639680,
+        "x": 120550,
+        "cx": 155878656,
+        "ccx": 129640474,
+        "t_count": 907483318,
+        "t_depth": 297652556,
+        "clifford_t_depth": 892236573,
+        "clifford_cx": 933721500,
+        "clifford_h": 259280948,
+        "logical_qubits": 414989,
+        "random_hadamards": 1920,
+        "ssa_words": 5698,
+        "max_reused_scratch_qubits": 4661,
+        "output_words": 1,
+        "t_depth_schedule": "serial clean leaves, ASAP inside each leaf; valid upper bound, not optimal circuit depth",
+        "ccx_expansion": "exact 7 T and 6 CX, 2 H per CCX; no relative-phase substitution"
+      },
+      "schedules": {
+        "all": {
+          "source_gates": 285639680,
+          "x": 120550,
+          "cx": 155878656,
+          "ccx": 129640474,
+          "t_count": 907483318,
+          "t_depth": 6032678,
+          "clifford_t_depth": 18068093,
+          "clifford_cx": 933721500,
+          "clifford_h": 259280948,
+          "logical_qubits": 550158,
+          "random_hadamards": 1920,
+          "ssa_words": 5698,
+          "max_reused_scratch_qubits": 139830,
+          "output_words": 1,
+          "t_depth_schedule": "Serial wave batches, disjoint private leaf workspaces; ASAP inside leaves, shared-control copies in separate rounds.",
+          "ccx_expansion": "exact 7 T and 6 CX, 2 H per CCX; no relative-phase substitution"
+        },
+        "128": {
+          "source_gates": 285639680,
+          "x": 120550,
+          "cx": 155878656,
+          "ccx": 129640474,
+          "t_count": 907483318,
+          "t_depth": 6401958,
+          "clifford_t_depth": 19173669,
+          "clifford_cx": 933721500,
+          "clifford_h": 259280948,
+          "logical_qubits": 550158,
+          "random_hadamards": 1920,
+          "ssa_words": 5698,
+          "max_reused_scratch_qubits": 139830,
+          "output_words": 1,
+          "t_depth_schedule": "Serial wave batches, disjoint private leaf workspaces; ASAP inside leaves, shared-control copies in separate rounds.",
+          "ccx_expansion": "exact 7 T and 6 CX, 2 H per CCX; no relative-phase substitution"
+        },
+        "32": {
+          "source_gates": 285639680,
+          "x": 120550,
+          "cx": 155878656,
+          "ccx": 129640474,
+          "t_count": 907483318,
+          "t_depth": 10980938,
+          "clifford_t_depth": 32916413,
+          "clifford_cx": 933721500,
+          "clifford_h": 259280948,
+          "logical_qubits": 550158,
+          "random_hadamards": 1920,
+          "ssa_words": 5698,
+          "max_reused_scratch_qubits": 139830,
+          "output_words": 1,
+          "t_depth_schedule": "Serial wave batches, disjoint private leaf workspaces; ASAP inside leaves, shared-control copies in separate rounds.",
+          "ccx_expansion": "exact 7 T and 6 CX, 2 H per CCX; no relative-phase substitution"
+        }
+      },
+      "logical_width_caps": {
+        "all": {
+          "10000": false,
+          "100000": false
+        },
+        "128": {
+          "10000": false,
+          "100000": false
+        },
+        "32": {
+          "10000": false,
+          "100000": false
+        }
+      },
+      "compile_and_schedule_seconds": 6.456636700000001,
+      "basis_cases_passed": 20,
+      "all_basis_cases_passed": true,
+      "elapsed_seconds": 196.7890069
+    },
+    {
+      "case": "B8x52",
+      "original_nodes": 42486,
+      "optimized_nodes": 41654,
+      "optimization": {
+        "original_nodes": 42486,
+        "final_nodes": 41654,
+        "constant_folded_nodes": 0,
+        "reused_nodes": 832,
+        "semantics": "Exact integer constant folding and common-subexpression reuse; no change to input law, output or finite arithmetic."
+      },
+      "exact": {
+        "forward_t_count": 3729021387,
+        "forward_calls": 41186,
+        "forward_dependency_t_depth": 1670595
+      },
+      "operation_scores": {
+        "cheapest": {
+          "forward_critical_t_depth": 449331,
+          "clean_call_t_depth": 898662,
+          "forward_t_count": 603831459,
+          "clean_call_t_count": 1207662918,
+          "op_counts": {
+            "input": 468,
+            "bits": 3172,
+            "const": 27,
+            "add": 15389,
+            "lt": 2522,
+            "select": 2522,
+            "msb": 234,
+            "sub": 1821,
+            "shift": 650,
+            "lookup": 702,
+            "mul": 11856,
+            "cmul": 1822,
+            "positive": 235,
+            "sqrt": 234
+          }
+        },
+        "median": {
+          "forward_critical_t_depth": 1047475.0,
+          "clean_call_t_depth": 2094950.0,
+          "forward_t_count": 1672811035.0,
+          "clean_call_t_count": 3345622070.0,
+          "op_counts": {
+            "input": 468,
+            "bits": 3172,
+            "const": 27,
+            "add": 15389,
+            "lt": 2522,
+            "select": 2522,
+            "msb": 234,
+            "sub": 1821,
+            "shift": 650,
+            "lookup": 702,
+            "mul": 11856,
+            "cmul": 1822,
+            "positive": 235,
+            "sqrt": 234
+          }
+        }
+      },
+      "serial_resources": {
+        "source_gates": 2344932988,
+        "x": 948386,
+        "cx": 1278549920,
+        "ccx": 1065434682,
+        "t_count": 7458042774,
+        "t_depth": 2443874124,
+        "clifford_t_depth": 7325099925,
+        "clifford_cx": 7671158012,
+        "clifford_h": 2130869364,
+        "logical_qubits": 3374477,
+        "random_hadamards": 14976,
+        "ssa_words": 46802,
+        "max_reused_scratch_qubits": 4661,
+        "output_words": 1,
+        "t_depth_schedule": "serial clean leaves, ASAP inside each leaf; valid upper bound, not optimal circuit depth",
+        "ccx_expansion": "exact 7 T and 6 CX, 2 H per CCX; no relative-phase substitution"
+      },
+      "schedules": {
+        "all": {
+          "source_gates": 2344932988,
+          "x": 948386,
+          "cx": 1278549920,
+          "ccx": 1065434682,
+          "t_count": 7458042774,
+          "t_depth": 6393144,
+          "clifford_t_depth": 19167853,
+          "clifford_cx": 7671158012,
+          "clifford_h": 2130869364,
+          "logical_qubits": 4460490,
+          "random_hadamards": 14976,
+          "ssa_words": 46802,
+          "max_reused_scratch_qubits": 1090674,
+          "output_words": 1,
+          "t_depth_schedule": "Serial wave batches, disjoint private leaf workspaces; ASAP inside leaves, shared-control copies in separate rounds.",
+          "ccx_expansion": "exact 7 T and 6 CX, 2 H per CCX; no relative-phase substitution"
+        },
+        "128": {
+          "source_gates": 2344932988,
+          "x": 948386,
+          "cx": 1278549920,
+          "ccx": 1065434682,
+          "t_count": 7458042774,
+          "t_depth": 21428752,
+          "clifford_t_depth": 64259469,
+          "clifford_cx": 7671158012,
+          "clifford_h": 2130869364,
+          "logical_qubits": 3966424,
+          "random_hadamards": 14976,
+          "ssa_words": 46802,
+          "max_reused_scratch_qubits": 596608,
+          "output_words": 1,
+          "t_depth_schedule": "Serial wave batches, disjoint private leaf workspaces; ASAP inside leaves, shared-control copies in separate rounds.",
+          "ccx_expansion": "exact 7 T and 6 CX, 2 H per CCX; no relative-phase substitution"
+        },
+        "32": {
+          "source_gates": 2344932988,
+          "x": 948386,
+          "cx": 1278549920,
+          "ccx": 1065434682,
+          "t_count": 7458042774,
+          "t_depth": 79765906,
+          "clifford_t_depth": 239096715,
+          "clifford_cx": 7671158012,
+          "clifford_h": 2130869364,
+          "logical_qubits": 3518968,
+          "random_hadamards": 14976,
+          "ssa_words": 46802,
+          "max_reused_scratch_qubits": 149152,
+          "output_words": 1,
+          "t_depth_schedule": "Serial wave batches, disjoint private leaf workspaces; ASAP inside leaves, shared-control copies in separate rounds.",
+          "ccx_expansion": "exact 7 T and 6 CX, 2 H per CCX; no relative-phase substitution"
+        }
+      },
+      "logical_width_caps": {
+        "all": {
+          "10000": false,
+          "100000": false
+        },
+        "128": {
+          "10000": false,
+          "100000": false
+        },
+        "32": {
+          "10000": false,
+          "100000": false
+        }
+      },
+      "compile_and_schedule_seconds": 6.184983200000005,
+      "basis_cases_passed": 4,
+      "all_basis_cases_passed": true,
+      "elapsed_seconds": 284.87915280000004
+    }
+  ],
+  "primary_frontier": [
+    {
+      "case": "B4x12",
+      "schedule": "all",
+      "eps": 0.001,
+      "k": 3,
+      "t_layer_seconds": 1e-07,
+      "sigma_q": 5.725834380420597,
+      "hypothetical_calls": 38172.229202803974,
+      "historical_classical_model_seconds": 5.860783245975945,
+      "source_only_model_seconds": 23028.076732271307,
+      "clean_source_t_depth": 6032678,
+      "historical_d_max": 153.5352628959232,
+      "ratio_to_10x_budget": 39291.807537981455,
+      "max_layer_seconds_for_10x": 2.5450598042183452e-12,
+      "required_T_per_second_for_10x": 59105856262815.33
+    },
+    {
+      "case": "B8x52",
+      "schedule": "all",
+      "eps": 0.001,
+      "k": 3,
+      "t_layer_seconds": 1e-07,
+      "sigma_q": 5.152749235909869,
+      "hypothetical_calls": 34351.66157273246,
+      "historical_classical_model_seconds": 27.118838962453555,
+      "source_only_model_seconds": 21961.511907374508,
+      "clean_source_t_depth": 6393144,
+      "historical_d_max": 789.4476633986128,
+      "ratio_to_10x_budget": 8098.249315828216,
+      "max_layer_seconds_for_10x": 1.2348347908300091e-11,
+      "required_T_per_second_for_10x": 94471655560961.98
+    }
+  ],
+  "elapsed_seconds": 487.4543068,
+  "artifact_count": 254,
+  "scientific_status": "No defensible significant quantum advantage established yet"
+}

@@ -1,0 +1,399 @@
+{
+ "spec": "manuscript/advantage-frontier-2026-09-23/ANALYSIS_SPEC_STAGE_B.md",
+ "checkout_commit": "d3a6950d3fe57047b4acce56e84355621cf1bca0",
+ "interpreter": "C:\\Users\\prith\\quantum_option_pricing\\.context\\frontier_t0_env\\Scripts\\python.exe",
+ "runs": [
+  {
+   "label": "P3",
+   "script": "barrier_fast_classical.py",
+   "returncode": 0,
+   "seconds": 64.8
+  },
+  {
+   "label": "P1",
+   "script": "classical_exponent_pilot.py",
+   "returncode": 0,
+   "seconds": 489.9
+  },
+  {
+   "label": "P2",
+   "script": "barrier_oss_pilot.py",
+   "returncode": 0,
+   "seconds": 246.2
+  },
+  {
+   "label": "Q1",
+   "script": "barrier_oracle_depth.py",
+   "returncode": 0,
+   "seconds": 7.8
+  },
+  {
+   "label": "DEC",
+   "script": "barrier_decision.py",
+   "returncode": 0,
+   "seconds": 0.3
+  },
+  {
+   "label": "FR",
+   "script": "frontier.py",
+   "returncode": 0,
+   "seconds": 0.3
+  }
+ ],
+ "files": {
+  "classical_exponent_pilot.json": {
+   "exact_fields": 1611,
+   "exact_fields_20260924": 1611,
+   "exact_mismatches": [],
+   "timing_fields": 1214,
+   "timing_fields_changed": 1196
+  },
+  "barrier_oss_pilot.json": {
+   "exact_fields": 108,
+   "exact_fields_20260924": 108,
+   "exact_mismatches": [],
+   "timing_fields": 10,
+   "timing_fields_changed": 4
+  },
+  "barrier_fast_classical.json": {
+   "exact_fields": 57,
+   "exact_fields_20260924": 57,
+   "exact_mismatches": [
+    {
+     "path": "/results[1]/price",
+     "archived": 3.2816161390608887,
+     "replayed": 3.2816193580246855
+    },
+    {
+     "path": "/results[1]/rate_r",
+     "archived": 0.5268016795399072,
+     "replayed": 0.541295386167135
+    },
+    {
+     "path": "/results[1]/rqmc_std_one_scramble[0]",
+     "archived": 0.01761344835878955,
+     "replayed": 0.01757237057711633
+    },
+    {
+     "path": "/results[1]/rqmc_std_one_scramble[1]",
+     "archived": 0.009680421852030295,
+     "replayed": 0.010511901072838767
+    },
+    {
+     "path": "/results[1]/rqmc_std_one_scramble[2]",
+     "archived": 0.00809690899956146,
+     "replayed": 0.008596156789246757
+    },
+    {
+     "path": "/results[1]/rqmc_std_one_scramble[3]",
+     "archived": 0.0062180763416722715,
+     "replayed": 0.006329876704256303
+    },
+    {
+     "path": "/results[1]/rqmc_std_one_scramble[4]",
+     "archived": 0.004073905363964955,
+     "replayed": 0.0038104200384023105
+    },
+    {
+     "path": "/results[1]/rqmc_std_one_scramble[5]",
+     "archived": 0.0022153368756582348,
+     "replayed": 0.0021908645202495607
+    },
+    {
+     "path": "/results[1]/rqmc_std_one_scramble[6]",
+     "archived": 0.0015807599779666553,
+     "replayed": 0.001546940973388175
+    },
+    {
+     "path": "/results[1]/rqmc_std_one_scramble[7]",
+     "archived": 0.0013598615717940596,
+     "replayed": 0.0013283976485368996
+    },
+    {
+     "path": "/results[1]/rqmc_std_one_scramble[8]",
+     "archived": 0.0008851272866753679,
+     "replayed": 0.0008516587621256536
+    },
+    {
+     "path": "/results[1]/rqmc_std_one_scramble[9]",
+     "archived": 0.0005767661257525392,
+     "replayed": 0.0005853645725541549
+    },
+    {
+     "path": "/results[1]/std_error",
+     "archived": 0.00010195880966957837,
+     "replayed": 0.00010347881467985193
+    }
+   ],
+   "timing_fields": 33,
+   "timing_fields_changed": 27
+  },
+  "barrier_oracle_depth.json": {
+   "exact_fields": 209,
+   "exact_fields_20260924": 209,
+   "exact_mismatches": [],
+   "timing_fields": 17,
+   "timing_fields_changed": 0
+  },
+  "barrier_decision.json": {
+   "exact_fields": 2112,
+   "exact_fields_20260924": 2112,
+   "exact_mismatches": [
+    {
+     "path": "/grid[144]/points_per_scramble",
+     "archived": 1579.5069229258877,
+     "replayed": 1655.1928539636958
+    },
+    {
+     "path": "/grid[145]/points_per_scramble",
+     "archived": 1579.5069229258877,
+     "replayed": 1655.1928539636958
+    },
+    {
+     "path": "/grid[146]/points_per_scramble",
+     "archived": 1579.5069229258877,
+     "replayed": 1655.1928539636958
+    },
+    {
+     "path": "/grid[147]/points_per_scramble",
+     "archived": 1579.5069229258877,
+     "replayed": 1655.1928539636958
+    },
+    {
+     "path": "/grid[148]/points_per_scramble",
+     "archived": 1579.5069229258877,
+     "replayed": 1655.1928539636958
+    },
+    {
+     "path": "/grid[149]/points_per_scramble",
+     "archived": 1579.5069229258877,
+     "replayed": 1655.1928539636958
+    },
+    {
+     "path": "/grid[150]/points_per_scramble",
+     "archived": 1579.5069229258877,
+     "replayed": 1655.1928539636958
+    },
+    {
+     "path": "/grid[151]/points_per_scramble",
+     "archived": 1579.5069229258877,
+     "replayed": 1655.1928539636958
+    },
+    {
+     "path": "/grid[152]/points_per_scramble",
+     "archived": 1579.5069229258877,
+     "replayed": 1655.1928539636958
+    },
+    {
+     "path": "/grid[153]/points_per_scramble",
+     "archived": 1579.5069229258877,
+     "replayed": 1655.1928539636958
+    },
+    {
+     "path": "/grid[154]/points_per_scramble",
+     "archived": 1579.5069229258877,
+     "replayed": 1655.1928539636958
+    },
+    {
+     "path": "/grid[155]/points_per_scramble",
+     "archived": 1579.5069229258877,
+     "replayed": 1655.1928539636958
+    },
+    {
+     "path": "/grid[156]/points_per_scramble",
+     "archived": 1579.5069229258877,
+     "replayed": 1655.1928539636958
+    },
+    {
+     "path": "/grid[157]/points_per_scramble",
+     "archived": 1579.5069229258877,
+     "replayed": 1655.1928539636958
+    },
+    {
+     "path": "/grid[158]/points_per_scramble",
+     "archived": 1579.5069229258877,
+     "replayed": 1655.1928539636958
+    },
+    {
+     "path": "/grid[159]/points_per_scramble",
+     "archived": 1579.5069229258877,
+     "replayed": 1655.1928539636958
+    },
+    {
+     "path": "/grid[160]/points_per_scramble",
+     "archived": 1579.5069229258877,
+     "replayed": 1655.1928539636958
+    },
+    {
+     "path": "/grid[161]/points_per_scramble",
+     "archived": 1579.5069229258877,
+     "replayed": 1655.1928539636958
+    },
+    {
+     "path": "/grid[162]/points_per_scramble",
+     "archived": 1579.5069229258877,
+     "replayed": 1655.1928539636958
+    },
+    {
+     "path": "/grid[163]/points_per_scramble",
+     "archived": 1579.5069229258877,
+     "replayed": 1655.1928539636958
+    },
+    {
+     "path": "/grid[164]/points_per_scramble",
+     "archived": 1579.5069229258877,
+     "replayed": 1655.1928539636958
+    },
+    {
+     "path": "/grid[165]/points_per_scramble",
+     "archived": 1579.5069229258877,
+     "replayed": 1655.1928539636958
+    },
+    {
+     "path": "/grid[166]/points_per_scramble",
+     "archived": 1579.5069229258877,
+     "replayed": 1655.1928539636958
+    },
+    {
+     "path": "/grid[167]/points_per_scramble",
+     "archived": 1579.5069229258877,
+     "replayed": 1655.1928539636958
+    },
+    {
+     "path": "/grid[168]/points_per_scramble",
+     "archived": 124959.44523080993,
+     "replayed": 116484.66262864033
+    },
+    {
+     "path": "/grid[169]/points_per_scramble",
+     "archived": 124959.44523080993,
+     "replayed": 116484.66262864033
+    },
+    {
+     "path": "/grid[170]/points_per_scramble",
+     "archived": 124959.44523080993,
+     "replayed": 116484.66262864033
+    },
+    {
+     "path": "/grid[171]/points_per_scramble",
+     "archived": 124959.44523080993,
+     "replayed": 116484.66262864033
+    },
+    {
+     "path": "/grid[172]/points_per_scramble",
+     "archived": 124959.44523080993,
+     "replayed": 116484.66262864033
+    },
+    {
+     "path": "/grid[173]/points_per_scramble",
+     "archived": 124959.44523080993,
+     "replayed": 116484.66262864033
+    },
+    {
+     "path": "/grid[174]/points_per_scramble",
+     "archived": 124959.44523080993,
+     "replayed": 116484.66262864033
+    },
+    {
+     "path": "/grid[175]/points_per_scramble",
+     "archived": 124959.44523080993,
+     "replayed": 116484.66262864033
+    },
+    {
+     "path": "/grid[176]/points_per_scramble",
+     "archived": 124959.44523080993,
+     "replayed": 116484.66262864033
+    },
+    {
+     "path": "/grid[177]/points_per_scramble",
+     "archived": 124959.44523080993,
+     "replayed": 116484.66262864033
+    },
+    {
+     "path": "/grid[178]/points_per_scramble",
+     "archived": 124959.44523080993,
+     "replayed": 116484.66262864033
+    },
+    {
+     "path": "/grid[179]/points_per_scramble",
+     "archived": 124959.44523080993,
+     "replayed": 116484.66262864033
+    },
+    {
+     "path": "/grid[180]/points_per_scramble",
+     "archived": 124959.44523080993,
+     "replayed": 116484.66262864033
+    },
+    {
+     "path": "/grid[181]/points_per_scramble",
+     "archived": 124959.44523080993,
+     "replayed": 116484.66262864033
+    },
+    {
+     "path": "/grid[182]/points_per_scramble",
+     "archived": 124959.44523080993,
+     "replayed": 116484.66262864033
+    },
+    {
+     "path": "/grid[183]/points_per_scramble",
+     "archived": 124959.44523080993,
+     "replayed": 116484.66262864033
+    },
+    {
+     "path": "/grid[184]/points_per_scramble",
+     "archived": 124959.44523080993,
+     "replayed": 116484.66262864033
+    },
+    {
+     "path": "/grid[185]/points_per_scramble",
+     "archived": 124959.44523080993,
+     "replayed": 116484.66262864033
+    },
+    {
+     "path": "/grid[186]/points_per_scramble",
+     "archived": 124959.44523080993,
+     "replayed": 116484.66262864033
+    },
+    {
+     "path": "/grid[187]/points_per_scramble",
+     "archived": 124959.44523080993,
+     "replayed": 116484.66262864033
+    },
+    {
+     "path": "/grid[188]/points_per_scramble",
+     "archived": 124959.44523080993,
+     "replayed": 116484.66262864033
+    },
+    {
+     "path": "/grid[189]/points_per_scramble",
+     "archived": 124959.44523080993,
+     "replayed": 116484.66262864033
+    },
+    {
+     "path": "/grid[190]/points_per_scramble",
+     "archived": 124959.44523080993,
+     "replayed": 116484.66262864033
+    },
+    {
+     "path": "/grid[191]/points_per_scramble",
+     "archived": 124959.44523080993,
+     "replayed": 116484.66262864033
+    }
+   ],
+   "timing_fields": 592,
+   "timing_fields_changed": 584
+  },
+  "frontier.json": {
+   "exact_fields": 270,
+   "exact_fields_20260924": 270,
+   "exact_mismatches": [],
+   "timing_fields": 162,
+   "timing_fields_changed": 145
+  }
+ },
+ "exact_fields_total": 4367,
+ "exact_mismatches_total": 61,
+ "decision_archived": "STOP H1",
+ "decision_replayed": "STOP H1",
+ "q0_passed": false
+}

@@ -1,0 +1,10 @@
+Stop rule at eps=$0.001, t_layer=100 ns, k=3, measured compiled classical:
+  B4x12: classical 2.1 s; D_max 54.1; oracle 8.85e+05 (Box-Muller) / 1.68e+05 (free Gaussians); oracle/D_max = 16348x / 3105x; stop=True
+  B8x52: classical 19.2 s; D_max 560; oracle 8.99e+05 (Box-Muller) / 1.82e+05 (free Gaussians); oracle/D_max = 1604x / 324x; stop=True
+DECISION: STOP H1
+
+Most favourable corner in the grid (free Gaussians, k=1, 10 ns/T-layer, preint sigma):
+  B4x12 eps=0.01: D_max 2.78e+03 vs oracle 1.68e+05 -> 60.5x short
+  B4x12 eps=0.001: D_max 7.46e+03 vs oracle 1.68e+05 -> 22.5x short
+  B8x52 eps=0.01: D_max 1.48e+04 vs oracle 1.82e+05 -> 12.3x short
+  B8x52 eps=0.001: D_max 7.58e+04 vs oracle 1.82e+05 -> 2.4x short

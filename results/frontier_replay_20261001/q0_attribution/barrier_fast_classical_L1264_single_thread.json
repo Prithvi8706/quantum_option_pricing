@@ -1,0 +1,110 @@
+{
+ "purpose": "Pilot P3: compiled multicore version of the strongest classical knock-out method (P1).\n\nSame contract and estimator as P1 `barrier/preint` (first-principal-direction analytic\npreintegration of the discretely monitored basket knock-out call), but:\n  * numba-compiled per-point kernel (Newton roots, closed-form 1-D integral);\n  * single-thread BLAS gemm for the PCA map, in chunks;\n  * one randomized-QMC scramble per worker process, 16 worker processes.\nMeasures the RQMC rate up to 2^17 points per scramble and the complete wall time per\nscramble, so the classical time-to-accuracy used in the quantum budget is measured,\nnot assumed. Requires numba (run with an interpreter that has numba, e.g. anaconda).\nDevelopment diagnostic only.\n",
+ "root_seed": 2026092333,
+ "python": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]",
+ "numba": "0.60.0",
+ "numpy": "2.0.2",
+ "platform": "Windows-11-10.0.26200-SP0",
+ "processor": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
+ "cpu_count": 22,
+ "results": [
+  {
+   "assets": 4,
+   "dates": 12,
+   "dim": 48,
+   "scrambles": 32,
+   "workers": 16,
+   "wall_seconds_all_scrambles": 9.706963700002234,
+   "price": 3.5188852273893136,
+   "std_error": 8.9866360586926e-05,
+   "n": [
+    256,
+    512,
+    1024,
+    2048,
+    4096,
+    8192,
+    16384,
+    32768,
+    65536,
+    131072
+   ],
+   "rqmc_std_one_scramble": [
+    0.01760234472590738,
+    0.01422130550262777,
+    0.010755749926052906,
+    0.007534821588912371,
+    0.004687278857665853,
+    0.003882545609286419,
+    0.0022539536974110013,
+    0.0010950799760384227,
+    0.0006551778885604624,
+    0.0005083609037725669
+   ],
+   "rate_r": 0.6326137993624648,
+   "fit_constant": 0.8838920438145355,
+   "median_scramble_seconds_to_prefix": {
+    "8": 0.3838381499990646,
+    "9": 0.3838501999998698,
+    "10": 0.3838537499977974,
+    "11": 0.3838587499994901,
+    "12": 0.3838609999984328,
+    "13": 0.4632674999993469,
+    "14": 0.6312123999960022,
+    "15": 0.8595213499975216,
+    "16": 1.4974323499991442,
+    "17": 2.656706549998489
+   },
+   "median_setup_seconds": 0.02366144999905373
+  },
+  {
+   "assets": 8,
+   "dates": 52,
+   "dim": 416,
+   "scrambles": 32,
+   "workers": 16,
+   "wall_seconds_all_scrambles": 44.931182100001024,
+   "price": 3.2816161390608887,
+   "std_error": 0.00010195880966957837,
+   "n": [
+    256,
+    512,
+    1024,
+    2048,
+    4096,
+    8192,
+    16384,
+    32768,
+    65536,
+    131072
+   ],
+   "rqmc_std_one_scramble": [
+    0.01761344835878955,
+    0.009680421852030295,
+    0.00809690899956146,
+    0.0062180763416722715,
+    0.004073905363964955,
+    0.0022153368756582348,
+    0.0015807599779666553,
+    0.0013598615717940596,
+    0.0008851272866753679,
+    0.0005767661257525392
+   ],
+   "rate_r": 0.5268016795399072,
+   "fit_constant": 0.2957187660034655,
+   "median_scramble_seconds_to_prefix": {
+    "8": 0.7898476499976823,
+    "9": 0.7898516500026744,
+    "10": 0.7898533000006864,
+    "11": 0.7898545499992906,
+    "12": 0.7898559000022942,
+    "13": 1.505981950002024,
+    "14": 2.8224289499994484,
+    "15": 5.526053049998154,
+    "16": 10.911599500002922,
+    "17": 21.65459805000137
+   },
+   "median_setup_seconds": 0.09275230000275769
+  }
+ ]
+}
