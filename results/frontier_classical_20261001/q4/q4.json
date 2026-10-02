@@ -1,0 +1,105 @@
+{
+ "commit": "f03166eb16accbe3d925e5524aba851d124582c7",
+ "cases": {
+  "B4x12": {
+   "target_sha256": "a7a682731b3cdb6f16b32a9b1a467d6bfeccb32ea97e583ab79e5252bb7a9384",
+   "clip_draws_found": 20,
+   "strata": {
+    "iid": {
+     "draws": 5000,
+     "barrier_flips": 0,
+     "strike_flips": 0,
+     "clip_events": 0,
+     "max_abs_error_unflipped": 3.298321615829991e-09
+    },
+    "near": {
+     "draws": 5000,
+     "barrier_flips": 0,
+     "strike_flips": 0,
+     "clip_events": 0,
+     "max_abs_error_unflipped": 3.485915556211694e-09
+    },
+    "edge": {
+     "draws": 127,
+     "barrier_flips": 0,
+     "strike_flips": 0,
+     "clip_events": 24,
+     "max_abs_error_unflipped": 0.0
+    }
+   },
+   "draws_total": 10127,
+   "barrier_flips": 0,
+   "strike_flips": 0,
+   "delta_fp": 9743.60492821189,
+   "delta": 97436.0492821189,
+   "law": {
+    "paths": 10000000,
+    "mean_diff": 1.5573427122105908e-09,
+    "se": 1.8012164071313954e-09,
+    "bound": 6.1969687157327055e-09
+   },
+   "flip": {
+    "paths": 10000000,
+    "band_count": 10000000,
+    "p_upper99": 1.0,
+    "bound": 94595.19665378655,
+    "plug_in": 94595.19665378655
+   },
+   "arithmetic_max_unflipped": 3.485915556211694e-09,
+   "total": 94595.19665379624,
+   "allowance": 0.0001,
+   "passed": false,
+   "e_q_if_failed": 0.0
+  },
+  "B8x52": {
+   "target_sha256": "267dcaa74aa9dd5cb1339c65006b122389331f42f0002f483bd6eed05c31090b",
+   "clip_draws_found": 20,
+   "strata": {
+    "iid": {
+     "draws": 5000,
+     "barrier_flips": 0,
+     "strike_flips": 0,
+     "clip_events": 0,
+     "max_abs_error_unflipped": 1.715838848781459e-08
+    },
+    "near": {
+     "draws": 5000,
+     "barrier_flips": 0,
+     "strike_flips": 0,
+     "clip_events": 0,
+     "max_abs_error_unflipped": 1.7835489529716142e-08
+    },
+    "edge": {
+     "draws": 127,
+     "barrier_flips": 0,
+     "strike_flips": 0,
+     "clip_events": 24,
+     "max_abs_error_unflipped": 0.0
+    }
+   },
+   "draws_total": 10127,
+   "barrier_flips": 0,
+   "strike_flips": 0,
+   "delta_fp": 2907632.084757296,
+   "delta": 29076320.84757296,
+   "law": {
+    "paths": 10000000,
+    "mean_diff": 6.493983544507683e-10,
+    "se": 5.946211206888493e-10,
+    "bound": 2.1810408616301938e-09
+   },
+   "flip": {
+    "paths": 10000000,
+    "band_count": 10000000,
+    "p_upper99": 1.0,
+    "bound": 28217024.516371895,
+    "plug_in": 28217024.516371895
+   },
+   "arithmetic_max_unflipped": 1.7835489529716142e-08,
+   "total": 28217024.516371917,
+   "allowance": 0.0001,
+   "passed": false,
+   "e_q_if_failed": 0.0
+  }
+ }
+}
