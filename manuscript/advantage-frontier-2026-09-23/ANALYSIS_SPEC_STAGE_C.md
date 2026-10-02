@@ -458,3 +458,20 @@ executed as written, or cut under the rule above with the reason recorded. The t
 claims C2, C4 and C6 follows the outcomes of items C1–C8 and Q4. Claim C7 (hardware) is
 outside Stage C. No item establishes or refutes quantum advantage on its own. The fixed
 verdict is the current status, not a required outcome.
+
+## Deviation log (appended after freezing; dated)
+
+- **D1, 2 October 2026 (item C2, small-n rule).** For n(ε) < 2^13 the rule reads the warm
+  all-16 elapsed time at the smallest prefix mark ≥ n(ε) inside the 2^19 timing runs. Marks
+  are stamped only after a whole 2^12-point chunk is computed, so for n(ε) < 2^12 the value
+  is the time for 2^12 points, not n(ε). Effect, as recorded: T_C at ε = $0.10 and $0.03
+  is overstated (8×52 preint: 0.91 s, against 0.55 s measured at ε = $0.01). This is QF and
+  does not touch the decision point ($0.001, measured confirmation). No re-run; the values
+  are reported with this note, and the paper does not use them as measured times.
+- **D2, 2 October 2026 (Q4, δ_fp).** The literal rule took δ_fp over all draws, including
+  the 20 constructed spot-clip draws, where the IR clips log spots and the reference by
+  design does not. δ_fp became 9.7×10³ (4×12) and 2.9×10⁶ (8×52), the flip band covered
+  every path, and the bound failed for that reason alone. The literal result is kept and
+  reported. A labelled post-hoc deviation (`q4_deviation.py`) recomputes δ_fp over draws
+  without a clip event and redoes only the flip-band count, with the same draws and
+  seeds. Clip events stay counted separately, as section Q4 states.
