@@ -98,6 +98,7 @@ def run_scramble(task):
     sampler = qmc.Sobol(case.dim, scramble=True, seed=np.random.default_rng(list(seed_key)))
     ms = list(range(M_MIN, m_max + 1))
     prefix = np.empty((6, len(ms)))
+    elapsed = np.empty(len(ms))
     total, count = np.zeros(6), 0
     while count < 2 ** m_max:
         u = sampler.random(CHUNK)
@@ -109,7 +110,9 @@ def run_scramble(task):
             n = 2 ** m
             if count < n <= count + CHUNK:
                 prefix[:, i] = (total + cs[n - count - 1]) / n
+                elapsed[i] = time.perf_counter() - t0
         total += cs[-1]
         count += CHUNK
     return dict(case=asdict(case), basis=basis if isinstance(basis, str) else list(basis),
-                seed_key=list(seed_key), ms=ms, prefix=prefix, seconds=time.perf_counter() - t0)
+                seed_key=list(seed_key), ms=ms, prefix=prefix, elapsed=elapsed.tolist(),
+                seconds=time.perf_counter() - t0)

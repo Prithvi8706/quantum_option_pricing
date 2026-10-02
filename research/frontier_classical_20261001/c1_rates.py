@@ -47,10 +47,13 @@ def port_check(pool):
     q0 = json.loads((sc.ROOT / "results/frontier_replay_20261001/q0_provenance_replay.json")
                     .read_text())
     archive = sc.ROOT / "results/advantage_frontier_20260923/barrier_fast_classical.json"
-    replayed = {"B4x12": json.loads(archive.read_text())["results"][0]["price"]}
+    # Q0-replayed price: the archived price unless Q0 recorded a mismatch for that case.
+    archived = json.loads(archive.read_text())["results"]
+    replayed = {f"B{r['assets']}x{r['dates']}": r["price"] for r in archived}
     for m in q0["files"]["barrier_fast_classical.json"]["exact_mismatches"]:
-        if m["path"] == "/results[1]/price":
-            replayed["B8x52"] = m["replayed"]
+        for i, r in enumerate(archived):
+            if m["path"] == f"/results[{i}]/price":
+                replayed[f"B{r['assets']}x{r['dates']}"] = m["replayed"]
     out = {}
     for case in DEV:
         name = f"B{case.na}x{case.nt}"

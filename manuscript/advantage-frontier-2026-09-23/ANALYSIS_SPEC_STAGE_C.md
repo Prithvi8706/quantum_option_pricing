@@ -475,3 +475,40 @@ verdict is the current status, not a required outcome.
   reported. A labelled post-hoc deviation (`q4_deviation.py`) recomputes δ_fp over draws
   without a clip event and redoes only the flip-band count, with the same draws and
   seeds. Clip events stay counted separately, as section Q4 states.
+- **D3, 2 October 2026 (item C2, sensitivity conventions below 2^13).** Conventions (i)
+  and (iii) are fitted on marks n ≥ 2^13 and give negative times when evaluated far below
+  (4×12 preint: −0.015 s at ε = $0.10). Such values are not tabulated. Rows with
+  n(ε) < 2^13 are flagged, and only the measured mark (with D1's caveat) is reported.
+- **D4, 2 October 2026 (item C2, load-balanced convention).** Each (scramble, chunk) task
+  builds a scrambled Sobol generator and fast-forwards it by chunk·2^12 points, a cost that
+  grows with the chunk index (about 64× the points used, per scramble at 2^19). The
+  measured load-balanced times include this overhead and exceed the all-16 times. So
+  convention (iii) is not a valid classical-favourable bound. It is reported with this note
+  and not re-run.
+- **D5, 2 October 2026 (provenance).** Ref A, Ref B, Q4, the C5 rates, the D2
+  recomputation, σ_Q and the interim decision table recorded the commit only, and C2 lacks
+  the lock and factor hashes. All ran from clean detached worktrees of the recorded
+  commits, so code and spec hashes follow from git. From the commit that adds this entry,
+  runners write full provenance (`provenance.py`) and refuse a dirty checkout.
+- **D6, 2 October 2026 (timing harness, before any C5, C7 or C8 timing run).** The C2
+  harness hard-coded the C2 seed root, so C5, C7 and C8 timing would have reused C2's
+  scrambles. It now takes each item's root (C2's default is unchanged). A timing run is
+  refused, not started, when the machine is still busy after the wait. Idleness is
+  re-checked before the fresh-cached, cold and load-balanced sub-runs. Core counts and the
+  full python process list are recorded. The measurement path is unchanged. C2's executed
+  run was idle at every check.
+- **D7, 2 October 2026 (item C7 truncation).** The first implementation timed a separate
+  solo probe. It was replaced, before item C7 ran, by the rule as written: the time to 2^16
+  of the first completed scramble of the pooled 16×52 H = 140 run.
+- **D8, 2 October 2026 (items C7/C8, depth (b) budget).** The budget is enforced as
+  2 hours of wall-clock time in a child process. The compile is single-threaded, so wall
+  time ≥ CPU time, which errs toward "not done".
+- **D9, 2 October 2026 (fit windows).** The sensitivity window [14, M] is now produced for
+  M = 18 too (C7 16×52 cases if truncated). This was fixed before item C7 ran; C1 used M = 19.
+- **D10, 2 October 2026 (T_C uncertainty).** C1 archives n(ε) percentile intervals, not the
+  joint (A, r) draws. T_C intervals are formed in the decision step by mapping the n(ε)
+  interval ends through the all-16 model (monotone in n), and labelled model-based.
+- **D11, 2 October 2026 (no effect on executed runs).** C1's port check now falls back to
+  the archived price when Q0 records no mismatch. C4's chunk sizing uses n_top − count.
+  Neither changes an executed result: the port check passed, and every C4 size is a power
+  of two ≥ 2^12.

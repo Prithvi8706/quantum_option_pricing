@@ -3,8 +3,10 @@
 `knockout_preint` is P3's estimand (research/advantage_frontier_20260923/
 barrier_fast_classical.py) with K and H as arguments instead of module constants; its
 arithmetic is unchanged. `six_estimands` adds the plain payoffs and the call/digital
-preintegration of P1 (classical_exponent_pilot.evaluate) for the C1 rate study only;
-timing (C2) uses `knockout_preint` alone so that no extra payoff is charged to classical.
+preintegration of P1 (classical_exponent_pilot.evaluate); it drives the rate runs (items C1,
+C7, C8 via scrambles.run_scramble), never a timed run. Timed runs and coverage use a single
+estimand so that no extra payoff is charged to classical: `knockout_preint` (C2/C4/C6
+preint, sigma_Q sensitivity) and `knockout_plain` (C2 rqmc, sigma_Q).
 """
 
 import math

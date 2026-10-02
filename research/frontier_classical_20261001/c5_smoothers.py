@@ -14,7 +14,6 @@ import research.frontier_classical_20261001.scrambles as sc  # noqa: I001  (pins
 import argparse
 import json
 import multiprocessing as mp
-import subprocess
 import time
 from pathlib import Path
 
@@ -23,6 +22,7 @@ from scipy.stats import qmc
 
 from research.frontier_classical_20261001 import c2_timing
 from research.frontier_classical_20261001.fit import summarize
+from research.frontier_classical_20261001.provenance import meta, require_clean
 from research.frontier_classical_20261001.oss import (bridge_plan, oss_bb_dims, oss_bb_paths,
                                                       oss_params, oss_paths)
 
@@ -80,7 +80,8 @@ def timing(out_dir, rates_path):
         name = f"B{case.na}x{case.nt}"
         for method in METHODS:
             est = rates_summary[f"{name}/{method}"]["summary"]
-            result[f"{name}/{method}"] = c2_timing.run_block(case, method, est, log)
+            result[f"{name}/{method}"] = c2_timing.run_block(case, method, est, log,
+                                                             root=ROOT_C5)
             (out_dir / "c5_timing.json").write_text(json.dumps(
                 dict(machine_log=log, blocks=result), indent=1, default=str))
     return result
@@ -92,13 +93,14 @@ def main():
     ap.add_argument("--out", required=True)
     ap.add_argument("--rates")
     args = ap.parse_args()
+    if args.phase == "timing" and not args.rates:
+        ap.error("the timing phase needs --rates <c5_rates.json>")
+    require_clean()
     out_dir = Path(args.out) / args.phase
     if out_dir.exists():
         raise SystemExit(f"refusing to overwrite {out_dir}")
     out_dir.mkdir(parents=True)
-    commit = subprocess.run(["git", "rev-parse", "HEAD"], cwd=sc.ROOT, capture_output=True,
-                            text=True).stdout.strip()
-    (out_dir / "commit.txt").write_text(commit + "\n")
+    (out_dir / "meta.json").write_text(json.dumps(meta(phase=args.phase, root=ROOT_C5), indent=1))
     if args.phase == "rates":
         rates(out_dir)
     else:

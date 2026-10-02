@@ -29,7 +29,10 @@ def depths(case):
     acc = json.loads((STAGE_A / case / "accounting.json").read_text())
     return {"favourable_leaf_table (QF)": fav,
             "clean_dependency_only (headline)": 2 * acc["exact"]["forward_dependency_t_depth"],
-            "clean_scheduled": acc["schedules"]["all"]["t_depth"]}
+            "clean_scheduled": acc["schedules"]["all"]["t_depth"],
+            # Chakrabarti et al.'s per-Q-operator T-depth for a smaller 3-asset payoff: a
+            # labelled hypothetical optimistic end (L1 N3), not a floor and not our oracle.
+            "hypothetical_9.5e3 (not a floor)": 9.5e3}
 
 
 def model_t(block, n):
@@ -62,12 +65,15 @@ def table(res):
         fit = est["canonical"][METHODS[best]]["fits"]["primary"]
         n_cf = (T995_15 * fit["A"] / (4 * 0.9 * EPS0)) ** (1 / fit["r"])
         rows["e_C = 0.9 eps (CF)"] = model_t(block, n_cf)
+        n_ci = est["canonical"][METHODS[best]]["n_eps"][str(EPS0)]["ci95"]
+        t_ci = [model_t(block, n) for n in n_ci]          # deviation D10: model-based
         ratios = {}
         for label, t in rows.items():
             dm = d_max(t, sigma)
             ratios[label] = {"t_c_s": t, "d_max": dm,
                              **{f"oracle/D_max [{d}]": v / dm for d, v in depths(case).items()}}
         out[case] = dict(sigma_q=sigma, comparator=best, candidates_s=cands,
+                         t_c_model_ci95_from_n_ci=t_ci,
                          pending_candidates=["C5 OSS-BB", "C5 OSS", "C6 GPU", "plain-MC anchors"],
                          depths=depths(case), rows=ratios,
                          stop=all(r["oracle/D_max [favourable_leaf_table (QF)]"] > 10

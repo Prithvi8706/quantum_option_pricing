@@ -16,7 +16,7 @@ BOOT_ROOT = 2026100112
 def windows(m_top):
     """Primary window first, then the sensitivity windows of the spec."""
     out = {"primary": (10, m_top), "w8": (8, m_top), "w12": (12, m_top)}
-    if m_top >= 19:
+    if m_top >= 18:
         out["w14"] = (14, m_top)
     return out
 

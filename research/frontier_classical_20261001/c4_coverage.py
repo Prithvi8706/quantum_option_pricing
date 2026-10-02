@@ -1,10 +1,11 @@
 """Item C4: coverage of the 16-scramble preint interval (ANALYSIS_SPEC_STAGE_C.md).
 
-`run` archives raw estimates: per development case, R = 1000 replications of 16 fresh
+Phase `raw` archives raw estimates: per development case, R = 1000 replications of 16 fresh
 scrambles to 2^13 (nested prefixes give 2^10..2^13), keys [2026100141, case_index, 4, rep, s];
-for 4x12 also replications 1000..1999 to 2^17. `score` computes coverage once the item C3
-reference exists.
-  python -m research.frontier_classical_20261001.c4_coverage --out <dir>
+for 4x12 also replications 1000..1999 to 2^17. Phase `score` computes coverage from those
+estimates and the item C3 references (Ref A, Ref B) by the spec's rules.
+  python -m research.frontier_classical_20261001.c4_coverage raw --out <dir>
+  python -m research.frontier_classical_20261001.c4_coverage score --res <results dir> --out <dir>
 """
 
 import research.frontier_classical_20261001.scrambles as sc  # noqa: I001  (pins threads first)
@@ -13,7 +14,6 @@ import argparse
 import json
 import math
 import multiprocessing as mp
-import subprocess
 import time
 from pathlib import Path
 
@@ -24,6 +24,8 @@ from scipy.stats import t as student_t
 
 from research.frontier_classical_20261001.basis import canonical_factor
 from research.frontier_classical_20261001.kernels import knockout_preint
+from research.frontier_classical_20261001.provenance import meta as provenance_meta
+from research.frontier_classical_20261001.provenance import require_clean
 
 ROOT_C4 = 2026100141
 R, SCRAMBLES, WORKERS = 1000, 16, 16
@@ -44,7 +46,7 @@ def preint_scramble(task):
     n_top = 2 ** max(levels)
     total, count, out = 0.0, 0, {}
     while count < n_top:
-        size = min(sc.CHUNK, n_top)
+        size = min(sc.CHUNK, n_top - count)
         z = ndtri(np.clip(sampler.random(size), 1e-15, 1 - 1e-15))
         y = knockout_preint(z @ L.T + mu, np.ascontiguousarray(z[:, 0]),
                             np.ascontiguousarray(L[:, 0]), case.na, case.nt, disc,
@@ -95,16 +97,75 @@ def score(estimates, levels, reference, ref_hw99, alpha_cells=18):
     return out
 
 
+def references(res):
+    """Item C3 primary agreement test and the item C4 reference (spec item C3)."""
+    a = json.loads((res / "c3_refa" / "ref_a.json").read_text())["cases"]
+    out = {}
+    for name in ("B4x12", "B8x52"):
+        b = json.loads((res / "c3_refb" / name / "ref_b.json").read_text())
+        ra, rb = a[name], b
+        diff = abs(ra["price"] - rb["price"])
+        passed = diff <= ra["hw99"] + rb["hw99"]
+        w_a, w_b = ra["se"] ** -2, rb["se"] ** -2
+        ref = (w_a * ra["price"] + w_b * rb["price"]) / (w_a + w_b)
+        out[name] = dict(ref_a=ra["price"], ref_a_hw99=ra["hw99"], ref_b=rb["price"],
+                         ref_b_hw99=rb["hw99"], abs_diff=diff, agreement_passed=passed,
+                         resolution=ra["hw99"] + rb["hw99"],
+                         reference=ref if passed else None,
+                         reference_hw99=2.576 * (w_a + w_b) ** -0.5 if passed else None)
+    return out
+
+
+def score_phase(res, out_dir):
+    refs = references(res)
+    raw = res / "c4"
+    result = dict(references=refs, cases={})
+    arms = [("B4x12", "B4x12_levels10to13.npy", LEVELS),
+            ("B8x52", "B8x52_levels10to13.npy", LEVELS),
+            ("B4x12", "B4x12_level17.npy", (17,))]
+    for name, f, levels in arms:
+        est = np.load(raw / f)
+        r = refs[name]
+        if r["agreement_passed"]:
+            targets = {"weighted": (r["reference"], r["reference_hw99"])}
+        else:
+            targets = {"ref_a": (r["ref_a"], r["ref_a_hw99"]),
+                       "ref_b": (r["ref_b"], r["ref_b_hw99"])}
+        for label, (ref, hw) in targets.items():
+            cells = result["cases"].setdefault(name, {}).setdefault(label, {})
+            cells.update(score(est, levels, ref, hw))
+    for name, by_ref in result["cases"].items():
+        # Primary check: raw 99% coverage at n = 2^13; the reference with lower coverage decides.
+        label = min(by_ref, key=lambda k: by_ref[k]["8192"]["0.99"]["raw"])
+        cell = by_ref[label]["8192"]
+        under = cell["0.99"]["raw_cp_bonferroni"][1] < 0.99
+        by_ref["primary_check"] = dict(reference=label, raw_99_at_8192=cell["0.99"]["raw"],
+                                       under_covering=bool(under),
+                                       c=cell["c_empirical_99"] if under else None)
+    (out_dir / "c4_coverage.json").write_text(json.dumps(result, indent=1))
+    for name, v in result["cases"].items():
+        print(name, v["primary_check"])
+
+
 def main():
     ap = argparse.ArgumentParser()
+    ap.add_argument("phase", choices=("raw", "score"))
     ap.add_argument("--out", required=True)
-    out_dir = Path(ap.parse_args().out)
+    ap.add_argument("--res")
+    args = ap.parse_args()
+    if args.phase == "score" and not args.res:
+        ap.error("the score phase needs --res <results dir>")
+    require_clean()
+    out_dir = Path(args.out)
     if out_dir.exists():
         raise SystemExit(f"refusing to overwrite {out_dir}")
     out_dir.mkdir(parents=True)
-    meta = dict(commit=subprocess.run(["git", "rev-parse", "HEAD"], cwd=sc.ROOT,
-                                      capture_output=True, text=True).stdout.strip(),
-                replications=R, scrambles=SCRAMBLES, levels=LEVELS, seconds={})
+    (out_dir / "meta.json").write_text(json.dumps(provenance_meta(phase=args.phase, root=ROOT_C4),
+                                                  indent=1))
+    if args.phase == "score":
+        score_phase(Path(args.res), out_dir)
+        return
+    meta = dict(replications=R, scrambles=SCRAMBLES, levels=LEVELS, seconds={})
     with mp.Pool(WORKERS) as pool:
         for case in DEV:
             name = f"B{case.na}x{case.nt}"

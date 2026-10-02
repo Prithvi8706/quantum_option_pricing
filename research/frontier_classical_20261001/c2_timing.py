@@ -57,29 +57,40 @@ def machine_state():
     busy = [line for line in procs.splitlines()
             if line.split()[0] != str(os.getpid()) and float(line.split()[1]) > 0.5]
     battery = powershell("(Get-CimInstance Win32_Battery).BatteryStatus")
+    cores = powershell("$c = Get-CimInstance Win32_Processor; '{0} {1}' -f "
+                       "$c.NumberOfCores, $c.NumberOfLogicalProcessors").split()
     try:
         cpu_avg = float(cpu)
     except ValueError:
         cpu_avg = None
-    return dict(cpu_percent_30s=cpu_avg, busy_python=busy, battery_status=battery,
+    return dict(cpu_percent_30s=cpu_avg, busy_python=busy, python_cpu_5s=procs.splitlines(),
+                battery_status=battery, physical_logical_cores=cores,
                 idle=cpu_avg is not None and cpu_avg < 10 and not busy)
 
 
-def wait_idle(log, max_wait_s=7200):
+class NotIdleError(RuntimeError):
+    """The machine never became idle; the timing run is not started (deviation D6)."""
+
+
+def wait_idle(log, max_wait_s=7200, label="block"):
+    """Wait for an idle machine. Since deviation D6 (2 October 2026) a timing run never starts
+    under load: after max_wait_s the run is refused and the state is logged."""
     t0 = time.time()
     while True:
         state = machine_state()
         if state["idle"] or time.time() - t0 > max_wait_s:
-            state["waited_s"] = round(time.time() - t0)
+            state.update(waited_s=round(time.time() - t0), label=label)
             log.append(state)
+            if not state["idle"]:
+                raise NotIdleError(f"machine not idle before {label}: {state}")
             return state
         time.sleep(60)
 
 
-def all16(pool, run_id, case, method, replication, n_top, purpose=1, submit=None):
+def all16(pool, run_id, case, method, replication, n_top, purpose=1, submit=None, root=ROOT_C2):
     """Convention (ii) and (i) from one 16-scramble run. `submit` lets fresh/cold runs start
-    their clock before the pool is created."""
-    tasks = [(run_id, case, method, (ROOT_C2, case.case_index, purpose, replication, s), n_top)
+    their clock before the pool is created. `root` is the item's seed root (deviation D6)."""
+    tasks = [(run_id, case, method, (root, case.case_index, purpose, replication, s), n_top)
              for s in range(SCRAMBLES)]
     submit = time.perf_counter() if submit is None else submit
     rows = pool.map(timed_scramble, tasks, chunksize=1)
@@ -95,9 +106,9 @@ def all16(pool, run_id, case, method, replication, n_top, purpose=1, submit=None
                              for n in marks})
 
 
-def load_balanced(pool, run_id, case, method, replication, n_top):
+def load_balanced(pool, run_id, case, method, replication, n_top, root=ROOT_C2):
     chunks = n_top // CHUNK
-    tasks = [(run_id, case, method, (ROOT_C2, case.case_index, 1, replication, s), c)
+    tasks = [(run_id, case, method, (root, case.case_index, 1, replication, s), c)
              for c in range(chunks) for s in range(SCRAMBLES)]
     submit = time.perf_counter()
     rows = list(pool.imap_unordered(timed_chunk, tasks, chunksize=1))
@@ -157,12 +168,15 @@ def t_c(block, c1_est, eps):
     return out
 
 
-def run_block(case, method, c1_est, log):
+def run_block(case, method, c1_est, log, root=ROOT_C2):
+    """One (case, method) timing block. `root` is the item's seed root: C2 2026100121,
+    C5 2026100151 (deviation D6). Idleness is checked before every sub-run."""
     run = f"{case.case_index}-{method}"
-    block = dict(machine=wait_idle(log))
+    block = dict(machine=wait_idle(log, label=f"{run} warm"), root=root)
     with mp.Pool(WORKERS, initializer=warm_up) as pool:
         wait_workers(pool, WORKERS)
-        block["warm"] = [all16(pool, f"{run}-w{r}", case, method, r, N_TOP) for r in WARM]
+        block["warm"] = [all16(pool, f"{run}-w{r}", case, method, r, N_TOP, root=root)
+                         for r in WARM]
         block["confirmation"] = {}
         for eps_index, eps in enumerate(EPS):
             n = c1_est["n_eps"][str(eps)]["point"]
@@ -170,25 +184,30 @@ def run_block(case, method, c1_est, log):
                 continue
             n_run = 2 ** math.ceil(math.log2(n))
             runs = [all16(pool, f"{run}-c{eps_index}-{k}", case, method, 100 * eps_index + k,
-                          n_run, purpose=3) for k in range(REPLICATIONS)]
+                          n_run, purpose=3, root=root) for k in range(REPLICATIONS)]
             block["confirmation"][str(eps)] = dict(n_run=n_run, runs=runs)
+    wait_idle(log, max_wait_s=1800, label=f"{run} fresh")
     start = time.perf_counter()
     with mp.Pool(WORKERS) as pool:
-        block["fresh"] = all16(pool, f"{run}-fresh", case, method, FRESH, N_TOP, submit=start)
+        block["fresh"] = all16(pool, f"{run}-fresh", case, method, FRESH, N_TOP, submit=start,
+                               root=root)
     cache = tempfile.mkdtemp(prefix="numba_cold_")
     old = os.environ.get("NUMBA_CACHE_DIR")
     os.environ["NUMBA_CACHE_DIR"] = cache
+    wait_idle(log, max_wait_s=1800, label=f"{run} cold")
     start = time.perf_counter()
     with mp.Pool(WORKERS) as pool:
-        block["cold"] = all16(pool, f"{run}-cold", case, method, COLD, N_TOP, submit=start)
+        block["cold"] = all16(pool, f"{run}-cold", case, method, COLD, N_TOP, submit=start,
+                              root=root)
     if old is None:
         os.environ.pop("NUMBA_CACHE_DIR")
     else:
         os.environ["NUMBA_CACHE_DIR"] = old
+    wait_idle(log, max_wait_s=1800, label=f"{run} load-balanced")
     with mp.Pool(LB_WORKERS, initializer=warm_up) as pool:
         wait_workers(pool, LB_WORKERS)
-        block["load_balanced"] = [load_balanced(pool, f"{run}-lb{r}", case, method, r, N_TOP)
-                                  for r in LB]
+        block["load_balanced"] = [load_balanced(pool, f"{run}-lb{r}", case, method, r, N_TOP,
+                                                root=root) for r in LB]
     block["fits"] = dict(all16=fit_ab(medians(block["warm"], "all16")),
                          per_scramble=fit_ab(medians(block["warm"], "per_scramble_median")),
                          load_balanced=fit_ab(medians(block["load_balanced"], "all16")))

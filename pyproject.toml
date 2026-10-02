@@ -1,6 +1,12 @@
 [tool.ruff]
 line-length = 100
-extend-exclude = ["*.ipynb", "research/journal_sprint/vendor"]
+extend-exclude = [
+    "*.ipynb",
+    "research/journal_sprint/vendor",
+    # Executed evidence, kept byte-identical to what ran (Stage A verifier hashes the first).
+    "results/frontier_completion_20260927/stage_a/executed_stage_a.py",
+    "results/frontier_replay_20261001/q0_attribution/*.py",
+]
 
 [tool.ruff.lint]
 select = ["E", "F", "W", "N"]
@@ -15,5 +21,6 @@ ignore = [
 
 [tool.pytest.ini_options]
 pythonpath = ["."]
-testpaths = ["tests", "research/paper_a/tests", "research/journal_sprint/tests"]
+testpaths = ["tests", "research/paper_a/tests", "research/journal_sprint/tests",
+             "research/frontier_classical_20261001", "research/frontier_replay_20261001"]
 markers = ["slow: full-benchmark sweeps, excluded from the fast loop"]

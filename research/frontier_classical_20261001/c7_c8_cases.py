@@ -2,6 +2,7 @@
 
   python -m research.frontier_classical_20261001.c7_c8_cases rates  --item c7|c8 --out <dir>
   python -m research.frontier_classical_20261001.c7_c8_cases timing --item c7|c8 --out <dir>
+      --rates <rates json>
   python -m research.frontier_classical_20261001.c7_c8_cases oracle --item c7|c8 --out <dir>
 `rates` (non-timing slot): sigma_Q and 32-scramble rate runs (C7: preint and rqmc to 2^19,
 2^18 for 16x52 if truncated; C8: preint to 2^17). `timing` (exclusive slot): warm all-16
@@ -14,7 +15,6 @@ import research.frontier_classical_20261001.scrambles as sc  # noqa: I001  (pins
 import argparse
 import json
 import multiprocessing as mp
-import subprocess
 import time
 from pathlib import Path
 
@@ -23,6 +23,7 @@ import numpy as np
 from research.frontier_classical_20261001 import c2_timing
 from research.frontier_classical_20261001.fit import summarize
 from research.frontier_classical_20261001.kernels import ESTIMANDS
+from research.frontier_classical_20261001.provenance import meta, require_clean
 from research.frontier_classical_20261001.sigma_q import sigma_q
 from research.frontier_classical_20261001.timing import wait_workers, warm_up
 
@@ -54,35 +55,40 @@ def cases_for(item):
     return C7_CASES if item == "c7" else tuple(c8_cases())
 
 
-def m_top_rule(item, out_dir):
-    """C7: 2^19, or 2^18 for all 16x52 cases if 8 x (first 16x52 H=140 scramble's time to
-    2^16) > 10 min, decided once before any fit. C8: 2^17."""
-    if item == "c8":
-        return {}, 17
-    t0 = time.perf_counter()
-    sc.run_scramble((C7_CASES[0], "canonical", (ROOTS["c7"], 2, 0, 0, 0), 16))
-    probe = time.perf_counter() - t0
-    m16 = 18 if 8 * probe > 600 else 19
-    (out_dir / "truncation.json").write_text(json.dumps(dict(probe_seconds_to_2_16=probe,
-                                                             m_top_16x52=m16)))
-    return {16: m16}, 19
-
-
 def rates(item, out_dir):
-    overrides, m_default = m_top_rule(item, out_dir)
+    """C8: every case to 2^17. C7: 2^19, except that all three 16x52 cases are truncated to
+    2^18 if 8 x (time to 2^16 of the first completed scramble of the pooled 16x52 H = 140
+    run) exceeds 10 minutes. Case 2 runs first; the decision is made from that scramble alone
+    and before any fit, then case 2 is analysed with the decided top prefix."""
+    m_default = 19 if item == "c7" else 17
+    m16 = m_default
     result = {}
     with mp.Pool(WORKERS) as pool:
         sigmas = dict(zip((c.case_index for c in cases_for(item)),
                           pool.map(sigma_q, cases_for(item), chunksize=1)))
         for case in cases_for(item):
-            m_top = overrides.get(case.na, m_default)
+            m_top = m16 if case.na == 16 else m_default
             t0 = time.time()
             tasks = [(case, "canonical", (ROOTS[item], case.case_index, 0, 0, s), m_top)
                      for s in range(SCRAMBLES)]
-            rows = pool.map(sc.run_scramble, tasks, chunksize=1)
-            arr = np.stack([r["prefix"] for r in rows])
+            if item == "c7" and case.case_index == 2:
+                rows = []
+                for row in pool.imap_unordered(sc.run_scramble, tasks, chunksize=1):
+                    if not rows:
+                        first = row["elapsed"][row["ms"].index(16)]
+                        m16 = 18 if 8 * first > 600 else 19
+                        (out_dir / "truncation.json").write_text(json.dumps(dict(
+                            first_scramble=row["seed_key"][-1], seconds_to_2_16=first,
+                            m_top_16x52=m16)))
+                    rows.append(row)
+                rows.sort(key=lambda r: r["seed_key"][-1])
+                m_top = m16
+            else:
+                rows = pool.map(sc.run_scramble, tasks, chunksize=1)
+            keep_m = [i for i, m in enumerate(rows[0]["ms"]) if m <= m_top]
+            arr = np.stack([r["prefix"][:, keep_m] for r in rows])
             np.save(out_dir / f"case{case.case_index}.npy", arr)
-            ms = rows[0]["ms"]
+            ms = [rows[0]["ms"][i] for i in keep_m]
             keep = ("knockout_pre", "knockout") if item == "c7" else ("knockout_pre",)
             result[str(case.case_index)] = dict(
                 case=case.__dict__, m_top=m_top, sigma=sigmas[case.case_index],
@@ -102,11 +108,12 @@ def timing(item, out_dir, rates_path):
     for case in cases_for(item):
         entry = rates_summary[str(case.case_index)]
         n_top = 2 ** (19 if item == "c7" else 17)
-        block = dict(machine=c2_timing.wait_idle(log))
+        block = dict(machine=c2_timing.wait_idle(log, label=f"{item}-{case.case_index}"))
         with mp.Pool(WORKERS, initializer=warm_up) as pool:
             wait_workers(pool, WORKERS)
-            block["warm"] = [c2_timing.all16(pool, f"{item}-{case.case_index}-w{r}", case, "preint",
-                                             r, n_top) for r in repeats]
+            block["warm"] = [c2_timing.all16(pool, f"{item}-{case.case_index}-w{r}", case,
+                                             "preint", r, n_top, root=ROOTS[item])
+                             for r in repeats]
         block["fits"] = dict(all16=c2_timing.fit_ab(c2_timing.medians(block["warm"], "all16")),
                              per_scramble=c2_timing.fit_ab(c2_timing.medians(
                                  block["warm"], "per_scramble_median")))
@@ -120,17 +127,29 @@ def timing(item, out_dir, rates_path):
             dict(machine_log=log, blocks=result), indent=1, default=str))
 
 
+ORACLE_BUDGET_S = 2 * 3600
+
+
 def oracle(item, out_dir):
+    """Depth (a) and depth (b). The 2-hour budget for (b) is enforced as wall-clock time in a
+    child process (single-threaded compile, so wall >= CPU time); a case over budget, or one
+    that fails, is reported as not done and never retried."""
     from research.frontier_classical_20261001.oracle import compiled_depths, favourable_score
     result = {}
     for case in cases_for(item):
         fav = favourable_score(case)
         row = dict(favourable_clean_call_t_depth=fav["clean_call_t_depth"],
                    favourable_forward=fav["forward_critical_t_depth"])
+        child = mp.Pool(1)
         try:
-            row["compiled"] = compiled_depths(case, out_dir / f"case{case.case_index}")
-        except Exception as exc:                      # reported as not done, never retried
-            row["compiled"] = dict(error=repr(exc))
+            job = child.apply_async(compiled_depths, (case, out_dir / f"case{case.case_index}"))
+            row["compiled"] = job.get(timeout=ORACLE_BUDGET_S)
+        except mp.TimeoutError:
+            row["compiled"] = dict(not_done=f"over the {ORACLE_BUDGET_S} s budget")
+        except Exception as exc:
+            row["compiled"] = dict(not_done=repr(exc))
+        finally:
+            child.terminate()
         result[str(case.case_index)] = row
         (out_dir / f"{item}_oracle.json").write_text(json.dumps(result, indent=1))
         print(item, case.case_index, row["favourable_clean_call_t_depth"],
@@ -144,12 +163,15 @@ def main():
     ap.add_argument("--out", required=True)
     ap.add_argument("--rates")
     args = ap.parse_args()
+    if args.phase == "timing" and not args.rates:
+        ap.error("the timing phase needs --rates <rates json>")
+    require_clean()
     out_dir = Path(args.out) / args.item / args.phase
     if out_dir.exists():
         raise SystemExit(f"refusing to overwrite {out_dir}")
     out_dir.mkdir(parents=True)
-    (out_dir / "commit.txt").write_text(subprocess.run(
-        ["git", "rev-parse", "HEAD"], cwd=sc.ROOT, capture_output=True, text=True).stdout)
+    (out_dir / "meta.json").write_text(json.dumps(meta(item=args.item, phase=args.phase,
+                                                       root=ROOTS[args.item]), indent=1))
     if args.phase == "rates":
         rates(args.item, out_dir)
     elif args.phase == "timing":
