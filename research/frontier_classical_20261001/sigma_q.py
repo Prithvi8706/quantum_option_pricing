@@ -44,3 +44,31 @@ def sigma_q(case):
                 sigma_q_ci95=[float(x) for x in np.percentile(boot, [2.5, 97.5])],
                 sigma_preint=float(pre.std(ddof=1)), mean_plain=float(plain.mean()),
                 mean_preint=float(pre.mean()), paths=PATHS)
+
+
+def main():
+    """sigma_Q for the development cases (case_index 0 and 1):
+    python -m research.frontier_classical_20261001.sigma_q --out <dir>"""
+    import argparse
+    import json
+    import multiprocessing as mp
+    import subprocess
+    from pathlib import Path
+
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--out", required=True)
+    out_dir = Path(ap.parse_args().out)
+    if out_dir.exists():
+        raise SystemExit(f"refusing to overwrite {out_dir}")
+    out_dir.mkdir(parents=True)
+    cases = (sc.Case(0, 4, 12), sc.Case(1, 8, 52))
+    with mp.Pool(2) as pool:
+        rows = pool.map(sigma_q, cases)
+    commit = subprocess.run(["git", "rev-parse", "HEAD"], cwd=sc.ROOT, capture_output=True,
+                            text=True).stdout.strip()
+    (out_dir / "sigma_dev.json").write_text(json.dumps(dict(
+        commit=commit, cases={f"B{c.na}x{c.nt}": r for c, r in zip(cases, rows)}), indent=1))
+
+
+if __name__ == "__main__":
+    main()
