@@ -138,7 +138,7 @@ logical T-layer and k = 3.
 | Quantum oracle calls k·σ/e | ≈ 34,000 |
 | Cheapest-leaf dependency score (forward + inverse; not compiled) | 9.0×10⁵ T-layers, i.e. 0.09 s per modelled call at 100 ns |
 | Source-only time model at hypothetical k = 3 | ≈ 3,100 s; excludes an implemented estimator and physical overhead |
-| Historical classical time-to-accuracy model (16 workers, best method tested in P3) | **27.1 s**; not a timed run at the required sample count |
+| Historical classical time-to-accuracy model (16 workers, best method tested in P3) | **27.1 s**; not a timed run at the required sample count. Its 8×52 rate depends on a non-unique PCA basis (ERRATA E10); Stage C item C2 measures 22.5 s at the canonical basis |
 | D_max for a 10× win | **789 T-layers per call** |
 
 This source-only sensitivity model is about **110 times slower**. Its 10× budget miss
@@ -533,8 +533,9 @@ Independent expert analyses reach the same classification:
 - Babbush et al., PRX Quantum 2021: quadratic speedups need about cubic–quartic
   separations, or roughly 10³× faster logic, to pay off;
 - Hoefler, Häner and Troyer, CACM 2023;
-- "The Grand Challenge of Quantum Applications", 2025, which places derivative pricing in
-  the quadratic-only class.
+- "The Grand Challenge of Quantum Applications" (PRX Quantum 7, 020101, 2026), which cites
+  the derivative-pricing threshold estimate among quadratic-only resource estimates
+  (Table 3 caption).
 
 ---
 
@@ -579,7 +580,7 @@ lower bound was proved.
 - S. Chakrabarti et al., "A threshold for quantum advantage in derivative pricing," Quantum 5, 463 (2021). https://arxiv.org/abs/2012.03819
 - N. Stamatopoulos and W. J. Zeng, "Derivative pricing using quantum signal processing," Quantum 8, 1322 (2024). https://arxiv.org/abs/2307.14310
 - T. Hoefler, T. Häner and M. Troyer, "Disentangling hype from practicality: on realistically achieving quantum advantage," CACM 66(5) (2023). https://arxiv.org/abs/2307.00523
-- "The Grand Challenge of Quantum Applications" (2025). https://arxiv.org/abs/2511.09124
+- "The Grand Challenge of Quantum Applications", PRX Quantum 7, 020101 (2026). https://arxiv.org/abs/2511.09124
 - McArdle, Dalzell, Kubica and Brandão, "The Fast for the Curious: how to accelerate fault-tolerant quantum applications" (2025). https://arxiv.org/abs/2510.26078
 - Google Quantum AI, "Quantum error correction below the surface code threshold," Nature (2025). https://arxiv.org/abs/2408.13687
 - C. Gidney, "How to factor 2048 bit RSA integers with less than a million noisy qubits" (2025). https://arxiv.org/abs/2505.15917

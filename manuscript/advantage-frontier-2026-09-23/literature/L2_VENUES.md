@@ -130,6 +130,14 @@ both at onos.gov.in.
 
 ## 3. Recommendation (for the author to accept or change)
 
+**Status after the L1 checkpoint.** This recommendation was written before the L1 checkpoint
+returned GO_NARROWED (L1_PRIOR_ART.md §5), and its condition 1 was framed for a plain "go". L1 finds
+that the frontier argument is already published in general and illustrative form, and it names binding
+narrowings N1–N6. L1 also says the narrowed claim set suits a computational-finance or benchmark venue at
+least as well as a quantum one, with a Quantum-style venue still possible on the Brehm–Weggemans
+precedent. The Quantum recommendation therefore needs re-evaluation against the narrowed claims.
+Condition 1 below is restated to match L1. The venue choice remains the author's.
+
 **Primary: Quantum (quantum-journal.org), on three conditions.**
 
 Reasons:
@@ -143,9 +151,16 @@ Reasons:
 - Posting to arXiv is already on the author's list in plan section 8.
 
 The conditions:
-1. The L1 novelty checkpoint is a "go", meaning the frontier argument is not already published. Quantum
-   treats incremental work as below its bar, so the paper must lead with the general frontier, the
-   calculator and the checklist, as the plan already says.
+1. The paper is framed within L1's GO_NARROWED narrowings N1–N6. It leads with a measured instantiation
+   for option pricing of the published break-even argument, not a new framework or the first
+   requirements frontier (N1). It reports the knock-out exponents as a known phenomenon limited to the
+   smoothers executed (N2) and the compiled oracle bracket at both ends without priority wording (N3).
+   The calculator is domain-specific and cites the QEA calculator (N4). It cites Campbell et al., Brehm
+   and Weggemans, and Incudini and Mazzola as the measured-comparator templates and claims only the
+   transfer to mean estimation for pricing (N5). The checklist is presented as a pricing-specific
+   consolidation of published guidance. The title keeps the negative result; whether to replace "a
+   measured requirements frontier" is the author's call (N6). Quantum treats incremental work on a limited technique as below
+   its bar, so whether this narrowed paper clears that bar is the main risk to this choice.
 2. The author obtains quant-ph endorsement in Week 1.
 3. The author accepts public posting before review and the irrevocable CC BY 4.0 licence for the accepted
    version on arXiv.

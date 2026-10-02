@@ -59,7 +59,7 @@ not ready to freeze. Version 2.1 addresses every item:
 | SCF-19 partial | A port or setup failure blocks item C1; continuation only by a dated deviation |
 | New: C3 agreement-failure branch | Both prices reported; the reference giving lower coverage decides (QF); validations must pass against both |
 | New: C7/C8/table details | C8 uses depth (a) for counts and trigger, reports (b); C8 T_C = all-16 model; trigger also for development cases; C7 rows labelled preint-CPU |
-| New: seed gaps | Five-word keys everywhere, purpose codes 0–9, replication indices for every repeat type, σ_Q root, bootstrap root. The reviewer's claim that SeedSequence zero-padding makes shorter keys equivalent was checked and is false for five words; code uses the five-word keys as written |
+| New: seed gaps | Five-word keys everywhere, purpose codes 0–9, replication indices for every repeat type, σ_Q root, bootstrap root. The reviewer's claim that SeedSequence zero-padding makes keys equivalent (3 and 4 words alias; 4 and 5 do not) is correct; it was first misrecorded here as false after a 2-word versus 5-word test, and corrected on 2 October. Declared keys are five words except the rotation and port-check keys, which have no 4-word counterparts, so none collide; code uses the keys as written |
 | New: unlabelled choices | Section 0.5 lists the additional QF and CF labels |
 | New: Q4 details | Absolute law error; δ defined on the traced max-basket node; no analytic bound used; at least 10⁴ draws with no fallback |
 | New: coverage cells and resolution | Raw coverage primary; Bonferroni over 18 cells; resolution = hw99(A) + hw99(B) |
