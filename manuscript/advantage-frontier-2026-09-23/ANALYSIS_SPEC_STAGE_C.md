@@ -512,3 +512,11 @@ verdict is the current status, not a required outcome.
   the archived price when Q0 records no mismatch. C4's chunk sizing uses n_top − count.
   Neither changes an executed result: the port check passed, and every C4 size is a power
   of two ≥ 2^12.
+- **D12, 2 October 2026 (item C7 depth (b), re-run logged before it starts).** The first C7
+  oracle run (`results/.../c7/oracle/`, from `9d734ff5`) reported depth (b) as not done for
+  every case: `FileNotFoundError`. The compiler's `resolve_library` resolves a leaf library
+  through its `results/` suffix against the checkout that runs the code, and it refuses `..`.
+  The output directory was in the main checkout, not in the running worktree, so the path
+  resolved to a location that did not exist. Depth (a) is unaffected. Re-run under the
+  execution rule (a defect, logged first), from a fresh clean worktree, with the output
+  inside that worktree, copied to `results/.../c7/oracle_d12/`. The failed run is kept.
