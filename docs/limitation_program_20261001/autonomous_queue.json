@@ -1,0 +1,2312 @@
+{
+  "schema": "local-autonomous-limitation-queue-v1",
+  "created_utc": "2026-10-02T06:25:55.079999+00:00",
+  "planning_only": true,
+  "local_only": true,
+  "entry_count": 110,
+  "source_sha256": {
+    "docs\\limitation_audit_20261001\\implementation_plan\\roadmap.json": "59333ddeba6ee73950cba5a7a669fdc6dd3a9db8629297335d507b65c6a02b6a",
+    "results\\limitation_program_20261001\\progress.json": "fea60a058aee2e1d337e9469f5487016780c4e513c683054fa5d3649e6f69036",
+    "manuscript\\advantage-frontier-2026-09-23\\WHY_NO_ADVANTAGE.md": "b3798f7c44a5bbc6c95d710ba38d5e713d6614294581543bbcaf18a2dfdf0637"
+  },
+  "accepted_source": "results/limitation_program_20261001/A10_coefficient_run001",
+  "gates_snapshot": {
+    "G0": "passed for current B4/B8 task and provenance",
+    "G1": "passed for current exact B4/B8 source: structural arithmetic, tests, full emitted replays and independent cost audits",
+    "G2": "open",
+    "G3": "open",
+    "G4": "open",
+    "G5": "open"
+  },
+  "ordered_packages": [
+    {
+      "order": 1,
+      "ids": [
+        "E02",
+        "E03",
+        "E07"
+      ]
+    },
+    {
+      "order": 2,
+      "ids": [
+        "C06"
+      ]
+    },
+    {
+      "order": 3,
+      "ids": [
+        "C07"
+      ]
+    },
+    {
+      "order": 4,
+      "ids": [
+        "C09",
+        "F01",
+        "F02",
+        "C08"
+      ]
+    },
+    {
+      "order": 5,
+      "ids": [
+        "H17",
+        "H18",
+        "C04"
+      ]
+    },
+    {
+      "order": 6,
+      "ids": [
+        "E04",
+        "E21",
+        "E24"
+      ]
+    }
+  ],
+  "routing_counts": {
+    "later-measured-source-hotspot": 5,
+    "requires-declared-financial-bias-budget": 11,
+    "preserve-verified-scoped-component": 15,
+    "preserve-closed-tested-branch": 1,
+    "active-bounded-harness": 1,
+    "conditional-structured-branch": 32,
+    "next-source-estimator-ledger": 3,
+    "source-compatible-estimator": 9,
+    "matched-classical-comparator": 12,
+    "compatible-physical-frontier": 19,
+    "next-financial-certificate": 2
+  },
+  "entries": [
+    {
+      "id": "A01",
+      "title": "Separate uniform preparation, normal loading, correlation and payoff costs",
+      "queue_priority": 50,
+      "routing": "later-measured-source-hotspot",
+      "original_plan_status": "ready",
+      "execution_status_snapshot": "One exact non-restoring signed-remainder root passed28 leaf+60 integration tests. Full capped Tdepth reduced15.9311% B4/15.3937% B8, Twork reduced1.5724%/1.4924%, same qubit caps. All4 financial dirty-output cleanup replays and61-array independent audit passed; all30/234 unsigned46 site guards and adopted78/650 signed7 shifts retained. V1 audit2-per-case bookkeeping failure preserved asA01_run010; corrected baseline3+1 replay cardinality audited in freshA01_run011. No pricing/precision/law/criterion changed. Scoped A11 exact alternative adopted; Newton/Heston/G2-G5 remain open.",
+      "depends_on": [
+        "G0"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Build an analysis-only ledger for both latest B4x12 and B8x52 sources, assigning every node and emitted invocation to exactly one of uniform preparation, scalar normal generation, correlation, or path/payoff.",
+      "stop_rule": "One ledger implementation and one independently recomputed reconciliation per case. If shared-node classification is ambiguous, retain its attribution as an explicit shared cost and resolve accounting before proposing loader savings.",
+      "receipt_references": [
+        "results/limitation_program_20261001/A11_nonrestoring_leaf_run001",
+        "results/limitation_program_20261001/A11_nonrestoring_run001",
+        "results/limitation_program_20261001/A01_run011"
+      ],
+      "source_sections": [
+        "\u00a73 item 1: coherent randomness and 468 Gaussians",
+        "\u00a73 operation cost table",
+        "\u00a76 better compilation"
+      ]
+    },
+    {
+      "id": "A02",
+      "title": "Replace Box-Muller only after a complete scalar-loader comparison",
+      "queue_priority": 6,
+      "routing": "requires-declared-financial-bias-budget",
+      "original_plan_status": "partial",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0",
+        "A01",
+        "A05"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Freeze one scalar Gaussian grid and its allocated error, then complete the Clifford+T cost of the existing prefix-rotation preparation/inverse before screening a separate QSVT Gaussian loader.",
+      "stop_rule": "Screen prefix, QSVT and MPS at one common grid and three error targets; emit at most two candidates. Stop replacing Box-Muller if no candidate reaches the allocated error or if its complete cost is dominated.",
+      "receipt_references": [],
+      "source_sections": [
+        "\u00a73 item 1: Box-Muller or equivalent loader",
+        "\u00a75 root cause C: state loading"
+      ]
+    },
+    {
+      "id": "A03",
+      "title": "Certify recursive-loading integrals and conditional angles",
+      "queue_priority": 6,
+      "routing": "requires-declared-financial-bias-budget",
+      "original_plan_status": "partial",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0",
+        "A05"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Replace floating-point prefix probabilities at the first two Gaussian-loading levels with interval-certified probabilities and angle enclosures, then synthesize those rotations with a charged error budget.",
+      "stop_rule": "Two certified levels and a full-tree count suffice for the first decision. Reject the cheap-recursive-loader claim if precision makes interval/angle generation or the exponential prefix table dominate A02\u2019s comparator.",
+      "receipt_references": [],
+      "source_sections": [
+        "\u00a73 item 1: equivalent loader",
+        "\u00a75 root cause C: alternative state preparation"
+      ]
+    },
+    {
+      "id": "A04",
+      "title": "Turn Gaussian MPS compression into an emitted, synthesized circuit",
+      "queue_priority": 6,
+      "routing": "requires-declared-financial-bias-budget",
+      "original_plan_status": "partial",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0",
+        "A03",
+        "A05"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Emit a sequential preparation/inverse circuit for the existing ten-bit bond-eight Gaussian MPS compression, then measure synthesis error and resource cost against the prefix baseline.",
+      "stop_rule": "Three bonds and three error targets on the ten-bit grid, with at most three emitted candidates. If all are dominated or miss the error target, archive the negative result and stop this architecture.",
+      "receipt_references": [],
+      "source_sections": [
+        "\u00a73 item 1: coherent normal loading",
+        "\u00a76 better compilation"
+      ]
+    },
+    {
+      "id": "A05",
+      "title": "Allocate and compose loading error across independent draws",
+      "queue_priority": 6,
+      "routing": "requires-declared-financial-bias-budget",
+      "original_plan_status": "ready",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Prove a two-factor preparation-error bound and assign a numeric scalar allowance from a frozen dollar loading budget, then scale the proved construction to each actual draw count.",
+      "stop_rule": "Evaluate the conservative product bound and one contract-aware refinement. If both force an unattainable loader precision at the screened costs, suspend law replacement and keep exact-source work moving.",
+      "receipt_references": [],
+      "source_sections": [
+        "\u00a73 item 1: 468 Gaussians",
+        "\u00a74 Failure 5: input and workspace width",
+        "\u00a75 root cause F: certification"
+      ]
+    },
+    {
+      "id": "A06",
+      "title": "Combine exact compact storage with the latest arithmetic schedule",
+      "queue_priority": 90,
+      "routing": "preserve-verified-scoped-component",
+      "original_plan_status": "partial",
+      "execution_status_snapshot": "accepted exact component",
+      "depends_on": [
+        "G0",
+        "A01"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Adapt compact SSA binding to the latest carry-save/ln(2) source and memory-capped wave scheduler without changing any arithmetic width or finite financial function.",
+      "stop_rule": "One merged binding, two caps per case, and at most one scheduler adjustment after a failed cap. If compact private-wire lifetimes cannot be proved, retain the previously verified serial opt-in path.",
+      "receipt_references": [
+        "results\\limitation_program_20261001\\A06_run001\\summary.json"
+      ],
+      "source_sections": [
+        "\u00a73 item 2: global 72-bit fixed point",
+        "\u00a74 Failure 5: millions of retained SSA qubits",
+        "\u00a75 root cause C: precision and representation"
+      ]
+    },
+    {
+      "id": "A07",
+      "title": "Prove reachable ranges before narrowing arithmetic",
+      "queue_priority": 90,
+      "routing": "preserve-verified-scoped-component",
+      "original_plan_status": "ready",
+      "execution_status_snapshot": "Exact signed7 control leaf passed27 tests and proof-dispatched integration52 tests; full capped source Tdepth reduced4.3447% B4 and5.7887% B8, Twork reduced0.7121% and0.7220%, same qubit caps/target/copies/other leaf bytes. All4 financial dirty-output cleanup replays passed. Independent61-array/220-metadata audit passed; scoped A07 component adopted, wider limitation and G2-G5 open.",
+      "depends_on": [
+        "G0",
+        "A01"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Create a new contract-specific interval/relational certificate for one B4x12 exponential, including its range-reduction integer and every intermediate coefficient/product/shift.",
+      "stop_rule": "One exponential proof with interval propagation and one relational refinement. If the range remains too loose, preserve the wider node and move to another exact cost instead of repeatedly sampling paths.",
+      "receipt_references": [
+        "results/limitation_program_20261001/A07_shift_leaf_run001",
+        "results/limitation_program_20261001/A07_shift_run001",
+        "results/limitation_program_20261001/A01_run009"
+      ],
+      "source_sections": [
+        "\u00a74 Failure 5: range-certified multipliers",
+        "\u00a74 Failure 6: incomplete knock-out financial validation",
+        "\u00a75 root cause C: precision choices"
+      ]
+    },
+    {
+      "id": "A08",
+      "title": "Benchmark a matching clean carry-lookahead adder",
+      "queue_priority": 95,
+      "routing": "preserve-closed-tested-branch",
+      "original_plan_status": "ready",
+      "execution_status_snapshot": "exact leaves verified; full-source gains below 2% threshold; baseline retained",
+      "depends_on": [
+        "G0",
+        "A01"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Emit an exact modular clean-XOR carry-lookahead add/subtract leaf matching primitives.build, then compare it with the current ripple implementation at 72 bits.",
+      "stop_rule": "Two carry-lookahead variants at 24, 40 and 72 bits; emit full sources for at most the best two. Stop if every variant exceeds the cap or full-source depth is unchanged/worse.",
+      "receipt_references": [
+        "results/limitation_program_20261001/A08_run001/FINAL_RECEIPT.json"
+      ],
+      "source_sections": [
+        "\u00a73 add/subtract leaf row",
+        "\u00a75 root cause C: arithmetic architecture",
+        "\u00a76 better compilation"
+      ]
+    },
+    {
+      "id": "A09",
+      "title": "Extend the measured multiplier frontier without assuming Karatsuba wins",
+      "queue_priority": 90,
+      "routing": "preserve-verified-scoped-component",
+      "original_plan_status": "partial",
+      "execution_status_snapshot": "Exact signed active-plane CSA/Brent-Kung portfolio mixed24-40 adopted: both actual operand guards at527/4451 sites; full capped T-depth719916/743064 (8.5898%/9.4120% better) and Tcount521330110/4267504654 (15.8505%/16.2499% better);113 new tests,4 financial replays, independent68-array audit passed. Native interfaces, full112-bit correction/low carries, target precision/input law, accepted roots/shifts/32rowlookup and SSA masks/copies preserved. This is a scoped A09 gain, not complete limitation closure or quantum advantage.",
+      "depends_on": [
+        "G0",
+        "A01",
+        "A07"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Inventory the proved active operand widths, then benchmark range-specific carry-save products at 24, 40 and 72 active bits against the already retained exact multiplier.",
+      "stop_rule": "Three active widths and at most two new circuit families. Reject Karatsuba for this run if its complete estimate is dominated before emission; do not pursue its asymptotic exponent at arbitrary widths.",
+      "receipt_references": [
+        "results/limitation_program_20261001/A09_range_leaf_run001",
+        "results/limitation_program_20261001/A09_range_run001",
+        "results/limitation_program_20261001/A01_run012",
+        "results/limitation_program_20261001/WAVE06_run001"
+      ],
+      "source_sections": [
+        "\u00a73 item 2: multiply cost",
+        "\u00a74 Failure 5: range-narrow multiplication",
+        "\u00a75 root cause C: quadratic schoolbook work"
+      ]
+    },
+    {
+      "id": "A10",
+      "title": "Finish constant-product and square specialization after the ln(2) win",
+      "queue_priority": 90,
+      "routing": "preserve-verified-scoped-component",
+      "original_plan_status": "partial",
+      "execution_status_snapshot": "Native72/40 unrestricted signed coefficient portfolio min-depth adopted at14 B4/1 B8 actual calls. T-depth555774/663704 (22.8002%/10.6801% better), Tcount520720662/4267435214 (0.1169%/0.001627% better), current qubits550141/4460479 unchanged. All119 leaf+72 integration cases and4 financial replays passed; independent80-array/378-metadata audit A01_run014 passed. A01_run013 failed only an incorrect assumption that allthree globalcoefficients occurinbothcases and ispreserved withoriginalauditor. Source/leaf/criteria/inputs unchanged in versioned audit correction. All ranges, roots, shifts, logconstants,32rowlookup,precision/law,SSA masks/copies preserved. A10 remains scoped; quantumadvantage/G2-G5 unproved.",
+      "depends_on": [
+        "G0",
+        "A01",
+        "A07"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Enumerate the remaining expensive coefficients and exact self-products, then prove whether the logarithm range-reduction integer can use seven signed bits in the already exact ln(2) specialization.",
+      "stop_rule": "Screen the top three constant coefficients and the top two square signatures; emit at most two candidates. Stop a candidate when its maximum attributable depth saving is below 0.1% of the current source or it is resource-dominated.",
+      "receipt_references": [
+        "results/limitation_program_20261001/A10_coefficient_leaf_run001",
+        "results/limitation_program_20261001/A10_coefficient_run001",
+        "results/limitation_program_20261001/A01_run014",
+        "results/limitation_program_20261001/WAVE07_run001"
+      ],
+      "source_sections": [
+        "\u00a73 multiplication and polynomial arithmetic",
+        "\u00a75 root cause C: separate squares and constant products"
+      ]
+    },
+    {
+      "id": "A11",
+      "title": "Match square-root interfaces and charge remainder cleanup",
+      "queue_priority": 90,
+      "routing": "preserve-verified-scoped-component",
+      "original_plan_status": "ready",
+      "execution_status_snapshot": "One exact non-restoring signed-remainder root passed28 leaf+60 integration tests. Full capped Tdepth reduced15.9311% B4/15.3937% B8, Twork reduced1.5724%/1.4924%, same qubit caps. All4 financial dirty-output cleanup replays and61-array independent audit passed; all30/234 unsigned46 site guards and adopted78/650 signed7 shifts retained. V1 audit2-per-case bookkeeping failure preserved asA01_run010; corrected baseline3+1 replay cardinality audited in freshA01_run011. No pricing/precision/law/criterion changed. Scoped A11 exact alternative adopted; Newton/Heston/G2-G5 remain open.",
+      "depends_on": [
+        "G0",
+        "A01",
+        "A07"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Implement a non-restoring clean-XOR alternative for the current exact fixed-point square root, including root/remainder erasure; the baseline already implements digit-by-digit square root.",
+      "stop_rule": "One exact root family and one analytic Newton resource/error screen at 24, 40 and 72 bits. Stop if no complete leaf improves or if the reachable near-zero domain prevents a bounded approximation.",
+      "receipt_references": [
+        "results/limitation_program_20261001/A11_nonrestoring_leaf_run001",
+        "results/limitation_program_20261001/A11_nonrestoring_run001",
+        "results/limitation_program_20261001/A01_run011"
+      ],
+      "source_sections": [
+        "\u00a73 square-root leaf row",
+        "\u00a74 Failure 1: coherent Heston-step bottleneck",
+        "\u00a75 root cause C: numerical functions"
+      ]
+    },
+    {
+      "id": "A12",
+      "title": "Screen reciprocal division with exact quotient correction",
+      "queue_priority": 50,
+      "routing": "later-measured-source-hotspot",
+      "original_plan_status": "ready",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0",
+        "A01",
+        "A07"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Inventory actual divide denominators and prove one positive range, then implement reciprocal multiplication with a final quotient/remainder correction for that range.",
+      "stop_rule": "Screen all denominator classes once; prototype the highest-cost proved-away-from-zero class and one constant class. Stop Newton replacement if correcting the quotient consumes its saving.",
+      "receipt_references": [],
+      "source_sections": [
+        "\u00a73 divide leaf row",
+        "\u00a74 Failure 4: controlled-source phase arithmetic",
+        "\u00a75 root cause C: numerical arithmetic"
+      ]
+    },
+    {
+      "id": "A13",
+      "title": "Search a bounded exponential degree/segment frontier",
+      "queue_priority": 6,
+      "routing": "requires-declared-financial-bias-budget",
+      "original_plan_status": "ready",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0",
+        "A07"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "For the newly proved exponential domain, certify a finite grid of minimax degree/segment choices before emitting the best two complete function candidates; the current Estrin source is the baseline.",
+      "stop_rule": "Twenty degree/segment pairs in the first screen and at most two new emitted candidates. Stop if all violate error/cap requirements or the full source is resource-dominated.",
+      "receipt_references": [],
+      "source_sections": [
+        "\u00a73 item 3: degree-12 exponential",
+        "\u00a74 Failure 3: compiled exponential dominates",
+        "\u00a75 root cause C: polynomial arithmetic"
+      ]
+    },
+    {
+      "id": "A14",
+      "title": "Bound CORDIC/log-cosine transfer before circuit work",
+      "queue_priority": 6,
+      "routing": "requires-declared-financial-bias-budget",
+      "original_plan_status": "conditional",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0",
+        "A01",
+        "A08"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Compute a charged iteration/add/shift/cleanup resource bound for a reversible cosine on the exact Box-Muller domain; proceed to gates only if it can beat the measured polynomial block.",
+      "stop_rule": "One cosine feasibility screen and one minimax comparator; emit at most one production candidate. Suspend CORDIC if iteration/history cleanup dominates or A02 removes its use.",
+      "receipt_references": [],
+      "source_sections": [
+        "\u00a73 items 1 and 3: log/cosine Gaussian arithmetic",
+        "\u00a75 root cause C: alternative arithmetic families"
+      ]
+    },
+    {
+      "id": "A15",
+      "title": "Preserve the completed exact coefficient-lookup replacement",
+      "queue_priority": 90,
+      "routing": "preserve-verified-scoped-component",
+      "original_plan_status": "complete",
+      "execution_status_snapshot": "existing verified component",
+      "depends_on": [
+        "G0"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Register the existing shared-prefix lookup as a completed component and carry its versioned leaf hashes and tests into every new combined-source manifest; do not rerun the already solved 32-row experiment without a code/table change.",
+      "stop_rule": "No new scientific run is scheduled for this completed component. Reopen only on changed table/contract/backend or a finite SelectSwap screen showing a nondominated resource point.",
+      "receipt_references": [],
+      "source_sections": [
+        "\u00a75 root cause C: QROM/coefficient loading",
+        "\u00a76 better compilation"
+      ]
+    },
+    {
+      "id": "A16",
+      "title": "Extend measured cleanup into a verified dynamic arithmetic backend",
+      "queue_priority": 50,
+      "routing": "later-measured-source-hotspot",
+      "original_plan_status": "partial",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Build one three- or four-bit temporary-AND adder fragment with explicit measurement/feed-forward and verify its complete corrected channel in every branch before attempting compiler integration.",
+      "stop_rule": "One small adder fragment and one representative unitary-vs-dynamic schedule. Stop compiler integration if any branch violates coherence or the charged dynamic latency is dominated.",
+      "receipt_references": [],
+      "source_sections": [
+        "\u00a73 item 4: uncomputation doubles work",
+        "\u00a74 Failure 4: complete controlled source",
+        "\u00a75 root cause C: cleanup architecture"
+      ]
+    },
+    {
+      "id": "A17",
+      "title": "Audit existing fusion and phase-check remaining controlled boundaries",
+      "queue_priority": 50,
+      "routing": "later-measured-source-hotspot",
+      "original_plan_status": "audit",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Audit which complete estimator schedules already use fused=True, then phase-check a tiny complete compute-controlled-phase-uncompute/reflection iterate and identify any actual duplicate copy boundary.",
+      "stop_rule": "One schedule audit and one tiny complete phase check. If all eligible boundaries are already fused, close this entry as complete with zero additional speedup.",
+      "receipt_references": [],
+      "source_sections": [
+        "\u00a73 item 5: controllability",
+        "\u00a74 Failure 4: complete controlled source",
+        "\u00a75 root cause F: estimator interface"
+      ]
+    },
+    {
+      "id": "A18",
+      "title": "Apply paid reversible pebbling to a real financial subgraph",
+      "queue_priority": 90,
+      "routing": "preserve-verified-scoped-component",
+      "original_plan_status": "partial",
+      "execution_status_snapshot": "Bounded A18 complete: 159 real atomic groups and 28 protected full72 boundaries. Block75% fits22831 versus29130 subgraph qubits with6.3488x Twork; 899 recomputations fully charged, all3 raw-trace dirty-output replays pass. Both50% points infeasible (19445 mandatory floor >16533 cap); cost-aware75% exhausted and its13 over-limit abort checks preserved, future v2 budget fix passed10 tiny tests without financial rerun. One fullB4 point365630 versus371929 matched-control qubits (6299/1.6936% checkpoint saving), +26.2782% Twork; all3 financial dirty-output cleanup replays and independent55/60-array audits pass. 80 new tests, program852 tests/41 complete financial replays; three subgraph replays separate. Preferred latency source unchanged; A18 broader memory and G2-G5 open.",
+      "depends_on": [
+        "G0",
+        "A01",
+        "A06"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Extract one actual Gaussian-plus-exponential subgraph and emit checkpoint/recompute schedules at 75% and 50% of its measured baseline workspace, using the latest exact leaf library.",
+      "stop_rule": "Two caps and two pebbling heuristics on one real subgraph; at most one B4 full-source integration. Stop scaling if neither point is nondominated or legal cleanup cannot be proved.",
+      "receipt_references": [
+        "results/limitation_program_20261001/A18_run001",
+        "results/limitation_program_20261001/A01_run015",
+        "results/limitation_program_20261001/A18_B4_run001",
+        "results/limitation_program_20261001/A01_run016",
+        "results/limitation_program_20261001/A18_budgetfix_run001"
+      ],
+      "source_sections": [
+        "\u00a74 Failure 5: retained SSA memory",
+        "\u00a75 root cause C: pebbling",
+        "\u00a75 root cause E: workspace per parallel lane"
+      ]
+    },
+    {
+      "id": "A19",
+      "title": "Test reversible streaming on the unchanged monitored payoff",
+      "queue_priority": 0,
+      "routing": "active-bounded-harness",
+      "original_plan_status": "conditional",
+      "execution_status_snapshot": "Continuous autonomous local plan execution authorized by user; no repeated proceed required. Start exactly one B2x4 72/f40,q32 harness and two date/block checkpoint placements. Preserve exact strict barrier, raw log state, Asian rounding and paid cleanup; accepted latency and A18 workspace sources remain immutable comparators.",
+      "depends_on": [
+        "G0",
+        "A18"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Build a two-asset/four-date monitored arithmetic-basket verification harness comparing existing SSA evaluation with a reversible current-state/violation-count design on identical finite draws.",
+      "stop_rule": "One two-asset/four-date harness and two checkpoint placements. Stop full scaling if the width saving is dominated after cleanup or the serial-depth penalty makes its physical-cap frontier worse.",
+      "receipt_references": [],
+      "source_sections": [
+        "\u00a74 Failure 5: path storage",
+        "\u00a74 Failure 6: maxima and basket operations",
+        "\u00a75 root cause C: path arithmetic"
+      ]
+    },
+    {
+      "id": "A20",
+      "title": "Test arithmetic-free loading on the actual sum-of-exponentials threshold",
+      "queue_priority": 6,
+      "routing": "requires-declared-financial-bias-budget",
+      "original_plan_status": "conditional",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0",
+        "A05",
+        "A07"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Write and certify the two-asset/one-date arithmetic-basket predicates in log coordinates, preserving barrier >= H as knock-out, alive < H, and the separate positive-payoff strike test > K; then screen a sum-of-exponentials block encoding against two explicit exponential circuits.",
+      "stop_rule": "One two-asset/one-date mathematical construction and one full cost screen; emit at most one candidate. Stop if a missing normalization/comparison oracle is needed or the candidate is dominated.",
+      "receipt_references": [],
+      "source_sections": [
+        "\u00a75 root cause C: arithmetic-free multi-asset path oracle",
+        "\u00a74 Failure 6: arithmetic-basket barrier",
+        "\u00a76 untested algorithmic routes"
+      ]
+    },
+    {
+      "id": "E01",
+      "title": "Generic quadratic query scaling versus exploitable structure",
+      "queue_priority": 70,
+      "routing": "conditional-structured-branch",
+      "original_plan_status": "audit",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Write a one-page access-model card for the current single-price task, then select at most two structural escapes already proposed in the formulation plan. For each, enumerate the reduction from the actual finite source, source/inverse access, output normalization and preprocessing; reject an unbuilt price oracle before compilation.",
+      "stop_rule": "Screen at most two transformations. Close this audit after their access-model cards; an absent implementable reduction leaves the generic estimator baseline in place, without a universal impossibility claim.",
+      "receipt_references": [],
+      "source_sections": [
+        "\u00a72.1",
+        "\u00a75 Root cause A"
+      ]
+    },
+    {
+      "id": "E02",
+      "title": "Replace hypothetical k with executable source and inverse counts",
+      "queue_priority": 1,
+      "routing": "next-source-estimator-ledger",
+      "original_plan_status": "ready",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0",
+        "G1"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Implement a fresh read-only estimator ledger exporter. First expand one existing C4 Hadamard row and one C4 bounded row against their actual wrapper hashes; separately bind the selected B4/B8 financial output to a compatible estimator. Record fresh preparations, graph forwards/inverses, phase/selector forwards/inverses, reflection calls, longest chain, repetitions, rotations, measurement, reset and controller work.",
+      "stop_rule": "Reconcile the two archived C4 rows and emit one selected estimator row per current financial source. Stop on any unexplained count/hash mismatch and repair accounting before another optimization branch.",
+      "receipt_references": [],
+      "source_sections": [
+        "\u00a72.1",
+        "\u00a74 Failure 4",
+        "\u00a77"
+      ]
+    },
+    {
+      "id": "E03",
+      "title": "Match range or variance normalization to the actual amplitude oracle",
+      "queue_priority": 1,
+      "routing": "next-source-estimator-ledger",
+      "original_plan_status": "partial",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0",
+        "E02"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Produce an exact two-point digital-source example with one negative value. Execute the existing shifted selector and a small signed phase source on the same law; derive both dollar-error conversions and fully expand their source/inverse counts. Then attach the correct range or second-moment contract to every candidate ledger row.",
+      "stop_rule": "Test two tiny distributions, including a rare-event case, and the chosen current workload row. If normalization or moment provenance fails, discard that row and use the certified support fallback.",
+      "receipt_references": [],
+      "source_sections": [
+        "\u00a72.1",
+        "\u00a74 Failure 6"
+      ]
+    },
+    {
+      "id": "E04",
+      "title": "Remove QFT/QPE only when the complete bounded-estimator schedule improves",
+      "queue_priority": 5,
+      "routing": "source-compatible-estimator",
+      "original_plan_status": "ready",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "E02",
+        "E03",
+        "E07"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Implement a local modified-IQAE schedule/controller adapter around the unchanged selector, using the audited theorem and explicit round confidence. First cost its general bound at eta=(0.002/discount)/256 and alpha=0.003; next simulate exact tiny-source observation laws and retain only a finite certified schedule that improves the present bounded baseline.",
+      "stop_rule": "Cost three estimator families and at most eight preregistered controller settings on two exact toy laws. If no certified setting beats the baseline, close this branch and retain canonical/Hadamard estimation.",
+      "receipt_references": [],
+      "source_sections": [
+        "\u00a72.1",
+        "\u00a75 Root cause F"
+      ]
+    },
+    {
+      "id": "E05",
+      "title": "Factored external controls already avoid controlling every arithmetic gate",
+      "queue_priority": 90,
+      "routing": "preserve-verified-scoped-component",
+      "original_plan_status": "complete",
+      "execution_status_snapshot": "existing verified component",
+      "depends_on": [
+        "G0"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Consume the existing controlled-conjugation proof and wrapper tests in the plan's accounting receipt. If a new estimator changes the wrapper, perform one tiny full-unitary comparison of direct control and A-controlled-S-A-inverse, including a superposed external control, reflection sign and clean scratch.",
+      "stop_rule": "No new experiment if wrapper semantics are unchanged. If changed, one exhaustive tiny-unitary regression closes the check; a phase mismatch blocks integration.",
+      "receipt_references": [],
+      "source_sections": [
+        "\u00a73 item 5"
+      ]
+    },
+    {
+      "id": "E06",
+      "title": "Fused graph compute and uncompute is already implemented",
+      "queue_priority": 90,
+      "routing": "preserve-verified-scoped-component",
+      "original_plan_status": "complete",
+      "execution_status_snapshot": "existing verified component",
+      "depends_on": [
+        "G0"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Audit each selected new wrapper's graph-half boundary: arithmetic forward, phase marking, arithmetic inverse, then reflection. Reuse archived fusion evidence; only run a tiny symbolic/gate comparison if a caller is still composing separately clean sources.",
+      "stop_rule": "Inspect the two selected estimator wrappers once. Close with no new gain if both already fuse; repair at most one demonstrated unfused caller and retest its interface.",
+      "receipt_references": [],
+      "source_sections": [
+        "\u00a73 item 4",
+        "\u00a74 Failure 4"
+      ]
+    },
+    {
+      "id": "E07",
+      "title": "One complete-price error and confidence ledger",
+      "queue_priority": 1,
+      "routing": "next-source-estimator-ledger",
+      "original_plan_status": "partial",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0",
+        "E02"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Create a rational ledger for one fixed price: deterministic law/tail/arithmetic/policy/surrogate/synthesis biases, statistical estimator failure, certificate-acquisition failures and physical execution failure. Map each term to a certificate or an explicitly open obligation; verify adaptive-stage failure allocation using exact fractions.",
+      "stop_rule": "One ledger per selected task, one reconciliation pass. Open terms become named prerequisite tasks; do not launch repeated estimation runs to conceal an unproved bridge.",
+      "receipt_references": [],
+      "source_sections": [
+        "\u00a71",
+        "\u00a75 Root cause F",
+        "\u00a77"
+      ]
+    },
+    {
+      "id": "E08",
+      "title": "Further confidence allocation optimization against the already optimized schedule",
+      "queue_priority": 5,
+      "routing": "source-compatible-estimator",
+      "original_plan_status": "partial",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "E02",
+        "E07"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Hold the selected stage geometry and probability promises fixed. Search rational stage-failure allocations proportional to chain cost to powers 0, 1/2, 1 and 2, plus one discrete local optimization; recompute exact binomial thresholds and weighted call counts without using favorable observations.",
+      "stop_rule": "Evaluate the five declared allocations and at most three local refinement rounds. No decrease or certificate failure retains the saved schedule.",
+      "receipt_references": [],
+      "source_sections": [
+        "\u00a74 Failure 4",
+        "\u00a75 Root cause F"
+      ]
+    },
+    {
+      "id": "E09",
+      "title": "Unknown variance without treating unknown sigma as an absolute-error certificate",
+      "queue_priority": 5,
+      "routing": "source-compatible-estimator",
+      "original_plan_status": "conditional",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "E02",
+        "E03",
+        "E07"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Write the audited unknown-variance/quantile algorithm as a complete finite controller for a bounded two-point source. Supply an absolute-dollar-error stopping/calibration rule, cap all stages, then enumerate quantile, centering, source and inverse calls for probabilities 1/2, 2^-8 and 2^-16.",
+      "stop_rule": "One fully specified theorem variant and the three rare-event laws; allow at most two stopping-rule revisions. If only a fixed-n sigma/n guarantee is obtained, stop and keep this finance branch conditional.",
+      "receipt_references": [],
+      "source_sections": [
+        "\u00a74 Failure 3",
+        "\u00a75 Root cause F"
+      ]
+    },
+    {
+      "id": "E10",
+      "title": "Acquire analytic moment bounds with outward rounding",
+      "queue_priority": 5,
+      "routing": "source-compatible-estimator",
+      "original_plan_status": "partial",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0",
+        "E02"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Implement interval evaluation of the existing C4 global fallback 2*q^2*E[(A-G)^2], using absolute future dates and the same continuous policy derivation. Measure bound acquisition time, evaluate the known-moment schedule using the outward bound, and keep the finite-source transfer obligation explicit.",
+      "stop_rule": "Evaluate C4 at 80 and 160 interval digits, then one H8 transfer of the implementation. If enclosure widths remain too loose after these two precisions or total work is worse, retain the support bound.",
+      "receipt_references": [],
+      "source_sections": [
+        "\u00a74 Failure 3"
+      ]
+    },
+    {
+      "id": "E11",
+      "title": "Transfer second moments to the identical finite source with an L2 bridge",
+      "queue_priority": 6,
+      "routing": "requires-declared-financial-bias-budget",
+      "original_plan_status": "conditional",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0",
+        "G1",
+        "E10"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "First prove one all-input/tail-controlled L2 error bound for the finite midpoint transform on a scalar smooth capped payoff. Propagate it through guarded path arithmetic, then isolate the exercise-policy indicator as a separate boundary term. Derive sqrt(E[Y_d^2]) <= sqrt(E[Y^2])+b only for the identical policy/law coupling.",
+      "stop_rule": "Three scoped proofs: scalar transform, smooth path/payoff, policy-boundary term. If a proof fails, document the exact missing inequality and retain the support estimator; no unbounded sampled search.",
+      "receipt_references": [],
+      "source_sections": [
+        "\u00a74 Failure 5",
+        "\u00a77"
+      ]
+    },
+    {
+      "id": "E12",
+      "title": "Anytime-valid statistical moment acquisition",
+      "queue_priority": 5,
+      "routing": "source-compatible-estimator",
+      "original_plan_status": "ready",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0",
+        "E07"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Implement the audited bounded empirical-Bernstein confidence sequence for independent outer-group squared residual observations. Compare its declared stopping rule with fixed-N acquisition on exact rare-event laws at p=1/2, 2^-8 and 2^-16, then run one eligible finance acquisition only if the toy design and theorem assumptions pass.",
+      "stop_rule": "Three toy laws and at most one finance acquisition with a preregistered sample/time cap no larger than the fixed-N baseline. On cap exhaustion use the fallback, not repeated uncorrected looks.",
+      "receipt_references": [],
+      "source_sections": [
+        "\u00a75 Root cause F",
+        "\u00a74 Failure 3"
+      ]
+    },
+    {
+      "id": "E13",
+      "title": "Exact uniform-selector payoff loading is already implemented",
+      "queue_priority": 90,
+      "routing": "preserve-verified-scoped-component",
+      "original_plan_status": "complete",
+      "execution_status_snapshot": "existing verified component",
+      "depends_on": [
+        "G0",
+        "G1"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Reuse the existing shifted_selector and its exhaustive small truth tables. For each newly selected output, prove its exact signed support, choose the selector span, bind its real output address and include selector random bits in reflection; rerun boundary/inverse checks only when span or binding changes.",
+      "stop_rule": "No reinvention of the existing loader. One changed-binding/changed-span verification closes integration; failed range proof returns to the existing safe span.",
+      "receipt_references": [],
+      "source_sections": [
+        "\u00a72.1",
+        "\u00a75 Root cause C"
+      ]
+    },
+    {
+      "id": "E14",
+      "title": "Replace prohibitive nested constants only with an explicit coherent schedule",
+      "queue_priority": 70,
+      "routing": "conditional-structured-branch",
+      "original_plan_status": "conditional",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0",
+        "E02",
+        "E07"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Instantiate one audited repeatedly-nested estimator at D=1 on a two-point bounded transition and a declared Lipschitz outer payoff. Build its deterministic level schedule, finite constants and coherent wrapper; compare integer conditional-source calls with the saved bounded-inner/signed-outer hierarchy at three error targets.",
+      "stop_rule": "One theorem variant, D=1, three error targets and at most two schedule refinements. No improvement keeps the current hierarchy or selects a separately certified flattening branch.",
+      "receipt_references": [],
+      "source_sections": [
+        "\u00a74 Failure 2"
+      ]
+    },
+    {
+      "id": "E15",
+      "title": "Measured adaptive inner estimation is not a coherent outer oracle",
+      "queue_priority": 70,
+      "routing": "conditional-structured-branch",
+      "original_plan_status": "partial",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0",
+        "G1"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Build a two-outer-state toy coherent inner computation, apply its outer payoff, then reverse. For each candidate inner estimator, choose a reversible fixed schedule or explicitly store and uncompute the control/measurement records; separately inventory the flattening baseline and regret certificates.",
+      "stop_rule": "Compare at most two coherent toy designs and the existing flattening interface. If records/padding erase the expected benefit or cleanup fails, keep the fixed schedule/flattening fallback.",
+      "receipt_references": [],
+      "source_sections": [
+        "\u00a74 Failure 2"
+      ]
+    },
+    {
+      "id": "E16",
+      "title": "Finite-variance heavy tails have query alternatives with explicit bias and weights",
+      "queue_priority": 70,
+      "routing": "conditional-structured-branch",
+      "original_plan_status": "conditional",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0",
+        "E02",
+        "E07"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "For one exactly evaluable scalar lognormal payoff, derive a rigorous second moment and dollar tail-cap bias. Cost three finite constructions: capped bounded AE, quantile finite-variance estimation and one analytically weighted change of measure. Separate full payoff tails from the already bounded parity residual.",
+      "stop_rule": "One scalar payoff and the three declared constructions at two epsilon targets. Failure of moment/bias certification rejects that construction; no multi-asset compilation until a candidate passes.",
+      "receipt_references": [],
+      "source_sections": [
+        "\u00a75 Root cause A"
+      ]
+    },
+    {
+      "id": "E17",
+      "title": "Infinite variance and undefined mean require different contracts",
+      "queue_priority": 70,
+      "routing": "conditional-structured-branch",
+      "original_plan_status": "audit",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Audit whether any selected pricing workload actually lacks a finite second moment. Current finite-source/clipped residuals and ordinary finite-parameter GBM do not activate this branch. If a future finite-mean heavy-tailed contract does, use one Pareto toy with a proved pth moment for 1<p<2 and derive a clipping budget before comparing an Lp estimator with a robust classical method.",
+      "stop_rule": "One workload relevance audit closes this point. Run at most one Pareto construction only when G0 selects such a contract; otherwise mark not applicable to the current single-price program.",
+      "receipt_references": [],
+      "source_sections": [
+        "\u00a75 Root cause A"
+      ]
+    },
+    {
+      "id": "E18",
+      "title": "Multi-output tasks need their own norm, confidence and access contract",
+      "queue_priority": 70,
+      "routing": "conditional-structured-branch",
+      "original_plan_status": "conditional",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0",
+        "E02",
+        "E07"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Keep the current one-price output fixed. If G0 later activates multiple outputs, use three strikes on a shared exact toy distribution to compare separate AE, a requested scalar weighted portfolio and a common output basis under explicitly distinct contracts; charge simultaneous confidence and reconstruction error.",
+      "stop_rule": "Dormant while G0 requests one price. If activated, three output contracts and one exact toy comparison; reject empirical-only low-rank reconstruction and stop before finance compilation.",
+      "receipt_references": [],
+      "source_sections": [
+        "\u00a76 Many strikes, portfolios, Greeks"
+      ]
+    },
+    {
+      "id": "E19",
+      "title": "Quantum Greeks must compete with classical adjoint differentiation",
+      "queue_priority": 70,
+      "routing": "conditional-structured-branch",
+      "original_plan_status": "conditional",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0",
+        "E02",
+        "E07"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Keep this branch dormant for a one-price task. If Greeks are requested, specify a smooth two-parameter payoff with analytic sensitivities, compile a parameter-superposition oracle and compare its gradient schedule with reverse-mode pathwise differentiation using the same paths; isolate barrier smoothing and its bias separately.",
+      "stop_rule": "Dormant until G0 changes the deliverable. If activated, one smooth toy and one quantum/adjoint comparison; no barrier finance implementation without a derivative-bias proof.",
+      "receipt_references": [],
+      "source_sections": [
+        "\u00a76 Many strikes, portfolios, Greeks"
+      ]
+    },
+    {
+      "id": "E20",
+      "title": "Entangled parallel AE must pay for all source lanes and physical scheduling",
+      "queue_priority": 70,
+      "routing": "conditional-structured-branch",
+      "original_plan_status": "conditional",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0",
+        "G1",
+        "E02",
+        "E07"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Specify one audited entangled parallel-AE construction at P=1,2,4 using one fixed compatible source and alpha allocation. Emit the finite query/chain/QSP/GHZ schedule and lane memory. Send those rows to the physical plan for routing/factory/data-memory timing under one stated qubit budget; first reject rows whose bare lane memory already exceeds that budget.",
+      "stop_rule": "Evaluate exactly P=1,2,4 for one source and one architecture. Stop at the first impossible memory cap or after all rows; expand P only if a valid best row and explicit budget headroom justify one further finite sweep.",
+      "receipt_references": [],
+      "source_sections": [
+        "\u00a75 Root cause E"
+      ]
+    },
+    {
+      "id": "E21",
+      "title": "Convert RMSE to the allocated high-probability dollar guarantee",
+      "queue_priority": 5,
+      "routing": "source-compatible-estimator",
+      "original_plan_status": "ready",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "E07"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Implement a read-only confidence converter for every RMSE-based candidate. Compare one run with RMSE<=e*sqrt(alpha) against a finite odd median of independent runs each with RMSE<=e/2; use exact binomial tails for the latter. Apply both to E20's finite P rows before physical promotion.",
+      "stop_rule": "Evaluate the two elementary conversions and at most one audited direct theorem; no numerical coverage-only substitution.",
+      "receipt_references": [],
+      "source_sections": [
+        "\u00a71",
+        "\u00a75 Root cause E"
+      ]
+    },
+    {
+      "id": "E22",
+      "title": "Classify actual payoff predicates before importing log-domain QSP",
+      "queue_priority": 5,
+      "routing": "source-compatible-estimator",
+      "original_plan_status": "ready",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0",
+        "G1"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Export every current barrier, exercise and payoff predicate from the target IR into a classification table: one-asset monotone threshold, min/max, sum of prices, arithmetic average or other. Prove any one-asset log-domain replacement on its entire supported domain; build only that small predicate before proposing a QSP source replacement.",
+      "stop_rule": "One complete predicate census and at most two algebraically eligible predicate proofs. If no predicate is eligible, close exact log-domain transfer without attempting a full arithmetic-free source.",
+      "receipt_references": [],
+      "source_sections": [
+        "\u00a75 Root cause C"
+      ]
+    },
+    {
+      "id": "E23",
+      "title": "QSP approximation, rotation synthesis and dollar bias are one budget",
+      "queue_priority": 6,
+      "routing": "requires-declared-financial-bias-budget",
+      "original_plan_status": "conditional",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0",
+        "E02",
+        "E07",
+        "E22"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "For one eligible bounded scalar payoff factor, freeze its signal encoding and approximation interval. Search degrees 8,16,32,64; use interval extrema to certify polynomial-amplitude error, then allocate synthesis operator error over all QSP invocations and estimator repetitions and emit the selected finite signal/QSP schedule.",
+      "stop_rule": "Four declared degrees and at most two encodings on one factor. If no fully certified candidate beats arithmetic, keep the arithmetic leaf; do not raise degree indefinitely.",
+      "receipt_references": [],
+      "source_sections": [
+        "\u00a75 Root cause C"
+      ]
+    },
+    {
+      "id": "E24",
+      "title": "Optimize the error split only over supported certificates",
+      "queue_priority": 6,
+      "routing": "requires-declared-financial-bias-budget",
+      "original_plan_status": "ready",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0",
+        "E02",
+        "E07"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Collect existing certified precision/law/arithmetic rows without rerunning finance. Enumerate only represented word widths and statistical-error fractions 0.25,0.45,0.65 of the selected epsilon; keep failure budgets separate. Recompute source/estimator/synthesis cost for each feasible ledger, then request only the smallest missing certificate needed by a promising row.",
+      "stop_rule": "One finite grid of existing certified widths times three error fractions, followed by at most one newly justified precision certificate. If all rows are infeasible or worse, retain the original split.",
+      "receipt_references": [],
+      "source_sections": [
+        "\u00a72.1",
+        "\u00a72.4"
+      ]
+    },
+    {
+      "id": "E25",
+      "title": "Adaptive Bayesian/likelihood designs need a coverage proof",
+      "queue_priority": 5,
+      "routing": "source-compatible-estimator",
+      "original_plan_status": "conditional",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "E02",
+        "E03",
+        "E07"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "First inspect the complete primary derivation for one Bayesian or likelihood design, using public read-only research access without uploading project material. Reproduce its finite design on an exact small-amplitude grid plus near-alias points; wrap adaptive selection in a proved frequentist stopping interval or reject it from the current guarantee. Keep device-noise and prior assumptions explicit.",
+      "stop_rule": "One fully read primary design, one bounded exact-law diagnostic grid and at most one coverage-wrapper construction. Without a coverage proof or an improvement, stop this branch and preserve the valid baseline.",
+      "receipt_references": [],
+      "source_sections": [
+        "\u00a75 Root cause F"
+      ]
+    },
+    {
+      "id": "F01",
+      "title": "Keep measured classical slopes inside their validated range",
+      "queue_priority": 3,
+      "routing": "matched-classical-comparator",
+      "original_plan_status": "ready",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Extract the archived independent-scramble errors and timings; fit adjacent three-size windows before acquiring one next-size B4x12 development batch.",
+      "stop_rule": "Use archived fits plus at most one new next-size batch. If prediction fails, close that extrapolation and use measured-range rows; do not refit and reacquire repeatedly until a preferred exponent appears.",
+      "receipt_references": [],
+      "source_sections": [
+        "2.3",
+        "4 Failure 6",
+        "5A",
+        "6"
+      ]
+    },
+    {
+      "id": "F02",
+      "title": "Separate path variance from randomized-quadrature variance",
+      "queue_priority": 3,
+      "routing": "matched-classical-comparator",
+      "original_plan_status": "audit",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Build one ledger row per estimand/transform distinguishing one-path sigma, residual bounds, and independent-scramble estimator variance.",
+      "stop_rule": "Audit the finite set of active benchmark rows once. Mark unsupported benefits unavailable until their source interface exists; do not block other valid rows.",
+      "receipt_references": [],
+      "source_sections": [
+        "2.1",
+        "2.2",
+        "2.3",
+        "4 Failure 3"
+      ]
+    },
+    {
+      "id": "F03",
+      "title": "Verify smoothness of the transformed Gaussian integrand",
+      "queue_priority": 3,
+      "routing": "matched-classical-comparator",
+      "original_plan_status": "ready",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Write the mixed-derivative and tail assumptions for one existing preintegrated call and one barrier integrand before assigning an RQMC theorem rate.",
+      "stop_rule": "Inspect two integrands and at most one alternative transform. If a required derivative bound remains absent, close the theorem-transfer claim and retain empirical performance.",
+      "receipt_references": [],
+      "source_sections": [
+        "2.3",
+        "5A"
+      ]
+    },
+    {
+      "id": "F04",
+      "title": "Test structured integration of a certified residual",
+      "queue_priority": 70,
+      "routing": "conditional-structured-branch",
+      "original_plan_status": "conditional",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0",
+        "F03",
+        "F02"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Build two frozen interpolation levels for one already-smoothed two-dimensional development integral and certify the residual range or moments.",
+      "stop_rule": "Try two interpolation levels on one two-dimensional case. If certification is unavailable or neither complete schedule improves the quantum baseline, close this pilot before high-dimensional circuits.",
+      "receipt_references": [],
+      "source_sections": [
+        "2.3",
+        "5A"
+      ]
+    },
+    {
+      "id": "F05",
+      "title": "Charge the whole payoff in coherent Sobol integration",
+      "queue_priority": 70,
+      "routing": "conditional-structured-branch",
+      "original_plan_status": "conditional",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0",
+        "F01",
+        "F02"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Specify a coherent XOR network for the exact small Sobol matrices used by one actual development payoff, with classical enumeration of the same points.",
+      "stop_rule": "One small net and two powers of two are sufficient to screen the route. Stop if the query saving disappears after confidence or full-source cost; a cheap loader alone does not reopen advantage.",
+      "receipt_references": [],
+      "source_sections": [
+        "6"
+      ]
+    },
+    {
+      "id": "F06",
+      "title": "Isolate the active barrier-date switching surface",
+      "queue_priority": 3,
+      "routing": "matched-classical-comparator",
+      "original_plan_status": "ready",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0",
+        "F02"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Instrument the existing B4x12 development preintegration to record the minimizing barrier date and gap between the two smallest roots.",
+      "stop_rule": "Test exactly two local transforms on B4x12. Retain failures, and stop before B8 or coherent smoothing if neither passes the frozen cost/error screen.",
+      "receipt_references": [],
+      "source_sections": [
+        "4 Failure 6",
+        "5A",
+        "6"
+      ]
+    },
+    {
+      "id": "F07",
+      "title": "Screen rare-event proposals with their likelihood-ratio costs",
+      "queue_priority": 3,
+      "routing": "matched-classical-comparator",
+      "original_plan_status": "ready",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0",
+        "F02"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Fit one scalar or low-rank Gaussian tilt using separate B4x12 development training data, freeze it, and measure the exact weighted estimator.",
+      "stop_rule": "One trained tilt and one optional active-subspace extension; no repeated proposal tuning on validation scrambles. Defer SMC if the simpler route fails and lacks an explicit uncertainty proof.",
+      "receipt_references": [],
+      "source_sections": [
+        "4 Failure 6",
+        "6"
+      ]
+    },
+    {
+      "id": "F08",
+      "title": "Keep the exact bounded rewrite; reject the losing two-probability shortcut",
+      "queue_priority": 70,
+      "routing": "conditional-structured-branch",
+      "original_plan_status": "partial",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0",
+        "F02"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Derive the finite-law single-indicator identity m*P_QA(U*A>K and survival), with exact finite tilt weights, and screen its normalization before compiling a sampler.",
+      "stop_rule": "Evaluate the one-predicate and reciprocal ledgers once. If neither beats direct estimation, close both for this workload; do not repeat the already losing two-probability screen without a quantitatively new source-cost premise.",
+      "receipt_references": [],
+      "source_sections": [
+        "2.1",
+        "5A",
+        "5F"
+      ]
+    },
+    {
+      "id": "F09",
+      "title": "Do not retain variance-based quantum rates in an infinite-variance model",
+      "queue_priority": 70,
+      "routing": "conditional-structured-branch",
+      "original_plan_status": "conditional",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0",
+        "F08"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Write a separate candidate contract only if a financially justified heavy-tail law is already needed; prove its first and p-th moments before proposing an estimator.",
+      "stop_rule": "One assumption audit and one ledger per justified model. If no independently justified model or finite usable moment constant exists, defer the branch without inventing a harder distribution.",
+      "receipt_references": [],
+      "source_sections": [
+        "5A",
+        "7"
+      ]
+    },
+    {
+      "id": "F10",
+      "title": "Reallocate multilevel work using separate classical and quantum costs",
+      "queue_priority": 70,
+      "routing": "conditional-structured-branch",
+      "original_plan_status": "partial",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0",
+        "F02"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Reuse the archived antithetic correction variances and enumerate all hybrid classical/quantum level assignments with their complete source costs.",
+      "stop_rule": "Enumerate the finite existing level menu once. If even free quantum corrections leave a base cost above the tenfold classical budget, close that allocation and hand the base question to F11.",
+      "receipt_references": [],
+      "source_sections": [
+        "4 Failure 1"
+      ]
+    },
+    {
+      "id": "F11",
+      "title": "Reduce the base cost before spending on fine corrections",
+      "queue_priority": 3,
+      "routing": "matched-classical-comparator",
+      "original_plan_status": "ready",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0",
+        "F02"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Test one analytically priced coarse control and one conditioned level-zero residual on the existing A4 development case, retuning the full allocation.",
+      "stop_rule": "Two coarse-base candidates only. If the base alone still exceeds the tenfold complete-classical budget, stop the associated hybrid branch before compiling fine paths.",
+      "receipt_references": [],
+      "source_sections": [
+        "4 Failure 1"
+      ]
+    },
+    {
+      "id": "F12",
+      "title": "Separate positivity, coupling quality and Heston convergence proofs",
+      "queue_priority": 70,
+      "routing": "conditional-structured-branch",
+      "original_plan_status": "ready",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Freeze S4 and compare the current coupling with one boundary-adapted CIR/variance transition at four existing refinement levels using matched random inputs.",
+      "stop_rule": "One alternative coupling and four levels with a frozen maximum sample budget. Stop if bias cannot be bounded or the cost/variance advantage is absent; positivity alone never passes.",
+      "receipt_references": [],
+      "source_sections": [
+        "4 Failure 1"
+      ]
+    },
+    {
+      "id": "F13",
+      "title": "Audit non-Lipschitz antithetic theory at the square-root boundary",
+      "queue_priority": 70,
+      "routing": "conditional-structured-branch",
+      "original_plan_status": "audit",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Create an assumption-by-assumption transfer table for the nominated non-globally-Lipschitz theorem and the fixed S4 coefficients.",
+      "stop_rule": "One theorem map and one optional transform. A failed required hypothesis closes that direct transfer; it does not require new path simulation.",
+      "receipt_references": [],
+      "source_sections": [
+        "4 Failure 1"
+      ]
+    },
+    {
+      "id": "F14",
+      "title": "Screen exact Heston transitions at contractual dates",
+      "queue_priority": 70,
+      "routing": "conditional-structured-branch",
+      "original_plan_status": "conditional",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "List and validate the one-asset A1 Broadie-Kaya or Poisson-conditioned transition primitives at the twelve contractual dates before writing a quantum transition.",
+      "stop_rule": "One A1 transition pilot and one primitive-cost ledger. If inversion/tail accuracy cannot be certified or the optimistic ledger does not improve the source, stop before circuit compilation.",
+      "receipt_references": [],
+      "source_sections": [
+        "4 Failure 1",
+        "6"
+      ]
+    },
+    {
+      "id": "F15",
+      "title": "Repair the actual fast-forwarding assumptions before compilation",
+      "queue_priority": 70,
+      "routing": "conditional-structured-branch",
+      "original_plan_status": "partial",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Attempt one A1 negative-leverage tail/truncation proof independent of the paper's failed sufficient condition; do not rerun the already completed direct-transfer screen.",
+      "stop_rule": "At most the two named A1 bounding methods and one primitive screen. If neither yields an explicit usable tail bound, defer the fast-forward compiler; changing leverage, covariance or eta starts a separate task branch rather than fixing this one.",
+      "receipt_references": [],
+      "source_sections": [
+        "4 Failure 1",
+        "6"
+      ]
+    },
+    {
+      "id": "F16",
+      "title": "Identify the exact failed factorization before changing a nested model",
+      "queue_priority": 70,
+      "routing": "conditional-structured-branch",
+      "original_plan_status": "audit",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Document the current GBM future-factor reuse identity and annotate which assumptions a separately justified alternative model would break.",
+      "stop_rule": "One existing-factorization audit and at most one candidate-model screen. If classical reuse still succeeds or coherent work grows faster, close that alternative without running a large nested estimator.",
+      "receipt_references": [],
+      "source_sections": [
+        "4 Failure 2",
+        "5D"
+      ]
+    },
+    {
+      "id": "F17",
+      "title": "Certify exercise-policy error near the continuation boundary",
+      "queue_priority": 70,
+      "routing": "conditional-structured-branch",
+      "original_plan_status": "ready",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Construct continuation upper/lower bounds and a boundary-band error ledger for the existing development compound contract.",
+      "stop_rule": "Three preregistered band widths on existing development cases. If population certification is unavailable or total cost does not improve, close localization and retain the empirical bracket as an observation only.",
+      "receipt_references": [],
+      "source_sections": [
+        "4 Failure 2"
+      ]
+    },
+    {
+      "id": "F18",
+      "title": "Match nested-estimation theorems to the actual contract and costs",
+      "queue_priority": 70,
+      "routing": "conditional-structured-branch",
+      "original_plan_status": "audit",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Audit outer Lipschitz constants, terminal moments, nesting depth, conditional access costs and error norms for the current compound contract.",
+      "stop_rule": "One current-contract theorem map; repeat only for a formally distinct candidate protocol. Missing premises close theorem transfer without requiring expensive quantum simulation.",
+      "receipt_references": [],
+      "source_sections": [
+        "4 Failure 2"
+      ]
+    },
+    {
+      "id": "F19",
+      "title": "Expand one deterministic nested schedule instead of hiding depth constants",
+      "queue_priority": 70,
+      "routing": "conditional-structured-branch",
+      "original_plan_status": "conditional",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0",
+        "F18"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Write one explicit fixed-D=2 deterministic-level schedule with all error, failure and source/inverse counts, using the already nominated contract.",
+      "stop_rule": "One fixed-depth schedule and two frozen error targets. Stop if hidden logarithmic/confidence constants leave the complete schedule above the comparator screen; do not increase depth to seek a larger exponent gap.",
+      "receipt_references": [],
+      "source_sections": [
+        "4 Failure 2"
+      ]
+    },
+    {
+      "id": "F20",
+      "title": "Evaluate controls by residual size times full oracle cost",
+      "queue_priority": 3,
+      "routing": "matched-classical-comparator",
+      "original_plan_status": "partial",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0",
+        "F02"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Attach full source cost to one existing parity-control residual and one bounded-measure-change ledger, using the latest exact arithmetic costs.",
+      "stop_rule": "Screen the two named rewrites once using current costs. If neither source-plus-estimator total improves, close those rewrites; rerun only after a documented new cost or bound changes the decision.",
+      "receipt_references": [],
+      "source_sections": [
+        "4 Failure 3",
+        "5D"
+      ]
+    },
+    {
+      "id": "F21",
+      "title": "Treat rough-volatility precision rates as measured contract-specific results",
+      "queue_priority": 70,
+      "routing": "conditional-structured-branch",
+      "original_plan_status": "conditional",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Create a separate rough-model protocol only if independently motivated, specifying the model, payoff and four separate approximation errors.",
+      "stop_rule": "One justified model/parameter point and four frozen levels. Without a valid bias reference or financial motivation, defer before circuit compilation.",
+      "receipt_references": [],
+      "source_sections": [
+        "6"
+      ]
+    },
+    {
+      "id": "F22",
+      "title": "Charge factor rank and bias in a Markovian rough-process lift",
+      "queue_priority": 70,
+      "routing": "conditional-structured-branch",
+      "original_plan_status": "conditional",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0",
+        "F21"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "For the single justified rough-model branch, compare ranks 2, 4, 8 and 16 while independently refining the time step.",
+      "stop_rule": "Four ranks and two frozen time steps. If no rank passes the bias budget or the lifted total does not improve, close this lift/rank target without compiling all factors.",
+      "receipt_references": [],
+      "source_sections": [
+        "4 Failure 2",
+        "6"
+      ]
+    },
+    {
+      "id": "F23",
+      "title": "Certify dimension compression on both architectures",
+      "queue_priority": 3,
+      "routing": "matched-classical-comparator",
+      "original_plan_status": "ready",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Compute covariance-mode residuals for the existing B4x12 and B8x52 laws and derive a payoff-appropriate dollar error bound for omitted modes.",
+      "stop_rule": "Three ranks on the two existing development sizes. If the barrier boundary bound is unavailable or no rank passes, keep full rank and close compression for this tolerance.",
+      "receipt_references": [],
+      "source_sections": [
+        "6"
+      ]
+    },
+    {
+      "id": "F24",
+      "title": "Specify the exact Asian/barrier PDE before costing a quantum solve",
+      "queue_priority": 70,
+      "routing": "conditional-structured-branch",
+      "original_plan_status": "conditional",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Formulate a one-asset development Asian/barrier backward PDE with average-state augmentation and updates at the actual discrete monitoring dates.",
+      "stop_rule": "One exact small-contract formulation and two grid sizes. If state augmentation, conditioning or scalar extraction already defeats the optimistic screen, close this PDE route before high-dimensional compilation.",
+      "receipt_references": [],
+      "source_sections": [
+        "6"
+      ]
+    },
+    {
+      "id": "F25",
+      "title": "Propagate overlap readout error into dollars and repeated evolution cost",
+      "queue_priority": 70,
+      "routing": "conditional-structured-branch",
+      "original_plan_status": "conditional",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "For one nominated forward-PDE formulation, write the normalization/overlap price formula and derive a stable absolute-dollar error bound before evolving a quantum state.",
+      "stop_rule": "One stable-normalization audit and two readout ledgers. Stop if no denominator bound exists or even the optimistic repeated-evolution total exceeds the eligible classical screen.",
+      "receipt_references": [],
+      "source_sections": [
+        "1",
+        "6"
+      ]
+    },
+    {
+      "id": "F26",
+      "title": "Audit one SPDE/BDSDE update only for an independently justified model",
+      "queue_priority": 70,
+      "routing": "conditional-structured-branch",
+      "original_plan_status": "conditional",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Define a separate financially justified SPDE contract and enumerate one forward/backward update's arithmetic, encoding and strong-error assumptions.",
+      "stop_rule": "One update audit and one allocation screen. If justification or an access premise is absent, defer; direct existing-model improvements retain priority.",
+      "receipt_references": [],
+      "source_sections": [
+        "6"
+      ]
+    },
+    {
+      "id": "F27",
+      "title": "Choose the exact multi-output error norm before pricing its penalty",
+      "queue_priority": 70,
+      "routing": "conditional-structured-branch",
+      "original_plan_status": "audit",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Write a separate output contract for K prices, one portfolio total or a vector norm, and map it to the nominated multivariate estimator access model.",
+      "stop_rule": "One nominated output contract and one theorem/access audit. If outputs are unspecified, defer the branch and continue the original single-price implementation.",
+      "receipt_references": [],
+      "source_sections": [
+        "6"
+      ]
+    },
+    {
+      "id": "F28",
+      "title": "Match a valid barrier Greek against a classical adjoint or smoothed estimator",
+      "queue_priority": 70,
+      "routing": "conditional-structured-branch",
+      "original_plan_status": "conditional",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0",
+        "F27"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Specify one first-order barrier sensitivity as a separate output task and derive a valid conditional-smoothed classical derivative estimator.",
+      "stop_rule": "One first-order Greek, one small validation and two eligible classical derivative methods. If derivative bias or oracle smoothness remains uncertified, defer quantum compilation; second-order Greeks require a new analysis.",
+      "receipt_references": [],
+      "source_sections": [
+        "6"
+      ]
+    },
+    {
+      "id": "F29",
+      "title": "Treat an aggregate portfolio as one declared observable",
+      "queue_priority": 70,
+      "routing": "conditional-structured-branch",
+      "original_plan_status": "conditional",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0",
+        "F27"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Freeze one small signed portfolio and derive its aggregate payoff and normalization before choosing either estimator.",
+      "stop_rule": "One fixed portfolio and one declared reuse count. If netting helps the classical comparator equally or source overhead dominates, close the quantum portfolio screen.",
+      "receipt_references": [],
+      "source_sections": [
+        "1",
+        "6"
+      ]
+    },
+    {
+      "id": "F30",
+      "title": "Compare tensor compression with direct classical contraction",
+      "queue_priority": 70,
+      "routing": "conditional-structured-branch",
+      "original_plan_status": "conditional",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Fit tensor-train ranks 2, 4 and 8 to one small existing development integrand with frozen training data and separate validation data.",
+      "stop_rule": "Three frozen ranks on one small case. If certification is absent or direct contraction dominates, close quantum loading for this representation and retain the classical benefit.",
+      "receipt_references": [],
+      "source_sections": [
+        "5D",
+        "6"
+      ]
+    },
+    {
+      "id": "F31",
+      "title": "Replace exponent requirements with the matched complete-time inequality",
+      "queue_priority": 70,
+      "routing": "conditional-structured-branch",
+      "original_plan_status": "audit",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Encode one frontier ledger that accepts actual setup, certified estimator calls, source/inverse/readout and matched classical timing inputs without requiring p_C>=3.",
+      "stop_rule": "Build and validate the ledger once using known pass/fail synthetic accounting cases and the current negative operating point. Rerun only when a changed interface could change the decision.",
+      "receipt_references": [],
+      "source_sections": [
+        "1",
+        "2.4",
+        "4 Failure 2",
+        "5D",
+        "7",
+        "8"
+      ]
+    },
+    {
+      "id": "F32",
+      "title": "Use quantum walks only when the financial input has a real mixing bottleneck",
+      "queue_priority": 70,
+      "routing": "conditional-structured-branch",
+      "original_plan_status": "conditional",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Record that direct GBM Gaussian sampling has no MCMC bottleneck; nominate a walk branch only for an independently justified input distribution lacking a competitive direct sampler.",
+      "stop_rule": "One nominated justified distribution and one sampler/access audit. If a competitive direct sampler exists or the premises are unsupported, close the walk branch; current GBM needs no new experiment here.",
+      "receipt_references": [],
+      "source_sections": [
+        "5A"
+      ]
+    },
+    {
+      "id": "H01",
+      "title": "Decoder latency is not universally tens of microseconds",
+      "queue_priority": 60,
+      "routing": "compatible-physical-frontier",
+      "original_plan_status": "audit",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0",
+        "C15"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Make a versioned hardware timing table with explicit pulse, syndrome, decoder and feedback endpoints.",
+      "stop_rule": "Screen the existing anchors plus at most two newer primary constructions; missing sustained-error data closes that substitution.",
+      "receipt_references": [],
+      "source_sections": [
+        "3 hardware table",
+        "5 root cause B"
+      ]
+    },
+    {
+      "id": "H02",
+      "title": "Fast standalone decoding is not the entire reaction loop",
+      "queue_priority": 60,
+      "routing": "compatible-physical-frontier",
+      "original_plan_status": "audit",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "H01"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Build one end-to-end reaction-loop timeline from acquisition through transport, decoding and conditional pulse dispatch.",
+      "stop_rule": "Stop after two complete timelines; an unmeasured link remains an explicit parameter, not zero.",
+      "receipt_references": [],
+      "source_sections": [
+        "3 hardware table",
+        "5 root cause B"
+      ]
+    },
+    {
+      "id": "H03",
+      "title": "A code cycle and a logical T layer are different quantities",
+      "queue_priority": 60,
+      "routing": "compatible-physical-frontier",
+      "original_plan_status": "ready",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0",
+        "H17"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Map a short signed multiply-add chain into reaction dependencies, independent of the code-cycle duration.",
+      "stop_rule": "Compare two gate schedules for one leaf and one dependent chain; no whole-source credit before a compatible mapping exists.",
+      "receipt_references": [],
+      "source_sections": [
+        "2.4",
+        "3 hardware timing",
+        "5 root cause B"
+      ]
+    },
+    {
+      "id": "H04",
+      "title": "Repeating distance-many syndrome rounds per operation is not mandatory in every architecture",
+      "queue_priority": 60,
+      "routing": "compatible-physical-frontier",
+      "original_plan_status": "conditional",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "H03",
+        "H18"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Make an assumption-to-circuit checklist for a transversal fault-tolerance construction using one existing adder.",
+      "stop_rule": "One finite adder mapping and one assumption audit; if a required decoder/gate is absent, defer scaling.",
+      "receipt_references": [],
+      "source_sections": [
+        "5 root cause B"
+      ]
+    },
+    {
+      "id": "H05",
+      "title": "Fifteen-to-one distillation is not the only magic-state supply",
+      "queue_priority": 60,
+      "routing": "compatible-physical-frontier",
+      "original_plan_status": "ready",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "H17",
+        "H18"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Replace only the factory model for the actual T-state demand, keeping the computation and error allowance fixed.",
+      "stop_rule": "Compare two factories on one demand profile; absent finite noise/output data makes the cultivation result conditional.",
+      "receipt_references": [],
+      "source_sections": [
+        "4 Failure 5 magic-state supply"
+      ]
+    },
+    {
+      "id": "H06",
+      "title": "T-state supply and Toffoli-state supply must be matched to the circuit",
+      "queue_priority": 60,
+      "routing": "compatible-physical-frontier",
+      "original_plan_status": "partial",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "H17",
+        "H18"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Export separate CCX, T-rotation and Clifford demands before pricing native Toffoli supply.",
+      "stop_rule": "Two lowerings for one leaf and one source; reject combinations that remove the same gate twice.",
+      "receipt_references": [],
+      "source_sections": [
+        "3 arithmetic and factories",
+        "4 Failure 5"
+      ]
+    },
+    {
+      "id": "H07",
+      "title": "Distillation is not logically necessary for every non-Clifford implementation",
+      "queue_priority": 60,
+      "routing": "compatible-physical-frontier",
+      "original_plan_status": "conditional",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "H18"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Translate one adder into a protected cat-qubit gate set and audit its noise assumptions.",
+      "stop_rule": "One gate translation; if usable finite error/duration data are missing, stop before full-source extrapolation.",
+      "receipt_references": [],
+      "source_sections": [
+        "3 non-Clifford operations",
+        "5 root cause B"
+      ]
+    },
+    {
+      "id": "H08",
+      "title": "An alternative physical qubit does not automatically eliminate all factories",
+      "queue_priority": 60,
+      "routing": "compatible-physical-frontier",
+      "original_plan_status": "conditional",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "H07",
+        "H17",
+        "H18"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Insert the pricing leaf schedule into a complete cat architecture cost model.",
+      "stop_rule": "One full leaf model; no source claim if gate costs cannot be composed at the actual connectivity.",
+      "receipt_references": [],
+      "source_sections": [
+        "5 root cause B",
+        "6 new hardware"
+      ]
+    },
+    {
+      "id": "H09",
+      "title": "Surface-code physical-qubit overhead is not universal",
+      "queue_priority": 60,
+      "routing": "compatible-physical-frontier",
+      "original_plan_status": "conditional",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "H15",
+        "H18"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Split the source allocation into stored data, active logic, ancillas and factories before substituting qLDPC storage.",
+      "stop_rule": "One finite allocation at each current B4/B8 cap; missing memory-to-logic conversion closes this direct integration.",
+      "receipt_references": [],
+      "source_sections": [
+        "4 Failure 5 memory",
+        "5 root cause B"
+      ]
+    },
+    {
+      "id": "H10",
+      "title": "High-rate codes also have logical-operation research",
+      "queue_priority": 60,
+      "routing": "compatible-physical-frontier",
+      "original_plan_status": "conditional",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "H09",
+        "H18"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Map a 32-bit adder through one finite qLDPC logical-operation scheme.",
+      "stop_rule": "One adder mapping; no full-source projection without a non-Clifford interface.",
+      "receipt_references": [],
+      "source_sections": [
+        "5 root cause B qLDPC"
+      ]
+    },
+    {
+      "id": "H11",
+      "title": "Addressable transversal non-Clifford gates are a distinct route",
+      "queue_priority": 60,
+      "routing": "compatible-physical-frontier",
+      "original_plan_status": "conditional",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "H18"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Find finite parameters for an addressable transversal-CCZ code and map one Toffoli-heavy leaf.",
+      "stop_rule": "One finite parameter extraction; missing physical CCZ/error implementation makes the timing branch unavailable.",
+      "receipt_references": [],
+      "source_sections": [
+        "5 root cause B cheap non-Clifford gates"
+      ]
+    },
+    {
+      "id": "H12",
+      "title": "Constant asymptotic overhead is not a small finite constant",
+      "queue_priority": 60,
+      "routing": "compatible-physical-frontier",
+      "original_plan_status": "conditional",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "H18"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Evaluate the additive-space and width conditions of a constant-overhead construction for the current source width/depth.",
+      "stop_rule": "One full-text finite-constant audit; if no usable construction/constants are supplied, close the numerical-transfer branch.",
+      "receipt_references": [],
+      "source_sections": [
+        "5 root cause B",
+        "7 resource frontier"
+      ]
+    },
+    {
+      "id": "H13",
+      "title": "Idle space can dominate a physical mapping",
+      "queue_priority": 60,
+      "routing": "compatible-physical-frontier",
+      "original_plan_status": "conditional",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "H15",
+        "H18"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Lower one multiplier to active-volume blocks and compare idle storage and reaction depth at fixed resources.",
+      "stop_rule": "One leaf plus one dependent chain; reject any unimplemented connectivity assumption for accepted timing.",
+      "receipt_references": [],
+      "source_sections": [
+        "4 Failure 5 memory",
+        "5 root cause B"
+      ]
+    },
+    {
+      "id": "H14",
+      "title": "Photonic clock rates cannot be inserted directly as logical-layer rates",
+      "queue_priority": 60,
+      "routing": "compatible-physical-frontier",
+      "original_plan_status": "conditional",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "H13",
+        "H18"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Model photonic throughput and feedback delay independently for the same dependency chain.",
+      "stop_rule": "One finite resource-generator/delay scenario and one sensitivity interval; missing loss data defers transfer.",
+      "receipt_references": [],
+      "source_sections": [
+        "7 logical-layer timing"
+      ]
+    },
+    {
+      "id": "H15",
+      "title": "Millions of logical qubits in the emitted oracle are not an information lower bound",
+      "queue_priority": 90,
+      "routing": "preserve-verified-scoped-component",
+      "original_plan_status": "partial",
+      "execution_status_snapshot": "accepted exact component",
+      "depends_on": [
+        "G0",
+        "A06"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Combine the exact compact SSA allocator with the accepted carry-save and ln(2) library and rebuild capped schedules; A18 is needed only for the later recomputation branch.",
+      "stop_rule": "First run packing alone; then at most three checkpoint policies on one segment. Reject any claimed memory gain without a clean replay.",
+      "receipt_references": [
+        "results\\limitation_program_20261001\\A06_run001\\summary.json"
+      ],
+      "source_sections": [
+        "4 Failure 5 memory",
+        "5 root cause E"
+      ]
+    },
+    {
+      "id": "H16",
+      "title": "Classical parallelism is inexpensive in this benchmark but not literally free",
+      "queue_priority": 3,
+      "routing": "matched-classical-comparator",
+      "original_plan_status": "ready",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0",
+        "C09"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Measure classical scaling at 1, 2, 4, 8 and up to 16 available workers with identical contracts and seeds.",
+      "stop_rule": "One fixed scaling grid; an unavailable GPU arm is marked unavailable rather than triggering a download/cloud job.",
+      "receipt_references": [],
+      "source_sections": [
+        "1 classical comparator",
+        "5 root cause E"
+      ]
+    },
+    {
+      "id": "H17",
+      "title": "T depth alone does not determine runtime",
+      "queue_priority": 4,
+      "routing": "compatible-physical-frontier",
+      "original_plan_status": "ready",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Create one resource ledger for the latest accepted source before attaching any estimator or hardware clock.",
+      "stop_rule": "One ledger per source and at most three compatible architectures; missing routing produces an incomplete scenario.",
+      "receipt_references": [],
+      "source_sections": [
+        "2.4",
+        "3 timing",
+        "4 Failures 4-6",
+        "7 frontier"
+      ]
+    },
+    {
+      "id": "H18",
+      "title": "Error per operation must fall as the entire computation grows",
+      "queue_priority": 4,
+      "routing": "compatible-physical-frontier",
+      "original_plan_status": "ready",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "C03"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Compute required per-operation and per-magic-state failure from the entire estimator invocation schedule.",
+      "stop_rule": "Use a provisional count range until G3; reject any fast hardware row whose accumulated failure exceeds its allocation.",
+      "receipt_references": [],
+      "source_sections": [
+        "1 confidence",
+        "5 root causes B and F"
+      ]
+    },
+    {
+      "id": "C01",
+      "title": "One classical price is the current output",
+      "queue_priority": 90,
+      "routing": "preserve-verified-scoped-component",
+      "original_plan_status": "ready",
+      "execution_status_snapshot": "completed scoped baseline audit; financial certificates remain open",
+      "depends_on": [],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Freeze a task contract for each original source family, specifying one classical discounted price and all financial inputs.",
+      "stop_rule": "No tuning until the task file is saved; unknown archived parameters are recovered from code/results rather than guessed.",
+      "receipt_references": [
+        "results\\limitation_program_20261001\\G0_run003\\summary.json",
+        "results\\limitation_program_20261001\\A01_run003\\summary.json"
+      ],
+      "source_sections": [
+        "1 output",
+        "5 root cause F"
+      ]
+    },
+    {
+      "id": "C02",
+      "title": "Dollar accuracy cannot be silently weakened",
+      "queue_priority": 90,
+      "routing": "preserve-verified-scoped-component",
+      "original_plan_status": "ready",
+      "execution_status_snapshot": "completed scoped baseline audit; financial certificates remain open",
+      "depends_on": [
+        "C01"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Express all candidate error bounds in discounted dollars at the existing notional.",
+      "stop_rule": "One dimensional/unit audit per source family; unsupported conversions make the candidate ineligible.",
+      "receipt_references": [
+        "results\\limitation_program_20261001\\G0_run003\\summary.json",
+        "results\\limitation_program_20261001\\A01_run003\\summary.json"
+      ],
+      "source_sections": [
+        "1 accuracy",
+        "7 extreme precision"
+      ]
+    },
+    {
+      "id": "C03",
+      "title": "The complete price needs the complete confidence allowance",
+      "queue_priority": 90,
+      "routing": "preserve-verified-scoped-component",
+      "original_plan_status": "ready",
+      "execution_status_snapshot": "completed scoped baseline audit; financial certificates remain open",
+      "depends_on": [
+        "C01",
+        "C02"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Create the common deterministic-error and probabilistic-failure ledger with an explicit allocation policy.",
+      "stop_rule": "One complete ledger skeleton; unresolved terms keep G2/G3/G5 open rather than delaying unchanged integer experiments.",
+      "receipt_references": [
+        "results\\limitation_program_20261001\\G0_run003\\summary.json",
+        "results\\limitation_program_20261001\\A01_run003\\summary.json"
+      ],
+      "source_sections": [
+        "1 confidence",
+        "5 root cause F"
+      ]
+    },
+    {
+      "id": "C04",
+      "title": "Tenfold advantage is a chosen threshold",
+      "queue_priority": 4,
+      "routing": "compatible-physical-frontier",
+      "original_plan_status": "audit",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "C01",
+        "H17"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Regenerate onefold and tenfold ratios with separate source-only and complete-runtime fields.",
+      "stop_rule": "One unit/identity check over every emitted comparison row; unsupported complete times remain blank.",
+      "receipt_references": [],
+      "source_sections": [
+        "1 tenfold target",
+        "2.2",
+        "7"
+      ]
+    },
+    {
+      "id": "C05",
+      "title": "The statistical allowance of 0.45 epsilon is adjustable",
+      "queue_priority": 6,
+      "routing": "requires-declared-financial-bias-budget",
+      "original_plan_status": "ready",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "C03",
+        "E24"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Optimize a small preregistered error-allocation grid after each component has a valid dollar bound.",
+      "stop_rule": "Three feasible allocations for one case; if a source bound is missing, retain the original split and defer optimization.",
+      "receipt_references": [],
+      "source_sections": [
+        "2.1 statistical allowance"
+      ]
+    },
+    {
+      "id": "C06",
+      "title": "Correct digital arithmetic is not a continuous financial-law certificate",
+      "queue_priority": 2,
+      "routing": "next-financial-certificate",
+      "original_plan_status": "conditional",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "C03"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Prove one-coordinate Gaussian-to-digital-law bias before composing a full-path price certificate.",
+      "stop_rule": "One coordinate plus one monitoring date first; a failed composition leaves the loader branch conditional and prompts a different bound.",
+      "receipt_references": [],
+      "source_sections": [
+        "4 Failure 6 correctness",
+        "7 certification"
+      ]
+    },
+    {
+      "id": "C07",
+      "title": "A few draws without barrier flips do not certify rare flips",
+      "queue_priority": 2,
+      "routing": "next-financial-certificate",
+      "original_plan_status": "conditional",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "C03",
+        "C06"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Bound the probability of the monitored basket lying within an arithmetic-error band around the barrier.",
+      "stop_rule": "Try two analytic/interval bounds on one date; if neither composes within its allowance, forbid lower precision for this contract.",
+      "receipt_references": [],
+      "source_sections": [
+        "4 Failure 6 barrier checks"
+      ]
+    },
+    {
+      "id": "C08",
+      "title": "Fitted convergence exponents are not lower bounds",
+      "queue_priority": 3,
+      "routing": "matched-classical-comparator",
+      "original_plan_status": "ready",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "C01",
+        "F01"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Freeze PCA basis, development/validation split and exponent-fit procedure before evaluating alternative classical representations.",
+      "stop_rule": "Use the existing Stage C design where compatible; a changed design is a separate locally versioned experiment.",
+      "receipt_references": [],
+      "source_sections": [
+        "2.3",
+        "4 Failure 6 rates",
+        "5 root cause A"
+      ]
+    },
+    {
+      "id": "C09",
+      "title": "Modelled classical time is not a timed successful price",
+      "queue_priority": 3,
+      "routing": "matched-classical-comparator",
+      "original_plan_status": "ready",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "C01",
+        "C03"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Complete the locally specified Stage C time-to-accuracy run using its actual target sample count and reference-price checks.",
+      "stop_rule": "Run one B4 target first, then the declared B8 target; a resource-limited incomplete run is reported incomplete, never timed-success evidence.",
+      "receipt_references": [],
+      "source_sections": [
+        "2.5 historical timing",
+        "4 Failure 6 comparator"
+      ]
+    },
+    {
+      "id": "C10",
+      "title": "The strongest tested classical method is not automatically the strongest applicable one",
+      "queue_priority": 3,
+      "routing": "matched-classical-comparator",
+      "original_plan_status": "ready",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "C01",
+        "F01"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Make an applicability matrix of classical challengers before implementing the next one.",
+      "stop_rule": "Screen three families and implement the best eligible development candidate; stop an inapplicable method before performance claims.",
+      "receipt_references": [],
+      "source_sections": [
+        "1 classical comparator",
+        "5 root cause D"
+      ]
+    },
+    {
+      "id": "C11",
+      "title": "A clean source is not an entire mean-estimation algorithm",
+      "queue_priority": 5,
+      "routing": "source-compatible-estimator",
+      "original_plan_status": "partial",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "C01",
+        "E02",
+        "H17"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Compile one complete estimator iterate for the same source family and reconcile every wrapper cost.",
+      "stop_rule": "One small complete iterate/repetition schedule first; incompatible interfaces stop that combination.",
+      "receipt_references": [],
+      "source_sections": [
+        "2 estimator model",
+        "4 Failures 3-6",
+        "8 evidence levels"
+      ]
+    },
+    {
+      "id": "C12",
+      "title": "Six constructions share three contracts and one toolchain",
+      "queue_priority": 50,
+      "routing": "later-measured-source-hotspot",
+      "original_plan_status": "partial",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Maintain an evidence-family table and independently structured replacements for shared toolchain components.",
+      "stop_rule": "Reuse existing exact replacement evidence; add a new independent backend only when its finite screen is promising.",
+      "receipt_references": [],
+      "source_sections": [
+        "Introduction",
+        "4 six attempts",
+        "8 shared-toolchain evidence"
+      ]
+    },
+    {
+      "id": "C13",
+      "title": "Optimizations interact and cannot be multiplied without a compatible schedule",
+      "queue_priority": 90,
+      "routing": "preserve-verified-scoped-component",
+      "original_plan_status": "partial",
+      "execution_status_snapshot": "accepted exact component",
+      "depends_on": [
+        "G0"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Adopt improvements only through one combined emitted source and a resource-matched schedule.",
+      "stop_rule": "Combine two compatible changes at a time; reject a combination on correctness, cap or certified-cost failure.",
+      "receipt_references": [
+        "results\\limitation_program_20261001\\A06_run001\\summary.json"
+      ],
+      "source_sections": [
+        "4 Failures 4-5",
+        "6 better compilation"
+      ]
+    },
+    {
+      "id": "C14",
+      "title": "A classical cubic exponent is not necessary for a crossover",
+      "queue_priority": 4,
+      "routing": "compatible-physical-frontier",
+      "original_plan_status": "audit",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "C04",
+        "C11",
+        "G4"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Evaluate the actual complete inequality without imposing a classical cubic-exponent prerequisite.",
+      "stop_rule": "One operating-point grid; unresolved estimator/hardware inputs are assumptions and cannot close G5.",
+      "receipt_references": [],
+      "source_sections": [
+        "7 requirements and expert summaries"
+      ]
+    },
+    {
+      "id": "C15",
+      "title": "References and stale numerical summaries need individual checking",
+      "queue_priority": 4,
+      "routing": "compatible-physical-frontier",
+      "original_plan_status": "audit",
+      "execution_status_snapshot": "not started",
+      "depends_on": [
+        "G0"
+      ],
+      "dependency_semantics": "Required input interfaces, not complete closure of every investigation branch.",
+      "original_next_action": "Bind every reused numerical/literature claim to an exact version, locator and cost boundary.",
+      "stop_rule": "Audit the references actually used by the next experiment first; missing primary evidence excludes that number from accepted costs.",
+      "receipt_references": [],
+      "source_sections": [
+        "3 external timing table",
+        "7 external summaries",
+        "9 evidence map",
+        "10 references"
+      ]
+    }
+  ]
+}

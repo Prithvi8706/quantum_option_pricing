@@ -1,0 +1,962 @@
+{
+  "schema_version": "limitation-implementation-plan-v1",
+  "section": "arithmetic_and_loading",
+  "as_of": "2026-10-01",
+  "source_document": "manuscript/advantage-frontier-2026-09-23/WHY_NO_ADVANTAGE.md",
+  "baseline": "results/limitation_audit_20261001/constant_multiplier_v1/summary.json",
+  "rules": [
+    "All execution is local. No pushes, publishing, project uploads or external messages are authorized by this plan. Use the pinned environment first; routine isolated local dependencies may be added when required by authorized testing.",
+    "Plans are bounded experiments and proof obligations, not guarantees that every limitation is solvable.",
+    "Every run uses a fresh top-level output directory; if run001 exists, choose the next unused run number and never overwrite prior evidence.",
+    "Before each run freeze target, library, schedule, code and environment hashes plus selection and stopping criteria.",
+    "Unchanged-integer-source experiments require exact semantics and cleanup under G1; changed precision, law or approximation requires G2 before financial adoption.",
+    "Report T count, T-depth, Clifford depth, peak logical qubits and setup cost. Complete runtime/advantage claims additionally require G3, G4 and G5.",
+    "Do not multiply overlapping leaf, storage, scheduler, loader or uncomputation improvement factors.",
+    "Entry dependencies identify required information/proof interfaces, not a requirement to solve every substep of another entry before beginning an independent prototype."
+  ],
+  "entries": [
+    {
+      "id": "A01",
+      "title": "Separate uniform preparation, normal loading, correlation and payoff costs",
+      "status": "ready",
+      "priority": 1,
+      "source_sections": [
+        "§3 item 1: coherent randomness and 468 Gaussians",
+        "§3 operation cost table",
+        "§6 better compilation"
+      ],
+      "existing_evidence": [
+        "manuscript/advantage-frontier-2026-09-23/STAGE_A_RESULTS.md",
+        "research/controlled_source_completion/finance.py",
+        "research/controlled_source_completion/compiler.py",
+        "results/limitation_audit_20261001/constant_multiplier_v1/summary.json",
+        "research/advantage_frontier_20260923/barrier_oracle_depth.py"
+      ],
+      "depends_on": [
+        "G0"
+      ],
+      "next_action": "Build an analysis-only ledger for both latest B4x12 and B8x52 sources, assigning every node and emitted invocation to exactly one of uniform preparation, scalar normal generation, correlation, or path/payoff.",
+      "alternatives": [
+        "Use producer/consumer reachability to assign shared constants once; retain a separate list of shared nodes rather than silently duplicating them.",
+        "Report both emitted operation totals and critical-path attribution; do not add category depths as if they were serial."
+      ],
+      "steps": [
+        "Read the latest target/source/schedule and annotate the roots of each normal and each correlation transform.",
+        "Partition shared nodes deterministically, reconcile forward, output-copy and inverse costs with the archived source, and report uniform Hadamards separately.",
+        "Identify the top three measured depth and work contributors and use them to order remaining arithmetic trials."
+      ],
+      "acceptance": [
+        "100% of non-input nodes and leaf invocations are assigned once, with no duplicates or omissions.",
+        "T, X, CX and CCX totals reproduce each latest emitted resource total exactly; random-Hadamard counts reproduce input declarations.",
+        "Recomputed dependency depth agrees with independent DAG accounting; schedule T-depth and peak qubits agree exactly with the current capped schedule. Category depth is labelled diagnostic and is not summed."
+      ],
+      "stop_rule": "One ledger implementation and one independently recomputed reconciliation per case. If shared-node classification is ambiguous, retain its attribution as an explicit shared cost and resolve accounting before proposing loader savings.",
+      "on_pass": "Freeze this ledger as the baseline for all source changes and select the next trial by its measured contribution.",
+      "on_fail": "Fix provenance or attribution; do not alter financial code or infer an improvement from incomplete totals.",
+      "artifacts": [
+        "results/limitation_program_20261001/A01_run001/protocol.json",
+        "results/limitation_program_20261001/A01_run001/cost_ledger.json",
+        "results/limitation_program_20261001/A01_run001/summary.md"
+      ]
+    },
+    {
+      "id": "A02",
+      "title": "Replace Box-Muller only after a complete scalar-loader comparison",
+      "status": "partial",
+      "priority": 3,
+      "source_sections": [
+        "§3 item 1: Box-Muller or equivalent loader",
+        "§5 root cause C: state loading"
+      ],
+      "existing_evidence": [
+        "research/limitation_audit_20261001/experiment_gaussian.py",
+        "results/limitation_audit_20261001/gaussian_v3/summary.json",
+        "docs/limitation_audit_20261001/EXECUTION_RESULTS.md"
+      ],
+      "depends_on": [
+        "G0",
+        "A01",
+        "A05"
+      ],
+      "next_action": "Freeze one scalar Gaussian grid and its allocated error, then complete the Clifford+T cost of the existing prefix-rotation preparation/inverse before screening a separate QSVT Gaussian loader.",
+      "alternatives": [
+        "Existing exact numerical prefix preparation; arbitrary RY rotations must be synthesized and charged.",
+        "QSVT preparation with explicit polynomial degree, block encoding, filling fraction, amplification and success handling.",
+        "The emitted MPS candidate from A04 on precisely the same scalar target."
+      ],
+      "steps": [
+        "Use the conditioned [-6,6] midpoint grid only as a clearly named alternative finite law; preserve the archived Box-Muller law as a separate baseline.",
+        "Bound rotation and coefficient errors, synthesize all rotations, and include preparation, inverse and any amplification/reflection overhead.",
+        "For QSVT, derive the degree and filling-fraction cost before emitting; emit one smallest viable instance only if the screen is competitive.",
+        "Compare complete scalar cost and then a source containing two draws; adoption at 468 draws requires G2, not merely a histogram."
+      ],
+      "acceptance": [
+        "Prepared amplitudes are square roots of the specified masses, not the Gaussian density itself; normalization and grid units are verified.",
+        "A preparation/inverse pair meets the preallocated scalar trace-distance/operator-error bound, including synthesis and unsuccessful branches.",
+        "Under a frozen logical-qubit cap at least one complete scalar resource improves without an unpriced resource increase; full adoption additionally passes G2.",
+        "The classical comparator can sample the same new finite law and is separately timed."
+      ],
+      "stop_rule": "Screen prefix, QSVT and MPS at one common grid and three error targets; emit at most two candidates. Stop replacing Box-Muller if no candidate reaches the allocated error or if its complete cost is dominated.",
+      "on_pass": "Retain the best certified scalar loader, then compose two draws and finally the full input law through A05 and G2.",
+      "on_fail": "Keep Box-Muller for the exact source, record the failing synthesis/degree/normalization term, and continue exact arithmetic work.",
+      "artifacts": [
+        "results/limitation_program_20261001/A02_run001/protocol.json",
+        "results/limitation_program_20261001/A02_run001/scalar_loader_comparison.json",
+        "results/limitation_program_20261001/A02_run001/preparation_and_inverse.qasm",
+        "results/limitation_program_20261001/A02_run001/error_certificate.json"
+      ]
+    },
+    {
+      "id": "A03",
+      "title": "Certify recursive-loading integrals and conditional angles",
+      "status": "partial",
+      "priority": 3,
+      "source_sections": [
+        "§3 item 1: equivalent loader",
+        "§5 root cause C: alternative state preparation"
+      ],
+      "existing_evidence": [
+        "research/limitation_audit_20261001/experiment_gaussian.py",
+        "results/limitation_audit_20261001/gaussian_v3/summary.json",
+        "docs/limitation_audit_20261001/ARITHMETIC_AND_LOADING.md"
+      ],
+      "depends_on": [
+        "G0",
+        "A05"
+      ],
+      "next_action": "Replace floating-point prefix probabilities at the first two Gaussian-loading levels with interval-certified probabilities and angle enclosures, then synthesize those rotations with a charged error budget.",
+      "alternatives": [
+        "Analytic normal-CDF interval differences evaluated deterministically.",
+        "Certified rational/polynomial CDF approximations with explicit domain and error.",
+        "Precomputed static angle structure; generation cost and storage remain part of setup."
+      ],
+      "steps": [
+        "Extract the first two levels of the existing prefix loader, keeping its cutoff, bins and normalization fixed.",
+        "Enclose each probability ratio and the square-root/arccos angle; handle empty or tiny conditional masses explicitly.",
+        "Synthesize these angles, compare branch amplitudes to the enclosures, and derive a precision-dependent bound for deeper levels.",
+        "Count all distinct angles and setup work before claiming this method scales beyond the existing ten-bit prototype."
+      ],
+      "acceptance": [
+        "Every first-two-level probability and angle is enclosed rigorously; interval divisions exclude zero or have a separately proved branch rule.",
+        "Complete synthesis cost and cumulative preparation error are finite functions of requested precision.",
+        "No Monte Carlo integration, oracle integral, small-angle pruning or arbitrary-rotation cost is left unpriced.",
+        "Numerical simulation is an implementation check, not substituted for the interval proof."
+      ],
+      "stop_rule": "Two certified levels and a full-tree count suffice for the first decision. Reject the cheap-recursive-loader claim if precision makes interval/angle generation or the exponential prefix table dominate A02’s comparator.",
+      "on_pass": "Extend certificates only to the loader candidate selected by A02; reuse them for the identical grid.",
+      "on_fail": "Retain the existing numerical prototype as exploratory evidence and prefer an analytically certified QSVT or MPS route if available.",
+      "artifacts": [
+        "results/limitation_program_20261001/A03_run001/protocol.json",
+        "results/limitation_program_20261001/A03_run001/conditional_angle_intervals.json",
+        "results/limitation_program_20261001/A03_run001/synthesis_cost.json"
+      ]
+    },
+    {
+      "id": "A04",
+      "title": "Turn Gaussian MPS compression into an emitted, synthesized circuit",
+      "status": "partial",
+      "priority": 3,
+      "source_sections": [
+        "§3 item 1: coherent normal loading",
+        "§6 better compilation"
+      ],
+      "existing_evidence": [
+        "research/limitation_audit_20261001/experiment_gaussian.py",
+        "results/limitation_audit_20261001/gaussian_v3/summary.json",
+        "results/limitation_audit_20261001/gaussian_v3/gaussian_10.json"
+      ],
+      "depends_on": [
+        "G0",
+        "A03",
+        "A05"
+      ],
+      "next_action": "Emit a sequential preparation/inverse circuit for the existing ten-bit bond-eight Gaussian MPS compression, then measure synthesis error and resource cost against the prefix baseline.",
+      "alternatives": [
+        "Bond caps 2, 4 and 8 using the existing tensor-train decomposition.",
+        "QSVT and certified prefix loaders from A02/A03.",
+        "A larger bond only if the frozen accuracy target cannot be reached at bond eight; do not silently enlarge the initial screen."
+      ],
+      "steps": [
+        "Convert normalized MPS cores into isometries with explicit scratch and a complete inverse.",
+        "Verify the uncompressed target probabilities, compressed state and emitted state separately; charge all three error sources.",
+        "Synthesize the circuit at scalar allowances delta, delta/10 and delta/100, including generation time.",
+        "If no financial allocation exists yet, use 1e-6, 1e-8 and 1e-10 as exploratory trace-distance targets and label them nonfinancial."
+      ],
+      "acceptance": [
+        "Forward/inverse and reference-entangled checks pass, and every ancilla returns to its declared state.",
+        "Compression, isometry-emission and synthesis errors sum to at most the chosen scalar allowance.",
+        "Complete preparation/inverse resource counts include every arbitrary rotation; the numerical 3.49e-11 compression result is not treated as an emitted-circuit certificate.",
+        "At least one certified circuit is nondominated against the prefix candidate at the same grid, error and cap; production adoption requires G2."
+      ],
+      "stop_rule": "Three bonds and three error targets on the ten-bit grid, with at most three emitted candidates. If all are dominated or miss the error target, archive the negative result and stop this architecture.",
+      "on_pass": "Add the MPS circuit to A02’s matched loader frontier; compose it under A05 before source replacement.",
+      "on_fail": "Keep the compression observation only; do not credit a loading speedup in the complete circuit.",
+      "artifacts": [
+        "results/limitation_program_20261001/A04_run001/protocol.json",
+        "results/limitation_program_20261001/A04_run001/mps_loader.qasm",
+        "results/limitation_program_20261001/A04_run001/accuracy_frontier.json"
+      ]
+    },
+    {
+      "id": "A05",
+      "title": "Allocate and compose loading error across independent draws",
+      "status": "ready",
+      "priority": 2,
+      "source_sections": [
+        "§3 item 1: 468 Gaussians",
+        "§4 Failure 5: input and workspace width",
+        "§5 root cause F: certification"
+      ],
+      "existing_evidence": [
+        "research/controlled_source_completion/finance.py",
+        "results/limitation_audit_20261001/gaussian_v3/summary.json",
+        "docs/limitation_audit_20261001/EXECUTION_RESULTS.md"
+      ],
+      "depends_on": [
+        "G0"
+      ],
+      "next_action": "Prove a two-factor preparation-error bound and assign a numeric scalar allowance from a frozen dollar loading budget, then scale the proved construction to each actual draw count.",
+      "alternatives": [
+        "Conservative product-state trace distance <= sum_j delta_j and bounded-payoff expectation error <= M times total variation.",
+        "A coupling/Wasserstein bound for smooth path components plus a separate barrier-band probability bound.",
+        "Unequal per-factor allowances based on rigorously bounded sensitivities; rank reduction is a separately budgeted model change."
+      ],
+      "steps": [
+        "Confirm the independent factors and correlation map in each source; use the actual count for each case rather than applying 468 everywhere.",
+        "Prove the joint law bound for two factors and derive a rigorous payoff bound M or a tail/moment alternative if no useful uniform bound exists.",
+        "Allocate the total dollar loading budget across tail truncation, grid, preparation, synthesis and correlation.",
+        "Compute the required per-coordinate delta for the full source and feed it to A02–A04; barrier discontinuities receive their own band term."
+      ],
+      "acceptance": [
+        "Allocated nonnegative error terms sum to no more than the frozen loading budget; the overall pricing ledger remains within epsilon through G2.",
+        "Every probability/trace-distance bound uses its stated law and normalization, and composition does not assume independent circuit errors without proof.",
+        "No factor is dropped and no PCA rank is reduced under an exact-optimization label.",
+        "The required scalar allowance is numeric for B4x12 and B8x52; infeasible precision is recorded as a failed candidate, not omitted."
+      ],
+      "stop_rule": "Evaluate the conservative product bound and one contract-aware refinement. If both force an unattainable loader precision at the screened costs, suspend law replacement and keep exact-source work moving.",
+      "on_pass": "Supply the allocation to loader trials; require its certificate to be updated whenever the grid or draw count changes.",
+      "on_fail": "Retain the current law and document the dominant tail, grid or barrier term for the next formulation decision.",
+      "artifacts": [
+        "results/limitation_program_20261001/A05_run001/protocol.json",
+        "results/limitation_program_20261001/A05_run001/loading_error_allocation.json",
+        "results/limitation_program_20261001/A05_run001/two_factor_proof.md"
+      ]
+    },
+    {
+      "id": "A06",
+      "title": "Combine exact compact storage with the latest arithmetic schedule",
+      "status": "partial",
+      "priority": 1,
+      "source_sections": [
+        "§3 item 2: global 72-bit fixed point",
+        "§4 Failure 5: millions of retained SSA qubits",
+        "§5 root cause C: precision and representation"
+      ],
+      "existing_evidence": [
+        "research/controlled_source_completion/compact_storage.py",
+        "research/controlled_source_completion/budget_schedule.py",
+        "research/limitation_audit_20261001/experiment_compact_storage.py",
+        "results/limitation_audit_20261001/compact_storage_v1/summary.json",
+        "results/limitation_audit_20261001/constant_multiplier_v1/summary.json"
+      ],
+      "depends_on": [
+        "G0",
+        "A01"
+      ],
+      "next_action": "Adapt compact SSA binding to the latest carry-save/ln(2) source and memory-capped wave scheduler without changing any arithmetic width or finite financial function.",
+      "alternatives": [
+        "Reuse proven possible-one masks and distinct private zero-bit wires while keeping every leaf interface unchanged.",
+        "Emit narrow flags/indexes only when operation semantics prove their active width.",
+        "After exact packing, investigate per-node signed ranges and fractional precision via A07 and G2; floating point remains a separate bounded screen."
+      ],
+      "steps": [
+        "Recompute masks on the latest archived target and verify they match the same graph and table hashes.",
+        "Build a compact live layout for parallel waves, reserve distinct private leaf wires, and account for all concurrently active scratch. Supply this early live-width/capacity interface to A18/H15; do not wait for A18’s later pebbling screen to combine existing exact packing.",
+        "Emit schedules at the original caps and at 90% of each cap; replay the same seeded and uniform-endpoint inputs.",
+        "Choose a nondominated depth/width point; only then consider reducing arithmetic precision or changing representation."
+      ],
+      "acceptance": [
+        "All operations compute the same 72/40 integer target, arbitrary output XOR remains valid, and every promised-zero/private wire is restored.",
+        "Full B4x12 and B8x52 source replays match the independent integer interpreter; small graphs exhaust width/mask cases.",
+        "The emitted peak qubits and concurrency are measured, not obtained by subtracting the earlier serial savings from a parallel total.",
+        "At the original caps, accept only if source T-depth does not increase; alternatively retain a lower-cap frontier point with its full measured depth/work penalty."
+      ],
+      "stop_rule": "One merged binding, two caps per case, and at most one scheduler adjustment after a failed cap. If compact private-wire lifetimes cannot be proved, retain the previously verified serial opt-in path.",
+      "on_pass": "Make this combined exact source the next baseline with fresh hashes, then use freed workspace for A08/A09/A18 candidates.",
+      "on_fail": "Keep serial packing and capped arithmetic as separate verified alternatives; record the precise allocation conflict and continue independent leaf trials.",
+      "artifacts": [
+        "results/limitation_program_20261001/A06_run001/protocol.json",
+        "results/limitation_program_20261001/A06_run001/compact_wave_sources.json",
+        "results/limitation_program_20261001/A06_run001/cap_frontier.json",
+        "results/limitation_program_20261001/A06_run001/replay_receipts.json"
+      ]
+    },
+    {
+      "id": "A07",
+      "title": "Prove reachable ranges before narrowing arithmetic",
+      "status": "ready",
+      "priority": 2,
+      "source_sections": [
+        "§4 Failure 5: range-certified multipliers",
+        "§4 Failure 6: incomplete knock-out financial validation",
+        "§5 root cause C: precision choices"
+      ],
+      "existing_evidence": [
+        "research/controlled_priority_completion/range_joint_arithmetic.py",
+        "research/controlled_priority_completion/range_audit.py",
+        "research/controlled_source_completion/ir.py",
+        "manuscript/advantage-frontier-2026-09-23/STAGE_A_RESULTS.md",
+        "research/advantage_frontier_20260923/barrier_oracle_depth.py"
+      ],
+      "depends_on": [
+        "G0",
+        "A01"
+      ],
+      "next_action": "Create a new contract-specific interval/relational certificate for one B4x12 exponential, including its range-reduction integer and every intermediate coefficient/product/shift.",
+      "alternatives": [
+        "Full finite-domain interval arithmetic with directed rounding.",
+        "Affine or relational bounds when interval cancellation is too loose.",
+        "Deliberate tail truncation only as a changed-law branch with a separately proved tail and barrier allowance under G2."
+      ],
+      "steps": [
+        "Identify the exponential on the measured critical path and its finite uniform-input domain.",
+        "Propagate signed bounds through range reduction and polynomial evaluation, including modulo arithmetic, shift limits and discarded-bit carry.",
+        "Attempt exact narrowing at one proved node, with same-graph proof dispatch and a fallback generic leaf.",
+        "For approximate narrowing, derive rounding accumulation and barrier-band probability separately; never borrow the compound-source certificate as if it covered this contract."
+      ],
+      "acceptance": [
+        "Every omitted bit is proved redundant for every declared finite input, or an explicit changed-law/error certificate is supplied.",
+        "Coefficient intermediates, signed edges, overflow and underflow are included in the proof.",
+        "A narrowed exact leaf matches the original integer result, including negative operands and arbitrary output, with restored workspace.",
+        "Any approximate price claim passes G2, including probability-weighted barrier flips rather than a typical-path observation."
+      ],
+      "stop_rule": "One exponential proof with interval propagation and one relational refinement. If the range remains too loose, preserve the wider node and move to another exact cost instead of repeatedly sampling paths.",
+      "on_pass": "Use the proved active widths in A06/A09/A10 and supply the certified approximation domain to A13.",
+      "on_fail": "Record the first unbounded or overflow-sensitive node and retain its full width; no narrowing based on sampled extrema.",
+      "artifacts": [
+        "results/limitation_program_20261001/A07_run001/protocol.json",
+        "results/limitation_program_20261001/A07_run001/exponential_range_certificate.json",
+        "results/limitation_program_20261001/A07_run001/narrow_leaf_replay.json"
+      ]
+    },
+    {
+      "id": "A08",
+      "title": "Benchmark a matching clean carry-lookahead adder",
+      "status": "ready",
+      "priority": 2,
+      "source_sections": [
+        "§3 add/subtract leaf row",
+        "§5 root cause C: arithmetic architecture",
+        "§6 better compilation"
+      ],
+      "existing_evidence": [
+        "research/controlled_source_completion/primitives.py",
+        "research/journal_sprint/reversible_fixed_point.py",
+        "research/controlled_source_completion/budget_schedule.py",
+        "results/limitation_audit_20261001/constant_multiplier_v1/summary.json"
+      ],
+      "depends_on": [
+        "G0",
+        "A01"
+      ],
+      "next_action": "Emit an exact modular clean-XOR carry-lookahead add/subtract leaf matching primitives.build, then compare it with the current ripple implementation at 72 bits.",
+      "alternatives": [
+        "Out-of-place carry-lookahead plus copying and inverse.",
+        "In-place carry-lookahead wrapped to the same clean output interface.",
+        "Reuse ripple for tight workspace; measurement-based adders belong to A16’s distinct phase-aware backend."
+      ],
+      "steps": [
+        "Specify signed two's-complement modular add/sub semantics and nonzero output behavior.",
+        "Exhaust all inputs/outputs at widths 1–5, then replay 72-bit carry chains, signed overflow and random values.",
+        "Measure T count, T-depth, Clifford depth, peak qubits and cache provenance under the current exact seven-T CCX model.",
+        "Screen at a 4,096-qubit leaf ceiling; compile the viable candidate in both full sources under their actual frozen caps."
+      ],
+      "acceptance": [
+        "Every small input pair and nonzero-output test matches the current leaf; inputs and workspace restore in both directions.",
+        "Production tests include all-ones carry chains, signed extrema and modular wrap.",
+        "Retain a logical candidate only if it is nondominated at the frozen cap; adoption requires measured full-source T-depth reduction or lower width without hidden work.",
+        "G5 assesses routing, simultaneous magic-state demand and reaction latency before any runtime gain is claimed."
+      ],
+      "stop_rule": "Two carry-lookahead variants at 24, 40 and 72 bits; emit full sources for at most the best two. Stop if every variant exceeds the cap or full-source depth is unchanged/worse.",
+      "on_pass": "Retain the matching adder and rerun only arithmetic leaves that actually use it; measure combined gains rather than multiplying factors.",
+      "on_fail": "Keep ripple and its verified semantics; use the result to limit A14’s shift-add feasibility screen.",
+      "artifacts": [
+        "results/limitation_program_20261001/A08_run001/protocol.json",
+        "results/limitation_program_20261001/A08_run001/adder_frontier.json",
+        "results/limitation_program_20261001/A08_run001/full_source_comparison.json"
+      ]
+    },
+    {
+      "id": "A09",
+      "title": "Extend the measured multiplier frontier without assuming Karatsuba wins",
+      "status": "partial",
+      "priority": 2,
+      "source_sections": [
+        "§3 item 2: multiply cost",
+        "§4 Failure 5: range-narrow multiplication",
+        "§5 root cause C: quadratic schoolbook work"
+      ],
+      "existing_evidence": [
+        "research/controlled_source_completion/carry_save_multiplier.py",
+        "research/controlled_priority_completion/ranged_multiplier.py",
+        "research/controlled_source_completion/budget_schedule.py",
+        "research/limitation_audit_20261001/test_carry_save_multiplier.py",
+        "results/limitation_audit_20261001/multiplier_v2/summary.json",
+        "results/limitation_audit_20261001/constant_multiplier_v1/summary.json"
+      ],
+      "depends_on": [
+        "G0",
+        "A01",
+        "A07"
+      ],
+      "next_action": "Inventory the proved active operand widths, then benchmark range-specific carry-save products at 24, 40 and 72 active bits against the already retained exact multiplier.",
+      "alternatives": [
+        "Truncated carry-save products with one final carry-propagating add.",
+        "Carry-lookahead final addition if A08 establishes a matched benefit.",
+        "A single reversible Karatsuba prototype only if a charged recursion/base-case gate screen can beat the current exact 72-bit leaf."
+      ],
+      "steps": [
+        "Keep the same signed floor(product/2^f) modulo 2^w output and count carry from discarded low bits.",
+        "Generate only justified operand/sign specializations and bind each through proof-aware dispatch with generic fallback.",
+        "Exhaust small signed words, then test each production active-width promise and invalid-promise negative control.",
+        "Compile at most two nondominated candidates under the whole-source caps, including recomputation and extra scratch."
+      ],
+      "acceptance": [
+        "Small-width exhaustive tests cover all supported fractional widths and signed pairs; production checks cover signed extremes, nonzero output and inverse cleanup.",
+        "Full-product costs are never compared to truncated-product costs without matching requested output bits.",
+        "Every specialization has a static proof; all resource figures include sign corrections and uncomputation.",
+        "Retain only a measured capped-source improvement; the existing 90,592-to-3,696 leaf result is evidence already earned, not a new forecast."
+      ],
+      "stop_rule": "Three active widths and at most two new circuit families. Reject Karatsuba for this run if its complete estimate is dominated before emission; do not pursue its asymptotic exponent at arbitrary widths.",
+      "on_pass": "Adopt the measured proof-dispatched variant, preserve the current generic carry-save and low-workspace alternatives, and update A01.",
+      "on_fail": "Keep the verified carry-save backend; shift effort to width management or another measured bottleneck.",
+      "artifacts": [
+        "results/limitation_program_20261001/A09_run001/protocol.json",
+        "results/limitation_program_20261001/A09_run001/active_width_inventory.json",
+        "results/limitation_program_20261001/A09_run001/multiplier_frontier.json"
+      ]
+    },
+    {
+      "id": "A10",
+      "title": "Finish constant-product and square specialization after the ln(2) win",
+      "status": "partial",
+      "priority": 1,
+      "source_sections": [
+        "§3 multiplication and polynomial arithmetic",
+        "§5 root cause C: separate squares and constant products"
+      ],
+      "existing_evidence": [
+        "research/controlled_source_completion/constant_multiplier.py",
+        "research/limitation_audit_20261001/experiment_constant_multiplier.py",
+        "research/limitation_audit_20261001/test_constant_multiplier.py",
+        "docs/limitation_audit_20261001/CONSTANT_MULTIPLIER_RESULT.md",
+        "results/limitation_audit_20261001/constant_multiplier_v1/summary.json"
+      ],
+      "depends_on": [
+        "G0",
+        "A01",
+        "A07"
+      ],
+      "next_action": "Enumerate the remaining expensive coefficients and exact self-products, then prove whether the logarithm range-reduction integer can use seven signed bits in the already exact ln(2) specialization.",
+      "alternatives": [
+        "Signed-digit shift-add for tighter scratch and signed-digit carry-save for lower depth; both already implemented for ln(2).",
+        "General constant specialization with zero-low-bit contracts only where same-graph proofs justify them.",
+        "A dedicated square using symmetric partial products, preserving discarded-bit carry and signed semantics."
+      ],
+      "steps": [
+        "Freeze the existing ln(2) result: 46,176 to 1,152 leaf T-depth and the measured 12.51%/12.37% complete-source reductions.",
+        "Prove the log exponent range [-40,31] from msb(x)-40 and the graph’s positive-input guard. A seven-bit specialization requires a static sign-extension promise for the upper operand, not just the existing zero-low-bit promise; keep exp-derived operands at their independently proved width.",
+        "Emit one narrower log-only coefficient leaf, or the next most expensive coefficient if the screen predicts no source benefit.",
+        "For actual self-products, derive an exact truncated square and run matched small/production checks; compile only the best two changes."
+      ],
+      "acceptance": [
+        "The coefficient 762123384786 remains a positive integer, not an incorrectly signed 40-bit word.",
+        "Each width/zero-low-bit promise is proved from the same graph; unproved calls retain the generic leaf.",
+        "Signed floor/truncation, arbitrary output XOR, inverse execution and workspace restoration match the archived leaf exactly.",
+        "Accept only measured full-source resource improvements under the frozen cap; do not reuse the prior 40.08x leaf gain as another multiplier."
+      ],
+      "stop_rule": "Screen the top three constant coefficients and the top two square signatures; emit at most two candidates. Stop a candidate when its maximum attributable depth saving is below 0.1% of the current source or it is resource-dominated.",
+      "on_pass": "Keep the winning specialization with versioned proof-aware cache keys and refresh full-source accounting.",
+      "on_fail": "Retain the current verified ln(2) implementation and mark the screened coefficient/square as having no local benefit.",
+      "artifacts": [
+        "results/limitation_program_20261001/A10_run001/protocol.json",
+        "results/limitation_program_20261001/A10_run001/constant_square_inventory.json",
+        "results/limitation_program_20261001/A10_run001/specialization_comparison.json"
+      ]
+    },
+    {
+      "id": "A11",
+      "title": "Match square-root interfaces and charge remainder cleanup",
+      "status": "ready",
+      "priority": 3,
+      "source_sections": [
+        "§3 square-root leaf row",
+        "§4 Failure 1: coherent Heston-step bottleneck",
+        "§5 root cause C: numerical functions"
+      ],
+      "existing_evidence": [
+        "research/controlled_source_completion/primitives.py",
+        "research/antithetic_feasibility/reversible.py",
+        "research/controlled_source_completion/finance.py",
+        "docs/limitation_audit_20261001/EXECUTION_RESULTS.md"
+      ],
+      "depends_on": [
+        "G0",
+        "A01",
+        "A07"
+      ],
+      "next_action": "Implement a non-restoring clean-XOR alternative for the current exact fixed-point square root, including root/remainder erasure; the baseline already implements digit-by-digit square root.",
+      "alternatives": [
+        "Non-restoring integer square root with the exact input scaling, output bits and charged remainder cleanup; compare to the existing digit-by-digit implementation.",
+        "Normalized Newton reciprocal-square-root plus multiplication, with a certified zero/small-input branch.",
+        "Remove only Box-Muller square roots if A02 succeeds; Heston’s state-dependent square root remains."
+      ],
+      "steps": [
+        "Freeze the existing exact function out XOR floor(sqrt(unsigned(x)*2^f)), with its nonnegative caller guard. The baseline is already digit-by-digit with stored remainders; the new candidate must improve its architecture rather than relabel it.",
+        "Exhaust small widths and every supported fractional count; test zero, one input quantum and values adjacent to perfect squares.",
+        "Emit the 72/40 candidate and compare complete clean-leaf resources at the same input domain.",
+        "If Newton is screened, allocate approximation error and handle small denominators before any price adoption."
+      ],
+      "acceptance": [
+        "Exact candidate matches the historical integer square-root function for every exhaustive input and all selected signed-domain guards.",
+        "No root remainder or input-scaling work is omitted; arbitrary output and inverse cleanup are supported.",
+        "Retain only a nondominated leaf and measure its actual complete-source contribution via A01.",
+        "Approximate Newton substitution requires G2 and is never labelled integer-equivalent; a Gaussian-loader removal is not credited to the Heston step."
+      ],
+      "stop_rule": "One exact root family and one analytic Newton resource/error screen at 24, 40 and 72 bits. Stop if no complete leaf improves or if the reachable near-zero domain prevents a bounded approximation.",
+      "on_pass": "Integrate the exact root into the unchanged source, or retain a separately certified approximate branch for G2 review.",
+      "on_fail": "Keep clean_sqrt and document whether scaling, remainder erasure, near-zero handling or sequential depth consumed the proposed saving.",
+      "artifacts": [
+        "results/limitation_program_20261001/A11_run001/protocol.json",
+        "results/limitation_program_20261001/A11_run001/sqrt_semantics.json",
+        "results/limitation_program_20261001/A11_run001/sqrt_frontier.json"
+      ]
+    },
+    {
+      "id": "A12",
+      "title": "Screen reciprocal division with exact quotient correction",
+      "status": "ready",
+      "priority": 3,
+      "source_sections": [
+        "§3 divide leaf row",
+        "§4 Failure 4: controlled-source phase arithmetic",
+        "§5 root cause C: numerical arithmetic"
+      ],
+      "existing_evidence": [
+        "research/controlled_source_completion/primitives.py",
+        "research/controlled_source_completion/ir.py",
+        "research/controlled_source_completion/phase_certificate.py",
+        "research/controlled_source_completion/phase_precision.py"
+      ],
+      "depends_on": [
+        "G0",
+        "A01",
+        "A07"
+      ],
+      "next_action": "Inventory actual divide denominators and prove one positive range, then implement reciprocal multiplication with a final quotient/remainder correction for that range.",
+      "alternatives": [
+        "Constant or power-of-two divide specialization when the exact graph permits it.",
+        "Normalized seed-table Newton reciprocal with exact correction.",
+        "An approximate reciprocal-only branch with its own phase/payoff error allowance under G2."
+      ],
+      "steps": [
+        "Respect divide’s unsigned restoring semantics and zero-divisor behavior; Graph.div’s guard does not establish a useful away-from-zero bound by itself.",
+        "Prove the selected denominator’s minimum/maximum and bound the required reciprocal precision.",
+        "Compute a candidate quotient, charge comparison/multiply/subtract correction, and restore seed, iteration and remainder workspace.",
+        "Compare exact quotients on every small input and selected large boundary cases; separately ledger any approximate option."
+      ],
+      "acceptance": [
+        "An exact candidate returns the same low w quotient bits as floor(a*2^f/b), including saturation/wrap conventions and declared zero handling.",
+        "The correction count has a proved finite bound on the selected range.",
+        "All lookup, normalization, iteration and correction resources are included in the clean-leaf comparison.",
+        "Approximate branches satisfy their allocated G2 term and do not inherit exact-source validity merely from small numerical errors."
+      ],
+      "stop_rule": "Screen all denominator classes once; prototype the highest-cost proved-away-from-zero class and one constant class. Stop Newton replacement if correcting the quotient consumes its saving.",
+      "on_pass": "Dispatch exact proven denominator classes with fallback; offer the approximate branch only as a separate certified target.",
+      "on_fail": "Keep restoring division and record the minimum-denominator or correction bottleneck.",
+      "artifacts": [
+        "results/limitation_program_20261001/A12_run001/protocol.json",
+        "results/limitation_program_20261001/A12_run001/denominator_inventory.json",
+        "results/limitation_program_20261001/A12_run001/reciprocal_divide_comparison.json"
+      ]
+    },
+    {
+      "id": "A13",
+      "title": "Search a bounded exponential degree/segment frontier",
+      "status": "ready",
+      "priority": 3,
+      "source_sections": [
+        "§3 item 3: degree-12 exponential",
+        "§4 Failure 3: compiled exponential dominates",
+        "§5 root cause C: polynomial arithmetic"
+      ],
+      "existing_evidence": [
+        "research/controlled_source_completion/ir.py",
+        "research/controlled_source_completion/optimize.py",
+        "research/controlled_priority_completion/range_joint_arithmetic.py",
+        "manuscript/advantage-frontier-2026-09-23/STAGE_A_RESULTS.md",
+        "results/limitation_audit_20261001/constant_multiplier_v1/summary.json",
+        "research/advantage_frontier_20260923/barrier_oracle_depth.py"
+      ],
+      "depends_on": [
+        "G0",
+        "A07"
+      ],
+      "next_action": "For the newly proved exponential domain, certify a finite grid of minimax degree/segment choices before emitting the best two complete function candidates; the current Estrin source is the baseline.",
+      "alternatives": [
+        "Piecewise minimax polynomials with static coefficient QROM.",
+        "Taylor baseline and the already-used Estrin dependency arrangement.",
+        "Alternative range reduction or mixed intermediate precision only with explicit conversions and G2 accounting."
+      ],
+      "steps": [
+        "Fix the required absolute error from G2’s arithmetic allocation; without it, perform only an explicitly exploratory error/cost screen.",
+        "Screen degrees 4, 6, 8, 10 and 12 with 1, 2, 4 and 8 segments using rigorous approximation and coefficient-rounding bounds.",
+        "Include domain labels, coefficient reads, products, additions, shifts and all cleanup in each candidate estimate.",
+        "Emit current baseline plus the best two feasible candidates, then compare source depth at frozen caps."
+      ],
+      "acceptance": [
+        "Uniform approximation error is certified over the entire reachable interval, including range-reduction boundaries.",
+        "Finite arithmetic rounding, coefficient quantization, overflow and any barrier-band impact are included under G2.",
+        "The comparison uses whole-function costs; lower degree is not counted while omitting the larger table or selector.",
+        "Adoption of changed polynomial semantics requires G2; optimization of the same polynomial may proceed under G1 alone."
+      ],
+      "stop_rule": "Twenty degree/segment pairs in the first screen and at most two new emitted candidates. Stop if all violate error/cap requirements or the full source is resource-dominated.",
+      "on_pass": "Adopt a certified whole-function improvement with a new target identifier; re-time the classical comparator on that same target.",
+      "on_fail": "Keep the exact existing polynomial source and retain the cost/error frontier for future budgets.",
+      "artifacts": [
+        "results/limitation_program_20261001/A13_run001/protocol.json",
+        "results/limitation_program_20261001/A13_run001/exponential_approximation_certificate.json",
+        "results/limitation_program_20261001/A13_run001/function_frontier.json"
+      ]
+    },
+    {
+      "id": "A14",
+      "title": "Bound CORDIC/log-cosine transfer before circuit work",
+      "status": "conditional",
+      "priority": 4,
+      "source_sections": [
+        "§3 items 1 and 3: log/cosine Gaussian arithmetic",
+        "§5 root cause C: alternative arithmetic families"
+      ],
+      "existing_evidence": [
+        "research/controlled_source_completion/ir.py",
+        "research/controlled_source_completion/primitives.py",
+        "docs/limitation_audit_20261001/ARITHMETIC_AND_LOADING.md",
+        "results/limitation_audit_20261001/lookup_v2/summary.json"
+      ],
+      "depends_on": [
+        "G0",
+        "A01",
+        "A08"
+      ],
+      "next_action": "Compute a charged iteration/add/shift/cleanup resource bound for a reversible cosine on the exact Box-Muller domain; proceed to gates only if it can beat the measured polynomial block.",
+      "alternatives": [
+        "Piecewise minimax cosine/logarithm with the existing exact coefficient lookup.",
+        "CORDIC cosine as an explicitly new transfer; the cited arcsine circuit does not establish its cost.",
+        "Drop this optimization if a certified A02 loader removes the entire Box-Muller block more cheaply."
+      ],
+      "steps": [
+        "Fix cosine’s [0,1] turn domain and a uniform allowed output error; handle periodic endpoints exactly.",
+        "Derive iteration count, signed branch history, constants, retained state and inverse cost.",
+        "Use the actually measured A08 or ripple adder costs, not a free shift-add assumption.",
+        "Emit one small reversible cosine and then a production-width candidate only after the screen passes; log is a separate subsequent screen."
+      ],
+      "acceptance": [
+        "A prospective upper-bound circuit cost is lower than the complete cosine baseline under the same width/error convention.",
+        "An emitted candidate has a uniform approximation certificate, explicit branch/history cleanup and complete inverse.",
+        "The source ledger shows the saving survives integration; any altered numeric function passes G2.",
+        "An ordinary classical CORDIC output or arcsine-paper factor alone does not satisfy acceptance."
+      ],
+      "stop_rule": "One cosine feasibility screen and one minimax comparator; emit at most one production candidate. Suspend CORDIC if iteration/history cleanup dominates or A02 removes its use.",
+      "on_pass": "Emit and validate the smallest matched cosine, then consider a separate log candidate only if A01 still ranks it highly.",
+      "on_fail": "Keep current log/cosine functions and pursue higher-ranked source costs.",
+      "artifacts": [
+        "results/limitation_program_20261001/A14_run001/protocol.json",
+        "results/limitation_program_20261001/A14_run001/cordic_cost_screen.json",
+        "results/limitation_program_20261001/A14_run001/cosine_certificate.json"
+      ]
+    },
+    {
+      "id": "A15",
+      "title": "Preserve the completed exact coefficient-lookup replacement",
+      "status": "complete",
+      "priority": 1,
+      "source_sections": [
+        "§5 root cause C: QROM/coefficient loading",
+        "§6 better compilation"
+      ],
+      "existing_evidence": [
+        "research/controlled_source_completion/exact_lookup.py",
+        "research/controlled_source_completion/primitives.py",
+        "research/limitation_audit_20261001/test_lookup.py",
+        "results/limitation_audit_20261001/lookup_v2/summary.json",
+        "docs/limitation_audit_20261001/EXECUTION_RESULTS.md"
+      ],
+      "depends_on": [
+        "G0"
+      ],
+      "next_action": "Register the existing shared-prefix lookup as a completed component and carry its versioned leaf hashes and tests into every new combined-source manifest; do not rerun the already solved 32-row experiment without a code/table change.",
+      "alternatives": [
+        "Historical equality-scan lowering remains a selectable regression baseline.",
+        "SelectSwap or dirty-ancilla QROM is a future conditional screen only for a new table shape or tighter hardware budget.",
+        "Constant/partial-table simplifications are already covered by exact tests."
+      ],
+      "steps": [
+        "Record all four real table results, including the requested 32x9 log lookup: 3,136 to 420 T gates and 1,600 to 226 T-depth at 724 qubits.",
+        "Retain exhaustive address/nonzero-output/inverse and reference-entangled phase checks.",
+        "Check provenance in each new combined manifest; invalidate caches when table values, dimensions or lowering change."
+      ],
+      "acceptance": [
+        "The exact function remains out[j] XOR table[address mod 2^bits][j], including signed coefficient words and unspecified-zero rows.",
+        "Every address and borrowed/scratch wire contract is preserved; the existing default uses the shared-prefix lowering.",
+        "Only the measured full-source gain is credited; the 86.61% log-lookup T reduction is not an entire-oracle reduction."
+      ],
+      "stop_rule": "No new scientific run is scheduled for this completed component. Reopen only on changed table/contract/backend or a finite SelectSwap screen showing a nondominated resource point.",
+      "on_pass": "Reuse the validated component and continue to unsolved entries.",
+      "on_fail": "If a new integration breaks its contract, restore the verified leaf and fix the integration before continuing.",
+      "artifacts": [
+        "results/limitation_program_20261001/A15_run001/component_registry.json"
+      ]
+    },
+    {
+      "id": "A16",
+      "title": "Extend measured cleanup into a verified dynamic arithmetic backend",
+      "status": "partial",
+      "priority": 3,
+      "source_sections": [
+        "§3 item 4: uncomputation doubles work",
+        "§4 Failure 4: complete controlled source",
+        "§5 root cause C: cleanup architecture"
+      ],
+      "existing_evidence": [
+        "research/limitation_audit_20261001/experiment_mcx_cleanup.py",
+        "results/limitation_audit_20261001/mcx_cleanup_v1/result.json",
+        "results/limitation_audit_20261001/mcx_cleanup_v1/mcx5.qasm",
+        "docs/limitation_audit_20261001/FIRST_COMPONENT_RESULT.md",
+        "research/controlled_source_completion/primitives.py"
+      ],
+      "depends_on": [
+        "G0"
+      ],
+      "next_action": "Build one three- or four-bit temporary-AND adder fragment with explicit measurement/feed-forward and verify its complete corrected channel in every branch before attempting compiler integration.",
+      "alternatives": [
+        "Existing five-control MCX fragment already saves 49 to 28 T gates with three feedback rounds.",
+        "Temporary-AND compute/uncompute in arithmetic where the permitted intermediate use conditions hold.",
+        "Keep the fully unitary X/CX/CCX backend when reaction latency or phase conditions make measurement cleanup unattractive."
+      ],
+      "steps": [
+        "Use the existing branch-aware MCX harness to specify the intended adder channel, arbitrary output and reference system.",
+        "Enumerate every measurement branch and compare its corrected Kraus operator to the desired operation up to the correct branch scalar.",
+        "Include a negative control that omits the phase correction and a logical-inverse/channel composition check.",
+        "Only after fragment validity, implement a separate dynamic backend rather than placing measurements in Program.undo; charge measurement and feedback rounds in G5."
+      ],
+      "acceptance": [
+        "Every branch gives the intended coherent map and scratch reset, including superposition and reference entanglement.",
+        "Basis truth tables alone cannot pass; all relative phases and feed-forward corrections are checked.",
+        "T-count savings include forward compute and all corrections; reaction depth and classical latency are reported separately.",
+        "The complete controlled source is adopted only after channel-level fusion/reflection checks in A17 and a physical cost decision."
+      ],
+      "stop_rule": "One small adder fragment and one representative unitary-vs-dynamic schedule. Stop compiler integration if any branch violates coherence or the charged dynamic latency is dominated.",
+      "on_pass": "Retain a distinct verified dynamic backend and expand one arithmetic leaf at a time.",
+      "on_fail": "Keep the validated MCX fragment only; preserve the unitary source and record the first violated temporary-AND use condition.",
+      "artifacts": [
+        "results/limitation_program_20261001/A16_run001/protocol.json",
+        "results/limitation_program_20261001/A16_run001/temporary_and_adder.qasm",
+        "results/limitation_program_20261001/A16_run001/branch_channel_checks.json"
+      ]
+    },
+    {
+      "id": "A17",
+      "title": "Audit existing fusion and phase-check remaining controlled boundaries",
+      "status": "audit",
+      "priority": 2,
+      "source_sections": [
+        "§3 item 5: controllability",
+        "§4 Failure 4: complete controlled source",
+        "§5 root cause F: estimator interface"
+      ],
+      "existing_evidence": [
+        "research/controlled_source_completion/compiler.py",
+        "research/controlled_source_completion/envelope.py",
+        "research/controlled_source_completion/fusion_validation.py",
+        "research/controlled_source_completion/spectral_validation.py",
+        "research/controlled_priority_completion/combined_wrappers.py"
+      ],
+      "depends_on": [
+        "G0"
+      ],
+      "next_action": "Audit which complete estimator schedules already use fused=True, then phase-check a tiny complete compute-controlled-phase-uncompute/reflection iterate and identify any actual duplicate copy boundary.",
+      "alternatives": [
+        "Existing compiler.envelope(fused=True) controls the middle bit phases while leaving financial arithmetic uncontrolled.",
+        "Remove a proved duplicate source/phase copy boundary if one exists.",
+        "A16’s dynamic channel may be fused only after its measurement corrections preserve cancellation."
+      ],
+      "steps": [
+        "Trace current source, phase, normalization, reflection and estimator manifests; distinguish arithmetic-source counts from complete controlled-iterate counts.",
+        "Use a tiny enumerated source and control in superposition to verify control-zero identity and control-one relative phase/reflection sign.",
+        "If a redundant boundary exists, remove only that boundary and compare literal emitted gates/resources.",
+        "Repeat channel-aware checks if measurement arithmetic is introduced; do not credit already-used fusion as a new gain."
+      ],
+      "acceptance": [
+        "Every reported complete-call count states whether it is fused and includes random preparation/inverse, reflection and phase precision.",
+        "Control-zero is identity, control-one equals the intended signed controlled operation, and all scratch is reset.",
+        "Relative phases agree with an independent small matrix/channel construction; global phases on a controlled branch cannot be dropped.",
+        "Retain a code change only if actual emitted duplicate work decreases while G3’s estimator interface remains valid."
+      ],
+      "stop_rule": "One schedule audit and one tiny complete phase check. If all eligible boundaries are already fused, close this entry as complete with zero additional speedup.",
+      "on_pass": "Freeze the verified controlled-call interface and feed its real cost to G3/G5.",
+      "on_fail": "Fix the smallest phase/sign/interface discrepancy before treating any arithmetic improvement as a complete oracle improvement.",
+      "artifacts": [
+        "results/limitation_program_20261001/A17_run001/protocol.json",
+        "results/limitation_program_20261001/A17_run001/fusion_audit.json",
+        "results/limitation_program_20261001/A17_run001/controlled_iterate_phase_checks.json"
+      ]
+    },
+    {
+      "id": "A18",
+      "title": "Apply paid reversible pebbling to a real financial subgraph",
+      "status": "partial",
+      "priority": 2,
+      "source_sections": [
+        "§4 Failure 5: retained SSA memory",
+        "§5 root cause C: pebbling",
+        "§5 root cause E: workspace per parallel lane"
+      ],
+      "existing_evidence": [
+        "research/controlled_source_completion/compiler.py",
+        "research/controlled_source_completion/compact_storage.py",
+        "research/limitation_audit_20261001/experiment_pebbling.py",
+        "results/limitation_audit_20261001/pebbling_v1/summary.json",
+        "results/limitation_audit_20261001/constant_multiplier_v1/summary.json"
+      ],
+      "depends_on": [
+        "G0",
+        "A01",
+        "A06"
+      ],
+      "next_action": "Extract one actual Gaussian-plus-exponential subgraph and emit checkpoint/recompute schedules at 75% and 50% of its measured baseline workspace, using the latest exact leaf library.",
+      "alternatives": [
+        "Reversible pebbling with explicit predecessor availability and charged recomputation.",
+        "Block checkpointing or heuristic schedules compared against retaining every intermediate.",
+        "Exact compact storage is complementary, but combined savings must be emitted and measured."
+      ],
+      "steps": [
+        "Carry forward the toy evidence as a tradeoff only: 76 to 56 qubits but 15 to 27 leaf calls.",
+        "Create a subgraph manifest preserving actual input/output semantics and enumerate legal compute/uncompute moves.",
+        "Schedule both caps, emit every recomputation and cleanup invocation, and replay small/extracted cases.",
+        "Scale only a successful nondominated schedule to B4x12 before attempting B8x52; keep random input storage in the floor."
+      ],
+      "acceptance": [
+        "Every erase has its required predecessors or a valid alternative cleanup; no dead value is overwritten while dirty.",
+        "Inputs and arbitrary outputs match the independent integer target, with all checkpoints and scratch restored.",
+        "Peak width is observed in the emitted schedule and is below the chosen cap; all recomputed T gates/depth are charged.",
+        "Retain width-saving points even if slower, but credit pricing latency only if G5 improves under the physical cap."
+      ],
+      "stop_rule": "Two caps and two pebbling heuristics on one real subgraph; at most one B4 full-source integration. Stop scaling if neither point is nondominated or legal cleanup cannot be proved.",
+      "on_pass": "Add a width/depth frontier to the combined source and choose the best point under actual physical/parallel budgets.",
+      "on_fail": "Keep the toy and compact-storage results separate; document the graph dependency that defeats the attempted cap.",
+      "artifacts": [
+        "results/limitation_program_20261001/A18_run001/protocol.json",
+        "results/limitation_program_20261001/A18_run001/subgraph_pebbling_schedules.json",
+        "results/limitation_program_20261001/A18_run001/resource_frontier.json"
+      ]
+    },
+    {
+      "id": "A19",
+      "title": "Test reversible streaming on the unchanged monitored payoff",
+      "status": "conditional",
+      "priority": 3,
+      "source_sections": [
+        "§4 Failure 5: path storage",
+        "§4 Failure 6: maxima and basket operations",
+        "§5 root cause C: path arithmetic"
+      ],
+      "existing_evidence": [
+        "research/controlled_source_completion/finance.py",
+        "research/controlled_source_completion/ir.py",
+        "research/controlled_source_completion/compiler.py",
+        "results/limitation_audit_20261001/pebbling_v1/summary.json",
+        "research/advantage_frontier_20260923/barrier_oracle_depth.py",
+        "research/frontier_completion_20260927/stage_a.py"
+      ],
+      "depends_on": [
+        "G0",
+        "A18"
+      ],
+      "next_action": "Build a two-asset/four-date monitored arithmetic-basket verification harness comparing existing SSA evaluation with a reversible current-state/violation-count design on identical finite draws.",
+      "alternatives": [
+        "Count barrier violations reversibly, then test count==0 instead of overwriting alive.",
+        "Retain/recompute local barrier decisions under checkpointing.",
+        "Running sums for Asian statistics and block checkpoints for noninvertible finite-price updates; preserve the original parallel-prefix alternative."
+      ],
+      "steps": [
+        "Use barrier_oracle_depth.build and the Stage A target/manifests as the exact source. Keep its guarded log prices, monitored basket threshold, Asian average, discounting and finite rounding; a streaming design must preserve the same sequence-sensitive integer result.",
+        "Specify that any date's basket >= H knocks out the path (alive is max basket < H), together with the arithmetic basket weights, monitoring dates and payoff average over assets and dates.",
+        "Use legal update/checkpoint operations; finite multiplication and alive AND updates cannot be assumed invertible.",
+        "Exhaust a tiny draw grid and replay boundary cases, then measure current-state, sums/counts, history cleanup and loss of prefix parallelism."
+      ],
+      "acceptance": [
+        "The streaming and SSA circuits return exactly the same discrete payoff on all harness inputs, including equality at the barrier.",
+        "Workspace and input restoration hold; lost information is retained or recomputed, never silently erased.",
+        "Measured peak width decreases and the complete work/depth penalty is explicit.",
+        "The harness does not replace B8x52 as the pricing task; full scaling requires an emitted matching source and G5 comparison."
+      ],
+      "stop_rule": "One two-asset/four-date harness and two checkpoint placements. Stop full scaling if the width saving is dominated after cleanup or the serial-depth penalty makes its physical-cap frontier worse.",
+      "on_pass": "Integrate the best design into a full unchanged-contract source, compare with A18, and retain only measured nondominated points.",
+      "on_fail": "Preserve SSA/prefix construction and the exact harness as a negative result; identify whether barrier history or irreversible finite updates caused the failure.",
+      "artifacts": [
+        "results/limitation_program_20261001/A19_run001/protocol.json",
+        "results/limitation_program_20261001/A19_run001/streaming_harness_target.json",
+        "results/limitation_program_20261001/A19_run001/streaming_vs_ssa.json"
+      ]
+    },
+    {
+      "id": "A20",
+      "title": "Test arithmetic-free loading on the actual sum-of-exponentials threshold",
+      "status": "conditional",
+      "priority": 5,
+      "source_sections": [
+        "§5 root cause C: arithmetic-free multi-asset path oracle",
+        "§4 Failure 6: arithmetic-basket barrier",
+        "§6 untested algorithmic routes"
+      ],
+      "existing_evidence": [
+        "docs/limitation_audit_20261001/ARITHMETIC_AND_LOADING.md",
+        "research/controlled_source_completion/ir.py",
+        "research/limitation_audit_20261001/experiment_bounded_probabilities.py",
+        "results/limitation_audit_20261001/bounded_probabilities_v1/summary.json"
+      ],
+      "depends_on": [
+        "G0",
+        "A05",
+        "A07"
+      ],
+      "next_action": "Write and certify the two-asset/one-date arithmetic-basket predicates in log coordinates, preserving barrier >= H as knock-out, alive < H, and the separate positive-payoff strike test > K; then screen a sum-of-exponentials block encoding against two explicit exponential circuits.",
+      "alternatives": [
+        "Keep truly monotone single-asset comparisons in log space.",
+        "Integration-based loading for separable payoffs, including normalization and scalar estimator extraction.",
+        "QSP/block encoding for a weighted sum of exponentials as a new construction, not an already supplied free oracle."
+      ],
+      "steps": [
+        "Freeze A = w1*exp(x1)+w2*exp(x2). For the monitored barrier, A >= H knocks out and alive means A < H; the positive-payoff strike test is separately A > K. Preserve these ties from the frozen contract and explicitly reject replacing A by an inequality on x1+x2 or a geometric basket.",
+        "Account for preparation, block-encoding normalization, polynomial degree, threshold approximation, amplification and inverse.",
+        "Certify the near-boundary band contribution and matched finite/continuous law error before emission.",
+        "Emit one smallest instance only if the charged screen is competitive; preserve the existing finite tilted-law sampler result without claiming it is coherent preparation."
+      ],
+      "acceptance": [
+        "The construction implements the arithmetic basket with the frozen barrier ties (knock-out at A >= H, alive at A < H), the separate positive-payoff strike test A > K, and the same normalization as the explicit baseline.",
+        "Approximation error is uniformly bounded away from the threshold, and probability-weighted boundary error fits the G2 allocation.",
+        "Complete scalar-estimation source cost is lower at the same accuracy/cap; an amplitude-loading module factor alone cannot pass.",
+        "Gaussian and path construction costs remain charged; the cited autocallable method is not credited with removing them."
+      ],
+      "stop_rule": "One two-asset/one-date mathematical construction and one full cost screen; emit at most one candidate. Stop if a missing normalization/comparison oracle is needed or the candidate is dominated.",
+      "on_pass": "Retain the certified small oracle and test one additional date before any multi-asset/path extrapolation.",
+      "on_fail": "Record the exact missing operation or cost term and keep explicit basket arithmetic; do not turn the failure into a no-go theorem for every arithmetic-free method.",
+      "artifacts": [
+        "results/limitation_program_20261001/A20_run001/protocol.json",
+        "results/limitation_program_20261001/A20_run001/arithmetic_basket_log_threshold.md",
+        "results/limitation_program_20261001/A20_run001/block_encoding_cost_screen.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+# Local autonomous queue after the bounded arithmetic screens
+
+This queue covers all110 entries of the original implementation plan without rewriting its frozen roadmap. The companion [machine-readable queue](autonomous_queue.json) records each entry's original action, dependencies, live status, routing and source hashes. These are planned actions; no new financial experiment follows from this inventory.
+
+Finish the active A19 two-asset/four-date streaming harness at its two declared checkpoint placements. Preserve the preferred coefficient latency source and the separate A18 workspace point. Then move to financial certification, a source-compatible estimator, actual classical timing and physical scheduling. Further leaf sweeps need a new measured reason to outrank those gaps.
+
+## Deterministic next packages
+
+| Order | Package | Smallest executable result | Stop and retain rule |
+|---|---|---|---|
+| 1 | E02/E03/E07: actual B4 source, normalization and error ledger | Bind the accepted B4 target/source/schedule hashes to an all-input native-dollar support proof; emit one exact selector and one explicit bounded-estimator count row, with a rational complete-price ledger. | One current source, one frozen normalization and one epsilon/failure row first. An unsupported tighter range falls back to the full signed-native range; missing financial biases stay open. |
+| 2 | C06: actual Box-Muller law and numerical transform | Certify one scalar and its shared-input pair against continuous Box-Muller: midpoint quantization, log/cos tables, square-root rounding and tails separately. Propagate to one monitoring date. | Freeze one enclosure method and at most two analytic bounds before evaluation. Failure to compose is evidence about that bound; preserve the current law and precision. |
+| 3 | C07: barrier sensitivity | Prove one-date boundary-band mass by conditional anti-concentration or interval integration, with a proved path-error band. | Exactly two bounds on one date. Compose across all contractual dates only after one passes its frozen dollar allowance. |
+| 4 | C09/F01/F02/C08: matched timed classical price | Audit existing Stage C confirmation/reference/coverage receipts, then run one B4 declared target sample count with setup and warm timing separated, using a justified target-law bridge. | One frozen B4 case first. A fitted extrapolation or scaled confirmation is labelled modelled; an unfinished or unsupported price remains incomplete. |
+| 5 | H17/H18/C04: complete compatible resource product | Combine one source/selector/estimator ledger with memory, reaction, magic-state supply and whole-computation failure allocation. | At most three compatible architecture rows. Missing routing or feedback remains a parameter; a bottleneck lower bound is not an executable latency. |
+| 6 | E04/E21/E24: bounded estimator and allocation alternatives | Compare canonical bounded AE and modified IQAE on the same normalization; use exact toy observation laws before one source-compatible finite controller. | Respect the existing finite controller/error-allocation grids. A theoretical or sampled numerical gain never substitutes for a confidence certificate. |
+
+Orders1–3 can make progress concurrently after A19: the exact digital estimator does not require a completed continuous-law certificate, but its claim stays restricted to the digital mean. G2/G3/G4/G5 remain open until their own complete interfaces pass. The exact native output already includes discounting; converting its error to dollars applies no second discount.
+
+## Concrete local interfaces
+
+For the next estimator package, read `results/limitation_program_20261001/A10_coefficient_run001/B4x12/min-depth/{target,source,schedule_capped}.json` and validate the actual filenames before freezing. Reuse `interval_bounds.bound_graph`, `SSAContext` and the source's literal coefficients as proof inputs. A new proof must reject arithmetic overflow and bind to the actual Y producer. Barrier conditioning can tighten the support only with exact integer inequalities, including average coefficient rounding. Do not claim the continuous bound automatically for the digitized graph.
+
+The existing `estimator_bounded.shifted_selector` supplies a comparator pattern and `bounded_schedule` supplies a certified canonical schedule pattern. Its saved C4/H8 wrappers bind `Y_6`, full-width offsets and a residual law; they cannot be copied directly onto compact B4 Y. Implement fresh `bind_source_estimator`, `make_selector`, `emit_iterate` and `expand_invocations` adapters. Verify a tiny signed two-point law and a rare-event law, dirty outputs, a superposed external control and relative phase. Count fresh preparations, each source forward/inverse, selector copies, reflections, maximum chain, repetitions, readout and any synthesized phases. A full signed72/40 word has a safe affine span of2**32 dollars if no tighter all-input support is proved; this is a valid costly fallback, not a useful pricing result.
+
+For C06, use `finance.normals_graph` and the actual accepted `target['tables']`. The current log table has32 rows and degree8; cosine has64 rows and degree7; these are distinct from each input's2**32 midpoint values. The two Box-Muller outputs share the same two uniform inputs. The finite pair must be certified jointly before composing the independent30 B4 or234 B8 pairs; treating all finite normal outputs as independent is unsupported. Proposed local APIs are `table_remainder_enclosure`, `pair_coupling_certificate`, `normal_arithmetic_enclosure` and `propagate_one_date`, all carrying exact domains, coefficients and outward rounding.
+
+For classical timing, preserve `research/frontier_classical_20261001/` and its existing receipts. `timing.timed_scramble` and `timed_chunk` already time actual paths. `c2_timing.t_c` can multiply a measured confirmation by a fitted scale; expose raw `median_wall`, `scale`, `n_run`, half-width and reference/coverage status rather than calling every derived primary field a timed successful price. Its ndtri/PCA/preintegration/OSS law is a continuous-law construction, while the accepted quantum source uses finite Box-Muller, clipping and fixed arithmetic. Either prove a common financial bridge through G2 or provide a separately timed exact finite-law comparator. A throughput microbenchmark alone cannot close G4.
+
+## Quantum alternatives and transfer boundaries
+
+Modified IQAE removes QFT/QPE while retaining a finite-error confidence result. Its paper defines a Grover-use sum in equations3.19–3.22, while Lemma3.7 describes the same displayed bound with A terminology. The new exporter must resolve routine multiplicities from the actual controller and separately charge initial preparations; published query notation is insufficient. [Fukuzawa et al., v4, sections2–3.4](https://arxiv.org/html/2208.14612v4).
+
+Source-code mean estimation supplies a variance-sensitive theoretical alternative, but its sigma/n error statement does not by itself provide an absolute-dollar stopping schedule when sigma is unknown. Quantile, centering, phase and confidence costs must be implemented or retained as named obligations. [Kothari and O'Donnell, Theorems1.1 and1.3](https://arxiv.org/html/2208.07544v1).
+
+QSP has removed register exponentiation for a structured multi-asset autocallable. That construction uses log-return predicates; its result does not supply this basket's sum-of-exponentials threshold. Run E22's predicate census before E23/A20 circuit work, and charge a multivariate reduction if proposed. [Stamatopoulos and Zeng, sections5.2–7](https://arxiv.org/html/2307.14310v2).
+
+Cultivation is a concrete alternative to a15-to-1 factory model. Its reported reliability and spacetime results are simulated under stated noise assumptions, and the paper explicitly leaves portions of complete T-gate integration unpriced. H17/H18 can substitute only the compatible supply component and must retain retries, transport, correction and whole-computation state error. [Gidney, Shutty and Jones, abstract and limitations](https://arxiv.org/html/2409.17595v1).
+
+The four primary papers were reopened for this queue on2 October2026 after reading the existing local literature and limitation audits. This is a targeted transfer check, not a new exhaustive literature search.
+
+## Routing the remaining110 entries
+
+The JSON has one row for every original A/E/F/H/C identifier. Completed exact components retain their receipts and avoid repeat credit. A08's tested below-threshold adder branch remains closed. A18's four attempts remain immutable, including the failed cost-aware budget accounting and its future-only correction. A19 is active; no extra checkpoint family is authorized by this queue.
+
+Unstarted exact arithmetic remains eligible after a new whole-source hotspot justifies it. Approximate functions or loaders require an allocated G2 budget first. Heston, nested contracts, rough volatility, infinite-variance models, vectors, Greeks, portfolios, PDE/SPDE, MCMC and tensor representations remain separate conditional branches with their original access, model and comparator requirements. Their conditional status is not a finding that they cannot work.
+
+At each handoff, select the first eligible finite package, freeze its code/inputs/candidates/limits before outcome-sensitive execution, retain both passing and failing receipts, update the root-owned progress ledger and continue. Missing interfaces defer only dependent work; independent certificate or audit work can advance. All work stays local, with no pushes, uploads, cloud runs or external messages.

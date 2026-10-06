@@ -8,6 +8,7 @@ from numba import njit
 from research.journal_sprint.reversible_fixed_point import (
     Program,copy,constant,add,subtract,fixed_multiply,less_than,positive_part)
 from research.antithetic_feasibility.reversible import constant_product,clean_sqrt
+from research.controlled_source_completion.exact_lookup import LOOKUP_LOWERING, lookup_shared
 
 
 def compare(p,a,b,flag):
@@ -89,7 +90,8 @@ def mcx(p,controls,target,scratch):
     p.gate(controls[0],controls[1],scratch[0])
 
 
-def lookup(p,address,outs,table,bits):
+def lookup_equality(p,address,outs,table,bits):
+    """Historical row-by-row circuit, retained as an explicit baseline."""
     flag=p.register(1)[0];scratch=p.register(max(1,bits-2));controls=address[:bits]
     for i,row in enumerate(table):
         for j in range(bits):
@@ -101,6 +103,11 @@ def lookup(p,address,outs,table,bits):
         mcx(p,controls,flag,scratch)
         for j in range(bits):
             if not ((i>>j)&1):p.gate(controls[j])
+
+
+def lookup(p,address,outs,table,bits):
+    """Exact shared-prefix replacement; keeps the existing clean XOR interface."""
+    lookup_shared(p,address,outs,table,bits)
 
 
 def build(op,w,f,params=None,table=None):
@@ -130,7 +137,10 @@ def build(op,w,f,params=None,table=None):
             source=j+params['shift']
             if 0<=source<w:p.gate(args[0][source],target)
             elif source>=w and params.get('signed'):p.gate(args[0][-1],target)
-    elif op=='lookup':lookup(p,args[0],outs,table,params['bits'])
+    elif op=='lookup':
+        strategy=params.get('lookup_strategy','shared_prefix')
+        if strategy not in ('shared_prefix','equality'):raise ValueError('unknown lookup strategy')
+        (lookup if strategy=='shared_prefix' else lookup_equality)(p,args[0],outs,table,params['bits'])
     return p,args,outs
 
 
@@ -196,6 +206,9 @@ class Library:
     def get(self,node):
         op=node['op'];params=node['params'];table=self.tables.get(params.get('table'))
         spec=dict(op=op,width=self.w,fraction_bits=self.f,params=params,table=table)
+        # Changed gate lowering must not accidentally reuse an old cached leaf.
+        if op=='lookup' and params.get('lookup_strategy','shared_prefix')=='shared_prefix':
+            spec['lowering']=LOOKUP_LOWERING
         key=hashlib.sha256(json.dumps(spec,sort_keys=True,separators=(',',':')).encode()).hexdigest()[:20]
         if key not in self.entries:
             meta=self.path/(key+'.json');binary=self.path/(key+'.npy')

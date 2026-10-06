@@ -1,0 +1,36 @@
+{
+  "schema": "independent-a20-two-closure-static-review-v1",
+  "review_timing": "After agent reported execution completed; no prospective execution authorization claimed",
+  "reviewed_inputs": {
+    "research/limitation_program_20261001/continuation_20261004/A13/A20_TWO_CLOSURE_DIAGNOSTIC_PROTOCOL_run001.json": "438b7f2e224f6c0d218ae4f36717855e9a20d421c44ddccd8ba5bae8a8780856",
+    "research/limitation_program_20261001/continuation_20261004/A13/diagnose_a20_two_stock_closures_v1.py": "c514a5fbed76173f33bdce916e3ec96d3d39294362bc4f44193fbdddc3ac6c05"
+  },
+  "source_imports_or_execution": false,
+  "target_or_census_or_result_payloads_inspected": false,
+  "pin_checks_passed": true,
+  "bounded_scope_checks_passed": true,
+  "scope_findings": [
+    "Exactly two fixed date0 assets0/1, exact two input SHA pins, 72/F40 guard, closed acyclic DFS with 64-node cap, literal/argument order retained in saved nodes.",
+    "No builder, scalar points, gate emission, fitting, pricing or finance-draw code; only stdlib JSON/hash/structural comparison.",
+    "Fresh output guard and authoritative FAILED_UNSEALED retained on caught failures; terminal input/source hashes rechecked; original V4 producer not promoted.",
+    "Equality or inequality is only structural, with explicit denial of mathematical equivalence/inequivalence or component approval."
+  ],
+  "typed_comparison_contract_satisfied_generically": false,
+  "finding": {
+    "severity": "contract limitation",
+    "locations": [
+      "diagnose(): if left != right",
+      "different_fields comparison left[field] != right[field]",
+      "different_parameter_keys comparison dict.get values"
+    ],
+    "mechanism": "Ordinary Python equality aliases int, bool and equal-valued float literals. Normalized node dictionaries preserve JSON value types in output but their comparison does not compare those types.",
+    "static_counterexample": "params {value: 1} and {value: true} or {value: 1.0} compare equal under the implemented Python dictionary/value comparisons.",
+    "impact": "Generic exact typed structural equality cannot be claimed from this comparison alone. This does not establish any type discrepancy in the two pinned actual targets and does not remove separately observed argument-order inequalities.",
+    "future_correction": "If generic typed comparison is needed, freeze a new operational version using recursive value-and-type comparison or explicit typed fingerprints; retain the current executed source/results immutable. Otherwise narrow the equality claim to an independently verified canonical parameter-type domain."
+  },
+  "actual_run_result_independently_reexamined": false,
+  "component_math_approval": false,
+  "new_fixture_credit": 0,
+  "rerun_requested": false,
+  "disposition": "BOUNDED_STATIC_SCOPE_PASS_WITH_TYPED_COMPARISON_LIMITATION"
+}

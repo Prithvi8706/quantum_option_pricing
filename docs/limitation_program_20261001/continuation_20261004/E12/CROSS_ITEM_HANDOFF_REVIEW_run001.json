@@ -1,0 +1,294 @@
+{
+  "schema": "a13-a14-e12-final-handoff-evidence-review-v1",
+  "passed": true,
+  "scientific_reruns": 0,
+  "source_imports": 0,
+  "full_historical_or_runtime_reaudit": false,
+  "review_scope": "Fresh hashes/inventories of current owned packets, sealed result/hand-off consistency, exact root-report bindings. Existing root full-union reports were read, not rerun. E12 implementation was authored by this reviewer; independent root byte evidence remains separately identified. No new mathematical proof or execution coverage is claimed.",
+  "broad_item_status": {
+    "A13": "partial",
+    "A14": "partial",
+    "E12": "partial"
+  },
+  "global_new_credit": 0,
+  "global_credited_gate_replays": 0,
+  "financial_replay_credit": 0,
+  "quantum_advantage": false,
+  "A20_active_release_outside_scope": true,
+  "interim_STATUS_left_untouched": true,
+  "component_owned_and_manifest_fresh_hash_checks": 59,
+  "substantive_mismatches": [],
+  "documentary_notes": [
+    {
+      "item": "A13",
+      "severity": "minor checkpoint-versus-terminal documentation distinction",
+      "handoff_terminal_wall_seconds": 12.547000000020489,
+      "sealed_manifest_checkpoint_wall_seconds": 12.53100000001723,
+      "sealed_summary_checkpoint_wall_seconds": 12.40600000001723,
+      "interpretation": "Outcome, fixed counts, original failure status and budget compliance unaffected. Final stdout duration is not independently pinned by the selected sealed summaries; use checkpoint wording or retain its separate stdout provenance. No matched-performance claim."
+    }
+  ],
+  "evidence": {
+    "A13": {
+      "summary": "results/limitation_program_20261001/A13_continuation_20261004_membership_QA_run001/summary.json",
+      "manifest_sha256": "ea6d663a425dc4e6f1e9067d7c3a5c82e9e1e863d410319bd7a8a0bca5183cbb",
+      "exact_counts": {
+        "corpora": 4681,
+        "full_record_retention_checks": 4681,
+        "invalid_input_rejections": 4,
+        "predicate_comparisons": 56172,
+        "snapshot_guards": 3,
+        "witness_position_checks": 56172
+      },
+      "root_integrity": {
+        "path": "results/limitation_program_20261001/A13_continuation_20261004_ROOT_integrity_run001/verification.json",
+        "manifest": "results/limitation_program_20261001/A13_continuation_20261004_ROOT_integrity_run001/manifest.json",
+        "manifest_sha256": "4225cd8edd0ac885a3d5adf149a0f8d03710b68ea6340cbb9b4ec7eeca5eaa11",
+        "passes": [
+          {
+            "fresh_unique_bytes": 988996,
+            "fresh_unique_paths": 14,
+            "inventory_exact": true,
+            "sha_mismatches": 0
+          },
+          {
+            "fresh_unique_bytes": 988996,
+            "fresh_unique_paths": 14,
+            "inventory_exact": true,
+            "sha_mismatches": 0
+          }
+        ],
+        "scope": "Independent byte/inventory integrity only; no arithmetic/financial theorem or runtime completeness certification."
+      },
+      "all20_approval": false,
+      "integration_or_performance_promotion": false
+    },
+    "A14": {
+      "producer_summary": "results/limitation_program_20261001/A14_continuation_20261004_stage_k_producer_run002/summary.json",
+      "audit_summary": "results/limitation_program_20261001/A14_continuation_20261004_stage_k_audit_run002/summary.json",
+      "producer_manifest_sha256": "a6d8f34aa2a461f5159c90eeb0f99936f30690f8ab60733baaa4e3b1dfe3b357",
+      "audit_manifest_sha256": "b34af226830210c2f965b98fd82c237db160b70bb9466496ed70f6ac8af72c31",
+      "fixed_diagnostic_counts": [
+        16,
+        40,
+        32,
+        88
+      ],
+      "exact_primitive_resources": {
+        "multiplier": {
+          "source_gates": 24352,
+          "qubits": 6476,
+          "t_count": 82334,
+          "t_depth": 1248
+        },
+        "rounder": {
+          "source_gates": 678,
+          "qubits": 369,
+          "t_count": 1064,
+          "t_depth": 608
+        }
+      },
+      "root_producer": {
+        "path": "results/limitation_program_20261001/A14_continuation_20261004_ROOT_producer_integrity_run001/verification.json",
+        "manifest": "results/limitation_program_20261001/A14_continuation_20261004_ROOT_producer_integrity_run001/manifest.json",
+        "manifest_sha256": "1b3832eb4981c8951c25848df7d19fdf301c0782fc60d7de8f4fd90bf85161dc",
+        "passes": [
+          {
+            "fresh_unique_bytes": 526089007,
+            "fresh_unique_paths": 3650,
+            "inventory_exact": true,
+            "sha_mismatches": 0
+          },
+          {
+            "fresh_unique_bytes": 526089007,
+            "fresh_unique_paths": 3650,
+            "inventory_exact": true,
+            "sha_mismatches": 0
+          }
+        ],
+        "scope": "Independent byte/inventory integrity only; no arithmetic/financial theorem or runtime completeness certification."
+      },
+      "root_audit": {
+        "path": "results/limitation_program_20261001/A14_continuation_20261004_ROOT_audit_integrity_run001/verification.json",
+        "manifest": "results/limitation_program_20261001/A14_continuation_20261004_ROOT_audit_integrity_run001/manifest.json",
+        "manifest_sha256": "fc3f6d1a442050080452491fde04e3c406b09080f0d591f0dc89922b14c7e48c",
+        "passes": [
+          {
+            "fresh_unique_bytes": 526898794,
+            "fresh_unique_paths": 3665,
+            "inventory_exact": true,
+            "sha_mismatches": 0
+          },
+          {
+            "fresh_unique_bytes": 526898794,
+            "fresh_unique_paths": 3665,
+            "inventory_exact": true,
+            "sha_mismatches": 0
+          }
+        ],
+        "scope": "Independent byte/inventory integrity only; no arithmetic/financial theorem or runtime completeness certification."
+      },
+      "full_cosine_or_source_or_financial_approval": false
+    },
+    "E12": {
+      "certificate": "results/limitation_program_20261001/E12_continuation_20261004_screen_run001/certificate.json",
+      "manifest_sha256": "bdc6946689367f982912cf28c0068d93d2fcc982e6f2cd0a0ee0e043ce05cdec",
+      "toy_attempts": 384,
+      "target_failures_retained": 128,
+      "minimum_finance_floor": "0.32451426154069683360842681842821567434513797043690439873422745281827321219979562",
+      "target": "0.19448064336973883",
+      "finance_draws": 0,
+      "root_integrity": {
+        "path": "results/limitation_program_20261001/E12_continuation_20261004_ROOT_integrity_run001/verification.json",
+        "manifest": "results/limitation_program_20261001/E12_continuation_20261004_ROOT_integrity_run001/manifest.json",
+        "manifest_sha256": "31cd94def7129dfbc45e4c6a0a648a0a5f872e4caa1d8d0fae165db822000a6c",
+        "passes": [
+          {
+            "fresh_unique_bytes": 6441272,
+            "fresh_unique_paths": 41,
+            "inventory_exact": true,
+            "sha_mismatches": 0
+          },
+          {
+            "fresh_unique_bytes": 6441272,
+            "fresh_unique_paths": 41,
+            "inventory_exact": true,
+            "sha_mismatches": 0
+          }
+        ],
+        "scope": "Independent byte/inventory integrity only; no arithmetic/financial theorem or runtime completeness certification."
+      },
+      "complete_latency": null
+    }
+  },
+  "selected_reviewed_files": {
+    "docs/limitation_program_20261001/continuation_20261004/A13/handoff.json": {
+      "sha256": "d81b3ab3f5652e7f63fe853745904429a9a9403af7c64316400b9b8a2c52fd0e",
+      "bytes": 2220
+    },
+    "docs/limitation_program_20261001/continuation_20261004/E12/HANDOFF.json": {
+      "sha256": "4372b9307b0b55442855a38dfc29807053e6a956a1fc55d2e087c212a2ce3719",
+      "bytes": 3123
+    },
+    "docs/limitation_program_20261001/continuation_20261004/STATUS.md": {
+      "sha256": "025a52870f0d1b411dad1408d3561487b0492442c7db82f492e4048a884d9c51",
+      "bytes": 2921
+    },
+    "docs/limitation_program_20261001/continuation_20261004/A13/STATUS.md": {
+      "sha256": "ec3789252f9cee892c4fb72f53134cc505aa69ee36ef52dcf22f4915e21cbe7e",
+      "bytes": 3992
+    },
+    "docs/limitation_program_20261001/continuation_20261004/A14/HANDOFF.md": {
+      "sha256": "765ea3fc468542d0a3e3fd12ad27e2dd74159305062337d468a967c56659f8fc",
+      "bytes": 5851
+    },
+    "docs/limitation_program_20261001/continuation_20261004/A14/STATUS.md": {
+      "sha256": "7e3a6b38ef5a44836d5e89ed8146370ae300f63a90d16e0c7c31f3d5b30df3c8",
+      "bytes": 3909
+    },
+    "docs/limitation_program_20261001/continuation_20261004/E12/HANDOFF.md": {
+      "sha256": "412733c724a0bb95d263b47e4da0dbc913541269b99712f2fc774f521c5ef526",
+      "bytes": 6305
+    },
+    "docs/limitation_program_20261001/continuation_20261004/E12/STATUS.md": {
+      "sha256": "5dff531adffe822fe1af5379c56c469f347260cb7fe8b8b715cbc0d38933dc9c",
+      "bytes": 2311
+    },
+    "results/limitation_program_20261001/A13_continuation_20261004_membership_QA_run001/manifest.json": {
+      "sha256": "ea6d663a425dc4e6f1e9067d7c3a5c82e9e1e863d410319bd7a8a0bca5183cbb",
+      "bytes": 2197
+    },
+    "results/limitation_program_20261001/A13_continuation_20261004_membership_QA_run001/summary.json": {
+      "sha256": "3e5bdd2b702b436e7d507e2be5aa087b28f4fa2327e46bc9bf1ed6b0844e0f34",
+      "bytes": 1013
+    },
+    "results/limitation_program_20261001/A13_continuation_20261004_ROOT_integrity_run001/manifest.json": {
+      "sha256": "4225cd8edd0ac885a3d5adf149a0f8d03710b68ea6340cbb9b4ec7eeca5eaa11",
+      "bytes": 2893
+    },
+    "results/limitation_program_20261001/A13_continuation_20261004_ROOT_integrity_run001/verification.json": {
+      "sha256": "38f44f4b3a6177103c6854ab6073d159cd592f90975818bfcbcc073c9730368c",
+      "bytes": 841
+    },
+    "results/limitation_program_20261001/A14_continuation_20261004_stage_k_producer_run002/manifest.json": {
+      "sha256": "a6d8f34aa2a461f5159c90eeb0f99936f30690f8ab60733baaa4e3b1dfe3b357",
+      "bytes": 637557
+    },
+    "results/limitation_program_20261001/A14_continuation_20261004_stage_k_audit_run002/manifest.json": {
+      "sha256": "b34af226830210c2f965b98fd82c237db160b70bb9466496ed70f6ac8af72c31",
+      "bytes": 641144
+    },
+    "results/limitation_program_20261001/A14_continuation_20261004_stage_k_producer_run002/summary.json": {
+      "sha256": "530158abf696dd17270463813f956f907d2e94295766294cdd790ab4d9a65530",
+      "bytes": 1945
+    },
+    "results/limitation_program_20261001/A14_continuation_20261004_stage_k_audit_run002/summary.json": {
+      "sha256": "2624df068072ac0e3a95704fac17ad47db3c76b430dfbbb4527b5396f4c77c05",
+      "bytes": 1436
+    },
+    "results/limitation_program_20261001/A14_continuation_20261004_stage_k_producer_run002/primitive_resources.json": {
+      "sha256": "2d1be5777fec8076a7dc6a43e6a68cf7170f908eb2b2d0fe137787c4809c3869",
+      "bytes": 1104
+    },
+    "results/limitation_program_20261001/A14_continuation_20261004_stage_k_audit_run002/independent_primitive_resources.json": {
+      "sha256": "e9f79994e3db3011a904b8beef1c7e0f42137db18a3bc939ec1aafe47ec7fc94",
+      "bytes": 1443
+    },
+    "results/limitation_program_20261001/A14_continuation_20261004_stage_k_audit_run002/independent_universal_certificate.json": {
+      "sha256": "ac21af740435611d921f5370cd55a0d87342e66fe79149d2ffe4e83802478bf2",
+      "bytes": 2003
+    },
+    "results/limitation_program_20261001/A14_continuation_20261004_stage_k_producer_run002/fixed_diagnostics.json": {
+      "sha256": "b149ae39e08224917dcf102190881bd15f7956a75ac57b9c75bf7727628e7ab7",
+      "bytes": 30174
+    },
+    "results/limitation_program_20261001/A14_continuation_20261004_ROOT_producer_integrity_run001/manifest.json": {
+      "sha256": "1b3832eb4981c8951c25848df7d19fdf301c0782fc60d7de8f4fd90bf85161dc",
+      "bytes": 645901
+    },
+    "results/limitation_program_20261001/A14_continuation_20261004_ROOT_producer_integrity_run001/verification.json": {
+      "sha256": "f8d9856f0107216d84fe7268f30f5227e0e680a9a5dfbcb54b953d0462fa380b",
+      "bytes": 850
+    },
+    "results/limitation_program_20261001/A14_continuation_20261004_ROOT_audit_integrity_run001/manifest.json": {
+      "sha256": "fc3f6d1a442050080452491fde04e3c406b09080f0d591f0dc89922b14c7e48c",
+      "bytes": 648788
+    },
+    "results/limitation_program_20261001/A14_continuation_20261004_ROOT_audit_integrity_run001/verification.json": {
+      "sha256": "40a16a40d816b35c7e467832e2d52e52d840ce3bf5c9996a97dfaf0b859dd1cf",
+      "bytes": 851
+    },
+    "results/limitation_program_20261001/E12_continuation_20261004_screen_run001/manifest.json": {
+      "sha256": "bdc6946689367f982912cf28c0068d93d2fcc982e6f2cd0a0ee0e043ce05cdec",
+      "bytes": 8483
+    },
+    "results/limitation_program_20261001/E12_continuation_20261004_screen_run001/certificate.json": {
+      "sha256": "0fe9304296d7c324887989f7c9acca4aa6f7f7db7fcc47d33db141244579cb38",
+      "bytes": 1438
+    },
+    "results/limitation_program_20261001/E12_continuation_20261004_screen_run001/receipt.json": {
+      "sha256": "952c387cf88cdca4921781e439636ea7b3a3d84590284bd3338df8925e8e3e64",
+      "bytes": 869
+    },
+    "results/limitation_program_20261001/E12_continuation_20261004_screen_run001/comparison.json": {
+      "sha256": "bb1e338487fe168e29d96976a62a20243173ce1a5c7d82fcfc13dcbf19d181a1",
+      "bytes": 10829
+    },
+    "results/limitation_program_20261001/E12_continuation_20261004_screen_run001/finance_admission.json": {
+      "sha256": "8fd4839d293686c40e34c5e2c156218871f9a1b2e27b3396ce934f6db9a372bc",
+      "bytes": 7909
+    },
+    "results/limitation_program_20261001/E12_continuation_20261004_qa_run001/validation.json": {
+      "sha256": "11dcf82482634d4f20806cf6f37f3438842b62ea0b37ea053898d194cf4cef54",
+      "bytes": 8899
+    },
+    "results/limitation_program_20261001/E12_continuation_20261004_ROOT_integrity_run001/manifest.json": {
+      "sha256": "31cd94def7129dfbc45e4c6a0a648a0a5f872e4caa1d8d0fae165db822000a6c",
+      "bytes": 6923
+    },
+    "results/limitation_program_20261001/E12_continuation_20261004_ROOT_integrity_run001/verification.json": {
+      "sha256": "874939a1fb9f94fd797a6f419a92fdb7aa32e367a1f451ad5f0b770638aa7633",
+      "bytes": 843
+    }
+  }
+}

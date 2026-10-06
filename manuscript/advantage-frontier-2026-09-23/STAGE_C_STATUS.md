@@ -1,5 +1,7 @@
 # Stage C status and handoff — 2 October 2026
 
+**6 October checkpoint:** the table below is the historical 2 October manuscript handoff. Later local timing work and the failed C8 deadline attempt are recorded in the [current limitation status](../../docs/limitation_program_20261001/STATUS.md) and [final checkpoint](../../docs/limitation_program_20261001/FINAL_CHECKPOINT_20261006.md). The separate generic A14 Stage C resource rejection remains distinct from that classical C8 work.
+
 Written for the next agent, or anyone who picks this work up cold. It records where the
 measured requirements-frontier paper stands when PR #13 merges, how to resume, and which
 decisions are still open. The rules are in [ANALYSIS_SPEC_STAGE_C.md](ANALYSIS_SPEC_STAGE_C.md)
