@@ -6,7 +6,7 @@ is used, so the verified permutation acts identically on coherent inputs.
 """
 
 
-LOOKUP_LOWERING = "shared-prefix-xor-v1"
+LOOKUP_LOWERING = "shared-prefix-xor-v2"
 
 
 def lookup_shared(p, address, outs, table, bits):
@@ -28,8 +28,10 @@ def lookup_shared(p, address, outs, table, bits):
 
     masks = [(1 << len(out)) - 1 for out in outs]
     rows = [tuple(int(value) & mask for value, mask in zip(row, masks)) for row in table]
-    rows += [tuple(0 for _ in outs)] * ((1 << bits) - len(rows))
-    base = rows[0]
+    # Missing rows must stay implicit: a sparse wide address is a valid input.
+    # A zero base lets every wholly absent subtree prune without materializing
+    # 2**bits rows. Full tables retain the factored constant-row optimization.
+    base = rows[0] if len(rows) == 1 << bits else tuple(0 for _ in outs)
     for out, value in zip(outs, base):
         for bit, wire in enumerate(out):
             if (value >> bit) & 1:
