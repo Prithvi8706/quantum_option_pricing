@@ -1,0 +1,110 @@
+{
+  "schema": "independent-e12-dyadic-empirical-Bernstein-static-review-v1",
+  "reviewer": "a13_continuation",
+  "static_review_passed": true,
+  "scientific_execution": false,
+  "E12_sources_imported_or_called": false,
+  "scope": "Prospective theorem/software/protocol review of one conditional iid confidence-sequence component; execution and numerical outcomes remain pending",
+  "AUTHOR_FREEZE_SHA256": "f9114b2f3eb77c61c0b4978f40418847ee2764d7a88d94ac2c3fc9bff0e2a118",
+  "fresh_all_seven_author_pin_checks_passed": true,
+  "source_map": {
+    "research/limitation_program_20261001/continuation_20261004/E12/anytime_eb.py": {"sha256": "8569e94c9cf2a9e2a94589a13e2e0bd36b5ef04d25760b79b9fb4d3f04bfa413", "bytes": 7600},
+    "research/limitation_program_20261001/continuation_20261004/E12/run.py": {"sha256": "7dd69673244831b334a6eb55c3fc6954b4524db897e5a561a1764e017b376d8e", "bytes": 17434},
+    "research/limitation_program_20261001/continuation_20261004/E12/validate.py": {"sha256": "c4a4ed88a8363e5b5c8bac752d81a8c80e10c8dac8dc7944637983102a390580", "bytes": 8898},
+    "docs/limitation_program_20261001/continuation_20261004/E12/PROTOCOL.json": {"sha256": "e4be2ad2e9ced6b60c43f299b247838414e79318d13903a495dd96b392b253e9", "bytes": 7562},
+    "docs/limitation_program_20261001/continuation_20261004/E12/THEOREM_AND_SCOPE.md": {"sha256": "e5b66c4001ef0095c906918d801ecb8f62e3de0e7b7d3f23c9f317e3b0a71db4", "bytes": 3461},
+    "docs/limitation_program_20261001/continuation_20261004/E12/sources/PRIMARY_SOURCE.json": {"sha256": "7500570fb6b6c7bd3284d26806079f9bfdc58b0f1d4e424dab472aa772f485ca", "bytes": 484},
+    "docs/limitation_program_20261001/continuation_20261004/E12/sources/maurer_pontil_colt2009.pdf": {"sha256": "4b06ea7eb3a832347df493948deb06a7053aa36d22eba6793d2a4e48ab3935c1", "bytes": 152160}
+  },
+  "primary_sources_independently_inspected": [
+    {"url": "https://www.learningtheory.org/colt2009/papers/012.pdf", "location": "PDF pages1-2, Theorems1/4 and sample-variance definition", "review": "Theorem4 assumes iid bounded observations as specified in Theorem1; the stated one-sided radius and pair-difference sample variance match the implementation."},
+    {"url": "https://docs.python.org/3.12/library/decimal.html", "location": "ln,exp,sqrt,Context arithmetic,next_minus,next_plus", "review": "Correct rounding and adjacent representable values support the outward Decimal construction under the finite declared numeric domain."}
+  ],
+  "theorem_checks": {
+    "fixed_N_iid_support_hypotheses_retained": true,
+    "unbiased_variance_equals_paper_pair_difference_variance": true,
+    "one_sided_radius": "sqrt(2*v*log(2/delta)/n)+7*width*log(2/delta)/(3*(n-1))",
+    "two_sided_allocation": "Apply both directions at alpha_j/2, hence log(4/alpha_j)",
+    "dyadic_look_allocation": "n_j=2^j; alpha_j=alpha/(j*(j+1)); sum through m=alpha*m/(m+1), infinite sum=alpha",
+    "no_independence_between_looks_required": true,
+    "intersection_and_carry_between_looks_preserve_simultaneous_event": true,
+    "optional_stopping_derives_from_countable_union_not_simulated_coverage": true,
+    "alpha_stream": "1/2000",
+    "second_stream_reserved_not_borrowed": "1/2000",
+    "per_price_moment_allocation": "1/1000",
+    "general_Howard_conditional_mean_sequence_not_implemented": true
+  },
+  "iid_financial_group_scope": {
+    "observation": "Average of squared path residuals over one fixed disjoint inner group, divided by deterministic support squared",
+    "independence": "Condition on independently frozen training; outer groups are iid, with disjoint fresh conditional iid inner draws. Common outer state may correlate the inner residuals.",
+    "excluded": "Square of inner mean, shared inner groups, data-dependent group sizes, adaptive refitting, individual Sobol points and merely constant conditional mean",
+    "numerical_financial_path_and_PRNG_hypotheses_unresolved": true
+  },
+  "software_checks": {
+    "three_Python_AST_parses_passed": true,
+    "protocol_and_primary_source_JSON_parses_passed": true,
+    "exact_rational_inputs_float_and_bool_refusals": true,
+    "support_total_squares_variance_guards": true,
+    "next_dyadic_look_and_fixed_cap_guards": true,
+    "prefix_guard": "Validate incremental n,total,squares with a new [0,1] Statistics object before changing retained state. This refuses inconsistent aggregate prefixes; it does not independently prove iid or reconstruct raw observations.",
+    "outward_endpoints": "Directed rational conversion and arithmetic; monotone ln/exp/sqrt widened to adjacent representable values; use radius upper for delivered intervals and target lower for readiness",
+    "zero_sample_variance_keeps_positive_range_term": true,
+    "empty_intersection_and_cap_fallback_are_support_upper1": true,
+    "true_law_probability_only_used_in_postdecision_coverage_diagnostics": true
+  },
+  "finance_admission_review": {
+    "exact_contract": "C4,compound strike6,original uncapped parity-residual contract",
+    "frozen_target_dollars_squared": "0.19448064336973883",
+    "support_squared": "10000*exp(-3/100)",
+    "sample_cap": 1048576,
+    "inner_group_size": 16,
+    "twenty_look_minimum_required": true,
+    "zero_term_argument": "For normalized nonnegative observations, empirical mean and sample variance are nonnegative, so every raw upper endpoint is at least its nonzero range tail. Support clipping preserves this floor. Intersection upper is at least the minimum over all20 floors; rejection uses an outward lower enclosure of that minimum against the exact frozen target.",
+    "negative_admission_rejects_fixed_rule_only": true,
+    "actual_floor_value_or_rejection_not_executed_in_this_review": true,
+    "no_finance_acquisition_route_authorized_even_if_floor_gate_passes": true
+  },
+  "fixed_execution_corpus_review": {
+    "laws": ["1/2", "1/256", "1/65536"],
+    "replicates_each": 128,
+    "total_attempts": 384,
+    "root_seed": 20261004012,
+    "toy_cap": 65536,
+    "target": "1/128",
+    "paired_disjoint_binomial_blocks": true,
+    "compressed_binomial_generation_not_sampler_latency_measurement": true,
+    "all_attempts_including_failed_targets_and_cap_fallbacks_retained": true,
+    "fixed_N_comparator_has_separate_terminal_allocation_and_no_posthoc_certificate_selection": true
+  },
+  "finite_oracle_QA_review": {
+    "validation_groups": 7,
+    "variance": "Five exact pair-difference corpora and16 Bernoulli count identities",
+    "allocation": "Exact telescope through20 looks",
+    "numeric": "Sixteen independent140-digit mpmath radius checks and one financial-support exp check; these are finite diagnostics alongside the separate outward arithmetic argument",
+    "guards": "Zero-event range, failure scaling, support scaling,11 invalid-input refusals, ready/cap/empty/prefix cases",
+    "all_zero_first_target_look_expected": 8192,
+    "QA_execution_pending": true
+  },
+  "budget_and_runtime_review": {
+    "run_body_CPU_wall_artifact_caps": [60, 180, 33554432],
+    "timer_scope": "Starts before NumPy import and includes initial/final verification and terminal sealing, with a final guard; Python startup and preceding stdlib imports excluded. Receipt subtotal precedes sealing. Preparation and finite QA are separate actions.",
+    "runtime_pins": "Selected launcher, NumPy init and NumPy RNG binaries only",
+    "no_complete_runtime_or_financial_source_closure_claim": true,
+    "no_matched_Stage_C_sampling_or_complete_process_timing_claim": true,
+    "one_run_STARTER_guard_and_exclusive_writes": true,
+    "failure_marker_overrides_success_looking_partials": true,
+    "actual_budget_fit_and_terminal_integrity_pending": true
+  },
+  "execution_obligations": [
+    "ROOT freezes these exact seven inputs and author-freeze record before one validation and one fresh prepared run",
+    "Retain any operational or scientific failure without budget increase,target retuning or new corpus",
+    "Require complete384 corpus,all20 finance floors,QA pass and final targeted input/owned integrity before component handoff",
+    "Keep E12 partial; no financial acquisition,source adoption,complete latency or advantage promotion"
+  ],
+  "new_financial_fixture_credit": 0,
+  "new_gate_replays": 0,
+  "finance_draws": 0,
+  "full_E12_completed": false,
+  "financial_promotion": false,
+  "quantum_advantage": false
+}

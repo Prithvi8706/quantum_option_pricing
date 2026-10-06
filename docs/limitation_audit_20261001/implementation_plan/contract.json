@@ -1,0 +1,571 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "id": "C01",
+      "title": "One classical price is the current output",
+      "status": "ready",
+      "source_sections": [
+        "1 output",
+        "5 root cause F"
+      ],
+      "existing_evidence": [
+        "docs/limitation_audit_20261001/CONTRACT_AND_EVIDENCE.md"
+      ],
+      "depends_on": [],
+      "next_action": "Freeze a task contract for each original source family, specifying one classical discounted price and all financial inputs.",
+      "alternatives": [
+        "Scalar amplitude/observable interface",
+        "Separately labelled portfolio or state-output experiments"
+      ],
+      "acceptance": [
+        "Contract fixes payoff, model, dates, asset covariance, notional, tolerance and 99% per-price confidence.",
+        "Every proposed algorithm returns the same scalar; variants never replace its benchmark."
+      ],
+      "stop_rule": "No tuning until the task file is saved; unknown archived parameters are recovered from code/results rather than guessed.",
+      "on_pass": "Close the task portion of G0 and start the frozen baseline inventory.",
+      "on_fail": "Mark unrecoverable fields as missing evidence and use another fully specified original case.",
+      "steps": [
+        "Resolve B4/B8 knock-out separately from C4/H8 residual and Heston/compound cases.",
+        "Copy original parameters and hash references.",
+        "Specify what a delivered numerical price must satisfy."
+      ],
+      "artifacts": [
+        "results/limitation_program_20261001/C01_<run>/"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "C02",
+      "title": "Dollar accuracy cannot be silently weakened",
+      "status": "ready",
+      "source_sections": [
+        "1 accuracy",
+        "7 extreme precision"
+      ],
+      "existing_evidence": [
+        "docs/limitation_audit_20261001/CONTRACT_AND_EVIDENCE.md"
+      ],
+      "depends_on": [
+        "C01"
+      ],
+      "next_action": "Express all candidate error bounds in discounted dollars at the existing notional.",
+      "alternatives": [
+        "Absolute-error normalization",
+        "Relative/norm-error conversion with proved scale bounds"
+      ],
+      "acceptance": [
+        "Retain the original epsilon grid, including $0.001 only in its declared cases.",
+        "Amplitude, payoff range and discount factors are explicitly converted; no unannounced relaxation."
+      ],
+      "stop_rule": "One dimensional/unit audit per source family; unsupported conversions make the candidate ineligible.",
+      "on_pass": "Supply dollar bounds to C03/C05.",
+      "on_fail": "Fix normalization or close that candidate interface; keep stricter tolerances as sensitivities only.",
+      "steps": [
+        "Identify price scale and discount.",
+        "Translate each approximation and estimator error.",
+        "Check units in every budget formula."
+      ],
+      "artifacts": [
+        "results/limitation_program_20261001/C02_<run>/"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "C03",
+      "title": "The complete price needs the complete confidence allowance",
+      "status": "ready",
+      "source_sections": [
+        "1 confidence",
+        "5 root cause F"
+      ],
+      "existing_evidence": [
+        "docs/limitation_audit_20261001/CONTRACT_AND_EVIDENCE.md"
+      ],
+      "depends_on": [
+        "C01",
+        "C02"
+      ],
+      "next_action": "Create the common deterministic-error and probabilistic-failure ledger with an explicit allocation policy.",
+      "alternatives": [
+        "Original 0.45 epsilon statistical share",
+        "Cost-optimized shares after valid bounds exist"
+      ],
+      "acceptance": [
+        "The sum of certified dollar errors is at most epsilon; total allocated failure is at most 0.01.",
+        "Every term is a bound, an assumption or unknown, with no zero-filled missing certificate.",
+        "Hardware, moment pilots, reference checks and sequential stopping have distinct failure entries."
+      ],
+      "stop_rule": "One complete ledger skeleton; unresolved terms keep G2/G3/G5 open rather than delaying unchanged integer experiments.",
+      "on_pass": "Use the ledger to qualify changed precision/loaders and all full-runtime claims.",
+      "on_fail": "Retain exact finite-source results and investigate the largest unbounded term first.",
+      "steps": [
+        "Enumerate law, discretization, arithmetic, synthesis and estimation errors. For compound/residual families include the same-policy baseline, surrogate and nonnegative exercise-policy regret terms; these are not obligations for a plain knock-out price.",
+        "Separate deterministic bias from failure probability.",
+        "Version allocations before outcome-sensitive experiments."
+      ],
+      "artifacts": [
+        "results/limitation_program_20261001/C03_<run>/"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "C04",
+      "title": "Tenfold advantage is a chosen threshold",
+      "status": "audit",
+      "source_sections": [
+        "1 tenfold target",
+        "2.2",
+        "7"
+      ],
+      "existing_evidence": [
+        "docs/limitation_audit_20261001/CONTRACT_AND_EVIDENCE.md"
+      ],
+      "depends_on": [
+        "C01",
+        "H17"
+      ],
+      "next_action": "Regenerate onefold and tenfold ratios with separate source-only and complete-runtime fields.",
+      "alternatives": [
+        "Observed T_C/T_Q",
+        "Break-even and tenfold frontiers"
+      ],
+      "acceptance": [
+        "Verify tenfold budget miss equals 10*T_Q/T_C using identical timing conventions.",
+        "A miss of the 10x target is not labelled a quantum slowdown unless T_Q exceeds T_C."
+      ],
+      "stop_rule": "One unit/identity check over every emitted comparison row; unsupported complete times remain blank.",
+      "on_pass": "Use ratios consistently in C14 and G5.",
+      "on_fail": "Correct interpretation and regenerate local tables without altering old evidence.",
+      "steps": [
+        "Read actual before/after source costs.",
+        "Separate modelled and timed inputs.",
+        "Export onefold, tenfold and source-only fields."
+      ],
+      "artifacts": [
+        "results/limitation_program_20261001/C04_<run>/"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "C05",
+      "title": "The statistical allowance of 0.45 epsilon is adjustable",
+      "status": "ready",
+      "source_sections": [
+        "2.1 statistical allowance"
+      ],
+      "existing_evidence": [
+        "docs/limitation_audit_20261001/CONTRACT_AND_EVIDENCE.md"
+      ],
+      "depends_on": [
+        "C03",
+        "E24"
+      ],
+      "next_action": "Optimize a small preregistered error-allocation grid after each component has a valid dollar bound.",
+      "alternatives": [
+        "Original split",
+        "Two alternative feasible statistical/bias splits"
+      ],
+      "acceptance": [
+        "Each row satisfies epsilon and failure constraints with integer estimator rounds.",
+        "Any selected cheaper source preserves the financial certificate and the same confidence."
+      ],
+      "stop_rule": "Three feasible allocations for one case; if a source bound is missing, retain the original split and defer optimization.",
+      "on_pass": "Adopt the minimum complete certified cost, then reevaluate C13/G5.",
+      "on_fail": "Keep the cheaper valid baseline rather than optimizing on unproved error estimates.",
+      "steps": [
+        "Enumerate costs as functions of tolerance.",
+        "Round actual stage counts.",
+        "Price source changes, pilots and repeats together."
+      ],
+      "artifacts": [
+        "results/limitation_program_20261001/C05_<run>/"
+      ],
+      "priority": 3
+    },
+    {
+      "id": "C06",
+      "title": "Correct digital arithmetic is not a continuous financial-law certificate",
+      "status": "conditional",
+      "source_sections": [
+        "4 Failure 6 correctness",
+        "7 certification"
+      ],
+      "existing_evidence": [
+        "docs/limitation_audit_20261001/CONTRACT_AND_EVIDENCE.md",
+        "manuscript/advantage-frontier-2026-09-23/STAGE_A_RESULTS.md"
+      ],
+      "depends_on": [
+        "C03"
+      ],
+      "next_action": "Prove one-coordinate Gaussian-to-digital-law bias before composing a full-path price certificate.",
+      "alternatives": [
+        "Coupling with payoff regularity",
+        "Explicit finite-grid/distribution discrepancy plus tail bounds"
+      ],
+      "acceptance": [
+        "Tail cutoff, finite-grid law, function approximation and payoff effects are bounded separately.",
+        "Compose over all required normals; gate truth tables or random draws are not substituted for financial bias."
+      ],
+      "stop_rule": "One coordinate plus one monitoring date first; a failed composition leaves the loader branch conditional and prompts a different bound.",
+      "on_pass": "Close G2 for the chosen source: add C07 for barrier payoffs and E11 only if a variance-sensitive estimator needs the tight digital-moment bridge.",
+      "on_fail": "Preserve current precision/law; compare a refined grid or a tighter coupling before adopting a new loader.",
+      "steps": [
+        "Write the exact finite sampler distribution.",
+        "Bound its discrepancy from the declared continuous law.",
+        "Propagate through a bounded truncated path and include remaining tails."
+      ],
+      "artifacts": [
+        "results/limitation_program_20261001/C06_<run>/"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "C07",
+      "title": "A few draws without barrier flips do not certify rare flips",
+      "status": "conditional",
+      "source_sections": [
+        "4 Failure 6 barrier checks"
+      ],
+      "existing_evidence": [
+        "docs/limitation_audit_20261001/CONTRACT_AND_EVIDENCE.md"
+      ],
+      "depends_on": [
+        "C03",
+        "C06"
+      ],
+      "next_action": "Bound the probability of the monitored basket lying within an arithmetic-error band around the barrier.",
+      "alternatives": [
+        "Conditional anti-concentration/density bound",
+        "Certified interval integration of a boundary band"
+      ],
+      "acceptance": [
+        "Prove path discrepancy eta and surviving-payoff discrepancy zeta on the stated truncated domain.",
+        "Bound discount*(zeta + M*P(any barrier band)) and add independent law/tail errors.",
+        "Targeted samples validate implementation only; they do not certify rare-event probability."
+      ],
+      "stop_rule": "Try two analytic/interval bounds on one date; if neither composes within its allowance, forbid lower precision for this contract.",
+      "on_pass": "Compose across dates and permit only precision choices meeting G2.",
+      "on_fail": "Keep current precision and record the failed precision-reduction branch.",
+      "steps": [
+        "Find a valid conditional distribution or interval enclosure.",
+        "Bound one-date boundary mass.",
+        "Apply a justified union/composition bound over dates."
+      ],
+      "artifacts": [
+        "results/limitation_program_20261001/C07_<run>/"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "C08",
+      "title": "Fitted convergence exponents are not lower bounds",
+      "status": "ready",
+      "source_sections": [
+        "2.3",
+        "4 Failure 6 rates",
+        "5 root cause A"
+      ],
+      "existing_evidence": [
+        "docs/limitation_audit_20261001/CONTRACT_AND_EVIDENCE.md",
+        "manuscript/advantage-frontier-2026-09-23/STAGE_B_RESULTS.md"
+      ],
+      "depends_on": [
+        "C01",
+        "F01"
+      ],
+      "next_action": "Freeze PCA basis, development/validation split and exponent-fit procedure before evaluating alternative classical representations.",
+      "alternatives": [
+        "Canonical basis",
+        "Seeded alternative bases and eligible conditioning methods"
+      ],
+      "acceptance": [
+        "Report fit-window, scramble-unit uncertainty and rate intervals.",
+        "Holdout outcomes are not used to select a basis or tune a slope; measured rates are not lower bounds."
+      ],
+      "stop_rule": "Use the existing Stage C design where compatible; a changed design is a separate locally versioned experiment.",
+      "on_pass": "Supply uncertainty-aware comparator inputs to C09/G4.",
+      "on_fail": "Report instability and widen the evidence range without preserving a desired advantage verdict.",
+      "steps": [
+        "Respect the existing PCA degeneracy finding.",
+        "Freeze configuration and seeds.",
+        "Evaluate development selection once on reserved cases."
+      ],
+      "artifacts": [
+        "results/limitation_program_20261001/C08_<run>/"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "C09",
+      "title": "Modelled classical time is not a timed successful price",
+      "status": "ready",
+      "source_sections": [
+        "2.5 historical timing",
+        "4 Failure 6 comparator"
+      ],
+      "existing_evidence": [
+        "docs/limitation_audit_20261001/CONTRACT_AND_EVIDENCE.md",
+        "manuscript/advantage-frontier-2026-09-23/ANALYSIS_SPEC_STAGE_C.md",
+        "research/frontier_classical_20261001/"
+      ],
+      "depends_on": [
+        "C01",
+        "C03"
+      ],
+      "next_action": "Complete the locally specified Stage C time-to-accuracy run using its actual target sample count and reference-price checks.",
+      "alternatives": [
+        "Existing compiled RQMC kernels",
+        "One eligible challenger selected on development data"
+      ],
+      "acceptance": [
+        "Record actual setup/warm timing, delivered interval and reference agreement.",
+        "Use the declared confidence procedure; modelled per-point extrapolation is labelled separately.",
+        "Preserve existing Stage C work and its specification rather than replacing it."
+      ],
+      "stop_rule": "Run one B4 target first, then the declared B8 target; a resource-limited incomplete run is reported incomplete, never timed-success evidence.",
+      "on_pass": "Close G4 only for validated cases; use the fastest eligible successful price.",
+      "on_fail": "Fix reference/coverage/kernel issues in a new run, or mark that case unresolved and continue independent arithmetic.",
+      "steps": [
+        "Inspect ongoing Stage C implementation and receipts.",
+        "Recover its preregistered configuration.",
+        "Run prescribed sample counts and report timing and uncertainty together."
+      ],
+      "artifacts": [
+        "results/limitation_program_20261001/C09_<run>/"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "C10",
+      "title": "The strongest tested classical method is not automatically the strongest applicable one",
+      "status": "ready",
+      "source_sections": [
+        "1 classical comparator",
+        "5 root cause D"
+      ],
+      "existing_evidence": [
+        "docs/limitation_audit_20261001/CONTRACT_AND_EVIDENCE.md"
+      ],
+      "depends_on": [
+        "C01",
+        "F01"
+      ],
+      "next_action": "Make an applicability matrix of classical challengers before implementing the next one.",
+      "alternatives": [
+        "Conditioning/RQMC/importance sampling",
+        "MLMC/PDE/tensor methods if the contract assumptions hold"
+      ],
+      "acceptance": [
+        "Every exclusion states the failed assumption; one eligible challenger receives the same task, error and setup accounting.",
+        "Report strongest tested, not universally fastest, unless an exhaustive claim is independently justified."
+      ],
+      "stop_rule": "Screen three families and implement the best eligible development candidate; stop an inapplicable method before performance claims.",
+      "on_pass": "Update G4 and tighten quantum budgets if the challenger wins.",
+      "on_fail": "Keep the strongest demonstrated baseline and list bounded search exclusions.",
+      "steps": [
+        "Check model and payoff compatibility.",
+        "Compare pilot work and mathematical error guarantees.",
+        "Validate the selected method on held-out cases."
+      ],
+      "artifacts": [
+        "results/limitation_program_20261001/C10_<run>/"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "C11",
+      "title": "A clean source is not an entire mean-estimation algorithm",
+      "status": "partial",
+      "source_sections": [
+        "2 estimator model",
+        "4 Failures 3-6",
+        "8 evidence levels"
+      ],
+      "existing_evidence": [
+        "docs/limitation_audit_20261001/CONTRACT_AND_EVIDENCE.md",
+        "research/controlled_source_completion/compiler.py",
+        "research/controlled_priority_completion/combined_wrappers.py"
+      ],
+      "depends_on": [
+        "C01",
+        "E02",
+        "H17"
+      ],
+      "next_action": "Compile one complete estimator iterate for the same source family and reconcile every wrapper cost.",
+      "alternatives": [
+        "Existing coherent fused wrapper",
+        "Measured bounded estimator where outer coherence is unnecessary"
+      ],
+      "acceptance": [
+        "Include normalization, source/inverse, reflection, rotations, synthesis, repeats, stopping and readout.",
+        "Never multiply residual-estimator query counts by knock-out source depths.",
+        "Source, estimator and price contracts share an explicit compatible identifier."
+      ],
+      "stop_rule": "One small complete iterate/repetition schedule first; incompatible interfaces stop that combination.",
+      "on_pass": "Use G2/G3/G4/H18 to produce a complete G5 scenario.",
+      "on_fail": "Keep the component result at L4 and repair the interface before claiming price runtime.",
+      "steps": [
+        "Match source and estimator contracts.",
+        "Test the small iterate including control-off identity.",
+        "Export exact calls and wrapper/synthesis costs."
+      ],
+      "artifacts": [
+        "results/limitation_program_20261001/C11_<run>/"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "C12",
+      "title": "Six constructions share three contracts and one toolchain",
+      "status": "partial",
+      "source_sections": [
+        "Introduction",
+        "4 six attempts",
+        "8 shared-toolchain evidence"
+      ],
+      "existing_evidence": [
+        "docs/limitation_audit_20261001/CONTRACT_AND_EVIDENCE.md"
+      ],
+      "depends_on": [
+        "G0"
+      ],
+      "next_action": "Maintain an evidence-family table and independently structured replacements for shared toolchain components.",
+      "alternatives": [
+        "Current exact lookup/multiplier replacements",
+        "Direct loading or a separate arithmetic backend"
+      ],
+      "acceptance": [
+        "Label six constructions over three contracts as shared evidence.",
+        "Each independent replacement implements the same numerical target and has its own correctness/cost receipt."
+      ],
+      "stop_rule": "Reuse existing exact replacement evidence; add a new independent backend only when its finite screen is promising.",
+      "on_pass": "Credit the verified component gain once and update the shared-evidence map.",
+      "on_fail": "Report the bounded implementation result without inferring an algorithm-independent obstruction.",
+      "steps": [
+        "Map each construction to shared modules.",
+        "Attach existing independent arithmetic checks.",
+        "Identify remaining correlated assumptions."
+      ],
+      "artifacts": [
+        "results/limitation_program_20261001/C12_<run>/"
+      ],
+      "priority": 3
+    },
+    {
+      "id": "C13",
+      "title": "Optimizations interact and cannot be multiplied without a compatible schedule",
+      "status": "partial",
+      "source_sections": [
+        "4 Failures 4-5",
+        "6 better compilation"
+      ],
+      "existing_evidence": [
+        "docs/limitation_audit_20261001/CONTRACT_AND_EVIDENCE.md",
+        "docs/limitation_audit_20261001/CONSTANT_MULTIPLIER_RESULT.md"
+      ],
+      "depends_on": [
+        "G0"
+      ],
+      "next_action": "Adopt improvements only through one combined emitted source and a resource-matched schedule.",
+      "alternatives": [
+        "Exact compact packing plus current arithmetic",
+        "Changed loader/precision only after G2"
+      ],
+      "acceptance": [
+        "Preserve unaffected target/leaf hashes and replay combined binding/cleanup.",
+        "Compare at equal resource caps or show the full Pareto tradeoff.",
+        "No product of overlapping module savings; removal of a module removes its separate optimization credit."
+      ],
+      "stop_rule": "Combine two compatible changes at a time; reject a combination on correctness, cap or certified-cost failure.",
+      "on_pass": "Set the new accepted local baseline, then re-rank the remaining hotspots.",
+      "on_fail": "Retain the last accepted baseline and record the interaction causing rejection.",
+      "steps": [
+        "Start from constant_multiplier_v1.",
+        "Add the next exact change alone.",
+        "Compare actual full-source costs and valid capped replays."
+      ],
+      "artifacts": [
+        "results/limitation_program_20261001/C13_<run>/"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "C14",
+      "title": "A classical cubic exponent is not necessary for a crossover",
+      "status": "audit",
+      "source_sections": [
+        "7 requirements and expert summaries"
+      ],
+      "existing_evidence": [
+        "docs/limitation_audit_20261001/CONTRACT_AND_EVIDENCE.md"
+      ],
+      "depends_on": [
+        "C04",
+        "C11",
+        "G4"
+      ],
+      "next_action": "Evaluate the actual complete inequality without imposing a classical cubic-exponent prerequisite.",
+      "alternatives": [
+        "Practical fixed-tolerance constants",
+        "Sensitivity curves with fit/extrapolation scope"
+      ],
+      "acceptance": [
+        "Use measured/certified inputs and compatible full quantum costs.",
+        "Report break-even and tenfold conditions without universal exponent or impossibility claims."
+      ],
+      "stop_rule": "One operating-point grid; unresolved estimator/hardware inputs are assumptions and cannot close G5.",
+      "on_pass": "State a scoped crossover or scoped miss with its reproducible assumptions.",
+      "on_fail": "Preserve the negative/component result and identify the remaining dominant cost rather than forcing a new workload.",
+      "steps": [
+        "Calculate T_C and complete T_Q at each declared epsilon.",
+        "Separate observed/modelled/extrapolated rows.",
+        "Propagate uncertainty and report both ratios."
+      ],
+      "artifacts": [
+        "results/limitation_program_20261001/C14_<run>/"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "C15",
+      "title": "References and stale numerical summaries need individual checking",
+      "status": "audit",
+      "source_sections": [
+        "3 external timing table",
+        "7 external summaries",
+        "9 evidence map",
+        "10 references"
+      ],
+      "existing_evidence": [
+        "docs/limitation_audit_20261001/CONTRACT_AND_EVIDENCE.md",
+        "docs/research_investigation/2026-09-23/ERRATA.md"
+      ],
+      "depends_on": [
+        "G0"
+      ],
+      "next_action": "Bind every reused numerical/literature claim to an exact version, locator and cost boundary.",
+      "alternatives": [
+        "Primary-source recovery",
+        "Explicit unverified/unrefreshed classification"
+      ],
+      "acceptance": [
+        "Store title, version/date, claim, locator, assumptions and transfer conditions.",
+        "Every hardware anchor, external compiled-circuit timing and source-screen conclusion has a checked or unverified status.",
+        "Do not refresh scientific claims from snippets or treat a selected screen as exhaustive."
+      ],
+      "stop_rule": "Audit the references actually used by the next experiment first; missing primary evidence excludes that number from accepted costs.",
+      "on_pass": "Use verified claims with their conditions and preserve historical manuscript evidence unchanged.",
+      "on_fail": "Mark the claim unverified, substitute a supported bound if available, and continue without fabricating a value.",
+      "steps": [
+        "Verify repository numerical claims locally against artifacts.",
+        "Read primary texts for externally reused claims when needed.",
+        "Record source dates, experimental/theoretical status and unresolved transfer assumptions."
+      ],
+      "artifacts": [
+        "results/limitation_program_20261001/C15_<run>/"
+      ],
+      "priority": 2
+    }
+  ]
+}

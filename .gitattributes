@@ -204,3 +204,15 @@ docs/controlled_priority_completion/** -text whitespace=cr-at-eol
 research/controlled_priority_completion/** -text whitespace=cr-at-eol
 results/controlled_priority_completion/** -text whitespace=cr-at-eol linguist-generated=true
 manuscript/controlled-compound-2026-09-22/** -text whitespace=cr-at-eol
+
+# Preserve byte hashes in the bounded 6 October checkpoint snapshot.
+docs/limitation_audit_20261001/** -text whitespace=cr-at-eol
+docs/limitation_program_20261001/** -text whitespace=cr-at-eol
+results/limitation_program_20261001/progress.json -text whitespace=cr-at-eol
+results/limitation_program_20261001/A10_coefficient_run001/summary.json -text whitespace=cr-at-eol
+tests/test_exact_coefficient_lookup.py -text whitespace=cr-at-eol
+
+# Keep historical, byte-preserved reports' final blank lines.
+docs/limitation_audit_20261001/implementation_plan/FORMULATIONS.md whitespace=-blank-at-eof,cr-at-eol
+docs/limitation_program_20261001/LOG_EXPONENT_PROOF.md whitespace=-blank-at-eof,cr-at-eol
+docs/limitation_program_20261001/continuation_20261004/A20_V6_OPERATIONAL_ERRATUM.md whitespace=-blank-at-eof,cr-at-eol

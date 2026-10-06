@@ -1,0 +1,670 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "id": "H01",
+      "title": "Decoder latency is not universally tens of microseconds",
+      "status": "audit",
+      "source_sections": [
+        "3 hardware table",
+        "5 root cause B"
+      ],
+      "existing_evidence": [
+        "docs/limitation_audit_20261001/HARDWARE_AND_COST_MODEL.md"
+      ],
+      "depends_on": [
+        "G0",
+        "C15"
+      ],
+      "next_action": "Make a versioned hardware timing table with explicit pulse, syndrome, decoder and feedback endpoints.",
+      "alternatives": [
+        "Integrated FPGA reaction loop",
+        "Original surface-code projection retained as a separate scenario"
+      ],
+      "acceptance": [
+        "Every latency has a primary-source locator, date, code distance, logical error and demonstrated/projected label.",
+        "No small-code result replaces an application-scale clock without an H18 failure check."
+      ],
+      "stop_rule": "Screen the existing anchors plus at most two newer primary constructions; missing sustained-error data closes that substitution.",
+      "on_pass": "Pass admissible timing records to H03/H17; retain old scenarios with their dates.",
+      "on_fail": "Mark unsupported replacements unavailable and continue with the bounded scenarios.",
+      "steps": [
+        "Recover each timing boundary from its figure/table.",
+        "Separate single-shot delay from sustained throughput.",
+        "Apply H18's whole-computation admissibility test."
+      ],
+      "artifacts": [
+        "results/limitation_program_20261001/H01_<run>/"
+      ],
+      "priority": 3
+    },
+    {
+      "id": "H02",
+      "title": "Fast standalone decoding is not the entire reaction loop",
+      "status": "audit",
+      "source_sections": [
+        "3 hardware table",
+        "5 root cause B"
+      ],
+      "existing_evidence": [
+        "docs/limitation_audit_20261001/HARDWARE_AND_COST_MODEL.md"
+      ],
+      "depends_on": [
+        "H01"
+      ],
+      "next_action": "Build one end-to-end reaction-loop timeline from acquisition through transport, decoding and conditional pulse dispatch.",
+      "alternatives": [
+        "Integrated controller",
+        "Distributed decoder/controller model"
+      ],
+      "acceptance": [
+        "All serial stages are charged; overlap has a stated dependency reason.",
+        "Kernel latency and complete reaction latency are distinct fields."
+      ],
+      "stop_rule": "Stop after two complete timelines; an unmeasured link remains an explicit parameter, not zero.",
+      "on_pass": "Feed the measured/projected loop into H03.",
+      "on_fail": "Retain a sensitivity interval; reject a claimed nanosecond layer based only on a kernel.",
+      "steps": [
+        "Identify link bandwidth and synchronization requirements.",
+        "Check whether feedback waits for one syndrome or many.",
+        "Export bottleneck and endpoints."
+      ],
+      "artifacts": [
+        "results/limitation_program_20261001/H02_<run>/"
+      ],
+      "priority": 3
+    },
+    {
+      "id": "H03",
+      "title": "A code cycle and a logical T layer are different quantities",
+      "status": "ready",
+      "source_sections": [
+        "2.4",
+        "3 hardware timing",
+        "5 root cause B"
+      ],
+      "existing_evidence": [
+        "docs/limitation_audit_20261001/HARDWARE_AND_COST_MODEL.md"
+      ],
+      "depends_on": [
+        "G0",
+        "H17"
+      ],
+      "next_action": "Map a short signed multiply-add chain into reaction dependencies, independent of the code-cycle duration.",
+      "alternatives": [
+        "Conventional lattice surgery",
+        "Time-optimal teleportation with explicit prepared resources"
+      ],
+      "acceptance": [
+        "Every measurement that gates a later operation is represented.",
+        "Count preparation, feedforward, connectivity and extra workspace; recover the original schedule as a control."
+      ],
+      "stop_rule": "Compare two gate schedules for one leaf and one dependent chain; no whole-source credit before a compatible mapping exists.",
+      "on_pass": "Scale the accepted mapping in H17 and check factory demand in H05/H06.",
+      "on_fail": "Keep the conventional mapping and record the failed assumptions.",
+      "steps": [
+        "Choose a leaf already emitted in the latest library.",
+        "Construct a dependency timeline under each schedule.",
+        "Compare latency and qubits at equal failure allowance."
+      ],
+      "artifacts": [
+        "results/limitation_program_20261001/H03_<run>/"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "H04",
+      "title": "Repeating distance-many syndrome rounds per operation is not mandatory in every architecture",
+      "status": "conditional",
+      "source_sections": [
+        "5 root cause B"
+      ],
+      "existing_evidence": [
+        "docs/limitation_audit_20261001/HARDWARE_AND_COST_MODEL.md"
+      ],
+      "depends_on": [
+        "H03",
+        "H18"
+      ],
+      "next_action": "Make an assumption-to-circuit checklist for a transversal fault-tolerance construction using one existing adder.",
+      "alternatives": [
+        "Algorithmic fault tolerance",
+        "Conventional repeated syndrome extraction"
+      ],
+      "acceptance": [
+        "Transversal gate set, input magic-state quality, decoder, connectivity and accumulated failures satisfy the construction.",
+        "Finite resources are recorded; constant rounds are not equated to a fixed nanosecond clock."
+      ],
+      "stop_rule": "One finite adder mapping and one assumption audit; if a required decoder/gate is absent, defer scaling.",
+      "on_pass": "Send the compatible gate schedule to H17.",
+      "on_fail": "Close this direct transfer and retain the missing-interface list.",
+      "steps": [
+        "Identify gates unavailable transversally.",
+        "Charge their replacements.",
+        "Check whole-run failure and reaction dependencies."
+      ],
+      "artifacts": [
+        "results/limitation_program_20261001/H04_<run>/"
+      ],
+      "priority": 4
+    },
+    {
+      "id": "H05",
+      "title": "Fifteen-to-one distillation is not the only magic-state supply",
+      "status": "ready",
+      "source_sections": [
+        "4 Failure 5 magic-state supply"
+      ],
+      "existing_evidence": [
+        "docs/limitation_audit_20261001/HARDWARE_AND_COST_MODEL.md"
+      ],
+      "depends_on": [
+        "H17",
+        "H18"
+      ],
+      "next_action": "Replace only the factory model for the actual T-state demand, keeping the computation and error allowance fixed.",
+      "alternatives": [
+        "15-to-1 distillation baseline",
+        "Cultivation with usable-distance escape"
+      ],
+      "acceptance": [
+        "Record successful output rate, rejected attempts, footprint, transport and error per output.",
+        "Factories, data and routing fit simultaneously; both schemes obey the same total failure allowance."
+      ],
+      "stop_rule": "Compare two factories on one demand profile; absent finite noise/output data makes the cultivation result conditional.",
+      "on_pass": "Integrate the winning compatible supply into H17.",
+      "on_fail": "Retain baseline supply and disclose which factory parameters are missing.",
+      "steps": [
+        "Extract time-dependent magic-state demand from the circuit.",
+        "Size factories for peak/buffered demand.",
+        "Check rate, footprint and failures jointly."
+      ],
+      "artifacts": [
+        "results/limitation_program_20261001/H05_<run>/"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "H06",
+      "title": "T-state supply and Toffoli-state supply must be matched to the circuit",
+      "status": "partial",
+      "source_sections": [
+        "3 arithmetic and factories",
+        "4 Failure 5"
+      ],
+      "existing_evidence": [
+        "docs/limitation_audit_20261001/HARDWARE_AND_COST_MODEL.md",
+        "research/controlled_priority_completion/capacity_screen.py"
+      ],
+      "depends_on": [
+        "H17",
+        "H18"
+      ],
+      "next_action": "Export separate CCX, T-rotation and Clifford demands before pricing native Toffoli supply.",
+      "alternatives": [
+        "Exact seven-T CCX",
+        "Native CCZ/Toffoli factory or compatible catalysis"
+      ],
+      "acceptance": [
+        "One arithmetic CCX is charged exactly once; residual rotations still pay their synthesis demand.",
+        "Native gate timing, workspace, state error and routing use one architecture."
+      ],
+      "stop_rule": "Two lowerings for one leaf and one source; reject combinations that remove the same gate twice.",
+      "on_pass": "Update H05/H17 with the matched state types.",
+      "on_fail": "Keep seven-T costs as the accepted baseline; native counts remain sensitivity data.",
+      "steps": [
+        "Reconcile with existing native-CCX capacity sensitivity.",
+        "Lower the chosen leaf in both gate sets.",
+        "Recompute full scheduled demand rather than multiply claimed savings."
+      ],
+      "artifacts": [
+        "results/limitation_program_20261001/H06_<run>/"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "H07",
+      "title": "Distillation is not logically necessary for every non-Clifford implementation",
+      "status": "conditional",
+      "source_sections": [
+        "3 non-Clifford operations",
+        "5 root cause B"
+      ],
+      "existing_evidence": [
+        "docs/limitation_audit_20261001/HARDWARE_AND_COST_MODEL.md"
+      ],
+      "depends_on": [
+        "H18"
+      ],
+      "next_action": "Translate one adder into a protected cat-qubit gate set and audit its noise assumptions.",
+      "alternatives": [
+        "Bias-preserving direct non-Clifford gates",
+        "Distilled gate baseline"
+      ],
+      "acceptance": [
+        "Bias, leakage, nonadiabatic errors and physical gate durations are stated.",
+        "The translated adder implements the same signed modular function and meets the allocated error."
+      ],
+      "stop_rule": "One gate translation; if usable finite error/duration data are missing, stop before full-source extrapolation.",
+      "on_pass": "Continue with the complete cat architecture in H08.",
+      "on_fail": "Leave a conditional architectural branch, not a demonstrated timing improvement.",
+      "steps": [
+        "Check gate identities locally on small registers.",
+        "Price every correction and protected operation.",
+        "Test the noise/error assumption ledger."
+      ],
+      "artifacts": [
+        "results/limitation_program_20261001/H07_<run>/"
+      ],
+      "priority": 4
+    },
+    {
+      "id": "H08",
+      "title": "An alternative physical qubit does not automatically eliminate all factories",
+      "status": "conditional",
+      "source_sections": [
+        "5 root cause B",
+        "6 new hardware"
+      ],
+      "existing_evidence": [
+        "docs/limitation_audit_20261001/HARDWARE_AND_COST_MODEL.md"
+      ],
+      "depends_on": [
+        "H07",
+        "H17",
+        "H18"
+      ],
+      "next_action": "Insert the pricing leaf schedule into a complete cat architecture cost model.",
+      "alternatives": [
+        "Cat-qubit architecture",
+        "Surface-code baseline"
+      ],
+      "acceptance": [
+        "Include Toffoli preparation, teleportation, transport and idling.",
+        "Use pricing's operation counts and failure budget, not a cryptographic workload's speedup."
+      ],
+      "stop_rule": "One full leaf model; no source claim if gate costs cannot be composed at the actual connectivity.",
+      "on_pass": "Add an independently labelled hardware scenario to H17.",
+      "on_fail": "Record the unavailable finite mapping and continue with supported architectures.",
+      "steps": [
+        "Extract finite cost formulas from primary architecture evidence.",
+        "Map the same adder/multiplier chain.",
+        "Compare simultaneous space and latency."
+      ],
+      "artifacts": [
+        "results/limitation_program_20261001/H08_<run>/"
+      ],
+      "priority": 4
+    },
+    {
+      "id": "H09",
+      "title": "Surface-code physical-qubit overhead is not universal",
+      "status": "conditional",
+      "source_sections": [
+        "4 Failure 5 memory",
+        "5 root cause B"
+      ],
+      "existing_evidence": [
+        "docs/limitation_audit_20261001/HARDWARE_AND_COST_MODEL.md"
+      ],
+      "depends_on": [
+        "H15",
+        "H18"
+      ],
+      "next_action": "Split the source allocation into stored data, active logic, ancillas and factories before substituting qLDPC storage.",
+      "alternatives": [
+        "Surface-code storage",
+        "Bivariate-bicycle/qLDPC storage plus explicit active-gate interfaces"
+      ],
+      "acceptance": [
+        "Finite code blocks, connectivity, conversion costs and logical error are recorded.",
+        "Storage savings exclude active arithmetic and factories unless those mappings are also supplied."
+      ],
+      "stop_rule": "One finite allocation at each current B4/B8 cap; missing memory-to-logic conversion closes this direct integration.",
+      "on_pass": "Hand the addressable operation interface to H10/H17.",
+      "on_fail": "Retain memory-only savings as a separate component result.",
+      "steps": [
+        "Measure live storage after A18.",
+        "Choose finite code blocks.",
+        "Charge all movement between storage and active logic."
+      ],
+      "artifacts": [
+        "results/limitation_program_20261001/H09_<run>/"
+      ],
+      "priority": 4
+    },
+    {
+      "id": "H10",
+      "title": "High-rate codes also have logical-operation research",
+      "status": "conditional",
+      "source_sections": [
+        "5 root cause B qLDPC"
+      ],
+      "existing_evidence": [
+        "docs/limitation_audit_20261001/HARDWARE_AND_COST_MODEL.md"
+      ],
+      "depends_on": [
+        "H09",
+        "H18"
+      ],
+      "next_action": "Map a 32-bit adder through one finite qLDPC logical-operation scheme.",
+      "alternatives": [
+        "qLDPC Clifford operations plus explicit T mechanism",
+        "Surface-code active region"
+      ],
+      "acceptance": [
+        "Charge inter-block gates, addressability, measurements and code conversion.",
+        "Count finite qubits and operation latency at the required failure rate."
+      ],
+      "stop_rule": "One adder mapping; no full-source projection without a non-Clifford interface.",
+      "on_pass": "Compare with H03/H17 using the same adder function.",
+      "on_fail": "Document the missing logic interface and stop this architecture transfer.",
+      "steps": [
+        "Locate the scheme's gate primitives.",
+        "Lower each adder gate.",
+        "Include nonlocal operation and state-supply costs."
+      ],
+      "artifacts": [
+        "results/limitation_program_20261001/H10_<run>/"
+      ],
+      "priority": 4
+    },
+    {
+      "id": "H11",
+      "title": "Addressable transversal non-Clifford gates are a distinct route",
+      "status": "conditional",
+      "source_sections": [
+        "5 root cause B cheap non-Clifford gates"
+      ],
+      "existing_evidence": [
+        "docs/limitation_audit_20261001/HARDWARE_AND_COST_MODEL.md"
+      ],
+      "depends_on": [
+        "H18"
+      ],
+      "next_action": "Find finite parameters for an addressable transversal-CCZ code and map one Toffoli-heavy leaf.",
+      "alternatives": [
+        "Addressable transversal CCZ",
+        "Native factory-produced CCZ"
+      ],
+      "acceptance": [
+        "Finite block size, stabilizer extraction and physical CCZ connectivity are available.",
+        "The construction is not mislabeled LDPC; unused block qubits still count."
+      ],
+      "stop_rule": "One finite parameter extraction; missing physical CCZ/error implementation makes the timing branch unavailable.",
+      "on_pass": "Compare its compatible state demand and latency with H06.",
+      "on_fail": "Keep the coding-theory result separate from application cost.",
+      "steps": [
+        "Expand theorem parameters.",
+        "Identify an admissible physical gate model.",
+        "Count extraction, idle and gate errors."
+      ],
+      "artifacts": [
+        "results/limitation_program_20261001/H11_<run>/"
+      ],
+      "priority": 5
+    },
+    {
+      "id": "H12",
+      "title": "Constant asymptotic overhead is not a small finite constant",
+      "status": "conditional",
+      "source_sections": [
+        "5 root cause B",
+        "7 resource frontier"
+      ],
+      "existing_evidence": [
+        "docs/limitation_audit_20261001/HARDWARE_AND_COST_MODEL.md"
+      ],
+      "depends_on": [
+        "H18"
+      ],
+      "next_action": "Evaluate the additive-space and width conditions of a constant-overhead construction for the current source width/depth.",
+      "alternatives": [
+        "Finite theorem construction",
+        "Explicit surface-code baseline"
+      ],
+      "acceptance": [
+        "Compute n, F(n) and required width with the construction's constants.",
+        "Missing constants remain unknown; asymptotic O(1) is never assigned an arbitrary numerical overhead."
+      ],
+      "stop_rule": "One full-text finite-constant audit; if no usable construction/constants are supplied, close the numerical-transfer branch.",
+      "on_pass": "Add a finite admissible scenario to H17 only if all conditions pass.",
+      "on_fail": "Record a theoretical alternative with no credited crossover.",
+      "steps": [
+        "Insert actual width, depth and total fault probability.",
+        "Check the width inequality.",
+        "Expand finite code/noise costs or record their absence."
+      ],
+      "artifacts": [
+        "results/limitation_program_20261001/H12_<run>/"
+      ],
+      "priority": 5
+    },
+    {
+      "id": "H13",
+      "title": "Idle space can dominate a physical mapping",
+      "status": "conditional",
+      "source_sections": [
+        "4 Failure 5 memory",
+        "5 root cause B"
+      ],
+      "existing_evidence": [
+        "docs/limitation_audit_20261001/HARDWARE_AND_COST_MODEL.md"
+      ],
+      "depends_on": [
+        "H15",
+        "H18"
+      ],
+      "next_action": "Lower one multiplier to active-volume blocks and compare idle storage and reaction depth at fixed resources.",
+      "alternatives": [
+        "Active-volume architecture",
+        "Conventional logical layout"
+      ],
+      "acceptance": [
+        "Record memory, active volume, reaction depth and required nonlocal connections.",
+        "All three bottlenecks are costed; lower active volume alone is not a latency gain."
+      ],
+      "stop_rule": "One leaf plus one dependent chain; reject any unimplemented connectivity assumption for accepted timing.",
+      "on_pass": "Extend a compatible mapping through H17.",
+      "on_fail": "Retain component volume results with explicit missing routing.",
+      "steps": [
+        "Translate primitive gates to blocks.",
+        "Count memory dwell and reaction dependencies.",
+        "Compare under simultaneous data/factory capacity."
+      ],
+      "artifacts": [
+        "results/limitation_program_20261001/H13_<run>/"
+      ],
+      "priority": 4
+    },
+    {
+      "id": "H14",
+      "title": "Photonic clock rates cannot be inserted directly as logical-layer rates",
+      "status": "conditional",
+      "source_sections": [
+        "7 logical-layer timing"
+      ],
+      "existing_evidence": [
+        "docs/limitation_audit_20261001/HARDWARE_AND_COST_MODEL.md"
+      ],
+      "depends_on": [
+        "H13",
+        "H18"
+      ],
+      "next_action": "Model photonic throughput and feedback delay independently for the same dependency chain.",
+      "alternatives": [
+        "Interleaved photonic resource states",
+        "Nonphotonic baseline"
+      ],
+      "acceptance": [
+        "Emitter count, loss, buffer/delay length and decoder throughput are fixed.",
+        "Optical clock rate is distinct from dependency latency; losses consume the total fault budget."
+      ],
+      "stop_rule": "One finite resource-generator/delay scenario and one sensitivity interval; missing loss data defers transfer.",
+      "on_pass": "Insert compatible throughput and reaction limits into H17.",
+      "on_fail": "Keep the architecture as a conditional route, with no GHz logical-layer substitution.",
+      "steps": [
+        "Determine resource-state consumption.",
+        "Size optical buffers and generators.",
+        "Calculate latency, loss and sustained output together."
+      ],
+      "artifacts": [
+        "results/limitation_program_20261001/H14_<run>/"
+      ],
+      "priority": 5
+    },
+    {
+      "id": "H15",
+      "title": "Millions of logical qubits in the emitted oracle are not an information lower bound",
+      "status": "partial",
+      "source_sections": [
+        "4 Failure 5 memory",
+        "5 root cause E"
+      ],
+      "existing_evidence": [
+        "docs/limitation_audit_20261001/HARDWARE_AND_COST_MODEL.md",
+        "research/controlled_source_completion/compact_storage.py",
+        "docs/limitation_audit_20261001/CONSTANT_MULTIPLIER_RESULT.md"
+      ],
+      "depends_on": [
+        "G0",
+        "A06"
+      ],
+      "next_action": "Combine the exact compact SSA allocator with the accepted carry-save and ln(2) library and rebuild capped schedules; A18 is needed only for the later recomputation branch.",
+      "alternatives": [
+        "Exact bit packing",
+        "Reversible checkpointing when packing is insufficient"
+      ],
+      "acceptance": [
+        "Use the unchanged financial target and arbitrary output XOR; restore every input/workspace bit.",
+        "Show depth/qubit Pareto results with actual recomputation, not a width estimate alone."
+      ],
+      "stop_rule": "First run packing alone; then at most three checkpoint policies on one segment. Reject any claimed memory gain without a clean replay.",
+      "on_pass": "Adopt compatible Pareto improvements via C13; expose affordable estimator lanes to E20.",
+      "on_fail": "Keep the accepted baseline and record the measured width/depth tradeoff.",
+      "steps": [
+        "Reuse the existing exact compact-storage implementation.",
+        "Integrate the latest leaf scratch sizes.",
+        "Replay B4 and B8 before considering recomputation."
+      ],
+      "artifacts": [
+        "results/limitation_program_20261001/H15_<run>/"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "H16",
+      "title": "Classical parallelism is inexpensive in this benchmark but not literally free",
+      "status": "ready",
+      "source_sections": [
+        "1 classical comparator",
+        "5 root cause E"
+      ],
+      "existing_evidence": [
+        "docs/limitation_audit_20261001/HARDWARE_AND_COST_MODEL.md",
+        "docs/research_investigation/2026-09-23/ERRATA.md"
+      ],
+      "depends_on": [
+        "G0",
+        "C09"
+      ],
+      "next_action": "Measure classical scaling at 1, 2, 4, 8 and up to 16 available workers with identical contracts and seeds.",
+      "alternatives": [
+        "Compiled multicore RQMC",
+        "GPU only if already locally available and eligible"
+      ],
+      "acceptance": [
+        "Report setup, cold one-price time, warm repeated time and throughput separately.",
+        "No linear scaling extrapolation beyond measured worker counts; tuning is charged consistently."
+      ],
+      "stop_rule": "One fixed scaling grid; an unavailable GPU arm is marked unavailable rather than triggering a download/cloud job.",
+      "on_pass": "Use measured scaling in G4 and E20 comparisons.",
+      "on_fail": "Report saturation/overhead honestly and retain the fastest eligible observed method.",
+      "steps": [
+        "Freeze worker affinity and workload.",
+        "Record resource and machine information.",
+        "Repeat the prescribed timings with reference-price checks."
+      ],
+      "artifacts": [
+        "results/limitation_program_20261001/H16_<run>/"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "H17",
+      "title": "T depth alone does not determine runtime",
+      "status": "ready",
+      "source_sections": [
+        "2.4",
+        "3 timing",
+        "4 Failures 4-6",
+        "7 frontier"
+      ],
+      "existing_evidence": [
+        "docs/limitation_audit_20261001/HARDWARE_AND_COST_MODEL.md",
+        "results/limitation_audit_20261001/constant_multiplier_v1/summary.json"
+      ],
+      "depends_on": [
+        "G0"
+      ],
+      "next_action": "Create one resource ledger for the latest accepted source before attaching any estimator or hardware clock.",
+      "alternatives": [
+        "Reaction/factory/routing bottleneck lower bound",
+        "Explicit compatible schedule for an achievable upper bound"
+      ],
+      "acceptance": [
+        "Reconcile CCX/T count, T-depth, total logical depth, scratch, memory and data movement.",
+        "Label max(reaction,supply,routing,other) a lower bound, not an executable runtime.",
+        "Keep B4/B8 knock-out and C4/H8 residual source families separate."
+      ],
+      "stop_rule": "One ledger per source and at most three compatible architectures; missing routing produces an incomplete scenario.",
+      "on_pass": "Combine G3, G4 and H18 into G5 using actually scheduled overlap.",
+      "on_fail": "Keep source-only L4 results and mark missing physical interfaces explicitly.",
+      "steps": [
+        "Hash the accepted libraries and schedules.",
+        "Extract demand by schedule batch.",
+        "Attach architecture inputs only with provenance and matching gate set."
+      ],
+      "artifacts": [
+        "results/limitation_program_20261001/H17_<run>/"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "H18",
+      "title": "Error per operation must fall as the entire computation grows",
+      "status": "ready",
+      "source_sections": [
+        "1 confidence",
+        "5 root causes B and F"
+      ],
+      "existing_evidence": [
+        "docs/limitation_audit_20261001/HARDWARE_AND_COST_MODEL.md"
+      ],
+      "depends_on": [
+        "C03"
+      ],
+      "next_action": "Compute required per-operation and per-magic-state failure from the entire estimator invocation schedule.",
+      "alternatives": [
+        "Conservative union bound",
+        "A dependence-aware bound only with a justified theorem"
+      ],
+      "acceptance": [
+        "Allocate hardware failure within the total 0.01 and count every repeated source, reflection and state use.",
+        "Choose code distance and state error jointly with latency and footprint."
+      ],
+      "stop_rule": "Use a provisional count range until G3; reject any fast hardware row whose accumulated failure exceeds its allocation.",
+      "on_pass": "Recompute H01-H14 admissibility and close G5 only for the complete compatible configuration.",
+      "on_fail": "Increase protection/reprice, or reject the hardware scenario without changing the financial confidence requirement.",
+      "steps": [
+        "Start from delta/N per opportunity.",
+        "Partition code, state and control errors.",
+        "Replace provisional counts with the final estimator schedule."
+      ],
+      "artifacts": [
+        "results/limitation_program_20261001/H18_<run>/"
+      ],
+      "priority": 2
+    }
+  ]
+}
