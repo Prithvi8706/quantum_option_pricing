@@ -50,19 +50,29 @@ def lookup_shared(p, address, outs, table, bits):
                     p.gate(control, wire)
 
     def visit(level, prefix, start):
-        if not any(any(row) for row in residual[start:start + (1 << (level + 1))]):
-            return
-        if level < 0:
-            emit_row(start, prefix)
-            return
-        flag = scratch[level]
-        bit = address[level]
-        p.gate(prefix, bit, flag)
-        visit(level - 1, flag, start + (1 << level))
-        p.gate(prefix, flag)
-        visit(level - 1, flag, start)
-        p.gate(prefix, flag)
-        p.gate(prefix, bit, flag)
+        # Explicit depth-first frames preserve compute/high/switch/low/cleanup
+        # gate order without imposing Python's recursion limit on address size.
+        pending = [(level, prefix, start, 0)]
+        while pending:
+            level, prefix, start, phase = pending.pop()
+            if phase:
+                p.gate(prefix, scratch[level])
+                if phase == 2:
+                    p.gate(prefix, address[level], scratch[level])
+                continue
+            if not any(any(row) for row in residual[start:start + (1 << (level + 1))]):
+                continue
+            if level < 0:
+                emit_row(start, prefix)
+                continue
+            flag = scratch[level]
+            p.gate(prefix, address[level], flag)
+            pending.extend([
+                (level, prefix, start, 2),
+                (level - 1, flag, start, 0),
+                (level, prefix, start, 1),
+                (level - 1, flag, start + (1 << level), 0),
+            ])
 
     high = address[bits - 1]
     visit(bits - 2, high, 1 << (bits - 1))

@@ -47,15 +47,18 @@ def test_partial_table_and_constant_table():
     assert resources(p)["ccx"] == 0
 
 
-@pytest.mark.parametrize("table", [[[5, -7]], [[0, 0]]])
-def test_sparse_table_with_wide_address(table):
+@pytest.mark.parametrize("bits,table", [
+    (32, [[5, -7]]), (32, [[0, 0]]), (1024, [[5, -7]]),
+])
+def test_sparse_table_with_wide_address(bits, table):
     # The historical interface permits wide addresses with only a few rows.
-    # Unlisted rows are zero; do not allocate an implicit 2**32-row table.
-    p, args, outs = build("lookup", 34, 2, {"bits": 32}, table)
-    mask = (1 << 34) - 1
+    # Keep missing rows implicit and do not impose Python's recursion limit.
+    width = bits + 2
+    p, args, outs = build("lookup", width, 2, {"bits": bits}, table)
+    mask = (1 << width) - 1
     initial = [17, 23]
-    for address in (0, 1, 2, 1 << 16, 1 << 31, (1 << 32) - 1, 3 << 32):
-        row = table[0] if address & ((1 << 32) - 1) == 0 else [0, 0]
+    for address in (0, 1, 2, 1 << (bits // 2), 1 << (bits - 1), (1 << bits) - 1, 3 << bits):
+        row = table[0] if address & ((1 << bits) - 1) == 0 else [0, 0]
         expected = [(value & mask) ^ old for value, old in zip(row, initial)]
         actual, clean, preserved, _ = basis_run(p, args, outs, [address], initial)
         assert (actual, clean, preserved) == (expected, True, True)
@@ -63,8 +66,8 @@ def test_sparse_table_with_wide_address(table):
             p, args, outs, [address], actual, inverse=True,
         )
         assert (restored, clean, preserved) == (initial, True, True)
-    assert len(p.gates) <= 8 * 32 + 2 * 34
-    assert p.qubits <= 3 * 34 + 31
+    assert len(p.gates) <= 8 * bits + 2 * width
+    assert p.qubits <= 3 * width + bits - 1
 
 
 def test_small_lookup_on_complex_state_with_entangled_reference():
