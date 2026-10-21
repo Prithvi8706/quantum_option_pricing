@@ -1,0 +1,370 @@
+{
+ "meta": {
+  "python": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]",
+  "executable": "C:\\Users\\prith\\quantum_option_pricing\\.context\\frontier_t0_env\\Scripts\\python.exe",
+  "numpy": "2.0.2",
+  "c2_meta_python": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]",
+  "c2_meta_numpy": "2.0.2",
+  "spec_sha256": "3f89d9f4d0f356a2da8f75f0c9bb7e8bbb52979bd202e2541441174f44f94be1",
+  "c1_summary_sha256": "5d91aecc5ae26140be4e8c6a86ce304ac97870470f04bedce11a3ad55a2b9123",
+  "c2_timing_sha256": "234bf8a873020ee8051f0202850aaec14a62c19349486c30c36867d4d61c9290",
+  "code_sha256": {
+   "basis.py": "3c6f238c0a9b2303a95cab7439739bc97d2d5ceb37e42bb143da2f3ea21419ee",
+   "c1_rates.py": "ce4f6f7ef6335993c513d9982d1fef2723493d90c045ce47a934fd7fe35471af",
+   "c2_timing.py": "d4f1156e77b74eaf33ea3fe828a7515b09825bf1d4ca0ece08907659ce3b685c",
+   "c3_refa.py": "ad9a933f9a569de7aebcea575b3776557eff3e8d08c41d3a1d4c0c10f2486343",
+   "c3_refb.py": "2f0dac6169328c2388cdb8e73e401e58316091f5125057f0d63e51f335b552fd",
+   "c4_coverage.py": "eb66ee469ff0c5ddb7f6e3a4393fc5a56572935c8b8752ea19c970aea1b51527",
+   "c5_smoothers.py": "447d7781a5e081c0e81b5e225f261e17e8f2a8277cad452ce399fb03fd9eea87",
+   "c7_c8_cases.py": "b5929ba742f156dea8212e4a948b7fac724590bae9b5b158219f3bd7c62eb6a1",
+   "conftest.py": "f1ea63001921b208369e5b2f469da9071f156311ac6a27949c0bdd1387a6b360",
+   "decision.py": "5fdb48c581301d291d1553eba6e98c3732e7a2e0282a63265bd8bcf818f23616",
+   "fit.py": "5c896bedb35af50836e45d6f25a15abc99273f51826fa1b6694921bbf6269720",
+   "kernels.py": "b0762f0e7d82ce9b4a5b7fe28c10278bfa3ccc0b390afe3a72e9d09404e97987",
+   "oracle.py": "f8221abc37710b6aa07e009eb02f754e941545dcdbd261d064d9bf0d1d694286",
+   "oss.py": "95f1f809eae8403c1ae1ef48d5749469d018cb980c2ad2e4f807b0a8f5c0290e",
+   "provenance.py": "2805c64e4f79a08b3f34d7666c4082c87242dad0e3344a7d6bcc5e21a56882b7",
+   "q4_deviation.py": "0448f047b6161c2a1258b532fbf98385f3061eb3f7f6a005117e4fe8743af6f4",
+   "q4_payoff.py": "2c74e9596a85083b93d3c3fb09cca757278b1d262eaa10faecc1e655c9e63482",
+   "scrambles.py": "40403b81a1b92d336bcb23a352029f2607ef859589f640e329075a597c49dc0f",
+   "sigma_q.py": "757e7c0dfdf660a95c1cda7138abfcf0c90fb387765c0271b4fb667955ce8f1c",
+   "test_basis.py": "07a6d9abe22c30d33a52644fd56a4159e9836ae3ed79e673121cd730e13f7e6a",
+   "test_fit.py": "eb6da7c35ca01fc666793cee79f07f64c2292c33b65a7e829b18422bdd776e32",
+   "test_kernels.py": "e27762f96c108e813aa35a2fd0e184b74c1b87a562203cf85fa655d6b5f5b970",
+   "test_oss.py": "a23fc8beab10b17bd36e0102b428fc41851f753576ebbf95615d064c08822645",
+   "test_refb.py": "25f4ed5cf25be1e4a020bf2de243304b4fc1055c8376f620b1c6446d2cb14fc4",
+   "test_runners.py": "c736449456a64111c14408eae205602666a4c20fc7bfcfdd0e919aa60c116e7c",
+   "test_scrambles.py": "a042d6f020418e19430448802711d5dfde3808c09d911580b4149575fadd9b2e",
+   "test_timing.py": "361e67625a5574ff5410189705fbff17026240cff1026be113e549e1c580e46f",
+   "timing.py": "dbf9079d9503b888f0a5ca4b6f2134b7629239915cb72e75e52d64d22a654cb0",
+   "h16_worker_grid.py": "72704c0426377a82ef791b7876deb713f8b04de84c3273c441c40e90d019c142"
+  },
+  "root": 2026101116,
+  "method": "preint",
+  "worker_grid": [
+   16,
+   8,
+   4,
+   2,
+   1
+  ],
+  "reps": {
+   "0.03": 20,
+   "0.01": 20,
+   "0.001": 5
+  },
+  "eps": [
+   0.01,
+   0.001
+  ],
+  "scrambles": 16,
+  "t995_15": 2.9467128834859504,
+  "share": 0.45,
+  "purpose": 3,
+  "estimate_hours": 1.3663863482643643,
+  "cpu": "Intel(R) Core(TM) Ultra 7 155H",
+  "power_plan": "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)",
+  "affinity": "none set",
+  "started_utc": "2026-10-10T19:34:32Z"
+ },
+ "machine_log": [
+  {
+   "cpu_percent_30s": 9.45402474195858,
+   "busy_python": [],
+   "python_cpu_5s": [
+    "10744 0.00",
+    "20400 0.00",
+    "34620 0.00",
+    "35520 0.00",
+    "39296 0.00",
+    "43268 0.00"
+   ],
+   "battery_status": "2",
+   "physical_logical_cores": [
+    "16",
+    "22"
+   ],
+   "idle": true,
+   "waited_s": 142,
+   "label": "start"
+  },
+  {
+   "cpu_percent_30s": 9.43570863605942,
+   "busy_python": [],
+   "python_cpu_5s": [
+    "10744 0.00",
+    "20400 0.00",
+    "34620 0.00",
+    "35520 0.00",
+    "39296 0.00",
+    "43268 0.00"
+   ],
+   "battery_status": "2",
+   "physical_logical_cores": [
+    "16",
+    "22"
+   ],
+   "idle": true,
+   "waited_s": 40,
+   "label": "B4x12 W=16"
+  },
+  {
+   "cpu_percent_30s": 7.76644587360901,
+   "busy_python": [],
+   "python_cpu_5s": [
+    "10744 0.00",
+    "20400 0.00",
+    "34620 0.00",
+    "35520 0.00",
+    "39296 0.00",
+    "43268 0.00"
+   ],
+   "battery_status": "2",
+   "physical_logical_cores": [
+    "16",
+    "22"
+   ],
+   "idle": true,
+   "waited_s": 40,
+   "label": "B4x12 W=8"
+  },
+  {
+   "cpu_percent_30s": 9.24054401981152,
+   "busy_python": [],
+   "python_cpu_5s": [
+    "10744 0.00",
+    "20400 0.00",
+    "34620 0.00",
+    "35520 0.00",
+    "39296 0.00",
+    "43268 0.00"
+   ],
+   "battery_status": "2",
+   "physical_logical_cores": [
+    "16",
+    "22"
+   ],
+   "idle": true,
+   "waited_s": 241,
+   "label": "B4x12 W=4"
+  },
+  {
+   "cpu_percent_30s": 6.24135236721713,
+   "busy_python": [],
+   "python_cpu_5s": [
+    "10744 0.00",
+    "20400 0.00",
+    "34620 0.00",
+    "35520 0.00",
+    "39296 0.00",
+    "43268 0.00"
+   ],
+   "battery_status": "2",
+   "physical_logical_cores": [
+    "16",
+    "22"
+   ],
+   "idle": true,
+   "waited_s": 242,
+   "label": "B4x12 W=2"
+  },
+  {
+   "cpu_percent_30s": 4.94720274006614,
+   "busy_python": [],
+   "python_cpu_5s": [
+    "10744 0.00",
+    "20400 0.00",
+    "34620 0.00",
+    "35520 0.00",
+    "39296 0.00",
+    "43268 0.00"
+   ],
+   "battery_status": "2",
+   "physical_logical_cores": [
+    "16",
+    "22"
+   ],
+   "idle": true,
+   "waited_s": 41,
+   "label": "B4x12 W=1"
+  },
+  {
+   "cpu_percent_30s": 6.21580704183907,
+   "busy_python": [],
+   "python_cpu_5s": [
+    "10744 0.00",
+    "20400 0.00",
+    "34620 0.00",
+    "35520 0.00",
+    "39296 0.00",
+    "43268 0.00"
+   ],
+   "battery_status": "2",
+   "physical_logical_cores": [
+    "16",
+    "22"
+   ],
+   "idle": true,
+   "waited_s": 41,
+   "label": "B8x52 W=16"
+  },
+  {
+   "cpu_percent_30s": 6.55748740184768,
+   "busy_python": [],
+   "python_cpu_5s": [
+    "10744 0.00",
+    "20400 0.00",
+    "34620 0.00",
+    "35520 0.00",
+    "39296 0.00",
+    "43268 0.00"
+   ],
+   "battery_status": "2",
+   "physical_logical_cores": [
+    "16",
+    "22"
+   ],
+   "idle": true,
+   "waited_s": 41,
+   "label": "B8x52 W=8"
+  },
+  {
+   "cpu_percent_30s": 8.65117325816481,
+   "busy_python": [],
+   "python_cpu_5s": [
+    "10744 0.00",
+    "20400 0.00",
+    "34620 0.00",
+    "35520 0.00",
+    "39296 0.00",
+    "43268 0.00"
+   ],
+   "battery_status": "2",
+   "physical_logical_cores": [
+    "16",
+    "22"
+   ],
+   "idle": true,
+   "waited_s": 41,
+   "label": "B8x52 W=4"
+  },
+  {
+   "cpu_percent_30s": 5.7812426669198,
+   "busy_python": [],
+   "python_cpu_5s": [
+    "10744 0.00",
+    "20400 0.00",
+    "34620 0.00",
+    "35520 0.00",
+    "39296 0.00",
+    "43268 0.00"
+   ],
+   "battery_status": "2",
+   "physical_logical_cores": [
+    "16",
+    "22"
+   ],
+   "idle": true,
+   "waited_s": 41,
+   "label": "B8x52 W=2"
+  },
+  {
+   "cpu_percent_30s": 6.44070874751951,
+   "busy_python": [],
+   "python_cpu_5s": [
+    "10744 0.00",
+    "20400 0.00",
+    "34620 0.00",
+    "35520 0.00",
+    "39296 0.00",
+    "43268 0.00"
+   ],
+   "battery_status": "2",
+   "physical_logical_cores": [
+    "16",
+    "22"
+   ],
+   "idle": true,
+   "waited_s": 43,
+   "label": "B8x52 W=1"
+  }
+ ],
+ "summary": {
+  "B4x12/0.01": {
+   "t_c_by_workers": {
+    "1": 0.8816688500228338,
+    "2": 0.5484290500171483,
+    "4": 0.3931702499394305,
+    "8": 0.1931971000158228,
+    "16": 0.13693129998864606
+   },
+   "speedup_vs_1": {
+    "1": 1.0,
+    "2": 1.607626091278837,
+    "4": 2.242460741011454,
+    "8": 4.56357186495359,
+    "16": 6.438767835373937
+   },
+   "t1_over_16t16": 0.40242298971087104,
+   "c2_primary_w16": 0.12440245000470895,
+   "paired_scramble_means_identical": true
+  },
+  "B4x12/0.001": {
+   "t_c_by_workers": {
+    "1": 26.10747339995578,
+    "2": 14.736842699931003,
+    "4": 10.337673400063068,
+    "8": 4.911665800027549,
+    "16": 2.7889391999924555
+   },
+   "speedup_vs_1": {
+    "1": 1.0,
+    "2": 1.771578480652305,
+    "4": 2.5254689705902784,
+    "8": 5.315401019305781,
+    "16": 9.361076569911027
+   },
+   "t1_over_16t16": 0.5850672856194392,
+   "c2_primary_w16": 2.6880081000053906,
+   "paired_scramble_means_identical": true
+  },
+  "B8x52/0.01": {
+   "t_c_by_workers": {
+    "1": 4.358857900020666,
+    "2": 2.4269424499943852,
+    "4": 1.7227460000431165,
+    "8": 0.9505590499611571,
+    "16": 0.5905108499573544
+   },
+   "speedup_vs_1": {
+    "1": 1.0,
+    "2": 1.7960285378958,
+    "4": 2.530180247065774,
+    "8": 4.585572984864836,
+    "16": 7.381503490300737
+   },
+   "t1_over_16t16": 0.4613439681437961,
+   "c2_primary_w16": 0.5535173499956727,
+   "paired_scramble_means_identical": true
+  },
+  "B8x52/0.001": {
+   "t_c_by_workers": {
+    "1": 240.18072379997466,
+    "2": 131.19607300008647,
+    "4": 81.94367830001283,
+    "8": 42.97215129993856,
+    "16": 23.4606172000058
+   },
+   "speedup_vs_1": {
+    "1": 1.0,
+    "2": 1.830700556104422,
+    "4": 2.9310464062965678,
+    "8": 5.589218052490615,
+    "16": 10.23761317753888
+   },
+   "t1_over_16t16": 0.63985082359618,
+   "c2_primary_w16": 22.529285950004123,
+   "paired_scramble_means_identical": true
+  }
+ }
+}
