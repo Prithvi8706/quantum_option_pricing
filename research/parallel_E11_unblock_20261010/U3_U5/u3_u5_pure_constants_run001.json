@@ -1,0 +1,96 @@
+{
+ "design_only": true,
+ "label": "U3_U5_pure_constant_identities_and_premise_pins",
+ "law_constants": {
+  "Cov_lnX_ij_lnG_gamma_j": {
+   "1": "33/8000",
+   "10": "33/1280",
+   "11": "847/32000",
+   "12": "429/16000",
+   "2": "253/32000",
+   "3": "363/32000",
+   "4": "231/16000",
+   "5": "11/640",
+   "6": "627/32000",
+   "7": "693/32000",
+   "8": "187/8000",
+   "9": "99/4000"
+  },
+  "E_lnG_minus_ln100": "-13/1600",
+  "Var_lnG_v_lambda": "143/7680",
+  "asset_corr_row_sum_1_plus_3rho": "11/5",
+  "contract_constants": {
+   "A": "equal-weight mean of 48 fixings",
+   "H": "140",
+   "K": "100",
+   "S0": "100",
+   "T": "1",
+   "dates": "j/12, j=1..12",
+   "r": "3/100",
+   "rho": "2/5",
+   "sigma2": "9/100",
+   "survival": "every date basket (mean of 4) strictly below 140"
+  },
+  "distinct_exact_exponents_E_A2_spot2_factored": 117,
+  "distinct_exact_exponents_E_AG_spot2_factored": 12,
+  "gamma_j_closed_form": "11*j*(25-j)/64000",
+  "max_abs_exponent_E_A2": "3/20",
+  "mean_gamma_equals_v_lambda": true,
+  "sum_min_t_years": "325/6",
+  "terminal_basket": {
+   "Cov_lnS_i_T_lnGB_T": "99/2000",
+   "E[B_T|G_B(T)] = G_B(T)*exp(kappa0), kappa0": "81/4000",
+   "E_lnGB_T_minus_ln100": "-3/200",
+   "Var_lnGB_T": "99/2000",
+   "Var_lnS_i_T": "9/100",
+   "beta": "1"
+  }
+ },
+ "pointwise_algebra_sanity": {
+  "all_hold": true,
+  "checked_cases": 36,
+  "inequality": "f >= d*[(A-K)*1_D - (A-K-c)^+] - d*c*1_KO",
+  "nature": "algebra sanity on hand-written vectors; not a sample of the law; not a bound"
+ },
+ "premise_sha256": {
+  ".context/E11_B4X12_FIXED_POLAR_SAFE_H128_PAYOFF_L2_ACTUAL_RESULT_ROOT_VERIFICATION_run001.json": "87d7dec30d03f326e13a16b8a2ebfea464c1e797a753986e0d2db3d10bd06ce7",
+  ".context/E11_B4X12_FIXED_POLAR_SAFE_UNIFORM_ERROR_FEASIBILITY_run001.md": "d673d81da8e91a3ad84db02f85f8e7d7fe5ce276ff5fcd8944747623f9530364",
+  ".context/E11_B4X12_FIXED_POLAR_SAFE_UNIFORM_ERROR_FEASIBILITY_run002.md": "04b491906b3dfadfb790fee41f7bca8dfc98991a7929770c785ad1ced3c0cc59",
+  ".context/ROOT_E11_ANY_H_CERTIFICATE_FOUR_TARGET_CONDITIONAL_REVIEW_run001.json": "de6d09fe50db48939e335d2a9aa4db112a3371a12d66fa7177b76bf5eae10e25",
+  ".context/advantage_frontier_replay/research/advantage_frontier_20260923/barrier_fast_classical.py": "18611d7db2f896516f7aed2e67be988beafba0ef54f3bfb395c88447104c5472",
+  "docs/independent_110_20261004/E17/MOMENT_PROOF_v2.md": "8427a39204ff66474dde1f4fc2dc010b714548f506cc9b37a177707fcd9f0ca6",
+  "docs/limitation_audit_20261001/implementation_plan/ESTIMATION.md": "146b515c8c10a12574798b2354b43368e4dbfdf7a7591aa931c816a1502216a4",
+  "docs/limitation_program_20261001/E10_CONTINUOUS_MOMENT_RESULTS.md": "800750b3dbe013e499899f5b108c95e58b2f9b9f78b51b4bc1d67e863fcc7fd9",
+  "docs/limitation_program_20261001/E11_B4X12_ALL48_STOCK_MATRIX_RESULTS_20261007.md": "5c1a7caf810340ed54710b3bf4a9795e7389d2284c6a18c86ae36982364dba92",
+  "docs/limitation_program_20261001/E11_FIXED_POLAR_SAFE_PAYOFF_L2_RESULTS_20261009.md": "512e879c42b206b0d79897850b39d3fcc167cc0e7188abf901bbdfa6ed639b04",
+  "docs/limitation_program_20261001/E11_FIXED_POLAR_SAFE_UNIFORM_FEASIBILITY_RESULTS_20261008.md": "c43d0f35483491de3b3057c0803ac24011767f57b9fb40e63e902d82ec4cdc90",
+  "docs/limitation_program_20261001/STATUS.md": "0e8dbe484afe274c7a723dc8a823c4eaa520198364950c158a69745bedf22d88",
+  "docs/parallel_E11_unblock_20261010/U2_MEAN_AWARE_SCHEDULE.md": "6a4d5996753da15bfff6b150847dfac177e4bdf4b0095facd05bcdfaa6a2ef10",
+  "manuscript/advantage-frontier-2026-09-23/WHY_NO_ADVANTAGE.md": "b3798f7c44a5bbc6c95d710ba38d5e713d6614294581543bbcaf18a2dfdf0637",
+  "research/controlled_priority_completion/estimator_hadamard.py": "70c4cc7ce22718fdf65d326ba1b7e70d712afcc730df5707c25bf6ee05267776",
+  "research/limitation_program_20261001/E10_CONTINUOUS_MOMENT_ONLY_PREFLIGHT_V2.md": "6eae176f59e6d400ebd56db325403d857ccd5141f2e875b25bc66b43dc41d2f9",
+  "research/limitation_program_20261001/experiment_e10_continuous_moment_only_v2.py": "087d56a6c5847a50ba889e1743e4dbb49a7458e8d2e9347042596d1af8a49161",
+  "results/frontier_classical_20261001/c1/c1_summary.json": "5d91aecc5ae26140be4e8c6a86ce304ac97870470f04bedce11a3ad55a2b9123",
+  "results/limitation_program_20261001/E03_support_audit_run002/summary.json": "43209c88565a1281f4c643b075add354078c3511a33ef0fa9caa08688b83cd47",
+  "results/limitation_program_20261001/E03_support_run001/summary.json": "bb114ee72a837cd379987b73b9d40b7c3b9ebf6129340598cffd2551ca1c9524",
+  "results/limitation_program_20261001/E07_schedule_run001/schedule.json": "4fdd33add8e18f83680bcda21f38fb0bb67cc1017323717b89a52165cb59b335",
+  "results/limitation_program_20261001/E10_continuous_moment_only_run002/manifest.json": "16a9c2e805839d423622ac2e21d9cd48c33d881281112220bc4a6aa19e2e7668",
+  "results/limitation_program_20261001/E10_continuous_moment_only_run002/summary.json": "02067de21cb64848ddb75c50efc1e5fca5938b95b4eb147474bb8e1cb9b8f66c",
+  "results/limitation_program_20261001/E11_B4x12_fixed_polar_safe_h128_payoff_squared_L2_bridge_run001/independent_fixed_polar_safe_h128_payoff_squared_L2_bridge.json": "663e25dd2fc990185400972b7f1c3be0fe04cb87a780dd7adfd35e2b61584910",
+  "results/limitation_program_20261001/E11_B4x12_fixed_polar_safe_h128_payoff_squared_L2_bridge_run001/manifest.json": "2f3162d8647888e424a01caadc0eff70cb481167a291a23462789eff380fa3f9",
+  "results/limitation_program_20261001/E11_B4x12_fixed_polar_safe_h128_payoff_squared_L2_bridge_run001/primary_fixed_polar_safe_h128_payoff_squared_L2_bridge.json": "c488f82b5fe04f578b33f2a060b99e6da387263b0da49cb2651691f1a23d32d6"
+ },
+ "saved_support": {
+  "M_g_digital_support_upper": "42680645928225/2^40",
+  "M_g_lt_span": true,
+  "M_g_over_2": "42680645928225/2^41",
+  "M_g_squared_over_4_exact": "1821637536850509271851650625/2^82",
+  "selector_span_dollars": "64"
+ },
+ "scientific_bound_evaluated": false,
+ "session_scratch_premise_sha256": {
+  "C:\\Users\\prith\\AppData\\Local\\Temp\\claude\\C--Users-prith-quantum-option-pricing\\3cc032fb-36f0-4c77-b733-779e62fbfea3\\scratchpad\\wf1\\PLAN_43.md": "3d44ee1ddb19dcb23bc3418b2a9cc96b49014dc69b0e59c01b1f3f5859f3d405",
+  "C:\\Users\\prith\\AppData\\Local\\Temp\\claude\\C--Users-prith-quantum-option-pricing\\3cc032fb-36f0-4c77-b733-779e62fbfea3\\scratchpad\\wf1\\moment_estimator_inventory.json": "e3712e9b164a86ce0086f4b4c070c512e724d797ff851ad5c2a75ce8ed8b5b29"
+ },
+ "transcendental_functions_evaluated": false
+}

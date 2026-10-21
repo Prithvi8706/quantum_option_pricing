@@ -1,0 +1,267 @@
+{
+ "schema": "U2-mean-aware-bounded-AE-schedule-arithmetic-v1",
+ "design_only": true,
+ "new_scientific_bound_evaluated": false,
+ "premises": {
+  "results/limitation_program_20261001/E07_schedule_run001/executed_code/financial_bounded_schedule.py": "4452c3319e9b7c33b96276aeefe137905d41c4638e42037d264fd6bdd26f149c",
+  "results/limitation_program_20261001/E07_schedule_run001/schedule.json": "4fdd33add8e18f83680bcda21f38fb0bb67cc1017323717b89a52165cb59b335",
+  "results/limitation_program_20261001/E02_IQFT_run001/rotations.json": "429a1bc35d7a9a365abbe1ff56c6ae10eb02e5167eb1c5b9bc1d3eeafb56effc"
+ },
+ "saved_eps_1_100_schedule_reproduced": true,
+ "readout_allowance_dollars": [
+  1,
+  549755813888
+ ],
+ "certified_rotation_labels": [
+  "pi_1_8",
+  "pi_1_16",
+  "pi_1_32",
+  "pi_1_64",
+  "pi_1_128",
+  "pi_1_256",
+  "pi_1_512",
+  "pi_1_1024",
+  "pi_1_2048",
+  "pi_1_4096",
+  "pi_1_8192",
+  "pi_1_16384",
+  "pi_1_32768",
+  "pi_1_65536"
+ ],
+ "certified_rotation_max_operator_error": "0.000000000000000002626332761891",
+ "rows": [
+  {
+   "epsilon": "0.1000",
+   "statistical_share_dollars": [
+    9,
+    200
+   ],
+   "saved_schedule_exists": false,
+   "baseline_M": 8192,
+   "baseline_qpe_bits": 13,
+   "repetitions": 15,
+   "baseline_calls": 122865,
+   "baseline_worst_case_error_plus_readout": "0.024553104",
+   "worst_case_half_fits": false,
+   "reductions": [
+    {
+     "divisor": 2,
+     "M": 4096,
+     "qpe_bits": 12,
+     "calls": 61425,
+     "feasible_for_any_m": true,
+     "m_star_sufficient_inward": "19.159773760",
+     "m_star_outward": "19.159773761",
+     "m_star_inward_exact": [
+      1915977376037,
+      100000000000
+     ],
+     "readout_free_m_star_inward": "19.159773763"
+    },
+    {
+     "divisor": 4,
+     "M": 2048,
+     "qpe_bits": 11,
+     "calls": 30705,
+     "feasible_for_any_m": true,
+     "m_star_sufficient_inward": "3.534308482",
+     "m_star_outward": "3.534308483",
+     "m_star_inward_exact": [
+      883577120717,
+      250000000000
+     ],
+     "readout_free_m_star_inward": "3.534308483"
+    },
+    {
+     "divisor": 8,
+     "M": 1024,
+     "qpe_bits": 10,
+     "calls": 15345,
+     "feasible_for_any_m": true,
+     "m_star_sufficient_inward": "0.828781503",
+     "m_star_outward": "0.828781504",
+     "m_star_inward_exact": [
+      33151260149,
+      40000000000
+     ],
+     "readout_free_m_star_inward": "0.828781503"
+    }
+   ]
+  },
+  {
+   "epsilon": "0.0300",
+   "statistical_share_dollars": [
+    27,
+    2000
+   ],
+   "saved_schedule_exists": false,
+   "baseline_M": 16384,
+   "baseline_qpe_bits": 14,
+   "repetitions": 15,
+   "baseline_calls": 245745,
+   "baseline_worst_case_error_plus_readout": "0.012274199",
+   "worst_case_half_fits": false,
+   "reductions": [
+    {
+     "divisor": 2,
+     "M": 8192,
+     "qpe_bits": 13,
+     "calls": 122865,
+     "feasible_for_any_m": true,
+     "m_star_sufficient_inward": "5.267484706",
+     "m_star_outward": "5.267484707",
+     "m_star_inward_exact": [
+      1053496941273,
+      200000000000
+     ],
+     "readout_free_m_star_inward": "5.267484707"
+    },
+    {
+     "divisor": 4,
+     "M": 4096,
+     "qpe_bits": 12,
+     "calls": 61425,
+     "feasible_for_any_m": true,
+     "m_star_sufficient_inward": "1.226955321",
+     "m_star_outward": "1.226955322",
+     "m_star_inward_exact": [
+      306738830371,
+      250000000000
+     ],
+     "readout_free_m_star_inward": "1.226955321"
+    },
+    {
+     "divisor": 8,
+     "M": 2048,
+     "qpe_bits": 11,
+     "calls": 30705,
+     "feasible_for_any_m": true,
+     "m_star_sufficient_inward": "0.297211309",
+     "m_star_outward": "0.297211310",
+     "m_star_inward_exact": [
+      59442261847,
+      200000000000
+     ],
+     "readout_free_m_star_inward": "0.297211309"
+    }
+   ]
+  },
+  {
+   "epsilon": "0.0100",
+   "statistical_share_dollars": [
+    9,
+    2000
+   ],
+   "saved_schedule_exists": true,
+   "baseline_M": 65536,
+   "baseline_qpe_bits": 16,
+   "repetitions": 15,
+   "baseline_calls": 983025,
+   "baseline_worst_case_error_plus_readout": "0.003068108",
+   "worst_case_half_fits": false,
+   "reductions": [
+    {
+     "divisor": 2,
+     "M": 32768,
+     "qpe_bits": 15,
+     "calls": 491505,
+     "feasible_for_any_m": true,
+     "m_star_sufficient_inward": "10.242691368",
+     "m_star_outward": "10.242691369",
+     "m_star_inward_exact": [
+      10242691368803,
+      1000000000000
+     ],
+     "readout_free_m_star_inward": "10.242691379"
+    },
+    {
+     "divisor": 4,
+     "M": 16384,
+     "qpe_bits": 14,
+     "calls": 245745,
+     "feasible_for_any_m": true,
+     "m_star_sufficient_inward": "2.226638005",
+     "m_star_outward": "2.226638006",
+     "m_star_inward_exact": [
+      2226638005249,
+      1000000000000
+     ],
+     "readout_free_m_star_inward": "2.226638007"
+    },
+    {
+     "divisor": 8,
+     "M": 8192,
+     "qpe_bits": 13,
+     "calls": 122865,
+     "feasible_for_any_m": true,
+     "m_star_sufficient_inward": "0.540166402",
+     "m_star_outward": "0.540166403",
+     "m_star_inward_exact": [
+      540166402541,
+      1000000000000
+     ],
+     "readout_free_m_star_inward": "0.540166402"
+    }
+   ]
+  },
+  {
+   "epsilon": "0.0010",
+   "statistical_share_dollars": [
+    9,
+    20000
+   ],
+   "saved_schedule_exists": false,
+   "baseline_M": 524288,
+   "baseline_qpe_bits": 19,
+   "repetitions": 15,
+   "baseline_calls": 7864305,
+   "baseline_worst_case_error_plus_readout": "0.000383497",
+   "worst_case_half_fits": false,
+   "reductions": [
+    {
+     "divisor": 2,
+     "M": 262144,
+     "qpe_bits": 18,
+     "calls": 3932145,
+     "feasible_for_any_m": true,
+     "m_star_sufficient_inward": "6.086186020",
+     "m_star_outward": "6.086186021",
+     "m_star_inward_exact": [
+      3043093010441,
+      500000000000
+     ],
+     "readout_free_m_star_inward": "6.086186075"
+    },
+    {
+     "divisor": 4,
+     "M": 131072,
+     "qpe_bits": 17,
+     "calls": 1966065,
+     "feasible_for_any_m": true,
+     "m_star_sufficient_inward": "1.407644120",
+     "m_star_outward": "1.407644121",
+     "m_star_inward_exact": [
+      87977757557,
+      62500000000
+     ],
+     "readout_free_m_star_inward": "1.407644132"
+    },
+    {
+     "divisor": 8,
+     "M": 65536,
+     "qpe_bits": 16,
+     "calls": 983025,
+     "feasible_for_any_m": true,
+     "m_star_sufficient_inward": "0.345871400",
+     "m_star_outward": "0.345871401",
+     "m_star_inward_exact": [
+      172935700199,
+      500000000000
+     ],
+     "readout_free_m_star_inward": "0.345871403"
+    }
+   ]
+  }
+ ],
+ "python": "3.9.13 (tags/v3.9.13:6de2ca5, May 17 2022, 16:36:42) [MSC v.1929 64 bit (AMD64)]"
+}
