@@ -1,0 +1,9 @@
+# Failed cap564 stock-component attempt: preserved custody
+
+The separately reviewed cap564 V1 SCI exited1 during main save(summary.json), inside the serialization traversal combined CPU/wall budget guard. Twelve owned files remain unsealed, including both partial profile matrices. Summary and manifest are absent. The attempt contributes zero scientific, verified-component, category, fixture or advantage credit; no partial numeric profile is evaluated or adopted.
+
+ROOT externally observed935.7993295 seconds. Exact terminal CPU and RSS are unavailable. The combined guard does not identify which CPU or wall check triggered, and the cause of elapsed wall time or possible sleep is not established. Budgets remain180/150/600 seconds and RSS157286400 bytes. The failed directory, SOURCE, terminal and log remain frozen; no exact SOURCE retry, reseal or relaxed cap is authorized here.
+
+A distinct prospective summary-reference output controller may replace repeated embedded profile objects with closed file/hash descriptors. That is a separately reviewed output-method proposal under the same mathematical formula and resource limits, not a claim that failure cause or runtime improvement is established. The conditional cap564 full-payoff chain keeps future verified-parent pins unbound until a new cap component is independently saved-verified.
+
+Evidence: [ROOT failure custody](../../.context/E11_B4X12_EXTERNAL_CAP564_STOCK_COMPONENT_REUSE_ROOT_FAILURE_CUSTODY_run001.json), [checkpoint](../../.context/OVERNIGHT_CONTINUATION_CHECKPOINT_20261007_run023.json). Custody SHA256: `99188333a89bb22e5199c32d1f905d428bd0907c98085b4d35b0155409d871c1`; terminal SHA256 `fb10030d68d5812402343be6427ffa4f73534d44f6eabb1ffbb6b68748f5e29a`; log SHA256 `0271669179f76a8c4084a4bfb68d9b78991334e9b9faace54b273562c421e020`. This page is failure history and is excluded from the verified37 result table.

@@ -1,0 +1,484 @@
+{
+  "schema": "MPS-local-U-bridge-and-reversed-core-next-author-preflight-v1",
+  "status": "author-only-no-new-implementation-preparation-SDK-emission-tests-or-evaluation",
+  "local_only": true,
+  "execution_gate": {
+    "after_fixed18_queue": true,
+    "required_cumulative_packet": "results/limitation_program_20261001/WAVE10_run001",
+    "preserve_all_fixed18_terminal_outcomes": true,
+    "timing_supervisor_descendants_and_orphans_terminal": true,
+    "new_implementations_must_be_authored_reviewed_and_prospectively_frozen": true,
+    "this_file_is_not_execution_authorization_or_an_executed_receipt": true
+  },
+  "preserved_component_outcomes": {
+    "receipt": "A04_mps_run001",
+    "screen_passed": true,
+    "completed_unique_fixtures": 16,
+    "fixture_recredit": 0,
+    "bond2": {
+      "supported": true,
+      "native_SDK_calls": 10,
+      "native_rotations": 144,
+      "eligible_rows": 0
+    },
+    "bond4": {
+      "supported": false,
+      "stage": "SDK_decomposition",
+      "actual_failure": "Unable to translate u,cx to ry,rz,cx",
+      "old_receipt_retry": false
+    },
+    "bond8": {
+      "supported": false,
+      "stage": "canonicalization",
+      "actual_failure": "Fixed rank threshold rejected a deficient isometry",
+      "fixed_rank_threshold": "1e-12",
+      "canonical_cores_saved": false,
+      "structure_plan_saved": false,
+      "old_receipt_retry": false
+    }
+  },
+  "next_local_bridge": {
+    "prospective_receipt": "A04_mps_u_bridge_run001",
+    "prospective_independent_audit": "A04_mps_u_bridge_audit_run001",
+    "new_implementation_prerequisites": [
+      "research/limitation_program_20261001/mps_local_u_bridge.py",
+      "research/limitation_program_20261001/experiment_mps_local_u_bridge.py",
+      "research/limitation_program_20261001/audit_mps_local_u_bridge.py"
+    ],
+    "one_fixed_input": {
+      "artifact": "results/limitation_program_20261001/A04_mps_run001/bond4/structure_plan.json",
+      "JSON_pointer": "/transitions/1/completed_local_matrix",
+      "site": 1,
+      "shape": [
+        8,
+        8
+      ],
+      "exact_complex_literal_entries": 64,
+      "canonical_literal_matrix_sha256": "4f91a35a9d13366d3e02b79d23271f581dc30514a946155598950a3632415066",
+      "left_rank": 2,
+      "right_rank": 4,
+      "global_local_wires": [
+        10,
+        11,
+        8
+      ],
+      "SDK_local_wire_order": [
+        0,
+        1,
+        2
+      ],
+      "local_wire_map": "SDK0->q10, SDK1->q11, SDK2->q8; low bond bits then physical output",
+      "new_completion_canonicalization_SVD_or_target_builds": 0,
+      "alternate_site_selection_after_outcome": false
+    },
+    "fixed_SDK": {
+      "interpreter": ".context/controlled_closeout_repro/Scripts/python.exe",
+      "NumPy_version": "1.26.4",
+      "Qiskit_Terra_version": "0.45.3",
+      "package_install_or_upgrade": false,
+      "UnitaryGate_check_input": true,
+      "basis": [
+        "u",
+        "cx"
+      ],
+      "optimization_level": 0,
+      "seed_transpiler": 0,
+      "maximum_calls": 1,
+      "maximum_U_CX_rows": 1024,
+      "SDK_numerical_unitarity_check_is_not_certificate": true
+    },
+    "exact_U_bridge": {
+      "identity": "U(theta,phi,lambda)=exp(i*(phi+lambda)/2)*Rz(phi)*Ry(theta)*Rz(lambda)",
+      "chronological_native_gates": [
+        "rz(lambda)",
+        "ry(theta)",
+        "rz(phi)"
+      ],
+      "parameter_encoding": "Each finite actual SDK binary64 theta/phi/lambda saved as exact Fraction before any phase sum",
+      "per_U_scalar_phase": "(phi+lambda)/2 using exact rational sum",
+      "aggregate_scalar_phase": "SDK_global_phase_exact + sum_U((phi_exact+lambda_exact)/2)",
+      "phase_reduction_using_rounded_pi": false,
+      "tiny_angle_pruning": false,
+      "native_basis": [
+        "ry",
+        "rz",
+        "cx",
+        "phase"
+      ],
+      "unsupported_SDK_gate_behavior": "terminal unsupported, retain complete prefix diagnostics; no alternative transpiler basis/retry",
+      "maximum_native_slots_including_aggregate_phase": 4096,
+      "relative_phase_or_column_fidelity_acceptance": false,
+      "literal_inverse": "Reverse native rows; negate every saved ry/rz/scalar phase angle; CX self-inverse",
+      "future_controlled_use_phase": "Implement/charge corresponding phase on control register under a separate complete synthesis/resource ledger; tracked scalar phase is not free controlled implementation"
+    },
+    "full_operator_certificate": {
+      "dimension": 8,
+      "entries": 64,
+      "target": "all exact saved completed-local-matrix complex-rational entries",
+      "precision_decimal_digits": 160,
+      "outward_root_bits": 256,
+      "operator_norm_upper_method": "sqrt of exact/outward sum of all64 squared complex residual magnitudes, Frobenius upper bound",
+      "include_SDK_global_phase_and_every_U_phase": true,
+      "up_to_global_phase_optimization": false,
+      "local_error_allowance_exact": [
+        1,
+        74880000000
+      ],
+      "allowance_derivation": "tightest prior scalar trace target 1/1872000000 divided by4 and10 local blocks",
+      "requires_independent_operator_audit": true,
+      "full_loader_error_implied": false,
+      "completion_column_or_float_predicate_is_certificate": false
+    },
+    "caps_and_budget": {
+      "fixed_matrices": 1,
+      "actual_local_operator_checks": 1,
+      "local_wires": 3,
+      "full_operator_matrix_entries": 64,
+      "maximum_SDK_calls": 1,
+      "maximum_SDK_rows": 1024,
+      "maximum_native_slots": 4096,
+      "process_CPU_seconds": 120,
+      "work_admission_CPU_seconds": 90,
+      "wall_seconds": 300,
+      "numerical_threads": 1,
+      "new_pytest_cases": 0,
+      "old_component_or_structure_fixture_recredit": 0,
+      "CDF_SVD_QR_Gaussian_loader_synthesis_calls": 0
+    },
+    "independent_audit": {
+      "process_CPU_seconds": 120,
+      "work_admission_CPU_seconds": 90,
+      "wall_seconds": 300,
+      "numerical_threads": 1,
+      "SDK_calls": 0,
+      "new_test_credit": 0,
+      "audited_builder_counter_or_matrix_expander_imports": 0,
+      "checks": [
+        "all source/prior canonical hash maps and installed U convention",
+        "every saved actual u/cx row, wire and parameter arity and exact conversion",
+        "independent exact/outward original U/CX expansion and native Ry/Rz/CX expansion including complete aggregate scalar phase",
+        "complete phase-correct target8x8 Frobenius residual and unchanged fixed allowance",
+        "literal forward/inverse phase and gate contract; no claimed Gaussian preparation"
+      ],
+      "no_precision_basis_site_or_method_retry": true
+    },
+    "all_terminal_outcomes_retained": true,
+    "global_budget_exit_is_censored_not_ordinary_unsupported": true,
+    "bulk_output_hashing_and_verification_before_final_budget_check": true
+  },
+  "separate_future_bond8_method": {
+    "status": "static-feasibility-proposal-only; needs local-U-bridge independent PASS, fresh method review and separate protocol before evaluation/emission",
+    "proposed_receipt_label_only": "A04_mps_reversed_bond8_run001",
+    "method_version_must_be_new": "mps_sequential_structure_v3 or a fresh dedicated reversal implementation; executed v2 remains immutable",
+    "fixed_input_cores": "results/limitation_program_20261001/A04_mps_run001/bond8/compressed_cores.json",
+    "saved_core_shapes": [
+      [
+        1,
+        2,
+        2
+      ],
+      [
+        2,
+        2,
+        4
+      ],
+      [
+        4,
+        2,
+        8
+      ],
+      [
+        8,
+        2,
+        8
+      ],
+      [
+        8,
+        2,
+        8
+      ],
+      [
+        8,
+        2,
+        8
+      ],
+      [
+        8,
+        2,
+        8
+      ],
+      [
+        8,
+        2,
+        4
+      ],
+      [
+        4,
+        2,
+        2
+      ],
+      [
+        2,
+        2,
+        1
+      ]
+    ],
+    "old_method": "normalized right-to-left QR",
+    "proposed_method": "reverse original left-SVD cores and transpose axes(2,1,0), no complex conjugation; one positive first-core norm division, no re-SVD/right-QR inversion",
+    "coefficient_identity": "B_i[r,s,l]=A_(9-i)[l,s,r]",
+    "exact_contraction_identity": "B(s0,...,s9)=A(s9,...,s0), a symbolic finite-literal identity before normalization",
+    "right_Gram_relation": "For reversed core i>0, sum_(s,l) B[r,s,l]*conj(B[rprime,s,l]) equals the conjugate of original saved U-column Gram; it is certified from exact literals, never assumed identity",
+    "first_residual_core": "B0=transpose(A9,(2,1,0)); one finite positive norm division paid against exact full compressed-vector normalization, including every rounding and preserved complex phase",
+    "first_normalizer_and_rank_threshold": "Retain1e-12 rejection, require certified positive exact tensor norm and positive minimum active-column Gram eigenvalue; no threshold loosening/rank adaptation or retry",
+    "strict_full_literal_Gram_method": "all10 exact rational Gram matrices; eigenvalue lower bound from Hermitian row sums and diagonal deficits, operator norm upper from exact Gram row sums; pay nonzero defects",
+    "physical_output_mapping": "reversed site i emits original site9-i onto physical q[i], preserving original original-bin significance without output SWAP insertion",
+    "preparation_output_wires_in_emission_order": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "scratch_bond_wires_low_bit_first": [
+      10,
+      11,
+      12
+    ],
+    "fixed_bond_rank_path": [
+      1,
+      2,
+      4,
+      8,
+      8,
+      8,
+      8,
+      8,
+      4,
+      2,
+      1
+    ],
+    "existing_descending_output_validator_reused_as_is": false,
+    "final_bond_rank": 1,
+    "mandatory_pre_emission_checks": [
+      "symbolic core-index/bond/wire permutation bijection and saved shape provenance",
+      "exact reversed full1024 coefficient contraction against original permutation, with phase preserved",
+      "paid first normalization/rounding vector distance and exact complex overlap",
+      "all10 actual finite-literal row Gram/norm/positive-eigenvalue bounds",
+      "unchanged fixed-threshold deterministic active-column completion and full-matrix SDK operator residuals",
+      "full fresh|0> scratch-support contract plus separate arbitrary dirty/reference literal-inverse contract",
+      "all fixed table/compression/gauge/completion/SDK/synthesis-reserve terms accumulated without dropping phases or assuming exact orthogonality"
+    ],
+    "fixed_targets_and_budgets": {
+      "q": 10,
+      "bins": 1024,
+      "cutoff_exact": [
+        6,
+        1
+      ],
+      "new_CDF_target_or_SVD": 0,
+      "reuse_exact_original_target_and_compression_certificates": true,
+      "bond": 8,
+      "emitted_candidates_maximum": 1,
+      "local_SDK_calls_maximum": 10,
+      "local_matrix_dimension_maximum": 16,
+      "preparation_wires_maximum": 13,
+      "dirty_reference_wires_maximum": 14,
+      "dirty_reference_amplitudes_maximum": 16384,
+      "native_forward_slots_maximum": 20000,
+      "rotations_maximum": 4096,
+      "scalar_trace_targets_exact": [
+        [
+          1,
+          18720000
+        ],
+        [
+          1,
+          187200000
+        ],
+        [
+          1,
+          1872000000
+        ]
+      ],
+      "synthesis_operator_reserve_exact": [
+        1,
+        7488000000
+      ],
+      "new_synthesis_calls": 0,
+      "process_CPU_seconds": 900,
+      "work_admission_CPU_seconds": 840,
+      "wall_seconds": 1800,
+      "numerical_threads": 1,
+      "interval_decimal_digits": 160,
+      "outward_root_bits": 256,
+      "rank_threshold": "1e-12"
+    },
+    "certificate_sum": "table target error + exact normalized original compressed overlap error + phase/norm/gauge/reversal-rounding error + preceding actual core norm products times each active-column completion and phase-correct full SDK residual + separate future synthesis reserve",
+    "rankorprecisionfallback": false,
+    "native_preparation_or_T_cost_evaluated": false
+  },
+  "immutable_author_readonly_bindings": [
+    {
+      "path": "results/limitation_program_20261001/A04_mps_run001/manifest.json",
+      "author_readonly_sha256": "5c8fb0e4e3d3bee6d8f0be18e8179b1a90b04acc0176102a226daaddc8f0b116",
+      "canonical_A04_mps_run001_expectation_matches": false,
+      "prior_expected_sha256": null
+    },
+    {
+      "path": "results/limitation_program_20261001/A04_mps_run001/protocol.json",
+      "author_readonly_sha256": "cb9ca5cc0f283bfd8958a7d3960d38f83c56db4b9f0fe5e3a775e0863a837512",
+      "canonical_A04_mps_run001_expectation_matches": true,
+      "prior_expected_sha256": "cb9ca5cc0f283bfd8958a7d3960d38f83c56db4b9f0fe5e3a775e0863a837512"
+    },
+    {
+      "path": "results/limitation_program_20261001/A04_mps_run001/summary.json",
+      "author_readonly_sha256": "c8bfb3088da4457c51ee28dafe8402d3bcc23b9665b0cd01af148dca82e8de38",
+      "canonical_A04_mps_run001_expectation_matches": true,
+      "prior_expected_sha256": "c8bfb3088da4457c51ee28dafe8402d3bcc23b9665b0cd01af148dca82e8de38"
+    },
+    {
+      "path": "results/limitation_program_20261001/A04_mps_run001/q10_target_certificate.json",
+      "author_readonly_sha256": "df0f438e779d087e18fc136978c2de41e9fd96af87fe4df8758215e8637c904f",
+      "canonical_A04_mps_run001_expectation_matches": true,
+      "prior_expected_sha256": "df0f438e779d087e18fc136978c2de41e9fd96af87fe4df8758215e8637c904f"
+    },
+    {
+      "path": "results/limitation_program_20261001/A04_mps_run001/bond4/attempt.json",
+      "author_readonly_sha256": "cd98e3a179b1420653a9cc454175ac7651e28134f93b022a441ec1ecde770126",
+      "canonical_A04_mps_run001_expectation_matches": true,
+      "prior_expected_sha256": "cd98e3a179b1420653a9cc454175ac7651e28134f93b022a441ec1ecde770126"
+    },
+    {
+      "path": "results/limitation_program_20261001/A04_mps_run001/bond4/unsupported.json",
+      "author_readonly_sha256": "db8ac0d0aeecb999e567bc3eb21d4cbea0d8d92298e1e6d59b987f558ff5745b",
+      "canonical_A04_mps_run001_expectation_matches": true,
+      "prior_expected_sha256": "db8ac0d0aeecb999e567bc3eb21d4cbea0d8d92298e1e6d59b987f558ff5745b"
+    },
+    {
+      "path": "results/limitation_program_20261001/A04_mps_run001/bond4/structure_plan.json",
+      "author_readonly_sha256": "88c02cf18047fbcce597c79dd9e3de114ab37f3d38844ad801ad74988e3d3c4e",
+      "canonical_A04_mps_run001_expectation_matches": true,
+      "prior_expected_sha256": "88c02cf18047fbcce597c79dd9e3de114ab37f3d38844ad801ad74988e3d3c4e"
+    },
+    {
+      "path": "results/limitation_program_20261001/A04_mps_run001/bond4/canonical_cores.json",
+      "author_readonly_sha256": "cfc1076c10d9de49c41aa9dc40c0dae8a0d11ae9db62129668eb1181045a6f11",
+      "canonical_A04_mps_run001_expectation_matches": true,
+      "prior_expected_sha256": "cfc1076c10d9de49c41aa9dc40c0dae8a0d11ae9db62129668eb1181045a6f11"
+    },
+    {
+      "path": "results/limitation_program_20261001/A04_mps_run001/bond4/compressed_cores.json",
+      "author_readonly_sha256": "205f8150fe04f33450909fd25d8624425b97de11c2e3cb4b437a58f861336fdc",
+      "canonical_A04_mps_run001_expectation_matches": true,
+      "prior_expected_sha256": "205f8150fe04f33450909fd25d8624425b97de11c2e3cb4b437a58f861336fdc"
+    },
+    {
+      "path": "results/limitation_program_20261001/A04_mps_run001/bond4/compression_certificate.json",
+      "author_readonly_sha256": "ab47b93f4403a54fc366ef7e303dccc2eac7e5e7e11c0fe038bfab5c3f6778be",
+      "canonical_A04_mps_run001_expectation_matches": true,
+      "prior_expected_sha256": "ab47b93f4403a54fc366ef7e303dccc2eac7e5e7e11c0fe038bfab5c3f6778be"
+    },
+    {
+      "path": "results/limitation_program_20261001/A04_mps_run001/bond8/attempt.json",
+      "author_readonly_sha256": "d364e5728d61f35b63efd63263099218c596faab3fa868c2e8d4ebab97b8e659",
+      "canonical_A04_mps_run001_expectation_matches": true,
+      "prior_expected_sha256": "d364e5728d61f35b63efd63263099218c596faab3fa868c2e8d4ebab97b8e659"
+    },
+    {
+      "path": "results/limitation_program_20261001/A04_mps_run001/bond8/unsupported.json",
+      "author_readonly_sha256": "2aa0f45abe564a160fe0486f244c56d4ee9991c8de480ceef0e3b60e9cbc10a6",
+      "canonical_A04_mps_run001_expectation_matches": true,
+      "prior_expected_sha256": "2aa0f45abe564a160fe0486f244c56d4ee9991c8de480ceef0e3b60e9cbc10a6"
+    },
+    {
+      "path": "results/limitation_program_20261001/A04_mps_run001/bond8/compressed_cores.json",
+      "author_readonly_sha256": "782e1ce214c40b1f2b4b5d11d78930942a5a2ce6972a7a3632b10c5003a81934",
+      "canonical_A04_mps_run001_expectation_matches": true,
+      "prior_expected_sha256": "782e1ce214c40b1f2b4b5d11d78930942a5a2ce6972a7a3632b10c5003a81934"
+    },
+    {
+      "path": "results/limitation_program_20261001/A04_mps_run001/bond8/compression_certificate.json",
+      "author_readonly_sha256": "64db79f3e58d5cb853da1660b623fc817a3faeaa37e1ceb2bed58ee182fd1203",
+      "canonical_A04_mps_run001_expectation_matches": true,
+      "prior_expected_sha256": "64db79f3e58d5cb853da1660b623fc817a3faeaa37e1ceb2bed58ee182fd1203"
+    },
+    {
+      "path": "research/limitation_program_20261001/mps_sequential_structure_v2.py",
+      "author_readonly_sha256": "70e4039732a7b4bda531fefea328932bd233b4a41cd138abf104607762673a45",
+      "canonical_A04_mps_run001_expectation_matches": true,
+      "prior_expected_sha256": "70e4039732a7b4bda531fefea328932bd233b4a41cd138abf104607762673a45"
+    },
+    {
+      "path": "research/limitation_program_20261001/mps_loader_components.py",
+      "author_readonly_sha256": "783e0cd7582ad7c56af05fea16d1ba7276e9967ae42cb026986293acadb5e287",
+      "canonical_A04_mps_run001_expectation_matches": true,
+      "prior_expected_sha256": "783e0cd7582ad7c56af05fea16d1ba7276e9967ae42cb026986293acadb5e287"
+    },
+    {
+      "path": "research/limitation_program_20261001/experiment_mps_components.py",
+      "author_readonly_sha256": "160d8d47496c114d552a1e97a8e51a7de960ff84b59a962e415149831621e261",
+      "canonical_A04_mps_run001_expectation_matches": true,
+      "prior_expected_sha256": "160d8d47496c114d552a1e97a8e51a7de960ff84b59a962e415149831621e261"
+    },
+    {
+      "path": "research/limitation_program_20261001/test_mps_loader_components.py",
+      "author_readonly_sha256": "f42aaf16124fcc44126ae733c65b0baebb883d9b8633414bd31d9a5503c345b2",
+      "canonical_A04_mps_run001_expectation_matches": true,
+      "prior_expected_sha256": "f42aaf16124fcc44126ae733c65b0baebb883d9b8633414bd31d9a5503c345b2"
+    },
+    {
+      "path": "research/limitation_program_20261001/mps_component_preflight.json",
+      "author_readonly_sha256": "10f5c61ce28038f557d4ea8928e2908e2a611e45fb2b3c32c1daff888bd28797",
+      "canonical_A04_mps_run001_expectation_matches": true,
+      "prior_expected_sha256": "10f5c61ce28038f557d4ea8928e2908e2a611e45fb2b3c32c1daff888bd28797"
+    },
+    {
+      "path": "research/limitation_program_20261001/mps_structure_preflight_v2.json",
+      "author_readonly_sha256": "553efda933ac0637b6a12bb2c1b369f73afced871c2c073597061e72f23001b9",
+      "canonical_A04_mps_run001_expectation_matches": true,
+      "prior_expected_sha256": "553efda933ac0637b6a12bb2c1b369f73afced871c2c073597061e72f23001b9"
+    },
+    {
+      "path": "research/limitation_program_20261001/mps_loader_preflight_v2.json",
+      "author_readonly_sha256": "655e66649ad2fc56e781315d4469e5dc72fe5c00a405c1d0a024a061846da43c",
+      "canonical_A04_mps_run001_expectation_matches": true,
+      "prior_expected_sha256": "655e66649ad2fc56e781315d4469e5dc72fe5c00a405c1d0a024a061846da43c"
+    },
+    {
+      "path": ".context/controlled_closeout_repro/Lib/site-packages/qiskit/circuit/library/standard_gates/u.py",
+      "author_readonly_sha256": "914a5ccf274b2e9c7cf174b7bf86783b7c518364730e753c0d6c85cfe8b387f4",
+      "canonical_A04_mps_run001_expectation_matches": true,
+      "prior_expected_sha256": "914a5ccf274b2e9c7cf174b7bf86783b7c518364730e753c0d6c85cfe8b387f4"
+    }
+  ],
+  "future_freeze_requirements": [
+    "Freeze reviewed new original/copied implementation and this plan before the one local SDK call",
+    "Bind complete A04_mps_run001 and A04_structure_run002 files/frozen maps preserving every canonical expectation and origin",
+    "Freeze actual invoked/base interpreter and exact existing SDK/numerical dependency origins; no install/upgrade",
+    "Exclusive new output receipt, preserve partial failures and all unsupported/censored rows",
+    "No original receipt retry or helper/test/preflight edits; no new Gaussian target or financial law inherited"
+  ],
+  "limits": {
+    "failed_q10_uniform_price_law_certificate_repaired": false,
+    "Gaussian_loader_or_source_law_adopted": false,
+    "full_preparation_Clifford_T_error_or_cost": null,
+    "native_financial_cost": null,
+    "full_G2_G5_or_quantum_advantage_established": false,
+    "possible_higher_q_work_requires_separate_new_preflight": true,
+    "all110_obligations_remain_in_scope": true
+  },
+  "author_stage_activity": {
+    "saved_JSON_source_text_and_installed_U_source_readonly": true,
+    "numerical_package_imports": 0,
+    "matrix_Gram_overlap_CDF_Walsh_or_statevector_evaluations": 0,
+    "new_implementation_files": 0,
+    "prepared_protocols": 0,
+    "SDK_calls_emissions_tests_or_synthesis": 0,
+    "executed_MPS_helper_component_structure_test_or_preflight_edits": 0
+  }
+}

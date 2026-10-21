@@ -1,4 +1,6 @@
-The radial-cell error method passed independent and ROOT symbolic review. The first controller is held at source review and has not been run. Its numerical size and benefit remain untested.
+Current result, 7 October: V4 completed and passed ROOT saved-result verification. The [radial result](E11_RADIAL_CELL_RESULTS_20261007.md) reduces the ideal midpoint squared-L2 allowance by approximately 99.895%, with native-coordinate composition and downstream propagation still open. The history below retains the earlier source holds and failed attempt.
+
+The radial-cell error method passed independent and ROOT symbolic review. The first controller was held at source review and was not run; that attempt established no numerical size or benefit.
 
 The proposed experiment keeps the original Q32 midpoint quantizer and independent continuous uniform coupling. It bounds every cell using four regions: a squared-log bound on the first cell, 31 aligned dyadic bands below one half, a derivative bound on the upper interior, and a separate bound on the last cell. Both endpoint cells remain included. The coordinate contribution is twice the raw radial allowance, followed by the original angular allowance.
 

@@ -1,0 +1,226 @@
+{
+  "schema": "AS241-native-financial-bias-author-preflight-v5",
+  "author_stage_only": true,
+  "prospective_receipt": "A02_quantile_financial_run005",
+  "local_only": true,
+  "immutable_original_method_preflight": "research/limitation_program_20261001/AS241_FINANCIAL_BIAS_PREFLIGHT.md",
+  "new_implementation": [
+    "research/limitation_program_20261001/as241_financial_native_v5.py",
+    "research/limitation_program_20261001/as241_financial_certificate_v5.py",
+    "research/limitation_program_20261001/experiment_as241_financial_v5.py",
+    "research/limitation_program_20261001/test_as241_financial_certificate_v5.py"
+  ],
+  "prior_attempts": [
+    {
+      "absent_receipt": "results/limitation_program_20261001/A02_quantile_financial_run001",
+      "observed_failure": "ValueError: Actual clamp literals before output mkdir",
+      "diagnostic_receipt": "results/limitation_program_20261001/A02_quantile_financial_admission_failure_run001",
+      "immutable_diagnostic_manifest_sha256": "85c15120262e1a5f9be56753b48c9528aaa6f6b7083c7e7abe0f458a584d4f82",
+      "immutable_execution_sources_sha256": {
+        "research/limitation_program_20261001/as241_financial_native.py": "9a21c7feb1332ff3c819e82c876b0b32908225b157ae16595c246434b62928d2",
+        "research/limitation_program_20261001/as241_financial_certificate.py": "0e020ca0ae30a3877584775f42471d0732ac49fcc58450ca7ffe977a72bbe0b8",
+        "research/limitation_program_20261001/test_as241_financial_certificate.py": "1642e7b43c48fc29a39bf9a65e8391d89919f288f456aaaa5f62a7874d21ea9d",
+        "research/limitation_program_20261001/experiment_as241_financial.py": "58d96bf00b702d1c28a49590a845ba95a2972315e968d1457938c537187fdf26",
+        "research/limitation_program_20261001/AS241_FINANCIAL_BIAS_PREFLIGHT.md": "3589ce22885c1dd3677f50d3d0d93150c9c67cdfce8cd0cf84bebf8bbce54607"
+      }
+    },
+    {
+      "absent_receipt": "results/limitation_program_20261001/A02_quantile_financial_run002",
+      "observed_failure": "ValueError: Complete actual native coefficient inventory before output mkdir",
+      "diagnostic_receipt": "results/limitation_program_20261001/A02_quantile_financial_admission_failure_run002",
+      "immutable_diagnostic_manifest_sha256": "3ed3538cd73da65324a208e9820a4be2456d22de96efeb24ce2943f1333c523e",
+      "immutable_execution_sources_sha256": {
+        "research/limitation_program_20261001/as241_financial_native_v2.py": "d95b0be62e0409431ef0cd2a57b10fc0c34dcf286efa879c2be279bc68710c38",
+        "research/limitation_program_20261001/as241_financial_certificate_v2.py": "40a008b6b05aa621d369db6516ff04fb8180f207c311977d15a430765c816731",
+        "research/limitation_program_20261001/test_as241_financial_certificate_v2.py": "2e8bd24a466b6e1648eb76df619f9d6714e03d455a665c6a3ff6f4b628a42798",
+        "research/limitation_program_20261001/experiment_as241_financial_v2.py": "cb4832279ddf040b779d10ca4aa92c6a583f81b21846ff0ebe3dbd570defe057",
+        "research/limitation_program_20261001/AS241_FINANCIAL_BIAS_PREFLIGHT_V2.md": "7b2ec2a3617620cb6b2d485bede33b2428ce82e44948a5f212c53ed5f3f0acb7",
+        "research/limitation_program_20261001/as241_financial_bias_preflight_v2.json": "7af6b37d8c381070fea6e2a94e7a73cfad02137acfb255f81db547a6334217d9"
+      }
+    }
+  ],
+  "both_diagnostics_root_report_only_not_reexecuted": true,
+  "both_failed_attempts_test_credit_and_math_evaluations": 0,
+  "failed_attempt_protocols_fabricated": false,
+  "bind_every_prior_files_and_frozen_inputs_map_without_override": true,
+  "exact_correction": {
+    "width": 72,
+    "strict_exact_integer_canonical_unsigned_range": [
+      0,
+      "2^72-1"
+    ],
+    "native_word_semantic_fields": 12,
+    "SSA_value_identifiers_and_flags_are_not_decoded": true,
+    "B4_drift_raw": 4722366482868270824161,
+    "B4_drift_signed": -1374389535,
+    "B8_drift_raw": 4722366482869328046880,
+    "B8_drift_signed": -317166816,
+    "lower_clamp_raw": 4722366470675671057123,
+    "lower_clamp_signed": -12193974156573,
+    "upper_clamp_raw_and_signed": 9145480617430,
+    "complete_actual_signed_inventory_and_shapes_equal_decoded_semantics": true,
+    "actual_source_polynomial_degree_0_through_12_equals_decoded_metadata": true,
+    "distinct_13_literal_nodes_required": false,
+    "certificate_math_diff": "Helper import v4 to v5 and actual exponent-domain containment admission guard only",
+    "changed_target_constants_guards_math_error_bounds_precision_partition_or_budget": false,
+    "canonical_add_mul_child_hashes_only": true,
+    "native_operation_parameters_literals_remainder_and_allowed_ops_strict": true,
+    "source_SSA_operands_or_numerical_reconstruction_reordered": false,
+    "association_of_operations_changed": false,
+    "mathematical_reason": "Native integer add and signed full144 multiplication followed by floor division by 2^40 are symmetric in their two operands; canonicalize hash ordering only.",
+    "helper_v5_exact_unchanged_copy_of_v4": true,
+    "actual_exponent_domain": [
+      -16,
+      11
+    ],
+    "fixed_unchanged_superset": [
+      -17,
+      12
+    ],
+    "fixed_30_classes_and_class_boundary_formulas_unchanged": true,
+    "explicit_empty_endpoint_classes": [
+      -17,
+      12
+    ],
+    "complete_gap_free_clipped_word_cover_and_union_checks_unchanged": true,
+    "extra_classes_partition_sweep_or_numerical_bounds_added": false
+  },
+  "fixed_cases": [
+    "B4x12",
+    "B8x52"
+  ],
+  "uniform_bits_each": 32,
+  "native_width": 72,
+  "fraction_bits": 40,
+  "all_stock_exp_sites": 464,
+  "fixed_exp_classes": [
+    -17,
+    -16,
+    -15,
+    -14,
+    -13,
+    -12,
+    -11,
+    -10,
+    -9,
+    -8,
+    -7,
+    -6,
+    -5,
+    -4,
+    -3,
+    -2,
+    -1,
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "test_plan": {
+    "prior_unique_cases_retained": 24,
+    "added_unique_cases": 1,
+    "declared_unique_cases": 25,
+    "fixed18_prior_planned_cases": 251,
+    "fixed18_new_planned_cases": 252,
+    "actual_regression": "One actual B4/B8 fixed clipped-domain fixture: exact endpoint exponents -16/11; unchanged30class inventory; -17/12 explicit empties; gap-free28nonempty classes cover clipped endpoints; out-of-superset endpoints reject",
+    "previous_fixture_credit_added_again": 0,
+    "tests_run_by_author": 0
+  },
+  "producer_budget": {
+    "interval_decimal_digits": 90,
+    "process_CPU_limit_seconds": 180,
+    "elapsed_wall_limit_seconds": 600,
+    "numeric_threads": 1,
+    "fixed_method_no_precision_partition_cutoff_retry_or_sweep": true,
+    "unchanged_residual_dollars": "11/2000"
+  },
+  "independent_audit": {
+    "auditor": "research/limitation_program_20261001/audit_as241_financial.py",
+    "prospective_receipt": "A02_quantile_financial_audit_run001",
+    "source_receipt": "A02_quantile_financial_run005",
+    "unique_producer_fixtures_reconciled_without_recredit": 25,
+    "all_12_native_word_fields_independently_typed_decoded_and_bound": true,
+    "saved_signed_literal_scope_checked_against_independent_actual_reconstruction": true,
+    "degree_indexed_polynomial_metadata_independently_bound": true,
+    "interval_decimal_digits": 110,
+    "process_CPU_limit_seconds": 240,
+    "elapsed_wall_limit_seconds": 900,
+    "producer_helper_imports": 0,
+    "new_test_credit": 0,
+    "add_mul_child_label_order_independently_canonicalized_only": true,
+    "actual_endpoint_containment_admission_and_original_all30_cover_checks": true
+  },
+  "execution_gates": [
+    "Absent run001/run002 stay absent; original/v2 source SHA expectations and both diagnostic maps verify before v5 admission",
+    "Failed run003 remains immutable; manifestSHA, all14own/2599frozen bindings, actual23 successful XML observations and zero complete credit/adoption verify",
+    "Failed run004 remains immutable; manifestSHA, all14own/2620frozen bindings, allsix executed sources, actual24 successful XML observations, uncensored domain failure and zero complete credit/adoption verify",
+    "All existing successful scalar/native-transform/law/source/frontend prerequisites remain mandatory",
+    "Fresh exclusive run005 output and protocol before fixtures or numerical financial evaluation",
+    "Freeze all six v5 source/preflight files, original method and all prior maps with canonical equal-SHA no-override merging; verify before/after",
+    "Retain complete B4/B8 certificates or terminal failure/censor; financial residual rejection carries zero fixture/adoption credit"
+  ],
+  "scope_limits": {
+    "accepted_joint_Box_Muller_obligation_filled": false,
+    "old_E02_source_or_wrapper_costs_transferred": false,
+    "new_quantum_compilation_sampler_or_estimator_adoption": false,
+    "full_G2_or_quantum_advantage_established": false,
+    "new_financial_price_observations_or_gate_replays": 0
+  },
+  "author_only_no_prepare_tests_or_numerical_evaluation": true,
+  "prior_executed_failed_packet": {
+    "receipt": "results/limitation_program_20261001/A02_quantile_financial_run003",
+    "manifest_sha256": "44ad3624b1e7fee2e180c15744e9784b980efadd80b18fcc3764f06cfbf018e5",
+    "owned_files": 14,
+    "frozen_inputs": 2599,
+    "observed_completed_unique_pytest_fixtures": 23,
+    "complete_packet_fixture_credit": 0,
+    "completed_cases_and_exponent_class_certificates": 0,
+    "budget_censored": false,
+    "failure_type": "ValueError",
+    "failure_message": "Every actual exponential template/literal must match",
+    "financial_certificate_adopted": false,
+    "immutable_execution_sources_sha256": {
+      "research/limitation_program_20261001/as241_financial_native_v3.py": "2c6973c036f2ea9da7def237fcdd2a3922d1c53b4c2c0c8b95ec05af13e6d017",
+      "research/limitation_program_20261001/as241_financial_certificate_v3.py": "a4d4a4c52633841e0e730ee52f89d446e06c5573551d579d8e722901c9cbfedb",
+      "research/limitation_program_20261001/test_as241_financial_certificate_v3.py": "a67a92b1626594c7ddde6deeb8c08308289f080186b0d9f9f66debc2916277ab",
+      "research/limitation_program_20261001/experiment_as241_financial_v3.py": "6c01524688125f6cb25cb313cc90219bf5cf4e58e3fc1d157ded9d62b4d5d0ab",
+      "research/limitation_program_20261001/AS241_FINANCIAL_BIAS_PREFLIGHT_V3.md": "e47be012fb484ec5cc9d87364c5f1073232b1453123523b8cbe118ec0fcad968",
+      "research/limitation_program_20261001/as241_financial_bias_preflight_v3.json": "10494aaf337346939f85edc5f1456874b15904a407dc74e838be58b1585d9fef"
+    },
+    "bind_every_files_and_frozen_inputs_map_without_override": true,
+    "no_retry_overwrite_or_recredit": true
+  },
+  "v5_admission_addendum": "research/limitation_program_20261001/AS241_FINANCIAL_BIAS_PREFLIGHT_V5.md",
+  "latest_executed_failed_packet": {
+    "receipt": "results/limitation_program_20261001/A02_quantile_financial_run004",
+    "manifest_sha256": "38877fdcd0e3e19b73a9b3d19af58901d88ca066d5a976bbc5e07b6768fdf067",
+    "owned_files": 14,
+    "frozen_inputs": 2620,
+    "observed_completed_unique_pytest_fixtures": 24,
+    "complete_packet_fixture_credit": 0,
+    "completed_cases_and_exponent_class_certificates": 0,
+    "budget_censored": false,
+    "failure_type": "ValueError",
+    "failure_message": "Fixed30-class actual exponent domain",
+    "financial_certificate_adopted": false,
+    "immutable_execution_sources_sha256": {
+      "research/limitation_program_20261001/as241_financial_native_v4.py": "bdcaf293502d6759dca274bbe2d7f4e0324d2351c62ad2214e9775d871798bac",
+      "research/limitation_program_20261001/as241_financial_certificate_v4.py": "b5082ac86a6af7a66379f680034c544b79415706e137e0d84fe40605e45288b4",
+      "research/limitation_program_20261001/test_as241_financial_certificate_v4.py": "abf66094420d7f244bc93ea2e22aafd82f10177bbff484254af896ee25edcfb5",
+      "research/limitation_program_20261001/experiment_as241_financial_v4.py": "6849ebeae293f128555ceb9f9ed7bcc4bc016e147eb8b18b2ebf6e143165ff78",
+      "research/limitation_program_20261001/AS241_FINANCIAL_BIAS_PREFLIGHT_V4.md": "364722a6ae73b5b06044328b7b10bb94575aa2577fd7d53f12df101be109570d",
+      "research/limitation_program_20261001/as241_financial_bias_preflight_v4.json": "9569fd069977676b8641d3e2189a8236a7d68f4b5b723b5cfa93b2687163b2b9"
+    },
+    "bind_every_files_and_frozen_inputs_map_without_override": true,
+    "no_retry_overwrite_or_recredit": true
+  }
+}

@@ -1,0 +1,3755 @@
+"""Independent130 A13 exploratory exponential frontier, AUTHOR ONLY.
+
+No producer/helper imports, coefficient fitting, proof, source walk or numerical
+operation has executed during authoring. All20 fixed choices share one future
+300/270/900 process budget. NULL G2 allocation excludes feasibility/adoption.
+"""
+
+from __future__ import annotations
+
+import argparse
+from collections import Counter
+import ctypes
+from ctypes import wintypes
+from datetime import datetime, timezone
+from fractions import Fraction
+import hashlib
+from importlib import metadata
+from importlib.util import cache_from_source
+import json
+from math import comb, factorial
+import os
+from pathlib import Path
+import re
+import site
+import sys
+import time
+import traceback
+
+ROOT = Path(__file__).resolve().parents[2]
+RESEARCH = ROOT / "research/limitation_program_20261001"
+PROGRAM = ROOT / "results/limitation_program_20261001"
+SOURCE = PROGRAM / "A13_run001"
+OUTPUT = PROGRAM / "A13_audit_run001"
+AUTHOR = RESEARCH / "audit_exp_frontier.py"
+PRODUCER_AUTHOR = RESEARCH / "experiment_exp_frontier.py"
+METHOD = RESEARCH / "a13_exp_frontier_preflight.json"
+METHOD_DOC = RESEARCH / "A13_EXP_FRONTIER_PREFLIGHT.md"
+IMPLEMENTATION = RESEARCH / "a13_exp_frontier_implementation_preflight.json"
+IMPLEMENTATION_DOC = RESEARCH / "A13_EXP_FRONTIER_IMPLEMENTATION_PREFLIGHT.md"
+LAUNCHER = ROOT / ".context/frontier_t0_env/Scripts/python.exe"
+METHOD_SHA = "6c0e97f33e1277c070e6e84883b6631a880997becd214772bb9ef287e1c7ba85"
+METHOD_DOC_SHA = "f5b4404650c1ee9bd3a8ef2557d67e1340dda0fc059d94126e19fcfc046d7f7b"
+CPU, ADMISSION, WALL, DIGITS = 300, 270, 900, 130
+Q, N, W = 1 << 40, 1 << 32, 72
+EPS = Fraction(1, Q)
+GRID = tuple((d, s) for d in (4, 6, 8, 10, 12) for s in (1, 2, 4, 8))
+EXPONENTS = tuple(range(-17, 13))
+CASES = {"B4x12": (4, 12, 30), "B8x52": (8, 52, 234)}
+BASELINE = {"B4x12": (520720662, 555774, 550141), "B8x52": (4267435214, 663704, 4460479)}
+RESOURCE_FIELDS = (
+    "source_gates",
+    "x",
+    "cx",
+    "ccx",
+    "t_count",
+    "t_depth",
+    "clifford_t_depth",
+    "clifford_cx",
+    "clifford_h",
+)
+PATH_CACHE, ACTUAL_HASH_CACHE, OBSERVED_HASHES = {}, {}, {}
+BASE_TREES, BASE_FILES = (), ()
+BASE_PREFIX = BASE_SITE_LEXICAL = BASE_SITE = None
+MAX_RUNTIME_FILES, MAX_RUNTIME_BYTES = 24000, 2 * 1024**3
+SHA_PATTERN = re.compile(r"[0-9a-f]{64}\Z")
+A07_SHA = "7380a91d89d4d7657533290406712139dee98913eef4ba60cb71e1de7e0e1f7e"
+
+
+class BudgetCensoredError(RuntimeError):
+    pass
+
+
+def require(condition, message):
+    if not condition:
+        raise ValueError(message)
+
+
+def check(started, *, admission=False):
+    cpu, wall = time.process_time(), time.monotonic() - started
+    if cpu >= (ADMISSION if admission else CPU) or wall >= WALL:
+        raise BudgetCensoredError("Fixed independent A13 CPU/wall censor")
+    return cpu, wall
+
+
+def start_clock():
+    require(os.name == "nt" and ctypes.sizeof(ctypes.c_void_p) == 8, "Pinned Win64 runtime")
+    kernel = ctypes.WinDLL("kernel32", use_last_error=True)
+    kernel.GetCurrentProcess.argtypes = []
+    kernel.GetCurrentProcess.restype = wintypes.HANDLE
+    kernel.GetProcessTimes.argtypes = [wintypes.HANDLE] + [ctypes.POINTER(wintypes.FILETIME)] * 4
+    kernel.GetProcessTimes.restype = wintypes.BOOL
+    fields = [wintypes.FILETIME() for _ in range(4)]
+    require(
+        kernel.GetProcessTimes(kernel.GetCurrentProcess(), *(ctypes.byref(v) for v in fields)),
+        "Actual creation time unavailable",
+    )
+    ticks = (fields[0].dwHighDateTime << 32) | fields[0].dwLowDateTime
+    age_ns = time.time_ns() - (ticks - 116444736000000000) * 100
+    require(age_ns >= 0, "Actual creation precedes clock observation")
+    return time.monotonic() - age_ns / 1000000000
+
+
+def encode(value):
+    value = Fraction(value)
+    return [value.numerator, value.denominator]
+
+
+def rational(value):
+    require(
+        type(value) is list
+        and len(value) == 2
+        and all(type(v) is int for v in value)
+        and value[1] > 0,
+        "Typed canonical exact rational",
+    )
+    result = Fraction(*value)
+    require(encode(result) == value, "Reduced rational representation")
+    return result
+
+
+def same(left, right, message):
+    require(
+        json.dumps(left, sort_keys=True, separators=(",", ":"), allow_nan=False)
+        == json.dumps(right, sort_keys=True, separators=(",", ":"), allow_nan=False),
+        message,
+    )
+
+
+def unsigned_word(value):
+    require(type(value) is int and 0 <= value < 1 << W, "Canonical unsigned72 CONST word")
+    return value - (1 << W) if value >= 1 << (W - 1) else value
+
+
+def signed_coefficient(value):
+    require(type(value) is int and -(1 << 71) <= value < 1 << 71, "Canonical signed72 coefficient")
+    return value
+
+
+def nearest_fraction(value):
+    value = Fraction(value)
+    low, remainder = divmod(value.numerator, value.denominator)
+    twice = 2 * remainder
+    return low + int(twice > value.denominator or (twice == value.denominator and low % 2))
+
+
+class GraphAudit:
+    """Own backward traversal on actual SSA; never constructs or evaluates it."""
+
+    def __init__(self, target, started):
+        self.target, self.started, self.nodes, self.ancestor_cache = target, started, {}, {}
+        require((target["width"], target["fraction_bits"]) == (72, 40), "Native W72/F40")
+        arities = {
+            "input": 0,
+            "const": 0,
+            "add": 2,
+            "sub": 2,
+            "mul": 2,
+            "cmul": 1,
+            "lt": 2,
+            "select": 3,
+            "positive": 1,
+            "msb": 1,
+            "bits": 1,
+            "shift": 2,
+            "sqrt": 1,
+            "lookup": 1,
+        }
+        next_value = 0
+        for row in target["nodes"]:
+            check(started)
+            op, args, out, params = (row[k] for k in ("op", "args", "out", "params"))
+            require(
+                op in arities and type(args) is list and len(args) == arities[op], "Typed arity"
+            )
+            require(type(out) is list and type(params) is dict and out, "Typed node shape")
+            require(all(type(v) is int and v in self.nodes for v in args), "Topological dependency")
+            require(
+                out == list(range(next_value, next_value + len(out))),
+                "Exact contiguous output slots",
+            )
+            require(all(type(v) is int for v in out), "Typed SSA identities")
+            next_value += len(out)
+            require(op == "lookup" or len(out) == 1, "Single output native primitive")
+            if op == "const":
+                require(set(params) == {"value"}, "Exact constant fields")
+                unsigned_word(params["value"])
+            elif op == "cmul":
+                require(set(params) == {"c"}, "Exact coefficient fields")
+                signed_coefficient(params["c"])
+            elif op == "bits":
+                require(
+                    set(params) == {"shift", "width", "signed"}
+                    and type(params["shift"]) is int
+                    and type(params["width"]) is int
+                    and 1 <= params["width"] <= 72
+                    and type(params["signed"]) is bool,
+                    "Exact bit-extraction fields",
+                )
+            elif op == "lookup":
+                require(
+                    set(params) == {"table", "bits"} and type(params["bits"]) is int,
+                    "Exact lookup fields",
+                )
+                table = target["tables"][params["table"]]
+                require(
+                    len(table) == 1 << params["bits"]
+                    and all(len(entry) == len(out) for entry in table),
+                    "Complete table shape",
+                )
+                for entry in table:
+                    for coefficient in entry:
+                        signed_coefficient(coefficient)
+            elif op == "input":
+                require(set(params) == {"name", "bits", "preparation"}, "Exact input fields")
+            else:
+                require(params == {}, "No undeclared arithmetic parameters")
+            for value in out:
+                self.nodes[value] = row
+
+    def node(self, value, kind=None, params=None):
+        check(self.started)
+        require(type(value) is int and value in self.nodes, "Actual SSA identity")
+        row = self.nodes[value]
+        require(kind is None or row["op"] == kind, "Expected native operation")
+        if params is not None:
+            same(row["params"], params, "Exact native operation parameters")
+        return row
+
+    def constant(self, value, expected=None):
+        result = unsigned_word(self.node(value, "const")["params"]["value"])
+        require(expected is None or result == expected, "Actual decoded constant")
+        return result
+
+    def ancestors(self, value):
+        if value not in self.ancestor_cache:
+            pending, values = [value], set()
+            while pending:
+                check(self.started)
+                current = pending.pop()
+                if current not in values:
+                    values.add(current)
+                    pending.extend(self.node(current)["args"])
+            self.ancestor_cache[value] = values
+        return self.ancestor_cache[value]
+
+    def clamp(self, value, low=None, high=None):
+        topflag, middle, upper = self.node(value, "select")["args"]
+        require(self.node(topflag, "lt")["args"] == [middle, upper], "Exact upper clamp")
+        bottomflag, lower, original = self.node(middle, "select")["args"]
+        require(self.node(bottomflag, "lt")["args"] == [original, lower], "Exact lower clamp")
+        require(self.constant(lower, low) < self.constant(upper, high), "Ordered clamp literals")
+        return original
+
+    def midpoint(self, value, input_value):
+        args = self.node(value, "add")["args"]
+        shifted = [v for v in args if self.node(v)["op"] == "bits"]
+        require(len(shifted) == 1, "One midpoint conversion")
+        require(
+            self.node(shifted[0], "bits", {"shift": -8, "width": 72, "signed": False})["args"]
+            == [input_value],
+            "Exact q32 to f40 conversion",
+        )
+        self.constant(next(v for v in args if v != shifted[0]), 128)
+
+    def interpolation(self, result, table_name, input_value):
+        bins, degree, lower, bits = (32, 8, Q, 5) if table_name == "log" else (64, 7, 0, 6)
+        candidates = {
+            tuple(self.node(v)["out"])
+            for v in self.ancestors(result)
+            if self.node(v)["op"] == "lookup" and self.node(v)["params"]["table"] == table_name
+        }
+        require(len(candidates) == 1, "One table supplies every Horner coefficient")
+        coefficients = next(iter(candidates))
+        require(len(coefficients) == degree + 1, "All actual polynomial coefficients")
+        address = self.node(coefficients[0], "lookup", {"table": table_name, "bits": bits})["args"][
+            0
+        ]
+        bounded = self.node(address, "bits", {"shift": 40 - bits, "width": bits, "signed": False})[
+            "args"
+        ][0]
+        if lower:
+            bounded, literal = self.node(bounded, "sub")["args"]
+            self.constant(literal, lower)
+        require(
+            self.clamp(bounded, lower, lower + Q - 1) == input_value, "Interpolation input binding"
+        )
+        current, local = result, None
+        for coefficient in coefficients[:-1]:
+            args = self.node(current, "add")["args"]
+            require(coefficient in args, "Horner coefficient order")
+            factors = self.node(next(v for v in args if v != coefficient), "mul")["args"]
+            if local is None:
+                possible = [v for v in factors if self.node(v)["op"] == "sub"]
+                require(len(possible) == 1, "One local variable in Horner")
+                local = possible[0]
+            require(local in factors, "Every Horner product uses same local variable")
+            current = next(v for v in factors if v != local)
+        require(current == coefficients[-1], "Horner terminal coefficient")
+        actual, center = self.node(local, "sub")["args"]
+        require(actual == bounded, "Local variable uses bounded argument")
+        args = self.node(center, "add")["args"]
+        shifted = [v for v in args if self.node(v)["op"] == "bits"]
+        require(len(shifted) == 1, "Exact local center shift")
+        require(
+            self.node(shifted[0], "bits", {"shift": bits - 40, "width": 72, "signed": False})[
+                "args"
+            ]
+            == [address],
+            "Local center derives from same address",
+        )
+        self.constant(next(v for v in args if v != shifted[0]), lower + Q // (2 * bins))
+        return dict(
+            output=result,
+            input=input_value,
+            address=address,
+            local=local,
+            lookup_outputs=list(coefficients),
+            floors=degree,
+        )
+
+    def joint_pair(self, first, second, input_u, input_v, ln2):
+        products = [self.node(v, "mul")["args"] for v in (first, second)]
+        shared = set(products[0]) & set(products[1])
+        require(len(shared) == 1, "Actual pair shares one radius")
+        radius = next(iter(shared))
+        positive = self.node(radius, "sqrt")["args"][0]
+        product = self.node(positive, "positive")["args"][0]
+        logarithm = self.node(product, "cmul", {"c": -2 * Q})["args"][0]
+        addends = self.node(logarithm, "add")["args"]
+        exponent_terms = [v for v in addends if self.node(v)["op"] == "cmul"]
+        require(len(exponent_terms) == 1, "Unique integer exponent literal product")
+        term = exponent_terms[0]
+        scaled = self.node(term, "cmul", {"c": ln2})["args"][0]
+        exponent = self.node(scaled, "bits", {"shift": -40, "width": 72, "signed": False})["args"][
+            0
+        ]
+        top, f = self.node(exponent, "sub")["args"]
+        self.constant(f, 40)
+        safe = self.node(top, "msb")["args"][0]
+        flag, tiny, midpoint_u = self.node(safe, "select")["args"]
+        self.constant(tiny, 1)
+        require(self.node(flag, "lt")["args"] == [midpoint_u, tiny], "Actual positive-input guard")
+        self.midpoint(midpoint_u, input_u)
+        polynomial = next(v for v in addends if v != term)
+        lookups = {
+            tuple(self.node(v)["out"])
+            for v in self.ancestors(polynomial)
+            if self.node(v)["op"] == "lookup"
+        }
+        require(len(lookups) == 1, "Unique original log lookup")
+        address = self.node(next(iter(lookups))[0])["args"][0]
+        shifted = self.node(address)["args"][0]
+        bounded = self.node(shifted, "sub")["args"][0]
+        mantissa = self.clamp(bounded, Q, 2 * Q - 1)
+        u, negated = self.node(mantissa, "shift")["args"]
+        require(u == safe, "Same positive midpoint is normalized")
+        zero, same_exponent = self.node(negated, "sub")["args"]
+        self.constant(zero, 0)
+        require(same_exponent == exponent, "Exact normalization exponent")
+        log_scope = self.interpolation(polynomial, "log", mantissa)
+        cosines = [next(v for v in args if v != radius) for args in products]
+        turns = []
+        for cosine in cosines:
+            lookups = {
+                tuple(self.node(v)["out"])
+                for v in self.ancestors(cosine)
+                if self.node(v)["op"] == "lookup"
+            }
+            require(len(lookups) == 1, "Unique original cosine lookup")
+            address = self.node(next(iter(lookups))[0])["args"][0]
+            bounded = self.node(address)["args"][0]
+            turns.append(self.clamp(bounded, 0, Q - 1))
+        midpoint_v, wrapped = turns
+        self.midpoint(midpoint_v, input_v)
+        total = self.node(wrapped, "bits", {"shift": 0, "width": 40, "signed": False})["args"][0]
+        args = self.node(total, "add")["args"]
+        require(midpoint_v in args, "Both angles derive from same midpoint")
+        self.constant(next(v for v in args if v != midpoint_v), 3 * Q // 4)
+        scopes = [self.interpolation(v, "cos", a) for v, a in zip(cosines, turns, strict=True)]
+        dependencies = {
+            v
+            for root in (first, second)
+            for v in self.ancestors(root)
+            if self.node(v)["op"] == "input"
+        }
+        require(dependencies == {input_u, input_v}, "Exactly two independent pair input words")
+        return dict(
+            normal_values=[first, second],
+            raw_uniform_values=[input_u, input_v],
+            radius=radius,
+            log=log_scope,
+            cosines=scopes,
+            original_shared_pair_preserved=True,
+        )
+
+    def sum_terms(self, value, stops):
+        pending, result = [value], Counter()
+        while pending:
+            check(self.started)
+            current = pending.pop()
+            if current in stops:
+                result[current] += 1
+            else:
+                pending.extend(self.node(current, "add")["args"])
+        return result
+
+
+def initialize(started):
+    """Independent admission of the actual local interpreter; stdlib only."""
+    global BASE_PREFIX, BASE_TREES, BASE_FILES, BASE_SITE_LEXICAL, BASE_SITE
+    PATH_CACHE.clear()
+    ACTUAL_HASH_CACHE.clear()
+    OBSERVED_HASHES.clear()
+    require(sys.dont_write_bytecode is True, "Interpreter startup -B is mandatory")
+    require(
+        Path.cwd().resolve() == ROOT and Path(__file__).resolve() == AUTHOR,
+        "Exact auditor module and working directory",
+    )
+    require(Path(sys.executable).resolve() == LAUNCHER, "Pinned isolated launcher")
+    require(
+        Path(sys.prefix).resolve() == ROOT / ".context/frontier_t0_env",
+        "Exact isolated interpreter prefix",
+    )
+    require(site.ENABLE_USER_SITE is False, "User site must be disabled")
+    for name in ("PYTHONPATH", "PYTHONHOME", "SAGE_ROOT", "MPMATH_SAGE"):
+        require(not os.environ.get(name), "Unexpected runtime override: " + name)
+    os.environ["MPMATH_NOGMPY"] = os.environ["MPMATH_NOSAGE"] = "1"
+    BASE_PREFIX = Path(sys.base_prefix).resolve(strict=True)
+    BASE_SITE_LEXICAL = BASE_PREFIX / "Lib/site-packages"
+    BASE_SITE = BASE_SITE_LEXICAL.resolve()
+    base = Path(getattr(sys, "_base_executable", sys.executable)).resolve(strict=True)
+    require(base.parent == BASE_PREFIX, "Actual adjacent base interpreter")
+    BASE_TREES = tuple(
+        (BASE_PREFIX / name).resolve(strict=True)
+        for name in ("Lib", "DLLs")
+        if (BASE_PREFIX / name).is_dir()
+    )
+    BASE_FILES = tuple(
+        path.resolve(strict=True) for path in BASE_PREFIX.iterdir() if path.is_file()
+    )
+    require(base in BASE_FILES, "Actual base executable is captured")
+    forbidden_imports()
+    check(started)
+
+
+def forbidden_imports():
+    banned = ("numpy", "scipy", "numba", "llvmlite", "qiskit", "gmpy", "gmpy2", "sage")
+    for name in sys.modules:
+        require(
+            not any(name == prefix or name.startswith(prefix + ".") for prefix in banned),
+            "Forbidden numerical or SDK import: " + name,
+        )
+        if name.startswith("research."):
+            require(
+                name
+                in (
+                    "research.limitation_program_20261001",
+                    "research.limitation_program_20261001.audit_exp_frontier",
+                ),
+                "Auditor must not import producer or other research helpers",
+            )
+
+
+def permitted(path):
+    if BASE_SITE is not None and path.is_relative_to(BASE_SITE):
+        return False
+    return (
+        path.is_relative_to(ROOT)
+        or path == BASE_PREFIX
+        or path in BASE_FILES
+        or any(path.is_relative_to(root) for root in BASE_TREES)
+    )
+
+
+def canonical_path(path, started, *, fresh=False):
+    check(started)
+    value = Path(path)
+    require(not value.drive or value.is_absolute(), "Ambiguous drive-relative path forbidden")
+    require(
+        BASE_SITE_LEXICAL is None or not value.absolute().is_relative_to(BASE_SITE_LEXICAL),
+        "Unreachable base site-packages lexical paths forbidden",
+    )
+    lexical = str(value.absolute())
+    if not fresh and lexical in PATH_CACHE:
+        check(started)
+        return PATH_CACHE[lexical]
+    actual = value.resolve(strict=True)
+    require(permitted(actual), "Outside ROOT or exact observed base-runtime scopes")
+    require(
+        lexical not in PATH_CACHE or PATH_CACHE[lexical] == actual,
+        "Previously confined lexical path redirected",
+    )
+    PATH_CACHE[lexical] = actual
+    PATH_CACHE.setdefault(str(actual), actual)
+    check(started)
+    return actual
+
+
+def fingerprint(path):
+    data = path.stat()
+    return (
+        data.st_dev,
+        data.st_ino,
+        data.st_size,
+        data.st_mtime_ns,
+        data.st_ctime_ns,
+        getattr(data, "st_file_attributes", None),
+        getattr(data, "st_reparse_tag", None),
+    )
+
+
+def actual_digest(path, started, *, fresh=False):
+    check(started)
+    require(permitted(path), "Pre-read confinement of actual hash path")
+    identity, key = fingerprint(path), str(path)
+    require(path.is_file(), "Actual regular byte input")
+    if not fresh and key in ACTUAL_HASH_CACHE and ACTUAL_HASH_CACHE[key][0] == identity:
+        check(started)
+        return ACTUAL_HASH_CACHE[key][1]
+    state = hashlib.sha256()
+    with path.open("rb") as stream:
+        while block := stream.read(1 << 20):
+            check(started)
+            state.update(block)
+            check(started)
+    require(fingerprint(path) == identity, "Actual bytes changed during SHA observation")
+    result = state.hexdigest()
+    require(
+        key not in OBSERVED_HASHES or OBSERVED_HASHES[key] == result,
+        "First independently observed actual SHA changed",
+    )
+    OBSERVED_HASHES.setdefault(key, result)
+    ACTUAL_HASH_CACHE[key] = (identity, result)
+    check(started)
+    return result
+
+
+def sha(path, started, *, fresh=False):
+    return actual_digest(canonical_path(path, started, fresh=fresh), started, fresh=fresh)
+
+
+def root_key(path, started):
+    actual = canonical_path(path, started)
+    require(actual.is_relative_to(ROOT), "ROOT-relative field confinement")
+    return actual.relative_to(ROOT).as_posix()
+
+
+def bind(frozen, external, path, expected, started):
+    check(started)
+    require(type(expected) is str and SHA_PATTERN.fullmatch(expected), "Canonical SHA256")
+    actual = canonical_path(path, started)
+    mapping = frozen if actual.is_relative_to(ROOT) else external
+    key = actual.relative_to(ROOT).as_posix() if actual.is_relative_to(ROOT) else str(actual)
+    require(key not in mapping or mapping[key] == expected, "Conflicting expected SHA binding")
+    require(actual_digest(actual, started) == expected, "Actual byte SHA differs: " + key)
+    mapping[key] = expected
+    check(started)
+    return actual
+
+
+def read_bytes(path, started):
+    actual = canonical_path(path, started)
+    identity = fingerprint(actual)
+    require(
+        actual.is_file() and identity[2] <= 128 * 1024**2, "Bounded regular source/artifact input"
+    )
+    chunks, state, total = [], hashlib.sha256(), 0
+    with actual.open("rb") as stream:
+        while block := stream.read(1 << 20):
+            check(started)
+            total += len(block)
+            require(total <= identity[2], "Text input grew while reading")
+            state.update(block)
+            check(started)
+            chunks.append(block)
+    require(
+        total == identity[2] and fingerprint(actual) == identity,
+        "Exact text bytes stable during read",
+    )
+    data = b"".join(chunks)
+    observed = state.hexdigest()
+    check(started)
+    key = str(actual)
+    require(
+        key not in OBSERVED_HASHES or OBSERVED_HASHES[key] == observed,
+        "JSON/source read contradicts original actual SHA",
+    )
+    OBSERVED_HASHES.setdefault(key, observed)
+    ACTUAL_HASH_CACHE[key] = (identity, observed)
+    return data
+
+
+def read_json(path, started):
+    value = json.loads(read_bytes(path, started))
+    check(started)
+    return value
+
+
+def write_json(path, value, started):
+    check(started)
+    data = (json.dumps(value, sort_keys=True, indent=2, allow_nan=False) + "\n").encode()
+    check(started)
+    require(len(data) <= 128 * 1024**2, "Bounded JSON output")
+    with Path(path).open("xb") as stream:
+        for offset in range(0, len(data), 1 << 20):
+            check(started)
+            stream.write(data[offset : offset + (1 << 20)])
+            check(started)
+
+
+def verify_maps(frozen, external, started):
+    for mapping, parent in ((frozen, ROOT), (external, None)):
+        for key, expected in mapping.items():
+            check(started)
+            path = parent / key if parent is not None else Path(key)
+            require(sha(path, started) == expected, "Immutable map byte mismatch: " + key)
+
+
+def final_fresh(frozen, external, started):
+    """Fresh confinement for all aliases and fresh full bytes for every actual path."""
+    for lexical, expected_path in tuple(PATH_CACHE.items()):
+        check(started)
+        require(
+            canonical_path(lexical, started, fresh=True) == expected_path,
+            "Final independent lexical alias mismatch",
+        )
+    expected = {}
+    for mapping, parent in ((frozen, ROOT), (external, None)):
+        for key, value in mapping.items():
+            check(started)
+            actual = canonical_path(parent / key if parent is not None else key, started)
+            require(actual not in expected or expected[actual] == value, "Equal-SHA final merge")
+            expected[actual] = value
+    observed = {Path(key): value for key, value in OBSERVED_HASHES.items()}
+    union = set(expected) | set(observed)
+    for path in sorted(union):
+        check(started)
+        actual = canonical_path(path, started, fresh=True)
+        value = actual_digest(actual, started, fresh=True)
+        require(path not in expected or expected[path] == value, "Final expected SHA differs")
+        require(path not in observed or observed[path] == value, "Final observed SHA differs")
+    return len(union)
+
+
+def original_owner_entries(path, data, started):
+    """Independently normalize exact historical map conventions, without LIVE waiver."""
+    if "files" in data:
+        require(
+            data.get("manifest_self_hash_excluded") is True,
+            "Original nested owner self-hash convention",
+        )
+        mappings = [(field, data.get(field, {})) for field in ("files", "frozen_inputs")]
+    else:
+        require(
+            path == PROGRAM / "A10_coefficient_run001/manifest.json",
+            "Only pinned historical A10 flat map is recognized",
+        )
+        mappings = [("flat_owned_files", data)]
+    result = []
+    for field, mapping in mappings:
+        require(type(mapping) is dict, "Recognized original expected byte map")
+        for literal, expected in mapping.items():
+            check(started)
+            require(
+                type(literal) is str and type(expected) is str and SHA_PATTERN.fullmatch(expected),
+                "Typed original map record",
+            )
+            normalized = literal.replace("\\", "/")
+            route = (
+                ROOT / normalized
+                if normalized.startswith(
+                    ("results/", "research/", "docs/", "manuscript/", ".context/")
+                )
+                else path.parent / normalized
+            )
+            # Membership is structural; no claim that every original current source remains LIVE.
+            actual = route.resolve()
+            require(actual.is_relative_to(ROOT), "Original membership confined to ROOT")
+            result.append((field, actual, literal, expected))
+            check(started)
+    return result
+
+
+def independent_origins(pins, owners, frozen, external, started, *, selected):
+    inventories = []
+    for key, expected in owners.items():
+        path = bind(frozen, external, ROOT / key, expected, started)
+        inventories.append((key, original_owner_entries(path, read_json(path, started), started)))
+    records = []
+    for key, expected in pins.items():
+        check(started)
+        actual = bind(frozen, external, ROOT / key, expected, started)
+        if selected and key.endswith("/manifest.json"):
+            continue
+        matches = []
+        for owner, inventory in inventories:
+            for field, candidate, original, value in inventory:
+                check(started)
+                if candidate == actual and value == expected:
+                    matches.append(
+                        dict(
+                            owner_manifest=owner,
+                            source_map=field,
+                            original_key=original,
+                            expected_sha256=value,
+                        )
+                    )
+        require(matches, "Original equal-SHA owner membership required: " + key)
+        row = dict(
+            path=key, sha256=expected, original_memberships=matches, expected_hash_waived=False
+        )
+        if selected:
+            row["archived_route"] = False
+        records.append(row)
+    return records
+
+
+def reject_unreachable_origin(path, started):
+    """Deny excluded lexical/physical origins even when their files disappeared."""
+    check(started)
+    candidate = Path(path)
+    require(not candidate.drive or candidate.is_absolute(), "Ambiguous runtime origin drive")
+    require(
+        BASE_SITE_LEXICAL is None or not candidate.absolute().is_relative_to(BASE_SITE_LEXICAL),
+        "Unreachable base site-packages lexical origin forbidden",
+    )
+    actual = candidate.resolve(strict=False)
+    require(
+        BASE_SITE is None or not actual.is_relative_to(BASE_SITE),
+        "Unreachable base site-packages physical origin forbidden",
+    )
+    check(started)
+
+
+def runtime_candidates(root, started):
+    """Prune the unreachable base site directory before traversing its entries."""
+    root = canonical_path(root, started)
+    if root.is_file():
+        yield root
+        return
+    require(root.is_dir(), "Finite actual runtime directory")
+    for current, directory_names, filenames in os.walk(root, topdown=True, followlinks=False):
+        check(started)
+        directory = canonical_path(current, started)
+        require(
+            directory == root or directory.is_relative_to(root),
+            "Runtime walk directory confinement",
+        )
+        retained = []
+        for name in directory_names:
+            check(started)
+            candidate = directory / name
+            if candidate.absolute() == BASE_SITE_LEXICAL:
+                continue
+            actual = canonical_path(candidate, started)
+            require(actual.is_relative_to(root), "Runtime directory alias escape")
+            require(
+                not candidate.is_symlink() and not candidate.is_junction(),
+                "Untraversed runtime directory links forbidden",
+            )
+            retained.append(name)
+        directory_names[:] = retained
+        for name in filenames:
+            check(started)
+            candidate = directory / name
+            if candidate.is_file():
+                actual = canonical_path(candidate, started)
+                require(actual.is_relative_to(root), "Runtime file alias escape")
+                yield actual
+
+
+def bootstrap_runtime_paths(site_root, started):
+    """Exact actual hook roots and preexisting loaded venv files, without package expansion."""
+    paths = set()
+    for candidate in site_root.iterdir():
+        check(started)
+        hook_name = candidate.name.split(".", 1)[0]
+        customize_names = ("sitecustomize", "usercustomize")
+        hook_file = candidate.is_file() and (
+            candidate.suffix.lower() == ".pth"
+            or hook_name in customize_names
+            and candidate.suffix.lower() in (".py", ".pyc", ".pyd")
+        )
+        hook_package = candidate.is_dir() and candidate.name in customize_names
+        if not (hook_file or hook_package):
+            continue
+        reject_unreachable_origin(candidate, started)
+        require(candidate.absolute().is_relative_to(site_root), "Lexical isolated startup hook")
+        actual = canonical_path(candidate, started)
+        require(actual.is_relative_to(site_root), "Physical isolated startup hook")
+        require(actual.is_file() or actual.is_dir(), "Actual startup hook file or package")
+        paths.add(actual)
+        if candidate.suffix == ".py":
+            cached = Path(cache_from_source(str(candidate)))
+            reject_unreachable_origin(cached, started)
+            if cached.is_file():
+                require(
+                    cached.absolute().is_relative_to(site_root), "Lexical startup cache confinement"
+                )
+                cache_actual = canonical_path(cached, started)
+                require(
+                    cache_actual.is_relative_to(site_root), "Physical startup cache confinement"
+                )
+                paths.add(cache_actual)
+    for module in tuple(sys.modules.values()):
+        check(started)
+        if module is None:
+            continue
+        for origin in (getattr(module, "__file__", None), getattr(module, "__cached__", None)):
+            if not origin:
+                continue
+            reject_unreachable_origin(origin, started)
+            lexical = Path(origin).absolute()
+            if Path(origin).is_file():
+                actual = canonical_path(origin, started)
+                if lexical.is_relative_to(site_root):
+                    require(
+                        actual.is_relative_to(site_root), "Loaded venv bootstrap alias confinement"
+                    )
+                if actual.is_relative_to(site_root) and not actual.is_relative_to(
+                    site_root / "mpmath"
+                ):
+                    paths.add(actual)
+    return sorted(paths)
+
+
+def venv_adjacent_runtime(prefix, started):
+    """Exact admitted prefix entries; capture adjacent files, caches and real packages."""
+    paths, membership = set(), []
+    for candidate in sorted(prefix.iterdir()):
+        check(started)
+        actual = canonical_path(candidate, started)
+        require(
+            actual == candidate.absolute() and actual.parent == prefix,
+            "Adjacent actual venv entry is direct and has no redirected alias",
+        )
+        if candidate.is_file():
+            kind = "file"
+            require(actual.parent == prefix, "Actual adjacent venv regular file")
+            paths.add(actual)
+        else:
+            require(candidate.is_dir(), "Actual adjacent venv file or directory")
+            kind = "directory"
+            importable_package = any(
+                (candidate / name).is_file() for name in ("__init__.py", "__init__.pyc")
+            )
+            if candidate.name == "__pycache__" or importable_package:
+                require(candidate.name not in ("Lib", "Scripts"), "No ambiguous venv package root")
+                paths.add(actual)
+        membership.append([candidate.name, kind])
+    return sorted(paths), sorted(membership)
+
+
+def runtime_inventory(frozen, external, started):
+    prefix = canonical_path(sys.prefix, started)
+    config = prefix / "pyvenv.cfg"
+    require(
+        "include-system-site-packages = false" in read_bytes(config, started).decode().lower(),
+        "Isolated actual venv config",
+    )
+    site_root = canonical_path(prefix / "Lib/site-packages", started)
+    distribution = metadata.distribution("mpmath")
+    require(
+        distribution.version == "1.3.0" and distribution.files,
+        "Fixed installed mpmath RECORD inventory",
+    )
+    metadata_roots = set()
+    for member in distribution.files:
+        check(started)
+        path = canonical_path(distribution.locate_file(member), started)
+        for parent in (path, *path.parents):
+            if parent.name.endswith(".dist-info"):
+                metadata_roots.add(parent)
+                break
+    require(len(metadata_roots) == 1, "Exactly one actual mpmath metadata root")
+    metadata_root = metadata_roots.pop()
+    require(metadata_root.parent == site_root, "Distribution metadata confined to pinned site")
+    roots = [
+        config,
+        prefix / "Scripts",
+        site_root / "mpmath",
+        metadata_root,
+        *BASE_TREES,
+        *BASE_FILES,
+    ]
+    bootstrap_paths = bootstrap_runtime_paths(site_root, started)
+    roots.extend(bootstrap_paths)
+    adjacent_paths, adjacent_membership = venv_adjacent_runtime(prefix, started)
+    roots.extend(adjacent_paths)
+    for path in (ROOT / "research/__init__.py", RESEARCH / "__init__.py"):
+        if path.is_file():
+            roots.append(path)
+    for path in (ROOT / "research/__init__.py", RESEARCH / "__init__.py", AUTHOR, PRODUCER_AUTHOR):
+        cached = Path(cache_from_source(str(path)))
+        if cached.is_file():
+            roots.append(cached)
+    paths, total = set(), 0
+    actual_roots = []
+    for route in roots:
+        root = canonical_path(route, started)
+        actual_roots.append(str(root))
+        for candidate in runtime_candidates(root, started):
+            check(started)
+            if not candidate.is_file():
+                continue
+            path = canonical_path(candidate, started)
+            require(path == root or path.is_relative_to(root), "Actual runtime tree confinement")
+            if path in paths:
+                continue
+            total += path.stat().st_size
+            paths.add(path)
+            require(
+                len(paths) <= MAX_RUNTIME_FILES and total <= MAX_RUNTIME_BYTES,
+                "Fixed entire runtime inventory cap",
+            )
+            bind(frozen, external, path, sha(path, started), started)
+    absent = []
+    allowed_roots = {ROOT, prefix, site_root, BASE_PREFIX, *BASE_TREES}
+    for entry in sys.path:
+        check(started)
+        path = Path(entry or ROOT)
+        reject_unreachable_origin(path, started)
+        if path.exists():
+            require(
+                canonical_path(path, started) in allowed_roots
+                or canonical_path(path, started) in BASE_FILES,
+                "Unexpected actual module search path",
+            )
+        else:
+            actual = path.resolve()
+            require(
+                actual
+                == BASE_PREFIX
+                / ("python" + str(sys.version_info.major) + str(sys.version_info.minor) + ".zip"),
+                "Only standard absent interpreter zip",
+            )
+            absent.append(str(actual))
+    return dict(
+        python_version=sys.version,
+        executable=str(canonical_path(sys.executable, started)),
+        base_executable=str(canonical_path(sys._base_executable, started)),
+        base_prefix=str(BASE_PREFIX),
+        venv_prefix=str(prefix),
+        mpmath_version="1.3.0",
+        backend="python",
+        MPMATH_NOGMPY="1",
+        MPMATH_NOSAGE="1",
+        startup_bytecode_disabled=True,
+        user_site_disabled=True,
+        runtime_inventory=dict(
+            roots=actual_roots,
+            actual_file_paths=sorted(str(p) for p in paths),
+            files=len(paths),
+            bytes=total,
+        ),
+        sys_path=list(sys.path),
+        external_runtime_trees=[str(p) for p in BASE_TREES],
+        external_adjacent_files=[str(p) for p in BASE_FILES],
+        absent_standard_runtime_paths=absent,
+        excluded_base_site_packages=str(BASE_SITE),
+        excluded_base_site_packages_lexical=str(BASE_SITE_LEXICAL),
+        base_site_packages_import_rejected=True,
+        bootstrap_hook_and_loaded_venv_paths=[str(path) for path in bootstrap_paths],
+        standard_Lib_excludes_only_unreachable_base_site_packages=True,
+        other_installed_venv_packages_not_blanket_admitted=True,
+        exact_sys_prefix_search_path_admitted=True,
+        venv_adjacent_runtime_paths=[str(path) for path in adjacent_paths],
+        venv_root_directory_membership=adjacent_membership,
+    )
+
+
+def verify_runtime(record, frozen, external, started):
+    check(started)
+    require(
+        record["python_version"] == sys.version
+        and record["executable"] == str(canonical_path(sys.executable, started))
+        and record["base_executable"] == str(canonical_path(sys._base_executable, started))
+        and record["base_prefix"] == str(BASE_PREFIX)
+        and record["venv_prefix"] == str(canonical_path(sys.prefix, started))
+        and record["mpmath_version"] == metadata.version("mpmath") == "1.3.0",
+        "Actual interpreter and dependency version provenance",
+    )
+    same(record["sys_path"], list(sys.path), "Exact interpreter search path snapshot")
+    same(
+        record["external_runtime_trees"],
+        [str(p) for p in BASE_TREES],
+        "Exact observed base tree scopes",
+    )
+    same(
+        record["external_adjacent_files"],
+        [str(p) for p in BASE_FILES],
+        "Exact observed adjacent runtime files",
+    )
+    require(
+        record["backend"] == "python"
+        and record["startup_bytecode_disabled"] is True
+        and record["user_site_disabled"] is True
+        and sys.dont_write_bytecode is True
+        and site.ENABLE_USER_SITE is False
+        and os.environ.get("MPMATH_NOGMPY") == os.environ.get("MPMATH_NOSAGE") == "1",
+        "Exact isolated pure Python import policy",
+    )
+    require(
+        record["excluded_base_site_packages"] == str(BASE_SITE)
+        and record["excluded_base_site_packages_lexical"] == str(BASE_SITE_LEXICAL)
+        and record["base_site_packages_import_rejected"] is True,
+        "Exact unreachable base site-packages exclusion and import rejection",
+    )
+    require(
+        record["standard_Lib_excludes_only_unreachable_base_site_packages"] is True
+        and record["other_installed_venv_packages_not_blanket_admitted"] is True,
+        "Full remaining runtime and selected venv package policy",
+    )
+    site_root = canonical_path(Path(sys.prefix) / "Lib/site-packages", started)
+    prefix = canonical_path(sys.prefix, started)
+    require(
+        record["exact_sys_prefix_search_path_admitted"] is True,
+        "Only exact isolated venv-prefix search root additionally admitted",
+    )
+    adjacent_paths, adjacent_membership = venv_adjacent_runtime(prefix, started)
+    same(
+        [str(path) for path in adjacent_paths],
+        record["venv_adjacent_runtime_paths"],
+        "Exact adjacent venv runtime roots",
+    )
+    same(
+        adjacent_membership,
+        record["venv_root_directory_membership"],
+        "Exact finite venv-root directory membership",
+    )
+    same(
+        [str(path) for path in bootstrap_runtime_paths(site_root, started)],
+        record["bootstrap_hook_and_loaded_venv_paths"],
+        "Actual complete startup hook membership",
+    )
+    allowed_sys_roots = {ROOT, prefix, site_root, BASE_PREFIX, *BASE_TREES}
+    for entry in sys.path:
+        check(started)
+        candidate = Path(entry or ROOT)
+        reject_unreachable_origin(candidate, started)
+        if candidate.exists():
+            actual = canonical_path(candidate, started)
+            require(
+                actual in allowed_sys_roots or actual in BASE_FILES,
+                "Unexpected current sys.path root",
+            )
+    paths = set()
+    for route in record["runtime_inventory"]["roots"]:
+        root = canonical_path(route, started)
+        for candidate in runtime_candidates(root, started):
+            check(started)
+            if candidate.is_file():
+                path = canonical_path(candidate, started)
+                require(
+                    path == root or path.is_relative_to(root),
+                    "Fresh runtime membership confinement",
+                )
+                paths.add(path)
+    same(
+        sorted(str(p) for p in paths),
+        record["runtime_inventory"]["actual_file_paths"],
+        "Complete existing source/cache/metadata/runtime file membership",
+    )
+    total = 0
+    for path in paths:
+        check(started)
+        total += path.stat().st_size
+        require(
+            len(paths) <= MAX_RUNTIME_FILES and total <= MAX_RUNTIME_BYTES,
+            "Actual complete runtime cap",
+        )
+        key = path.relative_to(ROOT).as_posix() if path.is_relative_to(ROOT) else str(path)
+        mapping = frozen if path.is_relative_to(ROOT) else external
+        require(
+            key in mapping and sha(path, started) == mapping[key],
+            "Entire runtime byte origin is frozen",
+        )
+    require(
+        record["runtime_inventory"]["files"] == len(paths)
+        and record["runtime_inventory"]["bytes"] == total,
+        "Exact recorded runtime count and bytes",
+    )
+    for path in record["absent_standard_runtime_paths"]:
+        check(started)
+        require(not Path(path).exists(), "Recorded absent interpreter zip appeared")
+    forbidden_imports()
+
+
+def loaded_origins(frozen, external, started):
+    forbidden_imports()
+    result = []
+    for name, module in tuple(sys.modules.items()):
+        check(started)
+        if module is None:
+            continue
+        for kind, origin in (
+            ("source", getattr(module, "__file__", None)),
+            ("cache", getattr(module, "__cached__", None)),
+        ):
+            if origin:
+                reject_unreachable_origin(origin, started)
+            if origin and Path(origin).is_file():
+                path = canonical_path(origin, started)
+                key = path.relative_to(ROOT).as_posix() if path.is_relative_to(ROOT) else str(path)
+                mapping = frozen if path.is_relative_to(ROOT) else external
+                require(
+                    key in mapping and sha(path, started) == mapping[key],
+                    "Actual loaded module source/existing cache not frozen: " + name,
+                )
+                result.append(dict(module=name, kind=kind, path=key, sha256=mapping[key]))
+    return result
+
+
+def map_inputs(record, frozen, external, started):
+    for field, is_external in (("frozen_inputs", False), ("external_runtime_inputs", True)):
+        mapping = record[field]
+        require(type(mapping) is dict, "Complete recognized source/protocol byte map")
+        for key, expected in mapping.items():
+            check(started)
+            require(type(key) is str, "Typed input map path")
+            route = Path(key) if is_external else ROOT / key
+            require(
+                route.is_absolute() if is_external else not Path(key).is_absolute(),
+                "Exact external-absolute / ROOT-relative map convention",
+            )
+            actual = bind(frozen, external, route, expected, started)
+            canonical = str(actual) if is_external else actual.relative_to(ROOT).as_posix()
+            require(
+                canonical == key and (not is_external or not actual.is_relative_to(ROOT)),
+                "Canonical source-map path; no aliases or ROOT path in external map",
+            )
+
+
+def elapsed(started):
+    return dict(process_CPU_seconds=time.process_time(), wall_seconds=time.monotonic() - started)
+
+
+def copy_exact(source, destination, frozen, external, started):
+    source = canonical_path(source, started)
+    expected, identity = sha(source, started), fingerprint(source)
+    with source.open("rb") as incoming, Path(destination).open("xb") as outgoing:
+        while block := incoming.read(1 << 20):
+            check(started)
+            outgoing.write(block)
+            check(started)
+    require(fingerprint(source) == identity, "Copy source remains immutable")
+    bind(frozen, external, destination, expected, started)
+
+
+def owned_artifacts(output, started):
+    result, total = {}, 0
+    for candidate in output.rglob("*"):
+        check(started)
+        if candidate.is_file():
+            path = canonical_path(candidate, started)
+            require(
+                path.is_relative_to(output) and path.name != "manifest.json",
+                "Owned output confinement and no manifest reuse",
+            )
+            key = path.relative_to(output).as_posix()
+            require(key not in result, "No aliased owned output")
+            total += path.stat().st_size
+            require(len(result) < 64 and total <= 128 * 1024**2, "Finite owned artifact caps")
+            result[key] = sha(path, started)
+    return result
+
+
+def outward(mp, value):
+    value = Fraction(value)
+    return mp.iv.mpf(value.numerator) / value.denominator
+
+
+def endpoints(value):
+    result = [
+        Fraction((-1) ** sign * mantissa) * Fraction(2) ** exponent
+        for sign, mantissa, exponent, _ in value._mpi_
+    ]
+    require(len(result) == 2 and result[0] <= result[1], "Finite outward interval endpoints")
+    return tuple(result)
+
+
+def interval_record(value):
+    return [encode(endpoint) for endpoint in endpoints(value)]
+
+
+def enclosures_contain(declared, actual, message):
+    lo, hi = [rational(value) for value in declared]
+    first, last = [rational(value) for value in actual]
+    require(lo <= first <= last <= hi, message)
+
+
+def word_range(pair):
+    require(
+        len(pair) == 2
+        and all(type(value) is int for value in pair)
+        and -(1 << 71) <= pair[0] <= pair[1] < 1 << 71,
+        "Stored signed72 no-wrap proof",
+    )
+    return tuple(pair)
+
+
+def integer_product(first, second, *, square=False):
+    values = [a * b for a in first for b in second]
+    lower = 0 if square and first[0] <= 0 <= first[1] else min(values)
+    result = (lower, max(values))
+    require(-(1 << 143) <= result[0] <= result[1] < 1 << 143, "Whole signed144 product proof")
+    return result
+
+
+def typed_source_domain(started):
+    """Walk original typed source; canonical signatures never reorder actual operations."""
+    reports, common = {}, None
+    for case, (assets, dates, pairs) in CASES.items():
+        check(started, admission=True)
+        receipt = PROGRAM / "A10_coefficient_run001" / case / "min-depth"
+        target, native = (
+            read_json(receipt / "target.json", started),
+            read_json(receipt / "source.json", started),
+        )
+        support = read_json(PROGRAM / "E03_support_run001" / (case + "_certificate.json"), started)
+        audit = read_json(PROGRAM / "E03_support_audit_run002" / (case + "_audit.json"), started)
+        graph = GraphAudit(target, started)
+        require(
+            native["word_width"] == W and native["fraction_bits"] == 40,
+            "Unchanged full72 f40 native ABI",
+        )
+        inputs = [node for node in target["nodes"] if node["op"] == "input"]
+        require(
+            len(inputs) == 2 * pairs == dates * (assets + 1), "All original independent q32 words"
+        )
+        same(native["inputs"], inputs, "Exact original source input inventory")
+        same(native["outputs"], target["outputs"], "Exact original financial outputs")
+        noninputs = [node for node in target["nodes"] if node["op"] != "input"]
+        require(
+            len(noninputs) == len(native["forward_calls"]), "Every original native call retained"
+        )
+        for node, call in zip(noninputs, native["forward_calls"], strict=True):
+            check(started)
+            same(
+                [node["args"], node["out"]],
+                [call["args"], call["out"]],
+                "Exact source call mapping",
+            )
+            require(
+                call["argument_copy_cx"] == 2 * W * len(node["args"]),
+                "All original full-word argument copies",
+            )
+        require(
+            support["complete_builder_equality"] is True
+            and support["all_original_uniform_word_patterns"] is True
+            and audit["passed"] is True
+            and audit["actual_stock_templates_checked"] == assets * dates
+            and audit["finite_samples_used"] is False,
+            "Original universal support and actual-source audit",
+        )
+        same(support["target_output"], target["outputs"], "Original support source identity")
+        stocks, templates = support["stock_ids"], []
+        require(
+            len(stocks) == assets * dates and len(set(stocks)) == len(stocks),
+            "Every distinct original stock site",
+        )
+        for stock in stocks:
+            check(started)
+            polynomial, exponent = graph.node(stock, "shift")["args"]
+            scaled = graph.node(exponent, "bits", {"shift": 40, "width": 72, "signed": True})[
+                "args"
+            ][0]
+            reducer = graph.node(scaled, "cmul")
+            clipped, inverse = reducer["args"][0], signed_coefficient(reducer["params"]["c"])
+            raw_log = graph.clamp(clipped)
+            upper = graph.node(clipped, "select")
+            lower_id = graph.node(upper["args"][1], "select")["args"][1]
+            lo, hi = graph.constant(lower_id), graph.constant(upper["args"][2])
+            require(
+                lo < hi and inverse > 0, "Actual signed clamp and positive reduction coefficient"
+            )
+            closure, pending = set(), [stock]
+            while pending:
+                check(started)
+                value = pending.pop()
+                if value == clipped or value in closure:
+                    continue
+                node = graph.node(value)
+                require(
+                    node["op"] in ("const", "add", "sub", "mul", "cmul", "bits", "shift")
+                    and len(node["out"]) == 1,
+                    "Original stock-only arithmetic template",
+                )
+                closure.add(value)
+                pending.extend(node["args"])
+            reductions = [
+                value
+                for value in closure
+                if graph.node(value)["op"] == "sub" and graph.node(value)["args"][0] == clipped
+            ]
+            require(len(reductions) == 1, "One exact stock reduction remainder")
+            remainder = reductions[0]
+            logarithm = graph.node(graph.node(remainder)["args"][1], "cmul")
+            ln2 = signed_coefficient(logarithm["params"]["c"])
+            same(
+                graph.node(logarithm["args"][0], "bits")["params"],
+                {"shift": -40, "width": 72, "signed": False},
+                "Exact full72 exponent scaling",
+            )
+            require(
+                graph.node(logarithm["args"][0])["args"] == [exponent] and ln2 > 0,
+                "Same native floor exponent used for shift and remainder",
+            )
+            signatures = {clipped: ["clipped-native-word"]}
+            for value in sorted(closure):
+                check(started)
+                node = graph.node(value)
+                children = [signatures[arg] for arg in node["args"]]
+                if node["op"] in ("add", "mul"):
+                    children.sort(key=lambda child: json.dumps(child, sort_keys=True))
+                signatures[value] = [node["op"], node["params"], children]
+            signature = hashlib.sha256(
+                json.dumps(signatures[stock], sort_keys=True).encode()
+            ).hexdigest()
+            require(
+                signature == audit["actual_stock_template_signature"],
+                "Exact E03 canonical original stock identity",
+            )
+            require(
+                [lo, hi] == support["clipped_log_integer_bounds"]
+                and inverse == support["literal_inverse_ln2"]
+                and ln2 == support["literal_ln2"],
+                "Every actual original reduction and signed clamp literal",
+            )
+            template = dict(
+                stock=stock,
+                polynomial=polynomial,
+                exponent=exponent,
+                clipped=clipped,
+                raw_log=raw_log,
+                remainder=remainder,
+                lower_raw=lo,
+                upper_raw=hi,
+                inverse_ln2_raw=inverse,
+                ln2_raw=ln2,
+                actual_stock_signature=signature,
+                original_native_stock_node_ids=sorted(closure),
+            )
+            templates.append(template)
+        reference = templates[0]
+        parameters = tuple(
+            reference[k] for k in ("lower_raw", "upper_raw", "inverse_ln2_raw", "ln2_raw")
+        )
+        require(
+            all(
+                tuple(row[k] for k in ("lower_raw", "upper_raw", "inverse_ln2_raw", "ln2_raw"))
+                == parameters
+                for row in templates
+            ),
+            "Common original remainder domain at all stock sites",
+        )
+        if common is None:
+            common = parameters
+        require(parameters == common, "One common whole domain across both original contracts")
+        lo, hi, inverse, ln2 = parameters
+        occupied, cells, next_raw = [], [], lo
+        for k in EXPONENTS:
+            check(started)
+            first = max(lo, -((-k * Q**2) // inverse))
+            last = min(hi, -((-(k + 1) * Q**2) // inverse) - 1)
+            empty = first > last
+            row = dict(k=k, empty=empty, clipped_raw_interval=[first, last])
+            if not empty:
+                require(
+                    first == next_raw and first * inverse // Q**2 == last * inverse // Q**2 == k,
+                    "Whole actual integer class cover, no gaps or overlaps",
+                )
+                next_raw = last + 1
+                remainder_bounds = word_range((first - k * ln2, last - k * ln2))
+                row["remainder_raw_interval"] = list(remainder_bounds)
+                occupied.append(row)
+            cells.append(row)
+        require(
+            next_raw == hi + 1 and len(cells) == 30, "Full clipped domain inside fixed30 classes"
+        )
+        hull = [
+            min(row["remainder_raw_interval"][0] for row in occupied),
+            max(row["remainder_raw_interval"][1] for row in occupied),
+        ]
+        reports[case] = dict(
+            actual_stock_sites=templates,
+            original_cells=cells,
+            whole_integer_remainder_hull=hull,
+            original_native_settings=list(parameters),
+            original_literal_exp_coefficients=support["literal_exp_coefficients"],
+            original_baseline_T_depth_qubits=list(BASELINE[case]),
+        )
+    same(
+        reports["B4x12"]["whole_integer_remainder_hull"],
+        reports["B8x52"]["whole_integer_remainder_hull"],
+        "Both original sources share the complete certified remainder hull",
+    )
+    return dict(schema="independent-A13-original-source-domain-v1", cases=reports)
+
+
+def exact_segments(hull, count):
+    require(type(count) is int and count in (1, 2, 4, 8), "Fixed segment inventory")
+    lo, hi = hull
+    require(
+        type(lo) is int and type(hi) is int and lo <= hi and hi - lo + 1 >= count,
+        "Finite nonempty raw-word domain",
+    )
+    width = hi - lo + 1
+    rows, next_raw = [], lo
+    for index in range(count):
+        first = lo + index * width // count
+        last = lo + (index + 1) * width // count - 1
+        center = nearest_fraction(Fraction(first + last, 2))
+        require(
+            first == next_raw and first <= center <= last,
+            "Complete native partition and exact internal center",
+        )
+        next_raw = last + 1
+        rows.append(
+            dict(
+                index=index,
+                first_raw=first,
+                last_raw=last,
+                center_raw=center,
+                local_interval=[
+                    encode(Fraction(first - center, Q)),
+                    encode(Fraction(last - center, Q)),
+                ],
+            )
+        )
+    require(next_raw == hi + 1, "Every raw integer selected once, including ties")
+    return rows
+
+
+def interval_scaled(pair, scale):
+    a, b = (value * scale for value in pair)
+    return (min(a, b), max(a, b))
+
+
+def exact_bernstein(coefficients, left, right, degree, started):
+    """Exact binomial substitution followed by the Bernstein degree identity."""
+    require(left <= right and len(coefficients) <= degree + 1, "Whole closed Bernstein domain")
+    width, monomials = right - left, []
+    for order in range(degree + 1):
+        check(started)
+        subtotal = Fraction(0)
+        for power in range(order, len(coefficients)):
+            subtotal += coefficients[power] * comb(power, order) * left ** (power - order)
+        monomials.append(subtotal * width**order)
+    rows = []
+    for index in range(degree + 1):
+        check(started)
+        rows.append(
+            sum(
+                (
+                    monomials[order] * Fraction(comb(index, order), comb(degree, order))
+                    for order in range(index + 1)
+                ),
+                Fraction(0),
+            )
+        )
+    return rows
+
+
+def dyadic_outward(pair, bits):
+    require(type(bits) is int and bits in (384, 544), "Fixed outward serialization grid")
+    scale = 1 << bits
+    lower, upper = (Fraction(value) * scale for value in pair)
+    require(lower <= upper, "Ordered enclosure before outward serialization")
+    return (
+        Fraction(lower.numerator // lower.denominator, scale),
+        Fraction(-((-upper.numerator) // upper.denominator), scale),
+    )
+
+
+def bernstein_witness(mp, coefficients, segment, terms, started):
+    """Independent interval power-to-Bernstein proof on the full CLOSED interval."""
+    require(
+        terms in (80, 112) and len(coefficients) <= 13, "Prospectively fixed proof and degree caps"
+    )
+    a, b = [rational(value) for value in segment["local_interval"]]
+    center = Fraction(segment["center_raw"], Q)
+    require(a <= 0 <= b and a < b, "Exact center inside nondegenerate closed segment")
+    ecoefficient = endpoints(mp.iv.exp(outward(mp, center)))
+    degree = terms - 1
+    polynomial = exact_bernstein(coefficients, a, b, degree, started)
+    taylor = exact_bernstein(
+        [Fraction(1, factorial(k)) for k in range(terms)], a, b, degree, started
+    )
+    bernstein = []
+    for implemented, witness in zip(polynomial, taylor, strict=True):
+        check(started)
+        scaled = interval_scaled(ecoefficient, witness)
+        pair = (implemented - scaled[1], implemented - scaled[0])
+        # Unsnap80 to check every primary384-bit enclosure. Own112 uses a fixed
+        # outward544-bit serialization grid, and pays its widening in its bound.
+        bernstein.append(dyadic_outward(pair, 544) if terms == 112 else pair)
+    hull = (min(pair[0] for pair in bernstein), max(pair[1] for pair in bernstein))
+    h = max(abs(a), abs(b))
+    upper_domain = Fraction(segment["last_raw"], Q)
+    tail = endpoints(
+        mp.iv.exp(outward(mp, upper_domain)) * outward(mp, h**terms / factorial(terms))
+    )[1]
+    error = max(abs(hull[0]), abs(hull[1])) + tail
+    return dict(
+        Taylor_terms=terms,
+        interval_digits=DIGITS,
+        exact_exp_center_enclosure=[encode(value) for value in ecoefficient],
+        closed_local_interval=segment["local_interval"],
+        Bernstein_coefficients=[[encode(value) for value in pair] for pair in bernstein],
+        Bernstein_hull=[encode(value) for value in hull],
+        Taylor_tail_upper=encode(tail),
+        uniform_absolute_error_upper=encode(error),
+        finite_grid_or_Remez_convergence_used_as_proof=False,
+    )
+
+
+def estrin_ir(degree, started):
+    require(degree in (4, 6, 8, 10, 12), "Exactly one declared degree")
+    nodes = [dict(id=0, op="input", args=[])]
+    nodes.extend(dict(id=j + 1, op="coefficient", args=[], degree=j) for j in range(degree + 1))
+    terms, power, level = list(range(1, degree + 2)), 0, 0
+    while len(terms) > 1:
+        check(started)
+        next_terms = []
+        for j in range(0, len(terms), 2):
+            if j + 1 == len(terms):
+                next_terms.append(terms[j])
+                continue
+            product = len(nodes)
+            nodes.append(dict(id=product, op="mul", args=[power, terms[j + 1]], level=level))
+            result = len(nodes)
+            nodes.append(dict(id=result, op="add", args=[terms[j], product], level=level))
+            next_terms.append(result)
+        if len(next_terms) > 1:
+            squared = len(nodes)
+            nodes.append(dict(id=squared, op="mul", args=[power, power], level=level))
+            power = squared
+        terms, level = next_terms, level + 1
+    return dict(
+        degree=degree,
+        nodes=nodes,
+        polynomial_output=terms[0],
+        unpaired_term_carried=True,
+        zero_padding=False,
+        unused_candidate_power_emitted=False,
+    )
+
+
+def polynomial_sum(first, second):
+    result = dict(first)
+    for degree, value in second.items():
+        result[degree] = result.get(degree, Fraction(0)) + value
+    return {degree: value for degree, value in result.items() if value != 0}
+
+
+def polynomial_product(first, second):
+    result = {}
+    for a, x in first.items():
+        for b, y in second.items():
+            result[a + b] = result.get(a + b, Fraction(0)) + x * y
+    return {degree: value for degree, value in result.items() if value != 0}
+
+
+def native_estrin_certificate(ir, words, local_raw, started):
+    """No execution/replay: whole-interval range and floor-error induction over the fixed IR."""
+    require(
+        len(words) == ir["degree"] + 1 and all(type(word) is int for word in words),
+        "All actual selected coefficient words in ascending degree",
+    )
+    local = word_range(local_raw)
+    radius = Fraction(max(abs(value) for value in local), Q)
+    ranges, polynomials, errors, rows, products = {}, {}, {}, [], []
+    for node in ir["nodes"]:
+        check(started)
+        value, op = node["id"], node["op"]
+        if op == "input":
+            bounds, polynomial, error = local, {1: Fraction(1)}, Fraction(0)
+        elif op == "coefficient":
+            word = signed_coefficient(words[node["degree"]])
+            bounds, polynomial, error = (word, word), {0: Fraction(word, Q)}, Fraction(0)
+        else:
+            left, right = node["args"]
+            first, second = polynomials[left], polynomials[right]
+            if op == "add":
+                bounds = (ranges[left][0] + ranges[right][0], ranges[left][1] + ranges[right][1])
+                polynomial = polynomial_sum(first, second)
+                error = errors[left] + errors[right]
+            else:
+                require(op == "mul", "No implicit operation or free floor in candidate IR")
+                product = integer_product(ranges[left], ranges[right], square=left == right)
+                bounds = (product[0] // Q, product[1] // Q)
+                products.append(dict(value=value, product_raw_bounds=list(product)))
+                polynomial = polynomial_product(first, second)
+                ma = sum((abs(c) * radius**d for d, c in first.items()), Fraction(0))
+                mb = sum((abs(c) * radius**d for d, c in second.items()), Fraction(0))
+                error = ma * errors[right] + mb * errors[left] + errors[left] * errors[right] + EPS
+                require(
+                    (ma + errors[left]) * (mb + errors[right]) * Q**2 < 1 << 143,
+                    "Candidate ideal/native error-induction product also signed144 safe",
+                )
+        ranges[value] = word_range(bounds)
+        magnitude = sum((abs(c) * radius**d for d, c in polynomial.items()), Fraction(0)) + error
+        require(magnitude * Q < 1 << 71, "Candidate whole stored-word error induction no-wrap")
+        polynomials[value], errors[value] = polynomial, error
+        rows.append(
+            dict(
+                value=value,
+                op=op,
+                raw_bounds=list(bounds),
+                magnitude_upper=encode(magnitude),
+                native_floor_error_upper=encode(error),
+            )
+        )
+    output = ir["polynomial_output"]
+    same(
+        [encode(polynomials[output].get(j, Fraction(0))) for j in range(ir["degree"] + 1)],
+        [encode(Fraction(word, Q)) for word in words],
+        "Fixed IR evaluates exactly the selected quantized polynomial",
+    )
+    return dict(
+        native_intermediate_ranges=rows,
+        signed144_products=products,
+        native_floor_error_upper=encode(errors[output]),
+        native_polynomial_raw_bounds=list(ranges[output]),
+        all_native72_product144_guards_passed=True,
+        every_actual_multiplication_floor_paid=True,
+    )
+
+
+def class_segment_intersections(
+    mp, domain, segments, words, quantized_errors, degree, started, authorized_ln2_error=None
+):
+    """All fixed30 classes times every segment, including empty native intersections."""
+    ir = estrin_ir(degree, started)
+    lo, hi, inverse, ln2_word = domain["original_native_settings"]
+    actual_ln2 = Fraction(ln2_word, Q)
+    true_ln2 = endpoints(mp.iv.log(outward(mp, 2)))
+    ln_error = max(abs(actual_ln2 - value) for value in true_ln2)
+    if authorized_ln2_error is not None:
+        require(
+            authorized_ln2_error >= ln_error,
+            "Primary reduction literal envelope independently valid",
+        )
+        ln_error = authorized_ln2_error
+    rows, stock_error = [], Fraction(0)
+    for cell in domain["original_cells"]:
+        for segment in segments:
+            check(started)
+            k, index = cell["k"], segment["index"]
+            first, last = cell["clipped_raw_interval"]
+            if not cell["empty"]:
+                first = max(first, segment["first_raw"] + k * ln2_word)
+                last = min(last, segment["last_raw"] + k * ln2_word)
+            empty = cell["empty"] or first > last
+            row = dict(k=k, segment=index, empty=empty, clipped_log_raw_bounds=[first, last])
+            if not empty:
+                require(
+                    lo <= first <= last <= hi
+                    and first * inverse // Q**2 == last * inverse // Q**2 == k,
+                    "Exact whole original reduction-class intersection",
+                )
+                remainder = word_range((first - k * ln2_word, last - k * ln2_word))
+                local = word_range(
+                    (remainder[0] - segment["center_raw"], remainder[1] - segment["center_raw"])
+                )
+                require(
+                    segment["first_raw"] <= remainder[0] <= remainder[1] <= segment["last_raw"],
+                    "Actual integer selector ties and exact center subtraction",
+                )
+                native = native_estrin_certificate(ir, words[index], local, started)
+                minimum, maximum = native["native_polynomial_raw_bounds"]
+                require(
+                    minimum > 0, "Every candidate stock polynomial is positive on its actual cell"
+                )
+                require(-72 < k < 72, "Same original full-word shift exponent")
+                shifted = word_range(
+                    (minimum << k, maximum << k) if k >= 0 else (minimum >> -k, maximum >> -k)
+                )
+                floor = rational(native["native_floor_error_upper"])
+                approximation = quantized_errors[index]
+                r_max = Fraction(remainder[1], Q)
+                scale = Fraction(2) ** k
+                reduction = endpoints(
+                    outward(mp, scale)
+                    * mp.iv.exp(outward(mp, r_max))
+                    * (mp.iv.exp(outward(mp, abs(k) * ln_error)) - 1)
+                )[1]
+                final_floor = EPS if k < 0 else Fraction(0)
+                absolute = scale * (approximation + floor) + reduction + final_floor
+                require(absolute >= 0, "Complete nonnegative candidate absolute stock envelope")
+                stock_error = max(stock_error, absolute)
+                row.update(
+                    remainder_raw_bounds=list(remainder),
+                    local_raw_bounds=list(local),
+                    native_floor_error_upper=encode(floor),
+                    native_intermediate_ranges=native["native_intermediate_ranges"],
+                    signed144_products=native["signed144_products"],
+                    native_polynomial_raw_bounds=native["native_polynomial_raw_bounds"],
+                    ln2_literal_error_upper=encode(ln_error),
+                    reduction_stock_error_upper=encode(reduction),
+                    negative_shift_floor_upper=encode(final_floor),
+                    absolute_stock_error_upper=encode(absolute),
+                    stock_raw_bounds=list(shifted),
+                    all_native72_product144_and_shift_guards_passed=True,
+                )
+            rows.append(row)
+    require(len(rows) == 30 * len(segments), "Every empty and nonempty class/segment row retained")
+    for cell in domain["original_cells"]:
+        if cell["empty"]:
+            continue
+        covered = sorted(
+            row["clipped_log_raw_bounds"]
+            for row in rows
+            if row["k"] == cell["k"] and not row["empty"]
+        )
+        require(
+            covered
+            and covered[0][0] == cell["clipped_raw_interval"][0]
+            and covered[-1][1] == cell["clipped_raw_interval"][1]
+            and all(first[1] + 1 == second[0] for first, second in zip(covered, covered[1:])),
+            "Candidate selector covers each original integer class without gap or overlap",
+        )
+    return dict(
+        classes_segments=rows,
+        absolute_stock_error_upper=encode(stock_error),
+        exact_candidate_IR=ir,
+        all_fixed_classes_and_segments_retained=True,
+        original_G2_allocation_or_safety_not_transferred=True,
+    )
+
+
+def canonical_digest(value, started):
+    check(started)
+    data = json.dumps(value, sort_keys=True, separators=(",", ":"), allow_nan=False).encode()
+    check(started)
+    state = hashlib.sha256()
+    for offset in range(0, len(data), 1 << 20):
+        check(started)
+        state.update(data[offset : offset + (1 << 20)])
+        check(started)
+    return state.hexdigest()
+
+
+def finite_binary(value):
+    point = rational(value)
+    denominator = point.denominator
+    require(denominator & (denominator - 1) == 0, "Exact serialized finite binary fitting value")
+    return point
+
+
+def alternating_selection(residuals, length, started):
+    """Independent exact threshold feasibility, then additive/lexicographic DP."""
+    points = [
+        (i, abs(value), 1 if value > 0 else -1) for i, value in enumerate(residuals) if value != 0
+    ]
+    thresholds = sorted({height for _, height, _ in points})
+    require(thresholds, "Alternating nonzero candidate residuals")
+
+    def possible(threshold):
+        last, runs = None, 0
+        for _, height, sign in points:
+            check(started)
+            if height >= threshold and sign != last:
+                runs += 1
+                last = sign
+        return runs >= length
+
+    require(possible(thresholds[0]), "Declared alternating subset exists")
+    low, high = 0, len(thresholds)
+    while low + 1 < high:
+        check(started)
+        middle = (low + high) // 2
+        if possible(thresholds[middle]):
+            low = middle
+        else:
+            high = middle
+    threshold = thresholds[low]
+    states = {}
+    for index, height, sign in points:
+        check(started)
+        if height < threshold:
+            continue
+        previous = dict(states)
+        proposals = [(1, sign, height, (index,))]
+        for (size, last), (total, indices) in previous.items():
+            if size < length and last != sign:
+                proposals.append((size + 1, sign, total + height, indices + (index,)))
+        for size, ending, total, indices in proposals:
+            old = states.get((size, ending))
+            if old is None or total > old[0] or total == old[0] and indices < old[1]:
+                states[(size, ending)] = (total, indices)
+    candidates = [entry for (size, _), entry in states.items() if size == length]
+    require(candidates, "Threshold-constrained alternating optimum")
+    total, indices = min(candidates, key=lambda value: (-value[0], value[1]))
+    require(
+        min(abs(residuals[index]) for index in indices) == threshold, "Exact bottleneck attained"
+    )
+    return threshold, total, list(indices)
+
+
+def audit_fit_segment(declared, degree, segment, started):
+    expected = dict(
+        segment=segment["index"],
+        raw_bounds=[segment["first_raw"], segment["last_raw"]],
+        center_raw=segment["center_raw"],
+        local_interval=segment["local_interval"],
+    )
+    for key, value in expected.items():
+        same(declared[key], value, "Exact preregistered native segment: " + key)
+    require(
+        declared["degree"] == degree
+        and declared["coefficients_from_round32_solve"] is True
+        and declared["extra33rd_solve"] is False
+        and declared["root_search_fitting_evidence_only"] is True
+        and declared["global_minimax_optimality_claim"] is False,
+        "Fixed fitting claim scope",
+    )
+    rounds = declared["exchange_rounds"]
+    require(type(rounds) is list and len(rounds) == 32, "Exactly32 finite solve/exchange rounds")
+    left, right = (rational(value) for value in segment["local_interval"])
+    previous = None
+    for index, row in enumerate(rounds):
+        check(started, admission=True)
+        require(row["round"] == index + 1, "Exact round order")
+        solve = [finite_binary(value) for value in row["solve_nodes"]]
+        require(
+            len(solve) == degree + 2
+            and all(a < b for a, b in zip(solve, solve[1:]))
+            and left <= solve[0] <= solve[-1] <= right,
+            "Distinct in-domain solve nodes",
+        )
+        if previous is not None:
+            same(row["solve_nodes"], previous, "No hidden fitting solve or exchange")
+        solved = [finite_binary(value) for value in row["solved_coefficients"]]
+        require(len(solved) == degree + 1, "Each solve has exactly the declared coefficient count")
+        finite_binary(row["solved_alternating_error"])
+        extrema = [finite_binary(value) for value in row["candidate_extrema"]]
+        heights = [finite_binary(value) for value in row["candidate_residuals"]]
+        require(
+            len(extrema) == len(heights)
+            and 2 <= len(extrema) <= 67
+            and extrema[0] == left
+            and extrema[-1] == right
+            and all(a < b for a, b in zip(extrema, extrema[1:])),
+            "Endpoints and deduplicated candidate locations",
+        )
+        seen_cells = set()
+        for bracket in row["candidate_stationary_brackets"]:
+            check(started)
+            cell = bracket["grid_cell"]
+            require(
+                type(cell) is int and 0 <= cell < 64 and cell not in seen_cells,
+                "Each frozen64 bracket at most once",
+            )
+            seen_cells.add(cell)
+            a, b = (finite_binary(value) for value in bracket["final_bracket"])
+            cell_left = left + (right - left) * cell / 64
+            cell_right = left + (right - left) * (cell + 1) / 64
+            require(
+                cell_left <= a <= b <= cell_right and b - a <= (cell_right - cell_left) / (1 << 24),
+                "Exactly24 bisection bound, including exact root collapse",
+            )
+            require(
+                (a + b) / 2 in extrema, "Every retained bracket midpoint is a fitting candidate"
+            )
+        threshold, total, indices = alternating_selection(heights, degree + 2, started)
+        same(row["selected_next_node_indices"], indices, "Exact bottleneck, sum and lex exchange")
+        same(
+            row["exact_exchange_bottleneck"],
+            encode(threshold),
+            "Exact serialized bottleneck threshold",
+        )
+        require(
+            row["exact_two_pass_bottleneck_then_sum_lex"] is True,
+            "Declared finite exchange algorithm",
+        )
+        following = [row["candidate_extrema"][value] for value in indices]
+        same(row["selected_next_nodes"], following, "Selected node positions and index ordering")
+        previous = following
+    coefficients = [finite_binary(value) for value in declared["coefficients_before_quantization"]]
+    same(
+        declared["coefficients_before_quantization"],
+        rounds[-1]["solved_coefficients"],
+        "Round32 coefficients, no33rd solve",
+    )
+    words = [signed_coefficient(nearest_fraction(value * Q)) for value in coefficients]
+    same(declared["coefficient_raw"], words, "Exactly one signedf40 nearest/ties-even conversion")
+    return (
+        coefficients,
+        words,
+        dict(
+            rounds_structurally_checked=32,
+            selected_exchange_objectives_exact=True,
+            fitting_numeric_solve_or_root_search_reexecuted=False,
+            fitting_diagnostics_used_as_uniform_proof=False,
+        ),
+    )
+
+
+def audit_segment_certificate(mp, declared, coefficients, words, segment, started):
+    for key, expected in (
+        ("segment", segment["index"]),
+        ("raw_bounds", [segment["first_raw"], segment["last_raw"]]),
+        ("center_raw", segment["center_raw"]),
+        ("local_interval", segment["local_interval"]),
+        ("Taylor_terms", 80),
+        ("Bernstein_degree", 79),
+        ("Bernstein_coefficients_count", 80),
+        ("Bernstein_outward_binary_grid_bits", 384),
+    ):
+        same(declared[key], expected, "Frozen primary uniform proof setting: " + key)
+    require(
+        declared["mesh_or_exchange_convergence_used_as_uniform_proof"] is False,
+        "Full interval proof is independent of fitting mesh",
+    )
+    own80, own112, authorized = {}, {}, {}
+    for name, actual in (
+        ("fit", coefficients),
+        ("quantized", [Fraction(word, Q) for word in words]),
+    ):
+        check(started, admission=True)
+        proof = bernstein_witness(mp, actual, segment, 80, started)
+        enclosures_contain(
+            declared["exp_center_enclosure"],
+            proof["exact_exp_center_enclosure"],
+            "Fresh130 exponential center inclusion",
+        )
+        saved = declared[name + "_Bernstein_coefficient_enclosures"]
+        require(
+            type(saved) is list and len(saved) == 80,
+            "All actual80 primary coefficient enclosures retained",
+        )
+        maximum = Fraction(0)
+        for old, fresh in zip(saved, proof["Bernstein_coefficients"], strict=True):
+            check(started)
+            enclosures_contain(
+                old, fresh, "Every primary Bernstein coefficient independently enclosed"
+            )
+            lo, hi = (rational(value) for value in old)
+            require(
+                lo * (1 << 384) == int(lo * (1 << 384)) and hi * (1 << 384) == int(hi * (1 << 384)),
+                "Fixed outward384-bit grid evidence",
+            )
+            maximum = max(maximum, abs(lo), abs(hi))
+        require(
+            declared[name + "_Bernstein_SHA256"] == canonical_digest(saved, started),
+            "Digest names actual saved coefficient list",
+        )
+        tail = rational(declared["Taylor_tail_upper"])
+        require(
+            tail >= rational(proof["Taylor_tail_upper"]) >= 0,
+            "Whole closed interval analytic Taylor tail",
+        )
+        claimed = rational(declared[name + "_uniform_error_upper"])
+        require(
+            claimed == maximum + tail, "Saved outward conversion and analytic tail are both paid"
+        )
+        authorized[name] = claimed
+        # Do not compare a degree79 hull to degree111: distinct valid witnesses
+        # can produce different conservative hull bounds.
+        own80[name] = dict(
+            Taylor_terms=80,
+            interval_digits=DIGITS,
+            every_saved_primary_coefficient_contains_independent130=True,
+            verified_primary_uniform_error_upper=encode(claimed),
+            independent_analytic_tail_upper=proof["Taylor_tail_upper"],
+        )
+        own112[name] = bernstein_witness(mp, actual, segment, 112, started)
+        own112[name]["Bernstein_outward_binary_grid_bits"] = 544
+    return authorized, dict(
+        primary80_authorizations=own80,
+        independent112_certificates=own112,
+        independent112_compared_as_primary80_replacement=False,
+    )
+
+
+def implementation_policy(started):
+    policy = read_json(IMPLEMENTATION, started)
+    require(
+        policy["schema"] == "a13-exp-frontier-implementation-preflight-v1",
+        "Exact implementation release",
+    )
+    same(policy["CPU_admission_wall_seconds"], [CPU, ADMISSION, WALL], "Same all20 row budget")
+    same(policy["fixed_grid"], [list(value) for value in GRID], "No extra/adaptive architecture")
+    require(
+        policy["primary_digits"] == 90
+        and policy["independent_digits"] == DIGITS
+        and policy["threads"] == 1
+        and policy["new_fixture_credit"] == 0,
+        "Fixed independent precision and zero credit",
+    )
+    require(
+        policy["candidate_G2_absolute_stock_error_allocation"] is None
+        and policy["candidate_G2_barrier_band_allocation"] is None
+        and policy["gate_emission_authorized"] is False,
+        "Allocation-free exploratory screen only",
+    )
+    same(
+        policy["method_document_SHA256"],
+        {METHOD.name: METHOD_SHA, METHOD_DOC.name: METHOD_DOC_SHA},
+        "Held method bytes",
+    )
+    require(policy["A07_manifest_SHA256"] == A07_SHA, "Actual frozen A07 interface owner")
+    author = policy["author_sha256"]
+    require(
+        type(author) is dict and set(author) == {AUTHOR.name, PRODUCER_AUTHOR.name},
+        "Both reviewed executable pins",
+    )
+    for name, expected in author.items():
+        check(started)
+        require(
+            type(expected) is str and SHA_PATTERN.fullmatch(expected),
+            "Null source pin blocks prepare",
+        )
+        require(sha(RESEARCH / name, started) == expected, "Exact author source SHA")
+    return policy
+
+
+def no_failure(receipt):
+    require(
+        not any(
+            (receipt / name).exists()
+            for name in (
+                "FAILED_UNSEALED.json",
+                "failure.json",
+                "run_failure.json",
+                "prepare_failure.json",
+            )
+        ),
+        "No failed, unsealed or partial prerequisite",
+    )
+
+
+def freeze_owner(path, expected_manifest, frozen, external, started):
+    """Full old receipt maps and actual owned membership, without replay or LIVE waiver."""
+    path = bind(frozen, external, path, expected_manifest, started)
+    receipt = path.parent
+    no_failure(receipt)
+    data = read_json(path, started)
+    flat = path == PROGRAM / "A10_coefficient_run001/manifest.json" and "files" not in data
+    if flat:
+        mappings = [("flat_owned_files", data)]
+    else:
+        require(
+            data.get("manifest_self_hash_excluded") is True, "Exact self-hash exclusion convention"
+        )
+        mappings = [
+            (field, data.get(field, {}))
+            for field in ("files", "frozen_inputs", "external_runtime_inputs")
+        ]
+    owned, owned_expected, records = set(), {}, []
+    for field, mapping in mappings:
+        require(
+            type(mapping) is dict and (mapping or field != "files"), "Complete typed receipt map"
+        )
+        for original, expected in mapping.items():
+            check(started)
+            require(type(original) is str, "Typed original map path")
+            key = original.replace("\\", "/")
+            if field == "external_runtime_inputs":
+                require(Path(original).is_absolute(), "Explicit actual external path")
+                route = Path(original)
+            else:
+                require(not Path(original).is_absolute(), "ROOT or receipt relative original path")
+                route = (
+                    ROOT / key
+                    if key.startswith(
+                        ("results/", "research/", "docs/", "manuscript/", ".context/")
+                    )
+                    else receipt / key
+                )
+            archived = False
+            if field == "frozen_inputs":
+                original_actual = route.resolve(strict=False)
+                require(
+                    original_actual.is_relative_to(ROOT)
+                    and original_actual.relative_to(ROOT).as_posix() == key,
+                    "Canonical historical ROOT dependency origin",
+                )
+                if original_actual.is_file() and sha(original_actual, started) == expected:
+                    actual = bind(frozen, external, original_actual, expected, started)
+                else:
+                    matches = [
+                        candidate
+                        for candidate, value in owned_expected.items()
+                        if value == expected
+                        and candidate.name
+                        in (original_actual.name, "executed_" + original_actual.name)
+                    ]
+                    require(
+                        matches, "Exact owner-owned equal-SHA archive required; no expected waiver"
+                    )
+                    actual = bind(frozen, external, sorted(matches)[0], expected, started)
+                    archived = True
+            else:
+                actual = bind(frozen, external, route, expected, started)
+            if field in ("files", "flat_owned_files"):
+                require(
+                    actual.is_relative_to(receipt) and actual != path and actual not in owned,
+                    "No escaped, duplicate, self-hashed or aliased owned artifact",
+                )
+                owned.add(actual)
+                owned_expected[actual] = expected
+                canonical = (
+                    actual.relative_to(ROOT).as_posix()
+                    if key.startswith("results/")
+                    else actual.relative_to(receipt).as_posix()
+                )
+                require(canonical == key, "Exact historical slash-normalized own key")
+            elif field == "frozen_inputs":
+                require(
+                    actual.is_relative_to(ROOT),
+                    "Current or exact owner-owned archived dependency route",
+                )
+            else:
+                require(
+                    not actual.is_relative_to(ROOT) and str(actual) == original,
+                    "Separate canonical external runtime key",
+                )
+            records.append(
+                dict(
+                    owner_manifest=path.relative_to(ROOT).as_posix(),
+                    source_map=field,
+                    original_key=original,
+                    verified_input_path=(
+                        actual.relative_to(ROOT).as_posix()
+                        if actual.is_relative_to(ROOT)
+                        else str(actual)
+                    ),
+                    original_expected_sha256=expected,
+                    expected_hash_waived=False,
+                )
+            )
+            records[-1]["archived_equal_SHA_route"] = archived
+    actual_owned, byte_count = set(), 0
+    for candidate in receipt.rglob("*"):
+        check(started)
+        if candidate.is_file():
+            actual = canonical_path(candidate, started)
+            require(
+                actual.is_relative_to(receipt) and actual not in actual_owned,
+                "Actual owned inventory cannot alias or escape",
+            )
+            actual_owned.add(actual)
+            byte_count += actual.stat().st_size
+            require(
+                len(actual_owned) <= 25000 and byte_count <= 8 * 1024**3,
+                "Finite receipt byte/membership cap",
+            )
+    require(actual_owned == owned | {path}, "Complete exact original owned membership")
+    if (receipt / "summary.json").is_file():
+        summary = read_json(receipt / "summary.json", started)
+        require(
+            summary.get("passed") is True and not summary.get("budget_censored", False),
+            "Actual successful original scoped prerequisite",
+        )
+    no_failure(receipt)
+    return records
+
+
+def selected_inputs(policy, frozen, external, started):
+    bind(frozen, external, METHOD, METHOD_SHA, started)
+    bind(frozen, external, METHOD_DOC, METHOD_DOC_SHA, started)
+    method = read_json(METHOD, started)
+    require(method["schema"] == "a13-exp-frontier-author-preflight-v1", "Exact held A13 method")
+    pins = method["selected_existing_manifest_expected_pins"]
+    owners = {key: expected for key, expected in pins.items() if key.endswith("/manifest.json")}
+    owners["results/limitation_program_20261001/A07_run003/manifest.json"] = A07_SHA
+    records = []
+    for key, expected in owners.items():
+        check(started)
+        records.extend(freeze_owner(ROOT / key, expected, frozen, external, started))
+    for key, expected in pins.items():
+        check(started)
+        actual = bind(frozen, external, ROOT / key, expected, started)
+        if not key.endswith("/manifest.json"):
+            require(
+                any(
+                    row["verified_input_path"] == actual.relative_to(ROOT).as_posix()
+                    and row["original_expected_sha256"] == expected
+                    for row in records
+                ),
+                "Exact original equal-SHA selected membership",
+            )
+    for name, expected in method["A07_domain_interface"][
+        "selected_existing_bounds_expected_pins"
+    ].items():
+        bind(frozen, external, PROGRAM / "A07_run003" / name, expected, started)
+    for path in (AUTHOR, PRODUCER_AUTHOR, IMPLEMENTATION, IMPLEMENTATION_DOC):
+        bind(frozen, external, path, sha(path, started), started)
+    return method, records
+
+
+def source_packet(policy, frozen, external, started):
+    method, origins = selected_inputs(policy, frozen, external, started)
+    require(SOURCE.is_dir() and SOURCE != OUTPUT, "Actual separate completed source receipt")
+    manifest_path = SOURCE / "manifest.json"
+    no_failure(SOURCE)
+    manifest_sha = sha(manifest_path, started)
+    freeze_owner(manifest_path, manifest_sha, frozen, external, started)
+    manifest = read_json(manifest_path, started)
+    outcome = read_json(SOURCE / "completion_outcome.json", started)
+    summary = read_json(SOURCE / "summary.json", started)
+    require(
+        manifest["schema"] == "a13-exp-frontier-terminal-manifest-v1",
+        "Actual fixed primary terminal schema",
+    )
+    for value in (manifest, outcome, summary):
+        require(
+            value["completed"] is True
+            and value["passed"] is True
+            and value["budget_censored"] is False
+            and not value.get("rejection", False)
+            and not value.get("failed", False),
+            "Complete uncensored screen, not partial failure",
+        )
+    same(
+        outcome["limits_CPU_admission_wall"],
+        [CPU, ADMISSION, WALL],
+        "Original primary full process budget",
+    )
+    for observation in (
+        outcome["budget"],
+        manifest["terminal_budget_observation"],
+        summary["budget"],
+    ):
+        require(
+            0 <= observation["process_CPU_seconds"] < CPU
+            and 0 <= observation["wall_seconds"] < WALL,
+            "Actual primary terminal within hard budget",
+        )
+    for value in (summary, outcome):
+        require(
+            value["new_test_credit"] == 0
+            and value["full_G2"] is False
+            and value["adoption"] is False
+            and value["cost_transfer"] is False,
+            "Original exploratory scope and zero credit preserved",
+        )
+    protocol = read_json(SOURCE / "protocol.json", started)
+    require(protocol["schema"] == "a13-exp-frontier-protocol-v1", "Exact primary preparation")
+    same(
+        protocol["author_sha256"],
+        policy["author_sha256"],
+        "Primary and independent reviewed sources identical",
+    )
+    same(
+        protocol["CPU_admission_wall_seconds"],
+        [CPU, ADMISSION, WALL],
+        "Prepared primary all20 clock",
+    )
+    for name, expected in policy["author_sha256"].items():
+        require(
+            sha(SOURCE / "executed_code" / name, started) == expected,
+            "Immutable actual executed author copy",
+        )
+    no_failure(SOURCE)
+    return (
+        method,
+        origins,
+        dict(
+            manifest_sha256=manifest_sha,
+            manifest=manifest,
+            summary=summary,
+            outcome=outcome,
+            protocol=protocol,
+        ),
+    )
+
+
+def saved_library(source, started):
+    route = source["library_workspace_relative"].replace("\\", "/")
+    require(".." not in route.split("/"), "No saved library traversal")
+    marker = route.lower().find("/results/")
+    actual = canonical_path(ROOT / (route[marker + 1 :] if marker >= 0 else route), started)
+    require(actual.is_relative_to(PROGRAM), "Exact ROOT-owned saved native library")
+    return actual
+
+
+def original_native_metadata(frozen, started):
+    cases = {}
+    for case in CASES:
+        check(started, admission=True)
+        route = PROGRAM / "A10_coefficient_run001" / case / "min-depth"
+        target, source, schedule = (
+            read_json(route / name, started)
+            for name in ("target.json", "source.json", "schedule_capped.json")
+        )
+        require(
+            source["word_width"] == W and source["fraction_bits"] == 40, "Full source native ABI"
+        )
+        require(
+            source["exact_clifford_t"] is True and source["arbitrary_rotations"] == 0,
+            "Source exact7T applicable macro premise",
+        )
+        same(
+            [schedule["resources"][key] for key in ("t_count", "t_depth", "logical_qubits")],
+            list(BASELINE[case]),
+            "Original accepted capped resource row",
+        )
+        require(schedule["qubit_cap"] == BASELINE[case][2], "Same original whole-function cap")
+        for name, value in (("target", target), ("source", source)):
+            check(started)
+            digest = hashlib.sha256(json.dumps(value, sort_keys=True).encode()).hexdigest()
+            require(
+                schedule[name + "_fingerprint"] == digest,
+                "Actual baseline source/target fingerprint",
+            )
+        library, leaves = saved_library(source, started), {}
+        for key in source["library_keys"]:
+            check(started)
+            descriptor = library / (key + ".json")
+            require(
+                root_key(descriptor, started) in frozen,
+                "Each actual native descriptor frozen before kernel",
+            )
+            entry = read_json(descriptor, started)
+            require(
+                entry["key"] == key
+                and entry["resources"]["t_count"] == 7 * entry["resources"]["ccx"],
+                "Exact original leaf identity and paid7T count",
+            )
+            gate = canonical_path(library / entry["gate_file"], started)
+            require(
+                gate.parent == library
+                and root_key(gate, started) in frozen
+                and sha(gate, started) == entry["sha256"],
+                "Full frozen actual gate bytes without scanning",
+            )
+            leaves[key] = entry
+        actual_nodes = [node for node in target["nodes"] if node["op"] != "input"]
+        require(
+            len(actual_nodes) == len(source["forward_calls"]),
+            "Complete actual forward call catalog",
+        )
+        for node, call in zip(actual_nodes, source["forward_calls"], strict=True):
+            check(started)
+            entry = leaves[call["leaf"]]
+            same(
+                [entry["op"], entry["params"]],
+                [node["op"], node["params"]],
+                "Same actual leaf parameters",
+            )
+            same(
+                [call["args"], call["out"]],
+                [node["args"], node["out"]],
+                "Native call operand addresses",
+            )
+            require(
+                call["argument_copy_cx"] == 2 * W * len(node["args"]),
+                "Every full72 argument copy in and out",
+            )
+        interface = read_json(PROGRAM / "A07_run003" / (case + "_bounds.json"), started)
+        require(
+            interface["target_sha256"] == sha(route / "target.json", started),
+            "A07 exact source domain interface",
+        )
+        for node in target["nodes"]:
+            check(started)
+            if node["op"] == "input":
+                require(node["params"]["bits"] == 32, "Original fullq32 inputs")
+                same(
+                    interface["intervals"][str(node["out"][0])],
+                    [0, N - 1],
+                    "Universal A07 input domain",
+                )
+        cases[case] = dict(
+            target=target,
+            source=source,
+            schedule=schedule,
+            leaves=leaves,
+            library=library,
+            A07=interface,
+        )
+    return cases
+
+
+def reconcile_domain(declared, independent, metadata_cases, started):
+    require(
+        declared["schema"] == "a13-source-domain-binding-v1"
+        and declared["fixed30_classes_retained"] is True
+        and declared["generic_zero_to_ln2_domain_assumed"] is False
+        and declared["source_or_gate_array_executed"] is False,
+        "Original source/domain scope",
+    )
+    require(set(declared["cases"]) == set(CASES), "Both original source contracts")
+    hull = independent["cases"]["B4x12"]["whole_integer_remainder_hull"]
+    same(declared["common_remainder_raw_hull"], hull, "Fresh complete actual remainder hull")
+    for case, (_, _, pairs) in CASES.items():
+        check(started)
+        own, primary, actual = (
+            independent["cases"][case],
+            declared["cases"][case],
+            metadata_cases[case],
+        )
+        lo, hi, inverse, logarithm = own["original_native_settings"]
+        require(
+            declared["inverse_ln2_word"] == inverse and declared["ln2_word"] == logarithm,
+            "Same actual signed reduction coefficients",
+        )
+        same(primary["clipped_log_raw_bounds"], [lo, hi], "Actual signed original clamp domain")
+        require(
+            primary["actual_stock_sites"] == len(own["actual_stock_sites"])
+            and primary["original_joint_pairs"] == pairs,
+            "All original stock/pair sites",
+        )
+        same(
+            primary["original_13_coefficients_raw"],
+            own["original_literal_exp_coefficients"],
+            "Original coefficient baseline only",
+        )
+        same(
+            primary["baseline_capped_resources"],
+            actual["schedule"]["resources"],
+            "Unchanged actual capped row",
+        )
+        same(
+            primary["baseline_serial_resources"],
+            actual["source"]["resources"],
+            "Unchanged complete source serial row",
+        )
+        expected_sites = []
+        for stock_site in own["actual_stock_sites"]:
+            check(started)
+            expected_sites.append(
+                dict(
+                    stock=stock_site["stock"],
+                    clipped=stock_site["clipped"],
+                    raw_log=stock_site["raw_log"],
+                    polynomial=stock_site["polynomial"],
+                    exponent=stock_site["exponent"],
+                    remainder=stock_site["remainder"],
+                    low=stock_site["lower_raw"],
+                    high=stock_site["upper_raw"],
+                    inverse_ln2=stock_site["inverse_ln2_raw"],
+                    ln2=stock_site["ln2_raw"],
+                    values=stock_site["original_native_stock_node_ids"],
+                    actual_original_support_signature=stock_site["actual_stock_signature"],
+                )
+            )
+            bound = word_range(actual["A07"]["intervals"][str(stock_site["clipped"])])
+            require(
+                lo <= bound[0] <= bound[1] <= hi,
+                "A07 original clipped domain, no candidate safety transfer",
+            )
+        same(
+            primary["stock_sites"],
+            expected_sites,
+            "Every original template and exact commutative signature",
+        )
+        require(
+            primary["original_support_signature"]
+            == expected_sites[0]["actual_original_support_signature"],
+            "Exact E03 signature witness",
+        )
+        cells = []
+        for row in own["original_cells"]:
+            check(started)
+            item = dict(
+                k=row["k"], empty=row["empty"], clipped_log_raw_bounds=row["clipped_raw_interval"]
+            )
+            if not row["empty"]:
+                item["remainder_raw_bounds"] = row["remainder_raw_interval"]
+            cells.append(item)
+        same(
+            primary["reduction_cells"],
+            cells,
+            "All fixed30 empty and occupied cells independently recovered",
+        )
+    return dict(
+        original_domain_authorized=True,
+        original_E03_support_transferred_to_changed_polynomial=False,
+        actual_source_calls_or_gate_arrays_executed=False,
+        all_original_templates_checked=464,
+    )
+
+
+def primary_plan(ir):
+    nodes = []
+    for node in ir["nodes"]:
+        item = dict(
+            value=node["id"], op="local" if node["op"] == "input" else node["op"], args=node["args"]
+        )
+        if "degree" in node:
+            item["degree"] = node["degree"]
+        nodes.append(item)
+    return dict(
+        nodes=nodes,
+        output=ir["polynomial_output"],
+        odd_term_carried_without_zero_pad=True,
+        unused_candidate_power_emitted=False,
+    )
+
+
+def audit_architecture(mp, declared, fit_rows, degree, count, domain, started):
+    require(
+        declared["degree"] == degree and declared["segments"] == count,
+        "Exact fixed architecture identity",
+    )
+    require(
+        declared["no_G2_allocation_or_feasibility_claim"] is True
+        and declared["realized_candidate_gate_or_ABI_proof"] is False,
+        "Exploratory proof, not emission/adoption",
+    )
+    partitions = exact_segments(domain["cases"]["B4x12"]["whole_integer_remainder_hull"], count)
+    require(
+        len(fit_rows) == len(declared["segments_certificate"]) == count,
+        "Each declared segment retained",
+    )
+    words, errors, uniform, diagnostics = [], [], [], []
+    for fit, certificate, segment in zip(
+        fit_rows, declared["segments_certificate"], partitions, strict=True
+    ):
+        coefficients, quantized, evidence = audit_fit_segment(fit, degree, segment, started)
+        authorized, proofs = audit_segment_certificate(
+            mp, certificate, coefficients, quantized, segment, started
+        )
+        words.append(quantized)
+        errors.append(authorized["quantized"])
+        uniform.append(dict(segment=segment["index"], **proofs))
+        diagnostics.append(dict(segment=segment["index"], **evidence))
+    same(
+        declared["native_evaluation_plan"],
+        primary_plan(estrin_ir(degree, started)),
+        "Exact frozen Estrin operation list",
+    )
+    require(
+        set(declared["cases"]) == set(CASES), "Both complete original class/segment inventories"
+    )
+    own_cases = {}
+    for case in CASES:
+        check(started, admission=True)
+        primary = declared["cases"][case]
+        rows = primary["intersections"]
+        require(
+            len(rows) == 30 * count
+            and [(row["k"], row["segment"]) for row in rows]
+            == [(k, segment) for k in EXPONENTS for segment in range(count)],
+            "Complete fixed row ordering",
+        )
+        ln_errors = {rational(row["ln2_literal_error_upper"]) for row in rows if not row["empty"]}
+        require(len(ln_errors) == 1, "One actual original ln2 literal error envelope")
+        own = class_segment_intersections(
+            mp, domain["cases"][case], partitions, words, errors, degree, started, ln_errors.pop()
+        )
+        maximum, maximum_alpha = Fraction(0), Fraction(0)
+        for primary_row, fresh in zip(rows, own["classes_segments"], strict=True):
+            check(started)
+            require(primary_row["empty"] is fresh["empty"], "Exact native empty-cell decision")
+            if fresh["empty"]:
+                same(
+                    primary_row,
+                    {key: fresh[key] for key in ("k", "segment", "empty")},
+                    "Empty row retained without fictitious bounds",
+                )
+                continue
+            for key in (
+                "clipped_log_raw_bounds",
+                "remainder_raw_bounds",
+                "local_raw_bounds",
+                "signed144_products",
+                "native_polynomial_raw_bounds",
+                "stock_raw_bounds",
+            ):
+                same(primary_row[key], fresh[key], "Every actual native range/product: " + key)
+            expected_ranges = []
+            for node in fresh["native_intermediate_ranges"]:
+                item = {
+                    key: node[key]
+                    for key in ("value", "op", "raw_bounds", "native_floor_error_upper")
+                }
+                if item["op"] == "input":
+                    item["op"] = "local"
+                expected_ranges.append(item)
+            same(
+                primary_row["native_intermediate_ranges"],
+                expected_ranges,
+                "Whole actual stored-word/floor induction",
+            )
+            for key in (
+                "native_floor_error_upper",
+                "negative_shift_floor_upper",
+                "ln2_literal_error_upper",
+            ):
+                same(primary_row[key], fresh[key], "Exact charged native term: " + key)
+            reduction = rational(primary_row["reduction_stock_error_upper"])
+            require(
+                reduction >= rational(fresh["reduction_stock_error_upper"]) >= 0,
+                "Fresh130 authorizes primary original range-reduction stock error",
+            )
+            segment = primary_row["segment"]
+            final = Fraction(2) ** primary_row["k"] * (
+                errors[segment] + rational(primary_row["native_floor_error_upper"])
+            )
+            final += reduction + rational(primary_row["negative_shift_floor_upper"])
+            same(
+                primary_row["absolute_stock_error_upper"],
+                encode(final),
+                "Quantized approximation and every native floor/reduction/shift paid once",
+            )
+            relative = endpoints(
+                mp.iv.exp(
+                    outward(
+                        mp, abs(primary_row["k"]) * rational(primary_row["ln2_literal_error_upper"])
+                    )
+                )
+                * (
+                    1
+                    + outward(
+                        mp, errors[segment] + rational(primary_row["native_floor_error_upper"])
+                    )
+                    * mp.iv.exp(outward(mp, Fraction(-primary_row["remainder_raw_bounds"][0], Q)))
+                )
+                - 1
+            )[1]
+            claimed_alpha = rational(primary_row["relative_stock_alpha_upper"])
+            require(
+                claimed_alpha >= relative >= 0,
+                "Fresh130 closed-cell relative envelope, no allocation transfer",
+            )
+            same(
+                primary_row["additive_stock_beta_upper"],
+                primary_row["negative_shift_floor_upper"],
+                "Shift beta kept separate from relative alpha",
+            )
+            require(
+                primary_row["all_native72_product144_and_shift_guards_passed"] is True,
+                "Fresh changed native safety required",
+            )
+            maximum = max(maximum, final)
+            maximum_alpha = max(maximum_alpha, claimed_alpha)
+        same(
+            primary["maximum_absolute_stock_error_upper"],
+            encode(maximum),
+            "Full original domain maximum, not sampled cells",
+        )
+        same(
+            primary["maximum_relative_stock_alpha_upper"],
+            encode(maximum_alpha),
+            "Relative alpha maximum over every occupied cell",
+        )
+        same(
+            primary["additive_stock_beta_upper"], encode(EPS), "One original negative-shift epsilon"
+        )
+        own_cases[case] = dict(
+            verified_primary_maximum_absolute_stock_error_upper=encode(maximum),
+            verified_primary_maximum_relative_stock_alpha_upper=encode(maximum_alpha),
+            independent_class_segment_ranges=own["classes_segments"],
+            changed_polynomial_safety_independently_recomputed=True,
+        )
+    return dict(
+        degree=degree,
+        segments=count,
+        independent_fit_structure=diagnostics,
+        uniform_segment_proofs=uniform,
+        cases=own_cases,
+        no_G2_allocation_or_feasibility_claim=True,
+        new_gate_emission_or_replays=0,
+    )
+
+
+def independent_units(entries, started):
+    units = {}
+    for operation in ("add", "sub", "mul", "lt"):
+        valid = []
+        for key in sorted(entries):
+            check(started)
+            entry = entries[key]
+            if entry["op"] != operation or entry["params"] != {}:
+                continue
+            contracts = [entry.get("input_contract"), entry.get("spec", {}).get("input_contract")]
+            if any(value and value != {"signed_operand_bits": [W, W]} for value in contracts):
+                continue
+            active = entry.get("spec", {}).get("active_operand_bits")
+            if active is not None and active != [W, W]:
+                continue
+            require(
+                entry["spec"]["width"] == W and entry["spec"]["fraction_bits"] == 40,
+                "Exact original generic primitive precision",
+            )
+            require(
+                len(entry["args"]) == 2
+                and all(len(value) == W for value in entry["args"])
+                and len(entry["outs"]) == 1
+                and len(entry["outs"][0]) == W,
+                "Actual generic full72 primitive port contract",
+            )
+            counts = entry["resources"]
+            require(
+                all(type(counts[field]) is int and counts[field] >= 0 for field in RESOURCE_FIELDS)
+                and counts["t_count"] == 7 * counts["ccx"]
+                and type(counts["qubits"]) is int
+                and counts["qubits"] >= 2 * W + len(entry["outs"][0]),
+                "Actual exact7T primitive counts and complete private scratch",
+            )
+            valid.append((key, counts))
+        require(valid, "Source-owned unspecialized dynamic primitive required")
+        units[operation] = dict(
+            resource_upper={
+                field: max(counts[field] for _, counts in valid) for field in RESOURCE_FIELDS
+            },
+            qubits_upper=max(counts["qubits"] for _, counts in valid),
+            actual_leaf_keys=[key for key, _ in valid],
+            componentwise_max_is_conservative=True,
+        )
+    return units
+
+
+def independent_removal(target, source, sites, started):
+    nodes = {node["out"][0]: node for node in target["nodes"]}
+    endpoints = {site["polynomial"] for site in sites}
+    boundaries = {site["remainder"] for site in sites}
+    closure, pending = set(), list(endpoints)
+    while pending:
+        check(started)
+        value = pending.pop()
+        if value in boundaries or value in closure:
+            continue
+        node = nodes[value]
+        require(
+            node["op"] in ("const", "add", "mul") and len(node["out"]) == 1,
+            "Actual original active polynomial closure",
+        )
+        closure.add(value)
+        pending.extend(node["args"])
+    replaceable_consumers = {site["stock"] for site in sites}
+    retained = set()
+    for value, node in nodes.items():
+        check(started)
+        if value not in closure and value not in replaceable_consumers:
+            retained.update(argument for argument in node["args"] if argument in closure)
+    changed = True
+    while changed:
+        check(started)
+        changed = False
+        for value in tuple(retained):
+            for argument in nodes[value]["args"]:
+                if argument in closure and argument not in retained:
+                    retained.add(argument)
+                    changed = True
+    removable = closure - retained
+    indices = [
+        index for index, call in enumerate(source["forward_calls"]) if call["out"][0] in removable
+    ]
+    require(len(indices) == len(removable), "One actual removable forward call per SSA value")
+    return dict(
+        active_polynomial_value_ids=sorted(closure),
+        retained_shared_or_dead_ancestor_value_ids=sorted(retained),
+        removed_value_ids=sorted(removable),
+        removed_forward_call_indices=indices,
+        eager_unused_values_outside_closure_retained=True,
+    )
+
+
+def independent_resources(degree, count, fit_rows, primary_domain, metadata_cases, started):
+    operation_count = Counter(node["op"] for node in estrin_ir(degree, started)["nodes"])
+    cases = {}
+    for case in CASES:
+        check(started, admission=True)
+        actual, original = metadata_cases[case], primary_domain["cases"][case]
+        source, leaves = actual["source"], actual["leaves"]
+        units = independent_units(leaves, started)
+        table = [[row["center_raw"], *row["coefficient_raw"]] for row in fit_rows]
+        require(
+            len(table) == count and all(len(row) == degree + 2 for row in table),
+            "Every actual center/coefficient table word",
+        )
+        encoded_table = [[signed_coefficient(word) % (1 << W) for word in row] for row in table]
+        address_bits = count.bit_length() - 1
+        require(
+            count == 1 << address_bits and 0 <= address_bits <= 3,
+            "Fixed power-of-two address inventory",
+        )
+        data_toggles = sum(word.bit_count() for row in encoded_table for word in row)
+        zero_address_bits = sum(address_bits - index.bit_count() for index in range(count))
+        equality_ccx = count * (0, 0, 2, 6)[address_bits]
+        equality_cx = 2 * count if address_bits == 1 else 0
+        qrom_cx = data_toggles if address_bits else 0
+        qrom_x = data_toggles if not address_bits else 0
+        thresholds = [row["raw_bounds"][0] for row in fit_rows[1:]]
+        address_changes = sum((index ^ (index - 1)).bit_count() for index in range(1, count))
+        calls = dict(add=operation_count["add"], mul=operation_count["mul"], sub=1, lt=count - 1)
+        primitive = {
+            field: sum(
+                calls[operation] * units[operation]["resource_upper"][field] for operation in calls
+            )
+            for field in RESOURCE_FIELDS
+        }
+        copies = sum(calls.values()) * 4 * W
+        extra_x = (
+            2 * zero_address_bits
+            + qrom_x
+            + sum((word % (1 << W)).bit_count() for word in thresholds)
+            + count
+            - 1
+        )
+        extra_cx = equality_cx + qrom_cx + address_changes + copies
+        additions = dict(
+            source_gates=extra_x + extra_cx + equality_ccx,
+            x=extra_x,
+            cx=extra_cx,
+            ccx=equality_ccx,
+            t_count=7 * equality_ccx,
+            t_depth=7 * equality_ccx,
+            clifford_t_depth=extra_x + extra_cx + 15 * equality_ccx,
+            clifford_cx=extra_cx + 6 * equality_ccx,
+            clifford_h=2 * equality_ccx,
+        )
+        forward = {field: primitive[field] + additions[field] for field in RESOURCE_FIELDS}
+        clean = {field: 2 * value for field, value in forward.items()}
+        for field in ("cx", "source_gates", "clifford_cx", "clifford_t_depth"):
+            clean[field] += 3 * W
+        plan_count = len(estrin_ir(degree, started)["nodes"])
+        words = plan_count + 2 + 2 * (count - 1) + int(address_bits > 0) + degree + 2
+        scratches = [unit["qubits_upper"] - 3 * W for operation, unit in units.items()]
+        private = max(*scratches, 2 * max(0, address_bits - 2))
+        removal = independent_removal(actual["target"], source, original["stock_sites"], started)
+        removed_indices = set(removal["removed_forward_call_indices"])
+        removed, removed_copies, kept_depth = dict.fromkeys(RESOURCE_FIELDS, 0), 0, 0
+        for index, call in enumerate(source["forward_calls"]):
+            check(started)
+            leaf = leaves[call["leaf"]]["resources"]
+            if index in removed_indices:
+                for field in RESOURCE_FIELDS:
+                    removed[field] += leaf[field]
+                removed_copies += 2 * W * len(call["args"])
+            else:
+                kept_depth += leaf["t_depth"]
+        sites = original["actual_stock_sites"]
+        whole = {
+            field: source["resources"][field] - 2 * removed[field] + 2 * sites * clean[field]
+            for field in RESOURCE_FIELDS
+        }
+        for field in ("cx", "source_gates", "clifford_cx"):
+            whole[field] -= 2 * removed_copies
+        whole["t_depth"] = 2 * kept_depth + 2 * sites * clean["t_depth"]
+        require(
+            all(value >= 0 for value in whole.values()) and whole["t_count"] == 7 * whole["ccx"],
+            "Complete nonnegative exact7T symbolic source estimate",
+        )
+        qubits = source["resources"]["logical_qubits"] + sites * W * words
+        qubits += max(0, private - source["resources"]["max_reused_scratch_qubits"])
+        cap = original["baseline_capped_resources"]["logical_qubits"]
+        cases[case] = dict(
+            primitive_units=units,
+            coefficient_QROM_rows_raw=table,
+            coefficient_QROM_rows_unsigned72=encoded_table,
+            primitive_forward_calls=calls,
+            threshold_raw=thresholds,
+            selector=dict(
+                address_bits=address_bits,
+                threshold_count=count - 1,
+                address_toggle_CX=address_changes,
+                equality_compute_uncompute_CCX=equality_ccx,
+                equality_CX=equality_cx,
+                address_inversion_X=2 * zero_address_bits,
+                table_data_controlled_CX=qrom_cx,
+                table_constant_X=qrom_x,
+            ),
+            full72_argument_copy_CX_per_forward=copies,
+            dirty_output_XOR_CX=W,
+            outer_argument_copy_CX_per_clean_function=2 * W,
+            function_forward_resource_estimate=forward,
+            function_clean_resource_estimate=clean,
+            function_full72_SSA_words=words,
+            function_private_scratch_qubits=private,
+            full72_bank_inventory=dict(
+                candidate_IR_values=plan_count,
+                raw_remainder_bank=1,
+                outer_argument_copy_bank=1,
+                threshold_constant_banks=count - 1,
+                threshold_predicate_banks=count - 1,
+                selector_address_banks=int(address_bits > 0),
+                QROM_center_and_coefficient_banks=degree + 2,
+                external_input_output_banks=2,
+            ),
+            function_logical_qubit_upper=W * (words + 2) + private,
+            original_polynomial_removal=removal,
+            original_removed_leaf_forward_resources=removed,
+            original_removed_argument_copy_CX=removed_copies,
+            whole_source_resource_estimate=whole,
+            whole_source_logical_qubit_upper=qubits,
+            original_capped_source_resources=original["baseline_capped_resources"],
+            original_serial_source_resources=original["baseline_serial_resources"],
+            original_logical_qubit_cap=cap,
+            estimated_qubit_upper_within_cap=qubits <= cap,
+            estimated_serial_depth_not_realized_capped_schedule=True,
+            whole_candidate_clean_invocations=2 * sites,
+            global_forward_and_inverse_each_use_clean_candidate=True,
+            exact7T_phase_paid=True,
+            relative_phase_substitution=False,
+            dynamic_selected_coefficient_constant_multiplier_discount=False,
+            all_costs_are_estimates_until_emitted_ABI_and_capped_schedule_proofs=True,
+        )
+    return dict(
+        schema="a13-symbolic-resource-estimate-v1",
+        degree=degree,
+        segments=count,
+        cases=cases,
+        arbitrary_phase_clean_XOR_ABI_still_requires_emitted_proof=True,
+        old_dead_paths_preserved=True,
+        full_financial_cost_not_divided_by_coordinates=True,
+        resource_adoption_or_realized_improvement_claim=False,
+    )
+
+
+def original_polynomial_model(graph, site, radius, started):
+    cache, records = {}, []
+
+    def visit(value):
+        check(started)
+        if value == site["remainder"]:
+            return {1: Fraction(1)}, Fraction(0)
+        if value in cache:
+            return cache[value]
+        node = graph.node(value)
+        if node["op"] == "const":
+            polynomial, error = {0: Fraction(graph.constant(value), Q)}, Fraction(0)
+        else:
+            require(
+                node["op"] in ("add", "mul") and node["params"] == {},
+                "Original active Estrin polynomial",
+            )
+            a, ea = visit(node["args"][0])
+            b, eb = visit(node["args"][1])
+            if node["op"] == "add":
+                polynomial, error = polynomial_sum(a, b), ea + eb
+            else:
+                ma = sum(
+                    (abs(coefficient) * radius**degree for degree, coefficient in a.items()),
+                    Fraction(0),
+                )
+                mb = sum(
+                    (abs(coefficient) * radius**degree for degree, coefficient in b.items()),
+                    Fraction(0),
+                )
+                polynomial = polynomial_product(a, b)
+                error = ma * eb + mb * ea + ea * eb + EPS
+                require(
+                    (ma + ea) * (mb + eb) * Q**2 < 1 << 143, "Original error-induction product safe"
+                )
+        magnitude = (
+            sum(
+                (abs(coefficient) * radius**degree for degree, coefficient in polynomial.items()),
+                Fraction(0),
+            )
+            + error
+        )
+        require(magnitude * Q < 1 << 71, "Original stored-word error induction safe")
+        cache[value] = (polynomial, error)
+        records.append(
+            dict(
+                value=value,
+                op=node["op"],
+                magnitude_upper=encode(magnitude),
+                native_floor_error_upper=encode(error),
+            )
+        )
+        return polynomial, error
+
+    polynomial, error = visit(site["polynomial"])
+    require(
+        set(polynomial) == set(range(13)),
+        "Original degree12 literal polynomial, not fitted candidate",
+    )
+    return polynomial, error, records
+
+
+def original_integer_stock(graph, site, left, right, exponent, started):
+    ranges, products = {site["clipped"]: word_range((left, right))}, []
+    for value in site["original_native_stock_node_ids"]:
+        check(started)
+        node = graph.node(value)
+        operands = [ranges[argument] for argument in node["args"]]
+        operation, parameters = node["op"], node["params"]
+        if operation == "const":
+            raw = graph.constant(value)
+            result = (raw, raw)
+        elif operation in ("cmul", "mul"):
+            second = (
+                (signed_coefficient(parameters["c"]),) * 2 if operation == "cmul" else operands[1]
+            )
+            product = integer_product(
+                operands[0],
+                second,
+                square=operation == "mul" and node["args"][0] == node["args"][1],
+            )
+            products.append(dict(value=value, product_raw_bounds=list(product)))
+            result = (product[0] // Q, product[1] // Q)
+        elif operation == "add":
+            result = (operands[0][0] + operands[1][0], operands[0][1] + operands[1][1])
+        elif operation == "sub":
+            result = (operands[0][0] - operands[1][1], operands[0][1] - operands[1][0])
+        elif operation == "bits":
+            require(parameters["width"] == W, "Original full72 exponent conversion")
+            shift = parameters["shift"]
+            if shift >= 0:
+                require(parameters["signed"] is True, "Signed native arithmetic extraction")
+                result = (operands[0][0] >> shift, operands[0][1] >> shift)
+            else:
+                require(parameters["signed"] is False, "Native modular integer-exponent scaling")
+                result = (operands[0][0] << -shift, operands[0][1] << -shift)
+        else:
+            require(
+                operation == "shift"
+                and operands[1] == (exponent, exponent)
+                and -W < exponent < W
+                and operands[0][0] > 0,
+                "Original positive stock shift",
+            )
+            result = tuple(
+                word << exponent if exponent >= 0 else word >> -exponent for word in operands[0]
+            )
+        ranges[value] = word_range(result)
+    require(
+        ranges[site["exponent"]] == (exponent, exponent)
+        and ranges[site["remainder"]]
+        == (left - exponent * site["ln2_raw"], right - exponent * site["ln2_raw"])
+        and ranges[site["stock"]][0] > 0,
+        "Original exact exponent/remainder/positive output",
+    )
+    return ranges, products
+
+
+def audit_baseline(mp, declared, domain, metadata_cases, started):
+    require(
+        declared["schema"] == "a13-original-Estrin-baseline-certificate-v1"
+        and declared["degree"] == 12
+        and declared["segments"] == 1
+        and declared["original_source_polynomial_not_new_fit"] is True
+        and declared["original_eager_dead_paths_retained_in_source_cost"] is True
+        and declared["no_G2_allocation_or_feasibility_claim"] is True,
+        "Separate unchanged original baseline",
+    )
+    cases = {}
+    for case in CASES:
+        check(started, admission=True)
+        original, primary = domain["cases"][case], declared["cases"][case]
+        graph = GraphAudit(metadata_cases[case]["target"], started)
+        site = original["actual_stock_sites"][0]
+        words = original["original_literal_exp_coefficients"]
+        coefficients = [Fraction(signed_coefficient(word), Q) for word in words]
+        lo, hi = original["whole_integer_remainder_hull"]
+        require(lo <= 0 <= hi, "Original variable-centered baseline witness")
+        segment = dict(
+            index=0,
+            first_raw=lo,
+            last_raw=hi,
+            center_raw=0,
+            local_interval=[encode(Fraction(lo, Q)), encode(Fraction(hi, Q))],
+        )
+        authorized, uniform = audit_segment_certificate(
+            mp, primary["segment_certificate"], coefficients, words, segment, started
+        )
+        _, _, _, logarithm = original["original_native_settings"]
+        true_logarithm = endpoints(mp.iv.log(outward(mp, 2)))
+        ln_error = max(abs(Fraction(logarithm, Q) - endpoint) for endpoint in true_logarithm)
+        maximum, alpha_max, witnesses = Fraction(0), Fraction(0), []
+        require(len(primary["intersections"]) == 30, "Every original baseline class retained")
+        for row, cell in zip(primary["intersections"], original["original_cells"], strict=True):
+            check(started)
+            require(
+                row["k"] == cell["k"] and row["empty"] is cell["empty"],
+                "Original baseline class identity",
+            )
+            if cell["empty"]:
+                same(
+                    row,
+                    dict(k=cell["k"], empty=True),
+                    "Original empty class contains no invented bound",
+                )
+                continue
+            left, right = cell["clipped_raw_interval"]
+            ranges, products = original_integer_stock(graph, site, left, right, cell["k"], started)
+            rlo, rhi = cell["remainder_raw_interval"]
+            actual_polynomial, floor, steps = original_polynomial_model(
+                graph, site, Fraction(max(abs(rlo), abs(rhi)), Q), started
+            )
+            same(
+                [encode(actual_polynomial[degree]) for degree in range(13)],
+                [encode(value) for value in coefficients],
+                "Actual original coefficient polynomial",
+            )
+            same(
+                row["original_native_intermediate_raw_bounds"],
+                {str(value): list(bounds) for value, bounds in ranges.items()},
+                "Every original class stored-word guard",
+            )
+            same(row["original_signed144_products"], products, "Every original class product guard")
+            same(
+                row["actual_Estrin_floor_induction"],
+                steps,
+                "Every original floor and magnitude induction",
+            )
+            same(row["native_floor_error_upper"], encode(floor), "Original actual tree floor error")
+            same(row["remainder_raw_bounds"], [rlo, rhi], "Original closed remainder class")
+            same(
+                row["additive_stock_beta_upper"],
+                encode(EPS if cell["k"] < 0 else Fraction(0)),
+                "Original shift beta separate",
+            )
+            total_poly = authorized["quantized"] + floor
+            # The primary does not expose its ln2 endpoint error in baseline
+            # rows. Authorize its final conservative relative/absolute claims
+            # independently at130, using the actual literal and primary Epoly.
+            k = cell["k"]
+            relative = endpoints(
+                mp.iv.exp(outward(mp, abs(k) * ln_error))
+                * (1 + outward(mp, total_poly) * mp.iv.exp(outward(mp, Fraction(-rlo, Q))))
+                - 1
+            )[1]
+            reduction = endpoints(
+                outward(mp, Fraction(2) ** k)
+                * mp.iv.exp(outward(mp, Fraction(rhi, Q)))
+                * (mp.iv.exp(outward(mp, abs(k) * ln_error)) - 1)
+            )[1]
+            absolute = Fraction(2) ** k * total_poly + reduction + (EPS if k < 0 else Fraction(0))
+            alpha = rational(row["relative_stock_alpha_upper"])
+            error = rational(row["absolute_stock_error_upper"])
+            require(
+                alpha >= relative >= 0 and error >= absolute >= 0,
+                "Original baseline fresh130 uniform error authorization",
+            )
+            maximum, alpha_max = max(maximum, error), max(alpha_max, alpha)
+            witnesses.append(
+                dict(
+                    k=k,
+                    verified_primary_absolute_stock_error_upper=encode(error),
+                    verified_primary_relative_stock_alpha_upper=encode(alpha),
+                )
+            )
+        same(
+            primary["maximum_absolute_stock_error_upper"],
+            encode(maximum),
+            "Original maximum absolute error",
+        )
+        same(
+            primary["maximum_relative_stock_alpha_upper"],
+            encode(alpha_max),
+            "Original maximum relative error",
+        )
+        same(primary["additive_stock_beta_upper"], encode(EPS), "Original full-domain shift beta")
+        cases[case] = dict(
+            uniform_proofs=uniform,
+            class_authorizations=witnesses,
+            verified_primary_absolute_stock_error_upper=encode(maximum),
+            original_source_not_replaced_by_new_degree12_fit=True,
+        )
+    return dict(schema="independent130-a13-original-baseline-v1", cases=cases)
+
+
+def seal(output, frozen, external, started, outcome):
+    require(
+        not (output / "manifest.json").exists() and not (output / "FAILED_UNSEALED.json").exists(),
+        "Exclusive independent terminal, never partial reseal",
+    )
+    count = final_fresh(frozen, external, started)
+    outcome = dict(
+        outcome,
+        verification_unique_paths=count,
+        budget=elapsed(started),
+        limits_CPU_admission_wall=[CPU, ADMISSION, WALL],
+        new_test_credit=0,
+        full_G2=False,
+        adoption=False,
+        cost_transfer=False,
+        gate_emission_authorized=False,
+    )
+    write_json(output / "completion_outcome.json", outcome, started)
+    files = owned_artifacts(output, started)
+    manifest = dict(
+        schema="a13-exp-frontier-independent-audit-manifest-v1",
+        files=files,
+        frozen_inputs=frozen,
+        external_runtime_inputs=external,
+        manifest_self_hash_excluded=True,
+        terminal_outcome_file="completion_outcome.json",
+        completed=outcome["completed"],
+        passed=outcome["passed"],
+        budget_censored=outcome["budget_censored"],
+        terminal_budget_observation=elapsed(started),
+        verification_and_output_hashing_before_terminal=True,
+        original_expected_hashes_waived=False,
+        historical_global_LIVE_integrity=dict(
+            passed=False, mismatch_references=36, distinct_paths=9, expected_hashes_waived=False
+        ),
+    )
+    write_json(output / "manifest.json", manifest, started)
+
+
+def retain_failure(output, frozen, external, started, error, phase):
+    if not output.exists():
+        return
+    try:
+        require(
+            not (output / "manifest.json").exists()
+            and not (output / "completion_outcome.json").exists(),
+            "A partial success terminal must remain failed-unsealed",
+        )
+        check(started)
+        write_json(
+            output / "failure.json",
+            dict(
+                failed=True,
+                phase=phase,
+                error_type=type(error).__name__,
+                error=str(error),
+                traceback=traceback.format_exc(),
+                new_test_credit=0,
+                budget=elapsed(started),
+            ),
+            started,
+        )
+        seal(
+            output,
+            frozen,
+            external,
+            started,
+            dict(
+                completed=False,
+                passed=False,
+                failed=True,
+                rejection=False,
+                budget_censored=isinstance(error, BudgetCensoredError),
+                phase=phase,
+                failure_file="failure.json",
+            ),
+        )
+    except BaseException:
+        # Constant evidence only after hard-clock exhaustion. This marker takes
+        # precedence over every partial summary, outcome or manifest.
+        try:
+            with (output / "FAILED_UNSEALED.json").open("xb") as stream:
+                stream.write(
+                    b'{"failed":true,"completed":false,"passed":false,"budget_censored":true,"new_test_credit":0,"partial_success_invalid":true,"requires_fresh_version_and_receipt":true}\n'
+                )
+        except FileExistsError:
+            pass
+
+
+def audit_protocol(protocol, policy, method, source, started):
+    check(started)
+    require(
+        protocol["schema"] == "a13-exp-frontier-independent-audit-protocol-v1"
+        and protocol["source"] == SOURCE.relative_to(ROOT).as_posix()
+        and protocol["output"] == OUTPUT.relative_to(ROOT).as_posix(),
+        "Exact independently prepared source/route",
+    )
+    same(
+        protocol["CPU_admission_wall_seconds"],
+        [CPU, ADMISSION, WALL],
+        "Unchanged independent whole-screen clocks",
+    )
+    same(protocol["fixed_grid"], [list(value) for value in GRID], "All20 fixed choices")
+    same(
+        protocol["author_sha256"], policy["author_sha256"], "Immutable reviewed pair of executables"
+    )
+    same(
+        protocol["method_document_SHA256"],
+        policy["method_document_SHA256"],
+        "Immutable held method",
+    )
+    same(
+        protocol["selected_source_SHA256"],
+        method["selected_existing_manifest_expected_pins"],
+        "No selected source expectation override",
+    )
+    require(
+        protocol["A07_manifest_SHA256"] == A07_SHA
+        and protocol["source_manifest_sha256"] == source["manifest_sha256"],
+        "Exact preparation prerequisite packets",
+    )
+    require(
+        protocol["primary_digits"] == 90
+        and protocol["independent_digits"] == DIGITS
+        and protocol["threads"] == 1
+        and protocol["new_fixture_credit"] == 0
+        and protocol["startup_B_required"] is True
+        and protocol["pure_Python_mpmath_backend_required"] is True,
+        "Same fixed runtime, precision and credit",
+    )
+    require(
+        protocol["candidate_G2_absolute_stock_error_allocation"] is None
+        and protocol["candidate_G2_barrier_band_allocation"] is None
+        and protocol["gate_emission_authorized"] is False
+        and protocol["no_fit_bound_source_walk_gate_or_sample_executed_in_prepare"] is True,
+        "Exploratory byte-only preparation, no science claim",
+    )
+
+
+def prepare(output):
+    started = start_clock()
+    frozen, external, created = {}, {}, False
+    try:
+        initialize(started)
+        require(output == OUTPUT and not output.exists(), "Exclusive fresh independent receipt")
+        require("mpmath" not in sys.modules, "Preparation imports no scientific engine")
+        policy = implementation_policy(started)
+        method, origins, source = source_packet(policy, frozen, external, started)
+        interpreter = runtime_inventory(frozen, external, started)
+        verify_runtime(interpreter, frozen, external, started)
+        loaded_origins(frozen, external, started)
+        verify_maps(frozen, external, started)
+        check(started, admission=True)
+        output.mkdir()
+        created = True
+        (output / "executed_code").mkdir()
+        (output / "rows").mkdir()
+        for path in (
+            AUTHOR,
+            PRODUCER_AUTHOR,
+            IMPLEMENTATION,
+            IMPLEMENTATION_DOC,
+            METHOD,
+            METHOD_DOC,
+        ):
+            copy_exact(path, output / "executed_code" / path.name, frozen, external, started)
+        write_json(output / "selected_source_origins.json", origins, started)
+        write_json(output / "interpreter.json", interpreter, started)
+        verified = final_fresh(frozen, external, started)
+        check(started, admission=True)
+        protocol = dict(
+            schema="a13-exp-frontier-independent-audit-protocol-v1",
+            output=output.relative_to(ROOT).as_posix(),
+            source=SOURCE.relative_to(ROOT).as_posix(),
+            source_manifest_sha256=source["manifest_sha256"],
+            prepared_UTC=datetime.now(timezone.utc).isoformat(),
+            independent_auditor_module="research.limitation_program_20261001.audit_exp_frontier",
+            author_sha256=policy["author_sha256"],
+            method_document_SHA256=policy["method_document_SHA256"],
+            selected_source_SHA256=method["selected_existing_manifest_expected_pins"],
+            A07_manifest_SHA256=A07_SHA,
+            CPU_admission_wall_seconds=[CPU, ADMISSION, WALL],
+            primary_digits=90,
+            independent_digits=DIGITS,
+            threads=1,
+            new_fixture_credit=0,
+            startup_B_required=True,
+            pure_Python_mpmath_backend_required=True,
+            fixed_grid=[list(value) for value in GRID],
+            candidate_G2_absolute_stock_error_allocation=None,
+            candidate_G2_barrier_band_allocation=None,
+            gate_emission_authorized=False,
+            interpreter=interpreter,
+            frozen_inputs=frozen,
+            external_runtime_inputs=external,
+            final_fresh_preparation_verified_paths=verified,
+            preparation_budget=elapsed(started),
+            all_process_CPU_and_creation_wall_charged=True,
+            scientific_producer_or_helper_imports=False,
+            no_fit_bound_source_walk_gate_or_sample_executed_in_prepare=True,
+        )
+        write_json(output / "protocol.json", protocol, started)
+        write_json(
+            output / "PREPARED_RECEIPT.json",
+            dict(
+                prepared=True,
+                terminal=False,
+                protocol_sha256=sha(output / "protocol.json", started),
+                preparation_budget=elapsed(started),
+                no_numeric_result_claim=True,
+            ),
+            started,
+        )
+        check(started)
+        return protocol
+    except BaseException as error:
+        if created:
+            retain_failure(output, frozen, external, started, error, "prepare")
+        raise
+
+
+def audit_rows(mp, domain, primary_domain, metadata_cases, started, output):
+    inventory = read_json(SOURCE / "fixed_inventory.json", started)
+    expected_rows = [dict(degree=d, segments=s, row_id=f"d{d}_s{s}") for d, s in GRID]
+    require(
+        inventory["schema"] == "a13-fixed-inventory-v1"
+        and inventory["no_adaptive_degrees_segments_or_precision"] is True,
+        "Exact fixed inventory scope",
+    )
+    same(inventory["rows"], expected_rows, "All20 identities and their preregistered ordering")
+    same(
+        inventory["separate_original_baseline"],
+        dict(degree=12, segments=1, new_degree12_fit_is_not_original_baseline=True),
+        "Original baseline and fresh degree12 fit remain separate",
+    )
+    fits = read_json(SOURCE / "coefficient_fit_diagnostics.json", started)
+    certificates = read_json(SOURCE / "exponential_approximation_certificate.json", started)
+    frontier = read_json(SOURCE / "function_frontier.json", started)
+    require(
+        fits["schema"] == "a13-fit-diagnostics-v1"
+        and fits["round32_solve_is_final"] is True
+        and fits["no_extra33rd_solve"] is True
+        and fits["no_optimality_claim"] is True,
+        "Actual finite fitting diagnostic scope",
+    )
+    require(
+        certificates["schema"] == "a13-approximation-certificate-v1"
+        and certificates["all_uniform_bounds_are_Bernstein_not_mesh"] is True
+        and certificates["relative_alpha_and_negative_shift_beta_separate"] is True
+        and certificates["original_baseline_file"] == "original_baseline_certificate.json",
+        "Whole interval error proof ledger",
+    )
+    require(
+        frontier["schema"] == "a13-function-frontier-v1"
+        and frontier["all_costs_symbolic_estimates"] is True
+        and frontier["candidate_G2_absolute_stock_error_allocation"] is None
+        and frontier["candidate_G2_barrier_band_allocation"] is None
+        and frontier["feasible_candidates_not_selected"] is True
+        and frontier["gate_emission_authorized"] is False,
+        "Allocation-free symbolic cost screen",
+    )
+    same(
+        frontier["original_capped_baseline_resources"],
+        {
+            case: value["baseline_capped_resources"]
+            for case, value in primary_domain["cases"].items()
+        },
+        "Unchanged baseline capped rows beside unexecuted candidate estimates",
+    )
+    require(
+        len(fits["rows"]) == 20 and len(frontier["fixed_row_statuses"]) == 20,
+        "Every successful or rejected row retained",
+    )
+    fit_by_id = {row["row_id"]: row for row in fits["rows"]}
+    cert_by_id = {row["row_id"]: row for row in certificates["rows"]}
+    cost_by_id = {row["row_id"]: row for row in frontier["rows"]}
+    require(
+        len(fit_by_id) == len(fits["rows"])
+        and len(cert_by_id) == len(certificates["rows"])
+        and len(cost_by_id) == len(frontier["rows"]),
+        "No duplicate diagnostic or proof architecture",
+    )
+    success, statuses, rows = set(), [], []
+    for identity, fit in zip(expected_rows, fits["rows"], strict=True):
+        check(started, admission=True)
+        degree, count, row_id = identity["degree"], identity["segments"], identity["row_id"]
+        for key, value in identity.items():
+            same(fit[key], value, "Exact fitting row identity")
+        actual = read_json(SOURCE / "rows" / (row_id + ".json"), started)
+        for key, value in identity.items():
+            same(actual[key], value, "Exact row artifact identity")
+        status = fit["status"]
+        require(
+            actual["status"] == status
+            and status
+            in ("CERTIFIED_ESTIMATE", "FIT_FAILED", "CERTIFICATE_REJECTED", "RESOURCE_REJECTED"),
+            "Exact retained fixed-row outcome",
+        )
+        status_row = dict(**identity, status=status)
+        statuses.append(status_row)
+        partitions = exact_segments(domain["cases"]["B4x12"]["whole_integer_remainder_hull"], count)
+        if status == "CERTIFIED_ESTIMATE":
+            success.add(row_id)
+            same(
+                actual["fit"]["segment_fits"],
+                fit["segment_fits"],
+                "Actual completed segment fitting payload",
+            )
+            certificate, cost = cert_by_id[row_id], cost_by_id[row_id]
+            for payload in (certificate, cost):
+                for key, value in status_row.items():
+                    same(payload[key], value, "Success aggregate row identity")
+            same(
+                actual["certificate"],
+                certificate["certificate"],
+                "Actual certificate and aggregate",
+            )
+            same(
+                actual["resource_estimate"],
+                cost["resource_estimate"],
+                "Actual resource and aggregate",
+            )
+            proof = audit_architecture(
+                mp, actual["certificate"], fit["segment_fits"], degree, count, domain, started
+            )
+            independent_cost = independent_resources(
+                degree, count, fit["segment_fits"], primary_domain, metadata_cases, started
+            )
+            same(
+                actual["resource_estimate"],
+                independent_cost,
+                "Every selector/table/copy/bank/cleanup and whole-source resource term",
+            )
+            result = dict(
+                **status_row,
+                independently_authorized_error_certificate=proof,
+                independently_reconstructed_resource_estimate=independent_cost,
+            )
+        else:
+            require(
+                row_id not in cert_by_id and row_id not in cost_by_id,
+                "Rejected row has no certificate or resource credit",
+            )
+            expected_stage = {
+                "FIT_FAILED": "fit",
+                "CERTIFICATE_REJECTED": "certificate",
+                "RESOURCE_REJECTED": "resource",
+            }[status]
+            require(
+                actual["failed_stage"] == expected_stage
+                and actual["no_uniform_certificate_claim"] is True
+                and actual["no_resource_improvement_claim"] is True
+                and actual["no_alternate_fitter_retry_or_new_choice"] is True,
+                "Retained rejected row without mathematical or resource claim",
+            )
+            require(
+                type(actual["error_type"]) is str
+                and actual["error_type"]
+                and type(actual["error"]) is str
+                and actual["error"],
+                "Actual rejected premise diagnostic",
+            )
+            same(
+                actual["retained_completed_segment_fits"],
+                fit["segment_fits"],
+                "Every completed pre-rejection segment fit retained",
+            )
+            for key in ("error_type", "error"):
+                same(actual[key], fit[key], "Exact row diagnostic reconciliation")
+            require(
+                len(fit["segment_fits"]) <= count
+                and (status == "FIT_FAILED" or len(fit["segment_fits"]) == count),
+                "Only a fitting failure may leave incomplete segment fits",
+            )
+            evidence = []
+            for segment_fit, segment in zip(fit["segment_fits"], partitions):
+                _, _, checked = audit_fit_segment(segment_fit, degree, segment, started)
+                evidence.append(checked)
+            result = dict(
+                **status_row,
+                rejected_primary_premise_preserved=True,
+                no_certificate_resource_or_feasibility_claim=True,
+                independent_completed_fit_structure=evidence,
+                numeric_fit_or_rejected_premise_reexecuted=False,
+                error_type=actual["error_type"],
+                error=actual["error"],
+            )
+        write_json(output / "rows" / (row_id + ".json"), result, started)
+        rows.append(dict(**status_row, actual_row_file="rows/" + row_id + ".json"))
+    require(
+        set(cert_by_id) == set(cost_by_id) == success,
+        "Only and all certified rows have proof/cost aggregates",
+    )
+    same(frontier["fixed_row_statuses"], statuses, "All fixed outcome statuses reconcile")
+    return statuses, rows
+
+
+def run(output):
+    started = start_clock()
+    frozen, external, admitted = {}, {}, False
+    try:
+        initialize(started)
+        require(output == OUTPUT and output.is_dir(), "Exact actual prepared independent screen")
+        require(
+            not any(
+                (output / name).exists()
+                for name in (
+                    "manifest.json",
+                    "completion_outcome.json",
+                    "FAILED_UNSEALED.json",
+                    "failure.json",
+                    "run_started.json",
+                )
+            ),
+            "No failed preparation, repeated run or partial terminal",
+        )
+        admitted = True
+        protocol = read_json(output / "protocol.json", started)
+        prepared = read_json(output / "PREPARED_RECEIPT.json", started)
+        require(
+            prepared["prepared"] is True
+            and prepared["terminal"] is False
+            and prepared["protocol_sha256"] == sha(output / "protocol.json", started),
+            "Immutable actual preparation",
+        )
+        map_inputs(protocol, frozen, external, started)
+        for name in (
+            "protocol.json",
+            "PREPARED_RECEIPT.json",
+            "selected_source_origins.json",
+            "interpreter.json",
+        ):
+            bind(frozen, external, output / name, sha(output / name, started), started)
+        policy = implementation_policy(started)
+        method, origins, source = source_packet(policy, frozen, external, started)
+        audit_protocol(protocol, policy, method, source, started)
+        same(
+            origins,
+            read_json(output / "selected_source_origins.json", started),
+            "Every original input origin remains strict",
+        )
+        interpreter = read_json(output / "interpreter.json", started)
+        same(interpreter, protocol["interpreter"], "Unchanged actual prepared runtime record")
+        verify_runtime(interpreter, frozen, external, started)
+        loaded_origins(frozen, external, started)
+        verify_maps(frozen, external, started)
+        check(started, admission=True)
+        write_json(
+            output / "run_started.json",
+            dict(
+                UTC=datetime.now(timezone.utc).isoformat(),
+                process_id=os.getpid(),
+                limits=[CPU, ADMISSION, WALL],
+            ),
+            started,
+        )
+        require(
+            "mpmath" not in sys.modules, "Lazy numerical engine only after complete byte admission"
+        )
+        import mpmath as mp
+
+        require(
+            mp.__version__ == "1.3.0" and sys.modules["mpmath.libmp.backend"].BACKEND == "python",
+            "Actual pure-Python fixed backend",
+        )
+        mp.mp.dps = mp.iv.dps = DIGITS
+        loaded_origins(frozen, external, started)
+        check(started, admission=True)
+        domain = typed_source_domain(started)
+        metadata_cases = original_native_metadata(frozen, started)
+        primary_domain = read_json(SOURCE / "source_domain_binding.json", started)
+        domain_authorization = reconcile_domain(primary_domain, domain, metadata_cases, started)
+        write_json(output / "independent_source_domain_binding.json", domain, started)
+        write_json(output / "source_domain_authorization.json", domain_authorization, started)
+        baseline = audit_baseline(
+            mp,
+            read_json(SOURCE / "original_baseline_certificate.json", started),
+            domain,
+            metadata_cases,
+            started,
+        )
+        write_json(output / "independent_original_baseline_certificate.json", baseline, started)
+        statuses, row_evidence = audit_rows(
+            mp, domain, primary_domain, metadata_cases, started, output
+        )
+        certified = sum(row["status"] == "CERTIFIED_ESTIMATE" for row in statuses)
+        primary_summary = source["summary"]
+        for key, expected in (
+            ("fixed_architecture_rows", 20),
+            ("certified_estimate_rows", certified),
+            ("retained_rejected_rows", 20 - certified),
+            ("all20_uniformly_certified", certified == 20),
+            ("fixed_row_statuses", statuses),
+        ):
+            same(primary_summary[key], expected, "Primary complete-screen summary reconciliation")
+        require(
+            primary_summary["scientific_screen_complete"] is True
+            and primary_summary["gate_emission_authorized"] is False
+            and primary_summary["feasible_architecture_or_realized_cost_improvement_claim"] is False
+            and primary_summary["candidate_G2_absolute_stock_error_allocation"] is None
+            and primary_summary["candidate_G2_barrier_band_allocation"] is None,
+            "Actual source remains exploratory",
+        )
+        verify_runtime(interpreter, frozen, external, started)
+        write_json(
+            output / "loaded_module_origins.json",
+            loaded_origins(frozen, external, started),
+            started,
+        )
+        write_json(
+            output / "fixed_inventory_authorization.json",
+            dict(
+                fixed_row_statuses=statuses,
+                independent_row_artifacts=row_evidence,
+                original_baseline_retained_separately=True,
+                all20_rows_and_rejections_retained=True,
+            ),
+            started,
+        )
+        summary = dict(
+            schema="a13-exp-frontier-independent-audit-summary-v1",
+            completed=True,
+            passed=True,
+            independent_audit_passed=True,
+            source_passed=True,
+            rejection=False,
+            budget_censored=False,
+            scientific_screen_complete=True,
+            fixed_architecture_rows=20,
+            certified_estimate_rows=certified,
+            retained_rejected_rows=20 - certified,
+            all20_uniformly_certified=certified == 20,
+            fixed_row_statuses=statuses,
+            source_manifest_sha256=source["manifest_sha256"],
+            every_claimed_primary80_uniform_bound_authorized_by_independent130=True,
+            independent112_uniform_witnesses_retained_separately=True,
+            exact_finite_fitting_transcript_and_single_tie_even_quantization_checked=True,
+            all_claimed_native_intermediate72_product144_and_shift_guards_independently_recomputed=True,
+            all_claimed_selector_QROM_argument_output_copies_banks_and_cleanup_costs_independently_reconstructed=True,
+            global_financial_forward_and_inverse_clean_function_invocations_paid=True,
+            symbolic_resources_not_actual_source_or_capped_schedule=True,
+            candidate_G2_absolute_stock_error_allocation=None,
+            candidate_G2_barrier_band_allocation=None,
+            gate_emission_authorized=False,
+            full_G2=False,
+            adoption=False,
+            cost_transfer=False,
+            feasible_architecture_or_realized_cost_improvement_claim=False,
+            new_test_credit=0,
+            new_gate_replays=0,
+            new_price_samples=0,
+            scientific_producer_or_helper_imports=False,
+            source_expected_hashes_waived=False,
+            budget=elapsed(started),
+        )
+        write_json(output / "summary.json", summary, started)
+        seal(
+            output,
+            frozen,
+            external,
+            started,
+            dict(
+                completed=True,
+                passed=True,
+                independent_audit_passed=True,
+                source_passed=True,
+                rejection=False,
+                budget_censored=False,
+                scientific_screen_complete=True,
+                phase="run",
+                summary_file="summary.json",
+            ),
+        )
+        return summary
+    except BaseException as error:
+        if admitted:
+            retain_failure(output, frozen, external, started, error, "run")
+        raise
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("operation", choices=("prepare", "run"))
+    parser.add_argument("--output", required=True)
+    arguments = parser.parse_args()
+    output = (ROOT / arguments.output).resolve()
+    require(output == OUTPUT, "Only the fresh exact independent A13 receipt")
+    result = prepare(output) if arguments.operation == "prepare" else run(output)
+    print(
+        json.dumps(
+            dict(
+                operation=arguments.operation,
+                output=output.relative_to(ROOT).as_posix(),
+                prepared=arguments.operation == "prepare",
+                passed=result.get("passed"),
+                new_test_credit=0,
+            )
+        )
+    )
+
+
+if __name__ == "__main__":
+    main()

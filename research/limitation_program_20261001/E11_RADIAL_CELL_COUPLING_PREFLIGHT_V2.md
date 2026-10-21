@@ -1,0 +1,7 @@
+# E11 radial-cell and ideal-midpoint squared-L2 preflight V2
+
+This dormant local packet implements the unchanged accepted radial theorem and two own endpoint profiles. V1 remains unexecuted on immutable HOLD because its copied decimal initializer was20000 and its list predicate missed exact element types. V2 changes only the packed decimal member to4300, the declared list-element checks, current/held authority admission and the source guard's exact phase custody expectations.
+
+All49 other definitions, both separate rational recipes, five categories/thirteen controls, two successful owners, original full4786 expected paths, native2843 runtime and native-only cfg retain their original authority. Twelve native citations and the failed scalar19 remain metadata/history. All12 held V1 files and original fingerprints, three absent caches and unused READY/output fences are admitted before origins and checked on both unchanged full fresh unions. Failed V1 source reviews remain failed; no grant or successful owner is inherited.
+
+The original180 CPU/150 admission/600 wall, default4300 with no setter, fixed65536-byte JSON writes and every original file/byte/integer cap remain. Exact current three scientific/lifecycle source reviews and a separate own ROOT READY are required before evaluation. Author publication creates no READY or run. Completion requires the inclusive29 seal, no failure markers and separately observed ROOT terminal0; failures may leave partial manifest bytes.

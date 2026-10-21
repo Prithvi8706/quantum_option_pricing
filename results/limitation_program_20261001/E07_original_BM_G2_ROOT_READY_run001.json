@@ -1,0 +1,82 @@
+{
+  "schema": "original-bm-G2-composition-root-READY-v1",
+  "ready": true,
+  "local_only": true,
+  "created_utc": "2026-10-03T11:25:03.475753+00:00",
+  "limits_CPU_work_wall": [
+    300,
+    270,
+    900
+  ],
+  "stdlib_only": true,
+  "threads": 1,
+  "author_inputs": {
+    "research/limitation_program_20261001/compose_original_bm_g2_ledger.py": "7519bc1ca03459531255a2563653b00d39b2dec0bfccadcfd3267210be571d1a",
+    "research/limitation_program_20261001/audit_original_bm_g2_ledger.py": "2f04bc3ed278bac103ea7bf0f37df2d024a2feb83653c3e045d51250f5e852ef",
+    "research/limitation_program_20261001/ORIGINAL_BM_G2_COMPOSITION_PREFLIGHT.md": "bd63c5f59217100d3b42fe39e29594c93f532270b598a472493e7476848807d3",
+    "research/limitation_program_20261001/original_bm_g2_composition_preflight.json": "a38bebbab5c2b1dc2793be5254ad277451471755a33e36a608bba9894c927ad8"
+  },
+  "interpreter_sha256": "41123879d2e991377997acadf5f0cf8f34fa10d86362eded8c69b6041e2893b5",
+  "manifest_inputs": {
+    "results/limitation_program_20261001/A10_coefficient_run001/manifest.json": "0a732d7f487bca1efd298e7eca4feb2f2d2e83d1958ebb9a14ee9b32a0d78a40",
+    "results/limitation_program_20261001/E03_support_run001/manifest.json": "fe9ec5382ca69d570b1ec67c4c8b2e61c97de4bd354089fcb7293a2f711ae9a2",
+    "results/limitation_program_20261001/E03_support_audit_run002/manifest.json": "f10e80022cff82caf99a1ed5237d102374fedc001cad0c1138baa3d55b626544",
+    "results/limitation_program_20261001/E02_financial_run002/manifest.json": "47fdd2c03289eafbacacc29929361448b3198518a5951a8171c734789d4460ae",
+    "results/limitation_program_20261001/E02_financial_audit_run001/manifest.json": "1403f18b89449b50e1028fb4bdd82147b09189c99f353f060c4d9650aca860c0",
+    "results/limitation_program_20261001/E07_schedule_run001/manifest.json": "fbdac6d588e1b893f7731c940c85002de6bcdd5c2a2514469fcb137c72052d75",
+    "results/limitation_program_20261001/E02_IQFT_run001/manifest.json": "d734347e67f9ac059349bda3ee10ec25319c655c3f0b7460da240bc456dbfad6",
+    "results/limitation_program_20261001/E02_IQFT_audit_run001/manifest.json": "1c41cf4d7f6c91449939c270fa28bcd09785e7452106d7b0b3a4cb676b93c401",
+    "results/limitation_program_20261001/E07_complete_run001/manifest.json": "6c688731fcae21cf1ba01e436308a1b2bb5235a01762e9a2936de11c8ec247d0",
+    "results/limitation_program_20261001/A02_polar_cdf_bv_run003/manifest.json": "86dcd6b400233b58f62d4197127e38c6d2598c05e1903d207b0947168b326a05",
+    "results/limitation_program_20261001/A02_polar_cdf_bv_audit_run003/manifest.json": "75ed7d7d6d5b929571d64d8fa54d53f6bf146c283d18133a5d191ac612724eb9",
+    "results/limitation_program_20261001/A02_BM_native_financial_bridge_run001/manifest.json": "8beb20bfe88407479953ddd7be284fd8fe94cea1e964c392340c4ab1a2376e02",
+    "results/limitation_program_20261001/A02_BM_native_financial_bridge_root_review_run001/manifest.json": "60c5c37bed87950e555ed89e09176ce2f87a1cb3daffd481111b17572ded316c",
+    "results/limitation_program_20261001/A02_BM_native_financial_bridge_run002/manifest.json": "78a8eea9dc937883b810cb6b3e2e26aec41297551b984a9c12bb15a435523162",
+    "results/limitation_program_20261001/A02_BM_native_financial_bridge_audit_run002/manifest.json": "62074efc3bd5a20a9cbe72b3d020fd5c6bf13e32d41b188ef57570225dade2a0"
+  },
+  "commands": {
+    "producer_prepare": [
+      "C:\\Users\\prith\\quantum_option_pricing\\.context\\frontier_t0_env\\Scripts\\python.exe",
+      "-B",
+      "-m",
+      "research.limitation_program_20261001.compose_original_bm_g2_ledger",
+      "prepare",
+      "--output",
+      "C:\\Users\\prith\\quantum_option_pricing\\results\\limitation_program_20261001\\E07_original_BM_G2_composition_run001"
+    ],
+    "producer_run": [
+      "C:\\Users\\prith\\quantum_option_pricing\\.context\\frontier_t0_env\\Scripts\\python.exe",
+      "-B",
+      "-m",
+      "research.limitation_program_20261001.compose_original_bm_g2_ledger",
+      "run",
+      "--output",
+      "C:\\Users\\prith\\quantum_option_pricing\\results\\limitation_program_20261001\\E07_original_BM_G2_composition_run001"
+    ],
+    "auditor_prepare": [
+      "C:\\Users\\prith\\quantum_option_pricing\\.context\\frontier_t0_env\\Scripts\\python.exe",
+      "-B",
+      "-m",
+      "research.limitation_program_20261001.audit_original_bm_g2_ledger",
+      "prepare",
+      "--output",
+      "C:\\Users\\prith\\quantum_option_pricing\\results\\limitation_program_20261001\\E07_original_BM_G2_composition_audit_run001"
+    ],
+    "auditor_run": [
+      "C:\\Users\\prith\\quantum_option_pricing\\.context\\frontier_t0_env\\Scripts\\python.exe",
+      "-B",
+      "-m",
+      "research.limitation_program_20261001.audit_original_bm_g2_ledger",
+      "run",
+      "--output",
+      "C:\\Users\\prith\\quantum_option_pricing\\results\\limitation_program_20261001\\E07_original_BM_G2_composition_audit_run001"
+    ]
+  },
+  "root_static_review_passed": true,
+  "independent_text_peer_review_passed": true,
+  "actual_composition_producer_manifest_SHA256": null,
+  "bridge_root_fresh_verification_manifest_SHA256": "eab61f5775110021e4e514b7412ce56ca9b24aec13311e32d240dc1559cb59ab",
+  "new_fixture_credit": 0,
+  "physical_price_delivery_certified": false,
+  "quantum_advantage": false
+}

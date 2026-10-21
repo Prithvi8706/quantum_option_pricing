@@ -1,4 +1,6 @@
-The sole local matched 112-bit V2 run stopped during admission, before output creation or scientific calculations. No matched resource comparison or savings has been measured. Its source, READY and failure log are frozen.
+Current result, 7 October: V4 completed and passed ROOT saved-result verification. The [matched leaf comparison](A13_MATCHED112_RESULTS_20261007.md) measures 33.33% lower T-depth for minimum65 against wide112, with caller copies and full-source integration still open. The history below retains the earlier failed attempts and their original scope.
+
+The sole local matched 112-bit V2 run stopped during admission, before output creation or scientific calculations. That attempt established no matched resource comparison or savings. Its source, READY and failure log are frozen.
 
 The saved manifests use two path formats. Thirteen owners list their own files relative to the receipt directory, while the declared role maps use paths relative to the project root. The controller compares the hashes of those two differently spelled maps as if they were the same object. Both maps are valid, but their hashes differ. That check would reject the first affected owner before runtime admission, output creation, helper execution or scientific calculations.
 

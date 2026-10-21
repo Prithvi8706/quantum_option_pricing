@@ -1,0 +1,26 @@
+{
+  "adoption": false,
+  "diagnostic_summary_sha256": "32cbff9cabe75e561070954f50d9389771caa08da8f50f00c8cba208a5bc15b6",
+  "exact_typed_JSON_normalized_nodes_equal_after_mul_order": true,
+  "full_G2": false,
+  "new_fixture_credit": 0,
+  "nodes_each": 45,
+  "old_failed_attempt_unchanged": true,
+  "proof": [
+    "For raw72 words a,b let s(a),s(b) be their signed integer decodings. The exact integer product s(a)s(b) equals s(b)s(a).",
+    "Signed144 product guards and signed72 guard on floor(product/2^40) are unchanged. This also holds with two-complement modulo72 interpretation when specified; the selected evaluator additionally excludes wrap.",
+    "Base clipped-log word and every literal are equal; normalized SSA induction gives identical node values and all eager guard results. Only parameter-free same-width mul arguments may be sorted; subtraction, shifts, bits, cmul and other ordered operations remain byte-typed equal.",
+    "Canonical JSON comparison preserves integer/float/Boolean literal spelling. Actual fixed closures have45nodes, equal clamps, output45 and exactly5arg reversals.",
+    "This authorizes common scalar table content only. Ordered narrow backend maps/capped schedules/source gate costs are neither changed nor assumed equal. V5 still needs actual full component2608 checks and independent audit."
+  ],
+  "quantum_advantage": false,
+  "same_output_identifier": 45,
+  "scope": "Symbolic source-sharing lemma and selected metadata binding only; no table points/gates or source cost reorder.",
+  "swap_outputs": [
+    11,
+    18,
+    22,
+    31,
+    35
+  ]
+}

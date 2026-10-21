@@ -1,0 +1,15 @@
+{
+  "schema": "a20-static-metadata-inspector-operational-failure-v5",
+  "passed": false,
+  "scientific_execution": false,
+  "stage": "Leaf owner expected-key extraction, after independent two-closure reconstruction",
+  "error": "KeyError: 'files'",
+  "cause": "Pinned A10 legacy owner is a flat path-to-SHA mapping, not a new-style manifest with a files field",
+  "original_inspector_source_SHA256": "0c291dba3582d9608cbea77c5b5036342a5f11ecd95fd9be0e7bbc1c356835f6",
+  "tool_returned_stdout_trace": "Traceback (most recent call last):\n  File \"C:\\Users\\prith\\quantum_option_pricing\\research\\limitation_program_20261001\\continuation_20261004\\A14\\review_a20_mul_metadata_v5.py\", line 119, in <module>\n    main()\n  File \"C:\\Users\\prith\\quantum_option_pricing\\research\\limitation_program_20261001\\continuation_20261004\\A14\\review_a20_mul_metadata_v5.py\", line 101, in main\n    keys=[key for key in owner[\"files\"] if key.replace(\"\\\\\",\"/\").endswith(\"B4x12/min-depth/leaves/\"+path.name)]\n                         ~~~~~^^^^^^^^^\nKeyError: 'files'\n",
+  "trace_scope": "Retained tool-returned traceback text; original invocation did not create a redirected stdout file",
+  "original_inspector_source_unchanged": true,
+  "metadata_result_output_absent": true,
+  "gates_or_scalar_or_price_evaluations": 0,
+  "new_fixture_credit": 0
+}

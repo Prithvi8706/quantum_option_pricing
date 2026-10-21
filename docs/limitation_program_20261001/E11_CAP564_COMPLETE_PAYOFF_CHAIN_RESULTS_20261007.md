@@ -1,0 +1,11 @@
+# Cap564 complete same-coupling payoff certificate
+
+The completed original-payoff5697 chain consumes the verified cap564 component's two own physical profiles, separately for primary90 and independent130. It pays basket quarter floors, original48-stock time-average coefficient/floor charge9025/Q, strike-positive contraction and discount enclosure/floor on the464-dollar native interval. Fixed dyadic256 rounding precedes all48 stock and12 basket additions.
+
+The strict140 barrier uses fixed h1/4: P=min(1,16*sum_12_rounded_basket_allowances+20/559). The original disjoint-event transport gives squared-L2 B_discount+1600P and mean upper S128(B_discount)+40P. Each own survival payoff is below40; unconditional original continuous positive-part boundedness and error independence are not assumed. The saved sqrt128 lattice/order/predecessor proof and closed references are separately verified.
+
+The verified ROOT receipt reports certificate ceilings primary90: 3 whole dollars; independent130: 3 whole dollars. These are readable upper allowances, not measured bias, payoff values, adopted cent accuracy or price policy. In this fixed band route the mean certificate includes40*20/559>1 dollar even if other terms vanish. This is a limitation of this certificate, not a lower bound on actual B4 pricing bias. The tighter-band#40 draft and any-h policy assessment remain prospective and contribute no verified record here.
+
+One chain scope is added:26 numeric rows are not26 limitation completions. No emitted cap circuit, candidate/source G2, estimator/physical runtime or quantum advantage credit is given. All process limits,110 categories, seven fixtures, failedV1 custody and old37 results remain preserved.
+
+Evidence: [ROOT receipt](../../.context/E11_B4X12_CAP564_FULL_PAYOFF_CHAIN_ACTUAL_RESULT_ROOT_VERIFICATION_run001.json), [manifest](../../results/limitation_program_20261001/E11_B4x12_cap564_full_payoff_chain_fixed_hquarter_dyadic256_sqrt128_run001/manifest.json), [checkpoint](../../.context/OVERNIGHT_CONTINUATION_CHECKPOINT_20261007_run024.json). ROOT SHA256 `ea307dd11687b7b0dcab7984695d26e1a75ff48969b2e567e0b2e17d3e400e54`. Reporting copies only typed verified diagnostics and reconstructs no ratios or scientific recipes.

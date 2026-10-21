@@ -1,0 +1,17 @@
+# A13: candidate approximation at the first-stock logical boundary
+
+The cheaper degree-four, four-segment row now has a verified logical connection to original B4x12 first-date stock `4021`. The corrected local run passed, followed by independent saved-checker review and [ROOT saved verification](../../.context/A13_FIRST_STOCK_SOURCE_BOUNDARY_V2_ACTUAL_RESULT_ROOT_VERIFICATION_run001.json). This completes a source and conditional accuracy join at one stock intermediate.
+
+The test retains original raw log `3542`, clipping `3579`, fixed-point reduction, integer exponent `3979`, remainder `3982` and signed stock shift. It replaces the old polynomial `4020` with the already tested sixteen-node candidate output. The exact 24 coefficient/center words and all native floor steps match the selected candidate certificate.
+
+All 30 exponent classes and 120 class/segment cells are accounted for: 112 occupied and eight empty. Their saved bounds match the completed native induction premise. The fixed logical cohort contains 228 endpoint/clip/full-width inputs with four dirty outputs each, yielding 912 forward and 912 inverse cases. Input preservation and dirty-output XOR restoration pass. These finite cases supplement the certificate; uniform accuracy depends on the existing conditional proof authority.
+
+The candidate uses its own relative allowance `alpha = 2^-24`, with final negative-shift floor allowance `beta = 2^-40`. The old degree-twelve approximation allowance is excluded. Integer source semantics are checked; the [compiled coherent signed-shift circuit](A13_FIRST_STOCK_SIGNED7_CALLER_RESULTS_20261007.md) now separately verifies its phase and workspace cleanup. The [complete row-to-shift composition](A13_COMPLETE_ROW_SIGNED7_RESULTS_20261007.md) now passes separate verification; the upstream caller remains open. This packet introduces no new stock squared-L2 bound, full financial G2 certificate, price estimate, hardware cost or quantum advantage.
+
+The first attempt stopped before output creation because its clip predicate compared an unsigned raw 72-bit word directly with a signed bound. Its [failed attempt](../../.context/A13_FIRST_STOCK_SOURCE_BOUNDARY_V1_ROOT_FAILURE_CAPTURE_run001.json) remains frozen. V2 changes only that signed representation join and the current file routes; the other 23 source bodies, premises, cohort and budgets are retained.
+
+The [corrected sealed packet](../../results/limitation_program_20261001/A13_first_stock_source_boundary_run002/manifest.json) contains 13 files. Its manifest SHA256 is `8d872c42232157b9b7c4ea16bd3478a406b6df7fe6e547804aa31a499270f10c`; the ROOT verification SHA256 is `09cafa53dc5748c9b5b9318097db481c5a0d97d10275851704157d4194f272ec`. Everything remains local.
+
+The [candidate-specific first-stock L2 test](E11_CANDIDATE_FIRST_STOCK_L2_RESULTS_20261007.md) now verifies a valid but slightly larger allowance using the own-alpha envelope, original log coupling, projection limit and continuous tails. The compiled shift caller also passes separately. Complete polynomial-to-shift composition now passes separate verification; whole-price adoption remains open.
+
+The [complete polynomial-row-to-shift circuit](A13_COMPLETE_ROW_SIGNED7_RESULTS_20261007.md) now separately passes its actual run and independent saved verification, including clearing the polynomial. Upstream clipping/reduction and whole-price adoption remain open; compute-prefix fusion is next.

@@ -1,0 +1,175 @@
+{
+  "schema": "a13-fixed-relative-stock-envelope-allocation-paper-preflight-v1",
+  "status": "PAPER_ONLY_HELD_NO_EVALUATED_RELEASE",
+  "local_only": true,
+  "numerical_fit_interval_sourcewalk_fixture_gate_or_price_executed": false,
+  "existing_held_methods_executed_sources_and_receipts_immutable": true,
+  "single_fixed_alpha": [
+    1,
+    16777216
+  ],
+  "beta_final_shift_floor": [
+    1,
+    1099511627776
+  ],
+  "epsilon_financial_word_floor": [
+    1,
+    1099511627776
+  ],
+  "alpha_search_alternate_precision_retry_or_residual_reallocation_allowed": false,
+  "required_both_financial_F_upper": [
+    11,
+    2000
+  ],
+  "unchanged_statistical_dollars": [
+    9,
+    2000
+  ],
+  "unchanged_total_tolerance_dollars": [
+    1,
+    100
+  ],
+  "actual_prerequisite_manifest_pins": {
+    "results/limitation_program_20261001/A02_BM_native_financial_bridge_run002/manifest.json": "78a8eea9dc937883b810cb6b3e2e26aec41297551b984a9c12bb15a435523162",
+    "results/limitation_program_20261001/A02_BM_native_financial_bridge_audit_run002/manifest.json": "62074efc3bd5a20a9cbe72b3d020fd5c6bf13e32d41b188ef57570225dade2a0",
+    "results/limitation_program_20261001/A02_polar_cdf_bv_run003/manifest.json": "86dcd6b400233b58f62d4197127e38c6d2598c05e1903d207b0947168b326a05",
+    "results/limitation_program_20261001/A02_polar_cdf_bv_audit_run003/manifest.json": "75ed7d7d6d5b929571d64d8fa54d53f6bf146c283d18133a5d191ac612724eb9",
+    "results/limitation_program_20261001/A10_coefficient_run001/manifest.json": "0a732d7f487bca1efd298e7eca4feb2f2d2e83d1958ebb9a14ee9b32a0d78a40",
+    "results/limitation_program_20261001/E03_support_run001/manifest.json": "fe9ec5382ca69d570b1ec67c4c8b2e61c97de4bd354089fcb7293a2f711ae9a2",
+    "results/limitation_program_20261001/E03_support_audit_run002/manifest.json": "f10e80022cff82caf99a1ed5237d102374fedc001cad0c1138baa3d55b626544",
+    "results/limitation_program_20261001/A02_BM_native_financial_bridge_root_verification_run001/manifest.json": "eab61f5775110021e4e514b7412ce56ca9b24aec13311e32d240dc1559cb59ab",
+    "results/limitation_program_20261001/A02_BM_native_financial_bridge_run001/manifest.json": "8beb20bfe88407479953ddd7be284fd8fe94cea1e964c392340c4ab1a2376e02",
+    "results/limitation_program_20261001/A02_BM_native_financial_bridge_root_review_run001/manifest.json": "60c5c37bed87950e555ed89e09176ce2f87a1cb3daffd481111b17572ded316c"
+  },
+  "held_method_pins": {
+    "research/limitation_program_20261001/A13_EXP_FRONTIER_PREFLIGHT.md": "f5b4404650c1ee9bd3a8ef2557d67e1340dda0fc059d94126e19fcfc046d7f7b",
+    "research/limitation_program_20261001/a13_exp_frontier_preflight.json": "6c0e97f33e1277c070e6e84883b6631a880997becd214772bb9ef287e1c7ba85",
+    "research/limitation_program_20261001/BOX_MULLER_NATIVE_FINANCIAL_BRIDGE_PREFLIGHT_V2.md": "b999f56da7eeb68ddee96e14260d96dd99a69cadf3157b2524908a3960b53c74",
+    "research/limitation_program_20261001/box_muller_native_financial_bridge_preflight_v2.json": "263dbcd26beea4d4337e67f648e667663a0b666ee4a4986b69914c44645c2ce8",
+    "research/limitation_program_20261001/BOX_MULLER_NATIVE_FINANCIAL_BRIDGE_PREFLIGHT.md": "9619262b469a2f40a30807e2bd0b12d80f8732b72a0af4098b32f01d1f28ec16",
+    "research/limitation_program_20261001/box_muller_native_financial_bridge_preflight.json": "32010ceaf2990583e4f27b8be833e8c1cf698fff59afa2ef3bdcab65c4dac9be"
+  },
+  "root_integrity_packet_is_provenance_not_fresh_admission": "eab61f5775110021e4e514b7412ce56ca9b24aec13311e32d240dc1559cb59ab",
+  "unchanged_actual_premises": [
+    "same lambda_j per date all asset prefixes",
+    "same H_price_case",
+    "same D_S",
+    "original clamps",
+    "original exact contract",
+    "original average/discount/strike and floors",
+    "strict integer basket comparison",
+    "all relevant whole source pairs"
+  ],
+  "fixed_alpha_financial_formula": {
+    "ell": "(1+alpha)*exp(L)+beta",
+    "a_j": "(1-alpha)*exp(-lambda_j)",
+    "b_j": "(1+alpha)*exp(lambda_j)",
+    "mandatory_guards": [
+      "0<a_j<=1<=b_j",
+      "0<=ell<H",
+      "(1-alpha)*exp(U)-beta>=na*H",
+      "exp(U-lambda_j)>na*H",
+      "(1-alpha)*exp(L)-beta>=0",
+      "0<L_j<=U_j"
+    ],
+    "closed_band": [
+      "(H-ell)/b_j",
+      "(H+beta+epsilon)/a_j"
+    ],
+    "Gaussian_variance": "sigma^2*rho*j/nt, full continuous law only",
+    "p_G_j": "min(1,log(U_j/L_j)/(sqrt(sigma^2*rho*j/nt)*sqrt(2*pi)))",
+    "Q_j": "ceil((na+1)*j/2)*(4*D_S+2/2^32)",
+    "D_j": "H*max(1-a_j,b_j-1)+max(beta,ell)",
+    "A_err": "sum_j D_j/nt+na*nt*H*abs(c_A-1/(na*nt))+epsilon",
+    "zeta": "d_hat*A_err+40*abs(d_hat-exp(-3/100))+epsilon",
+    "F_case": "H_price_case+zeta+40*min(1,sum_j min(1,p_G_j+Q_j))",
+    "strict_integer_survival_proves_unrounded_mean_support": true,
+    "closed_band_pointwise_radial_and_circular_TV": [
+      4,
+      4
+    ],
+    "actual_point_one_sided_CDF_singleton_and_seam_ties_paid": true,
+    "price_law_and_band_law_transport_paid_once": true,
+    "original_stock_alpha_error_Holder_grid_or_augmented_envelope_readded": false,
+    "safe_cap40_requires_candidate_fresh_positivity_source_support_and_safety": true,
+    "conditional_native_cap_proof": "S_total<=nt*(na*140Q-1), A_raw=floor(S_total*c_Araw/Q), P_raw=max(A_raw-100Q,0), Y_raw=floor(P_raw*d_raw/Q), require0<=Y_raw<40Q using actual positive literals",
+    "average_literal_assumed_floor_of_exact_equal_weight": false,
+    "rounded_up_B8_actual_average_literal_retained": true,
+    "smooth_absolute_average_literal_error_unchanged": true
+  },
+  "uniform_poly_release": {
+    "original_range_reduction_and_clamps_unchanged": true,
+    "complete_declared_classes": [
+      -17,
+      -16,
+      -15,
+      -14,
+      -13,
+      -12,
+      -11,
+      -10,
+      -9,
+      -8,
+      -7,
+      -6,
+      -5,
+      -4,
+      -3,
+      -2,
+      -1,
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "all_empty_intersections_retained": true,
+    "r_min_k": "exact lower endpoint of complete actual source remainder cell, no sampled or generic0..ln2 domain",
+    "delta_ln2": "fresh outward upper on abs(762123384786/2^40-ln(2))",
+    "E_k": "exp(r_min_k)*[(1+alpha_star)*exp(-abs(k)*delta_ln2)-1]",
+    "each_nonempty_bracket_and_certified_lower_bound_strict_positive": true,
+    "E_allow": "positive outward LOWER bound on min_nonempty E_k over both complete domains",
+    "E_poly": "uniform implemented quantized polynomial plus every internal floor absolute error against exp(r), original reduction mismatch and final shift floor paid separately",
+    "same_allowance_implies_upper_and_lower_relative_envelope": true,
+    "lower_minus_upper_allowance": "((a-1)/a)*[alpha_star*(a+1)-(a-1)]>=0 for a=exp(abs(k)*delta_ln2),1<=a<1+alpha_star",
+    "primary90_allowance_independently130_fully_authorized_required": true,
+    "Taylor_proof_witness_implemented_as_candidate_allowed": false,
+    "candidate_fresh_full72_ABI_eager72_full144_selector_coeff_QROM_shift_and_support_proofs_required": true
+  },
+  "prospective_execution": {
+    "producer_module": "research.limitation_program_20261001.experiment_exp_frontier_allocation",
+    "auditor_module": "research.limitation_program_20261001.audit_exp_frontier_allocation",
+    "producer_receipt": "results/limitation_program_20261001/A13_fixed_alpha_allocation_run001",
+    "audit_receipt": "results/limitation_program_20261001/A13_fixed_alpha_allocation_audit_run001",
+    "CPU_seconds": 180,
+    "work_admission_CPU_seconds": 150,
+    "wall_seconds": 600,
+    "primary_outward_digits": 90,
+    "independent_outward_digits": 130,
+    "threads": 1,
+    "new_fixture_or_gate_replay_credit": 0,
+    "actual_author_and_implementation_SHA_pins": null,
+    "actual_producer_PASS_manifest_SHA": null,
+    "actual_independent_PASS_manifest_SHA": null,
+    "actual_release_E_allow": null,
+    "actual_case_F_values": null,
+    "prepare_run_authorized_by_paper_alone": false,
+    "future_complete_immutable_maps_owned_membership_and_authoritative_failure_markers_required": true,
+    "all_IO_hashing_proof_output_and_retention_charged": true,
+    "no_retry_overwrite_expected_SHA_override_or_provisional_release": true
+  },
+  "future_release_gate": "only both complete F<=11/2000 and all positive class allowances, independent actual PASS/rootverification may fill a separate A13 ROOT_READY allocation gate",
+  "if_any_guard_or_fit_fails": "retain exploratory20-choice screen, null G2 allocation fields and closed global at-most2 emission gate; no alpha search",
+  "currently_evaluated_financial_fit_or_scalar_allowance": false,
+  "currently_G2_feasible_candidate_or_source_adoption": false,
+  "full_G2_G3_G4_G5_or_quantum_advantage_claim": false,
+  "live_progress_STATUS_or_counts_changed": false
+}

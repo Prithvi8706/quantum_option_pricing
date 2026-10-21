@@ -1,0 +1,11 @@
+# Matched V14 signed27x38 full112 standalone baseline
+
+This dormant packet uses the exact original index5, value14, ordered operands[13,5], active signed widths27x38 and full72 public banks. The helper retains the original signed-plane construction, every low carry, CSA112, ripple112 with113 carry wires, direct product window40..111 and literal inverse. Only the current matched ROOT READY authorizes its sole native array.
+
+The run owes the universal signed/residue112 structural proof, the original fixed64 forward and64 inverse all-wire cohort,900 scalar toys, four declared control categories, and all8 absolute paid15-event CCX phase columns. It compares completed min65 resources only after its own science passes. Oldwide value6 resources supply no comparison or estimate. Caller copies, fullsource integration, financial bias, G2 adoption and quantum advantage remain open.
+
+Admission keeps original14 complete-owner snapshots, all42 raw maps and437 owned files, exact original2879 runtime membership, saved3057 and strict2842 roles, six startup pins, all9 original cache contracts and49 failed files. The36 fixed shared declarations are read from the externally byte-bound finite METHOD before runtime observations/origins; the source does not embed that12.5MB object. Only five accepted current authority leaves are filled; four original comparator nulls remain None. Current three full science/lifecycle reviews and four author pins are mandatory before origins.
+
+The exact ledger is34 preseal/35 inclusive files; all copies and emitters are closed in the policy. CPU/admission/wall180/150/600 and all row/wire/integer/source/retention caps remain fixed. Output ownership begins only after this invocation creates its exclusive directory and identity. A failure may leave partial or complete manifest bytes alongside a failure marker; success requires all failure markers absent, complete sealed inventory and terminal checks. No result, timing, feasibility or savings is forecast by authoring.
+
+This metadata author freezes dormant source only. Full independent actual SOURCE/helper science/lifecycle review and separate ROOT release remain required. All work is local; no network, commits or push.
