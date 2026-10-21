@@ -1,0 +1,49 @@
+{
+  "format": "exact-in-place-streaming-update-v1",
+  "kind": "counter-is-zero",
+  "args": [
+    [
+      0,
+      1,
+      2
+    ]
+  ],
+  "outs": [
+    [
+      3
+    ]
+  ],
+  "semantics": "target XOR= (counter == 0); counter and helper restored",
+  "word_width": 72,
+  "counter_bits": 3,
+  "preserved_input_registers": true,
+  "target_is_mutable": false,
+  "inverse": "literal gate-array reverse",
+  "qubits": 5,
+  "gate_file": "counter-is-zero.npy",
+  "sha256": "d660e15ee82fe80f596eef3f91bc7e5598d79b30a04f76ade88d8b565e63313d",
+  "costs": {
+    "forward": {
+      "source_gates": 9,
+      "x": 6,
+      "cx": 0,
+      "ccx": 3,
+      "t_count": 21,
+      "clifford_cx": 18,
+      "clifford_h": 6,
+      "t_depth": 11,
+      "clifford_t_depth": 30
+    },
+    "inverse": {
+      "source_gates": 9,
+      "x": 6,
+      "cx": 0,
+      "ccx": 3,
+      "t_count": 21,
+      "clifford_cx": 18,
+      "clifford_h": 6,
+      "t_depth": 11,
+      "clifford_t_depth": 30
+    }
+  }
+}

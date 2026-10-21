@@ -1,0 +1,12167 @@
+{
+  "format": "reversible-fixed-point-ssa-v1",
+  "fraction_bits": 40,
+  "width": 72,
+  "nodes": [
+    {
+      "op": "input",
+      "args": [],
+      "params": {
+        "name": "uniform_0",
+        "bits": 32,
+        "preparation": "uniform"
+      },
+      "out": [
+        0
+      ]
+    },
+    {
+      "op": "input",
+      "args": [],
+      "params": {
+        "name": "uniform_1",
+        "bits": 32,
+        "preparation": "uniform"
+      },
+      "out": [
+        1
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        0
+      ],
+      "params": {
+        "shift": -8,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        2
+      ]
+    },
+    {
+      "op": "const",
+      "args": [],
+      "params": {
+        "value": 128
+      },
+      "out": [
+        3
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        2,
+        3
+      ],
+      "params": {},
+      "out": [
+        4
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        1
+      ],
+      "params": {
+        "shift": -8,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        5
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        5,
+        3
+      ],
+      "params": {},
+      "out": [
+        6
+      ]
+    },
+    {
+      "op": "const",
+      "args": [],
+      "params": {
+        "value": 1
+      },
+      "out": [
+        7
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        4,
+        7
+      ],
+      "params": {},
+      "out": [
+        8
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        8,
+        7,
+        4
+      ],
+      "params": {},
+      "out": [
+        9
+      ]
+    },
+    {
+      "op": "msb",
+      "args": [
+        9
+      ],
+      "params": {},
+      "out": [
+        10
+      ]
+    },
+    {
+      "op": "const",
+      "args": [],
+      "params": {
+        "value": 40
+      },
+      "out": [
+        11
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        10,
+        11
+      ],
+      "params": {},
+      "out": [
+        12
+      ]
+    },
+    {
+      "op": "const",
+      "args": [],
+      "params": {
+        "value": 0
+      },
+      "out": [
+        13
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        13,
+        12
+      ],
+      "params": {},
+      "out": [
+        14
+      ]
+    },
+    {
+      "op": "shift",
+      "args": [
+        9,
+        14
+      ],
+      "params": {},
+      "out": [
+        15
+      ]
+    },
+    {
+      "op": "const",
+      "args": [],
+      "params": {
+        "value": 1099511627776
+      },
+      "out": [
+        16
+      ]
+    },
+    {
+      "op": "const",
+      "args": [],
+      "params": {
+        "value": 2199023255551
+      },
+      "out": [
+        17
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        15,
+        16
+      ],
+      "params": {},
+      "out": [
+        18
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        18,
+        16,
+        15
+      ],
+      "params": {},
+      "out": [
+        19
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        19,
+        17
+      ],
+      "params": {},
+      "out": [
+        20
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        20,
+        19,
+        17
+      ],
+      "params": {},
+      "out": [
+        21
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        21,
+        16
+      ],
+      "params": {},
+      "out": [
+        22
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        22
+      ],
+      "params": {
+        "shift": 35,
+        "width": 5,
+        "signed": false
+      },
+      "out": [
+        23
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        23
+      ],
+      "params": {
+        "shift": -35,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        24
+      ]
+    },
+    {
+      "op": "const",
+      "args": [],
+      "params": {
+        "value": 1116691496960
+      },
+      "out": [
+        25
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        24,
+        25
+      ],
+      "params": {},
+      "out": [
+        26
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        21,
+        26
+      ],
+      "params": {},
+      "out": [
+        27
+      ]
+    },
+    {
+      "op": "lookup",
+      "args": [
+        23
+      ],
+      "params": {
+        "table": "log",
+        "bits": 5
+      },
+      "out": [
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        36,
+        27
+      ],
+      "params": {},
+      "out": [
+        37
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        37,
+        35
+      ],
+      "params": {},
+      "out": [
+        38
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        38,
+        27
+      ],
+      "params": {},
+      "out": [
+        39
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        39,
+        34
+      ],
+      "params": {},
+      "out": [
+        40
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        40,
+        27
+      ],
+      "params": {},
+      "out": [
+        41
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        41,
+        33
+      ],
+      "params": {},
+      "out": [
+        42
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        42,
+        27
+      ],
+      "params": {},
+      "out": [
+        43
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        43,
+        32
+      ],
+      "params": {},
+      "out": [
+        44
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        44,
+        27
+      ],
+      "params": {},
+      "out": [
+        45
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        45,
+        31
+      ],
+      "params": {},
+      "out": [
+        46
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        46,
+        27
+      ],
+      "params": {},
+      "out": [
+        47
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        47,
+        30
+      ],
+      "params": {},
+      "out": [
+        48
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        48,
+        27
+      ],
+      "params": {},
+      "out": [
+        49
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        49,
+        29
+      ],
+      "params": {},
+      "out": [
+        50
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        50,
+        27
+      ],
+      "params": {},
+      "out": [
+        51
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        51,
+        28
+      ],
+      "params": {},
+      "out": [
+        52
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        12
+      ],
+      "params": {
+        "shift": -40,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        53
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        53
+      ],
+      "params": {
+        "c": 762123384786
+      },
+      "out": [
+        54
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        52,
+        54
+      ],
+      "params": {},
+      "out": [
+        55
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        55
+      ],
+      "params": {
+        "c": -2199023255552
+      },
+      "out": [
+        56
+      ]
+    },
+    {
+      "op": "positive",
+      "args": [
+        56
+      ],
+      "params": {},
+      "out": [
+        57
+      ]
+    },
+    {
+      "op": "sqrt",
+      "args": [
+        57
+      ],
+      "params": {},
+      "out": [
+        58
+      ]
+    },
+    {
+      "op": "const",
+      "args": [],
+      "params": {
+        "value": 824633720832
+      },
+      "out": [
+        59
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        6,
+        59
+      ],
+      "params": {},
+      "out": [
+        60
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        60
+      ],
+      "params": {
+        "shift": 0,
+        "width": 40,
+        "signed": false
+      },
+      "out": [
+        61
+      ]
+    },
+    {
+      "op": "const",
+      "args": [],
+      "params": {
+        "value": 1099511627775
+      },
+      "out": [
+        62
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        6,
+        13
+      ],
+      "params": {},
+      "out": [
+        63
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        63,
+        13,
+        6
+      ],
+      "params": {},
+      "out": [
+        64
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        64,
+        62
+      ],
+      "params": {},
+      "out": [
+        65
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        65,
+        64,
+        62
+      ],
+      "params": {},
+      "out": [
+        66
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        66,
+        13
+      ],
+      "params": {},
+      "out": [
+        67
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        67
+      ],
+      "params": {
+        "shift": 34,
+        "width": 6,
+        "signed": false
+      },
+      "out": [
+        68
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        68
+      ],
+      "params": {
+        "shift": -34,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        69
+      ]
+    },
+    {
+      "op": "const",
+      "args": [],
+      "params": {
+        "value": 8589934592
+      },
+      "out": [
+        70
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        69,
+        70
+      ],
+      "params": {},
+      "out": [
+        71
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        66,
+        71
+      ],
+      "params": {},
+      "out": [
+        72
+      ]
+    },
+    {
+      "op": "lookup",
+      "args": [
+        68
+      ],
+      "params": {
+        "table": "cos",
+        "bits": 6
+      },
+      "out": [
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        80,
+        72
+      ],
+      "params": {},
+      "out": [
+        81
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        81,
+        79
+      ],
+      "params": {},
+      "out": [
+        82
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        82,
+        72
+      ],
+      "params": {},
+      "out": [
+        83
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        83,
+        78
+      ],
+      "params": {},
+      "out": [
+        84
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        84,
+        72
+      ],
+      "params": {},
+      "out": [
+        85
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        85,
+        77
+      ],
+      "params": {},
+      "out": [
+        86
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        86,
+        72
+      ],
+      "params": {},
+      "out": [
+        87
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        87,
+        76
+      ],
+      "params": {},
+      "out": [
+        88
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        88,
+        72
+      ],
+      "params": {},
+      "out": [
+        89
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        89,
+        75
+      ],
+      "params": {},
+      "out": [
+        90
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        90,
+        72
+      ],
+      "params": {},
+      "out": [
+        91
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        91,
+        74
+      ],
+      "params": {},
+      "out": [
+        92
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        92,
+        72
+      ],
+      "params": {},
+      "out": [
+        93
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        93,
+        73
+      ],
+      "params": {},
+      "out": [
+        94
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        58,
+        94
+      ],
+      "params": {},
+      "out": [
+        95
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        61,
+        13
+      ],
+      "params": {},
+      "out": [
+        96
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        96,
+        13,
+        61
+      ],
+      "params": {},
+      "out": [
+        97
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        97,
+        62
+      ],
+      "params": {},
+      "out": [
+        98
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        98,
+        97,
+        62
+      ],
+      "params": {},
+      "out": [
+        99
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        99,
+        13
+      ],
+      "params": {},
+      "out": [
+        100
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        100
+      ],
+      "params": {
+        "shift": 34,
+        "width": 6,
+        "signed": false
+      },
+      "out": [
+        101
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        101
+      ],
+      "params": {
+        "shift": -34,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        102
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        102,
+        70
+      ],
+      "params": {},
+      "out": [
+        103
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        99,
+        103
+      ],
+      "params": {},
+      "out": [
+        104
+      ]
+    },
+    {
+      "op": "lookup",
+      "args": [
+        101
+      ],
+      "params": {
+        "table": "cos",
+        "bits": 6
+      },
+      "out": [
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        112,
+        104
+      ],
+      "params": {},
+      "out": [
+        113
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        113,
+        111
+      ],
+      "params": {},
+      "out": [
+        114
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        114,
+        104
+      ],
+      "params": {},
+      "out": [
+        115
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        115,
+        110
+      ],
+      "params": {},
+      "out": [
+        116
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        116,
+        104
+      ],
+      "params": {},
+      "out": [
+        117
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        117,
+        109
+      ],
+      "params": {},
+      "out": [
+        118
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        118,
+        104
+      ],
+      "params": {},
+      "out": [
+        119
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        119,
+        108
+      ],
+      "params": {},
+      "out": [
+        120
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        120,
+        104
+      ],
+      "params": {},
+      "out": [
+        121
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        121,
+        107
+      ],
+      "params": {},
+      "out": [
+        122
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        122,
+        104
+      ],
+      "params": {},
+      "out": [
+        123
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        123,
+        106
+      ],
+      "params": {},
+      "out": [
+        124
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        124,
+        104
+      ],
+      "params": {},
+      "out": [
+        125
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        125,
+        105
+      ],
+      "params": {},
+      "out": [
+        126
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        58,
+        126
+      ],
+      "params": {},
+      "out": [
+        127
+      ]
+    },
+    {
+      "op": "input",
+      "args": [],
+      "params": {
+        "name": "uniform_2",
+        "bits": 32,
+        "preparation": "uniform"
+      },
+      "out": [
+        128
+      ]
+    },
+    {
+      "op": "input",
+      "args": [],
+      "params": {
+        "name": "uniform_3",
+        "bits": 32,
+        "preparation": "uniform"
+      },
+      "out": [
+        129
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        128
+      ],
+      "params": {
+        "shift": -8,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        130
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        130,
+        3
+      ],
+      "params": {},
+      "out": [
+        131
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        129
+      ],
+      "params": {
+        "shift": -8,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        132
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        132,
+        3
+      ],
+      "params": {},
+      "out": [
+        133
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        131,
+        7
+      ],
+      "params": {},
+      "out": [
+        134
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        134,
+        7,
+        131
+      ],
+      "params": {},
+      "out": [
+        135
+      ]
+    },
+    {
+      "op": "msb",
+      "args": [
+        135
+      ],
+      "params": {},
+      "out": [
+        136
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        136,
+        11
+      ],
+      "params": {},
+      "out": [
+        137
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        13,
+        137
+      ],
+      "params": {},
+      "out": [
+        138
+      ]
+    },
+    {
+      "op": "shift",
+      "args": [
+        135,
+        138
+      ],
+      "params": {},
+      "out": [
+        139
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        139,
+        16
+      ],
+      "params": {},
+      "out": [
+        140
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        140,
+        16,
+        139
+      ],
+      "params": {},
+      "out": [
+        141
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        141,
+        17
+      ],
+      "params": {},
+      "out": [
+        142
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        142,
+        141,
+        17
+      ],
+      "params": {},
+      "out": [
+        143
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        143,
+        16
+      ],
+      "params": {},
+      "out": [
+        144
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        144
+      ],
+      "params": {
+        "shift": 35,
+        "width": 5,
+        "signed": false
+      },
+      "out": [
+        145
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        145
+      ],
+      "params": {
+        "shift": -35,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        146
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        146,
+        25
+      ],
+      "params": {},
+      "out": [
+        147
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        143,
+        147
+      ],
+      "params": {},
+      "out": [
+        148
+      ]
+    },
+    {
+      "op": "lookup",
+      "args": [
+        145
+      ],
+      "params": {
+        "table": "log",
+        "bits": 5
+      },
+      "out": [
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        157,
+        148
+      ],
+      "params": {},
+      "out": [
+        158
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        158,
+        156
+      ],
+      "params": {},
+      "out": [
+        159
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        159,
+        148
+      ],
+      "params": {},
+      "out": [
+        160
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        160,
+        155
+      ],
+      "params": {},
+      "out": [
+        161
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        161,
+        148
+      ],
+      "params": {},
+      "out": [
+        162
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        162,
+        154
+      ],
+      "params": {},
+      "out": [
+        163
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        163,
+        148
+      ],
+      "params": {},
+      "out": [
+        164
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        164,
+        153
+      ],
+      "params": {},
+      "out": [
+        165
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        165,
+        148
+      ],
+      "params": {},
+      "out": [
+        166
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        166,
+        152
+      ],
+      "params": {},
+      "out": [
+        167
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        167,
+        148
+      ],
+      "params": {},
+      "out": [
+        168
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        168,
+        151
+      ],
+      "params": {},
+      "out": [
+        169
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        169,
+        148
+      ],
+      "params": {},
+      "out": [
+        170
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        170,
+        150
+      ],
+      "params": {},
+      "out": [
+        171
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        171,
+        148
+      ],
+      "params": {},
+      "out": [
+        172
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        172,
+        149
+      ],
+      "params": {},
+      "out": [
+        173
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        137
+      ],
+      "params": {
+        "shift": -40,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        174
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        174
+      ],
+      "params": {
+        "c": 762123384786
+      },
+      "out": [
+        175
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        173,
+        175
+      ],
+      "params": {},
+      "out": [
+        176
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        176
+      ],
+      "params": {
+        "c": -2199023255552
+      },
+      "out": [
+        177
+      ]
+    },
+    {
+      "op": "positive",
+      "args": [
+        177
+      ],
+      "params": {},
+      "out": [
+        178
+      ]
+    },
+    {
+      "op": "sqrt",
+      "args": [
+        178
+      ],
+      "params": {},
+      "out": [
+        179
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        133,
+        59
+      ],
+      "params": {},
+      "out": [
+        180
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        180
+      ],
+      "params": {
+        "shift": 0,
+        "width": 40,
+        "signed": false
+      },
+      "out": [
+        181
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        133,
+        13
+      ],
+      "params": {},
+      "out": [
+        182
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        182,
+        13,
+        133
+      ],
+      "params": {},
+      "out": [
+        183
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        183,
+        62
+      ],
+      "params": {},
+      "out": [
+        184
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        184,
+        183,
+        62
+      ],
+      "params": {},
+      "out": [
+        185
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        185,
+        13
+      ],
+      "params": {},
+      "out": [
+        186
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        186
+      ],
+      "params": {
+        "shift": 34,
+        "width": 6,
+        "signed": false
+      },
+      "out": [
+        187
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        187
+      ],
+      "params": {
+        "shift": -34,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        188
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        188,
+        70
+      ],
+      "params": {},
+      "out": [
+        189
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        185,
+        189
+      ],
+      "params": {},
+      "out": [
+        190
+      ]
+    },
+    {
+      "op": "lookup",
+      "args": [
+        187
+      ],
+      "params": {
+        "table": "cos",
+        "bits": 6
+      },
+      "out": [
+        191,
+        192,
+        193,
+        194,
+        195,
+        196,
+        197,
+        198
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        198,
+        190
+      ],
+      "params": {},
+      "out": [
+        199
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        199,
+        197
+      ],
+      "params": {},
+      "out": [
+        200
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        200,
+        190
+      ],
+      "params": {},
+      "out": [
+        201
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        201,
+        196
+      ],
+      "params": {},
+      "out": [
+        202
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        202,
+        190
+      ],
+      "params": {},
+      "out": [
+        203
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        203,
+        195
+      ],
+      "params": {},
+      "out": [
+        204
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        204,
+        190
+      ],
+      "params": {},
+      "out": [
+        205
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        205,
+        194
+      ],
+      "params": {},
+      "out": [
+        206
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        206,
+        190
+      ],
+      "params": {},
+      "out": [
+        207
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        207,
+        193
+      ],
+      "params": {},
+      "out": [
+        208
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        208,
+        190
+      ],
+      "params": {},
+      "out": [
+        209
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        209,
+        192
+      ],
+      "params": {},
+      "out": [
+        210
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        210,
+        190
+      ],
+      "params": {},
+      "out": [
+        211
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        211,
+        191
+      ],
+      "params": {},
+      "out": [
+        212
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        179,
+        212
+      ],
+      "params": {},
+      "out": [
+        213
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        181,
+        13
+      ],
+      "params": {},
+      "out": [
+        214
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        214,
+        13,
+        181
+      ],
+      "params": {},
+      "out": [
+        215
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        215,
+        62
+      ],
+      "params": {},
+      "out": [
+        216
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        216,
+        215,
+        62
+      ],
+      "params": {},
+      "out": [
+        217
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        217,
+        13
+      ],
+      "params": {},
+      "out": [
+        218
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        218
+      ],
+      "params": {
+        "shift": 34,
+        "width": 6,
+        "signed": false
+      },
+      "out": [
+        219
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        219
+      ],
+      "params": {
+        "shift": -34,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        220
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        220,
+        70
+      ],
+      "params": {},
+      "out": [
+        221
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        217,
+        221
+      ],
+      "params": {},
+      "out": [
+        222
+      ]
+    },
+    {
+      "op": "lookup",
+      "args": [
+        219
+      ],
+      "params": {
+        "table": "cos",
+        "bits": 6
+      },
+      "out": [
+        223,
+        224,
+        225,
+        226,
+        227,
+        228,
+        229,
+        230
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        230,
+        222
+      ],
+      "params": {},
+      "out": [
+        231
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        231,
+        229
+      ],
+      "params": {},
+      "out": [
+        232
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        232,
+        222
+      ],
+      "params": {},
+      "out": [
+        233
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        233,
+        228
+      ],
+      "params": {},
+      "out": [
+        234
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        234,
+        222
+      ],
+      "params": {},
+      "out": [
+        235
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        235,
+        227
+      ],
+      "params": {},
+      "out": [
+        236
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        236,
+        222
+      ],
+      "params": {},
+      "out": [
+        237
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        237,
+        226
+      ],
+      "params": {},
+      "out": [
+        238
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        238,
+        222
+      ],
+      "params": {},
+      "out": [
+        239
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        239,
+        225
+      ],
+      "params": {},
+      "out": [
+        240
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        240,
+        222
+      ],
+      "params": {},
+      "out": [
+        241
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        241,
+        224
+      ],
+      "params": {},
+      "out": [
+        242
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        242,
+        222
+      ],
+      "params": {},
+      "out": [
+        243
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        243,
+        223
+      ],
+      "params": {},
+      "out": [
+        244
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        179,
+        244
+      ],
+      "params": {},
+      "out": [
+        245
+      ]
+    },
+    {
+      "op": "input",
+      "args": [],
+      "params": {
+        "name": "uniform_4",
+        "bits": 32,
+        "preparation": "uniform"
+      },
+      "out": [
+        246
+      ]
+    },
+    {
+      "op": "input",
+      "args": [],
+      "params": {
+        "name": "uniform_5",
+        "bits": 32,
+        "preparation": "uniform"
+      },
+      "out": [
+        247
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        246
+      ],
+      "params": {
+        "shift": -8,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        248
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        248,
+        3
+      ],
+      "params": {},
+      "out": [
+        249
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        247
+      ],
+      "params": {
+        "shift": -8,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        250
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        250,
+        3
+      ],
+      "params": {},
+      "out": [
+        251
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        249,
+        7
+      ],
+      "params": {},
+      "out": [
+        252
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        252,
+        7,
+        249
+      ],
+      "params": {},
+      "out": [
+        253
+      ]
+    },
+    {
+      "op": "msb",
+      "args": [
+        253
+      ],
+      "params": {},
+      "out": [
+        254
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        254,
+        11
+      ],
+      "params": {},
+      "out": [
+        255
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        13,
+        255
+      ],
+      "params": {},
+      "out": [
+        256
+      ]
+    },
+    {
+      "op": "shift",
+      "args": [
+        253,
+        256
+      ],
+      "params": {},
+      "out": [
+        257
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        257,
+        16
+      ],
+      "params": {},
+      "out": [
+        258
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        258,
+        16,
+        257
+      ],
+      "params": {},
+      "out": [
+        259
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        259,
+        17
+      ],
+      "params": {},
+      "out": [
+        260
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        260,
+        259,
+        17
+      ],
+      "params": {},
+      "out": [
+        261
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        261,
+        16
+      ],
+      "params": {},
+      "out": [
+        262
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        262
+      ],
+      "params": {
+        "shift": 35,
+        "width": 5,
+        "signed": false
+      },
+      "out": [
+        263
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        263
+      ],
+      "params": {
+        "shift": -35,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        264
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        264,
+        25
+      ],
+      "params": {},
+      "out": [
+        265
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        261,
+        265
+      ],
+      "params": {},
+      "out": [
+        266
+      ]
+    },
+    {
+      "op": "lookup",
+      "args": [
+        263
+      ],
+      "params": {
+        "table": "log",
+        "bits": 5
+      },
+      "out": [
+        267,
+        268,
+        269,
+        270,
+        271,
+        272,
+        273,
+        274,
+        275
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        275,
+        266
+      ],
+      "params": {},
+      "out": [
+        276
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        276,
+        274
+      ],
+      "params": {},
+      "out": [
+        277
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        277,
+        266
+      ],
+      "params": {},
+      "out": [
+        278
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        278,
+        273
+      ],
+      "params": {},
+      "out": [
+        279
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        279,
+        266
+      ],
+      "params": {},
+      "out": [
+        280
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        280,
+        272
+      ],
+      "params": {},
+      "out": [
+        281
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        281,
+        266
+      ],
+      "params": {},
+      "out": [
+        282
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        282,
+        271
+      ],
+      "params": {},
+      "out": [
+        283
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        283,
+        266
+      ],
+      "params": {},
+      "out": [
+        284
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        284,
+        270
+      ],
+      "params": {},
+      "out": [
+        285
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        285,
+        266
+      ],
+      "params": {},
+      "out": [
+        286
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        286,
+        269
+      ],
+      "params": {},
+      "out": [
+        287
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        287,
+        266
+      ],
+      "params": {},
+      "out": [
+        288
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        288,
+        268
+      ],
+      "params": {},
+      "out": [
+        289
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        289,
+        266
+      ],
+      "params": {},
+      "out": [
+        290
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        290,
+        267
+      ],
+      "params": {},
+      "out": [
+        291
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        255
+      ],
+      "params": {
+        "shift": -40,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        292
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        292
+      ],
+      "params": {
+        "c": 762123384786
+      },
+      "out": [
+        293
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        291,
+        293
+      ],
+      "params": {},
+      "out": [
+        294
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        294
+      ],
+      "params": {
+        "c": -2199023255552
+      },
+      "out": [
+        295
+      ]
+    },
+    {
+      "op": "positive",
+      "args": [
+        295
+      ],
+      "params": {},
+      "out": [
+        296
+      ]
+    },
+    {
+      "op": "sqrt",
+      "args": [
+        296
+      ],
+      "params": {},
+      "out": [
+        297
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        251,
+        59
+      ],
+      "params": {},
+      "out": [
+        298
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        298
+      ],
+      "params": {
+        "shift": 0,
+        "width": 40,
+        "signed": false
+      },
+      "out": [
+        299
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        251,
+        13
+      ],
+      "params": {},
+      "out": [
+        300
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        300,
+        13,
+        251
+      ],
+      "params": {},
+      "out": [
+        301
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        301,
+        62
+      ],
+      "params": {},
+      "out": [
+        302
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        302,
+        301,
+        62
+      ],
+      "params": {},
+      "out": [
+        303
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        303,
+        13
+      ],
+      "params": {},
+      "out": [
+        304
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        304
+      ],
+      "params": {
+        "shift": 34,
+        "width": 6,
+        "signed": false
+      },
+      "out": [
+        305
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        305
+      ],
+      "params": {
+        "shift": -34,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        306
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        306,
+        70
+      ],
+      "params": {},
+      "out": [
+        307
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        303,
+        307
+      ],
+      "params": {},
+      "out": [
+        308
+      ]
+    },
+    {
+      "op": "lookup",
+      "args": [
+        305
+      ],
+      "params": {
+        "table": "cos",
+        "bits": 6
+      },
+      "out": [
+        309,
+        310,
+        311,
+        312,
+        313,
+        314,
+        315,
+        316
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        316,
+        308
+      ],
+      "params": {},
+      "out": [
+        317
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        317,
+        315
+      ],
+      "params": {},
+      "out": [
+        318
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        318,
+        308
+      ],
+      "params": {},
+      "out": [
+        319
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        319,
+        314
+      ],
+      "params": {},
+      "out": [
+        320
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        320,
+        308
+      ],
+      "params": {},
+      "out": [
+        321
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        321,
+        313
+      ],
+      "params": {},
+      "out": [
+        322
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        322,
+        308
+      ],
+      "params": {},
+      "out": [
+        323
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        323,
+        312
+      ],
+      "params": {},
+      "out": [
+        324
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        324,
+        308
+      ],
+      "params": {},
+      "out": [
+        325
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        325,
+        311
+      ],
+      "params": {},
+      "out": [
+        326
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        326,
+        308
+      ],
+      "params": {},
+      "out": [
+        327
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        327,
+        310
+      ],
+      "params": {},
+      "out": [
+        328
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        328,
+        308
+      ],
+      "params": {},
+      "out": [
+        329
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        329,
+        309
+      ],
+      "params": {},
+      "out": [
+        330
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        297,
+        330
+      ],
+      "params": {},
+      "out": [
+        331
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        299,
+        13
+      ],
+      "params": {},
+      "out": [
+        332
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        332,
+        13,
+        299
+      ],
+      "params": {},
+      "out": [
+        333
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        333,
+        62
+      ],
+      "params": {},
+      "out": [
+        334
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        334,
+        333,
+        62
+      ],
+      "params": {},
+      "out": [
+        335
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        335,
+        13
+      ],
+      "params": {},
+      "out": [
+        336
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        336
+      ],
+      "params": {
+        "shift": 34,
+        "width": 6,
+        "signed": false
+      },
+      "out": [
+        337
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        337
+      ],
+      "params": {
+        "shift": -34,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        338
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        338,
+        70
+      ],
+      "params": {},
+      "out": [
+        339
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        335,
+        339
+      ],
+      "params": {},
+      "out": [
+        340
+      ]
+    },
+    {
+      "op": "lookup",
+      "args": [
+        337
+      ],
+      "params": {
+        "table": "cos",
+        "bits": 6
+      },
+      "out": [
+        341,
+        342,
+        343,
+        344,
+        345,
+        346,
+        347,
+        348
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        348,
+        340
+      ],
+      "params": {},
+      "out": [
+        349
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        349,
+        347
+      ],
+      "params": {},
+      "out": [
+        350
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        350,
+        340
+      ],
+      "params": {},
+      "out": [
+        351
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        351,
+        346
+      ],
+      "params": {},
+      "out": [
+        352
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        352,
+        340
+      ],
+      "params": {},
+      "out": [
+        353
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        353,
+        345
+      ],
+      "params": {},
+      "out": [
+        354
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        354,
+        340
+      ],
+      "params": {},
+      "out": [
+        355
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        355,
+        344
+      ],
+      "params": {},
+      "out": [
+        356
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        356,
+        340
+      ],
+      "params": {},
+      "out": [
+        357
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        357,
+        343
+      ],
+      "params": {},
+      "out": [
+        358
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        358,
+        340
+      ],
+      "params": {},
+      "out": [
+        359
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        359,
+        342
+      ],
+      "params": {},
+      "out": [
+        360
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        360,
+        340
+      ],
+      "params": {},
+      "out": [
+        361
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        361,
+        341
+      ],
+      "params": {},
+      "out": [
+        362
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        297,
+        362
+      ],
+      "params": {},
+      "out": [
+        363
+      ]
+    },
+    {
+      "op": "input",
+      "args": [],
+      "params": {
+        "name": "uniform_6",
+        "bits": 32,
+        "preparation": "uniform"
+      },
+      "out": [
+        364
+      ]
+    },
+    {
+      "op": "input",
+      "args": [],
+      "params": {
+        "name": "uniform_7",
+        "bits": 32,
+        "preparation": "uniform"
+      },
+      "out": [
+        365
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        364
+      ],
+      "params": {
+        "shift": -8,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        366
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        366,
+        3
+      ],
+      "params": {},
+      "out": [
+        367
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        365
+      ],
+      "params": {
+        "shift": -8,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        368
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        368,
+        3
+      ],
+      "params": {},
+      "out": [
+        369
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        367,
+        7
+      ],
+      "params": {},
+      "out": [
+        370
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        370,
+        7,
+        367
+      ],
+      "params": {},
+      "out": [
+        371
+      ]
+    },
+    {
+      "op": "msb",
+      "args": [
+        371
+      ],
+      "params": {},
+      "out": [
+        372
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        372,
+        11
+      ],
+      "params": {},
+      "out": [
+        373
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        13,
+        373
+      ],
+      "params": {},
+      "out": [
+        374
+      ]
+    },
+    {
+      "op": "shift",
+      "args": [
+        371,
+        374
+      ],
+      "params": {},
+      "out": [
+        375
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        375,
+        16
+      ],
+      "params": {},
+      "out": [
+        376
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        376,
+        16,
+        375
+      ],
+      "params": {},
+      "out": [
+        377
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        377,
+        17
+      ],
+      "params": {},
+      "out": [
+        378
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        378,
+        377,
+        17
+      ],
+      "params": {},
+      "out": [
+        379
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        379,
+        16
+      ],
+      "params": {},
+      "out": [
+        380
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        380
+      ],
+      "params": {
+        "shift": 35,
+        "width": 5,
+        "signed": false
+      },
+      "out": [
+        381
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        381
+      ],
+      "params": {
+        "shift": -35,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        382
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        382,
+        25
+      ],
+      "params": {},
+      "out": [
+        383
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        379,
+        383
+      ],
+      "params": {},
+      "out": [
+        384
+      ]
+    },
+    {
+      "op": "lookup",
+      "args": [
+        381
+      ],
+      "params": {
+        "table": "log",
+        "bits": 5
+      },
+      "out": [
+        385,
+        386,
+        387,
+        388,
+        389,
+        390,
+        391,
+        392,
+        393
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        393,
+        384
+      ],
+      "params": {},
+      "out": [
+        394
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        394,
+        392
+      ],
+      "params": {},
+      "out": [
+        395
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        395,
+        384
+      ],
+      "params": {},
+      "out": [
+        396
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        396,
+        391
+      ],
+      "params": {},
+      "out": [
+        397
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        397,
+        384
+      ],
+      "params": {},
+      "out": [
+        398
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        398,
+        390
+      ],
+      "params": {},
+      "out": [
+        399
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        399,
+        384
+      ],
+      "params": {},
+      "out": [
+        400
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        400,
+        389
+      ],
+      "params": {},
+      "out": [
+        401
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        401,
+        384
+      ],
+      "params": {},
+      "out": [
+        402
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        402,
+        388
+      ],
+      "params": {},
+      "out": [
+        403
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        403,
+        384
+      ],
+      "params": {},
+      "out": [
+        404
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        404,
+        387
+      ],
+      "params": {},
+      "out": [
+        405
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        405,
+        384
+      ],
+      "params": {},
+      "out": [
+        406
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        406,
+        386
+      ],
+      "params": {},
+      "out": [
+        407
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        407,
+        384
+      ],
+      "params": {},
+      "out": [
+        408
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        408,
+        385
+      ],
+      "params": {},
+      "out": [
+        409
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        373
+      ],
+      "params": {
+        "shift": -40,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        410
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        410
+      ],
+      "params": {
+        "c": 762123384786
+      },
+      "out": [
+        411
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        409,
+        411
+      ],
+      "params": {},
+      "out": [
+        412
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        412
+      ],
+      "params": {
+        "c": -2199023255552
+      },
+      "out": [
+        413
+      ]
+    },
+    {
+      "op": "positive",
+      "args": [
+        413
+      ],
+      "params": {},
+      "out": [
+        414
+      ]
+    },
+    {
+      "op": "sqrt",
+      "args": [
+        414
+      ],
+      "params": {},
+      "out": [
+        415
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        369,
+        59
+      ],
+      "params": {},
+      "out": [
+        416
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        416
+      ],
+      "params": {
+        "shift": 0,
+        "width": 40,
+        "signed": false
+      },
+      "out": [
+        417
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        369,
+        13
+      ],
+      "params": {},
+      "out": [
+        418
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        418,
+        13,
+        369
+      ],
+      "params": {},
+      "out": [
+        419
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        419,
+        62
+      ],
+      "params": {},
+      "out": [
+        420
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        420,
+        419,
+        62
+      ],
+      "params": {},
+      "out": [
+        421
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        421,
+        13
+      ],
+      "params": {},
+      "out": [
+        422
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        422
+      ],
+      "params": {
+        "shift": 34,
+        "width": 6,
+        "signed": false
+      },
+      "out": [
+        423
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        423
+      ],
+      "params": {
+        "shift": -34,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        424
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        424,
+        70
+      ],
+      "params": {},
+      "out": [
+        425
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        421,
+        425
+      ],
+      "params": {},
+      "out": [
+        426
+      ]
+    },
+    {
+      "op": "lookup",
+      "args": [
+        423
+      ],
+      "params": {
+        "table": "cos",
+        "bits": 6
+      },
+      "out": [
+        427,
+        428,
+        429,
+        430,
+        431,
+        432,
+        433,
+        434
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        434,
+        426
+      ],
+      "params": {},
+      "out": [
+        435
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        435,
+        433
+      ],
+      "params": {},
+      "out": [
+        436
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        436,
+        426
+      ],
+      "params": {},
+      "out": [
+        437
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        437,
+        432
+      ],
+      "params": {},
+      "out": [
+        438
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        438,
+        426
+      ],
+      "params": {},
+      "out": [
+        439
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        439,
+        431
+      ],
+      "params": {},
+      "out": [
+        440
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        440,
+        426
+      ],
+      "params": {},
+      "out": [
+        441
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        441,
+        430
+      ],
+      "params": {},
+      "out": [
+        442
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        442,
+        426
+      ],
+      "params": {},
+      "out": [
+        443
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        443,
+        429
+      ],
+      "params": {},
+      "out": [
+        444
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        444,
+        426
+      ],
+      "params": {},
+      "out": [
+        445
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        445,
+        428
+      ],
+      "params": {},
+      "out": [
+        446
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        446,
+        426
+      ],
+      "params": {},
+      "out": [
+        447
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        447,
+        427
+      ],
+      "params": {},
+      "out": [
+        448
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        415,
+        448
+      ],
+      "params": {},
+      "out": [
+        449
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        417,
+        13
+      ],
+      "params": {},
+      "out": [
+        450
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        450,
+        13,
+        417
+      ],
+      "params": {},
+      "out": [
+        451
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        451,
+        62
+      ],
+      "params": {},
+      "out": [
+        452
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        452,
+        451,
+        62
+      ],
+      "params": {},
+      "out": [
+        453
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        453,
+        13
+      ],
+      "params": {},
+      "out": [
+        454
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        454
+      ],
+      "params": {
+        "shift": 34,
+        "width": 6,
+        "signed": false
+      },
+      "out": [
+        455
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        455
+      ],
+      "params": {
+        "shift": -34,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        456
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        456,
+        70
+      ],
+      "params": {},
+      "out": [
+        457
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        453,
+        457
+      ],
+      "params": {},
+      "out": [
+        458
+      ]
+    },
+    {
+      "op": "lookup",
+      "args": [
+        455
+      ],
+      "params": {
+        "table": "cos",
+        "bits": 6
+      },
+      "out": [
+        459,
+        460,
+        461,
+        462,
+        463,
+        464,
+        465,
+        466
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        466,
+        458
+      ],
+      "params": {},
+      "out": [
+        467
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        467,
+        465
+      ],
+      "params": {},
+      "out": [
+        468
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        468,
+        458
+      ],
+      "params": {},
+      "out": [
+        469
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        469,
+        464
+      ],
+      "params": {},
+      "out": [
+        470
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        470,
+        458
+      ],
+      "params": {},
+      "out": [
+        471
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        471,
+        463
+      ],
+      "params": {},
+      "out": [
+        472
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        472,
+        458
+      ],
+      "params": {},
+      "out": [
+        473
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        473,
+        462
+      ],
+      "params": {},
+      "out": [
+        474
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        474,
+        458
+      ],
+      "params": {},
+      "out": [
+        475
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        475,
+        461
+      ],
+      "params": {},
+      "out": [
+        476
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        476,
+        458
+      ],
+      "params": {},
+      "out": [
+        477
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        477,
+        460
+      ],
+      "params": {},
+      "out": [
+        478
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        478,
+        458
+      ],
+      "params": {},
+      "out": [
+        479
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        479,
+        459
+      ],
+      "params": {},
+      "out": [
+        480
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        415,
+        480
+      ],
+      "params": {},
+      "out": [
+        481
+      ]
+    },
+    {
+      "op": "input",
+      "args": [],
+      "params": {
+        "name": "uniform_8",
+        "bits": 32,
+        "preparation": "uniform"
+      },
+      "out": [
+        482
+      ]
+    },
+    {
+      "op": "input",
+      "args": [],
+      "params": {
+        "name": "uniform_9",
+        "bits": 32,
+        "preparation": "uniform"
+      },
+      "out": [
+        483
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        482
+      ],
+      "params": {
+        "shift": -8,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        484
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        484,
+        3
+      ],
+      "params": {},
+      "out": [
+        485
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        483
+      ],
+      "params": {
+        "shift": -8,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        486
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        486,
+        3
+      ],
+      "params": {},
+      "out": [
+        487
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        485,
+        7
+      ],
+      "params": {},
+      "out": [
+        488
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        488,
+        7,
+        485
+      ],
+      "params": {},
+      "out": [
+        489
+      ]
+    },
+    {
+      "op": "msb",
+      "args": [
+        489
+      ],
+      "params": {},
+      "out": [
+        490
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        490,
+        11
+      ],
+      "params": {},
+      "out": [
+        491
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        13,
+        491
+      ],
+      "params": {},
+      "out": [
+        492
+      ]
+    },
+    {
+      "op": "shift",
+      "args": [
+        489,
+        492
+      ],
+      "params": {},
+      "out": [
+        493
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        493,
+        16
+      ],
+      "params": {},
+      "out": [
+        494
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        494,
+        16,
+        493
+      ],
+      "params": {},
+      "out": [
+        495
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        495,
+        17
+      ],
+      "params": {},
+      "out": [
+        496
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        496,
+        495,
+        17
+      ],
+      "params": {},
+      "out": [
+        497
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        497,
+        16
+      ],
+      "params": {},
+      "out": [
+        498
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        498
+      ],
+      "params": {
+        "shift": 35,
+        "width": 5,
+        "signed": false
+      },
+      "out": [
+        499
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        499
+      ],
+      "params": {
+        "shift": -35,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        500
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        500,
+        25
+      ],
+      "params": {},
+      "out": [
+        501
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        497,
+        501
+      ],
+      "params": {},
+      "out": [
+        502
+      ]
+    },
+    {
+      "op": "lookup",
+      "args": [
+        499
+      ],
+      "params": {
+        "table": "log",
+        "bits": 5
+      },
+      "out": [
+        503,
+        504,
+        505,
+        506,
+        507,
+        508,
+        509,
+        510,
+        511
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        511,
+        502
+      ],
+      "params": {},
+      "out": [
+        512
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        512,
+        510
+      ],
+      "params": {},
+      "out": [
+        513
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        513,
+        502
+      ],
+      "params": {},
+      "out": [
+        514
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        514,
+        509
+      ],
+      "params": {},
+      "out": [
+        515
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        515,
+        502
+      ],
+      "params": {},
+      "out": [
+        516
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        516,
+        508
+      ],
+      "params": {},
+      "out": [
+        517
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        517,
+        502
+      ],
+      "params": {},
+      "out": [
+        518
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        518,
+        507
+      ],
+      "params": {},
+      "out": [
+        519
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        519,
+        502
+      ],
+      "params": {},
+      "out": [
+        520
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        520,
+        506
+      ],
+      "params": {},
+      "out": [
+        521
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        521,
+        502
+      ],
+      "params": {},
+      "out": [
+        522
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        522,
+        505
+      ],
+      "params": {},
+      "out": [
+        523
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        523,
+        502
+      ],
+      "params": {},
+      "out": [
+        524
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        524,
+        504
+      ],
+      "params": {},
+      "out": [
+        525
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        525,
+        502
+      ],
+      "params": {},
+      "out": [
+        526
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        526,
+        503
+      ],
+      "params": {},
+      "out": [
+        527
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        491
+      ],
+      "params": {
+        "shift": -40,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        528
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        528
+      ],
+      "params": {
+        "c": 762123384786
+      },
+      "out": [
+        529
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        527,
+        529
+      ],
+      "params": {},
+      "out": [
+        530
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        530
+      ],
+      "params": {
+        "c": -2199023255552
+      },
+      "out": [
+        531
+      ]
+    },
+    {
+      "op": "positive",
+      "args": [
+        531
+      ],
+      "params": {},
+      "out": [
+        532
+      ]
+    },
+    {
+      "op": "sqrt",
+      "args": [
+        532
+      ],
+      "params": {},
+      "out": [
+        533
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        487,
+        59
+      ],
+      "params": {},
+      "out": [
+        534
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        534
+      ],
+      "params": {
+        "shift": 0,
+        "width": 40,
+        "signed": false
+      },
+      "out": [
+        535
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        487,
+        13
+      ],
+      "params": {},
+      "out": [
+        536
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        536,
+        13,
+        487
+      ],
+      "params": {},
+      "out": [
+        537
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        537,
+        62
+      ],
+      "params": {},
+      "out": [
+        538
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        538,
+        537,
+        62
+      ],
+      "params": {},
+      "out": [
+        539
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        539,
+        13
+      ],
+      "params": {},
+      "out": [
+        540
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        540
+      ],
+      "params": {
+        "shift": 34,
+        "width": 6,
+        "signed": false
+      },
+      "out": [
+        541
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        541
+      ],
+      "params": {
+        "shift": -34,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        542
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        542,
+        70
+      ],
+      "params": {},
+      "out": [
+        543
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        539,
+        543
+      ],
+      "params": {},
+      "out": [
+        544
+      ]
+    },
+    {
+      "op": "lookup",
+      "args": [
+        541
+      ],
+      "params": {
+        "table": "cos",
+        "bits": 6
+      },
+      "out": [
+        545,
+        546,
+        547,
+        548,
+        549,
+        550,
+        551,
+        552
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        552,
+        544
+      ],
+      "params": {},
+      "out": [
+        553
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        553,
+        551
+      ],
+      "params": {},
+      "out": [
+        554
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        554,
+        544
+      ],
+      "params": {},
+      "out": [
+        555
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        555,
+        550
+      ],
+      "params": {},
+      "out": [
+        556
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        556,
+        544
+      ],
+      "params": {},
+      "out": [
+        557
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        557,
+        549
+      ],
+      "params": {},
+      "out": [
+        558
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        558,
+        544
+      ],
+      "params": {},
+      "out": [
+        559
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        559,
+        548
+      ],
+      "params": {},
+      "out": [
+        560
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        560,
+        544
+      ],
+      "params": {},
+      "out": [
+        561
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        561,
+        547
+      ],
+      "params": {},
+      "out": [
+        562
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        562,
+        544
+      ],
+      "params": {},
+      "out": [
+        563
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        563,
+        546
+      ],
+      "params": {},
+      "out": [
+        564
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        564,
+        544
+      ],
+      "params": {},
+      "out": [
+        565
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        565,
+        545
+      ],
+      "params": {},
+      "out": [
+        566
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        533,
+        566
+      ],
+      "params": {},
+      "out": [
+        567
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        535,
+        13
+      ],
+      "params": {},
+      "out": [
+        568
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        568,
+        13,
+        535
+      ],
+      "params": {},
+      "out": [
+        569
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        569,
+        62
+      ],
+      "params": {},
+      "out": [
+        570
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        570,
+        569,
+        62
+      ],
+      "params": {},
+      "out": [
+        571
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        571,
+        13
+      ],
+      "params": {},
+      "out": [
+        572
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        572
+      ],
+      "params": {
+        "shift": 34,
+        "width": 6,
+        "signed": false
+      },
+      "out": [
+        573
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        573
+      ],
+      "params": {
+        "shift": -34,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        574
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        574,
+        70
+      ],
+      "params": {},
+      "out": [
+        575
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        571,
+        575
+      ],
+      "params": {},
+      "out": [
+        576
+      ]
+    },
+    {
+      "op": "lookup",
+      "args": [
+        573
+      ],
+      "params": {
+        "table": "cos",
+        "bits": 6
+      },
+      "out": [
+        577,
+        578,
+        579,
+        580,
+        581,
+        582,
+        583,
+        584
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        584,
+        576
+      ],
+      "params": {},
+      "out": [
+        585
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        585,
+        583
+      ],
+      "params": {},
+      "out": [
+        586
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        586,
+        576
+      ],
+      "params": {},
+      "out": [
+        587
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        587,
+        582
+      ],
+      "params": {},
+      "out": [
+        588
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        588,
+        576
+      ],
+      "params": {},
+      "out": [
+        589
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        589,
+        581
+      ],
+      "params": {},
+      "out": [
+        590
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        590,
+        576
+      ],
+      "params": {},
+      "out": [
+        591
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        591,
+        580
+      ],
+      "params": {},
+      "out": [
+        592
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        592,
+        576
+      ],
+      "params": {},
+      "out": [
+        593
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        593,
+        579
+      ],
+      "params": {},
+      "out": [
+        594
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        594,
+        576
+      ],
+      "params": {},
+      "out": [
+        595
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        595,
+        578
+      ],
+      "params": {},
+      "out": [
+        596
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        596,
+        576
+      ],
+      "params": {},
+      "out": [
+        597
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        597,
+        577
+      ],
+      "params": {},
+      "out": [
+        598
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        533,
+        598
+      ],
+      "params": {},
+      "out": [
+        599
+      ]
+    },
+    {
+      "op": "input",
+      "args": [],
+      "params": {
+        "name": "uniform_10",
+        "bits": 32,
+        "preparation": "uniform"
+      },
+      "out": [
+        600
+      ]
+    },
+    {
+      "op": "input",
+      "args": [],
+      "params": {
+        "name": "uniform_11",
+        "bits": 32,
+        "preparation": "uniform"
+      },
+      "out": [
+        601
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        600
+      ],
+      "params": {
+        "shift": -8,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        602
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        602,
+        3
+      ],
+      "params": {},
+      "out": [
+        603
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        601
+      ],
+      "params": {
+        "shift": -8,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        604
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        604,
+        3
+      ],
+      "params": {},
+      "out": [
+        605
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        603,
+        7
+      ],
+      "params": {},
+      "out": [
+        606
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        606,
+        7,
+        603
+      ],
+      "params": {},
+      "out": [
+        607
+      ]
+    },
+    {
+      "op": "msb",
+      "args": [
+        607
+      ],
+      "params": {},
+      "out": [
+        608
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        608,
+        11
+      ],
+      "params": {},
+      "out": [
+        609
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        13,
+        609
+      ],
+      "params": {},
+      "out": [
+        610
+      ]
+    },
+    {
+      "op": "shift",
+      "args": [
+        607,
+        610
+      ],
+      "params": {},
+      "out": [
+        611
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        611,
+        16
+      ],
+      "params": {},
+      "out": [
+        612
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        612,
+        16,
+        611
+      ],
+      "params": {},
+      "out": [
+        613
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        613,
+        17
+      ],
+      "params": {},
+      "out": [
+        614
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        614,
+        613,
+        17
+      ],
+      "params": {},
+      "out": [
+        615
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        615,
+        16
+      ],
+      "params": {},
+      "out": [
+        616
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        616
+      ],
+      "params": {
+        "shift": 35,
+        "width": 5,
+        "signed": false
+      },
+      "out": [
+        617
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        617
+      ],
+      "params": {
+        "shift": -35,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        618
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        618,
+        25
+      ],
+      "params": {},
+      "out": [
+        619
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        615,
+        619
+      ],
+      "params": {},
+      "out": [
+        620
+      ]
+    },
+    {
+      "op": "lookup",
+      "args": [
+        617
+      ],
+      "params": {
+        "table": "log",
+        "bits": 5
+      },
+      "out": [
+        621,
+        622,
+        623,
+        624,
+        625,
+        626,
+        627,
+        628,
+        629
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        629,
+        620
+      ],
+      "params": {},
+      "out": [
+        630
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        630,
+        628
+      ],
+      "params": {},
+      "out": [
+        631
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        631,
+        620
+      ],
+      "params": {},
+      "out": [
+        632
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        632,
+        627
+      ],
+      "params": {},
+      "out": [
+        633
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        633,
+        620
+      ],
+      "params": {},
+      "out": [
+        634
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        634,
+        626
+      ],
+      "params": {},
+      "out": [
+        635
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        635,
+        620
+      ],
+      "params": {},
+      "out": [
+        636
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        636,
+        625
+      ],
+      "params": {},
+      "out": [
+        637
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        637,
+        620
+      ],
+      "params": {},
+      "out": [
+        638
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        638,
+        624
+      ],
+      "params": {},
+      "out": [
+        639
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        639,
+        620
+      ],
+      "params": {},
+      "out": [
+        640
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        640,
+        623
+      ],
+      "params": {},
+      "out": [
+        641
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        641,
+        620
+      ],
+      "params": {},
+      "out": [
+        642
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        642,
+        622
+      ],
+      "params": {},
+      "out": [
+        643
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        643,
+        620
+      ],
+      "params": {},
+      "out": [
+        644
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        644,
+        621
+      ],
+      "params": {},
+      "out": [
+        645
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        609
+      ],
+      "params": {
+        "shift": -40,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        646
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        646
+      ],
+      "params": {
+        "c": 762123384786
+      },
+      "out": [
+        647
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        645,
+        647
+      ],
+      "params": {},
+      "out": [
+        648
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        648
+      ],
+      "params": {
+        "c": -2199023255552
+      },
+      "out": [
+        649
+      ]
+    },
+    {
+      "op": "positive",
+      "args": [
+        649
+      ],
+      "params": {},
+      "out": [
+        650
+      ]
+    },
+    {
+      "op": "sqrt",
+      "args": [
+        650
+      ],
+      "params": {},
+      "out": [
+        651
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        605,
+        59
+      ],
+      "params": {},
+      "out": [
+        652
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        652
+      ],
+      "params": {
+        "shift": 0,
+        "width": 40,
+        "signed": false
+      },
+      "out": [
+        653
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        605,
+        13
+      ],
+      "params": {},
+      "out": [
+        654
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        654,
+        13,
+        605
+      ],
+      "params": {},
+      "out": [
+        655
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        655,
+        62
+      ],
+      "params": {},
+      "out": [
+        656
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        656,
+        655,
+        62
+      ],
+      "params": {},
+      "out": [
+        657
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        657,
+        13
+      ],
+      "params": {},
+      "out": [
+        658
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        658
+      ],
+      "params": {
+        "shift": 34,
+        "width": 6,
+        "signed": false
+      },
+      "out": [
+        659
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        659
+      ],
+      "params": {
+        "shift": -34,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        660
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        660,
+        70
+      ],
+      "params": {},
+      "out": [
+        661
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        657,
+        661
+      ],
+      "params": {},
+      "out": [
+        662
+      ]
+    },
+    {
+      "op": "lookup",
+      "args": [
+        659
+      ],
+      "params": {
+        "table": "cos",
+        "bits": 6
+      },
+      "out": [
+        663,
+        664,
+        665,
+        666,
+        667,
+        668,
+        669,
+        670
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        670,
+        662
+      ],
+      "params": {},
+      "out": [
+        671
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        671,
+        669
+      ],
+      "params": {},
+      "out": [
+        672
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        672,
+        662
+      ],
+      "params": {},
+      "out": [
+        673
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        673,
+        668
+      ],
+      "params": {},
+      "out": [
+        674
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        674,
+        662
+      ],
+      "params": {},
+      "out": [
+        675
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        675,
+        667
+      ],
+      "params": {},
+      "out": [
+        676
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        676,
+        662
+      ],
+      "params": {},
+      "out": [
+        677
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        677,
+        666
+      ],
+      "params": {},
+      "out": [
+        678
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        678,
+        662
+      ],
+      "params": {},
+      "out": [
+        679
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        679,
+        665
+      ],
+      "params": {},
+      "out": [
+        680
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        680,
+        662
+      ],
+      "params": {},
+      "out": [
+        681
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        681,
+        664
+      ],
+      "params": {},
+      "out": [
+        682
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        682,
+        662
+      ],
+      "params": {},
+      "out": [
+        683
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        683,
+        663
+      ],
+      "params": {},
+      "out": [
+        684
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        651,
+        684
+      ],
+      "params": {},
+      "out": [
+        685
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        653,
+        13
+      ],
+      "params": {},
+      "out": [
+        686
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        686,
+        13,
+        653
+      ],
+      "params": {},
+      "out": [
+        687
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        687,
+        62
+      ],
+      "params": {},
+      "out": [
+        688
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        688,
+        687,
+        62
+      ],
+      "params": {},
+      "out": [
+        689
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        689,
+        13
+      ],
+      "params": {},
+      "out": [
+        690
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        690
+      ],
+      "params": {
+        "shift": 34,
+        "width": 6,
+        "signed": false
+      },
+      "out": [
+        691
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        691
+      ],
+      "params": {
+        "shift": -34,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        692
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        692,
+        70
+      ],
+      "params": {},
+      "out": [
+        693
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        689,
+        693
+      ],
+      "params": {},
+      "out": [
+        694
+      ]
+    },
+    {
+      "op": "lookup",
+      "args": [
+        691
+      ],
+      "params": {
+        "table": "cos",
+        "bits": 6
+      },
+      "out": [
+        695,
+        696,
+        697,
+        698,
+        699,
+        700,
+        701,
+        702
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        702,
+        694
+      ],
+      "params": {},
+      "out": [
+        703
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        703,
+        701
+      ],
+      "params": {},
+      "out": [
+        704
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        704,
+        694
+      ],
+      "params": {},
+      "out": [
+        705
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        705,
+        700
+      ],
+      "params": {},
+      "out": [
+        706
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        706,
+        694
+      ],
+      "params": {},
+      "out": [
+        707
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        707,
+        699
+      ],
+      "params": {},
+      "out": [
+        708
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        708,
+        694
+      ],
+      "params": {},
+      "out": [
+        709
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        709,
+        698
+      ],
+      "params": {},
+      "out": [
+        710
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        710,
+        694
+      ],
+      "params": {},
+      "out": [
+        711
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        711,
+        697
+      ],
+      "params": {},
+      "out": [
+        712
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        712,
+        694
+      ],
+      "params": {},
+      "out": [
+        713
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        713,
+        696
+      ],
+      "params": {},
+      "out": [
+        714
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        714,
+        694
+      ],
+      "params": {},
+      "out": [
+        715
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        715,
+        695
+      ],
+      "params": {},
+      "out": [
+        716
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        651,
+        716
+      ],
+      "params": {},
+      "out": [
+        717
+      ]
+    },
+    {
+      "op": "const",
+      "args": [],
+      "params": {
+        "value": -12193974156573
+      },
+      "out": [
+        718
+      ]
+    },
+    {
+      "op": "const",
+      "args": [],
+      "params": {
+        "value": 9145480617430
+      },
+      "out": [
+        719
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        95
+      ],
+      "params": {
+        "c": 104308831728
+      },
+      "out": [
+        720
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        127
+      ],
+      "params": {
+        "c": 127751706700
+      },
+      "out": [
+        721
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        720,
+        721
+      ],
+      "params": {},
+      "out": [
+        722
+      ]
+    },
+    {
+      "op": "const",
+      "args": [],
+      "params": {
+        "value": -4123168604
+      },
+      "out": [
+        723
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        722,
+        723
+      ],
+      "params": {},
+      "out": [
+        724
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        245
+      ],
+      "params": {
+        "c": 104308831728
+      },
+      "out": [
+        725
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        331
+      ],
+      "params": {
+        "c": 127751706700
+      },
+      "out": [
+        726
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        725,
+        726
+      ],
+      "params": {},
+      "out": [
+        727
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        727,
+        723
+      ],
+      "params": {},
+      "out": [
+        728
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        449
+      ],
+      "params": {
+        "c": 104308831728
+      },
+      "out": [
+        729
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        481
+      ],
+      "params": {
+        "c": 127751706700
+      },
+      "out": [
+        730
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        729,
+        730
+      ],
+      "params": {},
+      "out": [
+        731
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        731,
+        723
+      ],
+      "params": {},
+      "out": [
+        732
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        599
+      ],
+      "params": {
+        "c": 104308831728
+      },
+      "out": [
+        733
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        685
+      ],
+      "params": {
+        "c": 127751706700
+      },
+      "out": [
+        734
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        733,
+        734
+      ],
+      "params": {},
+      "out": [
+        735
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        735,
+        723
+      ],
+      "params": {},
+      "out": [
+        736
+      ]
+    },
+    {
+      "op": "const",
+      "args": [],
+      "params": {
+        "value": 5063438167381
+      },
+      "out": [
+        737
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        724,
+        737
+      ],
+      "params": {},
+      "out": [
+        738
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        728,
+        738
+      ],
+      "params": {},
+      "out": [
+        739
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        732,
+        728
+      ],
+      "params": {},
+      "out": [
+        740
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        736,
+        732
+      ],
+      "params": {},
+      "out": [
+        741
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        740,
+        738
+      ],
+      "params": {},
+      "out": [
+        742
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        741,
+        739
+      ],
+      "params": {},
+      "out": [
+        743
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        738,
+        718
+      ],
+      "params": {},
+      "out": [
+        744
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        744,
+        718,
+        738
+      ],
+      "params": {},
+      "out": [
+        745
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        745,
+        719
+      ],
+      "params": {},
+      "out": [
+        746
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        746,
+        745,
+        719
+      ],
+      "params": {},
+      "out": [
+        747
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        739,
+        718
+      ],
+      "params": {},
+      "out": [
+        748
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        748,
+        718,
+        739
+      ],
+      "params": {},
+      "out": [
+        749
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        749,
+        719
+      ],
+      "params": {},
+      "out": [
+        750
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        750,
+        749,
+        719
+      ],
+      "params": {},
+      "out": [
+        751
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        742,
+        718
+      ],
+      "params": {},
+      "out": [
+        752
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        752,
+        718,
+        742
+      ],
+      "params": {},
+      "out": [
+        753
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        753,
+        719
+      ],
+      "params": {},
+      "out": [
+        754
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        754,
+        753,
+        719
+      ],
+      "params": {},
+      "out": [
+        755
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        743,
+        718
+      ],
+      "params": {},
+      "out": [
+        756
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        756,
+        718,
+        743
+      ],
+      "params": {},
+      "out": [
+        757
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        757,
+        719
+      ],
+      "params": {},
+      "out": [
+        758
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        758,
+        757,
+        719
+      ],
+      "params": {},
+      "out": [
+        759
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        95
+      ],
+      "params": {
+        "c": 104308831728
+      },
+      "out": [
+        760
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        213
+      ],
+      "params": {
+        "c": 127751706700
+      },
+      "out": [
+        761
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        760,
+        761
+      ],
+      "params": {},
+      "out": [
+        762
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        762,
+        723
+      ],
+      "params": {},
+      "out": [
+        763
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        245
+      ],
+      "params": {
+        "c": 104308831728
+      },
+      "out": [
+        764
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        363
+      ],
+      "params": {
+        "c": 127751706700
+      },
+      "out": [
+        765
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        764,
+        765
+      ],
+      "params": {},
+      "out": [
+        766
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        766,
+        723
+      ],
+      "params": {},
+      "out": [
+        767
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        449
+      ],
+      "params": {
+        "c": 104308831728
+      },
+      "out": [
+        768
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        567
+      ],
+      "params": {
+        "c": 127751706700
+      },
+      "out": [
+        769
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        768,
+        769
+      ],
+      "params": {},
+      "out": [
+        770
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        770,
+        723
+      ],
+      "params": {},
+      "out": [
+        771
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        599
+      ],
+      "params": {
+        "c": 104308831728
+      },
+      "out": [
+        772
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        717
+      ],
+      "params": {
+        "c": 127751706700
+      },
+      "out": [
+        773
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        772,
+        773
+      ],
+      "params": {},
+      "out": [
+        774
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        774,
+        723
+      ],
+      "params": {},
+      "out": [
+        775
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        763,
+        737
+      ],
+      "params": {},
+      "out": [
+        776
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        767,
+        776
+      ],
+      "params": {},
+      "out": [
+        777
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        771,
+        767
+      ],
+      "params": {},
+      "out": [
+        778
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        775,
+        771
+      ],
+      "params": {},
+      "out": [
+        779
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        778,
+        776
+      ],
+      "params": {},
+      "out": [
+        780
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        779,
+        777
+      ],
+      "params": {},
+      "out": [
+        781
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        776,
+        718
+      ],
+      "params": {},
+      "out": [
+        782
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        782,
+        718,
+        776
+      ],
+      "params": {},
+      "out": [
+        783
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        783,
+        719
+      ],
+      "params": {},
+      "out": [
+        784
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        784,
+        783,
+        719
+      ],
+      "params": {},
+      "out": [
+        785
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        777,
+        718
+      ],
+      "params": {},
+      "out": [
+        786
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        786,
+        718,
+        777
+      ],
+      "params": {},
+      "out": [
+        787
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        787,
+        719
+      ],
+      "params": {},
+      "out": [
+        788
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        788,
+        787,
+        719
+      ],
+      "params": {},
+      "out": [
+        789
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        780,
+        718
+      ],
+      "params": {},
+      "out": [
+        790
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        790,
+        718,
+        780
+      ],
+      "params": {},
+      "out": [
+        791
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        791,
+        719
+      ],
+      "params": {},
+      "out": [
+        792
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        792,
+        791,
+        719
+      ],
+      "params": {},
+      "out": [
+        793
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        781,
+        718
+      ],
+      "params": {},
+      "out": [
+        794
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        794,
+        718,
+        781
+      ],
+      "params": {},
+      "out": [
+        795
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        795,
+        719
+      ],
+      "params": {},
+      "out": [
+        796
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        796,
+        795,
+        719
+      ],
+      "params": {},
+      "out": [
+        797
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        747
+      ],
+      "params": {
+        "c": 1586259972792
+      },
+      "out": [
+        798
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        798
+      ],
+      "params": {
+        "shift": 40,
+        "width": 72,
+        "signed": true
+      },
+      "out": [
+        799
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        799
+      ],
+      "params": {
+        "shift": -40,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        800
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        800
+      ],
+      "params": {
+        "c": 762123384786
+      },
+      "out": [
+        801
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        747,
+        801
+      ],
+      "params": {},
+      "out": [
+        802
+      ]
+    },
+    {
+      "op": "const",
+      "args": [],
+      "params": {
+        "value": 549755813888
+      },
+      "out": [
+        803
+      ]
+    },
+    {
+      "op": "const",
+      "args": [],
+      "params": {
+        "value": 183251937963
+      },
+      "out": [
+        804
+      ]
+    },
+    {
+      "op": "const",
+      "args": [],
+      "params": {
+        "value": 45812984491
+      },
+      "out": [
+        805
+      ]
+    },
+    {
+      "op": "const",
+      "args": [],
+      "params": {
+        "value": 9162596898
+      },
+      "out": [
+        806
+      ]
+    },
+    {
+      "op": "const",
+      "args": [],
+      "params": {
+        "value": 1527099483
+      },
+      "out": [
+        807
+      ]
+    },
+    {
+      "op": "const",
+      "args": [],
+      "params": {
+        "value": 218157069
+      },
+      "out": [
+        808
+      ]
+    },
+    {
+      "op": "const",
+      "args": [],
+      "params": {
+        "value": 27269634
+      },
+      "out": [
+        809
+      ]
+    },
+    {
+      "op": "const",
+      "args": [],
+      "params": {
+        "value": 3029959
+      },
+      "out": [
+        810
+      ]
+    },
+    {
+      "op": "const",
+      "args": [],
+      "params": {
+        "value": 302996
+      },
+      "out": [
+        811
+      ]
+    },
+    {
+      "op": "const",
+      "args": [],
+      "params": {
+        "value": 27545
+      },
+      "out": [
+        812
+      ]
+    },
+    {
+      "op": "const",
+      "args": [],
+      "params": {
+        "value": 2295
+      },
+      "out": [
+        813
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        16,
+        802
+      ],
+      "params": {},
+      "out": [
+        814
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        16,
+        814
+      ],
+      "params": {},
+      "out": [
+        815
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        804,
+        802
+      ],
+      "params": {},
+      "out": [
+        816
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        803,
+        816
+      ],
+      "params": {},
+      "out": [
+        817
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        806,
+        802
+      ],
+      "params": {},
+      "out": [
+        818
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        805,
+        818
+      ],
+      "params": {},
+      "out": [
+        819
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        808,
+        802
+      ],
+      "params": {},
+      "out": [
+        820
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        807,
+        820
+      ],
+      "params": {},
+      "out": [
+        821
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        810,
+        802
+      ],
+      "params": {},
+      "out": [
+        822
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        809,
+        822
+      ],
+      "params": {},
+      "out": [
+        823
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        812,
+        802
+      ],
+      "params": {},
+      "out": [
+        824
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        811,
+        824
+      ],
+      "params": {},
+      "out": [
+        825
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        802,
+        802
+      ],
+      "params": {},
+      "out": [
+        826
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        817,
+        826
+      ],
+      "params": {},
+      "out": [
+        827
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        815,
+        827
+      ],
+      "params": {},
+      "out": [
+        828
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        821,
+        826
+      ],
+      "params": {},
+      "out": [
+        829
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        819,
+        829
+      ],
+      "params": {},
+      "out": [
+        830
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        825,
+        826
+      ],
+      "params": {},
+      "out": [
+        831
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        823,
+        831
+      ],
+      "params": {},
+      "out": [
+        832
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        826,
+        826
+      ],
+      "params": {},
+      "out": [
+        833
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        830,
+        833
+      ],
+      "params": {},
+      "out": [
+        834
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        828,
+        834
+      ],
+      "params": {},
+      "out": [
+        835
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        813,
+        833
+      ],
+      "params": {},
+      "out": [
+        836
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        832,
+        836
+      ],
+      "params": {},
+      "out": [
+        837
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        833,
+        833
+      ],
+      "params": {},
+      "out": [
+        838
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        837,
+        838
+      ],
+      "params": {},
+      "out": [
+        839
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        835,
+        839
+      ],
+      "params": {},
+      "out": [
+        840
+      ]
+    },
+    {
+      "op": "shift",
+      "args": [
+        840,
+        799
+      ],
+      "params": {},
+      "out": [
+        841
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        751
+      ],
+      "params": {
+        "c": 1586259972792
+      },
+      "out": [
+        842
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        842
+      ],
+      "params": {
+        "shift": 40,
+        "width": 72,
+        "signed": true
+      },
+      "out": [
+        843
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        843
+      ],
+      "params": {
+        "shift": -40,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        844
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        844
+      ],
+      "params": {
+        "c": 762123384786
+      },
+      "out": [
+        845
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        751,
+        845
+      ],
+      "params": {},
+      "out": [
+        846
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        16,
+        846
+      ],
+      "params": {},
+      "out": [
+        847
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        16,
+        847
+      ],
+      "params": {},
+      "out": [
+        848
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        804,
+        846
+      ],
+      "params": {},
+      "out": [
+        849
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        803,
+        849
+      ],
+      "params": {},
+      "out": [
+        850
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        806,
+        846
+      ],
+      "params": {},
+      "out": [
+        851
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        805,
+        851
+      ],
+      "params": {},
+      "out": [
+        852
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        808,
+        846
+      ],
+      "params": {},
+      "out": [
+        853
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        807,
+        853
+      ],
+      "params": {},
+      "out": [
+        854
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        810,
+        846
+      ],
+      "params": {},
+      "out": [
+        855
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        809,
+        855
+      ],
+      "params": {},
+      "out": [
+        856
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        812,
+        846
+      ],
+      "params": {},
+      "out": [
+        857
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        811,
+        857
+      ],
+      "params": {},
+      "out": [
+        858
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        846,
+        846
+      ],
+      "params": {},
+      "out": [
+        859
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        850,
+        859
+      ],
+      "params": {},
+      "out": [
+        860
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        848,
+        860
+      ],
+      "params": {},
+      "out": [
+        861
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        854,
+        859
+      ],
+      "params": {},
+      "out": [
+        862
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        852,
+        862
+      ],
+      "params": {},
+      "out": [
+        863
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        858,
+        859
+      ],
+      "params": {},
+      "out": [
+        864
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        856,
+        864
+      ],
+      "params": {},
+      "out": [
+        865
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        859,
+        859
+      ],
+      "params": {},
+      "out": [
+        866
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        863,
+        866
+      ],
+      "params": {},
+      "out": [
+        867
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        861,
+        867
+      ],
+      "params": {},
+      "out": [
+        868
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        813,
+        866
+      ],
+      "params": {},
+      "out": [
+        869
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        865,
+        869
+      ],
+      "params": {},
+      "out": [
+        870
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        866,
+        866
+      ],
+      "params": {},
+      "out": [
+        871
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        870,
+        871
+      ],
+      "params": {},
+      "out": [
+        872
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        868,
+        872
+      ],
+      "params": {},
+      "out": [
+        873
+      ]
+    },
+    {
+      "op": "shift",
+      "args": [
+        873,
+        843
+      ],
+      "params": {},
+      "out": [
+        874
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        755
+      ],
+      "params": {
+        "c": 1586259972792
+      },
+      "out": [
+        875
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        875
+      ],
+      "params": {
+        "shift": 40,
+        "width": 72,
+        "signed": true
+      },
+      "out": [
+        876
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        876
+      ],
+      "params": {
+        "shift": -40,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        877
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        877
+      ],
+      "params": {
+        "c": 762123384786
+      },
+      "out": [
+        878
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        755,
+        878
+      ],
+      "params": {},
+      "out": [
+        879
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        16,
+        879
+      ],
+      "params": {},
+      "out": [
+        880
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        16,
+        880
+      ],
+      "params": {},
+      "out": [
+        881
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        804,
+        879
+      ],
+      "params": {},
+      "out": [
+        882
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        803,
+        882
+      ],
+      "params": {},
+      "out": [
+        883
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        806,
+        879
+      ],
+      "params": {},
+      "out": [
+        884
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        805,
+        884
+      ],
+      "params": {},
+      "out": [
+        885
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        808,
+        879
+      ],
+      "params": {},
+      "out": [
+        886
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        807,
+        886
+      ],
+      "params": {},
+      "out": [
+        887
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        810,
+        879
+      ],
+      "params": {},
+      "out": [
+        888
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        809,
+        888
+      ],
+      "params": {},
+      "out": [
+        889
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        812,
+        879
+      ],
+      "params": {},
+      "out": [
+        890
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        811,
+        890
+      ],
+      "params": {},
+      "out": [
+        891
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        879,
+        879
+      ],
+      "params": {},
+      "out": [
+        892
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        883,
+        892
+      ],
+      "params": {},
+      "out": [
+        893
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        881,
+        893
+      ],
+      "params": {},
+      "out": [
+        894
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        887,
+        892
+      ],
+      "params": {},
+      "out": [
+        895
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        885,
+        895
+      ],
+      "params": {},
+      "out": [
+        896
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        891,
+        892
+      ],
+      "params": {},
+      "out": [
+        897
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        889,
+        897
+      ],
+      "params": {},
+      "out": [
+        898
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        892,
+        892
+      ],
+      "params": {},
+      "out": [
+        899
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        896,
+        899
+      ],
+      "params": {},
+      "out": [
+        900
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        894,
+        900
+      ],
+      "params": {},
+      "out": [
+        901
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        813,
+        899
+      ],
+      "params": {},
+      "out": [
+        902
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        898,
+        902
+      ],
+      "params": {},
+      "out": [
+        903
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        899,
+        899
+      ],
+      "params": {},
+      "out": [
+        904
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        903,
+        904
+      ],
+      "params": {},
+      "out": [
+        905
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        901,
+        905
+      ],
+      "params": {},
+      "out": [
+        906
+      ]
+    },
+    {
+      "op": "shift",
+      "args": [
+        906,
+        876
+      ],
+      "params": {},
+      "out": [
+        907
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        759
+      ],
+      "params": {
+        "c": 1586259972792
+      },
+      "out": [
+        908
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        908
+      ],
+      "params": {
+        "shift": 40,
+        "width": 72,
+        "signed": true
+      },
+      "out": [
+        909
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        909
+      ],
+      "params": {
+        "shift": -40,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        910
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        910
+      ],
+      "params": {
+        "c": 762123384786
+      },
+      "out": [
+        911
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        759,
+        911
+      ],
+      "params": {},
+      "out": [
+        912
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        16,
+        912
+      ],
+      "params": {},
+      "out": [
+        913
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        16,
+        913
+      ],
+      "params": {},
+      "out": [
+        914
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        804,
+        912
+      ],
+      "params": {},
+      "out": [
+        915
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        803,
+        915
+      ],
+      "params": {},
+      "out": [
+        916
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        806,
+        912
+      ],
+      "params": {},
+      "out": [
+        917
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        805,
+        917
+      ],
+      "params": {},
+      "out": [
+        918
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        808,
+        912
+      ],
+      "params": {},
+      "out": [
+        919
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        807,
+        919
+      ],
+      "params": {},
+      "out": [
+        920
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        810,
+        912
+      ],
+      "params": {},
+      "out": [
+        921
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        809,
+        921
+      ],
+      "params": {},
+      "out": [
+        922
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        812,
+        912
+      ],
+      "params": {},
+      "out": [
+        923
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        811,
+        923
+      ],
+      "params": {},
+      "out": [
+        924
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        912,
+        912
+      ],
+      "params": {},
+      "out": [
+        925
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        916,
+        925
+      ],
+      "params": {},
+      "out": [
+        926
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        914,
+        926
+      ],
+      "params": {},
+      "out": [
+        927
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        920,
+        925
+      ],
+      "params": {},
+      "out": [
+        928
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        918,
+        928
+      ],
+      "params": {},
+      "out": [
+        929
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        924,
+        925
+      ],
+      "params": {},
+      "out": [
+        930
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        922,
+        930
+      ],
+      "params": {},
+      "out": [
+        931
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        925,
+        925
+      ],
+      "params": {},
+      "out": [
+        932
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        929,
+        932
+      ],
+      "params": {},
+      "out": [
+        933
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        927,
+        933
+      ],
+      "params": {},
+      "out": [
+        934
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        813,
+        932
+      ],
+      "params": {},
+      "out": [
+        935
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        931,
+        935
+      ],
+      "params": {},
+      "out": [
+        936
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        932,
+        932
+      ],
+      "params": {},
+      "out": [
+        937
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        936,
+        937
+      ],
+      "params": {},
+      "out": [
+        938
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        934,
+        938
+      ],
+      "params": {},
+      "out": [
+        939
+      ]
+    },
+    {
+      "op": "shift",
+      "args": [
+        939,
+        909
+      ],
+      "params": {},
+      "out": [
+        940
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        785
+      ],
+      "params": {
+        "c": 1586259972792
+      },
+      "out": [
+        941
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        941
+      ],
+      "params": {
+        "shift": 40,
+        "width": 72,
+        "signed": true
+      },
+      "out": [
+        942
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        942
+      ],
+      "params": {
+        "shift": -40,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        943
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        943
+      ],
+      "params": {
+        "c": 762123384786
+      },
+      "out": [
+        944
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        785,
+        944
+      ],
+      "params": {},
+      "out": [
+        945
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        16,
+        945
+      ],
+      "params": {},
+      "out": [
+        946
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        16,
+        946
+      ],
+      "params": {},
+      "out": [
+        947
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        804,
+        945
+      ],
+      "params": {},
+      "out": [
+        948
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        803,
+        948
+      ],
+      "params": {},
+      "out": [
+        949
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        806,
+        945
+      ],
+      "params": {},
+      "out": [
+        950
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        805,
+        950
+      ],
+      "params": {},
+      "out": [
+        951
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        808,
+        945
+      ],
+      "params": {},
+      "out": [
+        952
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        807,
+        952
+      ],
+      "params": {},
+      "out": [
+        953
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        810,
+        945
+      ],
+      "params": {},
+      "out": [
+        954
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        809,
+        954
+      ],
+      "params": {},
+      "out": [
+        955
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        812,
+        945
+      ],
+      "params": {},
+      "out": [
+        956
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        811,
+        956
+      ],
+      "params": {},
+      "out": [
+        957
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        945,
+        945
+      ],
+      "params": {},
+      "out": [
+        958
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        949,
+        958
+      ],
+      "params": {},
+      "out": [
+        959
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        947,
+        959
+      ],
+      "params": {},
+      "out": [
+        960
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        953,
+        958
+      ],
+      "params": {},
+      "out": [
+        961
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        951,
+        961
+      ],
+      "params": {},
+      "out": [
+        962
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        957,
+        958
+      ],
+      "params": {},
+      "out": [
+        963
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        955,
+        963
+      ],
+      "params": {},
+      "out": [
+        964
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        958,
+        958
+      ],
+      "params": {},
+      "out": [
+        965
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        962,
+        965
+      ],
+      "params": {},
+      "out": [
+        966
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        960,
+        966
+      ],
+      "params": {},
+      "out": [
+        967
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        813,
+        965
+      ],
+      "params": {},
+      "out": [
+        968
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        964,
+        968
+      ],
+      "params": {},
+      "out": [
+        969
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        965,
+        965
+      ],
+      "params": {},
+      "out": [
+        970
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        969,
+        970
+      ],
+      "params": {},
+      "out": [
+        971
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        967,
+        971
+      ],
+      "params": {},
+      "out": [
+        972
+      ]
+    },
+    {
+      "op": "shift",
+      "args": [
+        972,
+        942
+      ],
+      "params": {},
+      "out": [
+        973
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        789
+      ],
+      "params": {
+        "c": 1586259972792
+      },
+      "out": [
+        974
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        974
+      ],
+      "params": {
+        "shift": 40,
+        "width": 72,
+        "signed": true
+      },
+      "out": [
+        975
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        975
+      ],
+      "params": {
+        "shift": -40,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        976
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        976
+      ],
+      "params": {
+        "c": 762123384786
+      },
+      "out": [
+        977
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        789,
+        977
+      ],
+      "params": {},
+      "out": [
+        978
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        16,
+        978
+      ],
+      "params": {},
+      "out": [
+        979
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        16,
+        979
+      ],
+      "params": {},
+      "out": [
+        980
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        804,
+        978
+      ],
+      "params": {},
+      "out": [
+        981
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        803,
+        981
+      ],
+      "params": {},
+      "out": [
+        982
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        806,
+        978
+      ],
+      "params": {},
+      "out": [
+        983
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        805,
+        983
+      ],
+      "params": {},
+      "out": [
+        984
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        808,
+        978
+      ],
+      "params": {},
+      "out": [
+        985
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        807,
+        985
+      ],
+      "params": {},
+      "out": [
+        986
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        810,
+        978
+      ],
+      "params": {},
+      "out": [
+        987
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        809,
+        987
+      ],
+      "params": {},
+      "out": [
+        988
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        812,
+        978
+      ],
+      "params": {},
+      "out": [
+        989
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        811,
+        989
+      ],
+      "params": {},
+      "out": [
+        990
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        978,
+        978
+      ],
+      "params": {},
+      "out": [
+        991
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        982,
+        991
+      ],
+      "params": {},
+      "out": [
+        992
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        980,
+        992
+      ],
+      "params": {},
+      "out": [
+        993
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        986,
+        991
+      ],
+      "params": {},
+      "out": [
+        994
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        984,
+        994
+      ],
+      "params": {},
+      "out": [
+        995
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        990,
+        991
+      ],
+      "params": {},
+      "out": [
+        996
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        988,
+        996
+      ],
+      "params": {},
+      "out": [
+        997
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        991,
+        991
+      ],
+      "params": {},
+      "out": [
+        998
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        995,
+        998
+      ],
+      "params": {},
+      "out": [
+        999
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        993,
+        999
+      ],
+      "params": {},
+      "out": [
+        1000
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        813,
+        998
+      ],
+      "params": {},
+      "out": [
+        1001
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        997,
+        1001
+      ],
+      "params": {},
+      "out": [
+        1002
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        998,
+        998
+      ],
+      "params": {},
+      "out": [
+        1003
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        1002,
+        1003
+      ],
+      "params": {},
+      "out": [
+        1004
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        1000,
+        1004
+      ],
+      "params": {},
+      "out": [
+        1005
+      ]
+    },
+    {
+      "op": "shift",
+      "args": [
+        1005,
+        975
+      ],
+      "params": {},
+      "out": [
+        1006
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        793
+      ],
+      "params": {
+        "c": 1586259972792
+      },
+      "out": [
+        1007
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        1007
+      ],
+      "params": {
+        "shift": 40,
+        "width": 72,
+        "signed": true
+      },
+      "out": [
+        1008
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        1008
+      ],
+      "params": {
+        "shift": -40,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        1009
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        1009
+      ],
+      "params": {
+        "c": 762123384786
+      },
+      "out": [
+        1010
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        793,
+        1010
+      ],
+      "params": {},
+      "out": [
+        1011
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        16,
+        1011
+      ],
+      "params": {},
+      "out": [
+        1012
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        16,
+        1012
+      ],
+      "params": {},
+      "out": [
+        1013
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        804,
+        1011
+      ],
+      "params": {},
+      "out": [
+        1014
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        803,
+        1014
+      ],
+      "params": {},
+      "out": [
+        1015
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        806,
+        1011
+      ],
+      "params": {},
+      "out": [
+        1016
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        805,
+        1016
+      ],
+      "params": {},
+      "out": [
+        1017
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        808,
+        1011
+      ],
+      "params": {},
+      "out": [
+        1018
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        807,
+        1018
+      ],
+      "params": {},
+      "out": [
+        1019
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        810,
+        1011
+      ],
+      "params": {},
+      "out": [
+        1020
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        809,
+        1020
+      ],
+      "params": {},
+      "out": [
+        1021
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        812,
+        1011
+      ],
+      "params": {},
+      "out": [
+        1022
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        811,
+        1022
+      ],
+      "params": {},
+      "out": [
+        1023
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        1011,
+        1011
+      ],
+      "params": {},
+      "out": [
+        1024
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        1015,
+        1024
+      ],
+      "params": {},
+      "out": [
+        1025
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        1013,
+        1025
+      ],
+      "params": {},
+      "out": [
+        1026
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        1019,
+        1024
+      ],
+      "params": {},
+      "out": [
+        1027
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        1017,
+        1027
+      ],
+      "params": {},
+      "out": [
+        1028
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        1023,
+        1024
+      ],
+      "params": {},
+      "out": [
+        1029
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        1021,
+        1029
+      ],
+      "params": {},
+      "out": [
+        1030
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        1024,
+        1024
+      ],
+      "params": {},
+      "out": [
+        1031
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        1028,
+        1031
+      ],
+      "params": {},
+      "out": [
+        1032
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        1026,
+        1032
+      ],
+      "params": {},
+      "out": [
+        1033
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        813,
+        1031
+      ],
+      "params": {},
+      "out": [
+        1034
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        1030,
+        1034
+      ],
+      "params": {},
+      "out": [
+        1035
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        1031,
+        1031
+      ],
+      "params": {},
+      "out": [
+        1036
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        1035,
+        1036
+      ],
+      "params": {},
+      "out": [
+        1037
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        1033,
+        1037
+      ],
+      "params": {},
+      "out": [
+        1038
+      ]
+    },
+    {
+      "op": "shift",
+      "args": [
+        1038,
+        1008
+      ],
+      "params": {},
+      "out": [
+        1039
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        797
+      ],
+      "params": {
+        "c": 1586259972792
+      },
+      "out": [
+        1040
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        1040
+      ],
+      "params": {
+        "shift": 40,
+        "width": 72,
+        "signed": true
+      },
+      "out": [
+        1041
+      ]
+    },
+    {
+      "op": "bits",
+      "args": [
+        1041
+      ],
+      "params": {
+        "shift": -40,
+        "width": 72,
+        "signed": false
+      },
+      "out": [
+        1042
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        1042
+      ],
+      "params": {
+        "c": 762123384786
+      },
+      "out": [
+        1043
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        797,
+        1043
+      ],
+      "params": {},
+      "out": [
+        1044
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        16,
+        1044
+      ],
+      "params": {},
+      "out": [
+        1045
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        16,
+        1045
+      ],
+      "params": {},
+      "out": [
+        1046
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        804,
+        1044
+      ],
+      "params": {},
+      "out": [
+        1047
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        803,
+        1047
+      ],
+      "params": {},
+      "out": [
+        1048
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        806,
+        1044
+      ],
+      "params": {},
+      "out": [
+        1049
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        805,
+        1049
+      ],
+      "params": {},
+      "out": [
+        1050
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        808,
+        1044
+      ],
+      "params": {},
+      "out": [
+        1051
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        807,
+        1051
+      ],
+      "params": {},
+      "out": [
+        1052
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        810,
+        1044
+      ],
+      "params": {},
+      "out": [
+        1053
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        809,
+        1053
+      ],
+      "params": {},
+      "out": [
+        1054
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        812,
+        1044
+      ],
+      "params": {},
+      "out": [
+        1055
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        811,
+        1055
+      ],
+      "params": {},
+      "out": [
+        1056
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        1044,
+        1044
+      ],
+      "params": {},
+      "out": [
+        1057
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        1048,
+        1057
+      ],
+      "params": {},
+      "out": [
+        1058
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        1046,
+        1058
+      ],
+      "params": {},
+      "out": [
+        1059
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        1052,
+        1057
+      ],
+      "params": {},
+      "out": [
+        1060
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        1050,
+        1060
+      ],
+      "params": {},
+      "out": [
+        1061
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        1056,
+        1057
+      ],
+      "params": {},
+      "out": [
+        1062
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        1054,
+        1062
+      ],
+      "params": {},
+      "out": [
+        1063
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        1057,
+        1057
+      ],
+      "params": {},
+      "out": [
+        1064
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        1061,
+        1064
+      ],
+      "params": {},
+      "out": [
+        1065
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        1059,
+        1065
+      ],
+      "params": {},
+      "out": [
+        1066
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        813,
+        1064
+      ],
+      "params": {},
+      "out": [
+        1067
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        1063,
+        1067
+      ],
+      "params": {},
+      "out": [
+        1068
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        1064,
+        1064
+      ],
+      "params": {},
+      "out": [
+        1069
+      ]
+    },
+    {
+      "op": "mul",
+      "args": [
+        1068,
+        1069
+      ],
+      "params": {},
+      "out": [
+        1070
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        1066,
+        1070
+      ],
+      "params": {},
+      "out": [
+        1071
+      ]
+    },
+    {
+      "op": "shift",
+      "args": [
+        1071,
+        1041
+      ],
+      "params": {},
+      "out": [
+        1072
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        841,
+        973
+      ],
+      "params": {},
+      "out": [
+        1073
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        1073
+      ],
+      "params": {
+        "c": 549755813888
+      },
+      "out": [
+        1074
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        874,
+        1006
+      ],
+      "params": {},
+      "out": [
+        1075
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        1075
+      ],
+      "params": {
+        "c": 549755813888
+      },
+      "out": [
+        1076
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        907,
+        1039
+      ],
+      "params": {},
+      "out": [
+        1077
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        1077
+      ],
+      "params": {
+        "c": 549755813888
+      },
+      "out": [
+        1078
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        940,
+        1072
+      ],
+      "params": {},
+      "out": [
+        1079
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        1079
+      ],
+      "params": {
+        "c": 549755813888
+      },
+      "out": [
+        1080
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        1074,
+        1076
+      ],
+      "params": {},
+      "out": [
+        1081
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        1081,
+        1076,
+        1074
+      ],
+      "params": {},
+      "out": [
+        1082
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        1078,
+        1080
+      ],
+      "params": {},
+      "out": [
+        1083
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        1083,
+        1080,
+        1078
+      ],
+      "params": {},
+      "out": [
+        1084
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        1082,
+        1084
+      ],
+      "params": {},
+      "out": [
+        1085
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        1085,
+        1084,
+        1082
+      ],
+      "params": {},
+      "out": [
+        1086
+      ]
+    },
+    {
+      "op": "const",
+      "args": [],
+      "params": {
+        "value": 153931627888640
+      },
+      "out": [
+        1087
+      ]
+    },
+    {
+      "op": "lt",
+      "args": [
+        1086,
+        1087
+      ],
+      "params": {},
+      "out": [
+        1088
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        841,
+        874
+      ],
+      "params": {},
+      "out": [
+        1089
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        907,
+        940
+      ],
+      "params": {},
+      "out": [
+        1090
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        973,
+        1006
+      ],
+      "params": {},
+      "out": [
+        1091
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        1039,
+        1072
+      ],
+      "params": {},
+      "out": [
+        1092
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        1089,
+        1090
+      ],
+      "params": {},
+      "out": [
+        1093
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        1091,
+        1092
+      ],
+      "params": {},
+      "out": [
+        1094
+      ]
+    },
+    {
+      "op": "add",
+      "args": [
+        1093,
+        1094
+      ],
+      "params": {},
+      "out": [
+        1095
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        1095
+      ],
+      "params": {
+        "c": 137438953472
+      },
+      "out": [
+        1096
+      ]
+    },
+    {
+      "op": "const",
+      "args": [],
+      "params": {
+        "value": 109951162777600
+      },
+      "out": [
+        1097
+      ]
+    },
+    {
+      "op": "sub",
+      "args": [
+        1096,
+        1097
+      ],
+      "params": {},
+      "out": [
+        1098
+      ]
+    },
+    {
+      "op": "positive",
+      "args": [
+        1098
+      ],
+      "params": {},
+      "out": [
+        1099
+      ]
+    },
+    {
+      "op": "cmul",
+      "args": [
+        1099
+      ],
+      "params": {
+        "c": 1067016148260
+      },
+      "out": [
+        1100
+      ]
+    },
+    {
+      "op": "select",
+      "args": [
+        1088,
+        1100,
+        13
+      ],
+      "params": {},
+      "out": [
+        1101
+      ]
+    }
+  ],
+  "inputs": [
+    0,
+    1,
+    128,
+    129,
+    246,
+    247,
+    364,
+    365,
+    482,
+    483,
+    600,
+    601
+  ],
+  "outputs": {
+    "Y": 1101
+  },
+  "tables": {
+    "log": [
+      [
+        17047033376,
+        1082596064272,
+        -532970370103,
+        349847217298,
+        -258348714313,
+        203499294966,
+        -166973780485,
+        140918531223,
+        -121406734592
+      ],
+      [
+        50368117529,
+        1050279763846,
+        -501626155867,
+        319443522144,
+        -228855060640,
+        174886255295,
+        -139212939539,
+        113982449430,
+        -95268912957
+      ],
+      [
+        82709026332,
+        1019836872140,
+        -472967824761,
+        292463195987,
+        -203452658078,
+        150967769472,
+        -116690063360,
+        92772224286,
+        -75293399421
+      ],
+      [
+        114125781579,
+        991109072925,
+        -446697046952,
+        268437662018,
+        -181478982773,
+        130869350957,
+        -98305615743,
+        75954439527,
+        -59907726951
+      ],
+      [
+        144669735329,
+        963955399694,
+        -422555791647,
+        246973248086,
+        -162393368604,
+        113897814692,
+        -83213015300,
+        62531894081,
+        -47969672172
+      ],
+      [
+        174388074903,
+        938249922369,
+        -400319966877,
+        227737581157,
+        -145752051940,
+        99500067458,
+        -70755603526,
+        51752670007,
+        -38641993605
+      ],
+      [
+        203324261410,
+        913879794515,
+        -379794200318,
+        210448734375,
+        -131188821429,
+        87232047495,
+        -60420465798,
+        43045378231,
+        -31305729622
+      ],
+      [
+        231518412033,
+        890743597186,
+        -360807533037,
+        194866515733,
+        -118399908294,
+        76735130438,
+        -51804307469,
+        35972611335,
+        -25499572592
+      ],
+      [
+        259007634518,
+        868749928119,
+        -343209848146,
+        180785434414,
+        -107132109283,
+        67718074016,
+        -44588032274,
+        30197185878,
+        -20877066780
+      ],
+      [
+        285826320846,
+        847816194912,
+        -326868894424,
+        168028989905,
+        -97173391752,
+        59943104310,
+        -38517657388,
+        25457453420,
+        -17176113151
+      ],
+      [
+        312006405950,
+        827867578561,
+        -311667794282,
+        156445010463,
+        -88345417673,
+        53215122175,
+        -33389880580,
+        21549099400,
+        -14197053722
+      ],
+      [
+        337577596325,
+        808836139973,
+        -297502948036,
+        145901828922,
+        -80497560785,
+        47373277151,
+        -29041089441,
+        18311622899,
+        -11786791751
+      ],
+      [
+        362567572664,
+        790660046940,
+        -284282264068,
+        136285130340,
+        -73502092768,
+        42284349997,
+        -25338936328,
+        15618220786,
+        -9827195101
+      ],
+      [
+        387002169964,
+        773282903051,
+        -271923658216,
+        127495341581,
+        -67250290065,
+        37837525839,
+        -22175839319,
+        13368166874,
+        -8226564230
+      ],
+      [
+        410905538059,
+        756653163201,
+        -260353776585,
+        119445460225,
+        -61649269794,
+        33940243155,
+        -19463938727,
+        11481032982,
+        -6913310183
+      ],
+      [
+        434300285060,
+        740723622923,
+        -249506904563,
+        112059241348,
+        -56619406155,
+        30514879949,
+        -17131160673,
+        9892279246,
+        -5831238292
+      ],
+      [
+        457207605864,
+        725450970904,
+        -239324031638,
+        105269677147,
+        -52092211372,
+        27496095074,
+        -15118127876,
+        8549869079,
+        -4936006891
+      ],
+      [
+        479647397532,
+        710795395734,
+        -229752047106,
+        99017717271,
+        -48008590192,
+        24828685029,
+        -13375722574,
+        7411655799,
+        -4192451765
+      ],
+      [
+        501638363140,
+        696720239383,
+        -220743046141,
+        93251187809,
+        -44317396186,
+        22465848364,
+        -11863154251,
+        6443353936,
+        -3572552677
+      ],
+      [
+        523198105434,
+        683191691045,
+        -212253729257,
+        87923874902,
+        -40974232964,
+        20367774056,
+        -10546420223,
+        5616956124,
+        -3053879058
+      ],
+      [
+        544343211492,
+        670178515978,
+        -204244881060,
+        82994745320,
+        -37940455003,
+        18500488535,
+        -9397073542,
+        4909491483,
+        -2618395458
+      ],
+      [
+        565089329383,
+        657651814745,
+        -196680916559,
+        78427281369,
+        -35182331829,
+        16834910184,
+        -8391232490,
+        4302047098,
+        -2251538668
+      ],
+      [
+        585451237738,
+        645584808969,
+        -189529485202,
+        74188911639,
+        -32670346410,
+        15346070974,
+        -7508780905,
+        3778993273,
+        -1941501131
+      ],
+      [
+        605442908990,
+        633952650249,
+        -182761124396,
+        70250522290,
+        -30378604234,
+        14012473304,
+        -6732719906,
+        3327367367,
+        -1678671825
+      ],
+      [
+        625077566966,
+        622732249360,
+        -176348955571,
+        66586036322,
+        -28284334013,
+        12815556650,
+        -6048640307,
+        2936381641,
+        -1455197981
+      ],
+      [
+        644367739428,
+        611902123284,
+        -170268416914,
+        63172050333,
+        -26367464487,
+        11739253754,
+        -5444291596,
+        2597028538,
+        -1264639984
+      ],
+      [
+        663325306087,
+        601442257929,
+        -164497027810,
+        59987520113,
+        -24610264662,
+        10769620091,
+        -4909228532,
+        2301762828,
+        -1101698448
+      ],
+      [
+        681961542539,
+        591333984686,
+        -159014180756,
+        57013487778,
+        -22997037087,
+        9894523520,
+        -4434520345,
+        2044244673,
+        -961997493
+      ],
+      [
+        700287160547,
+        581559869237,
+        -153800957154,
+        54232844396,
+        -21513855628,
+        9103383538,
+        -4012510651,
+        1819131157,
+        -841911940
+      ],
+      [
+        718312345019,
+        572103611201,
+        -148839963890,
+        51630122975,
+        -20148340673,
+        8386951565,
+        -3636618565,
+        1621906538,
+        -738428993
+      ],
+      [
+        736046788000,
+        562949953421,
+        -144115188076,
+        49191317530,
+        -18889465931,
+        7737125246,
+        -3301173438,
+        1448743543,
+        -649037107
+      ],
+      [
+        753499719969,
+        554084599824,
+        -139611867672,
+        46903724572,
+        -17727391964,
+        7146791091,
+        -3001277099,
+        1296389658,
+        -571636385
+      ]
+    ],
+    "cos": [
+      [
+        1098187217867,
+        -338980853644,
+        -21677346797369,
+        2230404616672,
+        71315612451750,
+        -4402642244183,
+        -93847584336024,
+        4138317835201
+      ],
+      [
+        1087611074629,
+        -1013677990005,
+        -21468582097667,
+        6669733834294,
+        70628804118761,
+        -13165526881009,
+        -92943780796560,
+        12375099242616
+      ],
+      [
+        1066560642194,
+        -1678612853190,
+        -21053063216444,
+        11044829869045,
+        69261801792476,
+        -21801620296961,
+        -91144877839786,
+        20492701679406
+      ],
+      [
+        1035238647732,
+        -2327381756975,
+        -20434791827671,
+        15313558154438,
+        67227770452577,
+        -30227752191476,
+        -88468199884557,
+        28412948196574
+      ],
+      [
+        993946739174,
+        -2953736702165,
+        -19619722222805,
+        19434808503562,
+        64546298932782,
+        -38362774308217,
+        -84939524802802,
+        36059562490512
+      ],
+      [
+        943082580171,
+        -3551645548235,
+        -18615703967702,
+        23368891022649,
+        61243211269668,
+        -46128341937144,
+        -80592835664528,
+        43358903485504
+      ],
+      [
+        883136020380,
+        -4115350106150,
+        -17432406307010,
+        27077918346453,
+        57350318003083,
+        -53449668416899,
+        -75469993462280,
+        50240674537542
+      ],
+      [
+        814684377941,
+        -4639421592863,
+        -16081225044060,
+        30526170514285,
+        52905109823255,
+        -60256245371239,
+        -69620333966895,
+        56638600429438
+      ],
+      [
+        738386879591,
+        -5118812913471,
+        -14575172793044,
+        33680438972762,
+        47950396514954,
+        -66482521743239,
+        -63100192597063,
+        62491065637390
+      ],
+      [
+        654978311948,
+        -5548907267494,
+        -12928753660430,
+        36510346392331,
+        42533894675861,
+        -72068535087809,
+        -55972361878447,
+        67741707722162
+      ],
+      [
+        565261945112,
+        -5925562611190,
+        -11157823562491,
+        38988639217556,
+        36707768179648,
+        -76960489042815,
+        -48305486717336,
+        72339960130186
+      ],
+      [
+        470101796741,
+        -6245151547699,
+        -9279437524159,
+        41091450133757,
+        30528125809357,
+        -81111271417455,
+        -40173403312672,
+        76241539177111
+      ],
+      [
+        370414311084,
+        -6504596260856,
+        -7311685429812,
+        42798527922299,
+        24054480899151,
+        -84480907908414,
+        -31654428073091,
+        79408870523896
+      ],
+      [
+        267159533123,
+        -6701398156246,
+        -5273517807802,
+        44093432490894,
+        17349178188370,
+        -87036947074253,
+        -22830603387096,
+        81811451038232
+      ],
+      [
+        161331862813,
+        -6833661924036,
+        -3184563326506,
+        44963693200680,
+        10476793407609,
+        -88754772860532,
+        -13786907510005,
+        83426142556381
+      ],
+      [
+        53950478471,
+        -6900113791837,
+        -1064939759515,
+        45400928965288,
+        3503511379135,
+        -89617841665870,
+        -4610436176903,
+        84237394716343
+      ],
+      [
+        -53950478471,
+        -6900113791837,
+        1064939759515,
+        45400928965288,
+        -3503511379135,
+        -89617841665870,
+        4610436176903,
+        84237394716343
+      ],
+      [
+        -161331862813,
+        -6833661924036,
+        3184563326506,
+        44963693200680,
+        -10476793407609,
+        -88754772860532,
+        13786907510005,
+        83426142556381
+      ],
+      [
+        -267159533123,
+        -6701398156246,
+        5273517807802,
+        44093432490894,
+        -17349178188370,
+        -87036947074253,
+        22830603387096,
+        81811451038232
+      ],
+      [
+        -370414311084,
+        -6504596260856,
+        7311685429812,
+        42798527922299,
+        -24054480899151,
+        -84480907908414,
+        31654428073091,
+        79408870523896
+      ],
+      [
+        -470101796741,
+        -6245151547699,
+        9279437524159,
+        41091450133757,
+        -30528125809357,
+        -81111271417455,
+        40173403312672,
+        76241539177111
+      ],
+      [
+        -565261945112,
+        -5925562611190,
+        11157823562491,
+        38988639217556,
+        -36707768179648,
+        -76960489042815,
+        48305486717336,
+        72339960130186
+      ],
+      [
+        -654978311948,
+        -5548907267494,
+        12928753660430,
+        36510346392331,
+        -42533894675861,
+        -72068535087809,
+        55972361878447,
+        67741707722162
+      ],
+      [
+        -738386879591,
+        -5118812913471,
+        14575172793044,
+        33680438972762,
+        -47950396514954,
+        -66482521743239,
+        63100192597063,
+        62491065637390
+      ],
+      [
+        -814684377941,
+        -4639421592863,
+        16081225044060,
+        30526170514285,
+        -52905109823255,
+        -60256245371239,
+        69620333966895,
+        56638600429438
+      ],
+      [
+        -883136020380,
+        -4115350106150,
+        17432406307010,
+        27077918346453,
+        -57350318003083,
+        -53449668416899,
+        75469993462280,
+        50240674537542
+      ],
+      [
+        -943082580171,
+        -3551645548235,
+        18615703967702,
+        23368891022649,
+        -61243211269668,
+        -46128341937144,
+        80592835664528,
+        43358903485504
+      ],
+      [
+        -993946739174,
+        -2953736702165,
+        19619722222805,
+        19434808503562,
+        -64546298932782,
+        -38362774308217,
+        84939524802802,
+        36059562490512
+      ],
+      [
+        -1035238647732,
+        -2327381756975,
+        20434791827671,
+        15313558154438,
+        -67227770452577,
+        -30227752191476,
+        88468199884557,
+        28412948196574
+      ],
+      [
+        -1066560642194,
+        -1678612853190,
+        21053063216444,
+        11044829869045,
+        -69261801792476,
+        -21801620296961,
+        91144877839786,
+        20492701679406
+      ],
+      [
+        -1087611074629,
+        -1013677990005,
+        21468582097667,
+        6669733834294,
+        -70628804118761,
+        -13165526881009,
+        92943780796560,
+        12375099242616
+      ],
+      [
+        -1098187217867,
+        -338980853644,
+        21677346797369,
+        2230404616672,
+        -71315612451750,
+        -4402642244183,
+        93847584336024,
+        4138317835201
+      ],
+      [
+        -1098187217867,
+        338980853644,
+        21677346797369,
+        -2230404616672,
+        -71315612451750,
+        4402642244183,
+        93847584336024,
+        -4138317835201
+      ],
+      [
+        -1087611074629,
+        1013677990005,
+        21468582097667,
+        -6669733834294,
+        -70628804118761,
+        13165526881009,
+        92943780796560,
+        -12375099242616
+      ],
+      [
+        -1066560642194,
+        1678612853190,
+        21053063216444,
+        -11044829869045,
+        -69261801792476,
+        21801620296961,
+        91144877839786,
+        -20492701679406
+      ],
+      [
+        -1035238647732,
+        2327381756975,
+        20434791827671,
+        -15313558154438,
+        -67227770452577,
+        30227752191476,
+        88468199884557,
+        -28412948196574
+      ],
+      [
+        -993946739174,
+        2953736702165,
+        19619722222805,
+        -19434808503562,
+        -64546298932782,
+        38362774308217,
+        84939524802802,
+        -36059562490512
+      ],
+      [
+        -943082580171,
+        3551645548235,
+        18615703967702,
+        -23368891022649,
+        -61243211269668,
+        46128341937144,
+        80592835664528,
+        -43358903485504
+      ],
+      [
+        -883136020380,
+        4115350106150,
+        17432406307010,
+        -27077918346453,
+        -57350318003083,
+        53449668416899,
+        75469993462280,
+        -50240674537542
+      ],
+      [
+        -814684377941,
+        4639421592863,
+        16081225044060,
+        -30526170514285,
+        -52905109823255,
+        60256245371239,
+        69620333966895,
+        -56638600429438
+      ],
+      [
+        -738386879591,
+        5118812913471,
+        14575172793044,
+        -33680438972762,
+        -47950396514954,
+        66482521743239,
+        63100192597063,
+        -62491065637390
+      ],
+      [
+        -654978311948,
+        5548907267494,
+        12928753660430,
+        -36510346392331,
+        -42533894675861,
+        72068535087809,
+        55972361878447,
+        -67741707722162
+      ],
+      [
+        -565261945112,
+        5925562611190,
+        11157823562491,
+        -38988639217556,
+        -36707768179648,
+        76960489042815,
+        48305486717336,
+        -72339960130186
+      ],
+      [
+        -470101796741,
+        6245151547699,
+        9279437524159,
+        -41091450133757,
+        -30528125809357,
+        81111271417455,
+        40173403312672,
+        -76241539177111
+      ],
+      [
+        -370414311084,
+        6504596260856,
+        7311685429812,
+        -42798527922299,
+        -24054480899151,
+        84480907908414,
+        31654428073091,
+        -79408870523896
+      ],
+      [
+        -267159533123,
+        6701398156246,
+        5273517807802,
+        -44093432490894,
+        -17349178188370,
+        87036947074253,
+        22830603387096,
+        -81811451038232
+      ],
+      [
+        -161331862813,
+        6833661924036,
+        3184563326506,
+        -44963693200680,
+        -10476793407609,
+        88754772860532,
+        13786907510005,
+        -83426142556381
+      ],
+      [
+        -53950478471,
+        6900113791837,
+        1064939759515,
+        -45400928965288,
+        -3503511379135,
+        89617841665870,
+        4610436176903,
+        -84237394716343
+      ],
+      [
+        53950478471,
+        6900113791837,
+        -1064939759515,
+        -45400928965288,
+        3503511379135,
+        89617841665870,
+        -4610436176903,
+        -84237394716343
+      ],
+      [
+        161331862813,
+        6833661924036,
+        -3184563326506,
+        -44963693200680,
+        10476793407609,
+        88754772860532,
+        -13786907510005,
+        -83426142556381
+      ],
+      [
+        267159533123,
+        6701398156246,
+        -5273517807802,
+        -44093432490894,
+        17349178188370,
+        87036947074253,
+        -22830603387096,
+        -81811451038232
+      ],
+      [
+        370414311084,
+        6504596260856,
+        -7311685429812,
+        -42798527922299,
+        24054480899151,
+        84480907908414,
+        -31654428073091,
+        -79408870523896
+      ],
+      [
+        470101796741,
+        6245151547699,
+        -9279437524159,
+        -41091450133757,
+        30528125809357,
+        81111271417455,
+        -40173403312672,
+        -76241539177111
+      ],
+      [
+        565261945112,
+        5925562611190,
+        -11157823562491,
+        -38988639217556,
+        36707768179648,
+        76960489042815,
+        -48305486717336,
+        -72339960130186
+      ],
+      [
+        654978311948,
+        5548907267494,
+        -12928753660430,
+        -36510346392331,
+        42533894675861,
+        72068535087809,
+        -55972361878447,
+        -67741707722162
+      ],
+      [
+        738386879591,
+        5118812913471,
+        -14575172793044,
+        -33680438972762,
+        47950396514954,
+        66482521743239,
+        -63100192597063,
+        -62491065637390
+      ],
+      [
+        814684377941,
+        4639421592863,
+        -16081225044060,
+        -30526170514285,
+        52905109823255,
+        60256245371239,
+        -69620333966895,
+        -56638600429438
+      ],
+      [
+        883136020380,
+        4115350106150,
+        -17432406307010,
+        -27077918346453,
+        57350318003083,
+        53449668416899,
+        -75469993462280,
+        -50240674537542
+      ],
+      [
+        943082580171,
+        3551645548235,
+        -18615703967702,
+        -23368891022649,
+        61243211269668,
+        46128341937144,
+        -80592835664528,
+        -43358903485504
+      ],
+      [
+        993946739174,
+        2953736702165,
+        -19619722222805,
+        -19434808503562,
+        64546298932782,
+        38362774308217,
+        -84939524802802,
+        -36059562490512
+      ],
+      [
+        1035238647732,
+        2327381756975,
+        -20434791827671,
+        -15313558154438,
+        67227770452577,
+        30227752191476,
+        -88468199884557,
+        -28412948196574
+      ],
+      [
+        1066560642194,
+        1678612853190,
+        -21053063216444,
+        -11044829869045,
+        69261801792476,
+        21801620296961,
+        -91144877839786,
+        -20492701679406
+      ],
+      [
+        1087611074629,
+        1013677990005,
+        -21468582097667,
+        -6669733834294,
+        70628804118761,
+        13165526881009,
+        -92943780796560,
+        -12375099242616
+      ],
+      [
+        1098187217867,
+        338980853644,
+        -21677346797369,
+        -2230404616672,
+        71315612451750,
+        4402642244183,
+        -93847584336024,
+        -4138317835201
+      ]
+    ]
+  },
+  "semantics": "Signed two-complement fixed-point; flags and indexes are unscaled integers; all output arithmetic is modulo 2^width."
+}

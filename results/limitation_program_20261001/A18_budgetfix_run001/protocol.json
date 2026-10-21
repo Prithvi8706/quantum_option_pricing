@@ -1,0 +1,48 @@
+{
+  "created_utc": "2026-10-02T05:38:11.705547+00:00",
+  "item": "Future A18 scheduler exact global budget accounting",
+  "local_only": true,
+  "fixture_only": true,
+  "before_meaningful_test_execution": true,
+  "financial_candidate_attempts": 0,
+  "complete_financial_replays": 0,
+  "executed_dependencies": [
+    {
+      "original": "research\\limitation_program_20261001\\experiment_checkpoint_budgetfix.py",
+      "snapshot": "executed\\experiment_checkpoint_budgetfix.py",
+      "sha256": "cf472f85ca03def178ae1bb1c8d15394c9b0aa36f538d255cd86f1359bcaf86e"
+    },
+    {
+      "original": "research\\limitation_program_20261001\\checkpoint_scheduler.py",
+      "snapshot": "executed\\checkpoint_scheduler.py",
+      "sha256": "6f6aea3e56544d88ca6f30309c25158a01a3543dbaf2a7e39ed20ce6b06302ea"
+    },
+    {
+      "original": "research\\limitation_program_20261001\\checkpoint_scheduler_v2.py",
+      "snapshot": "executed\\checkpoint_scheduler_v2.py",
+      "sha256": "ca453a78af7b6ed6cce3d40d55bb594b91146878e743d7f9498eeae8d12accb0"
+    },
+    {
+      "original": "research\\limitation_program_20261001\\test_checkpoint_scheduler_v2.py",
+      "snapshot": "executed\\test_checkpoint_scheduler_v2.py",
+      "sha256": "540082bbbe6ba4452155a2290b446dbecb2134be8d27351189db85c5f155dda4"
+    }
+  ],
+  "declared_tests": 10,
+  "event_budget_fixtures": [
+    0,
+    1,
+    2,
+    5,
+    17,
+    40
+  ],
+  "other_fixtures": [
+    "nested eviction bypasses ordinary failure catches",
+    "paid invocation budget checked before append",
+    "CPU limit admits no event",
+    "terminal budget exception has distinct type"
+  ],
+  "future_disposition": "Keep the original four A18 candidate attempts unchanged. The v2 scheduler is tested only on tiny synthetic fixtures and is not applied to the frozen financial subgraph in this wave.",
+  "historical_deviation": "The failed v1 cost-aware attempt recorded100013 tick checks against a100000 bound:100000 admitted checks and13 over-limit abort checks during exception unwinding. Its receipt is preserved and no new candidate rerun is authorized here."
+}

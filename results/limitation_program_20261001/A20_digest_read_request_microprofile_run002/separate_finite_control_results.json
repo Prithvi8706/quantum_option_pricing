@@ -1,0 +1,187 @@
+{
+  "control_harness_not_measured_or_production_source": true,
+  "missing_plus1_read_level_negative_control_passed": true,
+  "negative_control_is_full_digest_or_general_filesystem_race_proof": false,
+  "records": [
+    {
+      "bytes": 0,
+      "control": "STABLE",
+      "mode": "OLD",
+      "passed": true
+    },
+    {
+      "bytes": 1,
+      "control": "STABLE",
+      "mode": "OLD",
+      "passed": true
+    },
+    {
+      "bytes": 255,
+      "control": "STABLE",
+      "mode": "OLD",
+      "passed": true
+    },
+    {
+      "bytes": 4096,
+      "control": "STABLE",
+      "mode": "OLD",
+      "passed": true
+    },
+    {
+      "bytes": 2097153,
+      "control": "STABLE",
+      "mode": "OLD",
+      "passed": true
+    },
+    {
+      "control": "GROWTH",
+      "error": {
+        "message": "Bounded stable hash work",
+        "type": "ValueError"
+      },
+      "final_expected_SHA256": "fd037818a84c74cfcb3b8777de146ec912aef68b046cf1db989c8d4ae95ac486",
+      "initial_SHA256": "c8f5d0341d54d951a71b136e6e2afcb14d11ed8489a7ae126a8fee0df6ecf193",
+      "mode": "OLD",
+      "mutation_generation_bytes_charged": 4097,
+      "only_auxiliary_control_overrides_canonical_after_full_original_call": true,
+      "physical_canonical_and_real_stat_preserved": true,
+      "read_bytes_charged": 4097,
+      "rejected": true
+    },
+    {
+      "control": "TRUNCATION",
+      "error": {
+        "message": "Actual stable full byte SHA",
+        "type": "ValueError"
+      },
+      "final_expected_SHA256": "02eb925ab7d50a3333adc330ce64d365f863e21a4c9605b5455211c65f600cb1",
+      "initial_SHA256": "c8f5d0341d54d951a71b136e6e2afcb14d11ed8489a7ae126a8fee0df6ecf193",
+      "mode": "OLD",
+      "mutation_generation_bytes_charged": 4095,
+      "only_auxiliary_control_overrides_canonical_after_full_original_call": true,
+      "physical_canonical_and_real_stat_preserved": true,
+      "read_bytes_charged": 4095,
+      "rejected": true
+    },
+    {
+      "control": "CORRUPTION",
+      "error": {
+        "message": "Actual stable full byte SHA",
+        "type": "ValueError"
+      },
+      "final_expected_SHA256": "d8c4fc3b3500d47b5f64573a896e02090c50c8e3de62594c7e7a2f50d7971c0c",
+      "initial_SHA256": "c8f5d0341d54d951a71b136e6e2afcb14d11ed8489a7ae126a8fee0df6ecf193",
+      "mode": "OLD",
+      "mutation_generation_bytes_charged": 4096,
+      "only_auxiliary_control_overrides_canonical_after_full_original_call": true,
+      "physical_canonical_and_real_stat_preserved": true,
+      "read_bytes_charged": 4096,
+      "rejected": true
+    },
+    {
+      "control": "READ_ERROR",
+      "error": {
+        "message": "Fixed own-file read-error control",
+        "type": "OSError"
+      },
+      "final_expected_SHA256": "c8f5d0341d54d951a71b136e6e2afcb14d11ed8489a7ae126a8fee0df6ecf193",
+      "initial_SHA256": "c8f5d0341d54d951a71b136e6e2afcb14d11ed8489a7ae126a8fee0df6ecf193",
+      "mode": "OLD",
+      "mutation_generation_bytes_charged": 0,
+      "only_auxiliary_control_overrides_canonical_after_full_original_call": true,
+      "physical_canonical_and_real_stat_preserved": true,
+      "read_bytes_charged": 0,
+      "rejected": true
+    },
+    {
+      "bytes": 0,
+      "control": "STABLE",
+      "mode": "REQUEST",
+      "passed": true
+    },
+    {
+      "bytes": 1,
+      "control": "STABLE",
+      "mode": "REQUEST",
+      "passed": true
+    },
+    {
+      "bytes": 255,
+      "control": "STABLE",
+      "mode": "REQUEST",
+      "passed": true
+    },
+    {
+      "bytes": 4096,
+      "control": "STABLE",
+      "mode": "REQUEST",
+      "passed": true
+    },
+    {
+      "bytes": 2097153,
+      "control": "STABLE",
+      "mode": "REQUEST",
+      "passed": true
+    },
+    {
+      "control": "GROWTH",
+      "error": {
+        "message": "Bounded stable hash work",
+        "type": "ValueError"
+      },
+      "final_expected_SHA256": "fd037818a84c74cfcb3b8777de146ec912aef68b046cf1db989c8d4ae95ac486",
+      "initial_SHA256": "c8f5d0341d54d951a71b136e6e2afcb14d11ed8489a7ae126a8fee0df6ecf193",
+      "mode": "REQUEST",
+      "mutation_generation_bytes_charged": 4097,
+      "only_auxiliary_control_overrides_canonical_after_full_original_call": true,
+      "physical_canonical_and_real_stat_preserved": true,
+      "read_bytes_charged": 4097,
+      "rejected": true
+    },
+    {
+      "control": "TRUNCATION",
+      "error": {
+        "message": "Actual stable full byte SHA",
+        "type": "ValueError"
+      },
+      "final_expected_SHA256": "02eb925ab7d50a3333adc330ce64d365f863e21a4c9605b5455211c65f600cb1",
+      "initial_SHA256": "c8f5d0341d54d951a71b136e6e2afcb14d11ed8489a7ae126a8fee0df6ecf193",
+      "mode": "REQUEST",
+      "mutation_generation_bytes_charged": 4095,
+      "only_auxiliary_control_overrides_canonical_after_full_original_call": true,
+      "physical_canonical_and_real_stat_preserved": true,
+      "read_bytes_charged": 4095,
+      "rejected": true
+    },
+    {
+      "control": "CORRUPTION",
+      "error": {
+        "message": "Actual stable full byte SHA",
+        "type": "ValueError"
+      },
+      "final_expected_SHA256": "d8c4fc3b3500d47b5f64573a896e02090c50c8e3de62594c7e7a2f50d7971c0c",
+      "initial_SHA256": "c8f5d0341d54d951a71b136e6e2afcb14d11ed8489a7ae126a8fee0df6ecf193",
+      "mode": "REQUEST",
+      "mutation_generation_bytes_charged": 4096,
+      "only_auxiliary_control_overrides_canonical_after_full_original_call": true,
+      "physical_canonical_and_real_stat_preserved": true,
+      "read_bytes_charged": 4096,
+      "rejected": true
+    },
+    {
+      "control": "READ_ERROR",
+      "error": {
+        "message": "Fixed own-file read-error control",
+        "type": "OSError"
+      },
+      "final_expected_SHA256": "c8f5d0341d54d951a71b136e6e2afcb14d11ed8489a7ae126a8fee0df6ecf193",
+      "initial_SHA256": "c8f5d0341d54d951a71b136e6e2afcb14d11ed8489a7ae126a8fee0df6ecf193",
+      "mode": "REQUEST",
+      "mutation_generation_bytes_charged": 0,
+      "only_auxiliary_control_overrides_canonical_after_full_original_call": true,
+      "physical_canonical_and_real_stat_preserved": true,
+      "read_bytes_charged": 0,
+      "rejected": true
+    }
+  ]
+}

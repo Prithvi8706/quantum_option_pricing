@@ -1,0 +1,49 @@
+{
+  "format": "exact-in-place-streaming-update-v1",
+  "kind": "controlled-increment",
+  "args": [
+    [
+      0
+    ]
+  ],
+  "outs": [
+    [
+      1,
+      2,
+      3
+    ]
+  ],
+  "semantics": "counter += flag modulo 2**counter_bits; flag/extension/helper restored",
+  "word_width": 72,
+  "counter_bits": 3,
+  "preserved_input_registers": true,
+  "target_is_mutable": true,
+  "inverse": "literal gate-array reverse",
+  "qubits": 8,
+  "gate_file": "controlled-increment.npy",
+  "sha256": "a3a65dd63e9bf85ba5d3f5d23469ce11042bada5bdd7f41850a3ba2dc130bfa7",
+  "costs": {
+    "forward": {
+      "source_gates": 20,
+      "x": 0,
+      "cx": 14,
+      "ccx": 6,
+      "t_count": 42,
+      "clifford_cx": 50,
+      "clifford_h": 12,
+      "t_depth": 24,
+      "clifford_t_depth": 74
+    },
+    "inverse": {
+      "source_gates": 20,
+      "x": 0,
+      "cx": 14,
+      "ccx": 6,
+      "t_count": 42,
+      "clifford_cx": 50,
+      "clifford_h": 12,
+      "t_depth": 24,
+      "clifford_t_depth": 74
+    }
+  }
+}

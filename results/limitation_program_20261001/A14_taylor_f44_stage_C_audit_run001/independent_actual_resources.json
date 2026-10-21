@@ -1,0 +1,1307 @@
+{
+  "ccx": 159644,
+  "clifford_cx": 1226296,
+  "clifford_h": 319288,
+  "clifford_t_depth": 183413,
+  "cx": 268432,
+  "entire_clean_prototype_not_leaf_sum_estimate": true,
+  "matched_serial_event_chronology": {
+    "distinct_from_standalone_ASAP_depth": true,
+    "forward_actual_events": [
+      {
+        "ccx": 0,
+        "clifford_t_depth": 1,
+        "cx": 72,
+        "op": "CONST",
+        "rows": [
+          0,
+          72
+        ],
+        "source_gates": 72,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 0
+      },
+      {
+        "ccx": 0,
+        "clifford_t_depth": 3,
+        "cx": 72,
+        "op": "CONST",
+        "rows": [
+          72,
+          146
+        ],
+        "source_gates": 74,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 2
+      },
+      {
+        "ccx": 0,
+        "clifford_t_depth": 3,
+        "cx": 72,
+        "op": "CONST",
+        "rows": [
+          146,
+          282
+        ],
+        "source_gates": 136,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 64
+      },
+      {
+        "ccx": 0,
+        "clifford_t_depth": 5,
+        "cx": 218,
+        "op": "SIGN",
+        "rows": [
+          282,
+          500
+        ],
+        "source_gates": 218,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 0
+      },
+      {
+        "ccx": 288,
+        "clifford_t_depth": 1469,
+        "cx": 794,
+        "op": "SIGNED_LT",
+        "rows": [
+          500,
+          1878
+        ],
+        "source_gates": 1378,
+        "t_count": 2016,
+        "t_depth": 584,
+        "x": 296
+      },
+      {
+        "ccx": 144,
+        "clifford_t_depth": 1163,
+        "cx": 936,
+        "op": "SELECT",
+        "rows": [
+          1878,
+          2958
+        ],
+        "source_gates": 1080,
+        "t_count": 1008,
+        "t_depth": 434,
+        "x": 0
+      },
+      {
+        "ccx": 144,
+        "clifford_t_depth": 1163,
+        "cx": 936,
+        "op": "SELECT",
+        "rows": [
+          2958,
+          4038
+        ],
+        "source_gates": 1080,
+        "t_count": 1008,
+        "t_depth": 434,
+        "x": 0
+      },
+      {
+        "ccx": 142,
+        "clifford_t_depth": 1291,
+        "cx": 650,
+        "op": "EQ",
+        "rows": [
+          4038,
+          4974
+        ],
+        "source_gates": 936,
+        "t_count": 994,
+        "t_depth": 498,
+        "x": 144
+      },
+      {
+        "ccx": 144,
+        "clifford_t_depth": 1163,
+        "cx": 936,
+        "op": "SELECT",
+        "rows": [
+          4974,
+          6054
+        ],
+        "source_gates": 1080,
+        "t_count": 1008,
+        "t_depth": 434,
+        "x": 0
+      },
+      {
+        "ccx": 0,
+        "clifford_t_depth": 5,
+        "cx": 292,
+        "op": "ADDRESS34",
+        "rows": [
+          6054,
+          6346
+        ],
+        "source_gates": 292,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 0
+      },
+      {
+        "ccx": 0,
+        "clifford_t_depth": 5,
+        "cx": 352,
+        "op": "SHIFT4",
+        "rows": [
+          6346,
+          6698
+        ],
+        "source_gates": 352,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 0
+      },
+      {
+        "ccx": 1280,
+        "clifford_t_depth": 44670,
+        "cx": 33484,
+        "op": "QROM64x8",
+        "rows": [
+          6698,
+          42230
+        ],
+        "source_gates": 35532,
+        "t_count": 8960,
+        "t_depth": 4608,
+        "x": 768
+      },
+      {
+        "ccx": 666,
+        "clifford_t_depth": 337,
+        "cx": 1196,
+        "op": "SUB",
+        "rows": [
+          42230,
+          44237
+        ],
+        "source_gates": 2007,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 145
+      },
+      {
+        "ccx": 11762,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "op": "MUL",
+        "rows": [
+          44237,
+          68877
+        ],
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "op": "ADD",
+        "rows": [
+          68877,
+          70524
+        ],
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "op": "MUL",
+        "rows": [
+          70524,
+          95164
+        ],
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "op": "ADD",
+        "rows": [
+          95164,
+          96811
+        ],
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "op": "MUL",
+        "rows": [
+          96811,
+          121451
+        ],
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "op": "ADD",
+        "rows": [
+          121451,
+          123098
+        ],
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "op": "MUL",
+        "rows": [
+          123098,
+          147738
+        ],
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "op": "ADD",
+        "rows": [
+          147738,
+          149385
+        ],
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "op": "MUL",
+        "rows": [
+          149385,
+          174025
+        ],
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "op": "ADD",
+        "rows": [
+          174025,
+          175672
+        ],
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "op": "MUL",
+        "rows": [
+          175672,
+          200312
+        ],
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "op": "ADD",
+        "rows": [
+          200312,
+          201959
+        ],
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 152,
+        "clifford_t_depth": 1685,
+        "cx": 670,
+        "op": "ROUND",
+        "rows": [
+          201959,
+          202781
+        ],
+        "source_gates": 822,
+        "t_count": 1064,
+        "t_depth": 608,
+        "x": 0
+      },
+      {
+        "ccx": 288,
+        "clifford_t_depth": 1469,
+        "cx": 794,
+        "op": "SIGNED_LT",
+        "rows": [
+          202781,
+          204159
+        ],
+        "source_gates": 1378,
+        "t_count": 2016,
+        "t_depth": 584,
+        "x": 296
+      },
+      {
+        "ccx": 144,
+        "clifford_t_depth": 1163,
+        "cx": 936,
+        "op": "SELECT",
+        "rows": [
+          204159,
+          205239
+        ],
+        "source_gates": 1080,
+        "t_count": 1008,
+        "t_depth": 434,
+        "x": 0
+      },
+      {
+        "ccx": 288,
+        "clifford_t_depth": 1469,
+        "cx": 794,
+        "op": "SIGNED_LT",
+        "rows": [
+          205239,
+          206617
+        ],
+        "source_gates": 1378,
+        "t_count": 2016,
+        "t_depth": 584,
+        "x": 296
+      },
+      {
+        "ccx": 144,
+        "clifford_t_depth": 1163,
+        "cx": 936,
+        "op": "SELECT",
+        "rows": [
+          206617,
+          207697
+        ],
+        "source_gates": 1080,
+        "t_count": 1008,
+        "t_depth": 434,
+        "x": 0
+      },
+      {
+        "ccx": 0,
+        "clifford_t_depth": 1,
+        "cx": 72,
+        "op": "CONST",
+        "rows": [
+          207697,
+          207769
+        ],
+        "source_gates": 72,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 0
+      },
+      {
+        "ccx": 142,
+        "clifford_t_depth": 1291,
+        "cx": 650,
+        "op": "EQ",
+        "rows": [
+          207769,
+          208705
+        ],
+        "source_gates": 936,
+        "t_count": 994,
+        "t_depth": 498,
+        "x": 144
+      },
+      {
+        "ccx": 144,
+        "clifford_t_depth": 1163,
+        "cx": 936,
+        "op": "SELECT",
+        "rows": [
+          208705,
+          209785
+        ],
+        "source_gates": 1080,
+        "t_count": 1008,
+        "t_depth": 434,
+        "x": 0
+      },
+      {
+        "ccx": 0,
+        "clifford_t_depth": 3,
+        "cx": 72,
+        "op": "CONST",
+        "rows": [
+          209785,
+          209859
+        ],
+        "source_gates": 74,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 2
+      },
+      {
+        "ccx": 142,
+        "clifford_t_depth": 1291,
+        "cx": 650,
+        "op": "EQ",
+        "rows": [
+          209859,
+          210795
+        ],
+        "source_gates": 936,
+        "t_count": 994,
+        "t_depth": 498,
+        "x": 144
+      },
+      {
+        "ccx": 144,
+        "clifford_t_depth": 1163,
+        "cx": 936,
+        "op": "SELECT",
+        "rows": [
+          210795,
+          211875
+        ],
+        "source_gates": 1080,
+        "t_count": 1008,
+        "t_depth": 434,
+        "x": 0
+      },
+      {
+        "ccx": 0,
+        "clifford_t_depth": 3,
+        "cx": 72,
+        "op": "CONST",
+        "rows": [
+          211875,
+          211949
+        ],
+        "source_gates": 74,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 2
+      },
+      {
+        "ccx": 142,
+        "clifford_t_depth": 1291,
+        "cx": 650,
+        "op": "EQ",
+        "rows": [
+          211949,
+          212885
+        ],
+        "source_gates": 936,
+        "t_count": 994,
+        "t_depth": 498,
+        "x": 144
+      },
+      {
+        "ccx": 144,
+        "clifford_t_depth": 1163,
+        "cx": 936,
+        "op": "SELECT",
+        "rows": [
+          212885,
+          213965
+        ],
+        "source_gates": 1080,
+        "t_count": 1008,
+        "t_depth": 434,
+        "x": 0
+      },
+      {
+        "ccx": 0,
+        "clifford_t_depth": 3,
+        "cx": 72,
+        "op": "CONST",
+        "rows": [
+          213965,
+          214041
+        ],
+        "source_gates": 76,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 4
+      },
+      {
+        "ccx": 142,
+        "clifford_t_depth": 1291,
+        "cx": 650,
+        "op": "EQ",
+        "rows": [
+          214041,
+          214977
+        ],
+        "source_gates": 936,
+        "t_count": 994,
+        "t_depth": 498,
+        "x": 144
+      },
+      {
+        "ccx": 144,
+        "clifford_t_depth": 1163,
+        "cx": 936,
+        "op": "SELECT",
+        "rows": [
+          214977,
+          216057
+        ],
+        "source_gates": 1080,
+        "t_count": 1008,
+        "t_depth": 434,
+        "x": 0
+      },
+      {
+        "ccx": 0,
+        "clifford_t_depth": 3,
+        "cx": 72,
+        "op": "CONST",
+        "rows": [
+          216057,
+          216131
+        ],
+        "source_gates": 74,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 2
+      },
+      {
+        "ccx": 142,
+        "clifford_t_depth": 1291,
+        "cx": 650,
+        "op": "EQ",
+        "rows": [
+          216131,
+          217067
+        ],
+        "source_gates": 936,
+        "t_count": 994,
+        "t_depth": 498,
+        "x": 144
+      },
+      {
+        "ccx": 144,
+        "clifford_t_depth": 1163,
+        "cx": 936,
+        "op": "SELECT",
+        "rows": [
+          217067,
+          218147
+        ],
+        "source_gates": 1080,
+        "t_count": 1008,
+        "t_depth": 434,
+        "x": 0
+      }
+    ],
+    "inverse_actual_events": [
+      {
+        "ccx": 144,
+        "clifford_t_depth": 1163,
+        "cx": 936,
+        "op": "SELECT",
+        "rows": [
+          218219,
+          219299
+        ],
+        "source_gates": 1080,
+        "t_count": 1008,
+        "t_depth": 434,
+        "x": 0
+      },
+      {
+        "ccx": 142,
+        "clifford_t_depth": 1291,
+        "cx": 650,
+        "op": "EQ",
+        "rows": [
+          219299,
+          220235
+        ],
+        "source_gates": 936,
+        "t_count": 994,
+        "t_depth": 498,
+        "x": 144
+      },
+      {
+        "ccx": 0,
+        "clifford_t_depth": 3,
+        "cx": 72,
+        "op": "CONST",
+        "rows": [
+          220235,
+          220309
+        ],
+        "source_gates": 74,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 2
+      },
+      {
+        "ccx": 144,
+        "clifford_t_depth": 1163,
+        "cx": 936,
+        "op": "SELECT",
+        "rows": [
+          220309,
+          221389
+        ],
+        "source_gates": 1080,
+        "t_count": 1008,
+        "t_depth": 434,
+        "x": 0
+      },
+      {
+        "ccx": 142,
+        "clifford_t_depth": 1291,
+        "cx": 650,
+        "op": "EQ",
+        "rows": [
+          221389,
+          222325
+        ],
+        "source_gates": 936,
+        "t_count": 994,
+        "t_depth": 498,
+        "x": 144
+      },
+      {
+        "ccx": 0,
+        "clifford_t_depth": 3,
+        "cx": 72,
+        "op": "CONST",
+        "rows": [
+          222325,
+          222401
+        ],
+        "source_gates": 76,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 4
+      },
+      {
+        "ccx": 144,
+        "clifford_t_depth": 1163,
+        "cx": 936,
+        "op": "SELECT",
+        "rows": [
+          222401,
+          223481
+        ],
+        "source_gates": 1080,
+        "t_count": 1008,
+        "t_depth": 434,
+        "x": 0
+      },
+      {
+        "ccx": 142,
+        "clifford_t_depth": 1291,
+        "cx": 650,
+        "op": "EQ",
+        "rows": [
+          223481,
+          224417
+        ],
+        "source_gates": 936,
+        "t_count": 994,
+        "t_depth": 498,
+        "x": 144
+      },
+      {
+        "ccx": 0,
+        "clifford_t_depth": 3,
+        "cx": 72,
+        "op": "CONST",
+        "rows": [
+          224417,
+          224491
+        ],
+        "source_gates": 74,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 2
+      },
+      {
+        "ccx": 144,
+        "clifford_t_depth": 1163,
+        "cx": 936,
+        "op": "SELECT",
+        "rows": [
+          224491,
+          225571
+        ],
+        "source_gates": 1080,
+        "t_count": 1008,
+        "t_depth": 434,
+        "x": 0
+      },
+      {
+        "ccx": 142,
+        "clifford_t_depth": 1291,
+        "cx": 650,
+        "op": "EQ",
+        "rows": [
+          225571,
+          226507
+        ],
+        "source_gates": 936,
+        "t_count": 994,
+        "t_depth": 498,
+        "x": 144
+      },
+      {
+        "ccx": 0,
+        "clifford_t_depth": 3,
+        "cx": 72,
+        "op": "CONST",
+        "rows": [
+          226507,
+          226581
+        ],
+        "source_gates": 74,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 2
+      },
+      {
+        "ccx": 144,
+        "clifford_t_depth": 1163,
+        "cx": 936,
+        "op": "SELECT",
+        "rows": [
+          226581,
+          227661
+        ],
+        "source_gates": 1080,
+        "t_count": 1008,
+        "t_depth": 434,
+        "x": 0
+      },
+      {
+        "ccx": 142,
+        "clifford_t_depth": 1291,
+        "cx": 650,
+        "op": "EQ",
+        "rows": [
+          227661,
+          228597
+        ],
+        "source_gates": 936,
+        "t_count": 994,
+        "t_depth": 498,
+        "x": 144
+      },
+      {
+        "ccx": 0,
+        "clifford_t_depth": 1,
+        "cx": 72,
+        "op": "CONST",
+        "rows": [
+          228597,
+          228669
+        ],
+        "source_gates": 72,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 0
+      },
+      {
+        "ccx": 144,
+        "clifford_t_depth": 1163,
+        "cx": 936,
+        "op": "SELECT",
+        "rows": [
+          228669,
+          229749
+        ],
+        "source_gates": 1080,
+        "t_count": 1008,
+        "t_depth": 434,
+        "x": 0
+      },
+      {
+        "ccx": 288,
+        "clifford_t_depth": 1469,
+        "cx": 794,
+        "op": "SIGNED_LT",
+        "rows": [
+          229749,
+          231127
+        ],
+        "source_gates": 1378,
+        "t_count": 2016,
+        "t_depth": 584,
+        "x": 296
+      },
+      {
+        "ccx": 144,
+        "clifford_t_depth": 1163,
+        "cx": 936,
+        "op": "SELECT",
+        "rows": [
+          231127,
+          232207
+        ],
+        "source_gates": 1080,
+        "t_count": 1008,
+        "t_depth": 434,
+        "x": 0
+      },
+      {
+        "ccx": 288,
+        "clifford_t_depth": 1469,
+        "cx": 794,
+        "op": "SIGNED_LT",
+        "rows": [
+          232207,
+          233585
+        ],
+        "source_gates": 1378,
+        "t_count": 2016,
+        "t_depth": 584,
+        "x": 296
+      },
+      {
+        "ccx": 152,
+        "clifford_t_depth": 1685,
+        "cx": 670,
+        "op": "ROUND",
+        "rows": [
+          233585,
+          234407
+        ],
+        "source_gates": 822,
+        "t_count": 1064,
+        "t_depth": 608,
+        "x": 0
+      },
+      {
+        "ccx": 666,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "op": "ADD",
+        "rows": [
+          234407,
+          236054
+        ],
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "op": "MUL",
+        "rows": [
+          236054,
+          260694
+        ],
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "op": "ADD",
+        "rows": [
+          260694,
+          262341
+        ],
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "op": "MUL",
+        "rows": [
+          262341,
+          286981
+        ],
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "op": "ADD",
+        "rows": [
+          286981,
+          288628
+        ],
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "op": "MUL",
+        "rows": [
+          288628,
+          313268
+        ],
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "op": "ADD",
+        "rows": [
+          313268,
+          314915
+        ],
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "op": "MUL",
+        "rows": [
+          314915,
+          339555
+        ],
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "op": "ADD",
+        "rows": [
+          339555,
+          341202
+        ],
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "op": "MUL",
+        "rows": [
+          341202,
+          365842
+        ],
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "op": "ADD",
+        "rows": [
+          365842,
+          367489
+        ],
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "op": "MUL",
+        "rows": [
+          367489,
+          392129
+        ],
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_t_depth": 335,
+        "cx": 1196,
+        "op": "SUB",
+        "rows": [
+          392129,
+          394136
+        ],
+        "source_gates": 2007,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 145
+      },
+      {
+        "ccx": 1280,
+        "clifford_t_depth": 44670,
+        "cx": 33484,
+        "op": "QROM64x8",
+        "rows": [
+          394136,
+          429668
+        ],
+        "source_gates": 35532,
+        "t_count": 8960,
+        "t_depth": 4608,
+        "x": 768
+      },
+      {
+        "ccx": 0,
+        "clifford_t_depth": 5,
+        "cx": 352,
+        "op": "SHIFT4",
+        "rows": [
+          429668,
+          430020
+        ],
+        "source_gates": 352,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 0
+      },
+      {
+        "ccx": 0,
+        "clifford_t_depth": 5,
+        "cx": 292,
+        "op": "ADDRESS34",
+        "rows": [
+          430020,
+          430312
+        ],
+        "source_gates": 292,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 0
+      },
+      {
+        "ccx": 144,
+        "clifford_t_depth": 1163,
+        "cx": 936,
+        "op": "SELECT",
+        "rows": [
+          430312,
+          431392
+        ],
+        "source_gates": 1080,
+        "t_count": 1008,
+        "t_depth": 434,
+        "x": 0
+      },
+      {
+        "ccx": 142,
+        "clifford_t_depth": 1291,
+        "cx": 650,
+        "op": "EQ",
+        "rows": [
+          431392,
+          432328
+        ],
+        "source_gates": 936,
+        "t_count": 994,
+        "t_depth": 498,
+        "x": 144
+      },
+      {
+        "ccx": 144,
+        "clifford_t_depth": 1163,
+        "cx": 936,
+        "op": "SELECT",
+        "rows": [
+          432328,
+          433408
+        ],
+        "source_gates": 1080,
+        "t_count": 1008,
+        "t_depth": 434,
+        "x": 0
+      },
+      {
+        "ccx": 144,
+        "clifford_t_depth": 1163,
+        "cx": 936,
+        "op": "SELECT",
+        "rows": [
+          433408,
+          434488
+        ],
+        "source_gates": 1080,
+        "t_count": 1008,
+        "t_depth": 434,
+        "x": 0
+      },
+      {
+        "ccx": 288,
+        "clifford_t_depth": 1469,
+        "cx": 794,
+        "op": "SIGNED_LT",
+        "rows": [
+          434488,
+          435866
+        ],
+        "source_gates": 1378,
+        "t_count": 2016,
+        "t_depth": 584,
+        "x": 296
+      },
+      {
+        "ccx": 0,
+        "clifford_t_depth": 5,
+        "cx": 218,
+        "op": "SIGN",
+        "rows": [
+          435866,
+          436084
+        ],
+        "source_gates": 218,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 0
+      },
+      {
+        "ccx": 0,
+        "clifford_t_depth": 3,
+        "cx": 72,
+        "op": "CONST",
+        "rows": [
+          436084,
+          436220
+        ],
+        "source_gates": 136,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 64
+      },
+      {
+        "ccx": 0,
+        "clifford_t_depth": 3,
+        "cx": 72,
+        "op": "CONST",
+        "rows": [
+          436220,
+          436294
+        ],
+        "source_gates": 74,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 2
+      },
+      {
+        "ccx": 0,
+        "clifford_t_depth": 1,
+        "cx": 72,
+        "op": "CONST",
+        "rows": [
+          436294,
+          436366
+        ],
+        "source_gates": 72,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 0
+      }
+    ],
+    "matched_serial_whole_source_comparison_only": true,
+    "outer_caller_argument_copies_excluded": true,
+    "output_XOR_actual_event": {
+      "ccx": 0,
+      "clifford_t_depth": 1,
+      "cx": 72,
+      "rows": [
+        218147,
+        218219
+      ],
+      "source_gates": 72,
+      "t_count": 0,
+      "t_depth": 0,
+      "x": 0
+    },
+    "schedule": "serialize complete helper/leaf events; exact actual7T ASAP within each event",
+    "sums": {
+      "ccx": 159644,
+      "clifford_t_depth": 184315,
+      "cx": 268432,
+      "source_gates": 436366,
+      "t_count": 1117508,
+      "t_depth": 45346,
+      "x": 8290
+    }
+  },
+  "outer_caller_copies_excluded": true,
+  "qubits": 10364,
+  "schedule": "all-to-all ASAP full actual chronological exact7T expansion",
+  "source_gates": 436366,
+  "t_count": 1117508,
+  "t_depth": 45084,
+  "x": 8290
+}

@@ -1,0 +1,17 @@
+{
+  "domain": "Integer width w>=2, modular clean-XOR output, preserved inputs, fresh scratch",
+  "forward": "Prepare p_i=a_i XOR b_i. For i=0..w-2 prepare fresh g_i=a_i AND b_i; for i>0 prepare fresh h_i=p_i AND c_i. Set fresh c_(i+1)=g_i XOR h_i, with c0=0. Output_i XOR= p_i XOR c_i. No final overflow carry or g_(w-1)/h_(w-1) is produced.",
+  "carry_identity": "g_i*h_i=0 because g_i=1 implies p_i=0; therefore g_i XOR h_i equals their OR, the ordinary binary carry. p_i XOR c_i is the corresponding sum bit.",
+  "reverse_lifetimes": "Descending i, clear c_(i+1) with the live g_i/h_i, then erase h_i with live p_i/c_i, erase g_i with original a_i/b_i, and erase p_i only after its last dependent cleanup.",
+  "AND_count_expression": "N=1+2*(w-2)=2w-3",
+  "T_count_expression": "4N=8w-12 for this recipe only",
+  "fresh_scratch_expression": "w p + (w-1) g + (w-2) h + (w-1) carry = 4w-4",
+  "all_histories_Kraus_identity": "K_m=2^(-N/2)*U; every m has input-independent probability 2^(-N)",
+  "arbitrary_entanglement_supported_by_linearity": true,
+  "clean_XOR_self_inverse_adjoint_requires_fresh_scratch": true,
+  "channel_adjoint_requires_new_measurement_records": true,
+  "no_generic_width_circuit_emitted": true,
+  "no_native72_resources_credited": true,
+  "no_unitary_optimality_theorem": true,
+  "backend_obligation": "The current native Program.undo reverses X/CX/CCX arrays. Measurement-based erasure needs a separate dynamic channel/adjoint ABI and cannot be inserted into that literal reversal."
+}

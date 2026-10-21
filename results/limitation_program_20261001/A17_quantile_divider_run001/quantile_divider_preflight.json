@@ -1,0 +1,67 @@
+{
+  "schema": "quantile-divider-static-preflight-v1",
+  "status": "authored-only-awaiting-proof-review-and-Stage-C-timing-clearance",
+  "prospective_receipt": "A17_quantile_divider_run001",
+  "tests_or_gate_construction_executed": false,
+  "local_only": true,
+  "source_sampler": "New mathematical-native AS241 sampler, not the original Box-Muller source",
+  "required_proof_inputs": [
+    "A02_quantile_central_run002",
+    "A02_quantile_central_audit_run001",
+    "A02_quantile_tail_run001",
+    "A02_quantile_tail_audit_run001",
+    "A02_quantile_transform_run002"
+  ],
+  "fixed_production_interface": {
+    "full_input_and_dirty_output_words": 72,
+    "fraction_bits": 40,
+    "candidate_denominator_bits": 64,
+    "paid_original_control_denominator_bits": 72,
+    "fixed_candidates": 1,
+    "denominator_upper_bound_must_be_proved_for_both_branches": true,
+    "numerator_and_denominator_positive_mathematical_words": true,
+    "quotient_sign_restore_is_separate": true,
+    "division_floor_is_already_in_the_native_error_ledger": true,
+    "numerator_width_narrowing_or_reciprocal_sweep": false,
+    "zero_divisor_behavior_is_preserved_but_unreachable_under_sampler_guard": true,
+    "full_unsigned_shifted_numerator_bits": 112,
+    "candidate_remainder_bits": 65,
+    "all_112_trial_steps_are_charged": true,
+    "output_72_bit_truncation_is_proved_safe_under_denominator_at_least_2_to_40": true
+  },
+  "proof_contract": {
+    "restoring_invariant": "For b>0 and processed prefix P, P=q*b+r with0<=r<b<2^64. Trial2*r+bit<2*b fits65bits. Compare/subtract restores remainder<2^64 so the top remainder bit is zero before its next shift.",
+    "dirty_output_contract": "Preserve both full72-bit input words; XOR full72-bit quotient into arbitrary output; literal gate reversal cleans all helper, copied divisor, conditional, quotient and retained remainder registers.",
+    "exact_gate_family": ["X", "CX", "CCX"],
+    "CCX_convention": "Exact seven-T decomposition; no relative-phase or measurement substitutions",
+    "coherent_inverse_identity": "Actual self-inverse primitive gates and literal compute/copy/uncompute ensure the XOR leaf is its own inverse on the guarded clean-scratch subspace, including arbitrary external reference entanglement. Basis replay alone does not certify phase.",
+    "invalid_denominator_width_is_not_silently_supported": true
+  },
+  "fixed_meaningful_validation_scope": {
+    "declared_unique_pytest_cases": 17,
+    "tiny_interfaces": [[3, 1, 2], [4, 2, 3]],
+    "all_tiny_unsigned_inputs_denominators_dirty_outputs_and_both_directions": true,
+    "zero_divisor_high_denominator_bit_trial_carry_and_quotient_overflow_cases": true,
+    "production_fixture_count": 8,
+    "production_fixture_selection": "Four central/tail rational-domain endpoint pairs using frozen native coefficients, plus denominator2^63,2^64-1,2^40 and zero with fixed unsigned numerator words; no adaptive input search",
+    "dirty_output_words": ["zero", "all-ones", "alternating", "top-bit"],
+    "production_gate_replay_and_input_scratch_restoration": true,
+    "original_control_same_inputs_and_output_contract": true,
+    "independent_saved_array_resource_count_and_hashes": true,
+    "actual_quantile_graph_compilation_or_full_price_observations": 0,
+    "process_CPU_limit_seconds": 180,
+    "new_work_admission_CPU_seconds": 150,
+    "cleanup_reserve_CPU_seconds": 30,
+    "no_experiments_while_existing_Stage_C_timing_active": true
+  },
+  "adoption": {
+    "actual_unsigned64_division_fragment_only_if_all_checks_pass": true,
+    "original_Box_Muller_native_division_sites": 0,
+    "current_accepted_financial_source_changed": false,
+    "complete_quantile_loader_cost": null,
+    "financial_path_arithmetic_error_certificate": null,
+    "full_G2_G3_G4_G5_closed": false,
+    "quantum_advantage_established": false,
+    "push_upload_publish_cloud_run": false
+  }
+}

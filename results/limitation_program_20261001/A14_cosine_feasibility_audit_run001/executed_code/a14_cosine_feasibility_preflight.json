@@ -1,0 +1,269 @@
+{
+  "schema": "a14-cosine-feasibility-author-paper-preflight-v1",
+  "status": "AUTHOR_ONLY_PAPER_READY_PENDING_IMPLEMENTATION_AND_ROOT_READY",
+  "root_READY_required": true,
+  "local_only": true,
+  "existing_sources_and_receipts_immutable": true,
+  "numerical_fit_proof_gate_sourcewalker_fixture_or_prepare_execution": false,
+  "finite_scope": {
+    "CORDIC_screens": 1,
+    "minimax_comparators": 0,
+    "Taylor_comparators": 1,
+    "future_production_candidates_maximum": 1,
+    "logarithm_screen_authorized": false,
+    "adaptive_search_authorized": false
+  },
+  "external_ABI": {
+    "word_bits": 72,
+    "fraction_bits": 40,
+    "dirty_output_XOR": true,
+    "inputs_preserved": true,
+    "all_workspace_cleaned": true
+  },
+  "domain": {
+    "ideal_turns_closed_interval": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "uniform_input_bits": 32,
+    "midpoints_exact": true,
+    "second_angle_positive_sine_wrap": [
+      3,
+      4
+    ],
+    "rounded_two_pi_multiply_exists": false,
+    "public_input_policy": "Signed clamp full72 input to [0,2^40], never modulo arbitrary input.",
+    "original_public_upper_clip_is_Q_minus_one": true,
+    "new_public_endpoint_policy_differs": true,
+    "actual_midpoint_and_wrapped_inputs_strictly_between_zero_and_Q": true,
+    "reachability_and_new_total_map_root_authorization_required": true,
+    "exact_axis_raw_inputs": [
+      0,
+      274877906944,
+      549755813888,
+      824633720832,
+      1099511627776
+    ],
+    "exact_axis_raw_outputs": [
+      1099511627776,
+      0,
+      -1099511627776,
+      0,
+      1099511627776
+    ],
+    "all_axis_clamp_and_endpoint_costs_paid": true
+  },
+  "comparison": {
+    "uniform_allowance": "Actual accepted original cosine_error_upper E_old, freshly source/formula bound; not a numerical value invented here.",
+    "source_manifest_SHA256": "78a8eea9dc937883b810cb6b3e2e26aec41297551b984a9c12bb15a435523162",
+    "audit_manifest_SHA256": "62074efc3bd5a20a9cbe72b3d020fd5c6bf13e32d41b188ef57570225dade2a0",
+    "source_receipt": "results/limitation_program_20261001/A02_BM_native_financial_bridge_run002",
+    "artifact": "cosine_envelope.json",
+    "both_rows_require_E_at_most_E_old": true,
+    "original_propagated_Horner_floor_term_at_least_one_ULP_requires_binding": true,
+    "actual_joint_pairs": [
+      30,
+      234
+    ],
+    "actual_cosine_sites": [
+      60,
+      468
+    ]
+  },
+  "CORDIC": {
+    "word_bits": 72,
+    "fraction_bits": 56,
+    "iterations": 48,
+    "paper_choice_not_executed": true,
+    "old_internal80_fraction48_brainstorm_adopted": false,
+    "finite_gain": "product_i=0..47 sqrt(1+2^(-2*i))",
+    "gain_less_than_two_paper_bound": "sqrt(2)*exp(1/6)<(3/2)*(6/5)<2",
+    "initial_x": "ties-even f56 reciprocal finite gain",
+    "initial_y": 0,
+    "angle_literals": "Actual ties-even f56 atan(2^-i)/(2*pi), actual half-ULP independently certified.",
+    "nearest_quarter_fold": "j=floor((4*m+Q/2)/Q),j=0..4,t56=(m<<16)-(j<<54),reconstruct[x,-y,-x,y] at j mod4.",
+    "zero_residual_direction": 1,
+    "both_coordinate_updates_use_old_state": true,
+    "signed_shift_rounding": "floor",
+    "stage_clean_ADD_count": 3,
+    "stage_clean_SUB_count": 3,
+    "stage_full72_SELECT_count": 3,
+    "stage_signed_BITS_shift_count": 2,
+    "stage_sign_bank_count": 1,
+    "all_state_history_and_discarded_inputs_retained": true,
+    "free_controlled_add_assumed": false,
+    "retained_full72_words_before_other_scratch": 627,
+    "vector_error_paper_bound": "(3*N+1)*2^-56",
+    "rounded_angle_induction": "a_(i-1)<2*a_i, |z_N|<=a_47+N*2^-57; actual-angle residual adds <=N*2^-57.",
+    "radian_residual_paper_bound": "2^(-(N-1))+3*pi*N*2^-56",
+    "final_rounding": "q=floor(c/65536),r=c-65536*q; increment iff r>32768 or(r==32768 and q odd); paid comparisons/flags/ADD/copies/cleanup.",
+    "final_rounding_absolute_error": [
+      1,
+      2199023255552
+    ],
+    "final_saturation": [
+      -1,
+      1
+    ],
+    "uniform_error_strict_target": [
+      1,
+      1099511627776
+    ],
+    "target_paper_inequality": "2^-47+(3*pi*48+3*48+1)*2^-56+2^-41<2^-40: pi<4 gives e-units512+721+32768<65536.",
+    "selected_and_unselected_eager_integer_range_proofs_required": true,
+    "actual_uniform_certificate_exists": false
+  },
+  "Taylor_comparator": {
+    "degree": 6,
+    "segments": 64,
+    "internal_word_bits": 72,
+    "internal_fraction_bits": 40,
+    "external_fraction_bits": 40,
+    "local_interval": [
+      [
+        -1,
+        128
+      ],
+      [
+        1,
+        128
+      ]
+    ],
+    "coefficient_words": 448,
+    "center_words": 64,
+    "center_raw": "(2*i+1)<<33",
+    "lookup_total_table_literals": 512,
+    "lookup_full72_output_banks": 8,
+    "lookup_address_raw": "m0>>34, m0=paidSELECT(m==Q,0,m); bits6..71 zero",
+    "Horner_full144_f40_MUL_count": 6,
+    "uniform_allowance": "E_old",
+    "coherent_lookup_all_banks_all_copies_inverse_paid": true,
+    "generic_full72_f40_MUL_explicit_universal_contract_required": true,
+    "endpoint_Q_selected_to_zero_before_eager_lookup": true,
+    "eager_lookup_address64_permitted": false,
+    "f40_multiplier_cost_silently_transferred_to_f56": false,
+    "root_prospective_minimax_to_Taylor_method_change": true,
+    "fitter_or_exchange_search_authorized": false,
+    "literal_policy": "Exact ties-even rounding of Q*(lo+hi)/2 from saved rational90 true coefficient enclosure. Actual coefficient errors independently paid; no assumed half-ULP.",
+    "minimax_optimality_claim": false,
+    "proof": {
+      "primary_digits": 90,
+      "primary_Taylor_degree": 6,
+      "coefficient_count": 448,
+      "primary_tail": "(2*pi/128)^7/7!",
+      "all_actual_coefficient_enclosures_retained": true,
+      "floor_envelope": "2^-40*sum_(k=0..5)(1/128)^k",
+      "independent_digits": 130,
+      "independent_authorizes_primary_actual_literals_and_every_coefficient_error_upper": true,
+      "independent_Taylor_degree": 6,
+      "independent_tail_order": 7,
+      "half_ULP_is_conditional_on_actual_true_coefficient_interval_proof": true,
+      "paper_tail_upper": "1/(20^7*5040)<eps40/5 by pi<22/7<16/5",
+      "conditional_paper_quantization_upper": "(64/127)*eps40",
+      "paper_six_floor_upper": "(128/127)*eps40",
+      "paper_bounds_imply_E_at_most_E_old": false,
+      "every_eager72_144_value_checked": true
+    }
+  },
+  "cost": {
+    "direct_full72_primitive_count_order": ["CCX", "CX", "X", "private_qubits"],
+    "direct_full72_primitive_counts": {"LT": [286, 433, 436, 216], "EQ": [142, 289, 144, 143], "SELECT": [72, 360, 0, 72]},
+    "direct_CCX_serial_T_depth": 7,
+    "direct_CCX_serial_Clifford_T_depth": 15,
+    "direct_signed_LT_recipe": "Flip both MSBs; retain72generate+72propagate+72borrow; G=(not a)&b,P=not(a xor b),borrow=G xor(P&previous); copy finalborrow; literalinverse; restoreMSBs.",
+    "single_clean_function_workspace_reused_across_serial_calls": true,
+    "all_original_storage_and_scratch_retained": true,
+    "lookup_recipe": "Per64rows: negative-controlX,5exact7TCCX equality chain,literal-popcountCX to8full72 outputs,5inverseCCX,Xrestore; five scratch,full72 address/copies/banks charged.",
+    "A08_reference": "results/limitation_program_20261001/A08_run001/attempt002/leaf_screen.json",
+    "ripple_full72": {
+      "T": 2016,
+      "T_depth": 1152,
+      "qubits": 289
+    },
+    "Brent_Kung_full72": {
+      "T": 4662,
+      "T_depth": 127,
+      "ADD_qubits": 621,
+      "SUB_qubits": 693
+    },
+    "Kogge_Stone_full72": {
+      "T": 11354,
+      "T_depth": 583,
+      "ADD_qubits": 1099,
+      "SUB_qubits": 1171
+    },
+    "selected_ADD_SUB_family": "ONE actual full72 Brent-Kung; other families reference only.",
+    "fraction_label_ADD_SUB_reuse_requires_raw_bitmap_ABI_source_and_gate_proof": true,
+    "new73_bit_adder_or_controlled_discount_used": false,
+    "inner_argument_copies": "2*arity*72 CNOT per primitive call",
+    "clean_function_recipe": "F/outputXOR72/F^-1",
+    "complete_source_insertion": "2*sites*(clean_function+144 outer argument-copy CX)",
+    "standalone_clean_function_workspace_cap": 131072,
+    "complete_source_qubit_caps": [
+      550141,
+      4460479
+    ],
+    "reference_complete_T": [
+      520720662,
+      4267435214
+    ],
+    "reference_measured_T_depth": [
+      555774,
+      663704
+    ],
+    "exact_reference_owner_variant_membership_binding_required": true,
+    "source_schedule_class": "Serialized scratch and matched conservative serial sum-depth estimates; measured schedules separately retained.",
+    "removal": "Exact actual-user fixed point, only cosine-output-to-radius-product replacement edge authorized; shared/outside consumers retained.",
+    "original_storage_subtracted_without_liveness_proof": false,
+    "missing_contract_matched_full72_unit": "RESOURCE_REJECTED",
+    "every_copy_constant_sign_history_shift_and_cleanup_charged": true,
+    "complete_source_saving_claim": false
+  },
+  "financial": {
+    "route": "Fresh source-bound original native Box-Muller sensitivity with actual accepted E_old.",
+    "remaining_coordinate_error_formula": "B*E_cos+2^-40",
+    "old_radius_log_grid_Holder_terms_paid_again": false,
+    "A13_stock_alpha_inherited_as_cosine_allocation": false,
+    "unchanged_total_residual_dollars": [
+      11,
+      2000
+    ],
+    "total_residual_is_not_per_cosine_allocation": true,
+    "fresh_all_source_safety_clip_closed_bands_and_two_contract_price_proof_required": true,
+    "closed_barrier_band_TV_bound": 4,
+    "actual_point_value_tie_convention_required": true,
+    "existing_G2_or_cost_adoption_transferred": false
+  },
+  "prospective_future_limits": {
+    "CPU_seconds": 300,
+    "admission_CPU_seconds": 270,
+    "wall_seconds": 900,
+    "primary_digits": 90,
+    "independent_digits": 130,
+    "threads": 1,
+    "owned_files": 64,
+    "owned_bytes": 134217728,
+    "new_fixture_credit": 0,
+    "new_financial_gate_replays": 0,
+    "new_price_experiments": 0,
+    "one_invocation_exactly_two_rows_and_both_sources": true
+  },
+  "implementation_gates_before_ROOT_READY": [
+    "Exact executable/runtime/base/cache and actual existing owner/member SHA pins.",
+    "Actual48 angle/gain literals and all selected/unselected integer ranges.",
+    "Actual ABI/raw ADD-SUB bit map and contract-matched LT/SELECT/BITS/lookup/MUL resources.",
+    "Actual original domain/total-map authorization, complete removal/liveness/bank and realizable schedule ledgers.",
+    "Independent uniform and changed-source financial/cost review."
+  ],
+  "stop_after_fixed_screen_and_comparator": true,
+  "stop_if_no_matched_complete_T_and_serial_depth_improvement_on_both_sources": true,
+  "no_expected_SHA_override": true,
+  "no_retry_overwrite_or_unsealed_success_promotion": true,
+  "saving_or_quantum_advantage_promised": false
+}

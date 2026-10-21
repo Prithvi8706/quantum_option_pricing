@@ -1,0 +1,34 @@
+﻿python.exe : Traceback (most recent call last):
+At line:10 char:1
++ & .context/frontier_t0_env/Scripts/python.exe -B -m research.limitati ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File 
+"C:\Users\prith\quantum_option_pricing\research\limitation_program_20261001\experiment_f44_cosine_stage_c_v1.py", line 
+2804, in <module>
+    main()
+  File 
+"C:\Users\prith\quantum_option_pricing\research\limitation_program_20261001\experiment_f44_cosine_stage_c_v1.py", line 
+2653, in main
+    save("uniform_certificate.json", uniform)
+  File 
+"C:\Users\prith\quantum_option_pricing\research\limitation_program_20261001\experiment_f44_cosine_stage_c_v1.py", line 
+613, in save
+    for fragment in json.JSONEncoder(indent=2, sort_keys=True, allow_nan=False).iterencode(value):
+  File "C:\Users\prith\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "C:\Users\prith\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\prith\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 326, in _iterencode_list
+    yield from chunks
+  File "C:\Users\prith\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\prith\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 314, in _iterencode_list
+    yield buf + _intstr(value)
+                ^^^^^^^^^^^^^^
+ValueError: Exceeds the limit (4300 digits) for integer string conversion; use sys.set_int_max_str_digits() to 
+increase the limit

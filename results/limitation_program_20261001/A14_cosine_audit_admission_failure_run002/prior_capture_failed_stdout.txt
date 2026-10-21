@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\prith\quantum_option_pricing\research\limitation_program_20261001\capture_cosine_audit_admission_failure_v1.py", line 769, in <module>
+    main()
+  File "C:\Users\prith\quantum_option_pricing\research\limitation_program_20261001\capture_cosine_audit_admission_failure_v1.py", line 693, in main
+    observation = failure_observation()
+                  ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\prith\quantum_option_pricing\research\limitation_program_20261001\capture_cosine_audit_admission_failure_v1.py", line 628, in failure_observation
+    log = raw_bytes(LOG, 2 * 1024**2).decode("utf-8-sig")
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\prith\AppData\Local\Programs\Python\Python312\Lib\encodings\utf_8_sig.py", line 23, in decode
+    (output, consumed) = codecs.utf_8_decode(input, errors, True)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+decoding with 'utf-8-sig' codec failed

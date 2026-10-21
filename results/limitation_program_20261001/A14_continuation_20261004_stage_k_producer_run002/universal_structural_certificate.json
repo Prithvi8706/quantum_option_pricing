@@ -1,0 +1,119 @@
+{
+  "Stage_C_release_authorized": false,
+  "Stage_K_diagnostics_not_cosine_or_financial_certificate": true,
+  "absolute_phase_proof": [
+    "a+b+c-(a XOR b)-(a XOR c)-(b XOR c)+(a XOR b XOR c)=4abc.",
+    "T/TD phase is exp(i*pi/4*integer parity polynomial), hence exact CCZ without global offset.",
+    "Target H conjugation yields absolute CCX; X and CX have exact real permutation matrices.",
+    "All native gates are self-inverse; complete literal reverse implements F inverse on arbitrary superpositions."
+  ],
+  "adoption": false,
+  "cost_transfer": false,
+  "finite_basis_diagnostics_are_not_the_universal_proof": true,
+  "full_G2": false,
+  "independent_scientific_audit_still_required": true,
+  "multiplier": {
+    "all_input_contract_words": true,
+    "all_low44_carries_retained": true,
+    "array_matched": true,
+    "full_modulus116_correction_and_output_window": true,
+    "proof": [
+      "Signed weights multiply; exactly-one-sign terms are negative.",
+      "-t*2^k=(1-t)*2^k-2^k, correction modulo2^116 includes all negative weights.",
+      "CSA s=x XOR y XOR z and c=xy XOR((x XOR y)z) satisfy x+y+z=s+2c.",
+      "Ripple carry=xy XOR((x XOR y)c); its two terms are disjoint.",
+      "All columns0..115 remain before extracting bits44..115.",
+      "Both minima yield positive 2^88, requiring 90 signed bits; the modulus 116 image preserves it.",
+      "floor((xy+k*2^116)/2^44)=floor(xy/2^44)+k*2^72.",
+      "Compute does not read dirty output; 72 CX then literal reverse implements clean XOR for all contract inputs."
+    ],
+    "signed90_minimum_times_minimum_preserved": true
+  },
+  "new_credited_gate_replays": 0,
+  "new_price_samples": 0,
+  "new_test_credit": 0,
+  "phase_macro": [
+    [
+      "H",
+      2
+    ],
+    [
+      "CX",
+      1,
+      2
+    ],
+    [
+      "TD",
+      2
+    ],
+    [
+      "CX",
+      0,
+      2
+    ],
+    [
+      "T",
+      2
+    ],
+    [
+      "CX",
+      1,
+      2
+    ],
+    [
+      "TD",
+      2
+    ],
+    [
+      "CX",
+      0,
+      2
+    ],
+    [
+      "T",
+      1
+    ],
+    [
+      "T",
+      2
+    ],
+    [
+      "H",
+      2
+    ],
+    [
+      "CX",
+      0,
+      1
+    ],
+    [
+      "T",
+      0
+    ],
+    [
+      "TD",
+      1
+    ],
+    [
+      "CX",
+      0,
+      1
+    ]
+  ],
+  "previous_A14_rejected_rows_unchanged": true,
+  "quantum_advantage": false,
+  "rounder": {
+    "all_full72_input_words": true,
+    "array_matched": true,
+    "exact_ties_even": true,
+    "negative_floor_quotient_and_remainder": true,
+    "proof": [
+      "Arithmetic shift yields q=floor(z/16) and remainder r in0..15 for signed z.",
+      "OR target computes a XOR b XOR ab with a clean target.",
+      "Increment=r3 AND(r0 OR r1 OR r2 OR q0) equals r>8 OR(r=8 AND q odd).",
+      "Increment carry c_next=q_bit*c and sum=q_bit XOR c gives q+increment modulo2^72.",
+      "Signed full72 z yields |q|<=2^67; adding at most1 cannot overflow signed72.",
+      "Compute/output72XOR/literal reverse preserves input and zero private workspace."
+    ]
+  }
+}

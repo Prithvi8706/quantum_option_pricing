@@ -1,0 +1,164 @@
+{
+  "independent_full_dense_matrix_rows": [
+    {
+      "outcomes": [
+        0,
+        0
+      ],
+      "input_columns_checked": 32,
+      "branch_scalar_exact": [
+        1,
+        2
+      ],
+      "branch_probability_exact": [
+        1,
+        4
+      ],
+      "maximum_dense_matrix_error": 3.8882579728510553e-16,
+      "maximum_vectorized_crosscheck_error": 3.1470272019941045e-16,
+      "maximum_entangled_reference_error": 6.943229358190827e-17,
+      "scratch_output_zero": true
+    },
+    {
+      "outcomes": [
+        0,
+        1
+      ],
+      "input_columns_checked": 32,
+      "branch_scalar_exact": [
+        1,
+        2
+      ],
+      "branch_probability_exact": [
+        1,
+        4
+      ],
+      "maximum_dense_matrix_error": 3.8882579728510553e-16,
+      "maximum_vectorized_crosscheck_error": 2.779024842816778e-16,
+      "maximum_entangled_reference_error": 6.943229358190827e-17,
+      "scratch_output_zero": true
+    },
+    {
+      "outcomes": [
+        1,
+        0
+      ],
+      "input_columns_checked": 32,
+      "branch_scalar_exact": [
+        1,
+        2
+      ],
+      "branch_probability_exact": [
+        1,
+        4
+      ],
+      "maximum_dense_matrix_error": 3.8882579728510553e-16,
+      "maximum_vectorized_crosscheck_error": 2.779024842816778e-16,
+      "maximum_entangled_reference_error": 6.943229358190827e-17,
+      "scratch_output_zero": true
+    },
+    {
+      "outcomes": [
+        1,
+        1
+      ],
+      "input_columns_checked": 32,
+      "branch_scalar_exact": [
+        1,
+        2
+      ],
+      "branch_probability_exact": [
+        1,
+        4
+      ],
+      "maximum_dense_matrix_error": 3.8882579728510553e-16,
+      "maximum_vectorized_crosscheck_error": 3.1470272019941045e-16,
+      "maximum_entangled_reference_error": 6.943229358190827e-17,
+      "scratch_output_zero": true
+    }
+  ],
+  "vectorized_channel_check": {
+    "branch_rows": [
+      {
+        "outcomes": [
+          0,
+          0
+        ],
+        "input_columns_checked": 32,
+        "input_independent_branch_scalar_real": 0.4999999999999999,
+        "input_independent_branch_scalar_imag": 2.540443713150539e-18,
+        "expected_probability_exact": [
+          1,
+          4
+        ],
+        "maximum_channel_column_error": 1.5748206275731777e-16,
+        "maximum_scratch_cleanup_error": 0.0,
+        "maximum_branch_probability_error": 1.1102230246251565e-16,
+        "maximally_entangled_reference_dimension": 32
+      },
+      {
+        "outcomes": [
+          0,
+          1
+        ],
+        "input_columns_checked": 32,
+        "input_independent_branch_scalar_real": 0.4999999999999999,
+        "input_independent_branch_scalar_imag": 2.5404437131505393e-18,
+        "expected_probability_exact": [
+          1,
+          4
+        ],
+        "maximum_channel_column_error": 7.892441504159748e-17,
+        "maximum_scratch_cleanup_error": 0.0,
+        "maximum_branch_probability_error": 1.1102230246251565e-16,
+        "maximally_entangled_reference_dimension": 32
+      },
+      {
+        "outcomes": [
+          1,
+          0
+        ],
+        "input_columns_checked": 32,
+        "input_independent_branch_scalar_real": 0.4999999999999999,
+        "input_independent_branch_scalar_imag": 2.5404437131505393e-18,
+        "expected_probability_exact": [
+          1,
+          4
+        ],
+        "maximum_channel_column_error": 7.892441504159748e-17,
+        "maximum_scratch_cleanup_error": 0.0,
+        "maximum_branch_probability_error": 1.1102230246251565e-16,
+        "maximally_entangled_reference_dimension": 32
+      },
+      {
+        "outcomes": [
+          1,
+          1
+        ],
+        "input_columns_checked": 32,
+        "input_independent_branch_scalar_real": 0.4999999999999999,
+        "input_independent_branch_scalar_imag": 2.540443713150539e-18,
+        "expected_probability_exact": [
+          1,
+          4
+        ],
+        "maximum_channel_column_error": 1.5748206275731777e-16,
+        "maximum_scratch_cleanup_error": 0.0,
+        "maximum_branch_probability_error": 1.1102230246251565e-16,
+        "maximally_entangled_reference_dimension": 32
+      }
+    ],
+    "maximum_completeness_error": 4.440892098500626e-16,
+    "channel_identity_for_all_dirty_output_columns": true,
+    "arbitrary_superposition_and_entangled_reference_follows_from_Kraus_identity": true,
+    "global_phase_may_depend_on_branch_but_not_input": true,
+    "truth_table_only_check": false,
+    "numeric_matrix_tolerance": 1e-12,
+    "mathematical_channel_contract": "K_m=exp(i*theta_m)*U/2, for all four outcomes and all32 logical basis columns; scratch outputs are zero. Sum_m K_m rho K_m^dagger=U rho U^dagger, also when rho is entangled with any external reference."
+  },
+  "independent_paid_control_error": 1.887398338132208e-15,
+  "all_four_corrected_branches_K_equals_U_over_2": true,
+  "joint_channel_preserves_entangled_arbitrary_inputs": true,
+  "dirty_sum_and_carry_tested": true,
+  "numeric_matrix_tolerance": 1e-12
+}

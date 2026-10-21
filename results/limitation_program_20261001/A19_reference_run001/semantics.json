@@ -1,0 +1,200 @@
+{
+  "format": "exact-monitored-B2x4-reference-v1",
+  "assets": 2,
+  "dates": 4,
+  "word_width": 72,
+  "fraction_bits": 40,
+  "uniform_bits_each": 32,
+  "normal_values": [
+    94,
+    125,
+    210,
+    241,
+    326,
+    357,
+    442,
+    473,
+    558,
+    589,
+    674,
+    705
+  ],
+  "date_bindings": [
+    {
+      "date": 0,
+      "raw_log_values": [
+        726,
+        760
+      ],
+      "clipped_log_values": [
+        735,
+        769
+      ],
+      "stock_values": [
+        825,
+        957
+      ],
+      "common_normal_value": 94,
+      "idiosyncratic_normal_values": [
+        125,
+        210
+      ],
+      "increment_values": [
+        712,
+        750
+      ],
+      "basket_value": 1058,
+      "basket_sum_value": 1057
+    },
+    {
+      "date": 1,
+      "raw_log_values": [
+        727,
+        761
+      ],
+      "clipped_log_values": [
+        739,
+        773
+      ],
+      "stock_values": [
+        858,
+        990
+      ],
+      "common_normal_value": 241,
+      "idiosyncratic_normal_values": [
+        326,
+        357
+      ],
+      "increment_values": [
+        716,
+        753
+      ],
+      "basket_value": 1060,
+      "basket_sum_value": 1059
+    },
+    {
+      "date": 2,
+      "raw_log_values": [
+        730,
+        764
+      ],
+      "clipped_log_values": [
+        743,
+        777
+      ],
+      "stock_values": [
+        891,
+        1023
+      ],
+      "common_normal_value": 442,
+      "idiosyncratic_normal_values": [
+        473,
+        558
+      ],
+      "increment_values": [
+        720,
+        756
+      ],
+      "basket_value": 1062,
+      "basket_sum_value": 1061
+    },
+    {
+      "date": 3,
+      "raw_log_values": [
+        731,
+        765
+      ],
+      "clipped_log_values": [
+        747,
+        781
+      ],
+      "stock_values": [
+        924,
+        1056
+      ],
+      "common_normal_value": 589,
+      "idiosyncratic_normal_values": [
+        674,
+        705
+      ],
+      "increment_values": [
+        724,
+        759
+      ],
+      "basket_value": 1064,
+      "basket_sum_value": 1063
+    }
+  ],
+  "initial_log_value": 725,
+  "global_constant_values": [
+    3,
+    7,
+    11,
+    13,
+    16,
+    17,
+    25,
+    59,
+    62,
+    69,
+    706,
+    707,
+    711,
+    725,
+    787,
+    788,
+    789,
+    790,
+    791,
+    792,
+    793,
+    794,
+    795,
+    796,
+    797,
+    1071,
+    1081
+  ],
+  "barrier_value": 1071,
+  "strike_value": 1081,
+  "zero_value": 13,
+  "maximum_basket_value": 1070,
+  "alive_value": 1072,
+  "asian_sum_value": 1079,
+  "average_value": 1080,
+  "strike_difference_value": 1082,
+  "positive_payoff_value": 1083,
+  "discounted_payoff_value": 1084,
+  "output_value": 1085,
+  "discount_coefficient": 1067016148260,
+  "average_coefficient": 137438953472,
+  "common_coefficient": 104308831728,
+  "idiosyncratic_coefficient": 127751706700,
+  "drift_word": 4722366482865522045092,
+  "count_width": 3,
+  "barrier_tie": "basket >= H knocks out; all baskets < H survives",
+  "integer_update_identity": "Raw log and Asian-sum addition is modulo 2^72; associativity preserves the exact prefix/tree result. Clipped logs never feed later dates.",
+  "original_fingerprint": "19dfd69e78005a1a009e3f95f6b1a7f98c6ea89d76edf9c92bd6cca93181ae7d",
+  "target_fingerprint": "611a06b0724de270a7f188e1f495afe06044ca1c9a9ca635cd3aa0649a62ba6f",
+  "stock_structural_fingerprints": [
+    [
+      "f620d650a63df9487ad67299dfd56f3f748298c0bfd3c5360bd2195bc999d820",
+      "7c0629208ec2001bc8f2cb3aeddd871f72fd24aa385e48fc1d185d58822a3aff",
+      "3f5d9d1513a7ac3deed8745952307ed9ea74eb359ff675248d037ef639c8d533",
+      "f873cc79ef3db21d4e4b2823f3dfe44b14f9f65e160f2c19306df3384d3265b4"
+    ],
+    [
+      "8801e785198f737795cccb2c1b52713846a1ee23e6b96e8dcde886772c6e0b4a",
+      "22f7dd0090f8f29f23387f97f05635137e9934ff10b890d69d662763056f9ec3",
+      "df037a91ba1dbe99ef6604740b3cb9d24c2d58cdd13e25f0b45674db93e21b89",
+      "7d26f4199073e4a99f99d2c37f7656150acb3d3caa00ba41ce52c924f08ec889"
+    ]
+  ],
+  "builder_files": {
+    "research/advantage_frontier_20260923/barrier_oracle_depth.py": "1e0e225131c668f133ef05a5de3f78fbad4fb5307a2fc8c452d99d14c8dda929",
+    "research/controlled_source_completion/finance.py": "75f107e041a2b7fa7e1a6dfce471369549af96a18ae7852d212ca0e2b442f77b",
+    "research/controlled_source_completion/ir.py": "3a4af54bd2e439ef060b747ea8f26a0897ce9e4a119509b57fb018d936d5d223",
+    "research/controlled_source_completion/optimize.py": "e87b9d2b54da0f24a52cd11b328d5e8f5640cfda758efa46faef22232270d012",
+    "research/limitation_program_20261001/baseline.py": "9ac7e7f1375f49d78a6ead98d61314cdd9ff9a81dfaa074ad062615002816b17"
+  }
+}
