@@ -1,0 +1,271 @@
+{
+  "A02_audit_code_expected_SHA256": "063f8bf73faa0751b4dfa0f6aa227e2cbe457d89dc0c3f1fc0d12ac2c40998e9",
+  "LP_FORM_single_exact_bad_value": "2*E_s^2+2*C_J^2*p (Young (a+b)^2 split)",
+  "P10_G_restricted_pointwise_E_s_accepted": true,
+  "P11_continuous_B4_second_moment_missing_no_transfer": true,
+  "P9_event_split_C_J_LP_accepted": true,
+  "accepted_interface": {
+    "F": 40,
+    "G_restricted_disjoint_LP_combination": "E_s^2+(C_J^2-E_s^2)*p",
+    "W": 72,
+    "bad_or_mismatch_probability_upper": "min(1,60*lambda+B_band)",
+    "case": "B4x12",
+    "criterion_or_check_failure_seals_negative_with_L2SQ_BASE_L1_RMS_None": true,
+    "fixed_h_dollars": [
+      1,
+      128
+    ],
+    "fixed_lambda": [
+      1,
+      262144
+    ],
+    "ideal_band_correction": [
+      1,
+      963379197
+    ],
+    "ideal_band_leading_factor": [
+      1,
+      1176
+    ],
+    "inherited42_conditioning": [
+      "all12_fixed_basket_criterion_passed",
+      "all12_simultaneous_on_same_fixed_safe_event"
+    ],
+    "moment_transfer_estimator_saving_accuracy_policy_G2_physical_or_advantage": false,
+    "native_survival_selector": 5644,
+    "native_zero_branch": 13,
+    "no_adaptive_lambda_h_retuning_fallback_or_cross_profile_minimum": true,
+    "payoff_L1_secondary": "E_s*(1-p)+C_J*p",
+    "payoff_RMS": "outward_fixed_sqrt128(L2SQ)",
+    "payoff_jump_constant_C_J": "40*(U+eta)+tau",
+    "payoff_squared_L2_baseline": "E_s^2+1600*p",
+    "pointwise_kernel_M": 4608,
+    "profiles": [
+      "primary90",
+      "independent130"
+    ],
+    "radial_pair_count": 30,
+    "rational_checks": [
+      "R1",
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R6",
+      "R7"
+    ],
+    "same_coupling_no_native_or_error_independence": true,
+    "source_full_payoff": 5697,
+    "sqrt_grid_exponent_fixed": 128
+  },
+  "candidate_pricepolicy_estimator_G2_physical_or_advantage_excluded": true,
+  "conditional_fields_decoded_only_after_both_inherited_booleans_true": true,
+  "controller42_pinned_line_SHA256": {
+    "274": "963feb04e7a6fbca22c54ce7fbfc2608c1aa8121e305c5ab9da1439a50565835",
+    "291": "5e38a8a7f494a8861d61091b8fe4dc753e3047cf5cd749f0305a59e2fb0bf0fa",
+    "305": "5fb8ae9b69ae4829989dd66caa4a419910c14cc4cde970a522c75308bb20205c",
+    "314": "7c1be2c9d448c3fce5e5de4244cabd7c4d428f31ec5dcf39cf81f39a33255b83"
+  },
+  "inherited42_ROOT_receipt_SHA256": "c5f1bf3f358e537274bac297581d5e9e7f1c246072059b04886d607f4cea3e33",
+  "inherited42_SOURCE_SHA256": "cbf180d302155536134fd4dab4b7e9667c3b2043ecdcfe52e795d70b1edf4144",
+  "inherited42_adapter_SHA256": "0caab3ae094f5b6f833c59903858eb2cfb732622bd76bc7b1e118d7ee7e615f3",
+  "inherited42_manifest_SHA256": "e3b748925b525e0bb1154e438016b005bf30b7bf73461d0133034e763f937901",
+  "inherited42_operand_JSON_pointers": {
+    "B_band": "/components/fixed_ideal_band_probability_upper",
+    "E_s": "/conditional_smooth_survival_payoff_error_upper",
+    "U": "/components/own_discount_U",
+    "avg": "/components/average_pointwise_error_upper",
+    "eta": "/components/own_discount_literal_error_eta",
+    "p": "/conditional_mismatch_probability_upper",
+    "polar_bad": "/components/polar_bad_event_probability_upper",
+    "saved_mean": "/conditional_full_payoff_mean_bias_upper",
+    "tau": "/components/native_discount_floor_tau"
+  },
+  "inherited42_profile_files": {
+    "independent130": {
+      "expected_SHA256": "5447209f05c17e99c89bb893793a5d62506de1dd6bfc1078eb1cba3e54484704",
+      "filename": "independent_fixed_polar_safe_h128_uniform_error_feasibility.json"
+    },
+    "primary90": {
+      "expected_SHA256": "369f16352cd77be2a621f14d2810f24c58227248ffbebf004cf8b8208b639dc4",
+      "filename": "primary_fixed_polar_safe_h128_uniform_error_feasibility.json"
+    }
+  },
+  "inherited42_profile_outcomes": [
+    {
+      "all12_fixed_basket_criterion_passed": true,
+      "full_payoff_mean_certificate_adopted": true,
+      "outcome": "conditional_payoff_mean_certificate",
+      "profile": "primary90"
+    },
+    {
+      "all12_fixed_basket_criterion_passed": true,
+      "full_payoff_mean_certificate_adopted": true,
+      "outcome": "conditional_payoff_mean_certificate",
+      "profile": "independent130"
+    }
+  ],
+  "ir_semantics_expected_SHA256": "3a4af54bd2e439ef060b747ea8f26a0897ce9e4a119509b57fb018d936d5d223",
+  "native_error_safe_event_or_band_independence_assumed": false,
+  "native_payoff_5697_select_5644_5696_13_bound_in_target": true,
+  "native_stock_nonnegativity_line305_used_on_G_and_B": true,
+  "own_discount_archive_bindings": {
+    "independent130": {
+      "D_lit_Q40_word": 1067016148260,
+      "archive_expected_SHA256": "557ad358b5260fd39a2bfea7a18c86ae747ec1973630559994faf86b75a17702",
+      "archive_path": "results/limitation_program_20261001/A02_BM_native_financial_bridge_audit_run002/independent130_smooth_payoff_bounds.json",
+      "archived_eta_equals_endpoint_maximum_against_D_lit": true,
+      "enclosure_field": "independent_true_discount_enclosure",
+      "eta_field": "independent_discount_literal_error_upper",
+      "eta_ge_abs_D_lit_minus_d_since_d_in_own_outward_enclosure": true,
+      "literal_join": "target node 5696 and A02 audit lines 3062-3080/3144-3145",
+      "saved42_U_equals_archived_enclosure_upper": true,
+      "saved42_eta_equals_archived_eta": true
+    },
+    "primary90": {
+      "D_lit_Q40_word": 1067016148260,
+      "archive_expected_SHA256": "c31be96d9e4980a40ab1037466bf43698f8a55567225b0a86db320b3ac0ebb62",
+      "archive_path": "results/limitation_program_20261001/A02_BM_native_financial_bridge_run002/smooth_payoff_bounds.json",
+      "archived_eta_equals_endpoint_maximum_against_D_lit": true,
+      "enclosure_field": "exact_discount_enclosure",
+      "eta_field": "discount_literal_error_upper",
+      "eta_ge_abs_D_lit_minus_d_since_d_in_own_outward_enclosure": true,
+      "literal_join": "target node 5696 and controller42 line 314",
+      "saved42_U_equals_archived_enclosure_upper": true,
+      "saved42_eta_equals_archived_eta": true
+    }
+  },
+  "partition_G_Z_M_Ec_disjoint_exhaustive": true,
+  "passed": true,
+  "safe_band_subset_unconditional": true,
+  "schema": "e11-B4x12-fixed-polar-safe-h128-payoff-L2-source-premise-witness-v1",
+  "shared_native_graph_lines_305_314_apply_to_both_profiles": true,
+  "target_expected_SHA256": "a7a682731b3cdb6f16b32a9b1a467d6bfeccb32ea97e583ab79e5252bb7a9384",
+  "target_native_graph": {
+    "average_node5692_c": 22906492245,
+    "barrier_node5643_const_140Q": 153931627888640,
+    "basket_cmul_c_2p38": 274877906944,
+    "basket_nodes": [
+      5576,
+      5580,
+      5584,
+      5588,
+      5592,
+      5596,
+      5600,
+      5604,
+      5608,
+      5612,
+      5616,
+      5620
+    ],
+    "basket_stock_nodes": [
+      [
+        4021,
+        4417,
+        4813,
+        5209
+      ],
+      [
+        4054,
+        4450,
+        4846,
+        5242
+      ],
+      [
+        4087,
+        4483,
+        4879,
+        5275
+      ],
+      [
+        4120,
+        4516,
+        4912,
+        5308
+      ],
+      [
+        4153,
+        4549,
+        4945,
+        5341
+      ],
+      [
+        4186,
+        4582,
+        4978,
+        5374
+      ],
+      [
+        4219,
+        4615,
+        5011,
+        5407
+      ],
+      [
+        4252,
+        4648,
+        5044,
+        5440
+      ],
+      [
+        4285,
+        4681,
+        5077,
+        5473
+      ],
+      [
+        4318,
+        4714,
+        5110,
+        5506
+      ],
+      [
+        4351,
+        4747,
+        5143,
+        5539
+      ],
+      [
+        4384,
+        4780,
+        5176,
+        5572
+      ]
+    ],
+    "discount_node5696_c": 1067016148260,
+    "max_tree_lt_nodes": [
+      5621,
+      5623,
+      5625,
+      5627,
+      5629,
+      5631,
+      5633,
+      5635,
+      5637,
+      5639,
+      5641
+    ],
+    "max_tree_select_nodes": [
+      5622,
+      5624,
+      5626,
+      5628,
+      5630,
+      5632,
+      5634,
+      5636,
+      5638,
+      5640,
+      5642
+    ],
+    "payoff_node5697": "select(5644,5696,13)",
+    "strike_node5693_const_100Q": 109951162777600,
+    "sum48_tree_root": 5691,
+    "survival_node5644": "lt(5642,5643)",
+    "zero_branch_node13_const": 0
+  },
+  "twelve_basket_max_tree_bound_in_target": true,
+  "unselected_smooth_positive_part_bounded_by_40_assumed": false
+}

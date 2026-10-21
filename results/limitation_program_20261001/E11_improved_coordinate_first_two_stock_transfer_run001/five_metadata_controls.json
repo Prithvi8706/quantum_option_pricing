@@ -1,0 +1,40 @@
+{
+  "artificial_metadata_only": true,
+  "controls": [
+    {
+      "dedicated_tag": "COORDINATE_NOT_PAIR",
+      "field": "coordinate_quantity",
+      "mutation": "pair2_times_coordinate",
+      "rejected": true
+    },
+    {
+      "dedicated_tag": "OWN_PROFILE_ONLY",
+      "field": "profiles",
+      "mutation": [
+        "primary90",
+        "primary90"
+      ],
+      "rejected": true
+    },
+    {
+      "dedicated_tag": "BOTH_TAILS_REQUIRED",
+      "field": "projection_and_both_unconditional_continuous_tails",
+      "mutation": false,
+      "rejected": true
+    },
+    {
+      "dedicated_tag": "NO_EXTRA100",
+      "field": "extra_spot_multiplier",
+      "mutation": 100,
+      "rejected": true
+    },
+    {
+      "dedicated_tag": "NO_ERROR_INDEPENDENCE",
+      "field": "native_error_or_stock_independence_assumed",
+      "mutation": true,
+      "rejected": true
+    }
+  ],
+  "passed": true,
+  "positive_first": true
+}

@@ -1,0 +1,108 @@
+{
+  "allocation_policy": "Before outcome-sensitive work, fix nonnegative dollar allowances with sum <= epsilon and failure shares with sum <= 0.01. Retain 0.45*epsilon as reference statistical share until a valid cost/error grid justifies a prospective replacement. Unknown bounds/shares remain null; none is assumed free. Deterministic proofs consume no stochastic failure share once established. Quantum/classical reference checks retain their own explicit ledgers.",
+  "allocations": [
+    {
+      "allocation_is_certificate": false,
+      "certified_total_dollars": null,
+      "epsilon_dollars": 0.1,
+      "remaining_nonstatistical_dollars": 0.05500000000000001,
+      "statistical_reference_allowance_dollars": 0.045000000000000005
+    },
+    {
+      "allocation_is_certificate": false,
+      "certified_total_dollars": null,
+      "epsilon_dollars": 0.03,
+      "remaining_nonstatistical_dollars": 0.0165,
+      "statistical_reference_allowance_dollars": 0.0135
+    },
+    {
+      "allocation_is_certificate": false,
+      "certified_total_dollars": null,
+      "epsilon_dollars": 0.01,
+      "remaining_nonstatistical_dollars": 0.0055000000000000005,
+      "statistical_reference_allowance_dollars": 0.0045000000000000005
+    },
+    {
+      "allocation_is_certificate": false,
+      "certified_total_dollars": null,
+      "epsilon_dollars": 0.001,
+      "remaining_nonstatistical_dollars": 0.00055,
+      "statistical_reference_allowance_dollars": 0.00045000000000000004
+    }
+  ],
+  "case": "B4x12",
+  "contractual_dates": "Discrete monitoring is part of the payoff. Ideal GBM log transitions are exact at those dates; no deletion or continuous-monitoring substitution is authorized.",
+  "deterministic_terms": [
+    {
+      "dollar_bound": null,
+      "failure_probability": null,
+      "status": "unresolved",
+      "term": "finite_uniform_to_continuous_normal_law"
+    },
+    {
+      "dollar_bound": null,
+      "failure_probability": null,
+      "status": "unresolved",
+      "term": "Gaussian_log_cos_sqrt_function_and_rounding_error"
+    },
+    {
+      "dollar_bound": null,
+      "failure_probability": null,
+      "status": "unresolved",
+      "term": "spot_guard_and_tail_bias"
+    },
+    {
+      "dollar_bound": null,
+      "failure_probability": null,
+      "status": "unresolved",
+      "term": "fixed_point_GBM_path_and_Estrin_exponential_error"
+    },
+    {
+      "dollar_bound": null,
+      "failure_probability": null,
+      "status": "unresolved",
+      "term": "barrier_boundary_misclassification"
+    },
+    {
+      "dollar_bound": null,
+      "failure_probability": null,
+      "status": "unresolved",
+      "term": "rotation_or_phase_synthesis_if_added"
+    },
+    {
+      "dollar_bound": null,
+      "failure_probability": null,
+      "status": "unresolved",
+      "term": "estimator_finite_resolution"
+    }
+  ],
+  "failure_terms": [
+    {
+      "allocated_probability": null,
+      "status": "unresolved",
+      "term": "estimator_statistics_and_stopping"
+    },
+    {
+      "allocated_probability": null,
+      "status": "unresolved",
+      "term": "probabilistic_moment_or_reference_certification_if_used"
+    },
+    {
+      "allocated_probability": null,
+      "status": "unresolved",
+      "term": "state_preparation_or_synthesis_certification_if_probabilistic"
+    },
+    {
+      "allocated_probability": null,
+      "status": "unresolved",
+      "term": "hardware_execution_and_decoding"
+    }
+  ],
+  "gates": {
+    "G2": "unresolved",
+    "G3": "unresolved",
+    "G4": "unresolved_actual_target_time_to_accuracy",
+    "G5": "unresolved_physical_mapping_and_complete_latency"
+  },
+  "non_applicable_terms": "Compound baseline, surrogate and exercise-policy regret terms do not belong to this plain knock-out source family."
+}

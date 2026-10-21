@@ -1,0 +1,37 @@
+{
+  "accepted_same_middle_variable": {
+    "arithmetic_reuse": "Exact original saved arithmetic allowance; no native proof or domain guard repeated",
+    "cell_midpoints": "(i+1/2)*2^-32 for every i=0,...,2^32-1",
+    "cell_width_exact": [
+      1,
+      4294967296
+    ],
+    "certificate_presence": {
+      "native_verified": true,
+      "own_interface_release": true,
+      "radial_verified": true
+    },
+    "coupling": "One common continuous uniform U,V and their original cell midpoints U_M,V_M",
+    "digital_pair_independence": false,
+    "middle_coordinates": [
+      "sqrt(-2*ln(U_M))*cos(2*pi*V_M)",
+      "sqrt(-2*ln(U_M))*cos(2*pi*((V_M+3/4) mod 1))"
+    ],
+    "native_quantizer": {
+      "F": 40,
+      "Q": 32,
+      "W": 72,
+      "clipped": false
+    },
+    "profiles": [
+      "primary90",
+      "independent130"
+    ],
+    "quantity": "squared_L2_Gaussian_coordinate",
+    "source_law": "original_B4_B8_Q32_shared_U_V_BoxMuller_F40_W72",
+    "units": "dimensionless_Gaussian_coordinate_squared"
+  },
+  "expectation_requires_no_error_independence": true,
+  "native_arithmetic_proof_and_guard_reexecuted": false,
+  "pointwise_triangle": "|Z-N_M|^2 <= 2|Z-H_M|^2 + 2|H_M-N_M|^2"
+}

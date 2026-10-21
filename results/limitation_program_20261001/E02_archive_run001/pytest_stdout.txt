@@ -1,0 +1,127 @@
+..............................FF.F                                       [100%]
+================================== FAILURES ===================================
+___________ test_actual_archive_three_counts_and_t_resource_totals ____________
+
+    def test_actual_archive_three_counts_and_t_resource_totals():
+>       result = exporter.export_archive(ROOT)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+research\limitation_program_20261001\test_estimator_ledger_export.py:223: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+research\limitation_program_20261001\estimator_ledger_export.py:607: in export_archive
+    audited = audit_wrapper(root, wrapper, row["method"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+research\limitation_program_20261001\estimator_ledger_export.py:412: in audit_wrapper
+    financial = audit_wave(root, calls[0])
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+research\limitation_program_20261001\estimator_ledger_export.py:359: in audit_wave
+    require(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+condition = False, message = 'Archived range target binding'
+
+    def require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Archived range target binding
+
+research\limitation_program_20261001\estimator_ledger_export.py:26: ValueError
+_____ test_actual_archive_preserves_unknown_costs_and_financial_boundary ______
+
+    def test_actual_archive_preserves_unknown_costs_and_financial_boundary():
+>       result = exporter.export_archive(ROOT)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+research\limitation_program_20261001\test_estimator_ledger_export.py:244: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+research\limitation_program_20261001\estimator_ledger_export.py:607: in export_archive
+    audited = audit_wrapper(root, wrapper, row["method"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+research\limitation_program_20261001\estimator_ledger_export.py:412: in audit_wrapper
+    financial = audit_wave(root, calls[0])
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+research\limitation_program_20261001\estimator_ledger_export.py:359: in audit_wave
+    require(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+condition = False, message = 'Archived range target binding'
+
+    def require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Archived range target binding
+
+research\limitation_program_20261001\estimator_ledger_export.py:26: ValueError
+_________ test_selector_inverse_cannot_be_removed_from_archive_audit __________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000018DBE4166C0>
+
+    def test_selector_inverse_cannot_be_removed_from_archive_audit(monkeypatch):
+        original_read = exporter.read
+    
+        def missing_inverse(path):
+            value = original_read(path)
+            if Path(path).name == "combined_C4_bounded_wrapper.json":
+                value = copy.deepcopy(value)
+                # The very first selector-inverse gate immediately follows its CZ.
+                marker = next(j for j, op in enumerate(value["operations"]) if op["gate"] == "cz")
+                value["operations"].pop(marker + 1)
+            return value
+    
+        monkeypatch.setattr(exporter, "read", missing_inverse)
+        wrapper = exporter.read(
+            ROOT / "results/controlled_priority_completion/combined_C4_bounded_wrapper.json"
+        )
+        with pytest.raises(ValueError, match="Selector literal inverse"):
+>           exporter.audit_wrapper(ROOT, wrapper, "bounded_QAE")
+
+research\limitation_program_20261001\test_estimator_ledger_export.py:297: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+research\limitation_program_20261001\estimator_ledger_export.py:412: in audit_wrapper
+    financial = audit_wave(root, calls[0])
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+research\limitation_program_20261001\estimator_ledger_export.py:359: in audit_wave
+    require(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+condition = False, message = 'Archived range target binding'
+
+    def require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Archived range target binding
+
+research\limitation_program_20261001\estimator_ledger_export.py:26: ValueError
+
+During handling of the above exception, another exception occurred:
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000018DBE4166C0>
+
+    def test_selector_inverse_cannot_be_removed_from_archive_audit(monkeypatch):
+        original_read = exporter.read
+    
+        def missing_inverse(path):
+            value = original_read(path)
+            if Path(path).name == "combined_C4_bounded_wrapper.json":
+                value = copy.deepcopy(value)
+                # The very first selector-inverse gate immediately follows its CZ.
+                marker = next(j for j, op in enumerate(value["operations"]) if op["gate"] == "cz")
+                value["operations"].pop(marker + 1)
+            return value
+    
+        monkeypatch.setattr(exporter, "read", missing_inverse)
+        wrapper = exporter.read(
+            ROOT / "results/controlled_priority_completion/combined_C4_bounded_wrapper.json"
+        )
+>       with pytest.raises(ValueError, match="Selector literal inverse"):
+E       AssertionError: Regex pattern did not match.
+E        Regex: 'Selector literal inverse'
+E        Input: 'Archived range target binding'
+
+research\limitation_program_20261001\test_estimator_ledger_export.py:296: AssertionError
+- generated xml file: C:\Users\prith\quantum_option_pricing\results\limitation_program_20261001\E02_archive_run001\pytest.xml -
+=========================== short test summary info ===========================
+FAILED research/limitation_program_20261001/test_estimator_ledger_export.py::test_actual_archive_three_counts_and_t_resource_totals
+FAILED research/limitation_program_20261001/test_estimator_ledger_export.py::test_actual_archive_preserves_unknown_costs_and_financial_boundary
+FAILED research/limitation_program_20261001/test_estimator_ledger_export.py::test_selector_inverse_cannot_be_removed_from_archive_audit
+3 failed, 31 passed in 6.35s

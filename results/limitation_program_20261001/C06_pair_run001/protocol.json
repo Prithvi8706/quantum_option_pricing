@@ -1,0 +1,76 @@
+{
+  "created_utc": "2026-10-02T07:05:09.724381+00:00",
+  "item": "C06 joint Box-Muller pair and one B4 date",
+  "local_only": true,
+  "before_meaningful_tests_and_certification": true,
+  "executed_dependencies": [
+    {
+      "original": "research/limitation_program_20261001/experiment_box_muller_pair.py",
+      "snapshot": "executed_code/experiment_box_muller_pair.py",
+      "sha256": "e30160e8e32b8fff182ce202191a6718f364586afad0299039d0515f61cde5fe"
+    },
+    {
+      "original": "research/limitation_program_20261001/box_muller_pair_certificate.py",
+      "snapshot": "executed_code/box_muller_pair_certificate.py",
+      "sha256": "a5c43b0b449383ab007ee524551459c3babe9c12b75943a263bd48ebef8b582b"
+    },
+    {
+      "original": "research/limitation_program_20261001/test_box_muller_pair_certificate.py",
+      "snapshot": "executed_code/test_box_muller_pair_certificate.py",
+      "sha256": "be65f91c70f7d87d2646a59776afb6d00c97907602f37894fe78dd148fc141e7"
+    }
+  ],
+  "declared_tests": 26,
+  "coupling": "U,V independent continuous uniforms; q32 integer cells and exact f40 midpoints; retain the joint shared-input output pair",
+  "cutoff_bits": [
+    20,
+    24
+  ],
+  "cutoff_candidates": 2,
+  "method_families": 1,
+  "interval_decimal_precision": 90,
+  "mpmath_version": "1.3.0",
+  "interpreter_sha256": "41123879d2e991377997acadf5f0cf8f34fa10d86362eded8c69b6041e2893b5",
+  "law_changes": 0,
+  "finite_grid_sample_enumerations": 0,
+  "sampled_variance_estimates": 0,
+  "pair_counts": {
+    "B4x12": 30,
+    "B8x52": 234
+  },
+  "scalar_counts": {
+    "B4x12": 60,
+    "B8x52": 468
+  },
+  "observation_scope": {
+    "case": "B4x12",
+    "date": 1,
+    "time_exact": [
+      1,
+      12
+    ],
+    "used_joint_pairs": 3
+  },
+  "unallocated_dollar_headroom_exact": [
+    11,
+    2000
+  ],
+  "acceptance": "Each analytic enclosure must hold for the actual literal tables/typed graph. A valid one-date component is retained even if larger than headroom. Neither component comparison nor tail union closes full-path G2.",
+  "proof_terms": [
+    "radial and angular midpoint coupling",
+    "all actual Taylor coefficients enclosed by mp.iv",
+    "table Taylor remainder",
+    "every native Horner floor",
+    "exact mantissa normalization and integer exponent",
+    "ln2 literal",
+    "square-root Holder and native floor",
+    "native final product floor",
+    "actual date1 coefficients/drift/logspot",
+    "actual Estrin polynomial/floors/range reconstruction",
+    "tail union with independently bound nonnegative payoff support"
+  ],
+  "new_financial_gate_replays": 0,
+  "new_quantum_unitary_tests": 0,
+  "full_path_clipping_and_barrier_composition": "Explicitly unfinished; null dollar/band fields preserved",
+  "freeze_rule": "Preserve this first execution even on failure; code changes require a new version and receipt"
+}

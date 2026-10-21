@@ -1,0 +1,43 @@
+{
+  "cases": [
+    {
+      "case": "B4x12",
+      "monitored_date_basket_conditions": 12,
+      "stock_exponentials": 48,
+      "predicate_category_counts": {
+        "strict_survival_of_monitored_arithmetic_baskets": 1,
+        "maximum_tree_between_arithmetic_baskets": 11,
+        "positive_part_of_arithmetic_Asian_strike_difference": 1,
+        "Gaussian_log_table_argument_guard": 60,
+        "Gaussian_cos_table_argument_guard": 120,
+        "path_log_clipping_guard": 96,
+        "Gaussian_log_positive_input_guard": 30,
+        "Gaussian_square_root_nonnegative_argument_guard": 30
+      },
+      "eligible_one_asset_financial_predicates": 0,
+      "required_signal_interface": "The strict monitored payoff needs each date's exact sum of guarded native stock exponentials, their floor average, a strict H comparison and maximum/AND composition; the Asian strike needs the exact all-stock/date sum, rounded averaging coefficient, strict positive part and already-discounted magnitude. A coherent log-sum-exp or alternative signal must implement these dependencies with normalization, finite native/tie errors, preparation, inverse, comparison and all oracle invocations paid."
+    },
+    {
+      "case": "B8x52",
+      "monitored_date_basket_conditions": 52,
+      "stock_exponentials": 416,
+      "predicate_category_counts": {
+        "strict_survival_of_monitored_arithmetic_baskets": 1,
+        "maximum_tree_between_arithmetic_baskets": 51,
+        "positive_part_of_arithmetic_Asian_strike_difference": 1,
+        "Gaussian_log_table_argument_guard": 468,
+        "Gaussian_cos_table_argument_guard": 936,
+        "path_log_clipping_guard": 832,
+        "Gaussian_log_positive_input_guard": 234,
+        "Gaussian_square_root_nonnegative_argument_guard": 234
+      },
+      "eligible_one_asset_financial_predicates": 0,
+      "required_signal_interface": "The strict monitored payoff needs each date's exact sum of guarded native stock exponentials, their floor average, a strict H comparison and maximum/AND composition; the Asian strike needs the exact all-stock/date sum, rounded averaging coefficient, strict positive part and already-discounted magnitude. A coherent log-sum-exp or alternative signal must implement these dependencies with normalization, finite native/tie errors, preparation, inverse, comparison and all oracle invocations paid."
+    }
+  ],
+  "accepted_target_source_unchanged": true,
+  "mathematical_single_asset_submodel_conditional_only": true,
+  "omitted_log_sum_exp_normalization_comparison_cost_allowed": false,
+  "complete_QSP_source_or_cost_emitted": false,
+  "quantum_advantage_claim": false
+}

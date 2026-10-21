@@ -1,0 +1,164 @@
+{
+  "format": "continuous-gbm-one-date-barrier-band-certificate-v1",
+  "model": {
+    "case": "B4x12",
+    "assets": 4,
+    "dates": 12,
+    "volatility_exact": [
+      3,
+      10
+    ],
+    "correlation_exact": [
+      2,
+      5
+    ],
+    "spot_dollars_exact": [
+      100,
+      1
+    ],
+    "rate_exact": [
+      3,
+      100
+    ],
+    "maturity_years_exact": [
+      1,
+      1
+    ],
+    "strike_dollars_exact": [
+      100,
+      1
+    ],
+    "barrier_dollars_exact": [
+      140,
+      1
+    ],
+    "equal_asset_volatility": true,
+    "basket": "positive equal-weight arithmetic spot basket",
+    "builder_path": "C:\\Users\\prith\\quantum_option_pricing\\research\\advantage_frontier_20260923\\barrier_oracle_depth.py",
+    "builder_sha256": "1e0e225131c668f133ef05a5de3f78fbad4fb5307a2fc8c452d99d14c8dda929",
+    "continuous_driver_law": "independent common and idiosyncratic Brownian drivers",
+    "digital_paired_outputs_claimed_independent_gaussian": false
+  },
+  "date": 1,
+  "observation_time_exact": [
+    1,
+    12
+  ],
+  "common_log_variance_exact": [
+    3,
+    1000
+  ],
+  "proof": {
+    "factorization": "At date t>0, S_i(t)=S0*exp((r-sigma^2/2)t+sigma*sqrt(rho*t)Z+sigma*sqrt((1-rho)*t)Z_i). Conditioning on all idiosyncratic Brownian shocks gives B(t)=exp(s_c Z)W, s_c=sigma*sqrt(rho*t)>0, W>0 finite almost surely. The original independent continuous common Brownian driver makes Z standard Gaussian and independent of W.",
+    "density": "For 0<=eta<H, the event H-eta<=B<=H+eta restricts Z to an interval of length L/s_c, L=log((H+eta)/(H-eta)). Its probability is at most min(1,L/(s_c*sqrt(2*pi))) for every W, hence also unconditionally.",
+    "interval_maximum": "Writing d=L/(2*s_c), a shifted interval has probability g(c)=Phi(c+d)-Phi(c-d). Its derivative is phi(c+d)-phi(c-d), nonpositive for c>=0 and nonnegative for c<=0. Thus its exact shift-independent supremum is g(0)=2*Phi(d)-1. No observed W or financial sample enters this bound.",
+    "strict_barrier": "Conditional on any finite positive W, B has a continuous lognormal law. Every deterministic endpoint, including B=H, has probability zero after averaging over W. The original alive test B<H and knockout convention B>=H are preserved; digital equality is not claimed to have probability zero.",
+    "coupling": "If |B_digital-B_continuous|<=eta outside a separately bounded bad event E, then differing one-date barrier decisions imply E or |B_continuous-H|<=eta. Apply the unconditional Gaussian band bound plus P(E). Conditioning on E's complement can destroy Gaussian independence and is never used.",
+    "relative_log_band": "If a proved per-stock multiplicative/log discrepancy, including native exp and clipping, bounds each stock ratio between exp(-delta) and exp(delta), the positive equal-weight basket obeys the same ratio bounds. Different barrier decisions require H*exp(-delta)<=B_continuous<=H*exp(delta), whose log length is exactly 2*delta. The symmetric dollar radius H*(exp(delta)-1) also covers this band because 2-exp(delta)<=exp(-delta).",
+    "dollar_bias": "Given separately proved already-discounted smooth-payoff error zeta on the good domain, a discounted cap on the barrier-switch payoff difference, an any-contractual-date band probability and discounted bad-domain tail dollars, triangle inequality gives dollar_bias<=zeta+cap*P(any band)+tail_dollars. A one-date band alone supplies none of the remaining terms or full-path coverage. The original native output is already discounted: no second discount is applied.",
+    "numerics": "Exact rational Machin pi intervals, integer-square-root enclosures and dyadic outward arithmetic are used. log((1+x)/(1-x)) is enclosed by its positive atanh series and geometric remainder. The centered Gaussian integral uses the integrated Taylor series for exp(-z^2/2); Taylor's derivative bound gives remainder <=8^(2m+3)/(2^(m+1)*(m+1)!*(2m+3)) for 0<=z<=8. Larger arguments use monotonicity and the rigorous probability cap one."
+  },
+  "eta": null,
+  "path_log_discrepancy": null,
+  "bad_event_probability": null,
+  "proved_discrepancy_band_bounds": null,
+  "one_date_decision_disagreement_upper_exact": null,
+  "discounted_smooth_payoff_zeta": null,
+  "discounted_tail_dollars": null,
+  "any_contractual_date_band_probability": null,
+  "dollar_bias_upper_exact": null,
+  "full_G2_certificate": false,
+  "digital_paired_outputs_claimed_independent_gaussian": false,
+  "gaussian_law_conditioned_on_coupling_good_event": false,
+  "all_contractual_dates_covered": false,
+  "finite_financial_samples_used": 0,
+  "missing_bounds_are_zero": false,
+  "second_discount_applied": false,
+  "fixed_exploratory_band_diagnostic": {
+    "log_length_interval_exact": [
+      [
+        38514209524507464028014870652214527086107825780342513604518449,
+        26959946667150639794667015087019630673637144422540572481103610249216
+      ],
+      [
+        19257104762253732014007435326107263543053912890171256802259225,
+        13479973333575319897333507543509815336818572211270286240551805124608
+      ]
+    ],
+    "common_log_variance_exact": [
+      3,
+      1000
+    ],
+    "common_log_standard_deviation_interval_exact": [
+      [
+        1476657093873462780937264693036406101301816300673548945277009485819,
+        26959946667150639794667015087019630673637144422540572481103610249216
+      ],
+      [
+        369164273468365695234316173259101525325454075168387236319252371455,
+        6739986666787659948666753771754907668409286105635143120275902562304
+      ]
+    ],
+    "density": {
+      "formula": "min(1,L/(s_c*sqrt(2*pi)))",
+      "interval_exact": [
+        [
+          38514209524507464028014870652214527086107825780342513604518449,
+          3701430423437665353113974796239267136167065133539232813956685358539
+        ],
+        [
+          19257104762253732014007435326107263543053912890171256802259225,
+          1850715211718832676556987398119633568083532566769616406978342679269
+        ]
+      ],
+      "probability_upper_exact": [
+        19257104762253732014007435326107263543053912890171256802259225,
+        1850715211718832676556987398119633568083532566769616406978342679269
+      ]
+    },
+    "centered_interval_maximum": {
+      "formula": "2*Phi(L/(2*s_c))-1",
+      "interval_exact": [
+        [
+          280524261135349523554446218293989307917757667869580793761925923,
+          26959946667150639794667015087019630673637144422540572481103610249216
+        ],
+        [
+          280524261135349523554446218293989307917757667869580793761925931,
+          26959946667150639794667015087019630673637144422540572481103610249216
+        ]
+      ],
+      "probability_upper_exact": [
+        280524261135349523554446218293989307917757667869580793761925931,
+        26959946667150639794667015087019630673637144422540572481103610249216
+      ],
+      "uniform_over_all_positive_W": true
+    },
+    "finite_financial_samples_used": 0,
+    "bound_methods": 2,
+    "eta_dollars_exact": [
+      1,
+      10000
+    ],
+    "barrier_dollars_exact": [
+      140,
+      1
+    ],
+    "exploratory_only": true,
+    "proved_native_discrepancy": false,
+    "used_as_financial_error_certificate": false
+  },
+  "dollar_bias_assembly": {
+    "components": {
+      "discounted-smooth-payoff-error": null,
+      "discounted-path-payoff-cap": null,
+      "any-date-band-probability": null,
+      "discounted-tail-dollars": null
+    },
+    "dollar_bias_upper_exact": null,
+    "formula": "discounted_zeta+discounted_payoff_cap*P(any contractual-date band)+discounted_tail_dollars",
+    "second_discount_applied": false,
+    "missing_bounds_are_zero": false,
+    "full_G2_certificate": false
+  }
+}

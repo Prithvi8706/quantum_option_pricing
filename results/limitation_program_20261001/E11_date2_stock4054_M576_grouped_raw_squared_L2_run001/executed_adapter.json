@@ -1,0 +1,1615 @@
+{
+  "ROOT_assessment_review_path": ".context/E11_DATE2_STOCK4054_FIXED_M576_GROUPED_RAW_FEASIBILITY_ROOT_REVIEW_run001.json",
+  "SOURCE_READY_or_SCI_authorized_by_PLAN": false,
+  "SOURCE_execution_or_READY_authorized_by_adapter": false,
+  "accepted_assessment_path": ".context/E11_DATE2_STOCK4054_FIXED_M576_GROUPED_RAW_FEASIBILITY_ASSESSMENT_run001.json",
+  "analytic_log_lower_certificate": {
+    "identity": "ln((1+x)/(1-x))=2*integral_0^x 1/(1-t^2) dt",
+    "integrand_lower": "1/(1-t^2)>=1+t^2; remainder t^4/(1-t^2)>=0 for0<=t<1",
+    "ln2_lower_exact_pair": [
+      56,
+      81
+    ],
+    "ln2_x_exact_pair": [
+      1,
+      3
+    ],
+    "ln3_lower_exact_pair": [
+      13,
+      12
+    ],
+    "ln3_x_exact_pair": [
+      1,
+      2
+    ],
+    "ln576_lower_exact_pair": [
+      341,
+      54
+    ],
+    "lower_combination": "6*(56/81)+2*(13/12)=341/54",
+    "no_transcendental_numeric_evaluation": true
+  },
+  "assessment_proof_MD_path": ".context/E11_DATE2_STOCK4054_FIXED_M576_GROUPED_RAW_FEASIBILITY_ASSESSMENT_run001.md",
+  "caps": [
+    180,
+    150,
+    600
+  ],
+  "control_fields": {
+    "fixed_parameters": "FIXED_M576_NO_FALLBACK",
+    "grouped_profile_and_source_match": "VERIFIED_OWN_GROUPED_CPRIME_SEVEN_LITERALS",
+    "qualification": "NO_EXTRA_SPOT_INDEPENDENCE_MINIMUM_OR_ADOPTION",
+    "source_scope": "OWN_DATE2_ORIGINAL_STOCK4054",
+    "tail_reuse": "SQUARED_LOWER_SCALE_AND_UNCHANGED_UPPER_TAIL"
+  },
+  "controls": [
+    {
+      "bad": {
+        "M": 1024,
+        "failed_guard_retuning_or_M_fallback": false,
+        "grouped_delta_exact_pair": [
+          1,
+          100000
+        ],
+        "moment_order": 32,
+        "parent_M": 1024
+      },
+      "field": "fixed_parameters",
+      "tag": "FIXED_M576_NO_FALLBACK"
+    },
+    {
+      "bad": {
+        "F": 40,
+        "W": 72,
+        "asset_zero_based": 0,
+        "case": "B4x12",
+        "clipped_log": 3583,
+        "contractual_date_one_based": 2,
+        "count": 4023,
+        "polynomial": 4053,
+        "raw_log": 3543,
+        "remainder": 4026,
+        "saved_date_zero_based": 1,
+        "stock": 4021
+      },
+      "field": "source_scope",
+      "tag": "OWN_DATE2_ORIGINAL_STOCK4054"
+    },
+    {
+      "bad": {
+        "drivers": [
+          94,
+          125,
+          357,
+          442
+        ],
+        "raw_log": 3543,
+        "same_own_C_prime_and_seven_literals": false
+      },
+      "field": "grouped_profile_and_source_match",
+      "tag": "VERIFIED_OWN_GROUPED_CPRIME_SEVEN_LITERALS"
+    },
+    {
+      "bad": {
+        "both_unconditional_continuous_tails_paid": true,
+        "lower_scale_exact_pair": [
+          576,
+          1024
+        ],
+        "lower_scale_squared": true,
+        "upper_saved_identical": false
+      },
+      "field": "tail_reuse",
+      "tag": "SQUARED_LOWER_SCALE_AND_UNCHANGED_UPPER_TAIL"
+    },
+    {
+      "bad": {
+        "adaptive_M_formula_profile_minimum_or_numeric_adoption": false,
+        "candidate_or_date1_kernel_operand_used": false,
+        "extra_spot_multiplier": 100,
+        "native_error_or_stock_independence_assumed": false
+      },
+      "field": "qualification",
+      "tag": "NO_EXTRA_SPOT_INDEPENDENCE_MINIMUM_OR_ADOPTION"
+    }
+  ],
+  "current_review_paths": [
+    ".context/E11_DATE2_STOCK4054_FIXED_M576_GROUPED_RAW_SQUARED_L2_AUTHOR_STATIC_QA_run001.json",
+    ".context/E11_DATE2_STOCK4054_FIXED_M576_GROUPED_RAW_SQUARED_L2_INDEPENDENT_STATIC_PEER_run001.json",
+    ".context/E11_DATE2_STOCK4054_FIXED_M576_GROUPED_RAW_SQUARED_L2_ROOT_STATIC_REVIEW_run001.json"
+  ],
+  "default_decimal_digits": 4300,
+  "exact13_inclusive_ledger": [
+    "executed_controller.py",
+    "executed_adapter.json",
+    "executed_preflight.md",
+    "executed_ROOT_READY.json",
+    "run_started.json",
+    "selected_premise_authority.json",
+    "source_projection_and_saved_tail_witness.json",
+    "five_metadata_controls.json",
+    "primary_stock4054_M576_squared_L2.json",
+    "independent_stock4054_M576_squared_L2.json",
+    "same_profile_comparison.json",
+    "summary.json",
+    "manifest.json"
+  ],
+  "fixed_selected_route_no_fallback_or_formula_profile_minimum": true,
+  "full_caps": {
+    "CPU_seconds": 180,
+    "SOURCE_bytes": 8388608,
+    "admission_CPU_seconds": 150,
+    "default_integer_decimal_digits": 4300,
+    "inclusive_owned_bytes": 134217728,
+    "inclusive_owned_files": 64,
+    "limb_bits": 32,
+    "maximum_limbs": 4096,
+    "physical_write_block_bytes": 65536,
+    "reduced_rational_bits": 131072,
+    "resident_set_bytes": 157286400,
+    "selected_bytes": 67108864,
+    "selected_paths": 256,
+    "single_selected_bytes": 67108864,
+    "temporary_rational_bits": 524288,
+    "wall_seconds": 600
+  },
+  "future_routes": {
+    "ADAPTER": ".context/E11_DATE2_STOCK4054_FIXED_M576_GROUPED_RAW_SQUARED_L2_INPUT_ADAPTER_run001.json",
+    "AUTHOR_QA": ".context/E11_DATE2_STOCK4054_FIXED_M576_GROUPED_RAW_SQUARED_L2_AUTHOR_STATIC_QA_run001.json",
+    "OUTPUT": "results/limitation_program_20261001/E11_date2_stock4054_M576_grouped_raw_squared_L2_run001",
+    "PLAN": ".context/E11_DATE2_STOCK4054_FIXED_M576_GROUPED_RAW_SQUARED_L2_PLAN_run001.json",
+    "PREFLIGHT": ".context/E11_DATE2_STOCK4054_FIXED_M576_GROUPED_RAW_SQUARED_L2_PREFLIGHT_run001.md",
+    "ROOT_READY": ".context/E11_DATE2_STOCK4054_FIXED_M576_GROUPED_RAW_SQUARED_L2_ROOT_READY_run001.json",
+    "ROOT_RESULT": ".context/E11_DATE2_STOCK4054_FIXED_M576_GROUPED_RAW_SQUARED_L2_ACTUAL_RESULT_ROOT_VERIFICATION_run001.json",
+    "ROOT_SOURCE_REVIEW": ".context/E11_DATE2_STOCK4054_FIXED_M576_GROUPED_RAW_SQUARED_L2_ROOT_STATIC_REVIEW_run001.json",
+    "SOURCE": "research/limitation_program_20261001/experiment_e11_date2_stock4054_m576_grouped_raw_squared_l2_v1.py",
+    "SOURCE_PEER": ".context/E11_DATE2_STOCK4054_FIXED_M576_GROUPED_RAW_SQUARED_L2_INDEPENDENT_STATIC_PEER_run001.json"
+  },
+  "grouped_raw_READY": "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/executed_ROOT_READY.json",
+  "grouped_raw_ROOT": ".context/E11_SECOND_DATE_GROUPED_FIXED_YOUNG_SQUARED_L2_ACTUAL_RESULT_ROOT_VERIFICATION_run002.json",
+  "grouped_raw_SOURCE": "research/limitation_program_20261001/experiment_e11_second_date_grouped_fixed_young_raw_log_squared_l2_v2.py",
+  "grouped_raw_adapter": "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/executed_adapter.json",
+  "grouped_raw_full13_expected_SHA256": {
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/executed_ROOT_READY.json": "1f1c26ff1cff8908dff0dbf04fa0054bb460f317e6ebf05aec3991393530e613",
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/executed_adapter.json": "68a0f049e620f0c90d58d0d19faa2a033e0819efa566cc28f219fff7f9abfa4e",
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/executed_controller.py": "65a36876cbf896038ae9e7b4de28947c9a19438c03cd9fa9efc0c325b2021f93",
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/executed_preflight.md": "bb33ce9a3bcf3cb9877c2a4a92f9cfe336e3936ca53734cab1fd6337d0ce9bfa",
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/five_metadata_controls.json": "cb381df9b167fe83d785fbdad2bda6e5a3a60846486a0f14a20eb577a252e70f",
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/independent_grouped_raw_log_squared_L2.json": "fcc1abfc1c0cbeb1302a534f26aff736d2aa3a9c1a0450c7dd3cdb807f0df603",
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/manifest.json": "232eb319f6072b3d7e23b34336b3102a3b25a073bba4d1554e1aeb908a75f90d",
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/primary_grouped_raw_log_squared_L2.json": "0f947b19181b4c161f23d82dd4b61f25eadbc30210a4f9b726d1bf1e89842049",
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/run_started.json": "fe57c64539070b42f7a1ff06dba84d830a7b9278bff94e57f1040d9d3353c373",
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/same_profile_comparison.json": "00bf014f262354673c864b9816c84830fd0c909b12d9afdd8a8a385b490715ea",
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/selected_premise_authority.json": "f906a4e998c76f613820ea62fe4807785f6e35866c6868f8995ab339e0e68679",
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/source_prefix_and_grouped_norm_witness.json": "0fdc25418d43ba85c8ec701105feab72ba628d704975cad7d88f8c4c5665a5be",
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/summary.json": "d491622e882b58d8ef4fdc1ce94a5d25211efe028f1fb122ad75f9579e7704dd"
+  },
+  "grouped_raw_manifest": "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/manifest.json",
+  "grouped_raw_output": "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002",
+  "grouped_raw_witness": "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/source_prefix_and_grouped_norm_witness.json",
+  "ideal_law_constants": {
+    "Q": 1099511627776,
+    "a_squared": [
+      3,
+      1000
+    ],
+    "b_squared": [
+      9,
+      2000
+    ],
+    "d": [
+      -1,
+      800
+    ],
+    "mean_expression": "ln100+2*d",
+    "native_initial_literal_raw": 5063438167381,
+    "variance_expression": "2*(a^2+b^2)"
+  },
+  "interface": {
+    "fixed_parameters": {
+      "M": 576,
+      "failed_guard_retuning_or_M_fallback": false,
+      "grouped_delta_exact_pair": [
+        1,
+        100000
+      ],
+      "moment_order": 32,
+      "parent_M": 1024
+    },
+    "grouped_profile_and_source_match": {
+      "drivers": [
+        94,
+        125,
+        357,
+        442
+      ],
+      "raw_log": 3543,
+      "same_own_C_prime_and_seven_literals": true
+    },
+    "qualification": {
+      "adaptive_M_formula_profile_minimum_or_numeric_adoption": false,
+      "candidate_or_date1_kernel_operand_used": false,
+      "extra_spot_multiplier": 1,
+      "native_error_or_stock_independence_assumed": false
+    },
+    "source_scope": {
+      "F": 40,
+      "W": 72,
+      "asset_zero_based": 0,
+      "case": "B4x12",
+      "clipped_log": 3583,
+      "contractual_date_one_based": 2,
+      "count": 4023,
+      "polynomial": 4053,
+      "raw_log": 3543,
+      "remainder": 4026,
+      "saved_date_zero_based": 1,
+      "stock": 4054
+    },
+    "tail_reuse": {
+      "both_unconditional_continuous_tails_paid": true,
+      "lower_scale_exact_pair": [
+        576,
+        1024
+      ],
+      "lower_scale_squared": true,
+      "upper_saved_identical": true
+    }
+  },
+  "metadata_only": true,
+  "new_numerical_result_slots": {
+    "ROOT_result": null,
+    "independent_M_guard": null,
+    "independent_stock_bound": null,
+    "primary_M_guard": null,
+    "primary_stock_bound": null,
+    "same_profile_comparisons": null
+  },
+  "no_old_kernel_moment_reciprocal_power_or_tail_provider_replay": true,
+  "parent_stock_READY": "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/executed_ROOT_READY.json",
+  "parent_stock_ROOT": ".context/E11_SECOND_DATE_FIRST_STOCK_SQUARED_L2_ACTUAL_RESULT_ROOT_VERIFICATION_run001.json",
+  "parent_stock_SOURCE": "research/limitation_program_20261001/experiment_e11_second_date_first_stock_squared_l2_v1.py",
+  "parent_stock_adapter": "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/executed_adapter.json",
+  "parent_stock_full13_expected_SHA256": {
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/executed_ROOT_READY.json": "80094024a695f6a5811b6ce695719955286c36049498069815526fa26f2b29d4",
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/executed_adapter.json": "b410f8e4b3d0723bb26e2a20e27ef769926aad70a5946c63c0779d49bbe7ac9d",
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/executed_controller.py": "3e960126838cc076877b84550319b23ddccbff3b4b4a13bc1447e3bd3481ab21",
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/executed_preflight.md": "37301ae0dce58e9eae18e760bf762a3d5b1c624de35e65a0b60f7496af9b4f7c",
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/five_metadata_controls.json": "5fce7a249931d8cf692e595346ca5395336136a5dd3457c88a1e38f7ace889b0",
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/independent_stock4054_squared_L2.json": "8a1e99147c8ed88d68da63e390980ae5e69a208ea7e1a294f2edc1bbc33c9beb",
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/manifest.json": "f4c68020e98056351686ec36b2230a9ac0451bdaf317e8f34362ae2dd96d9cc0",
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/primary_stock4054_squared_L2.json": "0e9e3c2db95ffbabba3452eb2077e94c7c289d6d5deb6b4bed077152a990adc5",
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/run_started.json": "2670bf0b8f60151facaa6981ac6b6c490dfd7dad58cde567a768e7dfac8ca781",
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/same_profile_reconciliation.json": "25bc8d4757d2df766c0a0c83f11f6b3c9ddec8dd3d8815e713a02d2dfc8d0ab0",
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/selected_premise_authority.json": "8cfc2f84bb4e04026c996d33692ae941b9cf025769f2e274a790566511c4e514",
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/source_projection_and_continuous_law_witness.json": "257a4c5eff9116b1034e4dd5522331b0af530068a58aba484628e7ba5af694bc",
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/summary.json": "1c236e29b1ba44f5dc185b87c246a45183185418cb97141b1451d1e3538fcebd"
+  },
+  "parent_stock_manifest": "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/manifest.json",
+  "parent_stock_output": "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001",
+  "parent_stock_witness": "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/source_projection_and_continuous_law_witness.json",
+  "profiles": {
+    "independent130": {
+      "grouped_raw_record": "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/independent_grouped_raw_log_squared_L2.json",
+      "grouped_raw_record_expected_SHA256": "fcc1abfc1c0cbeb1302a534f26aff736d2aa3a9c1a0450c7dd3cdb807f0df603",
+      "own_grouped_matching_commitments": {
+        "all_four_signed_coefficient_floors_paid": true,
+        "allowed_literal_limbs_canonical_JSON_SHA256": "10d7c35d64689d115744e61e527273c0895e5dfad0e530eaf4b575698e4f0e57",
+        "asset_zero_based": 0,
+        "contractual_date_one_based": 2,
+        "fixed_delta_exact_pair": [
+          1,
+          100000
+        ],
+        "four_source_driver_values": [
+          94,
+          125,
+          357,
+          442
+        ],
+        "groupedraw_ROOT_verification_expected_SHA256": "3fe6404c80040807f31227b15f37c49b05e0d4f8c89cea5c8c858efa8e8bd07c",
+        "groupedraw_ROOT_verification_path": ".context/E11_SECOND_DATE_GROUPED_FIXED_YOUNG_SQUARED_L2_ACTUAL_RESULT_ROOT_VERIFICATION_run002.json",
+        "groupedraw_SOURCE_expected_SHA256": "65a36876cbf896038ae9e7b4de28947c9a19438c03cd9fa9efc0c325b2021f93",
+        "groupedraw_adapter_expected_SHA256": "68a0f049e620f0c90d58d0d19faa2a033e0819efa566cc28f219fff7f9abfa4e",
+        "groupedraw_manifest_expected_SHA256": "232eb319f6072b3d7e23b34336b3102a3b25a073bba4d1554e1aeb908a75f90d",
+        "groupedraw_manifest_path": "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/manifest.json",
+        "groupedraw_record_expected_SHA256": "fcc1abfc1c0cbeb1302a534f26aff736d2aa3a9c1a0450c7dd3cdb807f0df603",
+        "groupedraw_record_path": "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/independent_grouped_raw_log_squared_L2.json",
+        "own_C_prime_limbs_canonical_JSON_SHA256": "db2070b9e072404e0f5ac8139447ffbdef14622e5996fdecb7af0d12d6a4481c",
+        "profile": "independent130",
+        "raw_log": 3543,
+        "same_own_C_prime_not_pair_sum": true
+      },
+      "parent_stock_record": "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/independent_stock4054_squared_L2.json",
+      "parent_stock_record_expected_SHA256": "8a1e99147c8ed88d68da63e390980ae5e69a208ea7e1a294f2edc1bbc33c9beb",
+      "profile": "independent130"
+    },
+    "primary90": {
+      "grouped_raw_record": "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/primary_grouped_raw_log_squared_L2.json",
+      "grouped_raw_record_expected_SHA256": "0f947b19181b4c161f23d82dd4b61f25eadbc30210a4f9b726d1bf1e89842049",
+      "own_grouped_matching_commitments": {
+        "all_four_signed_coefficient_floors_paid": true,
+        "allowed_literal_limbs_canonical_JSON_SHA256": "74b48d89a3a4722b32dc64d13a2684c633a999d7f4e1bd76ed8da5b8b2a0c5dc",
+        "asset_zero_based": 0,
+        "contractual_date_one_based": 2,
+        "fixed_delta_exact_pair": [
+          1,
+          100000
+        ],
+        "four_source_driver_values": [
+          94,
+          125,
+          357,
+          442
+        ],
+        "groupedraw_ROOT_verification_expected_SHA256": "3fe6404c80040807f31227b15f37c49b05e0d4f8c89cea5c8c858efa8e8bd07c",
+        "groupedraw_ROOT_verification_path": ".context/E11_SECOND_DATE_GROUPED_FIXED_YOUNG_SQUARED_L2_ACTUAL_RESULT_ROOT_VERIFICATION_run002.json",
+        "groupedraw_SOURCE_expected_SHA256": "65a36876cbf896038ae9e7b4de28947c9a19438c03cd9fa9efc0c325b2021f93",
+        "groupedraw_adapter_expected_SHA256": "68a0f049e620f0c90d58d0d19faa2a033e0819efa566cc28f219fff7f9abfa4e",
+        "groupedraw_manifest_expected_SHA256": "232eb319f6072b3d7e23b34336b3102a3b25a073bba4d1554e1aeb908a75f90d",
+        "groupedraw_manifest_path": "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/manifest.json",
+        "groupedraw_record_expected_SHA256": "0f947b19181b4c161f23d82dd4b61f25eadbc30210a4f9b726d1bf1e89842049",
+        "groupedraw_record_path": "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/primary_grouped_raw_log_squared_L2.json",
+        "own_C_prime_limbs_canonical_JSON_SHA256": "501aa1323061ee5491ef8f063dea841734918c34e7a9baa916c1927ec43ca514",
+        "profile": "primary90",
+        "raw_log": 3543,
+        "same_own_C_prime_not_pair_sum": true
+      },
+      "parent_stock_record": "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/primary_stock4054_squared_L2.json",
+      "parent_stock_record_expected_SHA256": "0e9e3c2db95ffbabba3452eb2077e94c7c289d6d5deb6b4bed077152a990adc5",
+      "profile": "primary90"
+    }
+  },
+  "resident_set_bytes": 157286400,
+  "runtime_manifest": "results/limitation_program_20261001/E11_native_coordinate_squared_L2_run001/manifest.json",
+  "schema": "e11-date2-stock4054-M576-grouped-input-adapter-v1",
+  "scientific_evaluation_performed": false,
+  "selected_bytes": 3083396,
+  "selected_count": 34,
+  "selected_expected_SHA256": {
+    ".context/E11_DATE2_STOCK4054_FIXED_M576_GROUPED_RAW_FEASIBILITY_ASSESSMENT_run001.json": "4d9a5d8d35bb81f0b78af4ab5fa6749912d466cff74a0cd691612b0f86c98198",
+    ".context/E11_DATE2_STOCK4054_FIXED_M576_GROUPED_RAW_FEASIBILITY_ASSESSMENT_run001.md": "0df10b2adb5cd205d9abf8b7fea3dc51a9836d0bfc4389c09e28e2ee710d36d6",
+    ".context/E11_DATE2_STOCK4054_FIXED_M576_GROUPED_RAW_FEASIBILITY_ROOT_REVIEW_run001.json": "00d36bce4ad799b350a45901b0288a2d98b91512915e7931e004744d3249cb21",
+    ".context/E11_SECOND_DATE_FIRST_STOCK_SQUARED_L2_ACTUAL_RESULT_ROOT_VERIFICATION_run001.json": "577635965897a9392d712ea9fea826cbfb433bc7749533d6de59409d2658c9b6",
+    ".context/E11_SECOND_DATE_GROUPED_FIXED_YOUNG_SQUARED_L2_ACTUAL_RESULT_ROOT_VERIFICATION_run002.json": "3fe6404c80040807f31227b15f37c49b05e0d4f8c89cea5c8c858efa8e8bd07c",
+    "research/limitation_program_20261001/experiment_e11_second_date_first_stock_squared_l2_v1.py": "3e960126838cc076877b84550319b23ddccbff3b4b4a13bc1447e3bd3481ab21",
+    "research/limitation_program_20261001/experiment_e11_second_date_grouped_fixed_young_raw_log_squared_l2_v2.py": "65a36876cbf896038ae9e7b4de28947c9a19438c03cd9fa9efc0c325b2021f93",
+    "results/limitation_program_20261001/E11_native_coordinate_squared_L2_run001/manifest.json": "bb1f08a600712e34d1fa4b3c77f0ea04147c5368c8f92dc4f9a21ed3e293df95",
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/executed_ROOT_READY.json": "80094024a695f6a5811b6ce695719955286c36049498069815526fa26f2b29d4",
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/executed_adapter.json": "b410f8e4b3d0723bb26e2a20e27ef769926aad70a5946c63c0779d49bbe7ac9d",
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/executed_controller.py": "3e960126838cc076877b84550319b23ddccbff3b4b4a13bc1447e3bd3481ab21",
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/executed_preflight.md": "37301ae0dce58e9eae18e760bf762a3d5b1c624de35e65a0b60f7496af9b4f7c",
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/five_metadata_controls.json": "5fce7a249931d8cf692e595346ca5395336136a5dd3457c88a1e38f7ace889b0",
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/independent_stock4054_squared_L2.json": "8a1e99147c8ed88d68da63e390980ae5e69a208ea7e1a294f2edc1bbc33c9beb",
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/manifest.json": "f4c68020e98056351686ec36b2230a9ac0451bdaf317e8f34362ae2dd96d9cc0",
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/primary_stock4054_squared_L2.json": "0e9e3c2db95ffbabba3452eb2077e94c7c289d6d5deb6b4bed077152a990adc5",
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/run_started.json": "2670bf0b8f60151facaa6981ac6b6c490dfd7dad58cde567a768e7dfac8ca781",
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/same_profile_reconciliation.json": "25bc8d4757d2df766c0a0c83f11f6b3c9ddec8dd3d8815e713a02d2dfc8d0ab0",
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/selected_premise_authority.json": "8cfc2f84bb4e04026c996d33692ae941b9cf025769f2e274a790566511c4e514",
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/source_projection_and_continuous_law_witness.json": "257a4c5eff9116b1034e4dd5522331b0af530068a58aba484628e7ba5af694bc",
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/summary.json": "1c236e29b1ba44f5dc185b87c246a45183185418cb97141b1451d1e3538fcebd",
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/executed_ROOT_READY.json": "1f1c26ff1cff8908dff0dbf04fa0054bb460f317e6ebf05aec3991393530e613",
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/executed_adapter.json": "68a0f049e620f0c90d58d0d19faa2a033e0819efa566cc28f219fff7f9abfa4e",
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/executed_controller.py": "65a36876cbf896038ae9e7b4de28947c9a19438c03cd9fa9efc0c325b2021f93",
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/executed_preflight.md": "bb33ce9a3bcf3cb9877c2a4a92f9cfe336e3936ca53734cab1fd6337d0ce9bfa",
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/five_metadata_controls.json": "cb381df9b167fe83d785fbdad2bda6e5a3a60846486a0f14a20eb577a252e70f",
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/independent_grouped_raw_log_squared_L2.json": "fcc1abfc1c0cbeb1302a534f26aff736d2aa3a9c1a0450c7dd3cdb807f0df603",
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/manifest.json": "232eb319f6072b3d7e23b34336b3102a3b25a073bba4d1554e1aeb908a75f90d",
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/primary_grouped_raw_log_squared_L2.json": "0f947b19181b4c161f23d82dd4b61f25eadbc30210a4f9b726d1bf1e89842049",
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/run_started.json": "fe57c64539070b42f7a1ff06dba84d830a7b9278bff94e57f1040d9d3353c373",
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/same_profile_comparison.json": "00bf014f262354673c864b9816c84830fd0c909b12d9afdd8a8a385b490715ea",
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/selected_premise_authority.json": "f906a4e998c76f613820ea62fe4807785f6e35866c6868f8995ab339e0e68679",
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/source_prefix_and_grouped_norm_witness.json": "0fdc25418d43ba85c8ec701105feab72ba628d704975cad7d88f8c4c5665a5be",
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/summary.json": "d491622e882b58d8ef4fdc1ce94a5d25211efe028f1fb122ad75f9579e7704dd"
+  },
+  "selected_input_modes": {
+    ".context/E11_DATE2_STOCK4054_FIXED_M576_GROUPED_RAW_FEASIBILITY_ASSESSMENT_run001.json": "ordinary_json",
+    ".context/E11_DATE2_STOCK4054_FIXED_M576_GROUPED_RAW_FEASIBILITY_ASSESSMENT_run001.md": "plain_text_only",
+    ".context/E11_DATE2_STOCK4054_FIXED_M576_GROUPED_RAW_FEASIBILITY_ROOT_REVIEW_run001.json": "ordinary_json",
+    ".context/E11_SECOND_DATE_FIRST_STOCK_SQUARED_L2_ACTUAL_RESULT_ROOT_VERIFICATION_run001.json": "ordinary_json",
+    ".context/E11_SECOND_DATE_GROUPED_FIXED_YOUNG_SQUARED_L2_ACTUAL_RESULT_ROOT_VERIFICATION_run002.json": "ordinary_json",
+    "research/limitation_program_20261001/experiment_e11_second_date_first_stock_squared_l2_v1.py": "plaintext_AST_only",
+    "research/limitation_program_20261001/experiment_e11_second_date_grouped_fixed_young_raw_log_squared_l2_v2.py": "plaintext_AST_only",
+    "results/limitation_program_20261001/E11_native_coordinate_squared_L2_run001/manifest.json": "ordinary_json",
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/executed_ROOT_READY.json": "ordinary_json",
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/executed_adapter.json": "ordinary_json",
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/executed_controller.py": "plaintext_AST_only",
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/executed_preflight.md": "plain_text_only",
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/five_metadata_controls.json": "ordinary_json",
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/independent_stock4054_squared_L2.json": "ordinary_json",
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/manifest.json": "ordinary_json",
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/primary_stock4054_squared_L2.json": "ordinary_json",
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/run_started.json": "ordinary_json",
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/same_profile_reconciliation.json": "ordinary_json",
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/selected_premise_authority.json": "ordinary_json",
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/source_projection_and_continuous_law_witness.json": "ordinary_json",
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/summary.json": "ordinary_json",
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/executed_ROOT_READY.json": "ordinary_json",
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/executed_adapter.json": "ordinary_json",
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/executed_controller.py": "plaintext_AST_only",
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/executed_preflight.md": "plain_text_only",
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/five_metadata_controls.json": "ordinary_json",
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/independent_grouped_raw_log_squared_L2.json": "ordinary_json",
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/manifest.json": "ordinary_json",
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/primary_grouped_raw_log_squared_L2.json": "ordinary_json",
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/run_started.json": "ordinary_json",
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/same_profile_comparison.json": "ordinary_json",
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/selected_premise_authority.json": "ordinary_json",
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/source_prefix_and_grouped_norm_witness.json": "ordinary_json",
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/summary.json": "ordinary_json"
+  },
+  "selected_original_8_field_fingerprints": {
+    ".context/E11_DATE2_STOCK4054_FIXED_M576_GROUPED_RAW_FEASIBILITY_ASSESSMENT_run001.json": [
+      12265114460010605799,
+      61361544923064244,
+      50278,
+      1791369127027008700,
+      1791369127027008700,
+      33206,
+      32,
+      0
+    ],
+    ".context/E11_DATE2_STOCK4054_FIXED_M576_GROUPED_RAW_FEASIBILITY_ASSESSMENT_run001.md": [
+      12265114460010605799,
+      102738366499535637,
+      6393,
+      1791368952635029400,
+      1791368952635029400,
+      33206,
+      32,
+      0
+    ],
+    ".context/E11_DATE2_STOCK4054_FIXED_M576_GROUPED_RAW_FEASIBILITY_ROOT_REVIEW_run001.json": [
+      12265114460010605799,
+      25895697857529097,
+      9744,
+      1791370483292100700,
+      1791370483292100700,
+      33206,
+      32,
+      0
+    ],
+    ".context/E11_SECOND_DATE_FIRST_STOCK_SQUARED_L2_ACTUAL_RESULT_ROOT_VERIFICATION_run001.json": [
+      12265114460010605799,
+      71776119061229403,
+      237120,
+      1791368447451057000,
+      1791368447443056400,
+      33206,
+      32,
+      0
+    ],
+    ".context/E11_SECOND_DATE_GROUPED_FIXED_YOUNG_SQUARED_L2_ACTUAL_RESULT_ROOT_VERIFICATION_run002.json": [
+      12265114460010605799,
+      70368744177813900,
+      269197,
+      1791370718193288200,
+      1791370718180258500,
+      33206,
+      32,
+      0
+    ],
+    "research/limitation_program_20261001/experiment_e11_second_date_first_stock_squared_l2_v1.py": [
+      12265114460010605799,
+      96827391988527349,
+      48928,
+      1791367474206240300,
+      1791367474204972400,
+      33206,
+      32,
+      0
+    ],
+    "research/limitation_program_20261001/experiment_e11_second_date_grouped_fixed_young_raw_log_squared_l2_v2.py": [
+      12265114460010605799,
+      14636698789102356,
+      46614,
+      1791369863689384500,
+      1791369863689384500,
+      33206,
+      32,
+      0
+    ],
+    "results/limitation_program_20261001/E11_native_coordinate_squared_L2_run001/manifest.json": [
+      12265114460010605799,
+      5066549583549237,
+      1069934,
+      1791185138364646400,
+      1791185138314543000,
+      33206,
+      32,
+      0
+    ],
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/executed_ROOT_READY.json": [
+      12265114460010605799,
+      13510798882256905,
+      8711,
+      1791367975128942600,
+      1791367975126942800,
+      33206,
+      32,
+      0
+    ],
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/executed_adapter.json": [
+      12265114460010605799,
+      81346268269524967,
+      42281,
+      1791367975117934900,
+      1791367975116933600,
+      33206,
+      32,
+      0
+    ],
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/executed_controller.py": [
+      12265114460010605799,
+      46161896180692957,
+      48928,
+      1791367975114935100,
+      1791367975112936300,
+      33206,
+      32,
+      0
+    ],
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/executed_preflight.md": [
+      12265114460010605799,
+      38562071809505259,
+      3843,
+      1791367975124943800,
+      1791367975120936300,
+      33206,
+      32,
+      0
+    ],
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/five_metadata_controls.json": [
+      12265114460010605799,
+      3377699720673304,
+      1392,
+      1791367975302180800,
+      1791367975300180600,
+      33206,
+      32,
+      0
+    ],
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/independent_stock4054_squared_L2.json": [
+      12265114460010605799,
+      6473924464490566,
+      91794,
+      1791367976576785900,
+      1791367976573786100,
+      33206,
+      32,
+      0
+    ],
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/manifest.json": [
+      12265114460010605799,
+      10414574138439970,
+      5269,
+      1791367979053506000,
+      1791367979051504100,
+      33206,
+      32,
+      0
+    ],
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/primary_stock4054_squared_L2.json": [
+      12265114460010605799,
+      10977524091861032,
+      66524,
+      1791367975873570700,
+      1791367975869569600,
+      33206,
+      32,
+      0
+    ],
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/run_started.json": [
+      12265114460010605799,
+      21955048183576587,
+      236,
+      1791367975134941500,
+      1791367975132941400,
+      33206,
+      32,
+      0
+    ],
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/same_profile_reconciliation.json": [
+      12265114460010605799,
+      14355223812388943,
+      533,
+      1791367976582785900,
+      1791367976581786400,
+      33206,
+      32,
+      0
+    ],
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/selected_premise_authority.json": [
+      12265114460010605799,
+      7599824371333378,
+      93034,
+      1791367977254872800,
+      1791367977249872100,
+      33206,
+      32,
+      0
+    ],
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/source_projection_and_continuous_law_witness.json": [
+      12265114460010605799,
+      5066549580937233,
+      33148,
+      1791367975290181500,
+      1791367975288182300,
+      33206,
+      32,
+      0
+    ],
+    "results/limitation_program_20261001/E11_second_date_first_stock_squared_L2_run001/summary.json": [
+      12265114460010605799,
+      21955048183576266,
+      231736,
+      1791367979041456000,
+      1791367979034373700,
+      33206,
+      32,
+      0
+    ],
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/executed_ROOT_READY.json": [
+      12265114460010605799,
+      17169973579500208,
+      11757,
+      1791370371877885000,
+      1791370371875889900,
+      33206,
+      32,
+      0
+    ],
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/executed_adapter.json": [
+      12265114460010605799,
+      65583669573732890,
+      45978,
+      1791370371868891000,
+      1791370371866891300,
+      33206,
+      32,
+      0
+    ],
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/executed_controller.py": [
+      12265114460010605799,
+      43628621390301705,
+      46614,
+      1791370371863884900,
+      1791370371862887400,
+      33206,
+      32,
+      0
+    ],
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/executed_preflight.md": [
+      12265114460010605799,
+      56294995342281363,
+      3300,
+      1791370371873888500,
+      1791370371871887300,
+      33206,
+      32,
+      0
+    ],
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/five_metadata_controls.json": [
+      12265114460010605799,
+      57983845202545649,
+      1954,
+      1791370372409998500,
+      1791370372407350500,
+      33206,
+      32,
+      0
+    ],
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/independent_grouped_raw_log_squared_L2.json": [
+      12265114460010605799,
+      14918173765815741,
+      45517,
+      1791370373053034600,
+      1791370373052022400,
+      33206,
+      32,
+      0
+    ],
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/manifest.json": [
+      12265114460010605799,
+      55732045388861183,
+      7840,
+      1791370375784087000,
+      1791370375782161700,
+      33206,
+      32,
+      0
+    ],
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/primary_grouped_raw_log_squared_L2.json": [
+      12265114460010605799,
+      49258120924515583,
+      33522,
+      1791370372687516800,
+      1791370372685525000,
+      33206,
+      32,
+      0
+    ],
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/run_started.json": [
+      12265114460010605799,
+      12384898975419117,
+      236,
+      1791370371884101400,
+      1791370371882107800,
+      33206,
+      32,
+      0
+    ],
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/same_profile_comparison.json": [
+      12265114460010605799,
+      82753643153083844,
+      41751,
+      1791370373327679000,
+      1791370373326678700,
+      33206,
+      32,
+      0
+    ],
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/selected_premise_authority.json": [
+      12265114460010605799,
+      16888498602790378,
+      108298,
+      1791370373952414900,
+      1791370373948106400,
+      33206,
+      32,
+      0
+    ],
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/source_prefix_and_grouped_norm_witness.json": [
+      12265114460010605799,
+      24206847997266706,
+      107259,
+      1791370372394494500,
+      1791370372390595700,
+      33206,
+      32,
+      0
+    ],
+    "results/limitation_program_20261001/E11_second_date_grouped_fixed_Young_raw_log_squared_L2_run002/summary.json": [
+      12265114460010605799,
+      34058472182140411,
+      263733,
+      1791370375769644300,
+      1791370375760637400,
+      33206,
+      32,
+      0
+    ]
+  },
+  "source_scope_proof": {
+    "actual_copied_source_rows": {
+      "clip_and_reduction": [
+        {
+          "args": [],
+          "op": "const",
+          "out": [
+            3490
+          ],
+          "params": {
+            "value": 4722366470675671057123
+          }
+        },
+        {
+          "args": [],
+          "op": "const",
+          "out": [
+            3491
+          ],
+          "params": {
+            "value": 9145480617430
+          }
+        },
+        {
+          "args": [
+            3543,
+            3490
+          ],
+          "op": "lt",
+          "out": [
+            3580
+          ],
+          "params": {}
+        },
+        {
+          "args": [
+            3580,
+            3490,
+            3543
+          ],
+          "op": "select",
+          "out": [
+            3581
+          ],
+          "params": {}
+        },
+        {
+          "args": [
+            3581,
+            3491
+          ],
+          "op": "lt",
+          "out": [
+            3582
+          ],
+          "params": {}
+        },
+        {
+          "args": [
+            3582,
+            3581,
+            3491
+          ],
+          "op": "select",
+          "out": [
+            3583
+          ],
+          "params": {}
+        },
+        {
+          "args": [
+            3583
+          ],
+          "op": "cmul",
+          "out": [
+            4022
+          ],
+          "params": {
+            "c": 1586259972792
+          }
+        },
+        {
+          "args": [
+            4022
+          ],
+          "op": "bits",
+          "out": [
+            4023
+          ],
+          "params": {
+            "shift": 40,
+            "signed": true,
+            "width": 72
+          }
+        },
+        {
+          "args": [
+            4023
+          ],
+          "op": "bits",
+          "out": [
+            4024
+          ],
+          "params": {
+            "shift": -40,
+            "signed": false,
+            "width": 72
+          }
+        },
+        {
+          "args": [
+            4024
+          ],
+          "op": "cmul",
+          "out": [
+            4025
+          ],
+          "params": {
+            "c": 762123384786
+          }
+        },
+        {
+          "args": [
+            3583,
+            4025
+          ],
+          "op": "sub",
+          "out": [
+            4026
+          ],
+          "params": {}
+        }
+      ],
+      "old_exp_all_literal_rows": [
+        {
+          "args": [],
+          "op": "const",
+          "out": [
+            16
+          ],
+          "params": {
+            "value": 1099511627776
+          }
+        },
+        {
+          "args": [],
+          "op": "const",
+          "out": [
+            3983
+          ],
+          "params": {
+            "value": 549755813888
+          }
+        },
+        {
+          "args": [],
+          "op": "const",
+          "out": [
+            3984
+          ],
+          "params": {
+            "value": 183251937963
+          }
+        },
+        {
+          "args": [],
+          "op": "const",
+          "out": [
+            3985
+          ],
+          "params": {
+            "value": 45812984491
+          }
+        },
+        {
+          "args": [],
+          "op": "const",
+          "out": [
+            3986
+          ],
+          "params": {
+            "value": 9162596898
+          }
+        },
+        {
+          "args": [],
+          "op": "const",
+          "out": [
+            3987
+          ],
+          "params": {
+            "value": 1527099483
+          }
+        },
+        {
+          "args": [],
+          "op": "const",
+          "out": [
+            3988
+          ],
+          "params": {
+            "value": 218157069
+          }
+        },
+        {
+          "args": [],
+          "op": "const",
+          "out": [
+            3989
+          ],
+          "params": {
+            "value": 27269634
+          }
+        },
+        {
+          "args": [],
+          "op": "const",
+          "out": [
+            3990
+          ],
+          "params": {
+            "value": 3029959
+          }
+        },
+        {
+          "args": [],
+          "op": "const",
+          "out": [
+            3991
+          ],
+          "params": {
+            "value": 302996
+          }
+        },
+        {
+          "args": [],
+          "op": "const",
+          "out": [
+            3992
+          ],
+          "params": {
+            "value": 27545
+          }
+        },
+        {
+          "args": [],
+          "op": "const",
+          "out": [
+            3993
+          ],
+          "params": {
+            "value": 2295
+          }
+        },
+        {
+          "args": [
+            16,
+            4026
+          ],
+          "op": "mul",
+          "out": [
+            4027
+          ],
+          "params": {}
+        },
+        {
+          "args": [
+            16,
+            4027
+          ],
+          "op": "add",
+          "out": [
+            4028
+          ],
+          "params": {}
+        },
+        {
+          "args": [
+            3984,
+            4026
+          ],
+          "op": "mul",
+          "out": [
+            4029
+          ],
+          "params": {}
+        },
+        {
+          "args": [
+            3983,
+            4029
+          ],
+          "op": "add",
+          "out": [
+            4030
+          ],
+          "params": {}
+        },
+        {
+          "args": [
+            3986,
+            4026
+          ],
+          "op": "mul",
+          "out": [
+            4031
+          ],
+          "params": {}
+        },
+        {
+          "args": [
+            3985,
+            4031
+          ],
+          "op": "add",
+          "out": [
+            4032
+          ],
+          "params": {}
+        },
+        {
+          "args": [
+            3988,
+            4026
+          ],
+          "op": "mul",
+          "out": [
+            4033
+          ],
+          "params": {}
+        },
+        {
+          "args": [
+            3987,
+            4033
+          ],
+          "op": "add",
+          "out": [
+            4034
+          ],
+          "params": {}
+        },
+        {
+          "args": [
+            3990,
+            4026
+          ],
+          "op": "mul",
+          "out": [
+            4035
+          ],
+          "params": {}
+        },
+        {
+          "args": [
+            3989,
+            4035
+          ],
+          "op": "add",
+          "out": [
+            4036
+          ],
+          "params": {}
+        },
+        {
+          "args": [
+            3992,
+            4026
+          ],
+          "op": "mul",
+          "out": [
+            4037
+          ],
+          "params": {}
+        },
+        {
+          "args": [
+            3991,
+            4037
+          ],
+          "op": "add",
+          "out": [
+            4038
+          ],
+          "params": {}
+        },
+        {
+          "args": [
+            4026,
+            4026
+          ],
+          "op": "mul",
+          "out": [
+            4039
+          ],
+          "params": {}
+        },
+        {
+          "args": [
+            4030,
+            4039
+          ],
+          "op": "mul",
+          "out": [
+            4040
+          ],
+          "params": {}
+        },
+        {
+          "args": [
+            4028,
+            4040
+          ],
+          "op": "add",
+          "out": [
+            4041
+          ],
+          "params": {}
+        },
+        {
+          "args": [
+            4034,
+            4039
+          ],
+          "op": "mul",
+          "out": [
+            4042
+          ],
+          "params": {}
+        },
+        {
+          "args": [
+            4032,
+            4042
+          ],
+          "op": "add",
+          "out": [
+            4043
+          ],
+          "params": {}
+        },
+        {
+          "args": [
+            4038,
+            4039
+          ],
+          "op": "mul",
+          "out": [
+            4044
+          ],
+          "params": {}
+        },
+        {
+          "args": [
+            4036,
+            4044
+          ],
+          "op": "add",
+          "out": [
+            4045
+          ],
+          "params": {}
+        },
+        {
+          "args": [
+            4039,
+            4039
+          ],
+          "op": "mul",
+          "out": [
+            4046
+          ],
+          "params": {}
+        },
+        {
+          "args": [
+            4043,
+            4046
+          ],
+          "op": "mul",
+          "out": [
+            4047
+          ],
+          "params": {}
+        },
+        {
+          "args": [
+            4041,
+            4047
+          ],
+          "op": "add",
+          "out": [
+            4048
+          ],
+          "params": {}
+        },
+        {
+          "args": [
+            3993,
+            4046
+          ],
+          "op": "mul",
+          "out": [
+            4049
+          ],
+          "params": {}
+        },
+        {
+          "args": [
+            4045,
+            4049
+          ],
+          "op": "add",
+          "out": [
+            4050
+          ],
+          "params": {}
+        },
+        {
+          "args": [
+            4046,
+            4046
+          ],
+          "op": "mul",
+          "out": [
+            4051
+          ],
+          "params": {}
+        },
+        {
+          "args": [
+            4050,
+            4051
+          ],
+          "op": "mul",
+          "out": [
+            4052
+          ],
+          "params": {}
+        },
+        {
+          "args": [
+            4048,
+            4052
+          ],
+          "op": "add",
+          "out": [
+            4053
+          ],
+          "params": {}
+        },
+        {
+          "args": [
+            4053,
+            4023
+          ],
+          "op": "shift",
+          "out": [
+            4054
+          ],
+          "params": {}
+        }
+      ],
+      "prefix_log_and_innovation": [
+        {
+          "args": [
+            94
+          ],
+          "op": "cmul",
+          "out": [
+            3492
+          ],
+          "params": {
+            "c": 60222732077
+          }
+        },
+        {
+          "args": [
+            125
+          ],
+          "op": "cmul",
+          "out": [
+            3493
+          ],
+          "params": {
+            "c": 73757482253
+          }
+        },
+        {
+          "args": [
+            3492,
+            3493
+          ],
+          "op": "add",
+          "out": [
+            3494
+          ],
+          "params": {}
+        },
+        {
+          "args": [],
+          "op": "const",
+          "out": [
+            3495
+          ],
+          "params": {
+            "value": 4722366482868270824161
+          }
+        },
+        {
+          "args": [
+            3494,
+            3495
+          ],
+          "op": "add",
+          "out": [
+            3496
+          ],
+          "params": {}
+        },
+        {
+          "args": [
+            357
+          ],
+          "op": "cmul",
+          "out": [
+            3497
+          ],
+          "params": {
+            "c": 60222732077
+          }
+        },
+        {
+          "args": [
+            442
+          ],
+          "op": "cmul",
+          "out": [
+            3498
+          ],
+          "params": {
+            "c": 73757482253
+          }
+        },
+        {
+          "args": [
+            3497,
+            3498
+          ],
+          "op": "add",
+          "out": [
+            3499
+          ],
+          "params": {}
+        },
+        {
+          "args": [
+            3495,
+            3499
+          ],
+          "op": "add",
+          "out": [
+            3500
+          ],
+          "params": {}
+        },
+        {
+          "args": [],
+          "op": "const",
+          "out": [
+            3541
+          ],
+          "params": {
+            "value": 5063438167381
+          }
+        },
+        {
+          "args": [
+            3496,
+            3541
+          ],
+          "op": "add",
+          "out": [
+            3542
+          ],
+          "params": {}
+        },
+        {
+          "args": [
+            3500,
+            3542
+          ],
+          "op": "add",
+          "out": [
+            3543
+          ],
+          "params": {}
+        }
+      ]
+    },
+    "clip_and_exp_literal_kernel_witnesses": [
+      {
+        "canonical_ordered_except_add_mul_DAG_SHA256": "036b9fc5c165aea6cdd0bce3709c4b6b2eacd72cc5255cd5e1295f9741ac841a",
+        "equal": true,
+        "literal_value_count_excluding_boundaries": 6,
+        "new_boundaries": {
+          "3543": "raw_log"
+        },
+        "new_output": 3583,
+        "old_boundaries": {
+          "3542": "raw_log"
+        },
+        "old_output": 3579,
+        "role": "same complete clipping kernel"
+      },
+      {
+        "canonical_ordered_except_add_mul_DAG_SHA256": "80fd51dc7ae7c0fa7318fb329edf1d27c6f51b4d5d8714da3bcbbf802fd2e0c8",
+        "equal": true,
+        "literal_value_count_excluding_boundaries": 45,
+        "new_boundaries": {
+          "3583": "clipped_log"
+        },
+        "new_output": 4054,
+        "old_boundaries": {
+          "3579": "clipped_log"
+        },
+        "old_output": 4021,
+        "role": "same original degree12 exponential kernel"
+      }
+    ],
+    "clip_signed_raw_bounds": [
+      -12193974156573,
+      9145480617430
+    ],
+    "native_raw_interval": [
+      3248283927019,
+      6873094849599
+    ],
+    "original_full_clipped_support_signature": "2a35ab41d964c6abc9a3a6243a93f1be141b31da20672c50cdfe0d452239311e",
+    "saved_prefix_witness": {
+      "asset": 0,
+      "constants": [
+        [
+          -1374389535,
+          2
+        ],
+        [
+          5063438167381,
+          1
+        ]
+      ],
+      "date": 1,
+      "every_driver_multiplicity": 1,
+      "original_normal_indices": [
+        0,
+        1,
+        5,
+        6
+      ],
+      "raw_log": 3543,
+      "stock": 4054
+    },
+    "source_ids": {
+      "clip_constant_values": [
+        3490,
+        3491
+      ],
+      "clip_nodes": [
+        3580,
+        3581,
+        3582,
+        3583
+      ],
+      "common_product_floor": 3497,
+      "count_scaled_to_F40": 4024,
+      "count_times_ln2_product": 4025,
+      "current_innovation": 3500,
+      "drift_literal": 3495,
+      "idiosyncratic_product_floor": 3498,
+      "initial_log_literal": 3541,
+      "innovation_sum": 3499,
+      "native_normal_values": [
+        94,
+        125,
+        357,
+        442
+      ],
+      "normal_indices": [
+        0,
+        1,
+        5,
+        6
+      ],
+      "original_degree12_polynomial": 4053,
+      "original_full72_signed_shift_output": 4054,
+      "original_polynomial_product_floor_nodes": [
+        4027,
+        4029,
+        4031,
+        4033,
+        4035,
+        4037,
+        4039,
+        4040,
+        4042,
+        4044,
+        4046,
+        4047,
+        4049,
+        4051,
+        4052
+      ],
+      "original_raw_uniform_inputs": [
+        0,
+        1,
+        242,
+        243,
+        358,
+        359
+      ],
+      "previous_raw_log": 3542,
+      "prospective_candidate_internal_result": 15,
+      "raw_log": 3543,
+      "remainder": 4026,
+      "scaled_inverse_ln2_product_floor": 4022,
+      "signed_integer_count": 4023
+    },
+    "whole_kernel_DAG_validation_is_current_SCI_only": true
+  },
+  "symbolic_PLAN_expected_SHA256": "c016ab6d2d3fe9b380dc5309ea53b078135dcfded80f199db4762111f872669f",
+  "symbolic_PLAN_path": ".context/E11_DATE2_STOCK4054_FIXED_M576_GROUPED_RAW_SQUARED_L2_PLAN_run001.json",
+  "validity_separate_from_comparison_or_numeric_adoption": true
+}

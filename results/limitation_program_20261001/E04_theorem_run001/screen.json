@@ -1,0 +1,174 @@
+{
+  "passed": true,
+  "families": [
+    {
+      "family": "canonical-bounded-QAE",
+      "status": "retained_same-output_ideal_digital_baseline",
+      "grover_calls": 983025,
+      "fresh_uniform_preparations": 15,
+      "longest_single_shot_Q_chain": 65535,
+      "logical_T_count": 511911060861915,
+      "logical_serial_T_depth": 561342457665,
+      "source_matched_synthesized_recipe": "C:\\Users\\prith\\quantum_option_pricing\\results\\limitation_program_20261001\\E02_IQFT_run001\\B4x12\\synthesized_estimator_ledger.json",
+      "recipe_sha256": "d2eb29c7c92d6eda32879e5e040a8e5280432fa42417f7c60c1d2ac2db3ba405",
+      "physical_readout_reset_feedback_seconds": null,
+      "full_continuous_price_certificate": false
+    },
+    {
+      "family": "original-IQAE",
+      "status": "general_query_upper_bound_screen_only",
+      "primary_source": {
+        "url": "https://arxiv.org/html/1912.05559v3",
+        "location": "Theorem1 equation9 and its Q-query convention in SectionII",
+        "formula": "50/epsilon * ln((2/alpha)*log2(pi/(4*epsilon)))",
+        "query_unit": "Grover Q applications; preparation/measurement/reset separately required",
+        "native_controller_transfer_status": "Repeated-look/native confidence interface requires audit"
+      },
+      "general_Q_bound_formula_interval_exact": [
+        [
+          927702110671008797519693935085671337794638873632337492786429593818409053514035230343592351319567639309866924251,
+          143343663499379469475676305956380433799785311823017570233599302461682679755530300504376159569382855409664
+        ],
+        [
+          927702110671008797519693935085671337794638873632337492786429593818409053514035230343592351319567639309866924255,
+          143343663499379469475676305956380433799785311823017570233599302461682679755530300504376159569382855409664
+        ]
+      ],
+      "rigorous_Q_bound_formula_ceiling": 6471874,
+      "general_Q_bound_formula_lower_endpoint_above_canonical_Q_count": true,
+      "actual_Q_count_lower_bound_claimed": false,
+      "actual_financial_cost_lower_bound_claimed": false,
+      "fresh_preparation_count": null,
+      "terminal_predicate_observations": null,
+      "adaptive_rounds": null,
+      "longest_single_shot_Q_chain": null,
+      "financial_forward_calls": null,
+      "financial_literal_inverse_calls": null,
+      "selector_forward_calls": null,
+      "selector_literal_inverse_calls": null,
+      "logical_T_count": null,
+      "logical_serial_T_depth": null,
+      "physical_readout_reset_feedback_seconds": null,
+      "controller_coverage_and_delivery_audited": false,
+      "eligible_for_financial_promotion": false,
+      "missing_proof": "Explicit executable finite controller, all adaptive looks and delivery, shot preparation/readout/reset ledger"
+    },
+    {
+      "family": "modified-IQAE",
+      "status": "general_query_upper_bound_screen_only",
+      "primary_source": {
+        "url": "https://arxiv.org/html/2208.14612v4",
+        "location": "Lemma3.7 equations3.19-3.31, retaining exact coefficient",
+        "formula": "3*pi/(8*epsilon*sin(pi/21)^2*sin(8*pi/21)^2) * ln(sqrt(27)/alpha)",
+        "query_unit": "Proof sums k_i*N_i, i.e. Grover Q applications",
+        "printed_query_wording_ambiguous": true,
+        "native_controller_transfer_status": "Per-round/per-look confidence spending and preparation counts required"
+      },
+      "general_Q_bound_formula_interval_exact": [
+        [
+          29076651125263636004360338409894375593941727359017650392929602460959527899130615430912554113095502994803451777,
+          4479489484355608421114884561136888556243290994469299069799978201927583742360321890761754986543214231552
+        ],
+        [
+          232613209002109088034882707279155004751533818872141203143436819687676223193044923447300432904764023958427614221,
+          35835915874844867368919076489095108449946327955754392558399825615420669938882575126094039892345713852416
+        ]
+      ],
+      "rigorous_Q_bound_formula_ceiling": 6491064,
+      "general_Q_bound_formula_lower_endpoint_above_canonical_Q_count": true,
+      "actual_Q_count_lower_bound_claimed": false,
+      "actual_financial_cost_lower_bound_claimed": false,
+      "fresh_preparation_count": null,
+      "terminal_predicate_observations": null,
+      "adaptive_rounds": null,
+      "longest_single_shot_Q_chain": null,
+      "financial_forward_calls": null,
+      "financial_literal_inverse_calls": null,
+      "selector_forward_calls": null,
+      "selector_literal_inverse_calls": null,
+      "logical_T_count": null,
+      "logical_serial_T_depth": null,
+      "physical_readout_reset_feedback_seconds": null,
+      "controller_coverage_and_delivery_audited": false,
+      "eligible_for_financial_promotion": false,
+      "missing_proof": "Explicit executable finite controller, all adaptive looks and delivery, shot preparation/readout/reset ledger"
+    }
+  ],
+  "family_count": 3,
+  "normalization": "p=E[original already-discounted native Y]/64",
+  "span_dollars": 64,
+  "statistical_error_dollars_exact": [
+    9,
+    2000
+  ],
+  "amplitude_error_exact": [
+    9,
+    128000
+  ],
+  "ideal_failure_exact": [
+    3,
+    1000
+  ],
+  "prior_residual_span256_counts_transferred": false,
+  "wrapper_binding": {
+    "path": "C:\\Users\\prith\\quantum_option_pricing\\results\\limitation_program_20261001\\E02_financial_run002\\B4x12\\iterate.json",
+    "sha256": "113827783f91407e14f4ec44ff66484a00806dcd3033315ee20a5736a1f139af",
+    "sequence": [
+      "original compact F forward",
+      "positive selector",
+      "CZ(control,flag)",
+      "literal inverse selector",
+      "literal inverse original F",
+      "signed controlled uniform reflection (includes final Z(control))"
+    ],
+    "resource_qubits": 550141
+  },
+  "IQAE_terminal_predicate_requirement": "For each shot, unchanged uniform H preparation, pinned-active original Grover hierarchy Q^k, then original F+selector to measure its good flag, then literal inverse selector+F cleanup. Preparations and terminal marking add one financial/selector forward and inverse per shot. Readout, reset and controller feedback are counted separately, without invented durations.",
+  "same_output_conditional_operation_pricing_allowed": true,
+  "physical_execution_or_full_G2_certified": false,
+  "general_bound_screen_is_not_controller_impossibility": true,
+  "new_financial_samples_or_gate_replays": 0,
+  "next_finite_controller_scope": {
+    "maximum_settings": 8,
+    "maximum_exact_toy_laws": 2,
+    "families": [
+      "original-IQAE-adapter",
+      "modified-IQAE-adapter"
+    ],
+    "settings": [
+      {
+        "family": "original-IQAE-adapter",
+        "first_batch_shots": 16
+      },
+      {
+        "family": "original-IQAE-adapter",
+        "first_batch_shots": 32
+      },
+      {
+        "family": "original-IQAE-adapter",
+        "first_batch_shots": 64
+      },
+      {
+        "family": "original-IQAE-adapter",
+        "first_batch_shots": 128
+      },
+      {
+        "family": "modified-IQAE-adapter",
+        "first_batch_shots": 16
+      },
+      {
+        "family": "modified-IQAE-adapter",
+        "first_batch_shots": 32
+      },
+      {
+        "family": "modified-IQAE-adapter",
+        "first_batch_shots": 64
+      },
+      {
+        "family": "modified-IQAE-adapter",
+        "first_batch_shots": 128
+      }
+    ],
+    "stop_rule": "Eight fixed settings/two exact toy laws only; incomplete/censored rows are not certified financial improvements"
+  }
+}

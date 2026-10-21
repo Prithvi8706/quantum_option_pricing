@@ -1,0 +1,85 @@
+{
+  "accepted_interface": {
+    "F": 40,
+    "W": 72,
+    "case": "B4x12",
+    "discount_or_barrier_included": false,
+    "extra_rounding_or_Young_factor": false,
+    "own_profile_rows": 2,
+    "profiles": [
+      "primary90",
+      "independent130"
+    ],
+    "reference": "positive part of continuous arithmetic average of the original48 stocks minus100 dollars",
+    "same_profile_parent_allowance_copied_exactly": true,
+    "source_average": 5692,
+    "source_positive_part": 5695,
+    "source_strike": 5693,
+    "source_subtraction": 5694,
+    "stock_error_independence_assumed": false,
+    "strike_dollars": [
+      100,
+      1
+    ],
+    "strike_raw": 109951162777600,
+    "units": "dollars_squared"
+  },
+  "both_own_parent_allowances_copied_unchanged": true,
+  "discount5696_barrier5697_price_G2_candidate_and_advantage_excluded": true,
+  "ideal_average_has_no_bounded_support_assumption": true,
+  "native_average_dollars_half_open": [
+    0,
+    4096
+  ],
+  "native_positive_dollars_half_open": [
+    0,
+    3996
+  ],
+  "native_subtraction_dollars_half_open": [
+    -100,
+    3996
+  ],
+  "passed": true,
+  "pointwise_error_square_le_parent_average_error_square": true,
+  "positivepart_global_one_Lipschitz": true,
+  "same_Q40_no_additional_floor_or_rounding": true,
+  "same_coupling_no_independence": true,
+  "schema": "e11-B4x12-strike100-positive-part-common-coupling-witness-v1",
+  "signed72_subtraction_no_wrap": true,
+  "source_average": 5692,
+  "source_rows": {
+    "5693": {
+      "args": [],
+      "op": "const",
+      "out": [
+        5693
+      ],
+      "params": {
+        "value": 109951162777600
+      }
+    },
+    "5694": {
+      "args": [
+        5692,
+        5693
+      ],
+      "op": "sub",
+      "out": [
+        5694
+      ],
+      "params": {}
+    },
+    "5695": {
+      "args": [
+        5694
+      ],
+      "op": "positive",
+      "out": [
+        5695
+      ],
+      "params": {}
+    }
+  },
+  "verified_parent_ROOT_expected_SHA256": "d139b4a44aee34696b5a12421f80af2b08a3422c785189614b118e7365dceff4",
+  "verified_parent_manifest_expected_SHA256": "228d5c20f31ae0a71710b2e9e0185e5e1b764385b0a2571f5867f375b1e31a0a"
+}

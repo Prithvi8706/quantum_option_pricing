@@ -1,0 +1,138 @@
+{
+  "passed": true,
+  "local_only": true,
+  "independent_ideal_scalar_midpoint_grid_theorem_audit": true,
+  "new_independent_fixtures_passed": 28,
+  "original_source_fixture_count_added": 0,
+  "builder_economic_template_audit": {
+    "parameter_bindings_exact": {
+      "SIGMA": [
+        3,
+        10
+      ],
+      "CORR": [
+        2,
+        5
+      ],
+      "S0": [
+        100,
+        1
+      ],
+      "RATE": [
+        3,
+        100
+      ],
+      "T": [
+        1,
+        1
+      ],
+      "K": [
+        100,
+        1
+      ],
+      "H": [
+        140,
+        1
+      ]
+    },
+    "positive_increment_coefficients_and_average_template_checked": true,
+    "strict_less_than_survival_template_checked": true,
+    "native_clipping_exp_and_rounding_accuracy_audited": false,
+    "builder_path": "C:\\Users\\prith\\quantum_option_pricing\\research\\advantage_frontier_20260923\\barrier_oracle_depth.py",
+    "builder_sha256": "1e0e225131c668f133ef05a5de3f78fbad4fb5307a2fc8c452d99d14c8dda929"
+  },
+  "independent_analytic_proof": {
+    "monotonicity": "At date j the coefficient of an earlier common or idiosyncratic normal is respectively sigma*sqrt(dt*rho) or sigma*sqrt(dt*(1-rho)); both are positive. Fixing the other finite coordinates therefore makes every affected exact stock, date basket and Asian average nondecreasing. No digital exponent or clipped-path monotonicity is asserted.",
+    "cap_and_variation": "A=(1/nt)*sum_j B_j. On survival every B_j<H, so A<H and 0<=exp(-rT)*max(A-K,0)<(H-K)*exp(-rT)<40. Each coordinate's survival set is an intersection of lower half-lines. Before its endpoint the payoff is nonnegative and nondecreasing; at the strict-knockout endpoint it becomes zero. Its increase plus one downward jump has variation<=2*40=80. Empty/full half-lines obey the same bound. Increasing exact Phi inverse preserves this variation.",
+    "midpoint": "On a width-w cell with midpoint m, each half contributes at most (w/2) times its pointwise variation from f(m). The left and right variation sum to the cell variation, including the specified midpoint value. Thus absolute cell quadrature error<=w*TVcell/2. Summing yields TV/(2*N). One-sided endpoint limits define f(0),f(1); endpoint choices have measure zero. Strict midpoint knockout is paid.",
+    "independent_product": "Replace independent scalar uniform coordinates by their midpoint grid one at a time. For every fixed choice of all other coordinates, continuous or discrete, the same variation bound holds. Integrating each signed difference and applying triangle inequality gives d*80/(2*2^q). The bounded payoff makes all mixed integrations valid. The normal law here is the exact independent scalar quantile law.",
+    "nontransfer": "This is a conditional price-law result for a different ideal loader. Finite paired Box-Muller, rounded quantiles, native clipping/exp, finite arithmetic and coherent implementation are not certified. No native source, loader, physical runtime or quantum advantage is adopted."
+  },
+  "cases": [
+    {
+      "passed": true,
+      "case": "B4x12",
+      "normal_coordinates": 60,
+      "common_increment_log_coefficient_squared_exact": [
+        3,
+        1000
+      ],
+      "idiosyncratic_increment_log_coefficient_squared_exact": [
+        9,
+        2000
+      ],
+      "undiscounted_cap_also_bounds_discounted_payoff_exact": [
+        40,
+        1
+      ],
+      "coordinate_variation_upper_exact": [
+        80,
+        1
+      ],
+      "independently_derived_midpoint_grid_bias_upper_exact": [
+        75,
+        134217728
+      ],
+      "headroom_exact": [
+        11,
+        2000
+      ],
+      "ideal_law_term_fits_headroom": true,
+      "continuous_ideal_scalar_grid_theorem_only": true,
+      "all_native_loader_and_full_price_transfer_guards_preserved": true,
+      "native_financial_error_bound": null,
+      "loader_or_circuit_adopted": false,
+      "complete_continuous_price_certified": false,
+      "second_discount_applied": false,
+      "financial_price_observations_or_gate_replays": 0,
+      "source_certificate_path": "results/limitation_program_20261001/C06_quantile_grid_run001/B4x12_certificate.json",
+      "source_certificate_sha256": "8823cb5fc8fd892cfb4766974b720ced1486853c75f78ce3b0725eda8e930bed"
+    },
+    {
+      "passed": true,
+      "case": "B8x52",
+      "normal_coordinates": 468,
+      "common_increment_log_coefficient_squared_exact": [
+        9,
+        13000
+      ],
+      "idiosyncratic_increment_log_coefficient_squared_exact": [
+        27,
+        26000
+      ],
+      "undiscounted_cap_also_bounds_discounted_payoff_exact": [
+        40,
+        1
+      ],
+      "coordinate_variation_upper_exact": [
+        80,
+        1
+      ],
+      "independently_derived_midpoint_grid_bias_upper_exact": [
+        585,
+        134217728
+      ],
+      "headroom_exact": [
+        11,
+        2000
+      ],
+      "ideal_law_term_fits_headroom": true,
+      "continuous_ideal_scalar_grid_theorem_only": true,
+      "all_native_loader_and_full_price_transfer_guards_preserved": true,
+      "native_financial_error_bound": null,
+      "loader_or_circuit_adopted": false,
+      "complete_continuous_price_certified": false,
+      "second_discount_applied": false,
+      "financial_price_observations_or_gate_replays": 0,
+      "source_certificate_path": "results/limitation_program_20261001/C06_quantile_grid_run001/B8x52_certificate.json",
+      "source_certificate_sha256": "af0f5e0c8e83d5399371f61886b662ebc95f2822c0da92102e4b232710e1799b"
+    }
+  ],
+  "conditional_alternative_law_bounds_only": true,
+  "accepted_Box_Muller_law_certified": false,
+  "native_inverse_CDF_financial_arithmetic_or_loader_certified": false,
+  "full_G2_closed": false,
+  "quantum_advantage_established": false,
+  "original_B4_B8_price_observations_or_gate_replays": 0,
+  "elapsed_cpu_seconds": 0.921875
+}

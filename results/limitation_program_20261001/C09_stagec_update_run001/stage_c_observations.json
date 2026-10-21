@@ -1,0 +1,139 @@
+{
+  "coverage_arms_completed": true,
+  "primary_undercoverage_triggered": false,
+  "cases": {
+    "B4x12": {
+      "primary_check": {
+        "reference": "weighted",
+        "raw_99_at_8192": 0.987,
+        "under_covering": false,
+        "c": null
+      },
+      "primary_saved_Bonferroni_interval": [
+        0.9723435584084124,
+        0.9951954865673127
+      ],
+      "observed_99_coverage_by_n": {
+        "1024": 0.99,
+        "2048": 0.99,
+        "4096": 0.989,
+        "8192": 0.987,
+        "131072": 0.995
+      },
+      "weighted_reference": {
+        "ref_a": 3.5189322310450994,
+        "ref_a_hw99": 0.0004913788327363672,
+        "ref_b": 3.518677292829827,
+        "ref_b_hw99": 4.09890232461265e-05,
+        "abs_diff": 0.0002549382152725599,
+        "agreement_passed": true,
+        "resolution": 0.0005323678559824936,
+        "reference": 3.5186791652576863,
+        "reference_hw99": 4.084092744374115e-05
+      },
+      "all_input_99_confidence_theorem": false
+    },
+    "B8x52": {
+      "primary_check": {
+        "reference": "weighted",
+        "raw_99_at_8192": 0.996,
+        "under_covering": false,
+        "c": null
+      },
+      "primary_saved_Bonferroni_interval": [
+        0.985719931665202,
+        0.9995304570956481
+      ],
+      "observed_99_coverage_by_n": {
+        "1024": 0.989,
+        "2048": 0.988,
+        "4096": 0.993,
+        "8192": 0.996
+      },
+      "weighted_reference": {
+        "ref_a": 3.281643935193758,
+        "ref_a_hw99": 0.0005319488491162978,
+        "ref_b": 3.2817661155820614,
+        "ref_b_hw99": 0.00010600261841105651,
+        "abs_diff": 0.00012218038830358324,
+        "agreement_passed": true,
+        "resolution": 0.0006379514675273543,
+        "reference": 3.281761165605554,
+        "reference_hw99": 0.00010384002091489698
+      },
+      "all_input_99_confidence_theorem": false
+    }
+  },
+  "C2_byte_identical_to_original_C09_snapshot": true,
+  "C5_observed_blocks": [
+    "B4x12/oss_bb"
+  ],
+  "C5_expected_blocks": [
+    "B4x12/oss",
+    "B4x12/oss_bb",
+    "B8x52/oss",
+    "B8x52/oss_bb"
+  ],
+  "C5_all_blocks_present": false,
+  "C5_completion_not_inferred_from_file_existence": true,
+  "C5_observed_timing_rows": {
+    "B4x12/oss_bb": {
+      "0.1": {
+        "n_eps": 791.6054593021747,
+        "model_all16_unrounded": 0.12958206262808108,
+        "model_per_scramble_median": 0.020093548242595093,
+        "model_load_balanced": 0.04850407898353469,
+        "primary": 0.07845569998607971,
+        "convention": "measured small-n mark",
+        "mark": 1024,
+        "fresh_cached": 5.078592900012154
+      },
+      "0.03": {
+        "n_eps": 6343.104774464857,
+        "model_all16_unrounded": 0.18454688482370935,
+        "model_per_scramble_median": 0.07152973372344693,
+        "model_load_balanced": 0.11640465072443419,
+        "primary": 0.12676690000807866,
+        "convention": "measured small-n mark",
+        "mark": 8192,
+        "fresh_cached": 5.108733300003223
+      },
+      "0.01": {
+        "n_eps": 42364.62950377615,
+        "model_all16_unrounded": 0.5411922862838737,
+        "model_per_scramble_median": 0.4052791808717894,
+        "model_load_balanced": 0.556985111109038,
+        "primary": 0.7388724499905948,
+        "convention": "measured confirmation",
+        "n_run": 65536,
+        "median_wall": 0.7388724499905948,
+        "pooled_hw16": 0.003856741701515734,
+        "scale": 1.0,
+        "fraction_hw_ok": 0.8,
+        "fresh_cached": 5.5302964500151575
+      },
+      "0.001": {
+        "n_eps": 2267242.869414215,
+        "model_all16_unrounded": 22.569482288876813,
+        "model_per_scramble_median": 21.019394994194364,
+        "model_load_balanced": 27.76954445182436,
+        "primary": 22.569482288876813,
+        "convention": "modelled all-16",
+        "fresh_cached": 27.43793518890793
+      }
+    }
+  },
+  "C5_running_processes_observed_by_root": [
+    28208,
+    37464
+  ],
+  "C5_process_observation_is_not_a_future_state_guarantee": true,
+  "Stage_C_status_markdown_is_at_merge_handoff_and_stale_for_C4": true,
+  "reference_agreement_resolution_still_exceeds_0_0001": true,
+  "no_detected_undercoverage_is_not_a_proved_99_percent_success_rate": true,
+  "widened_interval_is_not_a_conservative_lower_true_price_coverage_bound": true,
+  "B8_decision_point_coverage_was_not_a_planned_arm": true,
+  "quantum_native_law_bridge_closed": false,
+  "final_comparator_minimum_closed": false,
+  "quantum_advantage_established": false
+}

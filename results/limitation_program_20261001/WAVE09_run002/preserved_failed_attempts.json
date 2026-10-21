@@ -1,0 +1,98 @@
+{
+  "A19_run001": {
+    "passed": false,
+    "return_code": 1
+  },
+  "E03_support_audit_run001": {
+    "passed": false,
+    "local_only": true,
+    "audit_failure": "Structural signature omitted commutative add/mul canonicalization; independently checked first differing stock roots4021/4054 agree after commutative normalization.",
+    "producer_support_invalidated": false,
+    "case_audits_completed": 0,
+    "new_distinct_tests": 0,
+    "new_financial_gate_replays": 0,
+    "next": "Versioned audit reader v2, fresh receipt; original executed audit remains immutable."
+  },
+  "E02_archive_run001": {
+    "passed": false,
+    "local_only": true,
+    "tests": {
+      "tests": 34,
+      "failures": 3,
+      "errors": 0,
+      "skipped": 0
+    },
+    "returncode": 1,
+    "frozen_inputs_unchanged": true,
+    "export_error": {
+      "type": "ValueError",
+      "message": "Archived range target binding"
+    },
+    "archived_rows_exported": 0,
+    "new_financial_candidate_attempts": 0,
+    "complete_financial_replays": 0,
+    "new_quantum_unitary_tests": 0,
+    "original_residual_contract_only": true,
+    "current_B4_estimator_pending": true,
+    "controlled_calls": null,
+    "advantage_demonstrated": false
+  },
+  "E02_archive_run002": {
+    "passed": false,
+    "local_only": true,
+    "tests": {
+      "tests": 35,
+      "failures": 2,
+      "errors": 0,
+      "skipped": 0
+    },
+    "returncode": 1,
+    "frozen_inputs_unchanged": true,
+    "export_error": {
+      "type": "ValueError",
+      "message": "Random preparation width"
+    },
+    "archived_rows_exported": 0,
+    "new_financial_candidate_attempts": 0,
+    "complete_financial_replays": 0,
+    "new_quantum_unitary_tests": 0,
+    "original_residual_contract_only": true,
+    "current_B4_estimator_pending": true,
+    "controlled_calls": null,
+    "advantage_demonstrated": false
+  },
+  "E02_financial_run001": {
+    "passed": false,
+    "local_only": true,
+    "status": "superseded preflight reader rejected by static schema review; test execution interrupted",
+    "failure": "Frozen _verify_receipt rejects declared manifest_self_hash_excluded=True structured support manifest",
+    "source_binding_rejection_executed": false,
+    "static_preflight_incompatibility_confirmed": true,
+    "test_execution_completed": false,
+    "completed_distinct_tests_credited": 0,
+    "planned_tests": 51,
+    "financial_wrappers_emitted": 0,
+    "source_marking_replays": 0,
+    "full_QPE_runs": 0,
+    "frozen_files_edited": false,
+    "reason_for_stop": "Known receipt-reader incompatibility makes this branch unexecutable; corrected version also replaces costly classical decoder fractions with an outward dyadic enclosure",
+    "replacement": "results/limitation_program_20261001/E02_financial_run002"
+  },
+  "C07_barrier_run001": {
+    "passed": false,
+    "return_code": 1
+  },
+  "H17_demand_run001": {
+    "passed": false,
+    "local_only": true,
+    "fixtures_passed": 38,
+    "terminal_failure": "Input schema KeyError: controlled_grover_calls; accepted synthesized row uses financial_forwards",
+    "stage": "post-fixtures demand-schema preflight",
+    "case": "B4x12",
+    "new_financial_gate_replays": 0,
+    "new_financial_price_samples": 0,
+    "complete_demand_ledgers_written": 0,
+    "frozen_code_and_receipt_preserved": true,
+    "next": "Versioned schema correction only, fresh H17_demand_run002"
+  }
+}

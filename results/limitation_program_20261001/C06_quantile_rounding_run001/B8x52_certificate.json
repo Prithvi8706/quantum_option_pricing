@@ -1,0 +1,116 @@
+{
+  "case": "B8x52",
+  "uniform_bits": 32,
+  "fraction_bits": 40,
+  "word_width": 72,
+  "defined_law": "floor(2^40*Phi_inverse((raw+1/2)/2^32))/2^40, independent scalar coordinates",
+  "quantile_rounding": "downward FLOOR, including negative quantiles",
+  "pointwise_defined_quantile_error_upper_exact": [
+    1,
+    1099511627776
+  ],
+  "midpoint_law_KS_upper_exact": [
+    1,
+    8589934592
+  ],
+  "rounding_KS_increment_upper_exact": [
+    1,
+    2748779069440
+  ],
+  "defined_rounded_law_KS_upper_exact": [
+    321,
+    2748779069440
+  ],
+  "normal_density_upper_exact": [
+    2,
+    5
+  ],
+  "pi_lower_exact": [
+    880794001069611548991079918499719293243803489233077787187889509630679857293303712265602942790769039628997106417373433343088994737685757316258665919557443277477584841591942327664593526730982384900773867551098136257669956514011018828640442553039683241942921196852752684376516631912419388196494377233185848406818493349469216436068382234335651389435527735634244885447792507248838315154212994490378152311498721588181023200517590133553712265713326665673641314666319291700565476906652822438640018455508825458471889526373683275016898988642758203013771506323543287124,
+    280365438231833651166655099700018077766536250935827127584029392745383340129241362737247784392661832187096374789820374916153345616171983025730526124559215568398999737588287143036761603929675541414184056783437190486856461404941833618352280486203744200304497014420281483313230579407234097627973638252975257835066410515074301910728979608595517649719179390182054130062749379617384435139741722418481834726425108931634328008681764326845168411079008268982139876094202713263915884279077273798339129259460688068952982352326501643002831798412444186396896839141845703125
+  ],
+  "normal_coordinates": 468,
+  "coordinate_total_variation_upper_dollars_exact": [
+    80,
+    1
+  ],
+  "all_date_defined_rounded_law_price_bias_upper_exact": [
+    37557,
+    8589934592
+  ],
+  "headroom_exact": [
+    11,
+    2000
+  ],
+  "defined_rounded_law_term_fits_headroom": true,
+  "conditional_all_input_defined_law_certificate": true,
+  "all_input_solver_completeness_certified": false,
+  "accepted_Box_Muller_law_certified": false,
+  "native_financial_path_arithmetic_certified": false,
+  "coherent_loader_implemented": false,
+  "complete_original_price_certified": false,
+  "second_discount_applied": false,
+  "quantum_resources_or_runtime_extrapolated_from_classical_solver": false,
+  "proof": {
+    "rounding": "For every raw q32 word k, u=(2k+1)/2^33 lies strictly inside(0,1). Define z=Phi_inverse(u) and a=floor(2^40*z)/2^40. Then a<=z<a+2^-40. The local interval solver emits a word only after proving this floor bin; sixteen selected words do not establish solver completeness.",
+    "midpoint_KS": "The exact independent scalar quantile midpoint law has distribution function within2^-33 of Phi, including either side of each atom. This follows by counting midpoint uniforms below any Phi(x).",
+    "rounded_KS": "Since a<=z<a+epsilon, G_z(x)<=G_a(x)<=G_z(x+epsilon). The standard normal density is everywhere<=1/sqrt(2*pi)<2/5; pi>25/8 is certified by the existing exact rational enclosure. Consequently sup_x abs(G_a(x)-Phi(x))<=2^-33+(2/5)*2^-40.",
+    "bounded_variation_product": "For a scalar function of bounded variation V, expectation difference under two laws is<=V times their Kolmogorov distance, by the Stieltjes integration-by-parts bound, including one-sided jump values. The independently audited original continuous GBM/payoff has coordinate variation<=80 discounted dollars. Replace independent coordinates one at a time and integrate over the other coordinates: price-law bias<=dimension*80*(2^-33+(2/5)*2^-40).",
+    "scope": "This all-input result concerns the mathematically DEFINED floor-rounded independent scalar quantile law and exact continuous financial arithmetic. It does not infer certification of all2^32 words from16 tests, does not certify finite Box-Muller or a coherent loader, and does not bound native path arithmetic/clipping or physical runtime."
+  },
+  "enclosure_method": {
+    "method": "audited integrated Gaussian Taylor plus symmetry",
+    "terms": 192,
+    "outward_precision_bits": 224,
+    "domain": [
+      -8,
+      8
+    ],
+    "maximum_bisection_steps_per_word": 80
+  },
+  "original_model_binding": {
+    "case": "B8x52",
+    "assets": 8,
+    "dates": 52,
+    "volatility_exact": [
+      3,
+      10
+    ],
+    "correlation_exact": [
+      2,
+      5
+    ],
+    "spot_dollars_exact": [
+      100,
+      1
+    ],
+    "rate_exact": [
+      3,
+      100
+    ],
+    "maturity_years_exact": [
+      1,
+      1
+    ],
+    "strike_dollars_exact": [
+      100,
+      1
+    ],
+    "barrier_dollars_exact": [
+      140,
+      1
+    ],
+    "equal_asset_volatility": true,
+    "basket": "positive equal-weight arithmetic spot basket",
+    "builder_path": "C:\\Users\\prith\\quantum_option_pricing\\research\\advantage_frontier_20260923\\barrier_oracle_depth.py",
+    "builder_sha256": "1e0e225131c668f133ef05a5de3f78fbad4fb5307a2fc8c452d99d14c8dda929",
+    "continuous_driver_law": "independent common and idiosyncratic Brownian drivers",
+    "digital_paired_outputs_claimed_independent_gaussian": false
+  },
+  "coordinate_BV_proof_audit": "results/limitation_program_20261001/C06_quantile_grid_audit_run001/B8x52_audit.json",
+  "coordinate_BV_proof_audit_sha256": "94d57e81f4740b54524d41c70e2b27a5f479928f74009af6e75c6003163eb14a",
+  "finite_word_records": "results/limitation_program_20261001/C06_quantile_rounding_run001/quantile_words.json",
+  "finite_word_records_sha256": "1938f1f9734fdcbf14af7fb27f264f43651a531ebf14ed654b82832e6d237bee",
+  "finite_word_count": 16,
+  "all_input_quantile_domain_proof": "results/limitation_program_20261001/C06_quantile_rounding_run001/defined_quantile_domain.json"
+}

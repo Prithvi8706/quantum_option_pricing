@@ -1,0 +1,114 @@
+{
+  "budget_unrelated_or_IO_error_credit": false,
+  "categories": [
+    {
+      "code": "REJECT_WEAK_PRICE_AS_STRONG_L1",
+      "fixed_variants": [
+        {
+          "exact_structural_rejection": true,
+          "fixed_mutation": {
+            "weak_price_bias_total_used_as_same_coupling_strong_L1": true
+          }
+        }
+      ],
+      "passed": true
+    },
+    {
+      "code": "REJECT_DIGITAL_PAIR_INDEPENDENCE_OR_ZERO_CROSS_TERM",
+      "fixed_variants": [
+        {
+          "exact_structural_rejection": true,
+          "fixed_mutation": {
+            "digital_pair_independence_assumed": true
+          }
+        },
+        {
+          "exact_structural_rejection": true,
+          "fixed_mutation": {
+            "cross_terms_set_zero_by_digital_independence": true
+          }
+        }
+      ],
+      "passed": true
+    },
+    {
+      "code": "REJECT_MISSING_FLOOR_OR_LITERAL_ERROR",
+      "fixed_variants": [
+        {
+          "exact_structural_rejection": true,
+          "fixed_mutation": {
+            "omitted_signed_cmul_floor_value": 3492
+          }
+        },
+        {
+          "exact_structural_rejection": true,
+          "fixed_mutation": {
+            "omitted_signed_cmul_floor_value": 3493
+          }
+        },
+        {
+          "exact_structural_rejection": true,
+          "fixed_mutation": {
+            "omitted_error_component": "ea"
+          }
+        },
+        {
+          "exact_structural_rejection": true,
+          "fixed_mutation": {
+            "omitted_error_component": "eb"
+          }
+        },
+        {
+          "exact_structural_rejection": true,
+          "fixed_mutation": {
+            "omitted_error_component": "e0"
+          }
+        },
+        {
+          "exact_structural_rejection": true,
+          "fixed_mutation": {
+            "omitted_error_component": "ed"
+          }
+        }
+      ],
+      "passed": true
+    },
+    {
+      "code": "REJECT_CHANGED_SOURCE_VALUE_PAIR_TARGET_OR_LAW",
+      "fixed_variants": [
+        {
+          "exact_structural_rejection": true,
+          "fixed_mutation": {
+            "raw_preclip_log_value": 3541
+          }
+        },
+        {
+          "exact_structural_rejection": true,
+          "fixed_mutation": {
+            "ordered_native_normal_values": [
+              125,
+              94
+            ]
+          }
+        },
+        {
+          "exact_structural_rejection": true,
+          "fixed_mutation": {
+            "target_literal_SHA256": "267dcaa74aa9dd5cb1339c65006b122389331f42f0002f483bd6eed05c31090b"
+          }
+        },
+        {
+          "exact_structural_rejection": true,
+          "fixed_mutation": {
+            "ideal_reference_model": "C4_H8_compound_predictor"
+          }
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "category_count": 4,
+  "metadata_variants": 13,
+  "new_numerical_candidate_or_fixture": false,
+  "passed": true
+}

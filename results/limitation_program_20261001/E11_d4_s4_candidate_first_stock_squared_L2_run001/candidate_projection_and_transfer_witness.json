@@ -1,0 +1,55 @@
+{
+  "M_is_native_exp_cap_and_projection_Lipschitz_not_candidate_stock_cap": true,
+  "accepted_interface": {
+    "candidate_alpha": [
+      1,
+      16777216
+    ],
+    "candidate_beta": [
+      1,
+      1099511627776
+    ],
+    "comparison_accepts_valid_larger_bound": true,
+    "extra_spot_multiplier": 1,
+    "no_native_error_independence": true,
+    "output_encoding": "canonical32bit-rational-limbs-and-signed-comparison-v1",
+    "profiles": [
+      "primary90",
+      "independent130"
+    ],
+    "projection_and_both_unconditional_continuous_tails": true,
+    "source_scope": {
+      "Q": 1099511627776,
+      "W": 72,
+      "asset_zero_based": 0,
+      "candidate_polynomial": 15,
+      "candidate_row": "d4_s4",
+      "case": "B4x12",
+      "clipped_log": 3579,
+      "contractual_date_one_based": 1,
+      "exponent": 3979,
+      "raw_log": 3542,
+      "remainder": 3982,
+      "scope_is_classical_logical_candidate_intermediate_only": true,
+      "stock": 4021,
+      "units": "dollars_squared"
+    }
+  },
+  "both_original_saved_unconditional_Gaussian_tails_reused": true,
+  "compiled_signed_shift_phase_and_cleanup_remain_open": true,
+  "conditional_candidate_envelope_accepted": true,
+  "finite_cases_are_only_supplements": true,
+  "native_sampler_guard_moment_tail_series_or_caller_reexecuted": false,
+  "no_native_pair_error_or_stock_independence": true,
+  "old_degree12_alpha_A_B_log_beta_read_as_candidate_numeric_premises": false,
+  "one_stock4021_dollars_squared_only": true,
+  "projection_proof": [
+    "The upstream native log L_N and its continuous coupling are unchanged by replacing only the downstream exponential row. Thus the verified improved B_log for raw3542 applies.",
+    "The original saved native interval lies inside the original clip endpoints. Therefore clip3579 is inactive for all native inputs at this site, and P(L_N)=L_N.",
+    "The completed old guard bounds exp(b)<=256=M. The new deterministic candidate allowance is A_candidate=alpha_candidate*M+beta_candidate. No old degree12 A is transferred.",
+    "|S_candidate-exp(L)| <= A_candidate + M*|L_N-L| + |exp(P(L))-exp(L)|. Projection is nonexpansive against L_N and exp on [a,b] is M-Lipschitz.",
+    "On L<a the remaining difference is <=M; on L>b it is <=exp(L). These disjoint continuous tails retain the original same-profile lower_tail and tilted upper_tail allowances. The ideal Gaussian is unbounded.",
+    "Pointwise three-term Cauchy followed by expectation gives B_candidate=3*(A_candidate^2+M^2*B_log_improved+lower_tail+upper_tail). No native coordinate/error/stock independence is invoked.",
+    "Initial ln100 already belongs to L, so the result is one stock in dollars squared; multiplying by100 again is forbidden."
+  ]
+}

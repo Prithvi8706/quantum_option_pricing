@@ -1,0 +1,73 @@
+{
+  "created_utc": "2026-10-02T07:28:06.545292+00:00",
+  "local_only": true,
+  "before_meaningful_tests_and_formula_evaluation": true,
+  "item": "E04 three-family theorem upper-bound screen",
+  "executed_dependencies": [
+    {
+      "original": "research/limitation_program_20261001/experiment_finite_estimator_theorem_screen.py",
+      "snapshot": "executed_code/experiment_finite_estimator_theorem_screen.py",
+      "sha256": "182098e33b497d656f0b4b2e6f6c60db99792ae4b71e9870d30652d58a8aa92e"
+    },
+    {
+      "original": "research/limitation_program_20261001/finite_estimator_theorem_screen.py",
+      "snapshot": "executed_code/finite_estimator_theorem_screen.py",
+      "sha256": "2f24534e4c42bb5e34789805f5ad506867b9eab80911edc30994ffd4f2aead5d"
+    },
+    {
+      "original": "research/limitation_program_20261001/test_finite_estimator_theorem_screen.py",
+      "snapshot": "executed_code/test_finite_estimator_theorem_screen.py",
+      "sha256": "8cd65aa74406599c800342180b3929598097a69c7d87cda096c04d2d7594336a"
+    },
+    {
+      "original": "research/limitation_program_20261001/audit_barrier_band.py",
+      "snapshot": "executed_code/audit_barrier_band.py",
+      "sha256": "ae06be0760a9b6630b721d509af6f3add70e60a5b6d43727f14048175a01375b"
+    }
+  ],
+  "declared_tests": 11,
+  "families": [
+    "canonical-bounded-QAE",
+    "original-IQAE",
+    "modified-IQAE"
+  ],
+  "family_count": 3,
+  "span_dollars": 64,
+  "error_dollars_exact": [
+    9,
+    2000
+  ],
+  "amplitude_error_exact": [
+    9,
+    128000
+  ],
+  "failure_exact": [
+    3,
+    1000
+  ],
+  "retained_canonical_Q_calls": 983025,
+  "primary_sources": {
+    "original-IQAE": {
+      "url": "https://arxiv.org/html/1912.05559v3",
+      "location": "Theorem1 equation9 and its Q-query convention in SectionII",
+      "formula": "50/epsilon * ln((2/alpha)*log2(pi/(4*epsilon)))",
+      "query_unit": "Grover Q applications; preparation/measurement/reset separately required",
+      "native_controller_transfer_status": "Repeated-look/native confidence interface requires audit"
+    },
+    "modified-IQAE": {
+      "url": "https://arxiv.org/html/2208.14612v4",
+      "location": "Lemma3.7 equations3.19-3.31, retaining exact coefficient",
+      "formula": "3*pi/(8*epsilon*sin(pi/21)^2*sin(8*pi/21)^2) * ln(sqrt(27)/alpha)",
+      "query_unit": "Proof sums k_i*N_i, i.e. Grover Q applications",
+      "printed_query_wording_ambiguous": true,
+      "native_controller_transfer_status": "Per-round/per-look confidence spending and preparation counts required"
+    }
+  },
+  "rigorous_numeric_method": "mp.iv110 digits; exact-rational financial tolerances and binary rational endpoints",
+  "bound_comparison_is_not_actual_cost_lower_bound": true,
+  "unknown_controller_shot_counts_not_zero": true,
+  "controller_simulations": 0,
+  "financial_samples_or_gate_replays": 0,
+  "next_controller_scope": "Atmost8 preregistered settings and2 exact tiny-source laws; separate prospective receipt before observations",
+  "full_price_and_physical_certificates": false
+}

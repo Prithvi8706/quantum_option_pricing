@@ -1,0 +1,7 @@
+{
+  "failure_type": "BudgetCensoredError",
+  "message": "Fixed finalizer CPU/wall budget reached",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\prith\\quantum_option_pricing\\research\\limitation_program_20261001\\finalize_quantile_loading_wave.py\", line 1024, in run\n    summary = reconcile(output, frozen, started)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\prith\\quantum_option_pricing\\research\\limitation_program_20261001\\finalize_quantile_loading_wave.py\", line 928, in reconcile\n    validation = strict_validation(output, previous, frozen, started)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\prith\\quantum_option_pricing\\research\\limitation_program_20261001\\finalize_quantile_loading_wave.py\", line 688, in strict_validation\n    budget(started)\n  File \"C:\\Users\\prith\\quantum_option_pricing\\research\\limitation_program_20261001\\finalize_quantile_loading_wave.py\", line 207, in budget\n    raise BudgetCensoredError(\"Fixed finalizer CPU/wall budget reached\")\nBudgetCensoredError: Fixed finalizer CPU/wall budget reached\n",
+  "partial_files_preserved": true,
+  "fixed_receipt_terminal_no_retry": true
+}

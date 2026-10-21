@@ -1,0 +1,42 @@
+{
+  "artificial_metadata_only": true,
+  "controls": [
+    {
+      "dedicated_tag": "Reject fixedM4608 replacement",
+      "field": "M_fixed",
+      "mutation": 8192,
+      "rejected": true
+    },
+    {
+      "dedicated_tag": "Reject changed fixed Young delta",
+      "field": "delta_fixed",
+      "mutation": [
+        1,
+        1000000
+      ],
+      "rejected": true
+    },
+    {
+      "dedicated_tag": "Reject missing or mixed own profile",
+      "field": "profiles",
+      "mutation": [
+        "primary90"
+      ],
+      "rejected": true
+    },
+    {
+      "dedicated_tag": "Reject nonoriginal degree12 kernel",
+      "field": "kernel",
+      "mutation": "candidate_min65",
+      "rejected": true
+    },
+    {
+      "dedicated_tag": "Reject missing shared clip projection",
+      "field": "projection",
+      "mutation": "native_clip_inactive",
+      "rejected": true
+    }
+  ],
+  "passed": true,
+  "positive_first": true
+}

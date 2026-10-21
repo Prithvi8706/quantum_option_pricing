@@ -1,0 +1,85 @@
+{
+  "artificial_metadata_only": true,
+  "controls": [
+    {
+      "dedicated_tag": "FIXED_DELTA_COMMON_TO_OWN_PROFILES",
+      "field": "fixed_young",
+      "mutation": {
+        "delta_exact_pair": [
+          1,
+          1000
+        ],
+        "one_delta_for_both_profiles": true,
+        "profiles": [
+          "primary90",
+          "independent130"
+        ]
+      },
+      "rejected": true
+    },
+    {
+      "dedicated_tag": "OWN_PER_COORDINATE_ONLY",
+      "field": "coordinate_quantity",
+      "mutation": "pair_sum_or_other_profile",
+      "rejected": true
+    },
+    {
+      "dedicated_tag": "INITIAL_DRIFT_FOUR_FLOORS_AND_GROUPS",
+      "field": "multiplicities",
+      "mutation": {
+        "aN_drivers": [
+          94,
+          357
+        ],
+        "bN_drivers": [
+          125,
+          442
+        ],
+        "drift": 2,
+        "initial": 1,
+        "signed_cmul_floors": 3
+      },
+      "rejected": true
+    },
+    {
+      "dedicated_tag": "DATE2_RAW3543_FOUR_SOURCE_DRIVERS",
+      "field": "source_scope",
+      "mutation": {
+        "F": 40,
+        "W": 72,
+        "asset_zero_based": 0,
+        "case": "B4x12",
+        "contractual_date_one_based": 2,
+        "innovation": 3500,
+        "normal_indices": [
+          0,
+          1,
+          5,
+          6
+        ],
+        "normal_values": [
+          94,
+          125,
+          357,
+          442
+        ],
+        "previous_raw_log": 3542,
+        "raw_log": 3542,
+        "saved_date_zero_based": 1
+      },
+      "rejected": true
+    },
+    {
+      "dedicated_tag": "NO_ERROR_INDEPENDENCE_OR_ADAPTIVE_MINIMUM",
+      "field": "proof_qualification",
+      "mutation": {
+        "adaptive_minimum_formula_or_profile_choice": false,
+        "native_error_or_previous_log_innovation_independence_assumed": true,
+        "stock_projection_tails_or_price_certificate": false
+      },
+      "rejected": true
+    }
+  ],
+  "passed": true,
+  "positive_first": true
+}

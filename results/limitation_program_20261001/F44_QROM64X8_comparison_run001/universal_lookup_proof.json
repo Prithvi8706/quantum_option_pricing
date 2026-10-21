@@ -1,0 +1,15 @@
+{
+  "coherent_absolute_phase": "Only exact X,CX,CCX permutations; exact7T CCX absolute+1 phase verified separately; basis identity extends linearly",
+  "domain": "All full72 addresses, arbitrary576-bit dirty outputs, and zero private653 bits",
+  "full_dirty_output_universality_from_affine_XOR_translation": true,
+  "historical_A15_or_financial_proof_transferred": false,
+  "naive_identity": "One-hot six-bit minterms; five clean AND-prefix wires computed/copied/uncomputed per row",
+  "passed": true,
+  "program_fixture_credit": 0,
+  "schema": "f44-qrom64x8-universal-clean-XOR-proof-v1",
+  "selection": "address mod64; all high66 address bits preserved and ignored by body",
+  "shared_identity": "base=row0; residual_i=row_i XOR base. A node clean flag goes P*x, P*(1-x), P*x,0 by CCX,CX,CX,CCX; children restore their own stack. Pruned all-zero residual subtrees emit no output change. High branch/address complement/low branch/address restoration partition every six-bit address exactly once",
+  "signed_words": "Each word reduced modulo2^72 only at bit extraction; every signed72 retained integer unchanged",
+  "whole_StageC_function_replaced_or_approved": false,
+  "wrapper_identity": "copy all72 address bits; compute private576 table bits; XOR-copy all576 into arbitrary dirty outputs; literal body inverse; uncopy address. All648 private address/output bits and all5 prefix bits restore zero"
+}

@@ -1,0 +1,378 @@
+{
+  "accepted_interface": {
+    "F": 40,
+    "H_dollars": [
+      140,
+      1
+    ],
+    "W": 72,
+    "adaptive_h_grid_or_cross_profile_selection": false,
+    "case": "B4x12",
+    "financial_price_discount_payoff_or_G2_scope": false,
+    "grid_exponent_fixed": 256,
+    "h_dollars": [
+      1,
+      1
+    ],
+    "ideal_common_loading_squared": [
+      3,
+      1000
+    ],
+    "ideal_joint_independence_only": true,
+    "outward_rounding_before_addition": true,
+    "own_basket_inputs_each_profile": 12,
+    "own_profile_rows": 2,
+    "profiles": [
+      "primary90",
+      "independent130"
+    ],
+    "quantity": "survival_indicator_mismatch_probability",
+    "shared_first_ideal_normal_source": 94,
+    "shared_ideal_scalar_index": 0,
+    "source_barrier_literal": 5643,
+    "source_max": 5642,
+    "source_strict_survival_flag": 5644,
+    "stock_date_native_or_error_independence_assumed": false,
+    "units": "probability"
+  },
+  "accepted_joint_law_witness": {
+    "continuous_variables": "product of sixty independent uniform(0,1) variables coupled by original Q32 floor-cell midpoints",
+    "cross_pair_law": "product over thirty disjoint raw-U/raw-V pairs",
+    "digital_or_error_independence": false,
+    "ideal_only": true,
+    "original_preparation": "sixty separate uniform input registers; tensor uniform preparation",
+    "pair_orientation": "R*cos(2piV), R*cos(2pi(V+3/4))=R*sin(2piV)",
+    "polar_jacobian": "exp(-(z0^2+z1^2)/2)/(2pi)=phi(z0)*phi(z1)",
+    "unused_partner": "retained in original joint coupling"
+  },
+  "basket_floor_already_paid": true,
+  "closed_band_includes_equalities": true,
+  "conditional_log_max_density_upper_symbolic": "1/(a*sqrt(2*pi))",
+  "dependence_safe_union_and_squared_error_Markov": true,
+  "exact_maximum_rows": [
+    {
+      "select": {
+        "args": [
+          5641,
+          5638,
+          5640
+        ],
+        "op": "select",
+        "out": [
+          5642
+        ],
+        "params": {}
+      },
+      "strict_lt": {
+        "args": [
+          5640,
+          5638
+        ],
+        "op": "lt",
+        "out": [
+          5641
+        ],
+        "params": {}
+      },
+      "symbolic_identity": "SELECT(LT(left,right),right,left)=max(left,right); ties retain equal left value"
+    },
+    {
+      "select": {
+        "args": [
+          5639,
+          5636,
+          5634
+        ],
+        "op": "select",
+        "out": [
+          5640
+        ],
+        "params": {}
+      },
+      "strict_lt": {
+        "args": [
+          5634,
+          5636
+        ],
+        "op": "lt",
+        "out": [
+          5639
+        ],
+        "params": {}
+      },
+      "symbolic_identity": "SELECT(LT(left,right),right,left)=max(left,right); ties retain equal left value"
+    },
+    {
+      "select": {
+        "args": [
+          5633,
+          5624,
+          5622
+        ],
+        "op": "select",
+        "out": [
+          5634
+        ],
+        "params": {}
+      },
+      "strict_lt": {
+        "args": [
+          5622,
+          5624
+        ],
+        "op": "lt",
+        "out": [
+          5633
+        ],
+        "params": {}
+      },
+      "symbolic_identity": "SELECT(LT(left,right),right,left)=max(left,right); ties retain equal left value"
+    },
+    {
+      "select": {
+        "args": [
+          5621,
+          5580,
+          5576
+        ],
+        "op": "select",
+        "out": [
+          5622
+        ],
+        "params": {}
+      },
+      "strict_lt": {
+        "args": [
+          5576,
+          5580
+        ],
+        "op": "lt",
+        "out": [
+          5621
+        ],
+        "params": {}
+      },
+      "symbolic_identity": "SELECT(LT(left,right),right,left)=max(left,right); ties retain equal left value"
+    },
+    {
+      "select": {
+        "args": [
+          5623,
+          5588,
+          5584
+        ],
+        "op": "select",
+        "out": [
+          5624
+        ],
+        "params": {}
+      },
+      "strict_lt": {
+        "args": [
+          5584,
+          5588
+        ],
+        "op": "lt",
+        "out": [
+          5623
+        ],
+        "params": {}
+      },
+      "symbolic_identity": "SELECT(LT(left,right),right,left)=max(left,right); ties retain equal left value"
+    },
+    {
+      "select": {
+        "args": [
+          5635,
+          5628,
+          5626
+        ],
+        "op": "select",
+        "out": [
+          5636
+        ],
+        "params": {}
+      },
+      "strict_lt": {
+        "args": [
+          5626,
+          5628
+        ],
+        "op": "lt",
+        "out": [
+          5635
+        ],
+        "params": {}
+      },
+      "symbolic_identity": "SELECT(LT(left,right),right,left)=max(left,right); ties retain equal left value"
+    },
+    {
+      "select": {
+        "args": [
+          5625,
+          5596,
+          5592
+        ],
+        "op": "select",
+        "out": [
+          5626
+        ],
+        "params": {}
+      },
+      "strict_lt": {
+        "args": [
+          5592,
+          5596
+        ],
+        "op": "lt",
+        "out": [
+          5625
+        ],
+        "params": {}
+      },
+      "symbolic_identity": "SELECT(LT(left,right),right,left)=max(left,right); ties retain equal left value"
+    },
+    {
+      "select": {
+        "args": [
+          5627,
+          5604,
+          5600
+        ],
+        "op": "select",
+        "out": [
+          5628
+        ],
+        "params": {}
+      },
+      "strict_lt": {
+        "args": [
+          5600,
+          5604
+        ],
+        "op": "lt",
+        "out": [
+          5627
+        ],
+        "params": {}
+      },
+      "symbolic_identity": "SELECT(LT(left,right),right,left)=max(left,right); ties retain equal left value"
+    },
+    {
+      "select": {
+        "args": [
+          5637,
+          5632,
+          5630
+        ],
+        "op": "select",
+        "out": [
+          5638
+        ],
+        "params": {}
+      },
+      "strict_lt": {
+        "args": [
+          5630,
+          5632
+        ],
+        "op": "lt",
+        "out": [
+          5637
+        ],
+        "params": {}
+      },
+      "symbolic_identity": "SELECT(LT(left,right),right,left)=max(left,right); ties retain equal left value"
+    },
+    {
+      "select": {
+        "args": [
+          5629,
+          5612,
+          5608
+        ],
+        "op": "select",
+        "out": [
+          5630
+        ],
+        "params": {}
+      },
+      "strict_lt": {
+        "args": [
+          5608,
+          5612
+        ],
+        "op": "lt",
+        "out": [
+          5629
+        ],
+        "params": {}
+      },
+      "symbolic_identity": "SELECT(LT(left,right),right,left)=max(left,right); ties retain equal left value"
+    },
+    {
+      "select": {
+        "args": [
+          5631,
+          5620,
+          5616
+        ],
+        "op": "select",
+        "out": [
+          5632
+        ],
+        "params": {}
+      },
+      "strict_lt": {
+        "args": [
+          5616,
+          5620
+        ],
+        "op": "lt",
+        "out": [
+          5631
+        ],
+        "params": {}
+      },
+      "symbolic_identity": "SELECT(LT(left,right),right,left)=max(left,right); ties retain equal left value"
+    }
+  ],
+  "fixed_band_rational": [
+    20,
+    139
+  ],
+  "grid_exponent_fixed": 256,
+  "h_dollars_fixed": [
+    1,
+    1
+  ],
+  "ideal_loading_literal_not_native_coefficient_square": true,
+  "ideal_unclipped_common_factor_only": true,
+  "log_ideal_maximum_equals_aZ94_plus_independent_rest": true,
+  "maximum_adds_no_floor": true,
+  "money_payoff_discount_price_G2_or_advantage_excluded": true,
+  "native_clipped_stock_factorization_claimed": false,
+  "no_second_gap_or_extra_Young_factor": true,
+  "outward_rounding_before12_additions": true,
+  "passed": true,
+  "rounding_gap_already_paid_in_operands": true,
+  "schema": "e11-B4x12-barrier-common94-fixed-h1-dyadic256-source-witness-v1",
+  "shared_first_common94_once_in_all48": true,
+  "source_baskets": [
+    5576,
+    5580,
+    5584,
+    5588,
+    5592,
+    5596,
+    5600,
+    5604,
+    5608,
+    5612,
+    5616,
+    5620
+  ],
+  "source_max": 5642,
+  "source_strict_survival_flag": 5644,
+  "stock_date_native_or_error_independence_assumed": false
+}

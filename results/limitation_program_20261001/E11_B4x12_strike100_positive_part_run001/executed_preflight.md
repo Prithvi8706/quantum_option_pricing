@@ -1,0 +1,11 @@
+# Original strike100 positive-part source5695 preflight
+
+This dormant packet transfers each completed dyadic256 time-average profile allowance to the original strike100 positive part under the same original coupling. The original nodes are const5693=100Q, sub5694=[5692,5693], and positive5695=[5694], with W72/F40. The native average is in [0,4096), so subtraction lies in [-100,3996) without signed72 wrap. Subtraction and positive part add no fixed-point floor.
+
+For arbitrary real x,y, |(x-100)^+-(y-100)^+|<=|x-y|. Each profile therefore copies its own verified parent allowance unchanged. No cross-profile minimum, error independence, extra rounding allowance, Young factor, tail, moment, kernel or producer recipe is used. Ideal average support is unrestricted. Discount5696, barrier5697, full price, G2, candidate and quantum advantage remain outside scope.
+
+The exact completed parent ROOT receipt is `.context/E11_B4X12_NATIVE48_FIXED_DYADIC256_STOCK_TIME_AVERAGE_ACTUAL_RESULT_ROOT_VERIFICATION_run001.json`, SHA256 d139b4a44aee34696b5a12421f80af2b08a3422c785189614b118e7365dceff4, with manifest228d5c20f31ae0a71710b2e9e0185e5e1b764385b0a2571f5867f375b1e31a0a. Both physical profile records are bound separately at /components/fixed_dyadic256_time_average_squared_L2_upper. The original exact-sum run failed its reduced bit cap; no failed or partial allowance is adopted. Historical b83f source contributes only27 unchanged foundation bodies.
+
+Current SOURCE peer and ROOT static review must match the exact author trio,30 ASTs,10 selected byte/stat8 roles, the independently checked typed parent ROOT projection, current interface,180/150/600 caps,150MiB RSS and13 ledger. Only a separate closed14-key ROOT READY authorizes execution. Default4300 and canonical base2^32 limbs remain fixed; no decimal setter, parser bypass, native arrays or transitive union replay. Current3 review checks precede premise/origin admission and output creation. The SOURCE, adapter and preflight are paid output copies.
+
+Publication is metadata-only. Positive-part results and current SCI/READY outcomes remain null until the independent SOURCE review and ROOT serial run. The frozen prospective plan and unbound drafts remain historical.

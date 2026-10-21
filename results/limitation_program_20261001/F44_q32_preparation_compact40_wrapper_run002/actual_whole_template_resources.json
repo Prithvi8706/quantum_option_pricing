@@ -1,0 +1,3728 @@
+{
+  "actual_whole_A_ASAP": {
+    "ccx": 310120,
+    "clifford_cx": 2346489,
+    "clifford_h": 620272,
+    "clifford_t_depth": 292840,
+    "cx": 485769,
+    "native_interval": [
+      0,
+      807792
+    ],
+    "native_rows": 807792,
+    "preparation_h": 32,
+    "source_gates": 807824,
+    "t_count": 2170840,
+    "t_depth": 61994,
+    "x": 11903
+  },
+  "actual_whole_A_inverse_ASAP": {
+    "ccx": 310120,
+    "clifford_cx": 2346489,
+    "clifford_h": 620272,
+    "clifford_t_depth": 292840,
+    "cx": 485769,
+    "native_interval": [
+      807792,
+      1615584
+    ],
+    "native_rows": 807792,
+    "preparation_h": 32,
+    "source_gates": 807824,
+    "t_count": 2170840,
+    "t_depth": 61994,
+    "x": 11903
+  },
+  "actual_whole_A_then_inverse_ASAP": {
+    "ccx": 620240,
+    "clifford_cx": 4692978,
+    "clifford_h": 1240544,
+    "clifford_t_depth": 585680,
+    "cx": 971538,
+    "native_interval": [
+      0,
+      1615584
+    ],
+    "native_rows": 1615584,
+    "preparation_h": 64,
+    "source_gates": 1615648,
+    "t_count": 4341680,
+    "t_depth": 123988,
+    "x": 23806
+  },
+  "all_preparation_copy_encoder_component_private_inverse_work_charged": true,
+  "classical_comparison_or_advantage": null,
+  "historical144CX_outer_obligation_discounted": false,
+  "matched_serial_event_chronology": {
+    "forward": [
+      {
+        "ccx": 0,
+        "clifford_cx": 0,
+        "clifford_h": 32,
+        "clifford_t_depth": 1,
+        "cx": 0,
+        "native_interval": [
+          0,
+          0
+        ],
+        "native_rows": 0,
+        "op": "H32",
+        "preparation_h": 32,
+        "source_gates": 32,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 0
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 32,
+        "clifford_h": 0,
+        "clifford_t_depth": 1,
+        "cx": 32,
+        "native_interval": [
+          0,
+          33
+        ],
+        "native_rows": 33,
+        "op": "ENCODE_M",
+        "preparation_h": 0,
+        "source_gates": 33,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 1
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 41,
+        "clifford_h": 0,
+        "clifford_t_depth": 3,
+        "cx": 41,
+        "native_interval": [
+          33,
+          76
+        ],
+        "native_rows": 43,
+        "op": "ENCODE_W",
+        "preparation_h": 0,
+        "source_gates": 43,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 2
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 40,
+        "clifford_h": 0,
+        "clifford_t_depth": 1,
+        "cx": 40,
+        "native_interval": [
+          76,
+          116
+        ],
+        "native_rows": 40,
+        "op": "COPY40_m",
+        "preparation_h": 0,
+        "source_gates": 40,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 0
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 72,
+        "clifford_h": 0,
+        "clifford_t_depth": 3,
+        "cx": 72,
+        "native_interval": [
+          116,
+          190
+        ],
+        "native_rows": 74,
+        "op": "m:CONST",
+        "preparation_h": 0,
+        "source_gates": 74,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 2
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 72,
+        "clifford_h": 0,
+        "clifford_t_depth": 3,
+        "cx": 72,
+        "native_interval": [
+          190,
+          326
+        ],
+        "native_rows": 136,
+        "op": "m:CONST",
+        "preparation_h": 0,
+        "source_gates": 136,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 64
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 292,
+        "clifford_h": 0,
+        "clifford_t_depth": 5,
+        "cx": 292,
+        "native_interval": [
+          326,
+          618
+        ],
+        "native_rows": 292,
+        "op": "m:ADDRESS34",
+        "preparation_h": 0,
+        "source_gates": 292,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 0
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 352,
+        "clifford_h": 0,
+        "clifford_t_depth": 5,
+        "cx": 352,
+        "native_interval": [
+          618,
+          970
+        ],
+        "native_rows": 352,
+        "op": "m:SHIFT4",
+        "preparation_h": 0,
+        "source_gates": 352,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 0
+      },
+      {
+        "ccx": 1280,
+        "clifford_cx": 41164,
+        "clifford_h": 2560,
+        "clifford_t_depth": 44670,
+        "cx": 33484,
+        "native_interval": [
+          970,
+          36502
+        ],
+        "native_rows": 35532,
+        "op": "m:QROM64x8",
+        "preparation_h": 0,
+        "source_gates": 35532,
+        "t_count": 8960,
+        "t_depth": 4608,
+        "x": 768
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 5192,
+        "clifford_h": 1332,
+        "clifford_t_depth": 337,
+        "cx": 1196,
+        "native_interval": [
+          36502,
+          38509
+        ],
+        "native_rows": 2007,
+        "op": "m:SUB",
+        "preparation_h": 0,
+        "source_gates": 2007,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 145
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          38509,
+          63149
+        ],
+        "native_rows": 24640,
+        "op": "m:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          63149,
+          64796
+        ],
+        "native_rows": 1647,
+        "op": "m:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          64796,
+          89436
+        ],
+        "native_rows": 24640,
+        "op": "m:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          89436,
+          91083
+        ],
+        "native_rows": 1647,
+        "op": "m:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          91083,
+          115723
+        ],
+        "native_rows": 24640,
+        "op": "m:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          115723,
+          117370
+        ],
+        "native_rows": 1647,
+        "op": "m:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          117370,
+          142010
+        ],
+        "native_rows": 24640,
+        "op": "m:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          142010,
+          143657
+        ],
+        "native_rows": 1647,
+        "op": "m:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          143657,
+          168297
+        ],
+        "native_rows": 24640,
+        "op": "m:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          168297,
+          169944
+        ],
+        "native_rows": 1647,
+        "op": "m:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          169944,
+          194584
+        ],
+        "native_rows": 24640,
+        "op": "m:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          194584,
+          196231
+        ],
+        "native_rows": 1647,
+        "op": "m:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 152,
+        "clifford_cx": 1582,
+        "clifford_h": 304,
+        "clifford_t_depth": 1685,
+        "cx": 670,
+        "native_interval": [
+          196231,
+          197053
+        ],
+        "native_rows": 822,
+        "op": "m:ROUND",
+        "preparation_h": 0,
+        "source_gates": 822,
+        "t_count": 1064,
+        "t_depth": 608,
+        "x": 0
+      },
+      {
+        "ccx": 288,
+        "clifford_cx": 2522,
+        "clifford_h": 576,
+        "clifford_t_depth": 1469,
+        "cx": 794,
+        "native_interval": [
+          197053,
+          198431
+        ],
+        "native_rows": 1378,
+        "op": "m:SIGNED_LT",
+        "preparation_h": 0,
+        "source_gates": 1378,
+        "t_count": 2016,
+        "t_depth": 584,
+        "x": 296
+      },
+      {
+        "ccx": 144,
+        "clifford_cx": 1800,
+        "clifford_h": 288,
+        "clifford_t_depth": 1163,
+        "cx": 936,
+        "native_interval": [
+          198431,
+          199511
+        ],
+        "native_rows": 1080,
+        "op": "m:SELECT",
+        "preparation_h": 0,
+        "source_gates": 1080,
+        "t_count": 1008,
+        "t_depth": 434,
+        "x": 0
+      },
+      {
+        "ccx": 288,
+        "clifford_cx": 2522,
+        "clifford_h": 576,
+        "clifford_t_depth": 1469,
+        "cx": 794,
+        "native_interval": [
+          199511,
+          200889
+        ],
+        "native_rows": 1378,
+        "op": "m:SIGNED_LT",
+        "preparation_h": 0,
+        "source_gates": 1378,
+        "t_count": 2016,
+        "t_depth": 584,
+        "x": 296
+      },
+      {
+        "ccx": 144,
+        "clifford_cx": 1800,
+        "clifford_h": 288,
+        "clifford_t_depth": 1163,
+        "cx": 936,
+        "native_interval": [
+          200889,
+          201969
+        ],
+        "native_rows": 1080,
+        "op": "m:SELECT",
+        "preparation_h": 0,
+        "source_gates": 1080,
+        "t_count": 1008,
+        "t_depth": 434,
+        "x": 0
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 72,
+        "clifford_h": 0,
+        "clifford_t_depth": 1,
+        "cx": 72,
+        "native_interval": [
+          201969,
+          202041
+        ],
+        "native_rows": 72,
+        "op": "m:DIRTY_XOR72",
+        "preparation_h": 0,
+        "source_gates": 72,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 0
+      },
+      {
+        "ccx": 144,
+        "clifford_cx": 1800,
+        "clifford_h": 288,
+        "clifford_t_depth": 1163,
+        "cx": 936,
+        "native_interval": [
+          202041,
+          203121
+        ],
+        "native_rows": 1080,
+        "op": "m:inverse:SELECT",
+        "preparation_h": 0,
+        "source_gates": 1080,
+        "t_count": 1008,
+        "t_depth": 434,
+        "x": 0
+      },
+      {
+        "ccx": 288,
+        "clifford_cx": 2522,
+        "clifford_h": 576,
+        "clifford_t_depth": 1469,
+        "cx": 794,
+        "native_interval": [
+          203121,
+          204499
+        ],
+        "native_rows": 1378,
+        "op": "m:inverse:SIGNED_LT",
+        "preparation_h": 0,
+        "source_gates": 1378,
+        "t_count": 2016,
+        "t_depth": 584,
+        "x": 296
+      },
+      {
+        "ccx": 144,
+        "clifford_cx": 1800,
+        "clifford_h": 288,
+        "clifford_t_depth": 1163,
+        "cx": 936,
+        "native_interval": [
+          204499,
+          205579
+        ],
+        "native_rows": 1080,
+        "op": "m:inverse:SELECT",
+        "preparation_h": 0,
+        "source_gates": 1080,
+        "t_count": 1008,
+        "t_depth": 434,
+        "x": 0
+      },
+      {
+        "ccx": 288,
+        "clifford_cx": 2522,
+        "clifford_h": 576,
+        "clifford_t_depth": 1469,
+        "cx": 794,
+        "native_interval": [
+          205579,
+          206957
+        ],
+        "native_rows": 1378,
+        "op": "m:inverse:SIGNED_LT",
+        "preparation_h": 0,
+        "source_gates": 1378,
+        "t_count": 2016,
+        "t_depth": 584,
+        "x": 296
+      },
+      {
+        "ccx": 152,
+        "clifford_cx": 1582,
+        "clifford_h": 304,
+        "clifford_t_depth": 1685,
+        "cx": 670,
+        "native_interval": [
+          206957,
+          207779
+        ],
+        "native_rows": 822,
+        "op": "m:inverse:ROUND",
+        "preparation_h": 0,
+        "source_gates": 822,
+        "t_count": 1064,
+        "t_depth": 608,
+        "x": 0
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          207779,
+          209426
+        ],
+        "native_rows": 1647,
+        "op": "m:inverse:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          209426,
+          234066
+        ],
+        "native_rows": 24640,
+        "op": "m:inverse:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          234066,
+          235713
+        ],
+        "native_rows": 1647,
+        "op": "m:inverse:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          235713,
+          260353
+        ],
+        "native_rows": 24640,
+        "op": "m:inverse:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          260353,
+          262000
+        ],
+        "native_rows": 1647,
+        "op": "m:inverse:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          262000,
+          286640
+        ],
+        "native_rows": 24640,
+        "op": "m:inverse:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          286640,
+          288287
+        ],
+        "native_rows": 1647,
+        "op": "m:inverse:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          288287,
+          312927
+        ],
+        "native_rows": 24640,
+        "op": "m:inverse:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          312927,
+          314574
+        ],
+        "native_rows": 1647,
+        "op": "m:inverse:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          314574,
+          339214
+        ],
+        "native_rows": 24640,
+        "op": "m:inverse:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          339214,
+          340861
+        ],
+        "native_rows": 1647,
+        "op": "m:inverse:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          340861,
+          365501
+        ],
+        "native_rows": 24640,
+        "op": "m:inverse:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 5192,
+        "clifford_h": 1332,
+        "clifford_t_depth": 335,
+        "cx": 1196,
+        "native_interval": [
+          365501,
+          367508
+        ],
+        "native_rows": 2007,
+        "op": "m:inverse:SUB",
+        "preparation_h": 0,
+        "source_gates": 2007,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 145
+      },
+      {
+        "ccx": 1280,
+        "clifford_cx": 41164,
+        "clifford_h": 2560,
+        "clifford_t_depth": 44670,
+        "cx": 33484,
+        "native_interval": [
+          367508,
+          403040
+        ],
+        "native_rows": 35532,
+        "op": "m:inverse:QROM64x8",
+        "preparation_h": 0,
+        "source_gates": 35532,
+        "t_count": 8960,
+        "t_depth": 4608,
+        "x": 768
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 352,
+        "clifford_h": 0,
+        "clifford_t_depth": 5,
+        "cx": 352,
+        "native_interval": [
+          403040,
+          403392
+        ],
+        "native_rows": 352,
+        "op": "m:inverse:SHIFT4",
+        "preparation_h": 0,
+        "source_gates": 352,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 0
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 292,
+        "clifford_h": 0,
+        "clifford_t_depth": 5,
+        "cx": 292,
+        "native_interval": [
+          403392,
+          403684
+        ],
+        "native_rows": 292,
+        "op": "m:inverse:ADDRESS34",
+        "preparation_h": 0,
+        "source_gates": 292,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 0
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 72,
+        "clifford_h": 0,
+        "clifford_t_depth": 3,
+        "cx": 72,
+        "native_interval": [
+          403684,
+          403820
+        ],
+        "native_rows": 136,
+        "op": "m:inverse:CONST",
+        "preparation_h": 0,
+        "source_gates": 136,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 64
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 72,
+        "clifford_h": 0,
+        "clifford_t_depth": 3,
+        "cx": 72,
+        "native_interval": [
+          403820,
+          403894
+        ],
+        "native_rows": 74,
+        "op": "m:inverse:CONST",
+        "preparation_h": 0,
+        "source_gates": 74,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 2
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 40,
+        "clifford_h": 0,
+        "clifford_t_depth": 1,
+        "cx": 40,
+        "native_interval": [
+          403894,
+          403934
+        ],
+        "native_rows": 40,
+        "op": "UNCOPY40_m",
+        "preparation_h": 0,
+        "source_gates": 40,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 0
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 40,
+        "clifford_h": 0,
+        "clifford_t_depth": 1,
+        "cx": 40,
+        "native_interval": [
+          403934,
+          403974
+        ],
+        "native_rows": 40,
+        "op": "COPY40_w",
+        "preparation_h": 0,
+        "source_gates": 40,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 0
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 72,
+        "clifford_h": 0,
+        "clifford_t_depth": 3,
+        "cx": 72,
+        "native_interval": [
+          403974,
+          404048
+        ],
+        "native_rows": 74,
+        "op": "w:CONST",
+        "preparation_h": 0,
+        "source_gates": 74,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 2
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 72,
+        "clifford_h": 0,
+        "clifford_t_depth": 3,
+        "cx": 72,
+        "native_interval": [
+          404048,
+          404184
+        ],
+        "native_rows": 136,
+        "op": "w:CONST",
+        "preparation_h": 0,
+        "source_gates": 136,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 64
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 292,
+        "clifford_h": 0,
+        "clifford_t_depth": 5,
+        "cx": 292,
+        "native_interval": [
+          404184,
+          404476
+        ],
+        "native_rows": 292,
+        "op": "w:ADDRESS34",
+        "preparation_h": 0,
+        "source_gates": 292,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 0
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 352,
+        "clifford_h": 0,
+        "clifford_t_depth": 5,
+        "cx": 352,
+        "native_interval": [
+          404476,
+          404828
+        ],
+        "native_rows": 352,
+        "op": "w:SHIFT4",
+        "preparation_h": 0,
+        "source_gates": 352,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 0
+      },
+      {
+        "ccx": 1280,
+        "clifford_cx": 41164,
+        "clifford_h": 2560,
+        "clifford_t_depth": 44670,
+        "cx": 33484,
+        "native_interval": [
+          404828,
+          440360
+        ],
+        "native_rows": 35532,
+        "op": "w:QROM64x8",
+        "preparation_h": 0,
+        "source_gates": 35532,
+        "t_count": 8960,
+        "t_depth": 4608,
+        "x": 768
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 5192,
+        "clifford_h": 1332,
+        "clifford_t_depth": 337,
+        "cx": 1196,
+        "native_interval": [
+          440360,
+          442367
+        ],
+        "native_rows": 2007,
+        "op": "w:SUB",
+        "preparation_h": 0,
+        "source_gates": 2007,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 145
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          442367,
+          467007
+        ],
+        "native_rows": 24640,
+        "op": "w:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          467007,
+          468654
+        ],
+        "native_rows": 1647,
+        "op": "w:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          468654,
+          493294
+        ],
+        "native_rows": 24640,
+        "op": "w:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          493294,
+          494941
+        ],
+        "native_rows": 1647,
+        "op": "w:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          494941,
+          519581
+        ],
+        "native_rows": 24640,
+        "op": "w:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          519581,
+          521228
+        ],
+        "native_rows": 1647,
+        "op": "w:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          521228,
+          545868
+        ],
+        "native_rows": 24640,
+        "op": "w:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          545868,
+          547515
+        ],
+        "native_rows": 1647,
+        "op": "w:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          547515,
+          572155
+        ],
+        "native_rows": 24640,
+        "op": "w:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          572155,
+          573802
+        ],
+        "native_rows": 1647,
+        "op": "w:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          573802,
+          598442
+        ],
+        "native_rows": 24640,
+        "op": "w:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          598442,
+          600089
+        ],
+        "native_rows": 1647,
+        "op": "w:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 152,
+        "clifford_cx": 1582,
+        "clifford_h": 304,
+        "clifford_t_depth": 1685,
+        "cx": 670,
+        "native_interval": [
+          600089,
+          600911
+        ],
+        "native_rows": 822,
+        "op": "w:ROUND",
+        "preparation_h": 0,
+        "source_gates": 822,
+        "t_count": 1064,
+        "t_depth": 608,
+        "x": 0
+      },
+      {
+        "ccx": 288,
+        "clifford_cx": 2522,
+        "clifford_h": 576,
+        "clifford_t_depth": 1469,
+        "cx": 794,
+        "native_interval": [
+          600911,
+          602289
+        ],
+        "native_rows": 1378,
+        "op": "w:SIGNED_LT",
+        "preparation_h": 0,
+        "source_gates": 1378,
+        "t_count": 2016,
+        "t_depth": 584,
+        "x": 296
+      },
+      {
+        "ccx": 144,
+        "clifford_cx": 1800,
+        "clifford_h": 288,
+        "clifford_t_depth": 1163,
+        "cx": 936,
+        "native_interval": [
+          602289,
+          603369
+        ],
+        "native_rows": 1080,
+        "op": "w:SELECT",
+        "preparation_h": 0,
+        "source_gates": 1080,
+        "t_count": 1008,
+        "t_depth": 434,
+        "x": 0
+      },
+      {
+        "ccx": 288,
+        "clifford_cx": 2522,
+        "clifford_h": 576,
+        "clifford_t_depth": 1469,
+        "cx": 794,
+        "native_interval": [
+          603369,
+          604747
+        ],
+        "native_rows": 1378,
+        "op": "w:SIGNED_LT",
+        "preparation_h": 0,
+        "source_gates": 1378,
+        "t_count": 2016,
+        "t_depth": 584,
+        "x": 296
+      },
+      {
+        "ccx": 144,
+        "clifford_cx": 1800,
+        "clifford_h": 288,
+        "clifford_t_depth": 1163,
+        "cx": 936,
+        "native_interval": [
+          604747,
+          605827
+        ],
+        "native_rows": 1080,
+        "op": "w:SELECT",
+        "preparation_h": 0,
+        "source_gates": 1080,
+        "t_count": 1008,
+        "t_depth": 434,
+        "x": 0
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 72,
+        "clifford_h": 0,
+        "clifford_t_depth": 1,
+        "cx": 72,
+        "native_interval": [
+          605827,
+          605899
+        ],
+        "native_rows": 72,
+        "op": "w:DIRTY_XOR72",
+        "preparation_h": 0,
+        "source_gates": 72,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 0
+      },
+      {
+        "ccx": 144,
+        "clifford_cx": 1800,
+        "clifford_h": 288,
+        "clifford_t_depth": 1163,
+        "cx": 936,
+        "native_interval": [
+          605899,
+          606979
+        ],
+        "native_rows": 1080,
+        "op": "w:inverse:SELECT",
+        "preparation_h": 0,
+        "source_gates": 1080,
+        "t_count": 1008,
+        "t_depth": 434,
+        "x": 0
+      },
+      {
+        "ccx": 288,
+        "clifford_cx": 2522,
+        "clifford_h": 576,
+        "clifford_t_depth": 1469,
+        "cx": 794,
+        "native_interval": [
+          606979,
+          608357
+        ],
+        "native_rows": 1378,
+        "op": "w:inverse:SIGNED_LT",
+        "preparation_h": 0,
+        "source_gates": 1378,
+        "t_count": 2016,
+        "t_depth": 584,
+        "x": 296
+      },
+      {
+        "ccx": 144,
+        "clifford_cx": 1800,
+        "clifford_h": 288,
+        "clifford_t_depth": 1163,
+        "cx": 936,
+        "native_interval": [
+          608357,
+          609437
+        ],
+        "native_rows": 1080,
+        "op": "w:inverse:SELECT",
+        "preparation_h": 0,
+        "source_gates": 1080,
+        "t_count": 1008,
+        "t_depth": 434,
+        "x": 0
+      },
+      {
+        "ccx": 288,
+        "clifford_cx": 2522,
+        "clifford_h": 576,
+        "clifford_t_depth": 1469,
+        "cx": 794,
+        "native_interval": [
+          609437,
+          610815
+        ],
+        "native_rows": 1378,
+        "op": "w:inverse:SIGNED_LT",
+        "preparation_h": 0,
+        "source_gates": 1378,
+        "t_count": 2016,
+        "t_depth": 584,
+        "x": 296
+      },
+      {
+        "ccx": 152,
+        "clifford_cx": 1582,
+        "clifford_h": 304,
+        "clifford_t_depth": 1685,
+        "cx": 670,
+        "native_interval": [
+          610815,
+          611637
+        ],
+        "native_rows": 822,
+        "op": "w:inverse:ROUND",
+        "preparation_h": 0,
+        "source_gates": 822,
+        "t_count": 1064,
+        "t_depth": 608,
+        "x": 0
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          611637,
+          613284
+        ],
+        "native_rows": 1647,
+        "op": "w:inverse:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          613284,
+          637924
+        ],
+        "native_rows": 24640,
+        "op": "w:inverse:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          637924,
+          639571
+        ],
+        "native_rows": 1647,
+        "op": "w:inverse:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          639571,
+          664211
+        ],
+        "native_rows": 24640,
+        "op": "w:inverse:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          664211,
+          665858
+        ],
+        "native_rows": 1647,
+        "op": "w:inverse:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          665858,
+          690498
+        ],
+        "native_rows": 24640,
+        "op": "w:inverse:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          690498,
+          692145
+        ],
+        "native_rows": 1647,
+        "op": "w:inverse:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          692145,
+          716785
+        ],
+        "native_rows": 24640,
+        "op": "w:inverse:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          716785,
+          718432
+        ],
+        "native_rows": 1647,
+        "op": "w:inverse:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          718432,
+          743072
+        ],
+        "native_rows": 24640,
+        "op": "w:inverse:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          743072,
+          744719
+        ],
+        "native_rows": 1647,
+        "op": "w:inverse:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          744719,
+          769359
+        ],
+        "native_rows": 24640,
+        "op": "w:inverse:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 5192,
+        "clifford_h": 1332,
+        "clifford_t_depth": 335,
+        "cx": 1196,
+        "native_interval": [
+          769359,
+          771366
+        ],
+        "native_rows": 2007,
+        "op": "w:inverse:SUB",
+        "preparation_h": 0,
+        "source_gates": 2007,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 145
+      },
+      {
+        "ccx": 1280,
+        "clifford_cx": 41164,
+        "clifford_h": 2560,
+        "clifford_t_depth": 44670,
+        "cx": 33484,
+        "native_interval": [
+          771366,
+          806898
+        ],
+        "native_rows": 35532,
+        "op": "w:inverse:QROM64x8",
+        "preparation_h": 0,
+        "source_gates": 35532,
+        "t_count": 8960,
+        "t_depth": 4608,
+        "x": 768
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 352,
+        "clifford_h": 0,
+        "clifford_t_depth": 5,
+        "cx": 352,
+        "native_interval": [
+          806898,
+          807250
+        ],
+        "native_rows": 352,
+        "op": "w:inverse:SHIFT4",
+        "preparation_h": 0,
+        "source_gates": 352,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 0
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 292,
+        "clifford_h": 0,
+        "clifford_t_depth": 5,
+        "cx": 292,
+        "native_interval": [
+          807250,
+          807542
+        ],
+        "native_rows": 292,
+        "op": "w:inverse:ADDRESS34",
+        "preparation_h": 0,
+        "source_gates": 292,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 0
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 72,
+        "clifford_h": 0,
+        "clifford_t_depth": 3,
+        "cx": 72,
+        "native_interval": [
+          807542,
+          807678
+        ],
+        "native_rows": 136,
+        "op": "w:inverse:CONST",
+        "preparation_h": 0,
+        "source_gates": 136,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 64
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 72,
+        "clifford_h": 0,
+        "clifford_t_depth": 3,
+        "cx": 72,
+        "native_interval": [
+          807678,
+          807752
+        ],
+        "native_rows": 74,
+        "op": "w:inverse:CONST",
+        "preparation_h": 0,
+        "source_gates": 74,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 2
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 40,
+        "clifford_h": 0,
+        "clifford_t_depth": 1,
+        "cx": 40,
+        "native_interval": [
+          807752,
+          807792
+        ],
+        "native_rows": 40,
+        "op": "UNCOPY40_w",
+        "preparation_h": 0,
+        "source_gates": 40,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 0
+      }
+    ],
+    "forward_sums": {
+      "ccx": 310120,
+      "clifford_cx": 2346489,
+      "clifford_h": 620272,
+      "clifford_t_depth": 294487,
+      "cx": 485769,
+      "native_rows": 807792,
+      "preparation_h": 32,
+      "source_gates": 807824,
+      "t_count": 2170840,
+      "t_depth": 62516,
+      "x": 11903
+    },
+    "inverse": [
+      {
+        "ccx": 0,
+        "clifford_cx": 40,
+        "clifford_h": 0,
+        "clifford_t_depth": 1,
+        "cx": 40,
+        "native_interval": [
+          807792,
+          807832
+        ],
+        "native_rows": 40,
+        "op": "whole-inverse:UNCOPY40_w",
+        "preparation_h": 0,
+        "source_gates": 40,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 0
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 72,
+        "clifford_h": 0,
+        "clifford_t_depth": 3,
+        "cx": 72,
+        "native_interval": [
+          807832,
+          807906
+        ],
+        "native_rows": 74,
+        "op": "whole-inverse:w:inverse:CONST",
+        "preparation_h": 0,
+        "source_gates": 74,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 2
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 72,
+        "clifford_h": 0,
+        "clifford_t_depth": 3,
+        "cx": 72,
+        "native_interval": [
+          807906,
+          808042
+        ],
+        "native_rows": 136,
+        "op": "whole-inverse:w:inverse:CONST",
+        "preparation_h": 0,
+        "source_gates": 136,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 64
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 292,
+        "clifford_h": 0,
+        "clifford_t_depth": 5,
+        "cx": 292,
+        "native_interval": [
+          808042,
+          808334
+        ],
+        "native_rows": 292,
+        "op": "whole-inverse:w:inverse:ADDRESS34",
+        "preparation_h": 0,
+        "source_gates": 292,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 0
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 352,
+        "clifford_h": 0,
+        "clifford_t_depth": 5,
+        "cx": 352,
+        "native_interval": [
+          808334,
+          808686
+        ],
+        "native_rows": 352,
+        "op": "whole-inverse:w:inverse:SHIFT4",
+        "preparation_h": 0,
+        "source_gates": 352,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 0
+      },
+      {
+        "ccx": 1280,
+        "clifford_cx": 41164,
+        "clifford_h": 2560,
+        "clifford_t_depth": 44670,
+        "cx": 33484,
+        "native_interval": [
+          808686,
+          844218
+        ],
+        "native_rows": 35532,
+        "op": "whole-inverse:w:inverse:QROM64x8",
+        "preparation_h": 0,
+        "source_gates": 35532,
+        "t_count": 8960,
+        "t_depth": 4608,
+        "x": 768
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 5192,
+        "clifford_h": 1332,
+        "clifford_t_depth": 337,
+        "cx": 1196,
+        "native_interval": [
+          844218,
+          846225
+        ],
+        "native_rows": 2007,
+        "op": "whole-inverse:w:inverse:SUB",
+        "preparation_h": 0,
+        "source_gates": 2007,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 145
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          846225,
+          870865
+        ],
+        "native_rows": 24640,
+        "op": "whole-inverse:w:inverse:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          870865,
+          872512
+        ],
+        "native_rows": 1647,
+        "op": "whole-inverse:w:inverse:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          872512,
+          897152
+        ],
+        "native_rows": 24640,
+        "op": "whole-inverse:w:inverse:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          897152,
+          898799
+        ],
+        "native_rows": 1647,
+        "op": "whole-inverse:w:inverse:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          898799,
+          923439
+        ],
+        "native_rows": 24640,
+        "op": "whole-inverse:w:inverse:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          923439,
+          925086
+        ],
+        "native_rows": 1647,
+        "op": "whole-inverse:w:inverse:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          925086,
+          949726
+        ],
+        "native_rows": 24640,
+        "op": "whole-inverse:w:inverse:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          949726,
+          951373
+        ],
+        "native_rows": 1647,
+        "op": "whole-inverse:w:inverse:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          951373,
+          976013
+        ],
+        "native_rows": 24640,
+        "op": "whole-inverse:w:inverse:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          976013,
+          977660
+        ],
+        "native_rows": 1647,
+        "op": "whole-inverse:w:inverse:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          977660,
+          1002300
+        ],
+        "native_rows": 24640,
+        "op": "whole-inverse:w:inverse:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          1002300,
+          1003947
+        ],
+        "native_rows": 1647,
+        "op": "whole-inverse:w:inverse:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 152,
+        "clifford_cx": 1582,
+        "clifford_h": 304,
+        "clifford_t_depth": 1685,
+        "cx": 670,
+        "native_interval": [
+          1003947,
+          1004769
+        ],
+        "native_rows": 822,
+        "op": "whole-inverse:w:inverse:ROUND",
+        "preparation_h": 0,
+        "source_gates": 822,
+        "t_count": 1064,
+        "t_depth": 608,
+        "x": 0
+      },
+      {
+        "ccx": 288,
+        "clifford_cx": 2522,
+        "clifford_h": 576,
+        "clifford_t_depth": 1469,
+        "cx": 794,
+        "native_interval": [
+          1004769,
+          1006147
+        ],
+        "native_rows": 1378,
+        "op": "whole-inverse:w:inverse:SIGNED_LT",
+        "preparation_h": 0,
+        "source_gates": 1378,
+        "t_count": 2016,
+        "t_depth": 584,
+        "x": 296
+      },
+      {
+        "ccx": 144,
+        "clifford_cx": 1800,
+        "clifford_h": 288,
+        "clifford_t_depth": 1163,
+        "cx": 936,
+        "native_interval": [
+          1006147,
+          1007227
+        ],
+        "native_rows": 1080,
+        "op": "whole-inverse:w:inverse:SELECT",
+        "preparation_h": 0,
+        "source_gates": 1080,
+        "t_count": 1008,
+        "t_depth": 434,
+        "x": 0
+      },
+      {
+        "ccx": 288,
+        "clifford_cx": 2522,
+        "clifford_h": 576,
+        "clifford_t_depth": 1469,
+        "cx": 794,
+        "native_interval": [
+          1007227,
+          1008605
+        ],
+        "native_rows": 1378,
+        "op": "whole-inverse:w:inverse:SIGNED_LT",
+        "preparation_h": 0,
+        "source_gates": 1378,
+        "t_count": 2016,
+        "t_depth": 584,
+        "x": 296
+      },
+      {
+        "ccx": 144,
+        "clifford_cx": 1800,
+        "clifford_h": 288,
+        "clifford_t_depth": 1163,
+        "cx": 936,
+        "native_interval": [
+          1008605,
+          1009685
+        ],
+        "native_rows": 1080,
+        "op": "whole-inverse:w:inverse:SELECT",
+        "preparation_h": 0,
+        "source_gates": 1080,
+        "t_count": 1008,
+        "t_depth": 434,
+        "x": 0
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 72,
+        "clifford_h": 0,
+        "clifford_t_depth": 1,
+        "cx": 72,
+        "native_interval": [
+          1009685,
+          1009757
+        ],
+        "native_rows": 72,
+        "op": "whole-inverse:w:DIRTY_XOR72",
+        "preparation_h": 0,
+        "source_gates": 72,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 0
+      },
+      {
+        "ccx": 144,
+        "clifford_cx": 1800,
+        "clifford_h": 288,
+        "clifford_t_depth": 1163,
+        "cx": 936,
+        "native_interval": [
+          1009757,
+          1010837
+        ],
+        "native_rows": 1080,
+        "op": "whole-inverse:w:SELECT",
+        "preparation_h": 0,
+        "source_gates": 1080,
+        "t_count": 1008,
+        "t_depth": 434,
+        "x": 0
+      },
+      {
+        "ccx": 288,
+        "clifford_cx": 2522,
+        "clifford_h": 576,
+        "clifford_t_depth": 1469,
+        "cx": 794,
+        "native_interval": [
+          1010837,
+          1012215
+        ],
+        "native_rows": 1378,
+        "op": "whole-inverse:w:SIGNED_LT",
+        "preparation_h": 0,
+        "source_gates": 1378,
+        "t_count": 2016,
+        "t_depth": 584,
+        "x": 296
+      },
+      {
+        "ccx": 144,
+        "clifford_cx": 1800,
+        "clifford_h": 288,
+        "clifford_t_depth": 1163,
+        "cx": 936,
+        "native_interval": [
+          1012215,
+          1013295
+        ],
+        "native_rows": 1080,
+        "op": "whole-inverse:w:SELECT",
+        "preparation_h": 0,
+        "source_gates": 1080,
+        "t_count": 1008,
+        "t_depth": 434,
+        "x": 0
+      },
+      {
+        "ccx": 288,
+        "clifford_cx": 2522,
+        "clifford_h": 576,
+        "clifford_t_depth": 1469,
+        "cx": 794,
+        "native_interval": [
+          1013295,
+          1014673
+        ],
+        "native_rows": 1378,
+        "op": "whole-inverse:w:SIGNED_LT",
+        "preparation_h": 0,
+        "source_gates": 1378,
+        "t_count": 2016,
+        "t_depth": 584,
+        "x": 296
+      },
+      {
+        "ccx": 152,
+        "clifford_cx": 1582,
+        "clifford_h": 304,
+        "clifford_t_depth": 1685,
+        "cx": 670,
+        "native_interval": [
+          1014673,
+          1015495
+        ],
+        "native_rows": 822,
+        "op": "whole-inverse:w:ROUND",
+        "preparation_h": 0,
+        "source_gates": 822,
+        "t_count": 1064,
+        "t_depth": 608,
+        "x": 0
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          1015495,
+          1017142
+        ],
+        "native_rows": 1647,
+        "op": "whole-inverse:w:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          1017142,
+          1041782
+        ],
+        "native_rows": 24640,
+        "op": "whole-inverse:w:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          1041782,
+          1043429
+        ],
+        "native_rows": 1647,
+        "op": "whole-inverse:w:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          1043429,
+          1068069
+        ],
+        "native_rows": 24640,
+        "op": "whole-inverse:w:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          1068069,
+          1069716
+        ],
+        "native_rows": 1647,
+        "op": "whole-inverse:w:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          1069716,
+          1094356
+        ],
+        "native_rows": 24640,
+        "op": "whole-inverse:w:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          1094356,
+          1096003
+        ],
+        "native_rows": 1647,
+        "op": "whole-inverse:w:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          1096003,
+          1120643
+        ],
+        "native_rows": 24640,
+        "op": "whole-inverse:w:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          1120643,
+          1122290
+        ],
+        "native_rows": 1647,
+        "op": "whole-inverse:w:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          1122290,
+          1146930
+        ],
+        "native_rows": 24640,
+        "op": "whole-inverse:w:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          1146930,
+          1148577
+        ],
+        "native_rows": 1647,
+        "op": "whole-inverse:w:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          1148577,
+          1173217
+        ],
+        "native_rows": 24640,
+        "op": "whole-inverse:w:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 5192,
+        "clifford_h": 1332,
+        "clifford_t_depth": 335,
+        "cx": 1196,
+        "native_interval": [
+          1173217,
+          1175224
+        ],
+        "native_rows": 2007,
+        "op": "whole-inverse:w:SUB",
+        "preparation_h": 0,
+        "source_gates": 2007,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 145
+      },
+      {
+        "ccx": 1280,
+        "clifford_cx": 41164,
+        "clifford_h": 2560,
+        "clifford_t_depth": 44670,
+        "cx": 33484,
+        "native_interval": [
+          1175224,
+          1210756
+        ],
+        "native_rows": 35532,
+        "op": "whole-inverse:w:QROM64x8",
+        "preparation_h": 0,
+        "source_gates": 35532,
+        "t_count": 8960,
+        "t_depth": 4608,
+        "x": 768
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 352,
+        "clifford_h": 0,
+        "clifford_t_depth": 5,
+        "cx": 352,
+        "native_interval": [
+          1210756,
+          1211108
+        ],
+        "native_rows": 352,
+        "op": "whole-inverse:w:SHIFT4",
+        "preparation_h": 0,
+        "source_gates": 352,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 0
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 292,
+        "clifford_h": 0,
+        "clifford_t_depth": 5,
+        "cx": 292,
+        "native_interval": [
+          1211108,
+          1211400
+        ],
+        "native_rows": 292,
+        "op": "whole-inverse:w:ADDRESS34",
+        "preparation_h": 0,
+        "source_gates": 292,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 0
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 72,
+        "clifford_h": 0,
+        "clifford_t_depth": 3,
+        "cx": 72,
+        "native_interval": [
+          1211400,
+          1211536
+        ],
+        "native_rows": 136,
+        "op": "whole-inverse:w:CONST",
+        "preparation_h": 0,
+        "source_gates": 136,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 64
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 72,
+        "clifford_h": 0,
+        "clifford_t_depth": 3,
+        "cx": 72,
+        "native_interval": [
+          1211536,
+          1211610
+        ],
+        "native_rows": 74,
+        "op": "whole-inverse:w:CONST",
+        "preparation_h": 0,
+        "source_gates": 74,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 2
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 40,
+        "clifford_h": 0,
+        "clifford_t_depth": 1,
+        "cx": 40,
+        "native_interval": [
+          1211610,
+          1211650
+        ],
+        "native_rows": 40,
+        "op": "whole-inverse:COPY40_w",
+        "preparation_h": 0,
+        "source_gates": 40,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 0
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 40,
+        "clifford_h": 0,
+        "clifford_t_depth": 1,
+        "cx": 40,
+        "native_interval": [
+          1211650,
+          1211690
+        ],
+        "native_rows": 40,
+        "op": "whole-inverse:UNCOPY40_m",
+        "preparation_h": 0,
+        "source_gates": 40,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 0
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 72,
+        "clifford_h": 0,
+        "clifford_t_depth": 3,
+        "cx": 72,
+        "native_interval": [
+          1211690,
+          1211764
+        ],
+        "native_rows": 74,
+        "op": "whole-inverse:m:inverse:CONST",
+        "preparation_h": 0,
+        "source_gates": 74,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 2
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 72,
+        "clifford_h": 0,
+        "clifford_t_depth": 3,
+        "cx": 72,
+        "native_interval": [
+          1211764,
+          1211900
+        ],
+        "native_rows": 136,
+        "op": "whole-inverse:m:inverse:CONST",
+        "preparation_h": 0,
+        "source_gates": 136,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 64
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 292,
+        "clifford_h": 0,
+        "clifford_t_depth": 5,
+        "cx": 292,
+        "native_interval": [
+          1211900,
+          1212192
+        ],
+        "native_rows": 292,
+        "op": "whole-inverse:m:inverse:ADDRESS34",
+        "preparation_h": 0,
+        "source_gates": 292,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 0
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 352,
+        "clifford_h": 0,
+        "clifford_t_depth": 5,
+        "cx": 352,
+        "native_interval": [
+          1212192,
+          1212544
+        ],
+        "native_rows": 352,
+        "op": "whole-inverse:m:inverse:SHIFT4",
+        "preparation_h": 0,
+        "source_gates": 352,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 0
+      },
+      {
+        "ccx": 1280,
+        "clifford_cx": 41164,
+        "clifford_h": 2560,
+        "clifford_t_depth": 44670,
+        "cx": 33484,
+        "native_interval": [
+          1212544,
+          1248076
+        ],
+        "native_rows": 35532,
+        "op": "whole-inverse:m:inverse:QROM64x8",
+        "preparation_h": 0,
+        "source_gates": 35532,
+        "t_count": 8960,
+        "t_depth": 4608,
+        "x": 768
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 5192,
+        "clifford_h": 1332,
+        "clifford_t_depth": 337,
+        "cx": 1196,
+        "native_interval": [
+          1248076,
+          1250083
+        ],
+        "native_rows": 2007,
+        "op": "whole-inverse:m:inverse:SUB",
+        "preparation_h": 0,
+        "source_gates": 2007,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 145
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          1250083,
+          1274723
+        ],
+        "native_rows": 24640,
+        "op": "whole-inverse:m:inverse:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          1274723,
+          1276370
+        ],
+        "native_rows": 1647,
+        "op": "whole-inverse:m:inverse:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          1276370,
+          1301010
+        ],
+        "native_rows": 24640,
+        "op": "whole-inverse:m:inverse:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          1301010,
+          1302657
+        ],
+        "native_rows": 1647,
+        "op": "whole-inverse:m:inverse:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          1302657,
+          1327297
+        ],
+        "native_rows": 24640,
+        "op": "whole-inverse:m:inverse:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          1327297,
+          1328944
+        ],
+        "native_rows": 1647,
+        "op": "whole-inverse:m:inverse:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          1328944,
+          1353584
+        ],
+        "native_rows": 24640,
+        "op": "whole-inverse:m:inverse:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          1353584,
+          1355231
+        ],
+        "native_rows": 1647,
+        "op": "whole-inverse:m:inverse:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          1355231,
+          1379871
+        ],
+        "native_rows": 24640,
+        "op": "whole-inverse:m:inverse:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          1379871,
+          1381518
+        ],
+        "native_rows": 1647,
+        "op": "whole-inverse:m:inverse:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          1381518,
+          1406158
+        ],
+        "native_rows": 24640,
+        "op": "whole-inverse:m:inverse:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          1406158,
+          1407805
+        ],
+        "native_rows": 1647,
+        "op": "whole-inverse:m:inverse:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 152,
+        "clifford_cx": 1582,
+        "clifford_h": 304,
+        "clifford_t_depth": 1685,
+        "cx": 670,
+        "native_interval": [
+          1407805,
+          1408627
+        ],
+        "native_rows": 822,
+        "op": "whole-inverse:m:inverse:ROUND",
+        "preparation_h": 0,
+        "source_gates": 822,
+        "t_count": 1064,
+        "t_depth": 608,
+        "x": 0
+      },
+      {
+        "ccx": 288,
+        "clifford_cx": 2522,
+        "clifford_h": 576,
+        "clifford_t_depth": 1469,
+        "cx": 794,
+        "native_interval": [
+          1408627,
+          1410005
+        ],
+        "native_rows": 1378,
+        "op": "whole-inverse:m:inverse:SIGNED_LT",
+        "preparation_h": 0,
+        "source_gates": 1378,
+        "t_count": 2016,
+        "t_depth": 584,
+        "x": 296
+      },
+      {
+        "ccx": 144,
+        "clifford_cx": 1800,
+        "clifford_h": 288,
+        "clifford_t_depth": 1163,
+        "cx": 936,
+        "native_interval": [
+          1410005,
+          1411085
+        ],
+        "native_rows": 1080,
+        "op": "whole-inverse:m:inverse:SELECT",
+        "preparation_h": 0,
+        "source_gates": 1080,
+        "t_count": 1008,
+        "t_depth": 434,
+        "x": 0
+      },
+      {
+        "ccx": 288,
+        "clifford_cx": 2522,
+        "clifford_h": 576,
+        "clifford_t_depth": 1469,
+        "cx": 794,
+        "native_interval": [
+          1411085,
+          1412463
+        ],
+        "native_rows": 1378,
+        "op": "whole-inverse:m:inverse:SIGNED_LT",
+        "preparation_h": 0,
+        "source_gates": 1378,
+        "t_count": 2016,
+        "t_depth": 584,
+        "x": 296
+      },
+      {
+        "ccx": 144,
+        "clifford_cx": 1800,
+        "clifford_h": 288,
+        "clifford_t_depth": 1163,
+        "cx": 936,
+        "native_interval": [
+          1412463,
+          1413543
+        ],
+        "native_rows": 1080,
+        "op": "whole-inverse:m:inverse:SELECT",
+        "preparation_h": 0,
+        "source_gates": 1080,
+        "t_count": 1008,
+        "t_depth": 434,
+        "x": 0
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 72,
+        "clifford_h": 0,
+        "clifford_t_depth": 1,
+        "cx": 72,
+        "native_interval": [
+          1413543,
+          1413615
+        ],
+        "native_rows": 72,
+        "op": "whole-inverse:m:DIRTY_XOR72",
+        "preparation_h": 0,
+        "source_gates": 72,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 0
+      },
+      {
+        "ccx": 144,
+        "clifford_cx": 1800,
+        "clifford_h": 288,
+        "clifford_t_depth": 1163,
+        "cx": 936,
+        "native_interval": [
+          1413615,
+          1414695
+        ],
+        "native_rows": 1080,
+        "op": "whole-inverse:m:SELECT",
+        "preparation_h": 0,
+        "source_gates": 1080,
+        "t_count": 1008,
+        "t_depth": 434,
+        "x": 0
+      },
+      {
+        "ccx": 288,
+        "clifford_cx": 2522,
+        "clifford_h": 576,
+        "clifford_t_depth": 1469,
+        "cx": 794,
+        "native_interval": [
+          1414695,
+          1416073
+        ],
+        "native_rows": 1378,
+        "op": "whole-inverse:m:SIGNED_LT",
+        "preparation_h": 0,
+        "source_gates": 1378,
+        "t_count": 2016,
+        "t_depth": 584,
+        "x": 296
+      },
+      {
+        "ccx": 144,
+        "clifford_cx": 1800,
+        "clifford_h": 288,
+        "clifford_t_depth": 1163,
+        "cx": 936,
+        "native_interval": [
+          1416073,
+          1417153
+        ],
+        "native_rows": 1080,
+        "op": "whole-inverse:m:SELECT",
+        "preparation_h": 0,
+        "source_gates": 1080,
+        "t_count": 1008,
+        "t_depth": 434,
+        "x": 0
+      },
+      {
+        "ccx": 288,
+        "clifford_cx": 2522,
+        "clifford_h": 576,
+        "clifford_t_depth": 1469,
+        "cx": 794,
+        "native_interval": [
+          1417153,
+          1418531
+        ],
+        "native_rows": 1378,
+        "op": "whole-inverse:m:SIGNED_LT",
+        "preparation_h": 0,
+        "source_gates": 1378,
+        "t_count": 2016,
+        "t_depth": 584,
+        "x": 296
+      },
+      {
+        "ccx": 152,
+        "clifford_cx": 1582,
+        "clifford_h": 304,
+        "clifford_t_depth": 1685,
+        "cx": 670,
+        "native_interval": [
+          1418531,
+          1419353
+        ],
+        "native_rows": 822,
+        "op": "whole-inverse:m:ROUND",
+        "preparation_h": 0,
+        "source_gates": 822,
+        "t_count": 1064,
+        "t_depth": 608,
+        "x": 0
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          1419353,
+          1421000
+        ],
+        "native_rows": 1647,
+        "op": "whole-inverse:m:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          1421000,
+          1445640
+        ],
+        "native_rows": 24640,
+        "op": "whole-inverse:m:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          1445640,
+          1447287
+        ],
+        "native_rows": 1647,
+        "op": "whole-inverse:m:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          1447287,
+          1471927
+        ],
+        "native_rows": 24640,
+        "op": "whole-inverse:m:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          1471927,
+          1473574
+        ],
+        "native_rows": 1647,
+        "op": "whole-inverse:m:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          1473574,
+          1498214
+        ],
+        "native_rows": 24640,
+        "op": "whole-inverse:m:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          1498214,
+          1499861
+        ],
+        "native_rows": 1647,
+        "op": "whole-inverse:m:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          1499861,
+          1524501
+        ],
+        "native_rows": 24640,
+        "op": "whole-inverse:m:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          1524501,
+          1526148
+        ],
+        "native_rows": 1647,
+        "op": "whole-inverse:m:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          1526148,
+          1550788
+        ],
+        "native_rows": 24640,
+        "op": "whole-inverse:m:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 4977,
+        "clifford_h": 1332,
+        "clifford_t_depth": 334,
+        "cx": 981,
+        "native_interval": [
+          1550788,
+          1552435
+        ],
+        "native_rows": 1647,
+        "op": "whole-inverse:m:ADD",
+        "preparation_h": 0,
+        "source_gates": 1647,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 0
+      },
+      {
+        "ccx": 11762,
+        "clifford_cx": 83216,
+        "clifford_h": 23524,
+        "clifford_t_depth": 3274,
+        "cx": 12644,
+        "native_interval": [
+          1552435,
+          1577075
+        ],
+        "native_rows": 24640,
+        "op": "whole-inverse:m:MUL",
+        "preparation_h": 0,
+        "source_gates": 24640,
+        "t_count": 82334,
+        "t_depth": 1248,
+        "x": 234
+      },
+      {
+        "ccx": 666,
+        "clifford_cx": 5192,
+        "clifford_h": 1332,
+        "clifford_t_depth": 335,
+        "cx": 1196,
+        "native_interval": [
+          1577075,
+          1579082
+        ],
+        "native_rows": 2007,
+        "op": "whole-inverse:m:SUB",
+        "preparation_h": 0,
+        "source_gates": 2007,
+        "t_count": 4662,
+        "t_depth": 127,
+        "x": 145
+      },
+      {
+        "ccx": 1280,
+        "clifford_cx": 41164,
+        "clifford_h": 2560,
+        "clifford_t_depth": 44670,
+        "cx": 33484,
+        "native_interval": [
+          1579082,
+          1614614
+        ],
+        "native_rows": 35532,
+        "op": "whole-inverse:m:QROM64x8",
+        "preparation_h": 0,
+        "source_gates": 35532,
+        "t_count": 8960,
+        "t_depth": 4608,
+        "x": 768
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 352,
+        "clifford_h": 0,
+        "clifford_t_depth": 5,
+        "cx": 352,
+        "native_interval": [
+          1614614,
+          1614966
+        ],
+        "native_rows": 352,
+        "op": "whole-inverse:m:SHIFT4",
+        "preparation_h": 0,
+        "source_gates": 352,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 0
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 292,
+        "clifford_h": 0,
+        "clifford_t_depth": 5,
+        "cx": 292,
+        "native_interval": [
+          1614966,
+          1615258
+        ],
+        "native_rows": 292,
+        "op": "whole-inverse:m:ADDRESS34",
+        "preparation_h": 0,
+        "source_gates": 292,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 0
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 72,
+        "clifford_h": 0,
+        "clifford_t_depth": 3,
+        "cx": 72,
+        "native_interval": [
+          1615258,
+          1615394
+        ],
+        "native_rows": 136,
+        "op": "whole-inverse:m:CONST",
+        "preparation_h": 0,
+        "source_gates": 136,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 64
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 72,
+        "clifford_h": 0,
+        "clifford_t_depth": 3,
+        "cx": 72,
+        "native_interval": [
+          1615394,
+          1615468
+        ],
+        "native_rows": 74,
+        "op": "whole-inverse:m:CONST",
+        "preparation_h": 0,
+        "source_gates": 74,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 2
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 40,
+        "clifford_h": 0,
+        "clifford_t_depth": 1,
+        "cx": 40,
+        "native_interval": [
+          1615468,
+          1615508
+        ],
+        "native_rows": 40,
+        "op": "whole-inverse:COPY40_m",
+        "preparation_h": 0,
+        "source_gates": 40,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 0
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 41,
+        "clifford_h": 0,
+        "clifford_t_depth": 3,
+        "cx": 41,
+        "native_interval": [
+          1615508,
+          1615551
+        ],
+        "native_rows": 43,
+        "op": "whole-inverse:ENCODE_W",
+        "preparation_h": 0,
+        "source_gates": 43,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 2
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 32,
+        "clifford_h": 0,
+        "clifford_t_depth": 1,
+        "cx": 32,
+        "native_interval": [
+          1615551,
+          1615584
+        ],
+        "native_rows": 33,
+        "op": "whole-inverse:ENCODE_M",
+        "preparation_h": 0,
+        "source_gates": 33,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 1
+      },
+      {
+        "ccx": 0,
+        "clifford_cx": 0,
+        "clifford_h": 32,
+        "clifford_t_depth": 1,
+        "cx": 0,
+        "native_interval": [
+          1615584,
+          1615584
+        ],
+        "native_rows": 0,
+        "op": "H32_inverse",
+        "preparation_h": 32,
+        "source_gates": 32,
+        "t_count": 0,
+        "t_depth": 0,
+        "x": 0
+      }
+    ],
+    "inverse_sums": {
+      "ccx": 310120,
+      "clifford_cx": 2346489,
+      "clifford_h": 620272,
+      "clifford_t_depth": 294487,
+      "cx": 485769,
+      "native_rows": 807792,
+      "preparation_h": 32,
+      "source_gates": 807824,
+      "t_count": 2170840,
+      "t_depth": 62516,
+      "x": 11903
+    }
+  },
+  "original_whole_source_capped_schedule_evaluated": false,
+  "qubits": 9028,
+  "schema": "f44-whole-template-A-and-inverse-actual-resource-ledger-v1",
+  "whole_source_cost_or_savings_forecast": null
+}

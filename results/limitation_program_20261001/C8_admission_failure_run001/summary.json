@@ -1,0 +1,55 @@
+{
+  "schema": "root-c8-admission-failure-diagnostic-v1",
+  "passed": false,
+  "local_only": true,
+  "created_utc": "2026-10-03T06:04:15.205961+00:00",
+  "source_receipt": "results/limitation_program_20261001/C8_execution_run001",
+  "original_rates_launched": false,
+  "original_timing_launched": false,
+  "new_test_or_measurement_credit": 0,
+  "original_attempt_immutable": true,
+  "all_actual_receipt_files_bound": 65,
+  "inventory_job_terminal_active_processes": 0,
+  "visible_unrelated_Python_processes": [],
+  "visible_process_observation_is_point_in_time_only": true,
+  "not_a_success_certificate": true,
+  "not_a_sealed_C8_result": true,
+  "reason": "Outside-job observed CPU11.097800548794254% exceeded fixed10%; terminal seal also rejected20.28251714872988%. Threshold remains unchanged.",
+  "observations": [
+    {
+      "observation": "000002",
+      "utc": "2026-10-03T05:57:06.480455+00:00",
+      "outside_CPU_percent_lower_bound": 6.484130094043887,
+      "conflicts": []
+    },
+    {
+      "observation": "000003",
+      "utc": "2026-10-03T05:57:37.483773+00:00",
+      "outside_CPU_percent_lower_bound": 7.530700146627566,
+      "conflicts": []
+    },
+    {
+      "observation": "000004",
+      "utc": "2026-10-03T05:58:08.595416+00:00",
+      "outside_CPU_percent_lower_bound": 11.097800548794254,
+      "conflicts": [
+        {
+          "aggregate_outside_cpu_percent": 11.097800548794254,
+          "reason": "outside-job hardware-capacity CPU is not below10%"
+        }
+      ]
+    },
+    {
+      "observation": "000005",
+      "utc": "2026-10-03T05:58:09.637518+00:00",
+      "outside_CPU_percent_lower_bound": 20.28251714872988,
+      "conflicts": [
+        {
+          "aggregate_outside_cpu_percent": 20.28251714872988,
+          "reason": "outside-job hardware-capacity CPU is not below10%"
+        }
+      ]
+    }
+  ],
+  "next": "Continue paired-loader after independent author review; C8 needs fresh preregistered admission in a quiet window, never retry or overwrite run001."
+}

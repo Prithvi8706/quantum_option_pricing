@@ -1,0 +1,493 @@
+{
+  "LP_FORM_single_exact_bad_value": {
+    "chosen": "2*E_s^2+2*C_J^2*p (Young (a+b)^2 split)",
+    "peer_requirement": "fix one exact bad value per control",
+    "prospectus_mutation_named_two_alternatives": "drop 1_G restriction / use Young (a+b)^2 split"
+  },
+  "ROOT42_conditional": ".context/ROOT_E11_FIXED_POLAR_SAFE_H128_CONDITIONAL_PROOF_REVIEW_run001.json",
+  "ROOT42_result": ".context/E11_B4X12_FIXED_POLAR_SAFE_H128_UNIFORM_ERROR_TEST_ACTUAL_RESULT_ROOT_VERIFICATION_run001.json",
+  "ROOT43": ".context/ROOT_E11_FIXED_POLAR_SAFE_H128_PAYOFF_L2_CONDITIONAL_PROOF_REVIEW_run001.json",
+  "SOURCE_READY_SCI_or_result_authorized": false,
+  "adapter42": "results/limitation_program_20261001/E11_B4x12_fixed_polar_safe_h128_uniform_error_test_run001/executed_adapter.json",
+  "audit_code": "results/limitation_program_20261001/A02_BM_native_financial_bridge_audit_run002/executed_code/audit_box_muller_native_financial_bridge_v2.py",
+  "caps": [
+    180,
+    150,
+    600
+  ],
+  "conditional_review_paths": {
+    ".context/E11_B4X12_FIXED_POLAR_SAFE_H128_PAYOFF_L2_INDEPENDENT_PROSPECTUS_PEER_run001.json": "2f123d526863fed8cc7c5edd9b908741b1d031ae23b21eaeaccf038f41439be2",
+    ".context/ROOT_E11_FIXED_POLAR_SAFE_H128_PAYOFF_L2_CONDITIONAL_PROOF_REVIEW_run001.json": "5251bb068b0e3f8effc6903e2cac11606bb4732ce486ecc7566d4599b1d7e5e8"
+  },
+  "controller42": "results/limitation_program_20261001/E11_B4x12_fixed_polar_safe_h128_uniform_error_test_run001/executed_controller.py",
+  "controller42_pinned_line_SHA256": {
+    "274": "963feb04e7a6fbca22c54ce7fbfc2608c1aa8121e305c5ab9da1439a50565835",
+    "291": "5e38a8a7f494a8861d61091b8fe4dc753e3047cf5cd749f0305a59e2fb0bf0fa",
+    "305": "5fb8ae9b69ae4829989dd66caa4a419910c14cc4cde970a522c75308bb20205c",
+    "314": "7c1be2c9d448c3fce5e5de4244cabd7c4d428f31ec5dcf39cf81f39a33255b83"
+  },
+  "controls": [
+    {
+      "bad": "40*U+tau (eta dropped)",
+      "field": "payoff_jump_constant_C_J",
+      "tag": "JUMP_CONSTANT"
+    },
+    {
+      "bad": "60*lambda only (band dropped)",
+      "field": "bad_or_mismatch_probability_upper",
+      "tag": "PROBABILITY"
+    },
+    {
+      "bad": "2*E_s^2+2*C_J^2*p (Young (a+b)^2 split)",
+      "field": "G_restricted_disjoint_LP_combination",
+      "tag": "LP_FORM"
+    },
+    {
+      "bad": false,
+      "field": "criterion_or_check_failure_seals_negative_with_L2SQ_BASE_L1_RMS_None",
+      "tag": "FAILED_CRITERION"
+    },
+    {
+      "bad": false,
+      "field": "same_coupling_no_native_or_error_independence",
+      "tag": "INDEPENDENCE"
+    }
+  ],
+  "current_review_paths": [
+    ".context/E11_B4X12_FIXED_POLAR_SAFE_H128_PAYOFF_L2_AUTHOR_STATIC_QA_run001.json",
+    ".context/E11_B4X12_FIXED_POLAR_SAFE_H128_PAYOFF_L2_INDEPENDENT_STATIC_PEER_run001.json",
+    ".context/E11_B4X12_FIXED_POLAR_SAFE_H128_PAYOFF_L2_ROOT_STATIC_REVIEW_run001.json"
+  ],
+  "default_decimal_digits": 4300,
+  "emitted_JSON_int_max_bits": 256,
+  "exact13_inclusive_ledger": [
+    "executed_controller.py",
+    "executed_adapter.json",
+    "executed_preflight.md",
+    "executed_ROOT_READY.json",
+    "run_started.json",
+    "selected_premise_authority.json",
+    "fixed_polar_safe_h128_payoff_L2_source_premise_witness.json",
+    "five_metadata_controls.json",
+    "primary_fixed_polar_safe_h128_payoff_squared_L2_bridge.json",
+    "independent_fixed_polar_safe_h128_payoff_squared_L2_bridge.json",
+    "same_profile_reconciliation.json",
+    "summary.json",
+    "manifest.json"
+  ],
+  "financial_policy_price_estimator_G2_physical_or_advantage_results": null,
+  "future_current_SOURCE_READY_terminal_manifest_FIELD_ROOT_result_pins": null,
+  "implementation_protocol_expected_SHA256": "71ad3e48f28c5edbd20e648ef19d21aacaef0540ccdca8466911b7eb069627cc",
+  "implementation_protocol_path": ".context/E11_B4X12_FIXED_POLAR_SAFE_H128_PAYOFF_L2_PLAN_run001.json",
+  "interface": {
+    "F": 40,
+    "G_restricted_disjoint_LP_combination": "E_s^2+(C_J^2-E_s^2)*p",
+    "W": 72,
+    "bad_or_mismatch_probability_upper": "min(1,60*lambda+B_band)",
+    "case": "B4x12",
+    "criterion_or_check_failure_seals_negative_with_L2SQ_BASE_L1_RMS_None": true,
+    "fixed_h_dollars": [
+      1,
+      128
+    ],
+    "fixed_lambda": [
+      1,
+      262144
+    ],
+    "ideal_band_correction": [
+      1,
+      963379197
+    ],
+    "ideal_band_leading_factor": [
+      1,
+      1176
+    ],
+    "inherited42_conditioning": [
+      "all12_fixed_basket_criterion_passed",
+      "all12_simultaneous_on_same_fixed_safe_event"
+    ],
+    "moment_transfer_estimator_saving_accuracy_policy_G2_physical_or_advantage": false,
+    "native_survival_selector": 5644,
+    "native_zero_branch": 13,
+    "no_adaptive_lambda_h_retuning_fallback_or_cross_profile_minimum": true,
+    "payoff_L1_secondary": "E_s*(1-p)+C_J*p",
+    "payoff_RMS": "outward_fixed_sqrt128(L2SQ)",
+    "payoff_jump_constant_C_J": "40*(U+eta)+tau",
+    "payoff_squared_L2_baseline": "E_s^2+1600*p",
+    "pointwise_kernel_M": 4608,
+    "profiles": [
+      "primary90",
+      "independent130"
+    ],
+    "radial_pair_count": 30,
+    "rational_checks": [
+      "R1",
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R6",
+      "R7"
+    ],
+    "same_coupling_no_native_or_error_independence": true,
+    "source_full_payoff": 5697,
+    "sqrt_grid_exponent_fixed": 128
+  },
+  "inventory43": ".context/E11_B4X12_FIXED_POLAR_SAFE_H128_PAYOFF_L2_OPERAND_ROLE_INVENTORY_run001.json",
+  "inventory43_MD": ".context/E11_B4X12_FIXED_POLAR_SAFE_H128_PAYOFF_L2_OPERAND_ROLE_INVENTORY_run001.md",
+  "ir_semantics": "research/controlled_source_completion/ir.py",
+  "manifest42": "results/limitation_program_20261001/E11_B4x12_fixed_polar_safe_h128_uniform_error_test_run001/manifest.json",
+  "maximum_limbs": 4096,
+  "metadata_only": true,
+  "output_bytes_cap": 134217728,
+  "payoff_L2_numeric_and_check_results": null,
+  "peer42": ".context/E11_B4X12_FIXED_POLAR_SAFE_H128_INDEPENDENT_PROSPECTUS_PEER_run001.json",
+  "peer43": ".context/E11_B4X12_FIXED_POLAR_SAFE_H128_PAYOFF_L2_INDEPENDENT_PROSPECTUS_PEER_run001.json",
+  "profiles": {
+    "independent130": {
+      "discount": "results/limitation_program_20261001/A02_BM_native_financial_bridge_audit_run002/independent130_smooth_payoff_bounds.json",
+      "discount_U_field": "independent_true_discount_enclosure",
+      "discount_eta_field": "independent_discount_literal_error_upper",
+      "profile_file": "results/limitation_program_20261001/E11_B4x12_fixed_polar_safe_h128_uniform_error_test_run001/independent_fixed_polar_safe_h128_uniform_error_feasibility.json"
+    },
+    "primary90": {
+      "discount": "results/limitation_program_20261001/A02_BM_native_financial_bridge_run002/smooth_payoff_bounds.json",
+      "discount_U_field": "exact_discount_enclosure",
+      "discount_eta_field": "discount_literal_error_upper",
+      "profile_file": "results/limitation_program_20261001/E11_B4x12_fixed_polar_safe_h128_uniform_error_test_run001/primary_fixed_polar_safe_h128_uniform_error_feasibility.json"
+    }
+  },
+  "prospectus001": ".context/E11_B4X12_FIXED_POLAR_SAFE_UNIFORM_ERROR_FEASIBILITY_run001.json",
+  "prospectus001_MD": ".context/E11_B4X12_FIXED_POLAR_SAFE_UNIFORM_ERROR_FEASIBILITY_run001.md",
+  "prospectus002": ".context/E11_B4X12_FIXED_POLAR_SAFE_UNIFORM_ERROR_FEASIBILITY_run002.json",
+  "prospectus002_MD": ".context/E11_B4X12_FIXED_POLAR_SAFE_UNIFORM_ERROR_FEASIBILITY_run002.md",
+  "prospectus43": ".context/E11_B4X12_FIXED_POLAR_SAFE_H128_PAYOFF_L2_BRIDGE_run001.json",
+  "prospectus43_MD": ".context/E11_B4X12_FIXED_POLAR_SAFE_H128_PAYOFF_L2_BRIDGE_run001.md",
+  "reconciliation42": "results/limitation_program_20261001/E11_B4x12_fixed_polar_safe_h128_uniform_error_test_run001/same_profile_reconciliation.json",
+  "reduced_bits": 131072,
+  "resident_set_bytes": 157286400,
+  "runtime_manifest": "results/limitation_program_20261001/E11_native_coordinate_squared_L2_run001/manifest.json",
+  "schema": "e11-B4x12-fixed-polar-safe-h128-payoff-squared-L2-bridge-input-adapter-v1",
+  "scientific_evaluation_performed": false,
+  "selected_expected_SHA256": {
+    ".context/E11_B4X12_FIXED_POLAR_SAFE_H128_INDEPENDENT_PROSPECTUS_PEER_run001.json": "dbab4633e708bb5c2a3bfddf48dcfe543381cf61711f81e5a2707e923a5d700b",
+    ".context/E11_B4X12_FIXED_POLAR_SAFE_H128_PAYOFF_L2_BRIDGE_run001.json": "9c363bd7aae3e165d530ab1c11a53181ebb26a5e63d7fc16a9eaec3337237e94",
+    ".context/E11_B4X12_FIXED_POLAR_SAFE_H128_PAYOFF_L2_BRIDGE_run001.md": "6a70fc53f245ec8ee4f6dc2c87d3ba893126167c281707b22181c00ed84ca818",
+    ".context/E11_B4X12_FIXED_POLAR_SAFE_H128_PAYOFF_L2_INDEPENDENT_PROSPECTUS_PEER_run001.json": "2f123d526863fed8cc7c5edd9b908741b1d031ae23b21eaeaccf038f41439be2",
+    ".context/E11_B4X12_FIXED_POLAR_SAFE_H128_PAYOFF_L2_OPERAND_ROLE_INVENTORY_run001.json": "1bd296bee6d6f113db9c72698d9f7c8435bd6ddee63bfdd25d6927d1ab198be6",
+    ".context/E11_B4X12_FIXED_POLAR_SAFE_H128_PAYOFF_L2_OPERAND_ROLE_INVENTORY_run001.md": "2df4fb0f6cf3c3b8aa584bb2210121c8d08509a578ced95d2ee0205ebe408a46",
+    ".context/E11_B4X12_FIXED_POLAR_SAFE_H128_UNIFORM_ERROR_TEST_ACTUAL_RESULT_ROOT_VERIFICATION_run001.json": "c5f1bf3f358e537274bac297581d5e9e7f1c246072059b04886d607f4cea3e33",
+    ".context/E11_B4X12_FIXED_POLAR_SAFE_UNIFORM_ERROR_FEASIBILITY_run001.json": "4d0733119751f86b05072c3ddb9111fb00fdd10e4c4395164fe64b074b55b047",
+    ".context/E11_B4X12_FIXED_POLAR_SAFE_UNIFORM_ERROR_FEASIBILITY_run001.md": "d673d81da8e91a3ad84db02f85f8e7d7fe5ce276ff5fcd8944747623f9530364",
+    ".context/E11_B4X12_FIXED_POLAR_SAFE_UNIFORM_ERROR_FEASIBILITY_run002.json": "063968d8554265743f8383e6ab6fdc7c98bd292a71685eb9798c330a0de24fad",
+    ".context/E11_B4X12_FIXED_POLAR_SAFE_UNIFORM_ERROR_FEASIBILITY_run002.md": "04b491906b3dfadfb790fee41f7bca8dfc98991a7929770c785ad1ced3c0cc59",
+    ".context/ROOT_E11_FIXED_POLAR_SAFE_H128_CONDITIONAL_PROOF_REVIEW_run001.json": "5eff6dcffe3754400121eab5b414407cbac5210916fd10fd67b9bc5cc027dc08",
+    ".context/ROOT_E11_FIXED_POLAR_SAFE_H128_PAYOFF_L2_CONDITIONAL_PROOF_REVIEW_run001.json": "5251bb068b0e3f8effc6903e2cac11606bb4732ce486ecc7566d4599b1d7e5e8",
+    "research/controlled_source_completion/ir.py": "3a4af54bd2e439ef060b747ea8f26a0897ce9e4a119509b57fb018d936d5d223",
+    "results/limitation_program_20261001/A02_BM_native_financial_bridge_audit_run002/executed_code/audit_box_muller_native_financial_bridge_v2.py": "063f8bf73faa0751b4dfa0f6aa227e2cbe457d89dc0c3f1fc0d12ac2c40998e9",
+    "results/limitation_program_20261001/A02_BM_native_financial_bridge_audit_run002/independent130_smooth_payoff_bounds.json": "557ad358b5260fd39a2bfea7a18c86ae747ec1973630559994faf86b75a17702",
+    "results/limitation_program_20261001/A02_BM_native_financial_bridge_run002/smooth_payoff_bounds.json": "c31be96d9e4980a40ab1037466bf43698f8a55567225b0a86db320b3ac0ebb62",
+    "results/limitation_program_20261001/A10_coefficient_run001/B4x12/min-depth/target.json": "a7a682731b3cdb6f16b32a9b1a467d6bfeccb32ea97e583ab79e5252bb7a9384",
+    "results/limitation_program_20261001/E11_B4x12_fixed_polar_safe_h128_uniform_error_test_run001/executed_adapter.json": "0caab3ae094f5b6f833c59903858eb2cfb732622bd76bc7b1e118d7ee7e615f3",
+    "results/limitation_program_20261001/E11_B4x12_fixed_polar_safe_h128_uniform_error_test_run001/executed_controller.py": "cbf180d302155536134fd4dab4b7e9667c3b2043ecdcfe52e795d70b1edf4144",
+    "results/limitation_program_20261001/E11_B4x12_fixed_polar_safe_h128_uniform_error_test_run001/independent_fixed_polar_safe_h128_uniform_error_feasibility.json": "5447209f05c17e99c89bb893793a5d62506de1dd6bfc1078eb1cba3e54484704",
+    "results/limitation_program_20261001/E11_B4x12_fixed_polar_safe_h128_uniform_error_test_run001/manifest.json": "e3b748925b525e0bb1154e438016b005bf30b7bf73461d0133034e763f937901",
+    "results/limitation_program_20261001/E11_B4x12_fixed_polar_safe_h128_uniform_error_test_run001/primary_fixed_polar_safe_h128_uniform_error_feasibility.json": "369f16352cd77be2a621f14d2810f24c58227248ffbebf004cf8b8208b639dc4",
+    "results/limitation_program_20261001/E11_B4x12_fixed_polar_safe_h128_uniform_error_test_run001/same_profile_reconciliation.json": "59b799899dcc2196b83cc54d53b78a42143ed43de3cc1fd2610eea2b2595d2db",
+    "results/limitation_program_20261001/E11_B4x12_fixed_polar_safe_h128_uniform_error_test_run001/summary.json": "82203b9d9c31ce0ccdc23df4d4c4ab360c237e212bd2b5fdb23ad88fce37dd2c",
+    "results/limitation_program_20261001/E11_native_coordinate_squared_L2_run001/manifest.json": "bb1f08a600712e34d1fa4b3c77f0ea04147c5368c8f92dc4f9a21ed3e293df95"
+  },
+  "selected_input_modes": {
+    ".context/E11_B4X12_FIXED_POLAR_SAFE_H128_INDEPENDENT_PROSPECTUS_PEER_run001.json": "ordinary_json",
+    ".context/E11_B4X12_FIXED_POLAR_SAFE_H128_PAYOFF_L2_BRIDGE_run001.json": "ordinary_json",
+    ".context/E11_B4X12_FIXED_POLAR_SAFE_H128_PAYOFF_L2_BRIDGE_run001.md": "plain_text_only",
+    ".context/E11_B4X12_FIXED_POLAR_SAFE_H128_PAYOFF_L2_INDEPENDENT_PROSPECTUS_PEER_run001.json": "ordinary_json",
+    ".context/E11_B4X12_FIXED_POLAR_SAFE_H128_PAYOFF_L2_OPERAND_ROLE_INVENTORY_run001.json": "ordinary_json",
+    ".context/E11_B4X12_FIXED_POLAR_SAFE_H128_PAYOFF_L2_OPERAND_ROLE_INVENTORY_run001.md": "plain_text_only",
+    ".context/E11_B4X12_FIXED_POLAR_SAFE_H128_UNIFORM_ERROR_TEST_ACTUAL_RESULT_ROOT_VERIFICATION_run001.json": "ordinary_json",
+    ".context/E11_B4X12_FIXED_POLAR_SAFE_UNIFORM_ERROR_FEASIBILITY_run001.json": "ordinary_json",
+    ".context/E11_B4X12_FIXED_POLAR_SAFE_UNIFORM_ERROR_FEASIBILITY_run001.md": "plain_text_only",
+    ".context/E11_B4X12_FIXED_POLAR_SAFE_UNIFORM_ERROR_FEASIBILITY_run002.json": "ordinary_json",
+    ".context/E11_B4X12_FIXED_POLAR_SAFE_UNIFORM_ERROR_FEASIBILITY_run002.md": "plain_text_only",
+    ".context/ROOT_E11_FIXED_POLAR_SAFE_H128_CONDITIONAL_PROOF_REVIEW_run001.json": "ordinary_json",
+    ".context/ROOT_E11_FIXED_POLAR_SAFE_H128_PAYOFF_L2_CONDITIONAL_PROOF_REVIEW_run001.json": "ordinary_json",
+    "research/controlled_source_completion/ir.py": "plaintext_AST_only",
+    "results/limitation_program_20261001/A02_BM_native_financial_bridge_audit_run002/executed_code/audit_box_muller_native_financial_bridge_v2.py": "plaintext_AST_only",
+    "results/limitation_program_20261001/A02_BM_native_financial_bridge_audit_run002/independent130_smooth_payoff_bounds.json": "ordinary_json",
+    "results/limitation_program_20261001/A02_BM_native_financial_bridge_run002/smooth_payoff_bounds.json": "ordinary_json",
+    "results/limitation_program_20261001/A10_coefficient_run001/B4x12/min-depth/target.json": "ordinary_json",
+    "results/limitation_program_20261001/E11_B4x12_fixed_polar_safe_h128_uniform_error_test_run001/executed_adapter.json": "ordinary_json",
+    "results/limitation_program_20261001/E11_B4x12_fixed_polar_safe_h128_uniform_error_test_run001/executed_controller.py": "plaintext_AST_only",
+    "results/limitation_program_20261001/E11_B4x12_fixed_polar_safe_h128_uniform_error_test_run001/independent_fixed_polar_safe_h128_uniform_error_feasibility.json": "ordinary_json",
+    "results/limitation_program_20261001/E11_B4x12_fixed_polar_safe_h128_uniform_error_test_run001/manifest.json": "ordinary_json",
+    "results/limitation_program_20261001/E11_B4x12_fixed_polar_safe_h128_uniform_error_test_run001/primary_fixed_polar_safe_h128_uniform_error_feasibility.json": "ordinary_json",
+    "results/limitation_program_20261001/E11_B4x12_fixed_polar_safe_h128_uniform_error_test_run001/same_profile_reconciliation.json": "ordinary_json",
+    "results/limitation_program_20261001/E11_B4x12_fixed_polar_safe_h128_uniform_error_test_run001/summary.json": "ordinary_json",
+    "results/limitation_program_20261001/E11_native_coordinate_squared_L2_run001/manifest.json": "ordinary_json"
+  },
+  "selected_original_8_field_fingerprints": {
+    ".context/E11_B4X12_FIXED_POLAR_SAFE_H128_INDEPENDENT_PROSPECTUS_PEER_run001.json": [
+      12265114460010605799,
+      52917295621631949,
+      20086,
+      1791438687369727600,
+      1791438687368711800,
+      33206,
+      32,
+      0
+    ],
+    ".context/E11_B4X12_FIXED_POLAR_SAFE_H128_PAYOFF_L2_BRIDGE_run001.json": [
+      12265114460010605799,
+      19421773393708836,
+      20359,
+      1791510505252921900,
+      1791510505250919900,
+      33206,
+      32,
+      0
+    ],
+    ".context/E11_B4X12_FIXED_POLAR_SAFE_H128_PAYOFF_L2_BRIDGE_run001.md": [
+      12265114460010605799,
+      30680772461750260,
+      10589,
+      1791510505207566400,
+      1791510505205555000,
+      33206,
+      32,
+      0
+    ],
+    ".context/E11_B4X12_FIXED_POLAR_SAFE_H128_PAYOFF_L2_INDEPENDENT_PROSPECTUS_PEER_run001.json": [
+      12265114460010605799,
+      13510798883030856,
+      27147,
+      1791511442307897900,
+      1791511442304897400,
+      33206,
+      32,
+      0
+    ],
+    ".context/E11_B4X12_FIXED_POLAR_SAFE_H128_PAYOFF_L2_OPERAND_ROLE_INVENTORY_run001.json": [
+      12265114460010605799,
+      3940649674851525,
+      74651,
+      1791510748360168800,
+      1791510748356169800,
+      33206,
+      32,
+      0
+    ],
+    ".context/E11_B4X12_FIXED_POLAR_SAFE_H128_PAYOFF_L2_OPERAND_ROLE_INVENTORY_run001.md": [
+      12265114460010605799,
+      3940649674851524,
+      2635,
+      1791510748340647000,
+      1791510748338649000,
+      33206,
+      32,
+      0
+    ],
+    ".context/E11_B4X12_FIXED_POLAR_SAFE_H128_UNIFORM_ERROR_TEST_ACTUAL_RESULT_ROOT_VERIFICATION_run001.json": [
+      12265114460010605799,
+      29836347531429380,
+      14468,
+      1791441859552292600,
+      1791441859550292900,
+      33206,
+      32,
+      0
+    ],
+    ".context/E11_B4X12_FIXED_POLAR_SAFE_UNIFORM_ERROR_FEASIBILITY_run001.json": [
+      12265114460010605799,
+      23362423067074268,
+      16487,
+      1791395135893939800,
+      1791395135892938600,
+      33206,
+      32,
+      0
+    ],
+    ".context/E11_B4X12_FIXED_POLAR_SAFE_UNIFORM_ERROR_FEASIBILITY_run001.md": [
+      12265114460010605799,
+      23080948090425839,
+      8938,
+      1791395029863378400,
+      1791395029862380700,
+      33206,
+      32,
+      0
+    ],
+    ".context/E11_B4X12_FIXED_POLAR_SAFE_UNIFORM_ERROR_FEASIBILITY_run002.json": [
+      12265114460010605799,
+      8725724278474705,
+      18518,
+      1791395845177789600,
+      1791395845175792600,
+      33206,
+      32,
+      0
+    ],
+    ".context/E11_B4X12_FIXED_POLAR_SAFE_UNIFORM_ERROR_FEASIBILITY_run002.md": [
+      12265114460010605799,
+      36310271995989616,
+      6239,
+      1791395790964179000,
+      1791395368565870200,
+      33206,
+      32,
+      0
+    ],
+    ".context/ROOT_E11_FIXED_POLAR_SAFE_H128_CONDITIONAL_PROOF_REVIEW_run001.json": [
+      12265114460010605799,
+      57139420272331580,
+      3106,
+      1791438784814698400,
+      1791438784812695700,
+      33206,
+      32,
+      0
+    ],
+    ".context/ROOT_E11_FIXED_POLAR_SAFE_H128_PAYOFF_L2_CONDITIONAL_PROOF_REVIEW_run001.json": [
+      12265114460010605799,
+      10133099162328904,
+      6987,
+      1791511595363141400,
+      1791511595362133500,
+      33206,
+      32,
+      0
+    ],
+    "research/controlled_source_completion/ir.py": [
+      12265114460010605799,
+      3377699721304188,
+      7121,
+      1790079919413930100,
+      1790079919412927200,
+      33206,
+      32,
+      0
+    ],
+    "results/limitation_program_20261001/A02_BM_native_financial_bridge_audit_run002/executed_code/audit_box_muller_native_financial_bridge_v2.py": [
+      12265114460010605799,
+      1407374886272888,
+      211443,
+      1791025808445803700,
+      1791025808444804500,
+      33206,
+      32,
+      0
+    ],
+    "results/limitation_program_20261001/A02_BM_native_financial_bridge_audit_run002/independent130_smooth_payoff_bounds.json": [
+      12265114460010605799,
+      4785074606797558,
+      3066,
+      1791025869562241500,
+      1791025869562241500,
+      33206,
+      32,
+      0
+    ],
+    "results/limitation_program_20261001/A02_BM_native_financial_bridge_run002/smooth_payoff_bounds.json": [
+      12265114460010605799,
+      281474979430301,
+      24520,
+      1791025606670323900,
+      1791025606670323900,
+      33206,
+      32,
+      0
+    ],
+    "results/limitation_program_20261001/A10_coefficient_run001/B4x12/min-depth/target.json": [
+      12265114460010605799,
+      562949955821394,
+      321011,
+      1790839034090303800,
+      1790916629373233000,
+      33206,
+      32,
+      0
+    ],
+    "results/limitation_program_20261001/E11_B4x12_fixed_polar_safe_h128_uniform_error_test_run001/executed_adapter.json": [
+      12265114460010605799,
+      2251799814463843,
+      27459,
+      1791441566437609800,
+      1791441566436610300,
+      33206,
+      32,
+      0
+    ],
+    "results/limitation_program_20261001/E11_B4x12_fixed_polar_safe_h128_uniform_error_test_run001/executed_controller.py": [
+      12265114460010605799,
+      3940649674727778,
+      55305,
+      1791441566428076900,
+      1791441566427062700,
+      33206,
+      32,
+      0
+    ],
+    "results/limitation_program_20261001/E11_B4x12_fixed_polar_safe_h128_uniform_error_test_run001/independent_fixed_polar_safe_h128_uniform_error_feasibility.json": [
+      12265114460010605799,
+      63050394783259172,
+      235629,
+      1791441572020072700,
+      1791441572004900300,
+      33206,
+      32,
+      0
+    ],
+    "results/limitation_program_20261001/E11_B4x12_fixed_polar_safe_h128_uniform_error_test_run001/manifest.json": [
+      12265114460010605799,
+      16888498603418075,
+      7600,
+      1791441573100151400,
+      1791441573096636000,
+      33206,
+      32,
+      0
+    ],
+    "results/limitation_program_20261001/E11_B4x12_fixed_polar_safe_h128_uniform_error_test_run001/primary_fixed_polar_safe_h128_uniform_error_feasibility.json": [
+      12265114460010605799,
+      13792273859600784,
+      190205,
+      1791441569428507000,
+      1791441569423999500,
+      33206,
+      32,
+      0
+    ],
+    "results/limitation_program_20261001/E11_B4x12_fixed_polar_safe_h128_uniform_error_test_run001/same_profile_reconciliation.json": [
+      12265114460010605799,
+      3940649674727831,
+      523,
+      1791441572034619300,
+      1791441572029094500,
+      33206,
+      32,
+      0
+    ],
+    "results/limitation_program_20261001/E11_B4x12_fixed_polar_safe_h128_uniform_error_test_run001/summary.json": [
+      12265114460010605799,
+      5629499534991778,
+      2463,
+      1791441573083122300,
+      1791441573080248800,
+      33206,
+      32,
+      0
+    ],
+    "results/limitation_program_20261001/E11_native_coordinate_squared_L2_run001/manifest.json": [
+      12265114460010605799,
+      5066549583549237,
+      1069934,
+      1791185138364646400,
+      1791185138314543000,
+      33206,
+      32,
+      0
+    ]
+  },
+  "summary42": "results/limitation_program_20261001/E11_B4x12_fixed_polar_safe_h128_uniform_error_test_run001/summary.json",
+  "target": "results/limitation_program_20261001/A10_coefficient_run001/B4x12/min-depth/target.json",
+  "temporary_bits": 524288
+}

@@ -1,0 +1,57 @@
+{
+  "passed": true,
+  "source_model_parameters": {
+    "spot": 100.0,
+    "strike": 100.0,
+    "barrier": 140.0,
+    "sigma": 0.3,
+    "rho": 0.4,
+    "rate": 0.03,
+    "maturity": 1.0
+  },
+  "classical_contract": "discounted positive Asian arithmetic average minus100,zeroifanymonitored equal-weight basket>=140",
+  "classical_dimension": {
+    "B4x12": 48,
+    "B8x52": 416
+  },
+  "classical_law": "Float64 scrambledSobol->clipped inverse-normal->fullrank covariance PCA, or survival-conditioned OSS; iid reference usesPCG64 standard normals withonefactor exactdate stepping. These are numerical constructions for theoriginal continuousGBM estimand.",
+  "classical_numeric_endpoint_clip": [
+    1e-15,
+    0.999999999999999
+  ],
+  "classical_numeric_inverse_normal_root_roundoff_bias_dollars": null,
+  "classical_hard_payoff_and_preintegrated_estimands_differ_pointwise_but_target_same_continuous_expectation": true,
+  "actual_time_includes_uniform_generation_inverse_normal_GEMM_and_payoff": true,
+  "actual_factor_built_per_worker_inside_timed_run": true,
+  "warm_start_excludes_worker_creation_initial_cache_and_compilation": true,
+  "fresh_cached_and_cold_start_sensitivities_exist_in_code": true,
+  "noPCA_rank_dropped": true,
+  "quantum_law": "Independentuniform32 words,exactf40midpoints,jointsharedinputBoxMuller,native table arithmetic,clipped logpath,native exp/strictbarrier/alreadydiscounted72bitY",
+  "quantum_cases": {
+    "B4x12": {
+      "target_sha256": "a7a682731b3cdb6f16b32a9b1a467d6bfeccb32ea97e583ab79e5252bb7a9384",
+      "random_uniform32_words": 60,
+      "shared_Box_Muller_pairs": 30,
+      "fraction_bits": 40,
+      "native_width": 72,
+      "original_named_output": {
+        "Y": 5697
+      }
+    },
+    "B8x52": {
+      "target_sha256": "267dcaa74aa9dd5cb1339c65006b122389331f42f0002f483bd6eed05c31090b",
+      "random_uniform32_words": 468,
+      "shared_Box_Muller_pairs": 234,
+      "fraction_bits": 40,
+      "native_width": 72,
+      "original_named_output": {
+        "Y": 46801
+      }
+    }
+  },
+  "identical_actual_finite_sampler_or_arithmetic": false,
+  "full_common_continuous_price_bridge_certified": false,
+  "exact_finite_law_classical_comparator_executed_in_this_audit": false,
+  "full_G2_open": true,
+  "financial_accuracy_and_G4_closed": false
+}

@@ -1,0 +1,122 @@
+{
+  "passed": true,
+  "diagnostic_families": 2,
+  "cases": [
+    {
+      "case": "B4x12",
+      "diagnostic_domain": "Algebraic/native stock-sum interface tuples within clipping support; these are not claimed to be realised finite Box-Muller paths",
+      "one_stock_threshold_diagnostic": {
+        "same_first_asset_dollars": 100,
+        "surviving_stock_tuple": [
+          100,
+          100,
+          100,
+          100
+        ],
+        "knocked_out_stock_tuple": [
+          100,
+          200,
+          200,
+          200
+        ],
+        "exact_native_basket_raw_values": [
+          109951162777600,
+          192414534860800
+        ],
+        "all_individual_stocks_below_H_is_not_necessary": {
+          "stock_tuple": [
+            200,
+            100,
+            100,
+            100
+          ],
+          "basket_raw": 137438953472000
+        },
+        "conclusion": "A predicate on one fixed stock/log cannot determine an unrestricted sum-of-stocks basket; conjunction of stock<H conditions is only sufficient. No whole finite-law replacement theorem is supplied."
+      },
+      "arithmetic_Asian_log_average_diagnostic": {
+        "equal_product_identity": "50*162 = 90^2, so paired geometric means and ideal average logs agree",
+        "uniform_stock_dollars": 90,
+        "alternate_pair_dollars": [
+          50,
+          162
+        ],
+        "total_stock_dates": 48,
+        "exact_native_average_raw_values": [
+          98956046498400,
+          116548232542560
+        ],
+        "native_strike_raw": 109951162777600,
+        "conclusion": "Equal products/average logs do not fix the arithmetic Asian mean or its strictly positive strike predicate. Native floor and the actual rounded coefficient were retained."
+      }
+    },
+    {
+      "case": "B8x52",
+      "diagnostic_domain": "Algebraic/native stock-sum interface tuples within clipping support; these are not claimed to be realised finite Box-Muller paths",
+      "one_stock_threshold_diagnostic": {
+        "same_first_asset_dollars": 100,
+        "surviving_stock_tuple": [
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100
+        ],
+        "knocked_out_stock_tuple": [
+          100,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200
+        ],
+        "exact_native_basket_raw_values": [
+          109951162777600,
+          206158430208000
+        ],
+        "all_individual_stocks_below_H_is_not_necessary": {
+          "stock_tuple": [
+            200,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100
+          ],
+          "basket_raw": 123695058124800
+        },
+        "conclusion": "A predicate on one fixed stock/log cannot determine an unrestricted sum-of-stocks basket; conjunction of stock<H conditions is only sufficient. No whole finite-law replacement theorem is supplied."
+      },
+      "arithmetic_Asian_log_average_diagnostic": {
+        "equal_product_identity": "50*162 = 90^2, so paired geometric means and ideal average logs agree",
+        "uniform_stock_dollars": 90,
+        "alternate_pair_dollars": [
+          50,
+          162
+        ],
+        "total_stock_dates": 416,
+        "exact_native_average_raw_values": [
+          98956046517120,
+          116548232564608
+        ],
+        "native_strike_raw": 109951162777600,
+        "conclusion": "Equal products/average logs do not fix the arithmetic Asian mean or its strictly positive strike predicate. Native floor and the actual rounded coefficient were retained."
+      }
+    }
+  ],
+  "algebraically_eligible_whole_domain_predicate_proofs": 0,
+  "conditional_single_asset_submodel_only": "For a separately defined ideal single-asset positive spot, exp(log S)<H iff log S<log H; min/max of such component comparisons may be composed. This does not certify a threshold for the current quantized polynomial, ties or native clipped endpoints, and does not replace current arithmetic baskets or Asian means.",
+  "direct_exact_log_domain_transfer_for_current_payoff_closed": true,
+  "closure_scope": "The available algebraic transfer is inadmissible without an exact whole-supported-domain replacement theorem. Interface diagnostics do not prove impossibility for all reachable finite-law tuples.",
+  "universal_QSP_impossibility_claim": false,
+  "approximate_structured_signal_remaining_conditional": true,
+  "new_financial_paths_or_prices": 0,
+  "new_circuits": 0
+}

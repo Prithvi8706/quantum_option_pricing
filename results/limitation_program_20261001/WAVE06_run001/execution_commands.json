@@ -1,0 +1,34 @@
+{
+  "local_only": true,
+  "commands": [
+    [
+      "C:\\Users\\prith\\quantum_option_pricing\\.context\\frontier_t0_env\\Scripts\\python.exe",
+      "-m",
+      "research.limitation_program_20261001.experiment_range_leaf",
+      "--output",
+      "results\\limitation_program_20261001\\A09_range_leaf_run001"
+    ],
+    [
+      "C:\\Users\\prith\\quantum_option_pricing\\.context\\frontier_t0_env\\Scripts\\python.exe",
+      "-m",
+      "research.limitation_program_20261001.experiment_range",
+      "--source-root",
+      "results/limitation_program_20261001/A11_nonrestoring_run001",
+      "--leaf-root",
+      "results\\limitation_program_20261001\\A09_range_leaf_run001",
+      "--output",
+      "results\\limitation_program_20261001\\A09_range_run001"
+    ],
+    [
+      "C:\\Users\\prith\\quantum_option_pricing\\.context\\frontier_t0_env\\Scripts\\python.exe",
+      "-m",
+      "research.limitation_program_20261001.reconcile_range",
+      "--leaf-root",
+      "results\\limitation_program_20261001\\A09_range_leaf_run001",
+      "--source-root",
+      "results\\limitation_program_20261001\\A09_range_run001",
+      "--output",
+      "results\\limitation_program_20261001\\A01_run012"
+    ]
+  ]
+}

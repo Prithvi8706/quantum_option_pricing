@@ -1,0 +1,143 @@
+{
+  "passed": true,
+  "local_only": true,
+  "cases": [
+    {
+      "case": "B4x12",
+      "ideal_law": "independent Phi_inverse((raw+1/2)/2^q) scalar normals",
+      "normal_coordinates": 60,
+      "uniform_bits": 32,
+      "coordinate_total_variation_upper_dollars_exact": [
+        80,
+        1
+      ],
+      "all_date_continuous_payoff_grid_law_error_upper_dollars_exact": [
+        75,
+        134217728
+      ],
+      "headroom_exact": [
+        11,
+        2000
+      ],
+      "ideal_grid_law_term_fits_headroom": true,
+      "continuous_ideal_grid_law_certificate": true,
+      "accepted_Box_Muller_law_certified": false,
+      "native_rounded_inverse_CDF_or_path_certified": false,
+      "coherent_loader_implemented": false,
+      "complete_original_price_certified": false,
+      "second_discount_applied": false,
+      "original_model_binding": {
+        "case": "B4x12",
+        "assets": 4,
+        "dates": 12,
+        "volatility_exact": [
+          3,
+          10
+        ],
+        "correlation_exact": [
+          2,
+          5
+        ],
+        "spot_dollars_exact": [
+          100,
+          1
+        ],
+        "rate_exact": [
+          3,
+          100
+        ],
+        "maturity_years_exact": [
+          1,
+          1
+        ],
+        "strike_dollars_exact": [
+          100,
+          1
+        ],
+        "barrier_dollars_exact": [
+          140,
+          1
+        ],
+        "equal_asset_volatility": true,
+        "basket": "positive equal-weight arithmetic spot basket",
+        "builder_path": "C:\\Users\\prith\\quantum_option_pricing\\research\\advantage_frontier_20260923\\barrier_oracle_depth.py",
+        "builder_sha256": "1e0e225131c668f133ef05a5de3f78fbad4fb5307a2fc8c452d99d14c8dda929",
+        "continuous_driver_law": "independent common and idiosyncratic Brownian drivers",
+        "digital_paired_outputs_claimed_independent_gaussian": false
+      }
+    },
+    {
+      "case": "B8x52",
+      "ideal_law": "independent Phi_inverse((raw+1/2)/2^q) scalar normals",
+      "normal_coordinates": 468,
+      "uniform_bits": 32,
+      "coordinate_total_variation_upper_dollars_exact": [
+        80,
+        1
+      ],
+      "all_date_continuous_payoff_grid_law_error_upper_dollars_exact": [
+        585,
+        134217728
+      ],
+      "headroom_exact": [
+        11,
+        2000
+      ],
+      "ideal_grid_law_term_fits_headroom": true,
+      "continuous_ideal_grid_law_certificate": true,
+      "accepted_Box_Muller_law_certified": false,
+      "native_rounded_inverse_CDF_or_path_certified": false,
+      "coherent_loader_implemented": false,
+      "complete_original_price_certified": false,
+      "second_discount_applied": false,
+      "original_model_binding": {
+        "case": "B8x52",
+        "assets": 8,
+        "dates": 52,
+        "volatility_exact": [
+          3,
+          10
+        ],
+        "correlation_exact": [
+          2,
+          5
+        ],
+        "spot_dollars_exact": [
+          100,
+          1
+        ],
+        "rate_exact": [
+          3,
+          100
+        ],
+        "maturity_years_exact": [
+          1,
+          1
+        ],
+        "strike_dollars_exact": [
+          100,
+          1
+        ],
+        "barrier_dollars_exact": [
+          140,
+          1
+        ],
+        "equal_asset_volatility": true,
+        "basket": "positive equal-weight arithmetic spot basket",
+        "builder_path": "C:\\Users\\prith\\quantum_option_pricing\\research\\advantage_frontier_20260923\\barrier_oracle_depth.py",
+        "builder_sha256": "1e0e225131c668f133ef05a5de3f78fbad4fb5307a2fc8c452d99d14c8dda929",
+        "continuous_driver_law": "independent common and idiosyncratic Brownian drivers",
+        "digital_paired_outputs_claimed_independent_gaussian": false
+      }
+    }
+  ],
+  "alternative_ideal_law_grid_bias_certificate": true,
+  "accepted_Box_Muller_full_price_certificate": false,
+  "coherent_inverse_CDF_loader_implemented": false,
+  "native_financial_arithmetic_price_bound": null,
+  "full_G2_closed": false,
+  "source_graph_changed": false,
+  "original_B4_B8_price_observations_or_gate_replays": 0,
+  "quantum_advantage_established": false,
+  "next_required": "Bind a rigorously rounded normal quantile implementation to this different law, propagate native arithmetic through the barrier, then price its reversible implementation before adoption"
+}

@@ -1,0 +1,80 @@
+{
+  "accepted_interface": {
+    "F": 40,
+    "W": 72,
+    "barrier_or_fullprice_included": false,
+    "case": "B4x12",
+    "coefficient_error_paid_against_native_positive_part": true,
+    "continuous_positive_support_assumed": false,
+    "delta": [
+      1,
+      100000
+    ],
+    "discount_literal": 1067016148260,
+    "fixed_pathwise_Young_not_error_independence": true,
+    "native_positive_support_dollars_half_open": [
+      0,
+      3996
+    ],
+    "own_profile_discount_authorities_kept_separate": true,
+    "own_profile_rows": 2,
+    "profiles": [
+      "primary90",
+      "independent130"
+    ],
+    "reference": "exp(-3/100) times positive part of continuous arithmetic average of the original48 stocks minus100 dollars",
+    "single_new_cmul_floor_paid": true,
+    "source_discount": 5696,
+    "source_positive_part": 5695,
+    "units": "dollars_squared"
+  },
+  "barrier5697_price_G2_candidate_and_advantage_excluded": true,
+  "both_own_discount_and_positivepart_authorities_kept_separate": true,
+  "coefficient_error_charged_only_to_bounded_native_positive_part": true,
+  "coefficient_literal": 1067016148260,
+  "continuous_positive_part_has_no_bounded_support_assumption": true,
+  "fixed_delta": [
+    1,
+    100000
+  ],
+  "full_endpoint_safety_trees_or_exp_producers_not_selected_or_replayed": true,
+  "native_positive_dollars_half_open": [
+    0,
+    3996
+  ],
+  "old_barrier40_or_smooth_payoff_allowance_not_reused": true,
+  "one_new_cmul_Q40_floor_paid": true,
+  "passed": true,
+  "same_coupling_pathwise_fixed_Young_no_independence": true,
+  "schema": "e11-B4x12-discount-after-positivepart-common-coupling-witness-v1",
+  "signed72_output_and_signed144_product_no_wrap": true,
+  "source_discount": 5696,
+  "source_positive_part": 5695,
+  "source_rows": {
+    "5695": {
+      "args": [
+        5694
+      ],
+      "op": "positive",
+      "out": [
+        5695
+      ],
+      "params": {}
+    },
+    "5696": {
+      "args": [
+        5695
+      ],
+      "op": "cmul",
+      "out": [
+        5696
+      ],
+      "params": {
+        "c": 1067016148260
+      }
+    }
+  },
+  "true_discount_same_exp_minus3_over100": true,
+  "verified_parent_ROOT_expected_SHA256": "008d69089c0d07bf716840a4630f3baa8e56ddfc1a5825a9af5d9125334ec037",
+  "verified_parent_manifest_expected_SHA256": "55f1fed0b8bf40e8d0a8dd4ba89257d6600c383926f86ac1870bd4d3250fab8b"
+}

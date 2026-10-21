@@ -1,0 +1,58 @@
+{
+  "schema": "root-c8-admission-failure-diagnostic-v1",
+  "passed": false,
+  "local_only": true,
+  "created_utc": "2026-10-03T09:24:57.368810+00:00",
+  "source_receipt": "results/limitation_program_20261001/C8_execution_run002",
+  "diagnostic_integrity_verified": true,
+  "original_rates_launched": false,
+  "original_timing_launched": false,
+  "original_scientific_case_generation_not_reached": true,
+  "source_runtime_capture_before_generation_absent": true,
+  "all_actual_receipt_files_bound": 18126,
+  "all_actual_receipt_bytes_bound": 1052168451,
+  "original_attempt_immutable": true,
+  "new_test_or_measurement_credit": 0,
+  "inventory_job_terminal_active_processes": 0,
+  "visible_unrelated_Python_processes": [],
+  "visible_process_observation_is_point_in_time_only": true,
+  "post_terminal_observed_utc": "2026-10-03T08:58:31.5005919Z",
+  "no_certified_StageC_manifest": true,
+  "not_a_success_certificate": true,
+  "not_a_sealed_C8_result": true,
+  "reason": "Outside-job observed CPU15.31532744537943% exceeded fixed10%; incomplete runtime capture preserved.",
+  "observations": [
+    {
+      "observation": "000021",
+      "utc": "2026-10-03T08:52:37.243280+00:00",
+      "outside_CPU_percent_lower_bound": 15.31532744537943,
+      "conflicts": [
+        {
+          "aggregate_outside_cpu_percent": 15.31532744537943,
+          "reason": "outside-job hardware-capacity CPU is not below10%"
+        }
+      ]
+    }
+  ],
+  "launcher_pid_plus_creation_binding": {
+    "pid": 38940,
+    "creation": "2026-10-03T08:40:19.1593250Z",
+    "exe": "C:\\Users\\prith\\quantum_option_pricing\\.context\\frontier_t0_env\\Scripts\\python.exe",
+    "argv": "\"C:\\Users\\prith\\quantum_option_pricing\\.context\\frontier_t0_env\\Scripts\\python.exe\" -B C:\\Users\\prith\\quantum_option_pricing\\research\\limitation_program_20261001\\run_c8_supervised_v2.py ",
+    "executable_sha256": "41123879d2e991377997acadf5f0cf8f34fa10d86362eded8c69b6041e2893b5"
+  },
+  "executed_helper_source": "results/limitation_program_20261001/C8_admission_failure_run002/preserve_c8_admission_failure_v2.py",
+  "scientific_optional_imports": 0,
+  "new_rates_timings_prices_factors_fixtures_proofs": 0,
+  "mutable_progress_STATUS_edits": 0,
+  "process_CPU_seconds_after_full_verification": 138.53125,
+  "wall_seconds_after_full_verification": 335.6575470333046,
+  "process_CPU_limit_seconds": 300,
+  "process_wall_limit_seconds": 900,
+  "new_work_CPU_admission_seconds": 270,
+  "new_work_wall_admission_seconds": 840,
+  "complete_fresh_partial_rehashes": 18126,
+  "complete_fresh_input_rehashes": 18135,
+  "total_hashwork_bytes": 2105213662,
+  "next": "Fresh preregistered quiet admission only; never retry or overwrite this attempt."
+}

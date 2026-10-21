@@ -1,0 +1,111 @@
+{
+  "categories": [
+    {
+      "code": "E11_FIRST_STOCK_SOURCE_SCOPE",
+      "fixed_variants": [
+        {
+          "exact_structural_rejection": true,
+          "fixed_mutation": {
+            "stock": 4022
+          }
+        },
+        {
+          "exact_structural_rejection": true,
+          "fixed_mutation": {
+            "raw_log": 3543
+          }
+        },
+        {
+          "exact_structural_rejection": true,
+          "fixed_mutation": {
+            "asset_zero_based": 1
+          }
+        },
+        {
+          "exact_structural_rejection": true,
+          "fixed_mutation": {
+            "contractual_date_one_based": 2
+          }
+        }
+      ],
+      "passed": true
+    },
+    {
+      "code": "E11_FIRST_STOCK_UNITS_SPOT",
+      "fixed_variants": [
+        {
+          "exact_structural_rejection": true,
+          "fixed_mutation": {
+            "units": "dimensionless_squared"
+          }
+        },
+        {
+          "exact_structural_rejection": true,
+          "fixed_mutation": {
+            "extra_spot_multiplier": 100
+          }
+        },
+        {
+          "exact_structural_rejection": true,
+          "fixed_mutation": {
+            "initial_ln100_already_in_log": false
+          }
+        }
+      ],
+      "passed": true
+    },
+    {
+      "code": "E11_FIRST_STOCK_TAIL_PROOF",
+      "fixed_variants": [
+        {
+          "exact_structural_rejection": true,
+          "fixed_mutation": {
+            "moment_half_order": 15
+          }
+        },
+        {
+          "exact_structural_rejection": true,
+          "fixed_mutation": {
+            "lower_tail_paid": false
+          }
+        },
+        {
+          "exact_structural_rejection": true,
+          "fixed_mutation": {
+            "upper_tail_paid": false
+          }
+        },
+        {
+          "exact_structural_rejection": true,
+          "fixed_mutation": {
+            "native_pair_independence_assumed": true
+          }
+        }
+      ],
+      "passed": true
+    },
+    {
+      "code": "E11_FIRST_STOCK_PROFILE_AUTHORITY",
+      "fixed_variants": [
+        {
+          "exact_structural_rejection": true,
+          "fixed_mutation": {
+            "primary90_e0_from_profile": "independent130"
+          }
+        },
+        {
+          "exact_structural_rejection": true,
+          "fixed_mutation": {
+            "independent130_alpha_from_profile": "primary90"
+          }
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "category_count": 4,
+  "metadata_variants": 13,
+  "new_numerical_candidate_or_fixture": false,
+  "passed": true,
+  "unrelated_IO_KeyError_assertion_or_budget_error_credit": false
+}

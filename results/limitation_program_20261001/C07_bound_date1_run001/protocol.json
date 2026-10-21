@@ -1,0 +1,70 @@
+{
+  "created_utc": "2026-10-02T07:18:10.410133+00:00",
+  "local_only": true,
+  "before_meaningful_tests_and_binding": true,
+  "item": "C07 one actual C06 date1 error bridge",
+  "executed_dependencies": [
+    {
+      "original": "research/limitation_program_20261001/experiment_bind_one_date_error.py",
+      "snapshot": "executed_code/experiment_bind_one_date_error.py",
+      "sha256": "6737682eccc52cb34bb9d4e9a55d96efdea4de042e0ce94114d5004dc8ec1dd1"
+    },
+    {
+      "original": "research/limitation_program_20261001/bind_one_date_error.py",
+      "snapshot": "executed_code/bind_one_date_error.py",
+      "sha256": "2dcc4b73c32443247c52b0731596d8d7234d6e2c34342035be768e366a01dfd7"
+    },
+    {
+      "original": "research/limitation_program_20261001/test_bind_one_date_error.py",
+      "snapshot": "executed_code/test_bind_one_date_error.py",
+      "sha256": "386684cae04380d86f82696b460d828f75134e427c216aa7584f0f879c139bab"
+    },
+    {
+      "original": "research/limitation_program_20261001/audit_barrier_band.py",
+      "snapshot": "executed_code/audit_barrier_band.py",
+      "sha256": "ae06be0760a9b6630b721d509af6f3add70e60a5b6d43727f14048175a01375b"
+    },
+    {
+      "original": "research/limitation_program_20261001/barrier_band_certificate.py",
+      "snapshot": "executed_code/barrier_band_certificate.py",
+      "sha256": "02807a4927d5575df011a0c22f51df0e2aa1ac0bfceb4ef394346577399d9107"
+    },
+    {
+      "original": "research/limitation_program_20261001/financial_bounded_schedule.py",
+      "snapshot": "executed_code/financial_bounded_schedule.py",
+      "sha256": "4452c3319e9b7c33b96276aeefe137905d41c4638e42037d264fd6bdd26f149c"
+    },
+    {
+      "original": "research/advantage_frontier_20260923/barrier_oracle_depth.py",
+      "snapshot": "executed_code/advantage_frontier_20260923/barrier_oracle_depth.py",
+      "sha256": "1e0e225131c668f133ef05a5de3f78fbad4fb5307a2fc8c452d99d14c8dda929"
+    }
+  ],
+  "declared_tests": 12,
+  "case": "B4x12",
+  "date": 1,
+  "cutoff_bits": 20,
+  "selected_eta_values": 1,
+  "eta_claim": "delta2minus20_B4_date1_basket",
+  "bad_event_claim": "delta2minus20_B4_date1_bad_event",
+  "bound_forms": [
+    "density",
+    "centered_interval_maximum"
+  ],
+  "bound_form_count": 2,
+  "eta_grid_or_adaptive_search": false,
+  "independent_validation": "mp.iv110 + separate64-term integral",
+  "event_contribution_proof": "Let D1 be the event that the original continuous and digital strict date1 basket<H decisions differ. Let E1 be any of the first three radial uniforms below delta=2^-20. C06 proves |B_d-B_c|<=eta on E1 complement including native exp and clipping. Therefore D1 intersect E1 complement is contained in the unconditional continuous event |B_c-140|<=eta. Both ORIGINAL fully monitored discounted payoffs Yc and Yd lie in [0,40]; hence E[|Yc-Yd|1{D1 intersect E1 complement}]<=40*P(band), and E[|Yc-Yd|1{D1 intersect E1}]<=40*P(E1)<=40*3*delta. These give only the contribution on D1. The contribution on D1 complement remains unbounded here; in particular later-date switches and smooth Asian payoff discrepancy are unresolved. A whole-B4 radial bad-event tail bound40*30*delta is listed separately and is not added to the date1 bad-event term. No good-event conditioned Gaussian law is asserted.",
+  "date1_bad_event_probability": "3*2^-20",
+  "whole_B4_bad_event_probability": "30*2^-20",
+  "payoff_difference_cap_dollars_exact": [
+    40,
+    1
+  ],
+  "tail_scopes_are_separate": true,
+  "C06_independent_audit_required_before_adoption": true,
+  "full_price_unknowns_remain_null": true,
+  "new_financial_price_samples": 0,
+  "new_financial_gate_replays": 0,
+  "maximum_process_cpu_seconds": 300
+}

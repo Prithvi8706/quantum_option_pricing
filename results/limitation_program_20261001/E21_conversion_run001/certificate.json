@@ -1,0 +1,57 @@
+{
+  "statistical_error_dollars_exact": [
+    9,
+    2000
+  ],
+  "failure_allowance_exact": [
+    3,
+    1000
+  ],
+  "one_run": {
+    "RMSE_target_squared_dollars_exact": [
+      243,
+      4000000000
+    ],
+    "RMSE_target_dollars_interval_exact": [
+      [
+        3322478461215291257108845559331913727929086676515485126873271343,
+        13479973333575319897333507543509815336818572211270286240551805124608
+      ],
+      [
+        6644956922430582514217691118663827455858173353030970253746542687,
+        26959946667150639794667015087019630673637144422540572481103610249216
+      ]
+    ],
+    "safe_rational_RMSE_target_dollars_exact": [
+      3322478461215291257108845559331913727929086676515485126873271343,
+      13479973333575319897333507543509815336818572211270286240551805124608
+    ],
+    "repetitions": 1,
+    "proof": "Markov applied to squared error: P(abs(Z-mu)>e)<=RMSE^2/e^2",
+    "requires_unbiasedness": false,
+    "quantum_query_or_runtime_cost": null
+  },
+  "independent_median": {
+    "per_run_RMSE_target_dollars_exact": [
+      9,
+      4000
+    ],
+    "per_run_bad_probability_upper_exact": [
+      1,
+      4
+    ],
+    "repetitions": 27,
+    "certified_failure_upper_exact": [
+      5516834859287,
+      2251799813685248
+    ],
+    "proof": "Each bad-run probability is at most1/4 by squared-error Markov. Independent bad indicators are stochastically dominated by independent Bernoulli(1/4); an incorrect median requires a majority.",
+    "independent_fresh_runs_required": true,
+    "source_inverse_preparation_readout_reset_multiplicity": 27,
+    "complete_quantum_cost": null
+  },
+  "construction_with_proved_RMSE_cost_supplied": false,
+  "cheaper_complete_conversion_selected": false,
+  "RMSE_equals_dollar_allowance_is_not_a_failure_certificate": true,
+  "original_continuous_price_bias_covered": false
+}

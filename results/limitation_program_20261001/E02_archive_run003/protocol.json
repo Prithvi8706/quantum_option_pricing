@@ -1,0 +1,61 @@
+{
+  "created_utc": "2026-10-02T06:47:50.686976+00:00",
+  "item": "E02 archived estimator invocation ledger v3",
+  "previous_receipt": "E02_archive_run002",
+  "previous_failure": "V1 assumed a byte hash where the range target uses sorted-JSON semantic SHA256; v2 counted provided/classical phase input bits as uniform random preparation. Both failed receipts and all historical artifacts are preserved.",
+  "local_only": true,
+  "before_meaningful_test_execution": true,
+  "before_meaningful_archive_expansion": true,
+  "executed_dependencies": [
+    {
+      "original": "research/limitation_program_20261001/experiment_estimator_archive_v3.py",
+      "snapshot": "executed/experiment_estimator_archive_v3.py",
+      "sha256": "f5aae9396ad62bc677edc5ee4891f7ecc507c5bf2bcfbc9572780e8c193869cb"
+    },
+    {
+      "original": "research/limitation_program_20261001/estimator_ledger_export_v3.py",
+      "snapshot": "executed/estimator_ledger_export_v3.py",
+      "sha256": "2ef66bd6f9dfc23510ad05b6ee35175434780ae8a8e9ed8930663da4b4ff5453"
+    },
+    {
+      "original": "research/limitation_program_20261001/test_estimator_ledger_export_v3.py",
+      "snapshot": "executed/test_estimator_ledger_export_v3.py",
+      "sha256": "d49d336b74d9d89beb4405c5abb615a2a4fbb9e3642c5554f1848b0029ed9447"
+    }
+  ],
+  "frozen_input_count": 247,
+  "declared_tests": 36,
+  "selected_rows": [
+    {
+      "model": "C4",
+      "method": "hadamard",
+      "mode": "continuous_moment_conditional"
+    },
+    {
+      "model": "H8",
+      "method": "hadamard",
+      "mode": "continuous_moment_conditional"
+    },
+    {
+      "model": "C4",
+      "method": "bounded_QAE",
+      "mode": "unconditional_digital_support"
+    }
+  ],
+  "expected_controlled_calls": [
+    1203320,
+    2967610,
+    7864305
+  ],
+  "maximum_rows": 3,
+  "parameter_scans": 0,
+  "new_financial_candidate_attempts": 0,
+  "complete_financial_replays": 0,
+  "new_quantum_unitary_tests": 0,
+  "contract": "Only original C4/H8, Kc=6, one-strike residual mean error .002/discount and ideal estimator failure .003.",
+  "audit": "Expand actual integer Hadamard stages or QPE powers; validate wrapper compute/inverse, literal selector inverse, phase synthesis, signed reflection, native schedule and leaf metadata; independently reconcile saved T resources.",
+  "gate_arrays": "The unchanged archived gate arrays are SHA-addressed in native metadata but not replayed or rehashed by this count audit.",
+  "unknowns": "Readout, reset, feedback, Clifford time, routing, factories and full-price obligations stay explicitly unknown, never free zero.",
+  "financial_transfer": "No archived call count multiplied by current B4 depth. A fresh dollar selector, proved support and bound wrapper are separate pending work.",
+  "freeze_semantics": "Any failed first execution keeps this receipt; executed code changes require a new version and receipt."
+}

@@ -1,0 +1,9 @@
+# Candidate d4_s4 first-stock squared L2 preflight
+
+This dormant runner assembles one conditional classical first-stock4021 squared-L2 allowance for each original profile. It binds completed A13 V2 allcase/source/envelope verification and the unchanged verified improved raw3542 log. Candidate alpha=2^-24 and beta=2^-40 replace the old degree12 approximation allowance. Original M=256, native support and both unconditional continuous tail terms are retained only in their declared roles. M is a native exponential cap and projection Lipschitz constant, not a candidate-stock cap.
+
+Each profile computes3*(A_candidate^2+M^2*B_log+T_lower+T_upper), with A_candidate=alpha*M+beta. It reports the exact signed difference from its own completed original-native improved-stock bound. A valid larger candidate allowance remains a scoped certificate; no improvement, price tolerance, adoption or advantage is assumed. There is no extra100 factor and no native coordinate/error independence assumption.
+
+All19 selected roles are byte-bound before use:18 accepted premises plus the accepted prospective plan. The original first-stock manifest supplies only original declared runtime expectations. Three current reviews and the own ROOT release are required before premises/origins/numbers. Default4300 and180/150/600 budgets remain fixed; rational outputs use canonical32bit limbs, reduced131072-bit and temporary524288-bit frontiers. Five metadata controls and an exact13-file ledger are fixed.
+
+No guard, moment, tail, exp/series, native sampler or caller is rerun. The old degree12 A/alpha/B_log/beta fields are excluded from candidate arithmetic. Finite logical cases are supplements to the saved uniform envelope. Realized coherent signed-shift phase/cleanup, other sites, full financial price/G2 and whole-source resources remain open. SOURCE is dormant; this preflight grants no READY or SCI.

@@ -1,0 +1,46 @@
+{
+  "created_utc": "2026-10-02T07:14:17.295519+00:00",
+  "local_only": true,
+  "before_meaningful_tests_and_audit": true,
+  "item": "C07 independent analytic and receipt audit",
+  "target": "C07_barrier_run002",
+  "preserved_first_failure": "C07_barrier_run001",
+  "executed_dependencies": [
+    {
+      "original": "research/limitation_program_20261001/experiment_audit_barrier_band.py",
+      "snapshot": "executed_code/experiment_audit_barrier_band.py",
+      "sha256": "dd76e10e6b70f270f5bb4af8ccb83af5adc39693444792aee94ce633c40814e7"
+    },
+    {
+      "original": "research/limitation_program_20261001/audit_barrier_band.py",
+      "snapshot": "executed_code/audit_barrier_band.py",
+      "sha256": "ae06be0760a9b6630b721d509af6f3add70e60a5b6d43727f14048175a01375b"
+    },
+    {
+      "original": "research/limitation_program_20261001/test_audit_barrier_band.py",
+      "snapshot": "executed_code/test_audit_barrier_band.py",
+      "sha256": "4b322e4741d6f47622a12816b40af66ff1bc5ab3b66e6b79f4eb707c7e3649cd"
+    }
+  ],
+  "declared_tests": 14,
+  "fixed_exploratory_eta_exact": [
+    1,
+    10000
+  ],
+  "new_production_eta_values": 0,
+  "independent_method": "mp.iv110 digits; independent64-term Gaussian integral with exact remainder",
+  "relative_radius_check": "mp.iv1000 digits; exact80-term positive series geometric upper",
+  "independent_proof": {
+    "original_factorization": "At t=1/12 the continuous original GBM is S_i=100 exp(-t*3/200+(3/10)sqrt((2/5)t)Z+(3/10)sqrt((3/5)t)Z_i). The continuous drivers are independent. Thus B=exp(s_c Z)W, W>0 finite almost surely and independent of Z, with s_c^2=3/1000. This assertion concerns the continuous model only, not the joint digital pair law.",
+    "density_bound": "For 0<=eta<140, conditional on W, the log interval has length L=log((140+eta)/(140-eta)); the standard-normal interval length is L/s_c. Since phi(z)<=1/sqrt(2*pi), its probability is at most min(1,L/sqrt(2*pi*s_c^2)). Average this uniform bound over W.",
+    "centered_maximum": "For half length d=L/(2*s_c), g(c)=Phi(c+d)-Phi(c-d) is even. For c>=0, (c+d)^2-(c-d)^2=4cd>=0, hence g'(c)<=0; for c<=0 the sign reverses. Its exact supremum over every positive W is g(0)=erf(L/sqrt(8*s_c^2)), also at most the density bound.",
+    "endpoint_and_good_event": "The conditional lognormal law has no atom at either deterministic endpoint or H=140; averaging preserves zero endpoint probability. The original strict basket<H test is preserved. Digital equality can have positive mass. Decision disagreement implies a bad event or the unconditional continuous band. No conditional-on-good-event independence or Gaussian law is used.",
+    "outward_arithmetic": "For exact x=eta/H in [0,1), log((1+x)/(1-x))=2 sum x^(2k+1)/(2k+1). The remainder after N terms is at most 2*x^(2N+1)/((2N+1)*(1-x^2)). Integer isqrt of floor(q*2^(2p)) brackets sqrt(q) on dyadics. Every dyadic lower endpoint uses floor and upper uses ceiling; multiplication takes the minimum and maximum of four products. For exp(-z^2/2), the integrated degree-N Taylor remainder on [0,8] is at most 8^(2N+3)/(2^(N+1)*(N+1)!*(2N+3)), since every exp(-t) derivative has magnitude at most one for t>=0. Above8, monotonicity supplies the lower bound at min(z_lower,8), and one supplies the upper. Positive denominator lower endpoints and upper numerators give outward quotient uppers. Clipping by a second proved upper is valid.",
+    "relative_log_radius": "If exp(-delta)<=S_d/S_c<=exp(delta) holds for every stock INCLUDING native exp/clipping, positive sums preserve these inequalities. The decision band has log length 2*delta. A symmetric dollar radius H*(exp(delta)-1) covers both sides because exp(delta)+exp(-delta)>=2. On 0<=delta<=1/2, sum_{k=1}^{80}delta^k/k! is a lower endpoint. The remaining positive terms are bounded by delta^81/81! divided by 1-delta/82: all following ratios are at most delta/82. The upper endpoint is exact rational (no float or rounded-down radius). A discrepancy of raw pre-exp logs alone is not this stock ratio claim.",
+    "scope": "One-date bands do not provide full smooth Asian payoff zeta, an any-date band union, a native discrepancy radius, or tail dollars. These remain null in the audited production artifact. The fixed eta=1/10000 dollar is exploratory only, not a financial certificate."
+  },
+  "finite_financial_samples": 0,
+  "financial_replays": 0,
+  "full_price_error_remains_null": true,
+  "historical_sources_are_read_only": true
+}

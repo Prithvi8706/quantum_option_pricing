@@ -1,0 +1,365 @@
+{
+  "format": "C06-delta20-C07-one-date-error-binding-v1",
+  "passed": true,
+  "scope": {
+    "case": "B4x12",
+    "date": 1,
+    "observation_time_exact": [
+      1,
+      12
+    ]
+  },
+  "selected_cutoff_bits": 20,
+  "selected_eta_values": 1,
+  "bound_forms": [
+    "density",
+    "centered_interval_maximum"
+  ],
+  "coupling_id": "C06_q32_f40_shared_uniform_delta2minus20",
+  "measure": "continuous-underlying-uniform-coupling",
+  "domain": {
+    "good_event": "First three radial uniforms are at least delta",
+    "delta_exact": [
+      1,
+      1048576
+    ],
+    "q32_grid_aligned_cutoff": true,
+    "midpoint_at_least_delta_on_good_event": true,
+    "used_joint_pairs": 3,
+    "used_normal_scalars": 5,
+    "finite_normal_outputs_assumed_independent": false,
+    "native_exp_and_clipping_included": true
+  },
+  "eta_basket_dollars_exact": [
+    12937689199841305264593353495658321835780708125311452880666362017284940328149329662175743511431939385908357476072504295279129665898771526011524338394424178644684365950951744535225934564959533575341850506262743134278768533342125863423574940157396618942145940557825840582796652073765143,
+    21282484252932888410084856014964302297969438045384922045503274902618055998719336304811016983738001112598985734873799745500415116637444244644641196538982633106791472938026372353719010041093275700984662360857983883519588383898415256567565314456211909678628726770463950214272099271101644800
+  ],
+  "date1_bad_event_probability_upper_exact": [
+    3,
+    1048576
+  ],
+  "whole_B4_all30_pairs_bad_event_probability_upper_exact": [
+    15,
+    524288
+  ],
+  "date1_bad_event_tail_dollars_upper_exact": [
+    15,
+    131072
+  ],
+  "whole_B4_all30_pairs_bad_event_tail_dollars_upper_exact": [
+    75,
+    65536
+  ],
+  "date1_and_whole_B4_tails_are_separate_alternatives_not_added": true,
+  "payoff_difference_cap_dollars_exact": [
+    40,
+    1
+  ],
+  "cap_proof": "Original continuous survival has everybasket<140, hence the Asian spot average<140, positive strike100 payoff<40 and discount<1. Independently audited actual digital fully monitored discounted payoff is nonnegative<40. Thus |Yc-Yd|<=40.",
+  "proof": "Let D1 be the event that the original continuous and digital strict date1 basket<H decisions differ. Let E1 be any of the first three radial uniforms below delta=2^-20. C06 proves |B_d-B_c|<=eta on E1 complement including native exp and clipping. Therefore D1 intersect E1 complement is contained in the unconditional continuous event |B_c-140|<=eta. Both ORIGINAL fully monitored discounted payoffs Yc and Yd lie in [0,40]; hence E[|Yc-Yd|1{D1 intersect E1 complement}]<=40*P(band), and E[|Yc-Yd|1{D1 intersect E1}]<=40*P(E1)<=40*3*delta. These give only the contribution on D1. The contribution on D1 complement remains unbounded here; in particular later-date switches and smooth Asian payoff discrepancy are unresolved. A whole-B4 radial bad-event tail bound40*30*delta is listed separately and is not added to the date1 bad-event term. No good-event conditioned Gaussian law is asserted.",
+  "one_date_barrier_contributions": {
+    "density": {
+      "one_date_good_event_band_probability_upper_exact": [
+        117064546292340091501788083183960752529586909966489751556635064,
+        1850715211718832676556987398119633568083532566769616406978342679269
+      ],
+      "one_date_good_event_payoff_difference_contribution_dollars_upper_exact": [
+        4682581851693603660071523327358430101183476398659590062265402560,
+        1850715211718832676556987398119633568083532566769616406978342679269
+      ],
+      "one_date_decision_disagreement_probability_upper_exact": [
+        128303219328193301816249903307063730748714721405330806949185196906671,
+        1940615553843286692653419617970692888286758244733017293563722653257170944
+      ],
+      "one_date_disagreement_event_only_payoff_difference_dollars_upper_exact": [
+        641516096640966509081249516535318653743573607026654034745925984533355,
+        242576944230410836581677452246336611035844780591627161695465331657146368
+      ],
+      "is_full_price_error_bound": false
+    },
+    "centered_interval_maximum": {
+      "one_date_good_event_band_probability_upper_exact": [
+        53291119248208477367270623007120534581190363823237460426680667,
+        842498333348457493583344221469363458551160763204392890034487820288
+      ],
+      "one_date_good_event_payoff_difference_contribution_dollars_upper_exact": [
+        266455596241042386836353115035602672905951819116187302133403335,
+        105312291668557186697918027683670432318895095400549111254310977536
+      ],
+      "one_date_decision_disagreement_probability_upper_exact": [
+        55701526314596962780583566145632278484973668313911649679632731,
+        842498333348457493583344221469363458551160763204392890034487820288
+      ],
+      "one_date_disagreement_event_only_payoff_difference_dollars_upper_exact": [
+        278507631572984813902917830728161392424868341569558248398163655,
+        105312291668557186697918027683670432318895095400549111254310977536
+      ],
+      "is_full_price_error_bound": false
+    }
+  },
+  "barrier_api_certificate": {
+    "format": "continuous-gbm-one-date-barrier-band-certificate-v1",
+    "model": {
+      "case": "B4x12",
+      "assets": 4,
+      "dates": 12,
+      "volatility_exact": [
+        3,
+        10
+      ],
+      "correlation_exact": [
+        2,
+        5
+      ],
+      "spot_dollars_exact": [
+        100,
+        1
+      ],
+      "rate_exact": [
+        3,
+        100
+      ],
+      "maturity_years_exact": [
+        1,
+        1
+      ],
+      "strike_dollars_exact": [
+        100,
+        1
+      ],
+      "barrier_dollars_exact": [
+        140,
+        1
+      ],
+      "equal_asset_volatility": true,
+      "basket": "positive equal-weight arithmetic spot basket",
+      "builder_path": "C:\\Users\\prith\\quantum_option_pricing\\research\\advantage_frontier_20260923\\barrier_oracle_depth.py",
+      "builder_sha256": "1e0e225131c668f133ef05a5de3f78fbad4fb5307a2fc8c452d99d14c8dda929",
+      "continuous_driver_law": "independent common and idiosyncratic Brownian drivers",
+      "digital_paired_outputs_claimed_independent_gaussian": false
+    },
+    "date": 1,
+    "observation_time_exact": [
+      1,
+      12
+    ],
+    "common_log_variance_exact": [
+      3,
+      1000
+    ],
+    "proof": {
+      "factorization": "At date t>0, S_i(t)=S0*exp((r-sigma^2/2)t+sigma*sqrt(rho*t)Z+sigma*sqrt((1-rho)*t)Z_i). Conditioning on all idiosyncratic Brownian shocks gives B(t)=exp(s_c Z)W, s_c=sigma*sqrt(rho*t)>0, W>0 finite almost surely. The original independent continuous common Brownian driver makes Z standard Gaussian and independent of W.",
+      "density": "For 0<=eta<H, the event H-eta<=B<=H+eta restricts Z to an interval of length L/s_c, L=log((H+eta)/(H-eta)). Its probability is at most min(1,L/(s_c*sqrt(2*pi))) for every W, hence also unconditionally.",
+      "interval_maximum": "Writing d=L/(2*s_c), a shifted interval has probability g(c)=Phi(c+d)-Phi(c-d). Its derivative is phi(c+d)-phi(c-d), nonpositive for c>=0 and nonnegative for c<=0. Thus its exact shift-independent supremum is g(0)=2*Phi(d)-1. No observed W or financial sample enters this bound.",
+      "strict_barrier": "Conditional on any finite positive W, B has a continuous lognormal law. Every deterministic endpoint, including B=H, has probability zero after averaging over W. The original alive test B<H and knockout convention B>=H are preserved; digital equality is not claimed to have probability zero.",
+      "coupling": "If |B_digital-B_continuous|<=eta outside a separately bounded bad event E, then differing one-date barrier decisions imply E or |B_continuous-H|<=eta. Apply the unconditional Gaussian band bound plus P(E). Conditioning on E's complement can destroy Gaussian independence and is never used.",
+      "relative_log_band": "If a proved per-stock multiplicative/log discrepancy, including native exp and clipping, bounds each stock ratio between exp(-delta) and exp(delta), the positive equal-weight basket obeys the same ratio bounds. Different barrier decisions require H*exp(-delta)<=B_continuous<=H*exp(delta), whose log length is exactly 2*delta. The symmetric dollar radius H*(exp(delta)-1) also covers this band because 2-exp(delta)<=exp(-delta).",
+      "dollar_bias": "Given separately proved already-discounted smooth-payoff error zeta on the good domain, a discounted cap on the barrier-switch payoff difference, an any-contractual-date band probability and discounted bad-domain tail dollars, triangle inequality gives dollar_bias<=zeta+cap*P(any band)+tail_dollars. A one-date band alone supplies none of the remaining terms or full-path coverage. The original native output is already discounted: no second discount is applied.",
+      "numerics": "Exact rational Machin pi intervals, integer-square-root enclosures and dyadic outward arithmetic are used. log((1+x)/(1-x)) is enclosed by its positive atanh series and geometric remainder. The centered Gaussian integral uses the integrated Taylor series for exp(-z^2/2); Taylor's derivative bound gives remainder <=8^(2m+3)/(2^(m+1)*(m+1)!*(2m+3)) for 0<=z<=8. Larger arguments use monotonicity and the rigorous probability cap one."
+    },
+    "eta": {
+      "upper_exact": [
+        12937689199841305264593353495658321835780708125311452880666362017284940328149329662175743511431939385908357476072504295279129665898771526011524338394424178644684365950951744535225934564959533575341850506262743134278768533342125863423574940157396618942145940557825840582796652073765143,
+        21282484252932888410084856014964302297969438045384922045503274902618055998719336304811016983738001112598985734873799745500415116637444244644641196538982633106791472938026372353719010041093275700984662360857983883519588383898415256567565314456211909678628726770463950214272099271101644800
+      ],
+      "coupling_id": "C06_q32_f40_shared_uniform_delta2minus20",
+      "artifact": {
+        "path": "C:\\Users\\prith\\quantum_option_pricing\\results\\limitation_program_20261001\\C06_pair_run001\\certificate.json",
+        "sha256": "8f027631a4b6abc6f601da2d7bbde3438c95557ebad7bf8fbb7b583aadca844c",
+        "claim": "delta2minus20_B4_date1_basket"
+      },
+      "theorem_externally_proved": true,
+      "external_theorem_reproved_here": false
+    },
+    "path_log_discrepancy": null,
+    "bad_event_probability": {
+      "upper_exact": [
+        3,
+        1048576
+      ],
+      "coupling_id": "C06_q32_f40_shared_uniform_delta2minus20",
+      "artifact": {
+        "path": "C:\\Users\\prith\\quantum_option_pricing\\results\\limitation_program_20261001\\C06_pair_run001\\certificate.json",
+        "sha256": "8f027631a4b6abc6f601da2d7bbde3438c95557ebad7bf8fbb7b583aadca844c",
+        "claim": "delta2minus20_B4_date1_bad_event"
+      },
+      "theorem_externally_proved": true,
+      "external_theorem_reproved_here": false
+    },
+    "proved_discrepancy_band_bounds": {
+      "log_length_interval_exact": [
+        [
+          234129092584680183003576166367921505059173819932979503113270127,
+          26959946667150639794667015087019630673637144422540572481103610249216
+        ],
+        [
+          14633068286542511437723510397995094066198363745811218944579383,
+          1684996666696914987166688442938726917102321526408785780068975640576
+        ]
+      ],
+      "common_log_variance_exact": [
+        3,
+        1000
+      ],
+      "common_log_standard_deviation_interval_exact": [
+        [
+          1476657093873462780937264693036406101301816300673548945277009485819,
+          26959946667150639794667015087019630673637144422540572481103610249216
+        ],
+        [
+          369164273468365695234316173259101525325454075168387236319252371455,
+          6739986666787659948666753771754907668409286105635143120275902562304
+        ]
+      ],
+      "density": {
+        "formula": "min(1,L/(s_c*sqrt(2*pi)))",
+        "interval_exact": [
+          [
+            234129092584680183003576166367921505059173819932979503113270127,
+            3701430423437665353113974796239267136167065133539232813956685358539
+          ],
+          [
+            117064546292340091501788083183960752529586909966489751556635064,
+            1850715211718832676556987398119633568083532566769616406978342679269
+          ]
+        ],
+        "probability_upper_exact": [
+          117064546292340091501788083183960752529586909966489751556635064,
+          1850715211718832676556987398119633568083532566769616406978342679269
+        ]
+      },
+      "centered_interval_maximum": {
+        "formula": "2*Phi(L/(2*s_c))-1",
+        "interval_exact": [
+          [
+            1705315815942671275752659936227857106598091642343598733653781335,
+            26959946667150639794667015087019630673637144422540572481103610249216
+          ],
+          [
+            53291119248208477367270623007120534581190363823237460426680667,
+            842498333348457493583344221469363458551160763204392890034487820288
+          ]
+        ],
+        "probability_upper_exact": [
+          53291119248208477367270623007120534581190363823237460426680667,
+          842498333348457493583344221469363458551160763204392890034487820288
+        ],
+        "uniform_over_all_positive_W": true
+      },
+      "finite_financial_samples_used": 0,
+      "bound_methods": 2,
+      "eta_dollars_exact": [
+        12937689199841305264593353495658321835780708125311452880666362017284940328149329662175743511431939385908357476072504295279129665898771526011524338394424178644684365950951744535225934564959533575341850506262743134278768533342125863423574940157396618942145940557825840582796652073765143,
+        21282484252932888410084856014964302297969438045384922045503274902618055998719336304811016983738001112598985734873799745500415116637444244644641196538982633106791472938026372353719010041093275700984662360857983883519588383898415256567565314456211909678628726770463950214272099271101644800
+      ],
+      "barrier_dollars_exact": [
+        140,
+        1
+      ]
+    },
+    "one_date_decision_disagreement_upper_exact": [
+      55701526314596962780583566145632278484973668313911649679632731,
+      842498333348457493583344221469363458551160763204392890034487820288
+    ],
+    "discounted_smooth_payoff_zeta": null,
+    "discounted_tail_dollars": null,
+    "any_contractual_date_band_probability": null,
+    "dollar_bias_upper_exact": null,
+    "full_G2_certificate": false,
+    "digital_paired_outputs_claimed_independent_gaussian": false,
+    "gaussian_law_conditioned_on_coupling_good_event": false,
+    "all_contractual_dates_covered": false,
+    "finite_financial_samples_used": 0,
+    "missing_bounds_are_zero": false,
+    "second_discount_applied": false
+  },
+  "independent_numeric_validation": {
+    "log_length": [
+      [
+        684360104318617297107675047421369408185111599758971874038710376889042642505446287472627485245796636884246620699,
+        78804012392788958424558080200287227610159478540930893335896586808491443542994421222828532509769831281613255980613632
+      ],
+      [
+        684360104318617297107675047421369408185111599758971874038710376889042642505446287472627485245796636884247013913,
+        78804012392788958424558080200287227610159478540930893335896586808491443542994421222828532509769831281613255980613632
+      ]
+    ],
+    "density": [
+      [
+        311540232472140350919906385531746646215308575344324525463323759511817077800182022892574931805153715586173543149,
+        4925250774549309901534880012517951725634967408808180833493536675530715221437151326426783281860614455100828498788352
+      ],
+      [
+        623080464944280701839812771063493292430617150688649050926647519023634155600364045785149863610307431172347444305,
+        9850501549098619803069760025035903451269934817616361666987073351061430442874302652853566563721228910201656997576704
+      ]
+    ],
+    "centered_interval_maximum": [
+      [
+        623080464291624686904929679115345316999507382633600230200746327012514399158829221997447540909321364544878042979,
+        9850501549098619803069760025035903451269934817616361666987073351061430442874302652853566563721228910201656997576704
+      ],
+      [
+        38942529018226542931558104944709082312469211414600014387546645438282149947426826374840471306832585284054900065,
+        615656346818663737691860001564743965704370926101022604186692084441339402679643915803347910232576806887603562348544
+      ]
+    ],
+    "independent_integrated_taylor_terms": 64,
+    "mp_iv_digits": 110,
+    "all_interval_endpoints_exact_binary_rationals": true
+  },
+  "bindings": {
+    "C06_certificate": {
+      "path": "C:\\Users\\prith\\quantum_option_pricing\\results\\limitation_program_20261001\\C06_pair_run001\\certificate.json",
+      "sha256": "8f027631a4b6abc6f601da2d7bbde3438c95557ebad7bf8fbb7b583aadca844c"
+    },
+    "eta_claim": {
+      "path": "C:\\Users\\prith\\quantum_option_pricing\\results\\limitation_program_20261001\\C06_pair_run001\\certificate.json",
+      "sha256": "8f027631a4b6abc6f601da2d7bbde3438c95557ebad7bf8fbb7b583aadca844c",
+      "claim": "delta2minus20_B4_date1_basket"
+    },
+    "bad_event_claim": {
+      "path": "C:\\Users\\prith\\quantum_option_pricing\\results\\limitation_program_20261001\\C06_pair_run001\\certificate.json",
+      "sha256": "8f027631a4b6abc6f601da2d7bbde3438c95557ebad7bf8fbb7b583aadca844c",
+      "claim": "delta2minus20_B4_date1_bad_event"
+    },
+    "C07_certificate": {
+      "path": "C:\\Users\\prith\\quantum_option_pricing\\results\\limitation_program_20261001\\C07_barrier_run002\\B4_date1_certificate.json",
+      "sha256": "b217e0d326744bb0921f30771d4aca56383c89cfc5c2f2448db6004119044803"
+    },
+    "C07_independent_audit": {
+      "path": "C:\\Users\\prith\\quantum_option_pricing\\results\\limitation_program_20261001\\C07_barrier_audit_run001\\audit.json",
+      "sha256": "f80f3ddd56ac3320cb6029e8b22c8b7c3ac89840e5f8ad6023ed3013c09e9767"
+    },
+    "original_builder": {
+      "path": "C:\\Users\\prith\\quantum_option_pricing\\research\\advantage_frontier_20260923\\barrier_oracle_depth.py",
+      "sha256": "1e0e225131c668f133ef05a5de3f78fbad4fb5307a2fc8c452d99d14c8dda929"
+    },
+    "accepted_target": {
+      "path": "C:\\Users\\prith\\quantum_option_pricing\\results\\limitation_program_20261001\\A10_coefficient_run001\\B4x12\\min-depth\\target.json",
+      "sha256": "a7a682731b3cdb6f16b32a9b1a467d6bfeccb32ea97e583ab79e5252bb7a9384"
+    },
+    "digital_support_certificate": {
+      "path": "C:\\Users\\prith\\quantum_option_pricing\\results\\limitation_program_20261001\\E03_support_run001\\B4x12_certificate.json",
+      "sha256": "539d1cd48b61ff6cb16a241714428dcceec005bc41cc7c0591980492c46d5741"
+    },
+    "digital_support_independent_audit": {
+      "path": "C:\\Users\\prith\\quantum_option_pricing\\results\\limitation_program_20261001\\E03_support_audit_run002\\B4x12_audit.json",
+      "sha256": "1b149ec7d91c8e719b82fa4e69d72f60a28b9c7d28e034269a3ff4eaddd900d4"
+    }
+  },
+  "C06_independent_audit_adoption": {
+    "status": "required_before_adoption",
+    "pointer": null
+  },
+  "adopted_as_complete_financial_error_certificate": false,
+  "discounted_smooth_full_Asian_payoff_zeta": null,
+  "any_contractual_date_band_probability": null,
+  "full_path_native_exp_and_clipping_discrepancy": null,
+  "complete_price_error_dollars_upper_exact": null,
+  "full_G2_closed": false,
+  "second_discount_applied": false,
+  "new_financial_price_samples": 0,
+  "new_financial_gate_replays": 0,
+  "eta_grid_or_adaptive_radius_search": false
+}

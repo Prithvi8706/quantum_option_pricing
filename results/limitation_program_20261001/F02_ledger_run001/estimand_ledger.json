@@ -1,0 +1,2964 @@
+[
+  {
+    "case": "B4x12",
+    "method": "plain-rqmc",
+    "original_contract": {
+      "assets": 4,
+      "monitored_dates": 12,
+      "spot_dollars_exact": [
+        100,
+        1
+      ],
+      "strike_dollars_exact": [
+        100,
+        1
+      ],
+      "strict_survival_basket_threshold_dollars_exact": [
+        140,
+        1
+      ],
+      "sigma_exact": [
+        3,
+        10
+      ],
+      "correlation_exact": [
+        2,
+        5
+      ],
+      "rate_exact": [
+        3,
+        100
+      ],
+      "maturity_years_exact": [
+        1,
+        1
+      ],
+      "scalar_discounted_price": true,
+      "notional_rescaling": 1
+    },
+    "normalization": {
+      "output_units": "already discounted dollars",
+      "output_contains_original_discount": true,
+      "second_discount_applied": false,
+      "native_fixed_point_fraction_bits": null,
+      "amplitude_normalization_span_dollars": null
+    },
+    "transform_source_bindings": [
+      {
+        "original": "research/frontier_classical_20261001/scrambles.py",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/research/frontier_classical_20261001/scrambles.py",
+        "sha256": "40403b81a1b92d336bcb23a352029f2607ef859589f640e329075a597c49dc0f"
+      },
+      {
+        "original": "research/frontier_classical_20261001/basis.py",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/research/frontier_classical_20261001/basis.py",
+        "sha256": "3c6f238c0a9b2303a95cab7439739bc97d2d5ceb37e42bb143da2f3ea21419ee"
+      },
+      {
+        "original": "research/frontier_classical_20261001/kernels.py",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/research/frontier_classical_20261001/kernels.py",
+        "sha256": "b0762f0e7d82ce9b4a5b7fe28c10278bfa3ccc0b390afe3a72e9d09404e97987"
+      },
+      {
+        "original": "research/frontier_classical_20261001/timing.py",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/research/frontier_classical_20261001/timing.py",
+        "sha256": "dbf9079d9503b888f0a5ca4b6f2134b7629239915cb72e75e52d64d22a654cb0"
+      }
+    ],
+    "one_path_sigma": {
+      "measurement_kind": "one_path_sample_standard_deviation_of_discounted_continuous_model_integrand",
+      "sample_sd_dollars": 5.663566959060668,
+      "sample_variance_dollars_squared": 32.0759906997637,
+      "iid_normal_draws": 1048576,
+      "ddof": 1,
+      "pilot_receipt_binding": {
+        "original": "results/frontier_classical_20261001/sigma_dev/sigma_dev.json",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/results/frontier_classical_20261001/sigma_dev/sigma_dev.json",
+        "sha256": "9d3c4e361ec0a9f4d24fbebea7e1d6adb40e39326cf67d5fd44cca6a4fa27677"
+      },
+      "pilot_transform_source_binding": {
+        "original": "research/frontier_classical_20261001/sigma_q.py",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/research/frontier_classical_20261001/sigma_q.py",
+        "sha256": "757e7c0dfdf660a95c1cda7138abfcf0c90fb387765c0271b4fb667955ce8f1c"
+      },
+      "source_family": "canonicalPCA Gaussian normal pilot",
+      "raw_one_path_values_archived_in_frozen_inventory": false,
+      "full_code_spec_environment_hashes_in_pilot": false,
+      "measured_value_not_a_certified_population_upper_bound": true,
+      "finite_quantum_law_bound_transfer_certified": false,
+      "sigma_over_epsilon_cost_substituted_for_measured_RQMC_variance": false,
+      "recorded_bootstrap_ci95_dollars": [
+        5.652931461971615,
+        5.675387263740139
+      ],
+      "bootstrap_ci_is_not_a_99percent_population_bound": true
+    },
+    "one_path_population_variance_upper_bound": {
+      "upper_dollars_squared_exact": [
+        400,
+        1
+      ],
+      "law": "ideal original continuous monitored discountedpayoff",
+      "proof": "BothYandidealE[Y|remainingcoordinates] liein[0,40];Popoviciu givesvariance<=40^2/4",
+      "actual_float64_transform_bias_bound_dollars": null,
+      "bound_not_a_complete_actual_float64_price_certificate": true
+    },
+    "independent_scramble_variance_measurements": [
+      {
+        "points_per_scramble": 64,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.15882557423788038,
+        "sample_sd_of_one_scramble_mean_dollars": 0.3985292639667511,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.004963299194933762,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.009926598389867524,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 128,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.06776405913111833,
+        "sample_sd_of_one_scramble_mean_dollars": 0.2603153071394733,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.0021176268478474477,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.004235253695694895,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 256,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.028048406390748917,
+        "sample_sd_of_one_scramble_mean_dollars": 0.16747658460438258,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.0008765126997109037,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.0017530253994218073,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 512,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.012359420562577626,
+        "sample_sd_of_one_scramble_mean_dollars": 0.11117293088957234,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.0003862318925805508,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.0007724637851611016,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 1024,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.006413123577609059,
+        "sample_sd_of_one_scramble_mean_dollars": 0.08008198035519014,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.0002004101118002831,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.0004008202236005662,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 2048,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.002297520555242017,
+        "sample_sd_of_one_scramble_mean_dollars": 0.04793245826412429,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 7.179751735131303e-05,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.00014359503470262605,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 4096,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.0009149864597928649,
+        "sample_sd_of_one_scramble_mean_dollars": 0.030248743110960246,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 2.859332686852703e-05,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 5.718665373705406e-05,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 8192,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.0005115909028530315,
+        "sample_sd_of_one_scramble_mean_dollars": 0.022618375336284247,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 1.5987215714157235e-05,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 3.197443142831447e-05,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 16384,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.00018277553493269022,
+        "sample_sd_of_one_scramble_mean_dollars": 0.013519450245209315,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 5.7117354666465695e-06,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 1.1423470933293139e-05,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 32768,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 8.056795789086365e-05,
+        "sample_sd_of_one_scramble_mean_dollars": 0.00897596556872093,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 2.517748684089489e-06,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 5.035497368178978e-06,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 65536,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 4.940926300642178e-05,
+        "sample_sd_of_one_scramble_mean_dollars": 0.007029172284588121,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 1.5440394689506805e-06,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 3.088078937901361e-06,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 131072,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 3.0785532854007064e-05,
+        "sample_sd_of_one_scramble_mean_dollars": 0.005548471217732599,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 9.620479016877207e-07,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 1.9240958033754415e-06,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 262144,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 1.2280680118741654e-05,
+        "sample_sd_of_one_scramble_mean_dollars": 0.003504380133310548,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 3.837712537106767e-07,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 7.675425074213534e-07,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 524288,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 8.198700715700453e-06,
+        "sample_sd_of_one_scramble_mean_dollars": 0.0028633373387885078,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 2.5620939736563916e-07,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 5.124187947312783e-07,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      }
+    ],
+    "iid_mean_variance_measurement": null,
+    "residual_range_dollars": null,
+    "residual_variance_upper_bound": null,
+    "residual_covariance_bound": null,
+    "residual_or_coherent_control_implemented": false,
+    "financial_full_price_certificate": false,
+    "law": "ContinuousGBM covariance model evaluatednumerically by clippedinverse-normal scrambledSobol andfullrankPCA",
+    "integrand": "discounted unsmoothed monitored knockoutpayoff",
+    "coordinates": 48,
+    "expectation_identity": "Original continuous Gaussian covariance model; changingPCAbasis preservesitsidealdistribution, butthisisnot anexact rotation identityfor pairedfiniteBoxMuller/nativewords",
+    "raw_scramble_prefix_binding": {
+      "original": "results/frontier_classical_20261001/c1/B4x12_canonical.npy",
+      "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/results/frontier_classical_20261001/c1/B4x12_canonical.npy",
+      "sha256": "e643408b136e84af80d5fb88a3166b56bd6b697c4074d4baf27839df481dc1a9"
+    },
+    "recorded_covariance_factor_sha256": "4bfc6ae908e20ca1eac43933209176574479e4ba6e9b28a6785bb3db1a233a39",
+    "quantum_smoothing_or_variance_credit_available": false,
+    "measured_error_cost_model": "Use independent-scramble error versuspointcount andactualtimings;do not substituteonepathsigma/sqrtn orsigma/epsilon."
+  },
+  {
+    "case": "B4x12",
+    "method": "preintegration",
+    "original_contract": {
+      "assets": 4,
+      "monitored_dates": 12,
+      "spot_dollars_exact": [
+        100,
+        1
+      ],
+      "strike_dollars_exact": [
+        100,
+        1
+      ],
+      "strict_survival_basket_threshold_dollars_exact": [
+        140,
+        1
+      ],
+      "sigma_exact": [
+        3,
+        10
+      ],
+      "correlation_exact": [
+        2,
+        5
+      ],
+      "rate_exact": [
+        3,
+        100
+      ],
+      "maturity_years_exact": [
+        1,
+        1
+      ],
+      "scalar_discounted_price": true,
+      "notional_rescaling": 1
+    },
+    "normalization": {
+      "output_units": "already discounted dollars",
+      "output_contains_original_discount": true,
+      "second_discount_applied": false,
+      "native_fixed_point_fraction_bits": null,
+      "amplitude_normalization_span_dollars": null
+    },
+    "transform_source_bindings": [
+      {
+        "original": "research/frontier_classical_20261001/scrambles.py",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/research/frontier_classical_20261001/scrambles.py",
+        "sha256": "40403b81a1b92d336bcb23a352029f2607ef859589f640e329075a597c49dc0f"
+      },
+      {
+        "original": "research/frontier_classical_20261001/basis.py",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/research/frontier_classical_20261001/basis.py",
+        "sha256": "3c6f238c0a9b2303a95cab7439739bc97d2d5ceb37e42bb143da2f3ea21419ee"
+      },
+      {
+        "original": "research/frontier_classical_20261001/kernels.py",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/research/frontier_classical_20261001/kernels.py",
+        "sha256": "b0762f0e7d82ce9b4a5b7fe28c10278bfa3ccc0b390afe3a72e9d09404e97987"
+      },
+      {
+        "original": "research/frontier_classical_20261001/timing.py",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/research/frontier_classical_20261001/timing.py",
+        "sha256": "dbf9079d9503b888f0a5ca4b6f2134b7629239915cb72e75e52d64d22a654cb0"
+      }
+    ],
+    "one_path_sigma": {
+      "measurement_kind": "one_path_sample_standard_deviation_of_discounted_continuous_model_integrand",
+      "sample_sd_dollars": 1.2478834503988405,
+      "sample_variance_dollars_squared": 1.5572131057793155,
+      "iid_normal_draws": 1048576,
+      "ddof": 1,
+      "pilot_receipt_binding": {
+        "original": "results/frontier_classical_20261001/sigma_dev/sigma_dev.json",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/results/frontier_classical_20261001/sigma_dev/sigma_dev.json",
+        "sha256": "9d3c4e361ec0a9f4d24fbebea7e1d6adb40e39326cf67d5fd44cca6a4fa27677"
+      },
+      "pilot_transform_source_binding": {
+        "original": "research/frontier_classical_20261001/sigma_q.py",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/research/frontier_classical_20261001/sigma_q.py",
+        "sha256": "757e7c0dfdf660a95c1cda7138abfcf0c90fb387765c0271b4fb667955ce8f1c"
+      },
+      "source_family": "canonicalPCA Gaussian normal pilot",
+      "raw_one_path_values_archived_in_frozen_inventory": false,
+      "full_code_spec_environment_hashes_in_pilot": false,
+      "measured_value_not_a_certified_population_upper_bound": true,
+      "finite_quantum_law_bound_transfer_certified": false,
+      "sigma_over_epsilon_cost_substituted_for_measured_RQMC_variance": false,
+      "recorded_bootstrap_ci95_dollars": null,
+      "conditioning_interpretation": "Ideal exact preintegration is a conditional expectation; law of total variance supportsnonincrease butthisreported sd is a numericalpilot,not a currentcoherentquantumsource."
+    },
+    "one_path_population_variance_upper_bound": {
+      "upper_dollars_squared_exact": [
+        400,
+        1
+      ],
+      "law": "ideal exact conditionalexpectation transform",
+      "proof": "BothYandidealE[Y|remainingcoordinates] liein[0,40];Popoviciu givesvariance<=40^2/4",
+      "actual_float64_transform_bias_bound_dollars": null,
+      "bound_not_a_complete_actual_float64_price_certificate": true
+    },
+    "independent_scramble_variance_measurements": [
+      {
+        "points_per_scramble": 64,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.002113764807478709,
+        "sample_sd_of_one_scramble_mean_dollars": 0.04597569800969539,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 6.605515023370966e-05,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.00013211030046741932,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 128,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.0007944843659571611,
+        "sample_sd_of_one_scramble_mean_dollars": 0.028186599049143213,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 2.4827636436161284e-05,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 4.965527287232257e-05,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 256,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.00042663262331879337,
+        "sample_sd_of_one_scramble_mean_dollars": 0.020655087105088503,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 1.3332269478712293e-05,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 2.6664538957424585e-05,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 512,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.00020052011828392891,
+        "sample_sd_of_one_scramble_mean_dollars": 0.014160512641988952,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 6.2662536963727786e-06,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 1.2532507392745557e-05,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 1024,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 6.749593309478888e-05,
+        "sample_sd_of_one_scramble_mean_dollars": 0.008215590854880061,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 2.1092479092121526e-06,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 4.218495818424305e-06,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 2048,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 5.510428184048247e-05,
+        "sample_sd_of_one_scramble_mean_dollars": 0.007423225837901099,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 1.7220088075150772e-06,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 3.4440176150301544e-06,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 4096,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 2.1034465529920906e-05,
+        "sample_sd_of_one_scramble_mean_dollars": 0.00458633465088636,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 6.573270478100283e-07,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 1.3146540956200566e-06,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 8192,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 1.5355945089741795e-05,
+        "sample_sd_of_one_scramble_mean_dollars": 0.003918666238625305,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 4.798732840544311e-07,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 9.597465681088622e-07,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 16384,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 3.3654021042485987e-06,
+        "sample_sd_of_one_scramble_mean_dollars": 0.001834503230918005,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 1.0516881575776871e-07,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 2.1033763151553742e-07,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 32768,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 1.1248212474861295e-06,
+        "sample_sd_of_one_scramble_mean_dollars": 0.001060575903689184,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 3.5150663983941546e-08,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 7.030132796788309e-08,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 65536,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 4.4482595855354916e-07,
+        "sample_sd_of_one_scramble_mean_dollars": 0.000666952740869658,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 1.3900811204798411e-08,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 2.7801622409596822e-08,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 131072,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 2.3027263551073674e-07,
+        "sample_sd_of_one_scramble_mean_dollars": 0.0004798673103168591,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 7.196019859710523e-09,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 1.4392039719421046e-08,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 262144,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 9.387247265923066e-08,
+        "sample_sd_of_one_scramble_mean_dollars": 0.0003063861495877884,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 2.933514770600958e-09,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 5.867029541201916e-09,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 524288,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 8.117607891470352e-08,
+        "sample_sd_of_one_scramble_mean_dollars": 0.00028491416060754776,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 2.536752466084485e-09,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 5.07350493216897e-09,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      }
+    ],
+    "iid_mean_variance_measurement": null,
+    "residual_range_dollars": null,
+    "residual_variance_upper_bound": null,
+    "residual_covariance_bound": null,
+    "residual_or_coherent_control_implemented": false,
+    "financial_full_price_certificate": false,
+    "law": "ContinuousGBM covariance model evaluatednumerically by clippedinverse-normal scrambledSobol andfullrankPCA",
+    "integrand": "discounted firstprincipalGaussian direction conditional expectation ofmonitored knockoutpayoff",
+    "coordinates": 48,
+    "expectation_identity": "Original continuous Gaussian covariance model; changingPCAbasis preservesitsidealdistribution, butthisisnot anexact rotation identityfor pairedfiniteBoxMuller/nativewords",
+    "raw_scramble_prefix_binding": {
+      "original": "results/frontier_classical_20261001/c1/B4x12_canonical.npy",
+      "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/results/frontier_classical_20261001/c1/B4x12_canonical.npy",
+      "sha256": "e643408b136e84af80d5fb88a3166b56bd6b697c4074d4baf27839df481dc1a9"
+    },
+    "recorded_covariance_factor_sha256": "4bfc6ae908e20ca1eac43933209176574479e4ba6e9b28a6785bb3db1a233a39",
+    "quantum_smoothing_or_variance_credit_available": false,
+    "measured_error_cost_model": "Use independent-scramble error versuspointcount andactualtimings;do not substituteonepathsigma/sqrtn orsigma/epsilon."
+  },
+  {
+    "case": "B4x12",
+    "method": "time-ordered-oss",
+    "original_contract": {
+      "assets": 4,
+      "monitored_dates": 12,
+      "spot_dollars_exact": [
+        100,
+        1
+      ],
+      "strike_dollars_exact": [
+        100,
+        1
+      ],
+      "strict_survival_basket_threshold_dollars_exact": [
+        140,
+        1
+      ],
+      "sigma_exact": [
+        3,
+        10
+      ],
+      "correlation_exact": [
+        2,
+        5
+      ],
+      "rate_exact": [
+        3,
+        100
+      ],
+      "maturity_years_exact": [
+        1,
+        1
+      ],
+      "scalar_discounted_price": true,
+      "notional_rescaling": 1
+    },
+    "normalization": {
+      "output_units": "already discounted dollars",
+      "output_contains_original_discount": true,
+      "second_discount_applied": false,
+      "native_fixed_point_fraction_bits": null,
+      "amplitude_normalization_span_dollars": null
+    },
+    "transform_source_bindings": [
+      {
+        "original": "research/frontier_classical_20261001/c5_smoothers.py",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/research/frontier_classical_20261001/c5_smoothers.py",
+        "sha256": "447d7781a5e081c0e81b5e225f261e17e8f2a8277cad452ce399fb03fd9eea87"
+      },
+      {
+        "original": "research/frontier_classical_20261001/oss.py",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/research/frontier_classical_20261001/oss.py",
+        "sha256": "95f1f809eae8403c1ae1ef48d5749469d018cb980c2ad2e4f807b0a8f5c0290e"
+      },
+      {
+        "original": "research/frontier_classical_20261001/basis.py",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/research/frontier_classical_20261001/basis.py",
+        "sha256": "3c6f238c0a9b2303a95cab7439739bc97d2d5ceb37e42bb143da2f3ea21419ee"
+      },
+      {
+        "original": "research/frontier_classical_20261001/timing.py",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/research/frontier_classical_20261001/timing.py",
+        "sha256": "dbf9079d9503b888f0a5ca4b6f2134b7629239915cb72e75e52d64d22a654cb0"
+      }
+    ],
+    "one_path_sigma": null,
+    "one_path_population_variance_upper_bound": {
+      "upper_dollars_squared_exact": [
+        400,
+        1
+      ],
+      "law": "ideal exactly conditioned,correctly likelihoodweightedOSS integrand",
+      "proof": "Conditional survivalweights arein[0,1] andsurvivingdiscounted payoffisin[0,40], henceintegrandisin[0,40]",
+      "actual_float64_transform_bias_bound_dollars": null,
+      "bound_not_a_complete_actual_float64_price_certificate": true
+    },
+    "independent_scramble_variance_measurements": [
+      {
+        "points_per_scramble": 64,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.08505720798296362,
+        "sample_sd_of_one_scramble_mean_dollars": 0.29164568912117256,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.0026580377494676132,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.0053160754989352264,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 128,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.04668788613511444,
+        "sample_sd_of_one_scramble_mean_dollars": 0.2160737978911706,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.0014589964417223262,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.0029179928834446524,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 256,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.02883648775268569,
+        "sample_sd_of_one_scramble_mean_dollars": 0.1698130965287592,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.0009011402422714278,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.0018022804845428556,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 512,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.01430347585545771,
+        "sample_sd_of_one_scramble_mean_dollars": 0.11959713982975391,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.0004469836204830534,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.0008939672409661068,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 1024,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.005794027368704907,
+        "sample_sd_of_one_scramble_mean_dollars": 0.07611850871309098,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.00018106335527202835,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.0003621267105440567,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 2048,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.0033612357020518092,
+        "sample_sd_of_one_scramble_mean_dollars": 0.05797616494777668,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.00010503861568911904,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.00021007723137823808,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 4096,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.0015230299196408012,
+        "sample_sd_of_one_scramble_mean_dollars": 0.03902601593348726,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 4.759468498877504e-05,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 9.518936997755007e-05,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 8192,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.0005277626051921358,
+        "sample_sd_of_one_scramble_mean_dollars": 0.022973084363927622,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 1.6492581412254242e-05,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 3.2985162824508484e-05,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 16384,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.0003034737348616025,
+        "sample_sd_of_one_scramble_mean_dollars": 0.017420497549197684,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 9.483554214425079e-06,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 1.8967108428850157e-05,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 32768,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.00010393757535540311,
+        "sample_sd_of_one_scramble_mean_dollars": 0.010194977947764434,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 3.248049229856347e-06,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 6.496098459712694e-06,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 65536,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 3.212702218830622e-05,
+        "sample_sd_of_one_scramble_mean_dollars": 0.005668070411375128,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 1.0039694433845693e-06,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 2.0079388867691386e-06,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 131072,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 1.6130466793960137e-05,
+        "sample_sd_of_one_scramble_mean_dollars": 0.0040162752388201856,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 5.040770873112543e-07,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 1.0081541746225086e-06,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 262144,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 1.3782923066591156e-05,
+        "sample_sd_of_one_scramble_mean_dollars": 0.0037125359347205187,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 4.3071634583097364e-07,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 8.614326916619473e-07,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 524288,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 1.3507900208595568e-05,
+        "sample_sd_of_one_scramble_mean_dollars": 0.0036753095391538885,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 4.221218815186115e-07,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 8.44243763037223e-07,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      }
+    ],
+    "iid_mean_variance_measurement": null,
+    "residual_range_dollars": null,
+    "residual_variance_upper_bound": null,
+    "residual_covariance_bound": null,
+    "residual_or_coherent_control_implemented": false,
+    "financial_full_price_certificate": false,
+    "law": "ContinuousGBM time-ordered survival-conditioned Gaussianincrements withlikelihoodweight product",
+    "integrand": "discounted survivorAsianpositivepayoff multipliedbyproductofconditional survivalprobabilities",
+    "coordinates": 48,
+    "raw_scramble_prefix_binding": {
+      "original": "results/frontier_classical_20261001/c5/rates/B4x12_oss.npy",
+      "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/results/frontier_classical_20261001/c5/rates/B4x12_oss.npy",
+      "sha256": "109672d9c5488539de85954c71bec4c47e3ecfcdce7d0e7f01deeeb4f36bf294"
+    },
+    "one_path_sigma_unavailable_reason": "No individual OSSpath outcomes or onepathvariance measurement inthisfrozenmenu;prefixmeans donotsupplyonepathvariance",
+    "expectation_identity": "Ideal exact survivalconditioning andlikelihoodweights targettheoriginal continuousmonitored price; numericalCDF,quantile,rootandroundoff effectsstillneedfinancialcertification",
+    "quantum_smoothing_or_variance_credit_available": false,
+    "measured_error_cost_model": "Independent-scramble meanvariancecurve for thisOSStransform;onepathsigma/e isnota replacement.",
+    "additional_64_scramble_reference_variance_measurements": [
+      {
+        "points_per_scramble": 64,
+        "independent_scrambles_observed": 64,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.11104147287636403,
+        "sample_sd_of_one_scramble_mean_dollars": 0.3332288596090741,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.001735023013693188,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.006940092054772752,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 128,
+        "independent_scrambles_observed": 64,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.04864950494962335,
+        "sample_sd_of_one_scramble_mean_dollars": 0.22056632777834279,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.0007601485148378648,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.0030405940593514593,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 256,
+        "independent_scrambles_observed": 64,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.026623359572027425,
+        "sample_sd_of_one_scramble_mean_dollars": 0.16316666195037338,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.0004159899933129285,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.001663959973251714,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 512,
+        "independent_scrambles_observed": 64,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.011082167715077834,
+        "sample_sd_of_one_scramble_mean_dollars": 0.1052718752330262,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.00017315887054809116,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.0006926354821923646,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 1024,
+        "independent_scrambles_observed": 64,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.005070147525669992,
+        "sample_sd_of_one_scramble_mean_dollars": 0.07120496840579309,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 7.922105508859362e-05,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.0003168842203543745,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 2048,
+        "independent_scrambles_observed": 64,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.0025210996698658487,
+        "sample_sd_of_one_scramble_mean_dollars": 0.050210553371436255,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 3.9392182341653886e-05,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.00015756872936661555,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 4096,
+        "independent_scrambles_observed": 64,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.001580468802458837,
+        "sample_sd_of_one_scramble_mean_dollars": 0.039755110394247895,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 2.469482503841933e-05,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 9.877930015367731e-05,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 8192,
+        "independent_scrambles_observed": 64,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.0006774584507552572,
+        "sample_sd_of_one_scramble_mean_dollars": 0.026028032018484554,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 1.0585288293050893e-05,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 4.234115317220357e-05,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 16384,
+        "independent_scrambles_observed": 64,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.00016535756687999508,
+        "sample_sd_of_one_scramble_mean_dollars": 0.012859143318277274,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 2.583711982499923e-06,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 1.0334847929999692e-05,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 32768,
+        "independent_scrambles_observed": 64,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 6.639406176974052e-05,
+        "sample_sd_of_one_scramble_mean_dollars": 0.008148255136514843,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 1.0374072151521955e-06,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 4.149628860608782e-06,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 65536,
+        "independent_scrambles_observed": 64,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 3.337618131722396e-05,
+        "sample_sd_of_one_scramble_mean_dollars": 0.005777212244432773,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 5.215028330816243e-07,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 2.0860113323264974e-06,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 131072,
+        "independent_scrambles_observed": 64,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 1.7140836457633164e-05,
+        "sample_sd_of_one_scramble_mean_dollars": 0.004140149327938929,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 2.678255696505182e-07,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 1.0713022786020727e-06,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 262144,
+        "independent_scrambles_observed": 64,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 1.2776514231078371e-05,
+        "sample_sd_of_one_scramble_mean_dollars": 0.0035744250210458144,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 1.9963303486059955e-07,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 7.985321394423982e-07,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 524288,
+        "independent_scrambles_observed": 64,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 7.877365113610162e-06,
+        "sample_sd_of_one_scramble_mean_dollars": 0.0028066644105788924,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 1.2308382990015878e-07,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 4.923353196006351e-07,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 1048576,
+        "independent_scrambles_observed": 64,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 3.1997454506498576e-06,
+        "sample_sd_of_one_scramble_mean_dollars": 0.0017887832318785465,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 4.9996022666404025e-08,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 1.999840906656161e-07,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 2097152,
+        "independent_scrambles_observed": 64,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 2.599923281487173e-06,
+        "sample_sd_of_one_scramble_mean_dollars": 0.0016124277600832767,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 4.062380127323708e-08,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 1.6249520509294832e-07,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 4194304,
+        "independent_scrambles_observed": 64,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 2.1903287067469532e-06,
+        "sample_sd_of_one_scramble_mean_dollars": 0.0014799759142455505,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 3.4223886042921144e-08,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 1.3689554417168458e-07,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      }
+    ],
+    "additional_reference_prefix_binding": {
+      "original": "results/frontier_classical_20261001/c3_refa/B4x12_oss_prefix.npy",
+      "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/results/frontier_classical_20261001/c3_refa/B4x12_oss_prefix.npy",
+      "sha256": "79c4ff26513f1a92aeef14c5c51c4910f45cc5a8e904de119f1a3a55666de786"
+    }
+  },
+  {
+    "case": "B4x12",
+    "method": "oss-bb",
+    "original_contract": {
+      "assets": 4,
+      "monitored_dates": 12,
+      "spot_dollars_exact": [
+        100,
+        1
+      ],
+      "strike_dollars_exact": [
+        100,
+        1
+      ],
+      "strict_survival_basket_threshold_dollars_exact": [
+        140,
+        1
+      ],
+      "sigma_exact": [
+        3,
+        10
+      ],
+      "correlation_exact": [
+        2,
+        5
+      ],
+      "rate_exact": [
+        3,
+        100
+      ],
+      "maturity_years_exact": [
+        1,
+        1
+      ],
+      "scalar_discounted_price": true,
+      "notional_rescaling": 1
+    },
+    "normalization": {
+      "output_units": "already discounted dollars",
+      "output_contains_original_discount": true,
+      "second_discount_applied": false,
+      "native_fixed_point_fraction_bits": null,
+      "amplitude_normalization_span_dollars": null
+    },
+    "transform_source_bindings": [
+      {
+        "original": "research/frontier_classical_20261001/c5_smoothers.py",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/research/frontier_classical_20261001/c5_smoothers.py",
+        "sha256": "447d7781a5e081c0e81b5e225f261e17e8f2a8277cad452ce399fb03fd9eea87"
+      },
+      {
+        "original": "research/frontier_classical_20261001/oss.py",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/research/frontier_classical_20261001/oss.py",
+        "sha256": "95f1f809eae8403c1ae1ef48d5749469d018cb980c2ad2e4f807b0a8f5c0290e"
+      },
+      {
+        "original": "research/frontier_classical_20261001/basis.py",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/research/frontier_classical_20261001/basis.py",
+        "sha256": "3c6f238c0a9b2303a95cab7439739bc97d2d5ceb37e42bb143da2f3ea21419ee"
+      },
+      {
+        "original": "research/frontier_classical_20261001/timing.py",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/research/frontier_classical_20261001/timing.py",
+        "sha256": "dbf9079d9503b888f0a5ca4b6f2134b7629239915cb72e75e52d64d22a654cb0"
+      }
+    ],
+    "one_path_sigma": null,
+    "one_path_population_variance_upper_bound": {
+      "upper_dollars_squared_exact": [
+        400,
+        1
+      ],
+      "law": "ideal exactly conditioned,correctly likelihoodweightedOSS integrand",
+      "proof": "Conditional survivalweights arein[0,1] andsurvivingdiscounted payoffisin[0,40], henceintegrandisin[0,40]",
+      "actual_float64_transform_bias_bound_dollars": null,
+      "bound_not_a_complete_actual_float64_price_certificate": true
+    },
+    "independent_scramble_variance_measurements": [
+      {
+        "points_per_scramble": 64,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.08525820281844833,
+        "sample_sd_of_one_scramble_mean_dollars": 0.29199007315052394,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.0026643188380765103,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.0053286376761530205,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 128,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.046015306016124045,
+        "sample_sd_of_one_scramble_mean_dollars": 0.21451178526161224,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.0014379783130038764,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.002875956626007753,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 256,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.016071462484847976,
+        "sample_sd_of_one_scramble_mean_dollars": 0.12677327196553687,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.0005022332026514992,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.0010044664053029985,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 512,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.007681094642827905,
+        "sample_sd_of_one_scramble_mean_dollars": 0.0876418544008963,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.00024003420758837203,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.00048006841517674406,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 1024,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.003554004546439307,
+        "sample_sd_of_one_scramble_mean_dollars": 0.05961547237453803,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.00011106264207622834,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.00022212528415245668,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 2048,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.0013811130374916437,
+        "sample_sd_of_one_scramble_mean_dollars": 0.03716332920355284,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 4.3159782421613865e-05,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 8.631956484322773e-05,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 4096,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.0004456422120432156,
+        "sample_sd_of_one_scramble_mean_dollars": 0.02111023950700739,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 1.3926319126350488e-05,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 2.7852638252700976e-05,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 8192,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.00020934395093563603,
+        "sample_sd_of_one_scramble_mean_dollars": 0.014468723196455036,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 6.541998466738626e-06,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 1.3083996933477252e-05,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 16384,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 8.11081613302815e-05,
+        "sample_sd_of_one_scramble_mean_dollars": 0.00900600695815196,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 2.534630041571297e-06,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 5.069260083142594e-06,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 32768,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 5.95794778197684e-05,
+        "sample_sd_of_one_scramble_mean_dollars": 0.007718774372901983,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 1.8618586818677624e-06,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 3.723717363735525e-06,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 65536,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 2.434815082171724e-05,
+        "sample_sd_of_one_scramble_mean_dollars": 0.004934384543356673,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 7.608797131786638e-07,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 1.5217594263573276e-06,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 131072,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 1.1209113555377084e-05,
+        "sample_sd_of_one_scramble_mean_dollars": 0.003348001427027337,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 3.5028479860553387e-07,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 7.005695972110677e-07,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 262144,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 4.6233947691989465e-06,
+        "sample_sd_of_one_scramble_mean_dollars": 0.002150208075791491,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 1.4448108653746708e-07,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 2.8896217307493416e-07,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 524288,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 2.018701944904544e-06,
+        "sample_sd_of_one_scramble_mean_dollars": 0.0014208103127808947,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 6.3084435778267e-08,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 1.26168871556534e-07,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      }
+    ],
+    "iid_mean_variance_measurement": null,
+    "residual_range_dollars": null,
+    "residual_variance_upper_bound": null,
+    "residual_covariance_bound": null,
+    "residual_or_coherent_control_implemented": false,
+    "financial_full_price_certificate": false,
+    "law": "ContinuousGBM survival-conditioned Gaussianincrements withlikelihoodweight product; Brownianbridgeordering foridioPCs",
+    "integrand": "discounted survivorAsianpositivepayoff multipliedbyproductofconditional survivalprobabilities",
+    "coordinates": 48,
+    "raw_scramble_prefix_binding": {
+      "original": "results/frontier_classical_20261001/c5/rates/B4x12_oss_bb.npy",
+      "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/results/frontier_classical_20261001/c5/rates/B4x12_oss_bb.npy",
+      "sha256": "ad048a0c8fff8998691f35fa19174869f3b858a6edfb84193206f24e7129d32e"
+    },
+    "one_path_sigma_unavailable_reason": "No individual OSSpath outcomes or onepathvariance measurement inthisfrozenmenu;prefixmeans donotsupplyonepathvariance",
+    "expectation_identity": "Ideal exact survivalconditioning andlikelihoodweights targettheoriginal continuousmonitored price; numericalCDF,quantile,rootandroundoff effectsstillneedfinancialcertification",
+    "quantum_smoothing_or_variance_credit_available": false,
+    "measured_error_cost_model": "Independent-scramble meanvariancecurve for thisOSStransform;onepathsigma/e isnota replacement."
+  },
+  {
+    "case": "B4x12",
+    "method": "iid-reference",
+    "original_contract": {
+      "assets": 4,
+      "monitored_dates": 12,
+      "spot_dollars_exact": [
+        100,
+        1
+      ],
+      "strike_dollars_exact": [
+        100,
+        1
+      ],
+      "strict_survival_basket_threshold_dollars_exact": [
+        140,
+        1
+      ],
+      "sigma_exact": [
+        3,
+        10
+      ],
+      "correlation_exact": [
+        2,
+        5
+      ],
+      "rate_exact": [
+        3,
+        100
+      ],
+      "maturity_years_exact": [
+        1,
+        1
+      ],
+      "scalar_discounted_price": true,
+      "notional_rescaling": 1
+    },
+    "normalization": {
+      "output_units": "already discounted dollars",
+      "output_contains_original_discount": true,
+      "second_discount_applied": false,
+      "native_fixed_point_fraction_bits": null,
+      "amplitude_normalization_span_dollars": null
+    },
+    "transform_source_bindings": [
+      {
+        "original": "research/frontier_classical_20261001/c3_refb.py",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/research/frontier_classical_20261001/c3_refb.py",
+        "sha256": "2f0dac6169328c2388cdb8e73e401e58316091f5125057f0d63e51f335b552fd"
+      },
+      {
+        "original": "research/frontier_classical_20261001/scrambles.py",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/research/frontier_classical_20261001/scrambles.py",
+        "sha256": "40403b81a1b92d336bcb23a352029f2607ef859589f640e329075a597c49dc0f"
+      }
+    ],
+    "one_path_sigma": {
+      "sample_sd_dollars": 5.66344824768575,
+      "sample_variance_dollars_squared": 32.07464605421479,
+      "actual_paths": 126666244096,
+      "ddof": 1,
+      "raw_worker_aggregates_reconciled": true,
+      "receipt_binding": {
+        "original": "results/frontier_classical_20261001/c3_refb/B4x12/ref_b.json",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/results/frontier_classical_20261001/c3_refb/B4x12/ref_b.json",
+        "sha256": "9339928d17131e0ab52dbcf9862e17c628e9aa0d058bc816d054bc3036eafe09"
+      },
+      "certified_population_upper_bound": false
+    },
+    "one_path_population_variance_upper_bound": {
+      "upper_dollars_squared_exact": [
+        400,
+        1
+      ],
+      "law": "ideal original continuous monitored discountedpayoff",
+      "proof": "Originalsurvivalimpliespositivepayoffbelow40;Popoviciu",
+      "actual_float64_transform_bias_bound_dollars": null
+    },
+    "independent_scramble_variance_measurements": [],
+    "iid_mean_variance_measurement": {
+      "estimated_variance_dollars_squared": 2.532217346707265e-10,
+      "standard_error_dollars": 1.591294236370906e-05,
+      "actual_iid_paths": 126666244096,
+      "formula": "Samplepathvariance/actualindependentpathcount; thisidentitydoesnotapplytoscrambledRQMC prefixpoints",
+      "normal_approximation_hw99_dollars": 4.09890232461265e-05,
+      "rigorous_population_error_certificate": null
+    },
+    "residual_range_dollars": null,
+    "residual_variance_upper_bound": null,
+    "residual_covariance_bound": null,
+    "residual_or_coherent_control_implemented": false,
+    "financial_full_price_certificate": false,
+    "law": "PCG64 independentnormal numericalgenerator,commonplusidio onefactor exactmonitored-date stepping",
+    "integrand": "discounted unsmoothed plainmonitored knockoutpayoff",
+    "normal_coordinates": 60,
+    "quantum_smoothing_or_variance_credit_available": false,
+    "measured_error_cost_model": "Thisrowis theexistingfixedbudgetreference,notanaccuracy-target time-to-delivery anchor."
+  },
+  {
+    "case": "B4x12",
+    "method": "native-quantum-payoff",
+    "original_contract": {
+      "assets": 4,
+      "monitored_dates": 12,
+      "spot_dollars_exact": [
+        100,
+        1
+      ],
+      "strike_dollars_exact": [
+        100,
+        1
+      ],
+      "strict_survival_basket_threshold_dollars_exact": [
+        140,
+        1
+      ],
+      "sigma_exact": [
+        3,
+        10
+      ],
+      "correlation_exact": [
+        2,
+        5
+      ],
+      "rate_exact": [
+        3,
+        100
+      ],
+      "maturity_years_exact": [
+        1,
+        1
+      ],
+      "scalar_discounted_price": true,
+      "notional_rescaling": 1
+    },
+    "normalization": {
+      "output_units": "already discounted dollars",
+      "output_contains_original_discount": true,
+      "second_discount_applied": false,
+      "native_fixed_point_fraction_bits": 40,
+      "amplitude_normalization_span_dollars": 64,
+      "native_integer_to_dollars_scale_exact": [
+        1,
+        1099511627776
+      ],
+      "native_discount_literal_exact": [
+        266754037065,
+        274877906944
+      ],
+      "selector_bits": 46,
+      "probability_identity": "p=E[Yraw]/2^46=E[alreadydiscountednativeYdollars]/64"
+    },
+    "transform_source_bindings": [
+      {
+        "original": "results/limitation_program_20261001/A10_coefficient_run001/B4x12/min-depth/target.json",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/results/limitation_program_20261001/A10_coefficient_run001/B4x12/min-depth/target.json",
+        "sha256": "a7a682731b3cdb6f16b32a9b1a467d6bfeccb32ea97e583ab79e5252bb7a9384"
+      },
+      {
+        "source": "results/limitation_program_20261001/A10_coefficient_run001/B4x12/min-depth/source.json",
+        "sha256": "d40db71a1946f49e40683b6686579bc572f668de03f5968ccc5911189760e21f"
+      },
+      {
+        "estimator_ledger": "results/limitation_program_20261001/E02_financial_run002/B4x12/estimator_ledger.json",
+        "sha256": "440c7c8ef6435ac7624a9b7cdb6a0fcbeb2ab2afefcfc0614fccbf260decc42d"
+      }
+    ],
+    "one_path_sigma": null,
+    "one_path_population_variance_upper_bound": {
+      "upper_dollars_squared_exact": [
+        1821637536850509271851650625,
+        4835703278458516698824704
+      ],
+      "law": "Actualacceptednativefinite source,allinputwords",
+      "proof": "IndependentlyauditedactualYsupportplusPopoviciu",
+      "native_payoff_support_dollars_exact": [
+        [
+          0,
+          1
+        ],
+        [
+          42680645928225,
+          1099511627776
+        ]
+      ],
+      "native_payoff_support_raw": [
+        0,
+        42680645928225
+      ],
+      "native_path_sigma_upper_dollars_exact": [
+        42680645928225,
+        2199023255552
+      ],
+      "certificate": "results/limitation_program_20261001/E03_support_run001/B4x12_certificate.json",
+      "certificate_sha256": "539d1cd48b61ff6cb16a241714428dcceec005bc41cc7c0591980492c46d5741",
+      "independent_audit": "results/limitation_program_20261001/E03_support_audit_run002/B4x12_audit.json",
+      "independent_audit_sha256": "1b149ec7d91c8e719b82fa4e69d72f60a28b9c7d28e034269a3ff4eaddd900d4"
+    },
+    "independent_scramble_variance_measurements": [],
+    "iid_mean_variance_measurement": null,
+    "residual_range_dollars": null,
+    "residual_variance_upper_bound": null,
+    "residual_covariance_bound": null,
+    "residual_or_coherent_control_implemented": false,
+    "financial_full_price_certificate": false,
+    "law": "Uniformproduct32bitinputwords,exactf40midpoints,jointsharedinputBoxMuller,nativetableandEstrinarithmetic,clippedlogprefixes andstrictmonitoring",
+    "integrand": "Unsmoothedoriginalnative discounted knockoutpayoffY,notaclassicalconditionalexpectation orsurvivalweightedtransform",
+    "random_uniform_words": 60,
+    "joint_Box_Muller_pairs": 30,
+    "finite_outputs_claimed_independent_gaussian": false,
+    "normalized_payoff_value_population_variance_upper_exact": [
+      1821637536850509271851650625,
+      19807040628566084398385987584
+    ],
+    "selector_marking_Bernoulli_population_variance_upper_exact": [
+      1,
+      4
+    ],
+    "selector_variance_is_not_scaled_path_payoff_variance": true,
+    "measured_native_path_sigma": null,
+    "classical_smoothed_path_sigma_credited": false,
+    "classical_scramble_mean_variance_credited": false,
+    "current_estimator_kind": "Sourcecompatible boundedrangeQPE with64dollarspan; itdoesnotconsumea smoothedclassicalsigma",
+    "current_Grover_invocations": 983025,
+    "current_fresh_preparations": 15,
+    "extra_coherent_preintegration_or_OSS_source_implemented": false,
+    "rangebound_does_not_close_continuous_G2": true
+  },
+  {
+    "case": "B8x52",
+    "method": "plain-rqmc",
+    "original_contract": {
+      "assets": 8,
+      "monitored_dates": 52,
+      "spot_dollars_exact": [
+        100,
+        1
+      ],
+      "strike_dollars_exact": [
+        100,
+        1
+      ],
+      "strict_survival_basket_threshold_dollars_exact": [
+        140,
+        1
+      ],
+      "sigma_exact": [
+        3,
+        10
+      ],
+      "correlation_exact": [
+        2,
+        5
+      ],
+      "rate_exact": [
+        3,
+        100
+      ],
+      "maturity_years_exact": [
+        1,
+        1
+      ],
+      "scalar_discounted_price": true,
+      "notional_rescaling": 1
+    },
+    "normalization": {
+      "output_units": "already discounted dollars",
+      "output_contains_original_discount": true,
+      "second_discount_applied": false,
+      "native_fixed_point_fraction_bits": null,
+      "amplitude_normalization_span_dollars": null
+    },
+    "transform_source_bindings": [
+      {
+        "original": "research/frontier_classical_20261001/scrambles.py",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/research/frontier_classical_20261001/scrambles.py",
+        "sha256": "40403b81a1b92d336bcb23a352029f2607ef859589f640e329075a597c49dc0f"
+      },
+      {
+        "original": "research/frontier_classical_20261001/basis.py",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/research/frontier_classical_20261001/basis.py",
+        "sha256": "3c6f238c0a9b2303a95cab7439739bc97d2d5ceb37e42bb143da2f3ea21419ee"
+      },
+      {
+        "original": "research/frontier_classical_20261001/kernels.py",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/research/frontier_classical_20261001/kernels.py",
+        "sha256": "b0762f0e7d82ce9b4a5b7fe28c10278bfa3ccc0b390afe3a72e9d09404e97987"
+      },
+      {
+        "original": "research/frontier_classical_20261001/timing.py",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/research/frontier_classical_20261001/timing.py",
+        "sha256": "dbf9079d9503b888f0a5ca4b6f2134b7629239915cb72e75e52d64d22a654cb0"
+      }
+    ],
+    "one_path_sigma": {
+      "measurement_kind": "one_path_sample_standard_deviation_of_discounted_continuous_model_integrand",
+      "sample_sd_dollars": 5.183395545396595,
+      "sample_variance_dollars_squared": 26.86758938003727,
+      "iid_normal_draws": 1048576,
+      "ddof": 1,
+      "pilot_receipt_binding": {
+        "original": "results/frontier_classical_20261001/sigma_dev/sigma_dev.json",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/results/frontier_classical_20261001/sigma_dev/sigma_dev.json",
+        "sha256": "9d3c4e361ec0a9f4d24fbebea7e1d6adb40e39326cf67d5fd44cca6a4fa27677"
+      },
+      "pilot_transform_source_binding": {
+        "original": "research/frontier_classical_20261001/sigma_q.py",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/research/frontier_classical_20261001/sigma_q.py",
+        "sha256": "757e7c0dfdf660a95c1cda7138abfcf0c90fb387765c0271b4fb667955ce8f1c"
+      },
+      "source_family": "canonicalPCA Gaussian normal pilot",
+      "raw_one_path_values_archived_in_frozen_inventory": false,
+      "full_code_spec_environment_hashes_in_pilot": false,
+      "measured_value_not_a_certified_population_upper_bound": true,
+      "finite_quantum_law_bound_transfer_certified": false,
+      "sigma_over_epsilon_cost_substituted_for_measured_RQMC_variance": false,
+      "recorded_bootstrap_ci95_dollars": [
+        5.173713668607464,
+        5.192610431427698
+      ],
+      "bootstrap_ci_is_not_a_99percent_population_bound": true
+    },
+    "one_path_population_variance_upper_bound": {
+      "upper_dollars_squared_exact": [
+        400,
+        1
+      ],
+      "law": "ideal original continuous monitored discountedpayoff",
+      "proof": "BothYandidealE[Y|remainingcoordinates] liein[0,40];Popoviciu givesvariance<=40^2/4",
+      "actual_float64_transform_bias_bound_dollars": null,
+      "bound_not_a_complete_actual_float64_price_certificate": true
+    },
+    "independent_scramble_variance_measurements": [
+      {
+        "points_per_scramble": 64,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.11609440649401229,
+        "sample_sd_of_one_scramble_mean_dollars": 0.3407262926367912,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.003627950202937884,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.007255900405875768,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 128,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.03988996837799118,
+        "sample_sd_of_one_scramble_mean_dollars": 0.19972473151312828,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.0012465615118122243,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.0024931230236244486,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 256,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.022660839256363665,
+        "sample_sd_of_one_scramble_mean_dollars": 0.1505351761428659,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.0007081512267613645,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.001416302453522729,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 512,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.013241752194433335,
+        "sample_sd_of_one_scramble_mean_dollars": 0.11507281257722579,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.0004138047560760417,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.0008276095121520834,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 1024,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.006314286758108617,
+        "sample_sd_of_one_scramble_mean_dollars": 0.07946248648329989,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.0001973214611908943,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.0003946429223817886,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 2048,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.0023926659240231306,
+        "sample_sd_of_one_scramble_mean_dollars": 0.04891488448338737,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 7.477081012572283e-05,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.00014954162025144566,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 4096,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.0009122270385307859,
+        "sample_sd_of_one_scramble_mean_dollars": 0.030203096505669512,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 2.850709495408706e-05,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 5.701418990817412e-05,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 8192,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.0006008311003542715,
+        "sample_sd_of_one_scramble_mean_dollars": 0.024511856322079556,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 1.8775971886070983e-05,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 3.7551943772141966e-05,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 16384,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.0002826425916122782,
+        "sample_sd_of_one_scramble_mean_dollars": 0.01681197762347661,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 8.832580987883694e-06,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 1.7665161975767388e-05,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 32768,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 7.582017200975144e-05,
+        "sample_sd_of_one_scramble_mean_dollars": 0.008707477936219617,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 2.3693803753047326e-06,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 4.738760750609465e-06,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 65536,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 3.4791256490126094e-05,
+        "sample_sd_of_one_scramble_mean_dollars": 0.005898411353078564,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 1.0872267653164404e-06,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 2.174453530632881e-06,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 131072,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 1.7824389796208776e-05,
+        "sample_sd_of_one_scramble_mean_dollars": 0.004221894100544065,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 5.570121811315243e-07,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 1.1140243622630485e-06,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 262144,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 1.3055739327380041e-05,
+        "sample_sd_of_one_scramble_mean_dollars": 0.003613272661643464,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 4.079918539806263e-07,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 8.159837079612526e-07,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 524288,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 6.240231330658932e-06,
+        "sample_sd_of_one_scramble_mean_dollars": 0.0024980455021193933,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 1.9500722908309163e-07,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 3.9001445816618327e-07,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      }
+    ],
+    "iid_mean_variance_measurement": null,
+    "residual_range_dollars": null,
+    "residual_variance_upper_bound": null,
+    "residual_covariance_bound": null,
+    "residual_or_coherent_control_implemented": false,
+    "financial_full_price_certificate": false,
+    "law": "ContinuousGBM covariance model evaluatednumerically by clippedinverse-normal scrambledSobol andfullrankPCA",
+    "integrand": "discounted unsmoothed monitored knockoutpayoff",
+    "coordinates": 416,
+    "expectation_identity": "Original continuous Gaussian covariance model; changingPCAbasis preservesitsidealdistribution, butthisisnot anexact rotation identityfor pairedfiniteBoxMuller/nativewords",
+    "raw_scramble_prefix_binding": {
+      "original": "results/frontier_classical_20261001/c1/B8x52_canonical.npy",
+      "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/results/frontier_classical_20261001/c1/B8x52_canonical.npy",
+      "sha256": "7ee6603d25445dd5c97c6b93af19bc0a142b50e88903b5f1798bc40748b52ab9"
+    },
+    "recorded_covariance_factor_sha256": "57a0d32056dd6a278eeac16969baaed8cff3b3562385ab39ed4f15ecd28606f6",
+    "quantum_smoothing_or_variance_credit_available": false,
+    "measured_error_cost_model": "Use independent-scramble error versuspointcount andactualtimings;do not substituteonepathsigma/sqrtn orsigma/epsilon."
+  },
+  {
+    "case": "B8x52",
+    "method": "preintegration",
+    "original_contract": {
+      "assets": 8,
+      "monitored_dates": 52,
+      "spot_dollars_exact": [
+        100,
+        1
+      ],
+      "strike_dollars_exact": [
+        100,
+        1
+      ],
+      "strict_survival_basket_threshold_dollars_exact": [
+        140,
+        1
+      ],
+      "sigma_exact": [
+        3,
+        10
+      ],
+      "correlation_exact": [
+        2,
+        5
+      ],
+      "rate_exact": [
+        3,
+        100
+      ],
+      "maturity_years_exact": [
+        1,
+        1
+      ],
+      "scalar_discounted_price": true,
+      "notional_rescaling": 1
+    },
+    "normalization": {
+      "output_units": "already discounted dollars",
+      "output_contains_original_discount": true,
+      "second_discount_applied": false,
+      "native_fixed_point_fraction_bits": null,
+      "amplitude_normalization_span_dollars": null
+    },
+    "transform_source_bindings": [
+      {
+        "original": "research/frontier_classical_20261001/scrambles.py",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/research/frontier_classical_20261001/scrambles.py",
+        "sha256": "40403b81a1b92d336bcb23a352029f2607ef859589f640e329075a597c49dc0f"
+      },
+      {
+        "original": "research/frontier_classical_20261001/basis.py",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/research/frontier_classical_20261001/basis.py",
+        "sha256": "3c6f238c0a9b2303a95cab7439739bc97d2d5ceb37e42bb143da2f3ea21419ee"
+      },
+      {
+        "original": "research/frontier_classical_20261001/kernels.py",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/research/frontier_classical_20261001/kernels.py",
+        "sha256": "b0762f0e7d82ce9b4a5b7fe28c10278bfa3ccc0b390afe3a72e9d09404e97987"
+      },
+      {
+        "original": "research/frontier_classical_20261001/timing.py",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/research/frontier_classical_20261001/timing.py",
+        "sha256": "dbf9079d9503b888f0a5ca4b6f2134b7629239915cb72e75e52d64d22a654cb0"
+      }
+    ],
+    "one_path_sigma": {
+      "measurement_kind": "one_path_sample_standard_deviation_of_discounted_continuous_model_integrand",
+      "sample_sd_dollars": 1.1458902106952196,
+      "sample_variance_dollars_squared": 1.3130643749671347,
+      "iid_normal_draws": 1048576,
+      "ddof": 1,
+      "pilot_receipt_binding": {
+        "original": "results/frontier_classical_20261001/sigma_dev/sigma_dev.json",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/results/frontier_classical_20261001/sigma_dev/sigma_dev.json",
+        "sha256": "9d3c4e361ec0a9f4d24fbebea7e1d6adb40e39326cf67d5fd44cca6a4fa27677"
+      },
+      "pilot_transform_source_binding": {
+        "original": "research/frontier_classical_20261001/sigma_q.py",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/research/frontier_classical_20261001/sigma_q.py",
+        "sha256": "757e7c0dfdf660a95c1cda7138abfcf0c90fb387765c0271b4fb667955ce8f1c"
+      },
+      "source_family": "canonicalPCA Gaussian normal pilot",
+      "raw_one_path_values_archived_in_frozen_inventory": false,
+      "full_code_spec_environment_hashes_in_pilot": false,
+      "measured_value_not_a_certified_population_upper_bound": true,
+      "finite_quantum_law_bound_transfer_certified": false,
+      "sigma_over_epsilon_cost_substituted_for_measured_RQMC_variance": false,
+      "recorded_bootstrap_ci95_dollars": null,
+      "conditioning_interpretation": "Ideal exact preintegration is a conditional expectation; law of total variance supportsnonincrease butthisreported sd is a numericalpilot,not a currentcoherentquantumsource."
+    },
+    "one_path_population_variance_upper_bound": {
+      "upper_dollars_squared_exact": [
+        400,
+        1
+      ],
+      "law": "ideal exact conditionalexpectation transform",
+      "proof": "BothYandidealE[Y|remainingcoordinates] liein[0,40];Popoviciu givesvariance<=40^2/4",
+      "actual_float64_transform_bias_bound_dollars": null,
+      "bound_not_a_complete_actual_float64_price_certificate": true
+    },
+    "independent_scramble_variance_measurements": [
+      {
+        "points_per_scramble": 64,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.0019060302201867052,
+        "sample_sd_of_one_scramble_mean_dollars": 0.04365810600778171,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 5.956344438083454e-05,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.00011912688876166908,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 128,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.0009016464390827879,
+        "sample_sd_of_one_scramble_mean_dollars": 0.030027428113023398,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 2.8176451221337122e-05,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 5.6352902442674244e-05,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 256,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.00028249498155932676,
+        "sample_sd_of_one_scramble_mean_dollars": 0.016807587023702324,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 8.827968173728961e-06,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 1.7655936347457923e-05,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 512,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.0001705130846852006,
+        "sample_sd_of_one_scramble_mean_dollars": 0.013058065886079783,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 5.328533896412519e-06,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 1.0657067792825037e-05,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 1024,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 9.785120693102591e-05,
+        "sample_sd_of_one_scramble_mean_dollars": 0.009891976897012341,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 3.0578502165945598e-06,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 6.1157004331891195e-06,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 2048,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 2.8787620985824503e-05,
+        "sample_sd_of_one_scramble_mean_dollars": 0.005365409675488397,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 8.996131558070157e-07,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 1.7992263116140315e-06,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 4096,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 1.0696884176717724e-05,
+        "sample_sd_of_one_scramble_mean_dollars": 0.0032706091445964197,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 3.342776305224289e-07,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 6.685552610448578e-07,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 8192,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 5.852420605597232e-06,
+        "sample_sd_of_one_scramble_mean_dollars": 0.002419177671358024,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 1.828881439249135e-07,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 3.65776287849827e-07,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 16384,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 2.2396022912438448e-06,
+        "sample_sd_of_one_scramble_mean_dollars": 0.0014965300836414365,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 6.998757160137015e-08,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 1.399751432027403e-07,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 32768,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 2.07457602642901e-06,
+        "sample_sd_of_one_scramble_mean_dollars": 0.0014403388581958796,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 6.483050082590656e-08,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 1.2966100165181312e-07,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 65536,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 6.684616718653185e-07,
+        "sample_sd_of_one_scramble_mean_dollars": 0.0008175950537187212,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 2.0889427245791203e-08,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 4.1778854491582406e-08,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 131072,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 2.720615231208547e-07,
+        "sample_sd_of_one_scramble_mean_dollars": 0.000521595171680926,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 8.50192259752671e-09,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 1.700384519505342e-08,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 262144,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 1.018210859498851e-07,
+        "sample_sd_of_one_scramble_mean_dollars": 0.000319094164706729,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 3.1819089359339094e-09,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 6.363817871867819e-09,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 524288,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 3.2779601339229424e-08,
+        "sample_sd_of_one_scramble_mean_dollars": 0.0001810513776231195,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 1.0243625418509195e-09,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 2.048725083701839e-09,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      }
+    ],
+    "iid_mean_variance_measurement": null,
+    "residual_range_dollars": null,
+    "residual_variance_upper_bound": null,
+    "residual_covariance_bound": null,
+    "residual_or_coherent_control_implemented": false,
+    "financial_full_price_certificate": false,
+    "law": "ContinuousGBM covariance model evaluatednumerically by clippedinverse-normal scrambledSobol andfullrankPCA",
+    "integrand": "discounted firstprincipalGaussian direction conditional expectation ofmonitored knockoutpayoff",
+    "coordinates": 416,
+    "expectation_identity": "Original continuous Gaussian covariance model; changingPCAbasis preservesitsidealdistribution, butthisisnot anexact rotation identityfor pairedfiniteBoxMuller/nativewords",
+    "raw_scramble_prefix_binding": {
+      "original": "results/frontier_classical_20261001/c1/B8x52_canonical.npy",
+      "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/results/frontier_classical_20261001/c1/B8x52_canonical.npy",
+      "sha256": "7ee6603d25445dd5c97c6b93af19bc0a142b50e88903b5f1798bc40748b52ab9"
+    },
+    "recorded_covariance_factor_sha256": "57a0d32056dd6a278eeac16969baaed8cff3b3562385ab39ed4f15ecd28606f6",
+    "quantum_smoothing_or_variance_credit_available": false,
+    "measured_error_cost_model": "Use independent-scramble error versuspointcount andactualtimings;do not substituteonepathsigma/sqrtn orsigma/epsilon."
+  },
+  {
+    "case": "B8x52",
+    "method": "time-ordered-oss",
+    "original_contract": {
+      "assets": 8,
+      "monitored_dates": 52,
+      "spot_dollars_exact": [
+        100,
+        1
+      ],
+      "strike_dollars_exact": [
+        100,
+        1
+      ],
+      "strict_survival_basket_threshold_dollars_exact": [
+        140,
+        1
+      ],
+      "sigma_exact": [
+        3,
+        10
+      ],
+      "correlation_exact": [
+        2,
+        5
+      ],
+      "rate_exact": [
+        3,
+        100
+      ],
+      "maturity_years_exact": [
+        1,
+        1
+      ],
+      "scalar_discounted_price": true,
+      "notional_rescaling": 1
+    },
+    "normalization": {
+      "output_units": "already discounted dollars",
+      "output_contains_original_discount": true,
+      "second_discount_applied": false,
+      "native_fixed_point_fraction_bits": null,
+      "amplitude_normalization_span_dollars": null
+    },
+    "transform_source_bindings": [
+      {
+        "original": "research/frontier_classical_20261001/c5_smoothers.py",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/research/frontier_classical_20261001/c5_smoothers.py",
+        "sha256": "447d7781a5e081c0e81b5e225f261e17e8f2a8277cad452ce399fb03fd9eea87"
+      },
+      {
+        "original": "research/frontier_classical_20261001/oss.py",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/research/frontier_classical_20261001/oss.py",
+        "sha256": "95f1f809eae8403c1ae1ef48d5749469d018cb980c2ad2e4f807b0a8f5c0290e"
+      },
+      {
+        "original": "research/frontier_classical_20261001/basis.py",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/research/frontier_classical_20261001/basis.py",
+        "sha256": "3c6f238c0a9b2303a95cab7439739bc97d2d5ceb37e42bb143da2f3ea21419ee"
+      },
+      {
+        "original": "research/frontier_classical_20261001/timing.py",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/research/frontier_classical_20261001/timing.py",
+        "sha256": "dbf9079d9503b888f0a5ca4b6f2134b7629239915cb72e75e52d64d22a654cb0"
+      }
+    ],
+    "one_path_sigma": null,
+    "one_path_population_variance_upper_bound": {
+      "upper_dollars_squared_exact": [
+        400,
+        1
+      ],
+      "law": "ideal exactly conditioned,correctly likelihoodweightedOSS integrand",
+      "proof": "Conditional survivalweights arein[0,1] andsurvivingdiscounted payoffisin[0,40], henceintegrandisin[0,40]",
+      "actual_float64_transform_bias_bound_dollars": null,
+      "bound_not_a_complete_actual_float64_price_certificate": true
+    },
+    "independent_scramble_variance_measurements": [
+      {
+        "points_per_scramble": 64,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.17805805512805975,
+        "sample_sd_of_one_scramble_mean_dollars": 0.4219692585106879,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.005564314222751867,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.011128628445503734,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 128,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.12362434348472916,
+        "sample_sd_of_one_scramble_mean_dollars": 0.351602536231935,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.003863260733897786,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.007726521467795572,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 256,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.06228640948024284,
+        "sample_sd_of_one_scramble_mean_dollars": 0.24957245336824102,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.0019464502962575887,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.0038929005925151775,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 512,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.022310920730999734,
+        "sample_sd_of_one_scramble_mean_dollars": 0.14936840606701182,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.0006972162728437417,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.0013944325456874834,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 1024,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.008718900763942617,
+        "sample_sd_of_one_scramble_mean_dollars": 0.09337505429151095,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.0002724656488732068,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.0005449312977464136,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 2048,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.005483221718946488,
+        "sample_sd_of_one_scramble_mean_dollars": 0.07404877932111027,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.00017135067871707776,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.0003427013574341555,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 4096,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.0028262163615507202,
+        "sample_sd_of_one_scramble_mean_dollars": 0.053162170399173134,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 8.831926129846001e-05,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.00017663852259692001,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 8192,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.0011364430306424597,
+        "sample_sd_of_one_scramble_mean_dollars": 0.03371117071005485,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 3.5513844707576866e-05,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 7.102768941515373e-05,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 16384,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.0007276958509019558,
+        "sample_sd_of_one_scramble_mean_dollars": 0.026975838279874747,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 2.2740495340686118e-05,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 4.5480990681372235e-05,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 32768,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.0002963151817855883,
+        "sample_sd_of_one_scramble_mean_dollars": 0.01721380788162771,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 9.259849430799634e-06,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 1.8519698861599267e-05,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 65536,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.00016141684984209047,
+        "sample_sd_of_one_scramble_mean_dollars": 0.012704993106731325,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 5.044276557565327e-06,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 1.0088553115130655e-05,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 131072,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 7.092602117175736e-05,
+        "sample_sd_of_one_scramble_mean_dollars": 0.008421758793254373,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 2.2164381616174175e-06,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 4.432876323234835e-06,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 262144,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 2.7280842106803336e-05,
+        "sample_sd_of_one_scramble_mean_dollars": 0.0052231065570983075,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 8.525263158376043e-07,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 1.7050526316752085e-06,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 524288,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 1.9190986315174317e-05,
+        "sample_sd_of_one_scramble_mean_dollars": 0.004380751797942257,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 5.997183223491974e-07,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 1.1994366446983948e-06,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      }
+    ],
+    "iid_mean_variance_measurement": null,
+    "residual_range_dollars": null,
+    "residual_variance_upper_bound": null,
+    "residual_covariance_bound": null,
+    "residual_or_coherent_control_implemented": false,
+    "financial_full_price_certificate": false,
+    "law": "ContinuousGBM time-ordered survival-conditioned Gaussianincrements withlikelihoodweight product",
+    "integrand": "discounted survivorAsianpositivepayoff multipliedbyproductofconditional survivalprobabilities",
+    "coordinates": 416,
+    "raw_scramble_prefix_binding": {
+      "original": "results/frontier_classical_20261001/c5/rates/B8x52_oss.npy",
+      "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/results/frontier_classical_20261001/c5/rates/B8x52_oss.npy",
+      "sha256": "5f5e3a21a92d81a008c5f50d7e3b972188d10f5242df4fd10acdaec4ed49409a"
+    },
+    "one_path_sigma_unavailable_reason": "No individual OSSpath outcomes or onepathvariance measurement inthisfrozenmenu;prefixmeans donotsupplyonepathvariance",
+    "expectation_identity": "Ideal exact survivalconditioning andlikelihoodweights targettheoriginal continuousmonitored price; numericalCDF,quantile,rootandroundoff effectsstillneedfinancialcertification",
+    "quantum_smoothing_or_variance_credit_available": false,
+    "measured_error_cost_model": "Independent-scramble meanvariancecurve for thisOSStransform;onepathsigma/e isnota replacement.",
+    "additional_64_scramble_reference_variance_measurements": [
+      {
+        "points_per_scramble": 64,
+        "independent_scrambles_observed": 64,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.18509725217072198,
+        "sample_sd_of_one_scramble_mean_dollars": 0.4302293018504458,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.002892144565167531,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.011568578260670124,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 128,
+        "independent_scrambles_observed": 64,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.09929372117150204,
+        "sample_sd_of_one_scramble_mean_dollars": 0.315109062344297,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.0015514643933047193,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.006205857573218877,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 256,
+        "independent_scrambles_observed": 64,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.0398986822201042,
+        "sample_sd_of_one_scramble_mean_dollars": 0.1997465449516066,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.0006234169096891281,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.0024936676387565123,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 512,
+        "independent_scrambles_observed": 64,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.019656546204770035,
+        "sample_sd_of_one_scramble_mean_dollars": 0.1402018052835627,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.0003071335344495318,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.0012285341377981272,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 1024,
+        "independent_scrambles_observed": 64,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.0098281525620149,
+        "sample_sd_of_one_scramble_mean_dollars": 0.09913703930426256,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.0001535648837814828,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.0006142595351259312,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 2048,
+        "independent_scrambles_observed": 64,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.005661104264141491,
+        "sample_sd_of_one_scramble_mean_dollars": 0.07524031010131133,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 8.84547541272108e-05,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.0003538190165088432,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 4096,
+        "independent_scrambles_observed": 64,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.0028863921799652803,
+        "sample_sd_of_one_scramble_mean_dollars": 0.05372515407111719,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 4.5099877811957505e-05,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.00018039951124783002,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 8192,
+        "independent_scrambles_observed": 64,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.0012224978018095676,
+        "sample_sd_of_one_scramble_mean_dollars": 0.03496423603926686,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 1.9101528153274495e-05,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 7.640611261309798e-05,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 16384,
+        "independent_scrambles_observed": 64,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.000572955668014567,
+        "sample_sd_of_one_scramble_mean_dollars": 0.023936492391630128,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 8.95243231272761e-06,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 3.580972925091044e-05,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 32768,
+        "independent_scrambles_observed": 64,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.00032725911699370015,
+        "sample_sd_of_one_scramble_mean_dollars": 0.018090304502514604,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 5.113423703026565e-06,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 2.045369481210626e-05,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 65536,
+        "independent_scrambles_observed": 64,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.0001480067381381082,
+        "sample_sd_of_one_scramble_mean_dollars": 0.012165801993214759,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 2.3126052834079407e-06,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 9.250421133631763e-06,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 131072,
+        "independent_scrambles_observed": 64,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 5.6641992714157577e-05,
+        "sample_sd_of_one_scramble_mean_dollars": 0.007526087477179466,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 8.850311361587121e-07,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 3.5401245446348485e-06,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 262144,
+        "independent_scrambles_observed": 64,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 3.136240803243522e-05,
+        "sample_sd_of_one_scramble_mean_dollars": 0.005600214998768817,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 4.900376255068003e-07,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 1.9601505020272013e-06,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 524288,
+        "independent_scrambles_observed": 64,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 1.660512269648933e-05,
+        "sample_sd_of_one_scramble_mean_dollars": 0.004074938367201316,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 2.5945504213264577e-07,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 1.037820168530583e-06,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 1048576,
+        "independent_scrambles_observed": 64,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 8.164321409215743e-06,
+        "sample_sd_of_one_scramble_mean_dollars": 0.0028573276692069713,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 1.27567522018996e-07,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 5.10270088075984e-07,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 2097152,
+        "independent_scrambles_observed": 64,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 4.286887321768323e-06,
+        "sample_sd_of_one_scramble_mean_dollars": 0.0020704799737665475,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 6.698261440263005e-08,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 2.679304576105202e-07,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 4194304,
+        "independent_scrambles_observed": 64,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 2.5669425781224725e-06,
+        "sample_sd_of_one_scramble_mean_dollars": 0.001602168086725757,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 4.010847778316363e-08,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 1.6043391113265453e-07,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      }
+    ],
+    "additional_reference_prefix_binding": {
+      "original": "results/frontier_classical_20261001/c3_refa/B8x52_oss_prefix.npy",
+      "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/results/frontier_classical_20261001/c3_refa/B8x52_oss_prefix.npy",
+      "sha256": "d22496dfc6c1b75c006129de58f77e9eb8e886f439ee2ad60d3126dc22f0629f"
+    }
+  },
+  {
+    "case": "B8x52",
+    "method": "oss-bb",
+    "original_contract": {
+      "assets": 8,
+      "monitored_dates": 52,
+      "spot_dollars_exact": [
+        100,
+        1
+      ],
+      "strike_dollars_exact": [
+        100,
+        1
+      ],
+      "strict_survival_basket_threshold_dollars_exact": [
+        140,
+        1
+      ],
+      "sigma_exact": [
+        3,
+        10
+      ],
+      "correlation_exact": [
+        2,
+        5
+      ],
+      "rate_exact": [
+        3,
+        100
+      ],
+      "maturity_years_exact": [
+        1,
+        1
+      ],
+      "scalar_discounted_price": true,
+      "notional_rescaling": 1
+    },
+    "normalization": {
+      "output_units": "already discounted dollars",
+      "output_contains_original_discount": true,
+      "second_discount_applied": false,
+      "native_fixed_point_fraction_bits": null,
+      "amplitude_normalization_span_dollars": null
+    },
+    "transform_source_bindings": [
+      {
+        "original": "research/frontier_classical_20261001/c5_smoothers.py",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/research/frontier_classical_20261001/c5_smoothers.py",
+        "sha256": "447d7781a5e081c0e81b5e225f261e17e8f2a8277cad452ce399fb03fd9eea87"
+      },
+      {
+        "original": "research/frontier_classical_20261001/oss.py",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/research/frontier_classical_20261001/oss.py",
+        "sha256": "95f1f809eae8403c1ae1ef48d5749469d018cb980c2ad2e4f807b0a8f5c0290e"
+      },
+      {
+        "original": "research/frontier_classical_20261001/basis.py",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/research/frontier_classical_20261001/basis.py",
+        "sha256": "3c6f238c0a9b2303a95cab7439739bc97d2d5ceb37e42bb143da2f3ea21419ee"
+      },
+      {
+        "original": "research/frontier_classical_20261001/timing.py",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/research/frontier_classical_20261001/timing.py",
+        "sha256": "dbf9079d9503b888f0a5ca4b6f2134b7629239915cb72e75e52d64d22a654cb0"
+      }
+    ],
+    "one_path_sigma": null,
+    "one_path_population_variance_upper_bound": {
+      "upper_dollars_squared_exact": [
+        400,
+        1
+      ],
+      "law": "ideal exactly conditioned,correctly likelihoodweightedOSS integrand",
+      "proof": "Conditional survivalweights arein[0,1] andsurvivingdiscounted payoffisin[0,40], henceintegrandisin[0,40]",
+      "actual_float64_transform_bias_bound_dollars": null,
+      "bound_not_a_complete_actual_float64_price_certificate": true
+    },
+    "independent_scramble_variance_measurements": [
+      {
+        "points_per_scramble": 64,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.11121984941567661,
+        "sample_sd_of_one_scramble_mean_dollars": 0.33349640090363286,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.003475620294239894,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.006951240588479788,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 128,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.0667582115417855,
+        "sample_sd_of_one_scramble_mean_dollars": 0.25837610481967077,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.002086194110680797,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.004172388221361594,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 256,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.060360878811962934,
+        "sample_sd_of_one_scramble_mean_dollars": 0.24568451072862313,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.0018862774628738417,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.0037725549257476834,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 512,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.014537581237655183,
+        "sample_sd_of_one_scramble_mean_dollars": 0.12057189240306043,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.00045429941367672446,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.0009085988273534489,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 1024,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.011687940704447604,
+        "sample_sd_of_one_scramble_mean_dollars": 0.10811077977911178,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.0003652481470139876,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.0007304962940279752,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 2048,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.003687323244035397,
+        "sample_sd_of_one_scramble_mean_dollars": 0.06072333360443411,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 0.00011522885137610616,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.00023045770275221232,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 4096,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.001861048766660163,
+        "sample_sd_of_one_scramble_mean_dollars": 0.04313987443955027,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 5.8157773958130094e-05,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 0.00011631554791626019,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 8192,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.0008373725042451761,
+        "sample_sd_of_one_scramble_mean_dollars": 0.028937389381994638,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 2.6167890757661752e-05,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 5.2335781515323504e-05,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 16384,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.0004214604508777761,
+        "sample_sd_of_one_scramble_mean_dollars": 0.02052950196370521,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 1.3170639089930503e-05,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 2.6341278179861007e-05,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 32768,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 0.0001190199099136125,
+        "sample_sd_of_one_scramble_mean_dollars": 0.010909624645862592,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 3.7193721848003905e-06,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 7.438744369600781e-06,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 65536,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 6.834938926655706e-05,
+        "sample_sd_of_one_scramble_mean_dollars": 0.008267368944625434,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 2.1359184145799082e-06,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 4.2718368291598165e-06,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 131072,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 6.617808260151957e-05,
+        "sample_sd_of_one_scramble_mean_dollars": 0.008134991247783833,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 2.0680650812974865e-06,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 4.136130162594973e-06,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 262144,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 3.5406081894606574e-05,
+        "sample_sd_of_one_scramble_mean_dollars": 0.005950300991933649,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 1.1064400592064554e-06,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 2.212880118412911e-06,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      },
+      {
+        "points_per_scramble": 524288,
+        "independent_scrambles_observed": 32,
+        "sample_variance_of_one_scramble_mean_dollars_squared": 1.1241564935902705e-05,
+        "sample_sd_of_one_scramble_mean_dollars": 0.0033528443053477304,
+        "estimated_variance_of_average_of_observed_scrambles_dollars_squared": 3.512989042469595e-07,
+        "estimated_variance_of_average_of_16_fresh_scrambles_dollars_squared": 7.02597808493919e-07,
+        "covariance_between_dependent_points_within_scramble_not_discarded": true,
+        "one_path_variance_not_inferred_by_multiplying_by_n": true,
+        "population_variance_confidence_certificate": null
+      }
+    ],
+    "iid_mean_variance_measurement": null,
+    "residual_range_dollars": null,
+    "residual_variance_upper_bound": null,
+    "residual_covariance_bound": null,
+    "residual_or_coherent_control_implemented": false,
+    "financial_full_price_certificate": false,
+    "law": "ContinuousGBM survival-conditioned Gaussianincrements withlikelihoodweight product; Brownianbridgeordering foridioPCs",
+    "integrand": "discounted survivorAsianpositivepayoff multipliedbyproductofconditional survivalprobabilities",
+    "coordinates": 416,
+    "raw_scramble_prefix_binding": {
+      "original": "results/frontier_classical_20261001/c5/rates/B8x52_oss_bb.npy",
+      "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/results/frontier_classical_20261001/c5/rates/B8x52_oss_bb.npy",
+      "sha256": "eb92bbbbf2a5e5fd5bd5b97323214dd5b4781e2b1f306c3243899281d1681c20"
+    },
+    "one_path_sigma_unavailable_reason": "No individual OSSpath outcomes or onepathvariance measurement inthisfrozenmenu;prefixmeans donotsupplyonepathvariance",
+    "expectation_identity": "Ideal exact survivalconditioning andlikelihoodweights targettheoriginal continuousmonitored price; numericalCDF,quantile,rootandroundoff effectsstillneedfinancialcertification",
+    "quantum_smoothing_or_variance_credit_available": false,
+    "measured_error_cost_model": "Independent-scramble meanvariancecurve for thisOSStransform;onepathsigma/e isnota replacement."
+  },
+  {
+    "case": "B8x52",
+    "method": "iid-reference",
+    "original_contract": {
+      "assets": 8,
+      "monitored_dates": 52,
+      "spot_dollars_exact": [
+        100,
+        1
+      ],
+      "strike_dollars_exact": [
+        100,
+        1
+      ],
+      "strict_survival_basket_threshold_dollars_exact": [
+        140,
+        1
+      ],
+      "sigma_exact": [
+        3,
+        10
+      ],
+      "correlation_exact": [
+        2,
+        5
+      ],
+      "rate_exact": [
+        3,
+        100
+      ],
+      "maturity_years_exact": [
+        1,
+        1
+      ],
+      "scalar_discounted_price": true,
+      "notional_rescaling": 1
+    },
+    "normalization": {
+      "output_units": "already discounted dollars",
+      "output_contains_original_discount": true,
+      "second_discount_applied": false,
+      "native_fixed_point_fraction_bits": null,
+      "amplitude_normalization_span_dollars": null
+    },
+    "transform_source_bindings": [
+      {
+        "original": "research/frontier_classical_20261001/c3_refb.py",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/research/frontier_classical_20261001/c3_refb.py",
+        "sha256": "2f0dac6169328c2388cdb8e73e401e58316091f5125057f0d63e51f335b552fd"
+      },
+      {
+        "original": "research/frontier_classical_20261001/scrambles.py",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/research/frontier_classical_20261001/scrambles.py",
+        "sha256": "40403b81a1b92d336bcb23a352029f2607ef859589f640e329075a597c49dc0f"
+      }
+    ],
+    "one_path_sigma": {
+      "sample_sd_dollars": 5.184381588895731,
+      "sample_variance_dollars_squared": 26.877812459281028,
+      "actual_paths": 15870656512,
+      "ddof": 1,
+      "raw_worker_aggregates_reconciled": true,
+      "receipt_binding": {
+        "original": "results/frontier_classical_20261001/c3_refb/B8x52/ref_b.json",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/results/frontier_classical_20261001/c3_refb/B8x52/ref_b.json",
+        "sha256": "ab8c9da7106d565d9997b13d2198711f9fde0291cec63d1312862254a11527a7"
+      },
+      "certified_population_upper_bound": false
+    },
+    "one_path_population_variance_upper_bound": {
+      "upper_dollars_squared_exact": [
+        400,
+        1
+      ],
+      "law": "ideal original continuous monitored discountedpayoff",
+      "proof": "Originalsurvivalimpliespositivepayoffbelow40;Popoviciu",
+      "actual_float64_transform_bias_bound_dollars": null
+    },
+    "independent_scramble_variance_measurements": [],
+    "iid_mean_variance_measurement": {
+      "estimated_variance_dollars_squared": 1.6935539143549846e-09,
+      "standard_error_dollars": 4.115281174300226e-05,
+      "actual_iid_paths": 15870656512,
+      "formula": "Samplepathvariance/actualindependentpathcount; thisidentitydoesnotapplytoscrambledRQMC prefixpoints",
+      "normal_approximation_hw99_dollars": 0.00010600261841105651,
+      "rigorous_population_error_certificate": null
+    },
+    "residual_range_dollars": null,
+    "residual_variance_upper_bound": null,
+    "residual_covariance_bound": null,
+    "residual_or_coherent_control_implemented": false,
+    "financial_full_price_certificate": false,
+    "law": "PCG64 independentnormal numericalgenerator,commonplusidio onefactor exactmonitored-date stepping",
+    "integrand": "discounted unsmoothed plainmonitored knockoutpayoff",
+    "normal_coordinates": 468,
+    "quantum_smoothing_or_variance_credit_available": false,
+    "measured_error_cost_model": "Thisrowis theexistingfixedbudgetreference,notanaccuracy-target time-to-delivery anchor."
+  },
+  {
+    "case": "B8x52",
+    "method": "native-quantum-payoff",
+    "original_contract": {
+      "assets": 8,
+      "monitored_dates": 52,
+      "spot_dollars_exact": [
+        100,
+        1
+      ],
+      "strike_dollars_exact": [
+        100,
+        1
+      ],
+      "strict_survival_basket_threshold_dollars_exact": [
+        140,
+        1
+      ],
+      "sigma_exact": [
+        3,
+        10
+      ],
+      "correlation_exact": [
+        2,
+        5
+      ],
+      "rate_exact": [
+        3,
+        100
+      ],
+      "maturity_years_exact": [
+        1,
+        1
+      ],
+      "scalar_discounted_price": true,
+      "notional_rescaling": 1
+    },
+    "normalization": {
+      "output_units": "already discounted dollars",
+      "output_contains_original_discount": true,
+      "second_discount_applied": false,
+      "native_fixed_point_fraction_bits": 40,
+      "amplitude_normalization_span_dollars": 64,
+      "native_integer_to_dollars_scale_exact": [
+        1,
+        1099511627776
+      ],
+      "native_discount_literal_exact": [
+        266754037065,
+        274877906944
+      ],
+      "selector_bits": 46,
+      "probability_identity": "p=E[Yraw]/2^46=E[alreadydiscountednativeYdollars]/64"
+    },
+    "transform_source_bindings": [
+      {
+        "original": "results/limitation_program_20261001/A10_coefficient_run001/B8x52/min-depth/target.json",
+        "immutable_C09_snapshot": "results/limitation_program_20261001/C09_audit_run001/snapshots/results/limitation_program_20261001/A10_coefficient_run001/B8x52/min-depth/target.json",
+        "sha256": "267dcaa74aa9dd5cb1339c65006b122389331f42f0002f483bd6eed05c31090b"
+      },
+      {
+        "source": "results/limitation_program_20261001/A10_coefficient_run001/B8x52/min-depth/source.json",
+        "sha256": "b1a920b5cf3f20775ab042f43368bc2fc578bfeef7488c00d8d9ce4ad26a6ef8"
+      },
+      {
+        "estimator_ledger": "results/limitation_program_20261001/E02_financial_run002/B8x52/estimator_ledger.json",
+        "sha256": "d2264d06588069a9198ec7b2eb8dcb2faa2d0b3fd6b75102f29f40f1d5986147"
+      }
+    ],
+    "one_path_sigma": null,
+    "one_path_population_variance_upper_bound": {
+      "upper_dollars_squared_exact": [
+        113852346203920876201352641,
+        302231454903657293676544
+      ],
+      "law": "Actualacceptednativefinite source,allinputwords",
+      "proof": "IndependentlyauditedactualYsupportplusPopoviciu",
+      "native_payoff_support_dollars_exact": [
+        [
+          0,
+          1
+        ],
+        [
+          10670161489121,
+          274877906944
+        ]
+      ],
+      "native_payoff_support_raw": [
+        0,
+        42680645956484
+      ],
+      "native_path_sigma_upper_dollars_exact": [
+        10670161489121,
+        549755813888
+      ],
+      "certificate": "results/limitation_program_20261001/E03_support_run001/B8x52_certificate.json",
+      "certificate_sha256": "1bdfff95f143236549e928d305440eb5e522a69822aeb743e87563e8008ec8a8",
+      "independent_audit": "results/limitation_program_20261001/E03_support_audit_run002/B8x52_audit.json",
+      "independent_audit_sha256": "babcab95778dd1b8ca920e265ad30e0e7249ad7fe0f577f75e5624cc2276c00a"
+    },
+    "independent_scramble_variance_measurements": [],
+    "iid_mean_variance_measurement": null,
+    "residual_range_dollars": null,
+    "residual_variance_upper_bound": null,
+    "residual_covariance_bound": null,
+    "residual_or_coherent_control_implemented": false,
+    "financial_full_price_certificate": false,
+    "law": "Uniformproduct32bitinputwords,exactf40midpoints,jointsharedinputBoxMuller,nativetableandEstrinarithmetic,clippedlogprefixes andstrictmonitoring",
+    "integrand": "Unsmoothedoriginalnative discounted knockoutpayoffY,notaclassicalconditionalexpectation orsurvivalweightedtransform",
+    "random_uniform_words": 468,
+    "joint_Box_Muller_pairs": 234,
+    "finite_outputs_claimed_independent_gaussian": false,
+    "normalized_payoff_value_population_variance_upper_exact": [
+      113852346203920876201352641,
+      1237940039285380274899124224
+    ],
+    "selector_marking_Bernoulli_population_variance_upper_exact": [
+      1,
+      4
+    ],
+    "selector_variance_is_not_scaled_path_payoff_variance": true,
+    "measured_native_path_sigma": null,
+    "classical_smoothed_path_sigma_credited": false,
+    "classical_scramble_mean_variance_credited": false,
+    "current_estimator_kind": "Sourcecompatible boundedrangeQPE with64dollarspan; itdoesnotconsumea smoothedclassicalsigma",
+    "current_Grover_invocations": 983025,
+    "current_fresh_preparations": 15,
+    "extra_coherent_preintegration_or_OSS_source_implemented": false,
+    "rangebound_does_not_close_continuous_G2": true
+  }
+]

@@ -1,0 +1,157 @@
+{
+  "created_utc": "2026-10-02T07:34:13.454034+00:00",
+  "local_only": true,
+  "item": "E04 finite confidence-spending controller adapters",
+  "before_meaningful_tests_and_toy_observations": true,
+  "executed_dependencies": [
+    {
+      "original": "research/limitation_program_20261001/experiment_finite_iqae_controller.py",
+      "snapshot": "executed_code/experiment_finite_iqae_controller.py",
+      "sha256": "069f0c8427fbef7f04972b4322200d9a9fb6fbdb988b2b5c7c01598666304d9a"
+    },
+    {
+      "original": "research/limitation_program_20261001/finite_iqae_controller.py",
+      "snapshot": "executed_code/finite_iqae_controller.py",
+      "sha256": "bd16b3142d0fc7bb639ffbb73b1286c796922b77b50237d369abae9770ccca36"
+    },
+    {
+      "original": "research/limitation_program_20261001/test_finite_iqae_controller.py",
+      "snapshot": "executed_code/test_finite_iqae_controller.py",
+      "sha256": "2fa0bc803ed83866abc5ac50eb69d82e4125ad74da1a396682df6605aeb19e08"
+    },
+    {
+      "original": "research/limitation_program_20261001/audit_barrier_band.py",
+      "snapshot": "executed_code/audit_barrier_band.py",
+      "sha256": "ae06be0760a9b6630b721d509af6f3add70e60a5b6d43727f14048175a01375b"
+    }
+  ],
+  "declared_tests": 18,
+  "span_dollars": 64,
+  "error_dollars_exact": [
+    9,
+    2000
+  ],
+  "amplitude_error_exact": [
+    9,
+    128000
+  ],
+  "ideal_failure_exact": [
+    3,
+    1000
+  ],
+  "retained_canonical_Q_calls": 983025,
+  "settings": [
+    {
+      "family": "original-IQAE-adapter",
+      "first_batch_shots": 16
+    },
+    {
+      "family": "original-IQAE-adapter",
+      "first_batch_shots": 32
+    },
+    {
+      "family": "original-IQAE-adapter",
+      "first_batch_shots": 64
+    },
+    {
+      "family": "original-IQAE-adapter",
+      "first_batch_shots": 128
+    },
+    {
+      "family": "modified-IQAE-adapter",
+      "first_batch_shots": 16
+    },
+    {
+      "family": "modified-IQAE-adapter",
+      "first_batch_shots": 32
+    },
+    {
+      "family": "modified-IQAE-adapter",
+      "first_batch_shots": 64
+    },
+    {
+      "family": "modified-IQAE-adapter",
+      "first_batch_shots": 128
+    }
+  ],
+  "setting_count": 8,
+  "exact_toy_laws": [
+    {
+      "name": "coin-Y0-or16",
+      "Y_dollars": [
+        0,
+        16
+      ],
+      "probabilities_exact": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "mean_Y_dollars_exact": [
+        8,
+        1
+      ],
+      "amplitude_exact": [
+        1,
+        8
+      ]
+    },
+    {
+      "name": "coin-Y0-or32",
+      "Y_dollars": [
+        0,
+        32
+      ],
+      "probabilities_exact": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "mean_Y_dollars_exact": [
+        16,
+        1
+      ],
+      "amplitude_exact": [
+        1,
+        4
+      ]
+    }
+  ],
+  "law_count": 2,
+  "replicates_per_setting_law": 1,
+  "total_controller_attempts": 16,
+  "seed_rule": "20261002+2*setting_index+law_index",
+  "base_seed": 20261002,
+  "max_admitted_rounds": 20,
+  "max_fresh_looks_per_round": 8,
+  "max_Q_plus_terminal_clean_pairs_per_attempt": 983024,
+  "max_power_search_events_per_attempt": 100000,
+  "inversion_bisections": 80,
+  "interval_digits": 110,
+  "proof": {
+    "coverage": "Before each fresh batch choose its power, integer size and failure allocation from past observations. Given that history, observations are independent Bernoulli(p_k). Hoeffding's two-sided failure is at most2*exp(-2*N*r^2). The radius is rounded upward from sqrt(log(2/delta)/(2*N)). Each new look uses fresh counts, so conditional fixed-batch coverage is valid. Intersect outward converted intervals with prior knowledge. On simultaneous coverage every interval contains theta; a delivered amplitude interval of width<=2*epsilon yields its midpoint within epsilon.",
+    "spending": "The original adapter allocates alpha/20 per round; at most20 rounds are admitted. The modified adapter allocates(2*alpha/3)*K/Kcap per round. Distinct modified round powers increase by at least3 and never exceed fixed Kcap, so sumK<=3*Kcap/2 on every history, giving sumalpha_round<=alpha. Within each round delta_look=alpha_round/[l*(l+1)] for l>=1. Its total is at mostalpha_round by telescoping. The conditional union bound therefore covers every admitted adaptive look, including stopping.",
+    "branch": "Store theta/pi in[0,1/2]. Select odd K only when the scaled prior interval lies in one closed half-unit quadrant. On even quadrants sin^2(pi*t) increases; on odd quadrants it decreases. mp.iv sine enclosures and monotone rational bisection convert the binomial interval outward. Endpoints0/1 map exactly. No branch is discarded using observed truth.",
+    "paid_budget": "A shot costs k original Grover blocks plus one terminal original F/selector forward and literal-inverse cleanup pair. Before acquiring a batch, check N*(k+1) against the remaining983024 paid-source-pair cap. No acquisition is admitted over the cap. Finite round/look/search caps retain non-delivery. Coverage of delivered intervals does not certify delivery for every financial amplitude within that budget.",
+    "exact_toys": "For rational amplitude a, p_k=(1-T_{2k+1}(1-2a))/2, by the standard Grover rotation and Chebyshev identity. Exact rational doubling computes this probability. Bernoulli draws compare uniform integers with its rational numerator (rejection if needed); counts are exact-binomial model observations, not quantum circuit jobs or financial samples."
+  },
+  "preparation_and_terminal_marking_cleanup_paid": true,
+  "paper_native_controller_or_query_bound_automatically_transferred": false,
+  "stop_rule": "Exactly eight declared settings on the two declared laws. Preserve every non-delivery; no tuning or extra laws.",
+  "coverage_is_simultaneous_for_delivered_intervals": true,
+  "uniform_financial_delivery_within_budget_proved": false,
+  "future_finance_requires_independent_controller_cost_and_delivery_audit": true,
+  "financial_samples_or_gate_replays": 0,
+  "quantum_circuit_jobs": 0,
+  "full_G2_and_physical_runtime_certificates": false
+}

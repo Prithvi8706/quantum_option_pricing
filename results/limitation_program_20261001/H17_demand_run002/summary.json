@@ -1,0 +1,215 @@
+{
+  "passed": true,
+  "local_only": true,
+  "case_rows": [
+    {
+      "case": "B4x12",
+      "logical_qubits": 550141,
+      "consumed_T_states": 511911060861915,
+      "primitive_elementary_gate_count": 1182602002711185,
+      "native_CCX_positions": 73130151300300,
+      "max_simultaneous_native_private_qubits": 195017,
+      "batch_maxima": {
+        "native_call_count": {
+          "value": 150,
+          "batches": [
+            7
+          ]
+        },
+        "joint_private_qubits": {
+          "value": 195017,
+          "batches": [
+            22
+          ]
+        },
+        "forward_T_states": {
+          "value": 3518928,
+          "batches": [
+            83
+          ]
+        },
+        "copy_CX_per_direction": {
+          "value": 26488,
+          "batches": [
+            125
+          ]
+        },
+        "SSA_fanout_occurrences": {
+          "value": 60,
+          "batches": [
+            1
+          ]
+        },
+        "SSA_fanout_copy_target_bits": {
+          "value": 3456,
+          "batches": [
+            85
+          ]
+        }
+      },
+      "failure_requirements": {
+        "physical_failure_allowance_exact": [
+          3,
+          1000
+        ],
+        "allocation_exact": {
+          "data": [
+            1,
+            1000
+          ],
+          "magic_states": [
+            1,
+            1000
+          ],
+          "control": [
+            1,
+            1000
+          ]
+        },
+        "required_error_per_consumed_T_state_exact": [
+          1,
+          511911060861915000
+        ],
+        "required_data_error_per_elementary_logical_gate_exact": [
+          1,
+          1182602002711185000
+        ],
+        "required_control_error_per_elementary_logical_operation_exact": [
+          1,
+          1182602002711185000
+        ],
+        "known_elementary_gate_opportunity_count": 1182602002711185,
+        "known_consumed_T_state_opportunity_count": 511911060861915,
+        "idle_or_code_cycle_opportunity_count": null,
+        "physical_control_reset_feedback_opportunity_count": null,
+        "known_gate_union_targets_cover_idle_and_feedback": false,
+        "dependence_assumption": "Union bound requires marginal bounds; independence is not assumed",
+        "code_distance": null,
+        "complete_execution_failure_upper": null,
+        "published_factory_reliability_transferred": false
+      }
+    },
+    {
+      "case": "B8x52",
+      "logical_qubits": 4460479,
+      "consumed_T_states": 4195204814583315,
+      "primitive_elementary_gate_count": 9691531767803025,
+      "native_CCX_positions": 599314973260500,
+      "max_simultaneous_native_private_qubits": 1516959,
+      "batch_maxima": {
+        "native_call_count": {
+          "value": 1208,
+          "batches": [
+            129
+          ]
+        },
+        "joint_private_qubits": {
+          "value": 1516959,
+          "batches": [
+            141
+          ]
+        },
+        "forward_T_states": {
+          "value": 28062944,
+          "batches": [
+            83
+          ]
+        },
+        "copy_CX_per_direction": {
+          "value": 277238,
+          "batches": [
+            129
+          ]
+        },
+        "SSA_fanout_occurrences": {
+          "value": 468,
+          "batches": [
+            1
+          ]
+        },
+        "SSA_fanout_copy_target_bits": {
+          "value": 29952,
+          "batches": [
+            85
+          ]
+        }
+      },
+      "failure_requirements": {
+        "physical_failure_allowance_exact": [
+          3,
+          1000
+        ],
+        "allocation_exact": {
+          "data": [
+            1,
+            1000
+          ],
+          "magic_states": [
+            1,
+            1000
+          ],
+          "control": [
+            1,
+            1000
+          ]
+        },
+        "required_error_per_consumed_T_state_exact": [
+          1,
+          4195204814583315000
+        ],
+        "required_data_error_per_elementary_logical_gate_exact": [
+          1,
+          9691531767803025000
+        ],
+        "required_control_error_per_elementary_logical_operation_exact": [
+          1,
+          9691531767803025000
+        ],
+        "known_elementary_gate_opportunity_count": 9691531767803025,
+        "known_consumed_T_state_opportunity_count": 4195204814583315,
+        "idle_or_code_cycle_opportunity_count": null,
+        "physical_control_reset_feedback_opportunity_count": null,
+        "known_gate_union_targets_cover_idle_and_feedback": false,
+        "dependence_assumption": "Union bound requires marginal bounds; independence is not assumed",
+        "code_distance": null,
+        "complete_execution_failure_upper": null,
+        "published_factory_reliability_transferred": false
+      }
+    }
+  ],
+  "full_elementary_counts_reconciled_to_independent_audit": true,
+  "source_native_batch_profiles_reconciled": true,
+  "physical_failure_allowance_exact": [
+    3,
+    1000
+  ],
+  "prospective_allocation_exact": {
+    "data": [
+      1,
+      1000
+    ],
+    "magic_states": [
+      1,
+      1000
+    ],
+    "control": [
+      1,
+      1000
+    ]
+  },
+  "physical_qubit_cap": null,
+  "tau_grid": null,
+  "architecture_rows": 0,
+  "full_physical_fidelity_certificate": false,
+  "full_physical_latency_certificate": false,
+  "measurement_reaction_depth": null,
+  "idle_or_code_cycle_opportunity_count": null,
+  "new_financial_gate_replays": 0,
+  "new_financial_price_samples": 0,
+  "new_classical_price_timings": 0,
+  "preexisting_Stage_C_jobs_edited": false,
+  "missing_bounds_are_zero": false,
+  "G5_closed": false,
+  "elapsed_cpu_seconds": 24.015625,
+  "next": "Independently audit demands; propose a compatible finite data/factory/routing/control mapping at these exact error targets before assigning latency or admitting an architecture."
+}

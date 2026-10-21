@@ -1,0 +1,444 @@
+{
+  "F01_dependency_closed": false,
+  "G2_transfer": false,
+  "G4_closed": false,
+  "absolute_error_dollars_exact": [
+    1,
+    1000
+  ],
+  "case": "B4x12",
+  "challenger_implementation_released": false,
+  "cost_transfer": false,
+  "decision": "FIRST_APPLICABILITY_CENSUS_WITH_NAMED_HOLDS_NO_CHALLENGER_RELEASE",
+  "delivered_output": "one classical discounted dollar price",
+  "entire_C10_completed": false,
+  "financial_adoption": false,
+  "first_matrix_substep_only": true,
+  "fixture_credit": 0,
+  "global_current_original_G2_status_reassessed": false,
+  "item": "C10",
+  "metadata_only": true,
+  "new_prices_paths_scrambles_timings": 0,
+  "new_scientific_tests": 0,
+  "next_challenger_selected": null,
+  "normalization_or_quantum0p01_budget_transfer": false,
+  "notional_multiplier_added": false,
+  "original_contract": {
+    "annual_rate": 0.03,
+    "annual_volatility_each_asset": 0.3,
+    "assets": 4,
+    "barrier_dollars": 140.0,
+    "barrier_equality": "basket >= H is knocked out; alive uses strict < H",
+    "continuous_sampling": "Independent common/idiosyncratic standard normals give exact GBM log increments at each contractual date before numerical representation.",
+    "dates": 12,
+    "digital_source": {
+      "exponential": "ln(2) range reduction and degree-12 Taylor polynomial evaluated by Estrin",
+      "fraction_bits": 40,
+      "guard_semantics": "Each accumulated log spot is clipped before its Estrin exponential; the digital guard's continuous-price bias remains unproved.",
+      "integer_semantics": "Signed two-complement fixed-point; flags and indexes are unscaled integers; all output arithmetic is modulo 2^width.",
+      "law": "Independent uniform 32-bit integers, paired Box-Muller with existing log/cos polynomial tables and integer square root",
+      "normal_count": 60,
+      "output": {
+        "Y": 5697
+      },
+      "output_dollar_conversion": "Interpret output Y as signed two's-complement integer divided by 2^40; discount is already applied.",
+      "spot_guard": [
+        1.52587890625e-05,
+        4096.0
+      ],
+      "uniform_bits_each": 32,
+      "uniform_midpoint": "u=(integer+1/2)/2^32",
+      "word_width": 72
+    },
+    "discount": 0.9704455335485082,
+    "equicorrelation": 0.4,
+    "equity_covariance_matrix": [
+      [
+        1.0,
+        0.4,
+        0.4,
+        0.4
+      ],
+      [
+        0.4,
+        1.0,
+        0.4,
+        0.4
+      ],
+      [
+        0.4,
+        0.4,
+        1.0,
+        0.4
+      ],
+      [
+        0.4,
+        0.4,
+        0.4,
+        1.0
+      ]
+    ],
+    "maturity_years": 1.0,
+    "model": "correlated geometric Brownian motion at contractual dates",
+    "notional_semantics": {
+      "initial_equal_weight_basket_dollars": 100.0,
+      "interpretation": "One unit of the equal-weight basket/Asian call. Initial basket is $100; payoff is already in dollars. No extra factor of 100 or 0.01 is introduced.",
+      "participation": 1,
+      "recovered_from": "barrier_oracle_depth.build constants, 1/assets and 1/(assets*dates) averages, strike and discount; matches Stage A original_target and optimized target",
+      "separate_notional_multiplier": null
+    },
+    "observation_times": [
+      0.08333333333333333,
+      0.16666666666666666,
+      0.25,
+      0.3333333333333333,
+      0.4166666666666667,
+      0.5,
+      0.5833333333333334,
+      0.6666666666666666,
+      0.75,
+      0.8333333333333334,
+      0.9166666666666666,
+      1.0
+    ],
+    "output_contract": {
+      "absolute_error_dollars": [
+        0.1,
+        0.03,
+        0.01,
+        0.001
+      ],
+      "complete_advantage": "T_Q <= fastest eligible complete measured T_C / 10",
+      "delivered_output": "one classical discounted dollar price",
+      "final_strict_target_scope": "0.001 is the historical B4/B8 knock-out final test, not silently extended to every source family",
+      "per_price_success_probability_at_least": 0.99,
+      "statistical_share_reference": "e=0.45*epsilon retained as a historical/planning allocation, not an implemented estimator"
+    },
+    "payoff": "exp(-r*T) * max(mean over all asset/date spots - K, 0) * indicator(max over monitored dates of equal-weight spot basket < H)",
+    "spot_each_asset_dollars": 100.0,
+    "strike_dollars": 100.0
+  },
+  "per_price_success_probability_exact": [
+    99,
+    100
+  ],
+  "price_law": "Original continuous correlated GBM at contractual12 dates",
+  "quantum_advantage": false,
+  "retained_C09_law_qualification_as_historical_record_only": {
+    "actual_factor_built_per_worker_inside_timed_run": true,
+    "actual_time_includes_uniform_generation_inverse_normal_GEMM_and_payoff": true,
+    "classical_contract": "discounted positive Asian arithmetic average minus100,zeroifanymonitored equal-weight basket>=140",
+    "classical_dimension": {
+      "B4x12": 48,
+      "B8x52": 416
+    },
+    "classical_hard_payoff_and_preintegrated_estimands_differ_pointwise_but_target_same_continuous_expectation": true,
+    "classical_law": "Float64 scrambledSobol->clipped inverse-normal->fullrank covariance PCA, or survival-conditioned OSS; iid reference usesPCG64 standard normals withonefactor exactdate stepping. These are numerical constructions for theoriginal continuousGBM estimand.",
+    "classical_numeric_endpoint_clip": [
+      1e-15,
+      0.999999999999999
+    ],
+    "classical_numeric_inverse_normal_root_roundoff_bias_dollars": null,
+    "exact_finite_law_classical_comparator_executed_in_this_audit": false,
+    "financial_accuracy_and_G4_closed": false,
+    "fresh_cached_and_cold_start_sensitivities_exist_in_code": true,
+    "full_G2_open": true,
+    "full_common_continuous_price_bridge_certified": false,
+    "identical_actual_finite_sampler_or_arithmetic": false,
+    "noPCA_rank_dropped": true,
+    "passed": true,
+    "quantum_cases": {
+      "B4x12": {
+        "fraction_bits": 40,
+        "native_width": 72,
+        "original_named_output": {
+          "Y": 5697
+        },
+        "random_uniform32_words": 60,
+        "shared_Box_Muller_pairs": 30,
+        "target_sha256": "a7a682731b3cdb6f16b32a9b1a467d6bfeccb32ea97e583ab79e5252bb7a9384"
+      },
+      "B8x52": {
+        "fraction_bits": 40,
+        "native_width": 72,
+        "original_named_output": {
+          "Y": 46801
+        },
+        "random_uniform32_words": 468,
+        "shared_Box_Muller_pairs": 234,
+        "target_sha256": "267dcaa74aa9dd5cb1339c65006b122389331f42f0002f483bd6eed05c31090b"
+      }
+    },
+    "quantum_law": "Independentuniform32 words,exactf40midpoints,jointsharedinputBoxMuller,native table arithmetic,clipped logpath,native exp/strictbarrier/alreadydiscounted72bitY",
+    "source_model_parameters": {
+      "barrier": 140.0,
+      "maturity": 1.0,
+      "rate": 0.03,
+      "rho": 0.4,
+      "sigma": 0.3,
+      "spot": 100.0,
+      "strike": 100.0
+    },
+    "warm_start_excludes_worker_creation_initial_cache_and_compilation": true
+  },
+  "retained_C5_C7_status": {
+    "C5_complete_blocks": 4,
+    "C5_epsilon0p01_elapsed_median_and_scale_adjusted_primary_kept_distinct": true,
+    "C5_epsilon0p01_measured_confirmation_records_reported": true,
+    "C5_rates_source_provenance_has_commit_marker_not_recorded_per_file_digests": true,
+    "C7_complete_blocks": 7,
+    "C7_warm_runs_per_block": 3,
+    "CPU_seconds": 0.609375,
+    "all_epsilon0p001_C5_C7_times_are_fitted_not20_run_confirmed": true,
+    "hash_bound_recorded_code_spec_lock_bindings": 90,
+    "local_only": true,
+    "new_tests_prices_paths_timing_runs_rate_fits_or_coverage_scores": 0,
+    "old_C09_one_block_snapshot_byte_identical_and_immutable": true,
+    "original_C4_score_references_and_C2_unchanged": true,
+    "passed": true,
+    "scope": "Read-only completed C5/C7 timing/provenance observations",
+    "terminal_process_observations": [
+      {
+        "clearance_is_observation_not_a_future_process_guarantee": true,
+        "live_multiprocessing_spawn_or_resource_tracker_workers": [],
+        "live_stage_c_supervisors_or_timing_descendants": [],
+        "observed_utc": "2026-10-02T10:33:08.426883+00:00",
+        "worker_admission_requires_every_visible_spawn_worker_and_resource_tracker_terminal": true
+      },
+      {
+        "clearance_is_observation_not_a_future_process_guarantee": true,
+        "live_multiprocessing_spawn_or_resource_tracker_workers": [],
+        "live_stage_c_supervisors_or_timing_descendants": [],
+        "observed_utc": "2026-10-02T10:33:09.455103+00:00",
+        "worker_admission_requires_every_visible_spawn_worker_and_resource_tracker_terminal": true
+      }
+    ],
+    "true_price99_delivery_G4_final_minimum_or_quantum_advantage_proved": false,
+    "wall_seconds": 2.26500000001397
+  },
+  "retained_C8_failed_guard_and_no_numerical_phase": {
+    "all_failed_or_censored_phases_fixture_credit": 0,
+    "commit": "b4a4bdc9bd21099fd1382dff7f9e57c470a54d3a",
+    "error": "RuntimeError('exclusive slot conflict; 1 unrelated processes')",
+    "expected_factor_hashes_not_worker_observed": true,
+    "externally_censored": false,
+    "financial_adoption": false,
+    "fixture_credit": 0,
+    "model_timing_without20_replication_accuracy_confirmation": true,
+    "newly_preregistered_operational_admission_not_numerical_retry": true,
+    "no_original_producer_or_spec_edits": true,
+    "no_retries": true,
+    "oracle_phase_executed": false,
+    "original_admission_failure_fixture_or_measurement_credit": 0,
+    "passed": false,
+    "quantum_advantage_claim": false,
+    "supervisor_own_cpu_seconds": 66.265625,
+    "timing_rates_hash_is_external_not_internal_read_trace": true,
+    "total_wall_seconds": 269.7029999999795
+  },
+  "retained_confidence_status": {
+    "CPU_seconds": 17.5,
+    "budget_censored": false,
+    "classification_nesting_and_closed_ties_checked": true,
+    "conditional_IID_binomial_model_verified": false,
+    "conditional_joint_bound_is_not_an_established_confidence_theorem": true,
+    "conditional_joint_confidence_if_refs_99_percent_counts_95_percent_exact": [
+      93,
+      100
+    ],
+    "directed_exact_binomial_intervals": 54,
+    "fixtures_passed": 21,
+    "local_only": true,
+    "method_cells": 18,
+    "new_prices_paths_scrambles_timings": 0,
+    "original_Stage_C_rule_or_output_changed": false,
+    "original_saved_float_scores_reproduced": true,
+    "passed": true,
+    "quantum_advantage_established": false,
+    "reference_true_price_confidence_premise_verified": false,
+    "true_price_99_percent_delivery_proved": false,
+    "unique_testcases": 21,
+    "wall_seconds": 18.062999999994645
+  },
+  "retained_measured_final_dollar_baseline_row": {
+    "actual_complete_slowdown_ratio": null,
+    "actual_complete_speedup_ratio": null,
+    "actual_onefold_reached": null,
+    "actual_tenfold_budget_miss_ratio": null,
+    "actual_tenfold_reached": null,
+    "case": "B4x12",
+    "classical_accuracy_target_dollars_exact": [
+      1,
+      1000
+    ],
+    "classical_evidence_is_measured_confirmation": true,
+    "classical_full_coverage_qualification": false,
+    "classical_method": "preint",
+    "classical_n_run_per_scramble": 131072,
+    "common_continuous_or_finite_input_law_certified": false,
+    "comparable_complete_runtimes_available": false,
+    "complete_logical_T_state_demand": 511911060861915,
+    "complete_quantum_seconds": null,
+    "conditional_required_accepted_T_states_per_second_onefold_exact": [
+      2559555304309575000000000000000,
+      13440040500026953
+    ],
+    "conditional_required_accepted_T_states_per_second_tenfold_exact": [
+      25595553043095750000000000000000,
+      13440040500026953
+    ],
+    "hypothetical_identity_checks": [
+      {
+        "onefold_reached": true,
+        "slowdown_exact": [
+          1,
+          2
+        ],
+        "speedup_exact": [
+          2,
+          1
+        ],
+        "tenfold_budget_miss_exact": [
+          5,
+          1
+        ],
+        "tenfold_reached": false
+      },
+      {
+        "onefold_reached": false,
+        "slowdown_exact": [
+          2,
+          1
+        ],
+        "speedup_exact": [
+          1,
+          2
+        ],
+        "tenfold_budget_miss_exact": [
+          20,
+          1
+        ],
+        "tenfold_reached": false
+      },
+      {
+        "onefold_reached": true,
+        "slowdown_exact": [
+          1,
+          20
+        ],
+        "speedup_exact": [
+          20,
+          1
+        ],
+        "tenfold_budget_miss_exact": [
+          1,
+          2
+        ],
+        "tenfold_reached": true
+      }
+    ],
+    "logical_T_depth_is_not_physical_reaction_depth": true,
+    "measured_classical_pooled_halfwidth_exact": [
+      3304495000013897,
+      10000000000000000000
+    ],
+    "measured_classical_wall_seconds_exact": [
+      13440040500026953,
+      5000000000000000
+    ],
+    "native_financial_subroutine_T_count_per_G_iteration": 520720662,
+    "rate_is_measured_or_architecture_certified": false,
+    "rate_scope": "Protected usable delivered states; no free initial stock or retry/routing credit",
+    "same_nominal_accuracy_target": false,
+    "source_only_quantum_seconds": null,
+    "supply_threshold_is_necessary_not_sufficient": true,
+    "tenfold_target_miss_does_not_imply_quantum_slowdown": true
+  },
+  "rows": [
+    {
+      "challenger_implementation_released": false,
+      "confidence_required": "Sound99% true-price delivery including reference/numerical bias, replicate dependence and any stopping/selection; nominal scramble intervals alone are insufficient.",
+      "delivery_eligible": false,
+      "existing_evidence": [
+        "C09_audit_run001",
+        "C04_frontier_run002",
+        "C04_frontier_audit_run001",
+        "C09_stagec_timing_update_run001",
+        "C09_conservative_coverage_run001"
+      ],
+      "family": "Conditioning/preintegration with randomized quasi-Monte Carlo",
+      "id": "conditioning_rqmc",
+      "law_required": "Original full-rank correlated GBM date law; conditional likelihood/weight and numerical inverse-normal, clipping and root errors must be accounted for.",
+      "monitoring_required": "Contractual12 monitoring dates; basket>=H kills, including equality. No continuous monitoring or selected barrier-date substitution.",
+      "named_holds": [
+        "F01 applicability/performance-optimality dependency remains unresolved",
+        "Full true-price99% and numerical bias qualification is not supplied by saved nominal intervals",
+        "Any new conditioning directions need separate exact-conditional/payoff proof and pilot",
+        "Complete cold/setup and held-out acquisition must use separately preregistered accounting"
+      ],
+      "next_small_step": "Specify one candidate transformation and its exact conditional expectation/weight, monetary bias and confidence/setup premises before any pilot.",
+      "performance_rank": null,
+      "same_task_required": "Conditional expectation integrates the ORIGINAL12-date arithmetic-Asian basket payoff including alive iff every monitored basket<140; unchanged discounted scalar.",
+      "setup_required": "Same complete cold/setup/warm conventions; include conditioning/root/transform/factorization/training if used, uniform draws and all payoff work.",
+      "task_applicability": "EXISTING_TARGETED_CLASSICAL_IMPLEMENTATION_WITH_OPEN_DELIVERY_PROOFS",
+      "variant_incompatibility": "Replacing min over ALL12 contractual basket-barrier tests by one chosen date changes the payoff; it is not a same-task challenger."
+    },
+    {
+      "challenger_implementation_released": false,
+      "confidence_required": "Joint allocation over base, all corrections and any residual/stopping/selection gives same99% scalar delivery; no assumed IID or variance decay.",
+      "delivery_eligible": false,
+      "existing_evidence": [
+        "G0_run003"
+      ],
+      "family": "Multilevel Monte Carlo with exact final monitored-date target",
+      "id": "mlmc_fixed_target",
+      "law_required": "Every required level marginal and fine/coarse Gaussian covariance coupling is exact or bias-paid; common/idiosyncratic sharing at original dates is retained.",
+      "monitoring_required": "Final target retains all12 original dates, arithmetic averaging and equality killing. Coarse intermediate estimands are permitted ONLY through a proved final-target telescope.",
+      "named_holds": [
+        "Explicit same-final-target hierarchy and telescoping identity not supplied",
+        "Level marginal/covariance/date and arithmetic averaging coupling proof not supplied",
+        "Correction variance/cost and bias rates not supplied for this fixed payoff",
+        "Confidence/setup allocation and independent held-out target validation not supplied",
+        "F01 comparator applicability dependency remains unresolved"
+      ],
+      "next_small_step": "Supply one finite hierarchy/coupling/telescope ending at exact original12-date target; hold allocations and pilot until that identity is reviewed.",
+      "performance_rank": null,
+      "same_task_required": "Preregister levels and telescope, whose FINAL level equals the original12-date payoff expectation, with separately bounded residual/bias and sampling error.",
+      "setup_required": "Charge coupling/base/corrections/pilot/allocation/reference and complete setup; no free trained or analytic base.",
+      "task_applicability": "CONDITIONAL_HOLD_UNSUPPLIED_HIERARCHY_AND_COUPLING",
+      "variant_incompatibility": "A standalone coarse-date price replacing original12 monitoring/averaging dates fails the task. This does NOT exclude coarse intermediate MLMC levels with a valid telescope."
+    },
+    {
+      "challenger_implementation_released": false,
+      "confidence_required": "Deterministic domain/discretization/solver/roundoff error<=same dollar allowance; randomized components need same99% complete allocation. A residual norm alone needs output-dollar conversion.",
+      "delivery_eligible": false,
+      "existing_evidence": [
+        "G0_run003"
+      ],
+      "family": "State-space PDE with discrete-date average update and killing",
+      "id": "pde_discrete_average_state",
+      "law_required": "Generator/covariance, initial state and discount represent unchanged four-asset correlated GBM; any truncation/low-rank/reduction error is paid in dollars.",
+      "monitoring_required": "At each ORIGINAL date update accumulated basket sum and kill iff basket>=140. Between dates there is no continuously monitored absorbing basket barrier substituted.",
+      "named_holds": [
+        "Complete original-date jump/killing/terminal and scalar readout formulation not supplied",
+        "Finite domain/tail, discretization, interpolation, solver and floating-point dollar error bounds not supplied",
+        "Initial/terminal and covariance/state storage contracts not supplied as executable solver inputs",
+        "Comparable complete setup/solve/readout pilot and validation not supplied",
+        "F01 comparator applicability dependency remains unresolved"
+      ],
+      "next_small_step": "Write the full four-asset-plus-average-state backward problem with ORIGINAL12 update/killing operators and dollar-error ledger before choosing a mesh/solver.",
+      "performance_rank": null,
+      "same_task_required": "State holds four spot/log-spot coordinates plus accumulated monitored equal-weight-basket sum; no scalar-basket Markov closure assumed. Sum/12 gives original arithmetic average at maturity.",
+      "setup_required": "Charge domain, mesh, generator/matrix/boundary construction, solve/preconditioner/storage and scalar output extraction; analytic or trained bases are not free.",
+      "task_applicability": "CONDITIONAL_HOLD_UNSUPPLIED_DISCRETE_UPDATE_AND_NUMERICAL_ERROR_PROOF",
+      "variant_incompatibility": "A continuous absorbing basket-barrier PDE changes discrete monitoring; a basket-only state without proved closure changes the model/average state. These variants do not exclude a valid full-state discrete-update PDE."
+    }
+  ],
+  "schema": "c10-three-family-applicability-census-v1",
+  "source_adoption": false,
+  "strongest_tested_baseline_changed": false,
+  "task_SHA256": "c7ac83c1019b649e46a12469cf15df1cede810539b96f18e7de313660117537f",
+  "universal_fastest_claim": false,
+  "universally_fastest_method_selected": null,
+  "untouched_foreign_F03_F31_F32_C15": true
+}

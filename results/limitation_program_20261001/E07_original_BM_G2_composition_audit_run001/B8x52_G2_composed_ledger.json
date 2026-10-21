@@ -1,0 +1,184 @@
+{
+  "schema": "exact-source-original-BM-G2-composed-ledger-v1",
+  "task": "B8x52 original monitored arithmetic-basket knock-out call",
+  "epsilon_dollars": [
+    1,
+    100
+  ],
+  "failure_cap": [
+    1,
+    100
+  ],
+  "source": {
+    "target": "results/limitation_program_20261001/A10_coefficient_run001/B8x52/min-depth/target.json",
+    "target_sha256": "267dcaa74aa9dd5cb1339c65006b122389331f42f0002f483bd6eed05c31090b",
+    "source": "results/limitation_program_20261001/A10_coefficient_run001/B8x52/min-depth/source.json",
+    "source_sha256": "b1a920b5cf3f20775ab042f43368bc2fc578bfeef7488c00d8d9ce4ad26a6ef8",
+    "capped_schedule": "results/limitation_program_20261001/A10_coefficient_run001/B8x52/min-depth/schedule_capped.json",
+    "capped_schedule_sha256": "1a94a9ef56d9d982fa54a97289710129e119fea24c92ce6e835784028d555c71",
+    "fixed_contract_certificate": "results/limitation_program_20261001/E03_support_audit_run002/summary.json"
+  },
+  "support": {
+    "certificate": "results/limitation_program_20261001/E03_support_run001/B8x52_certificate.json",
+    "independent_audit": "results/limitation_program_20261001/E03_support_audit_run002/summary.json",
+    "normalization_span_dollars": 64,
+    "selector_bits": 46,
+    "native_payoff_lower": 0,
+    "native_payoff_upper": 42680645956484
+  },
+  "output_includes_discount": true,
+  "further_discount_factor_applied": [
+    1,
+    1
+  ],
+  "dollar_terms": [
+    {
+      "name": "original_joint_law_and_native_financial_bias",
+      "bound": [
+        109795505456227944739085731032720442001501271516379672210645943710586681796494232358927175373382223186845932007198567669050166422734320793438500286459637235861060886919542694930339171901549522447271395076485,
+        88576370981154126467888366378708193332198311572526158998325286322104110890441212283091275974353616985867846052703974598211855289573486829960929223557797457240262835258411547020455192249159143265470626666643456
+      ],
+      "covers": [
+        "finite_input_law_and_joint_Box_Muller",
+        "clipped_log_tail",
+        "native_arithmetic_and_polynomial"
+      ],
+      "certificate": "results/limitation_program_20261001/A02_BM_native_financial_bridge_run002/complete_financial_bounds.json",
+      "independent_audit": "results/limitation_program_20261001/A02_BM_native_financial_bridge_audit_run002/independent_complete_financial_bounds.json",
+      "primary_manifest_sha256": "78a8eea9dc937883b810cb6b3e2e26aec41297551b984a9c12bb15a435523162",
+      "independent_manifest_sha256": "62074efc3bd5a20a9cbe72b3d020fd5c6bf13e32d41b188ef57570225dade2a0",
+      "pay_once": true
+    },
+    {
+      "name": "monitoring_policy",
+      "bound": [
+        0,
+        1
+      ],
+      "certificate": "results/limitation_program_20261001/E03_support_audit_run002/summary.json",
+      "reason": "The contract fixes monitoring dates; no policy approximation was introduced"
+    },
+    {
+      "name": "surrogate",
+      "bound": [
+        0,
+        1
+      ],
+      "certificate": "results/limitation_program_20261001/E03_support_audit_run002/summary.json",
+      "reason": "The source evaluates the original digitized payoff"
+    },
+    {
+      "name": "random_preparation",
+      "bound": [
+        0,
+        1
+      ],
+      "certificate": "results/limitation_program_20261001/E03_support_audit_run002/summary.json",
+      "reason": "Exact Hadamards prepare the original finite product input law"
+    },
+    {
+      "name": "statistical_digital_mean",
+      "bound": [
+        9,
+        2000
+      ],
+      "certificate": "results/limitation_program_20261001/E07_schedule_run001/schedule.json"
+    }
+  ],
+  "failure_terms": [
+    {
+      "name": "ideal_estimator",
+      "allowance": [
+        3,
+        1000
+      ],
+      "bound": [
+        46988240106954863425791289657454391591955111124320525479329804575126368610155376411132914170012567995711072580474243211863040537626911987094334621964111818489307421593962727,
+        15829145694278690179872161345257420162248406342477557754500035589945422406818039498900249667919554879334250971265032917718487362195632077437922953926521162746662833417516744704
+      ],
+      "certificate": "results/limitation_program_20261001/E07_schedule_run001/schedule.json"
+    },
+    {
+      "name": "QPE_rotation_synthesis",
+      "allowance": [
+        1,
+        1000
+      ],
+      "bound": [
+        21,
+        846131249804720
+      ],
+      "certificate": "results/limitation_program_20261001/E02_IQFT_audit_run001/summary.json",
+      "prerequisite": "Emit synthesized IQFT rotations with whole-circuit error bound",
+      "source": "results/limitation_program_20261001/E02_IQFT_run001/B8x52/synthesized_estimator_ledger.json",
+      "reason": "Independent exact-target gate-string audit and telescoped whole-IQFT observation perturbation bound"
+    },
+    {
+      "name": "physical_execution",
+      "allowance": [
+        3,
+        1000
+      ],
+      "bound": null,
+      "certificate": null,
+      "prerequisite": "H17/H18: complete execution failure allocation"
+    },
+    {
+      "name": "certificate_acquisition",
+      "allowance": [
+        3,
+        1000
+      ],
+      "bound": [
+        0,
+        1
+      ],
+      "certificate": "results/limitation_program_20261001/E03_support_run001/B4x12_certificate.json",
+      "reason": "This moment-free estimator uses deterministic all-input support and no statistical certificate acquisition"
+    }
+  ],
+  "ideal_digital_mean_certified": true,
+  "full_price_confidence_claim": false,
+  "adaptive_quantum_stages": 0,
+  "assessment": {
+    "complete_price_certified": false,
+    "source_specific_mathematical_G2_bias_complete": true,
+    "known_dollar_bound_sum": [
+      63548646858927689230572922467113413999549209199093423462888716520006897600434960954104739657246687452906404905545806670125439403226876441032835224058715724180280455697799332065298442127845708392736151884547569,
+      11072046372644265808486045797338524166524788946565769874790660790263013861305151535386409496794202123233480756587996824776481911196685853745116152944724682155032854407301443377556899031144892908183828333330432000
+    ],
+    "known_failure_bound_sum": [
+      2484888645509650050971110807560171782477073772052528378582305825290523105626856746582777719170394777364203803476309876158702799735150296981152382649199131573339749298166540053926097519389,
+      837095926852564399942450881308681676634786116236537203075205672529140046428400887259400945217726069646459891580862740893228451981982918883317719645466385321469762744183556061409608130887680
+    ],
+    "allocated_failure_sum": [
+      1,
+      100
+    ],
+    "ideal_logical_confidence_lower_exact": [
+      834611038207054749891479770501121504852309042464484674696623366703849523322774030512818167498555674869095687777386431017069749182247768586336567262817186189896422994885389521355682033368291,
+      837095926852564399942450881308681676634786116236537203075205672529140046428400887259400945217726069646459891580862740893228451981982918883317719645466385321469762744183556061409608130887680
+    ],
+    "open_obligations": [
+      "physical_execution"
+    ],
+    "missing_bounds_are_zero": false,
+    "physical_price_delivery_or_G3_G4_G5_claim": false
+  },
+  "source_compatible_logical_estimator": "results/limitation_program_20261001/E02_IQFT_run001/B8x52/synthesized_estimator_ledger.json",
+  "source_compatible_logical_estimator_sha256": "214bfbbf7309502ad0a05008ef85fca2f560556796ecf79920bb7380d1d2d7c8",
+  "independent_IQFT_audit": "results/limitation_program_20261001/E02_IQFT_audit_run001/summary.json",
+  "noiseless_digital_mean_confidence_lower_exact": [
+    834611038207054749891479770501121504852309042464484674696623366703849523322774030512818167498555674869095687777386431017069749182247768586336567262817186189896422994885389521355682033368291,
+    837095926852564399942450881308681676634786116236537203075205672529140046428400887259400945217726069646459891580862740893228451981982918883317719645466385321469762744183556061409608130887680
+  ],
+  "physical_execution_assumed_ideal_for_digital_certificate": true,
+  "all_input_error_to_original_continuous_price_certified": true,
+  "old_unmodified_ledger": "results/limitation_program_20261001/E07_complete_run001/B8x52_complete_price_ledger.json",
+  "old_bias_accounting_slots_covered_once": [
+    "finite_input_law_and_joint_Box_Muller",
+    "clipped_log_tail",
+    "native_arithmetic_and_polynomial"
+  ],
+  "source_specific_mathematical_G2_bias_complete": true
+}

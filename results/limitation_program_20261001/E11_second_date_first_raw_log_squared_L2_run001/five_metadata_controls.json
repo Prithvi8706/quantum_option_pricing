@@ -1,0 +1,62 @@
+{
+  "artificial_metadata_only": true,
+  "controls": [
+    {
+      "dedicated_tag": "DATE2_RAW3543_SCOPE",
+      "field": "source_scope",
+      "mutation": {
+        "F": 40,
+        "W": 72,
+        "asset_zero_based": 0,
+        "case": "B4x12",
+        "contractual_date_one_based": 1,
+        "innovation": 3500,
+        "normal_indices": [
+          0,
+          1,
+          5,
+          6
+        ],
+        "normal_values": [
+          94,
+          125,
+          357,
+          442
+        ],
+        "previous_raw_log": 3542,
+        "raw_log": 3543,
+        "saved_date_zero_based": 1
+      },
+      "rejected": true
+    },
+    {
+      "dedicated_tag": "PER_COORDINATE_ONLY",
+      "field": "coordinate_quantity",
+      "mutation": "pair2_times_coordinate",
+      "rejected": true
+    },
+    {
+      "dedicated_tag": "OWN_PROFILE_ONLY",
+      "field": "profiles",
+      "mutation": [
+        "primary90",
+        "primary90"
+      ],
+      "rejected": true
+    },
+    {
+      "dedicated_tag": "FOUR_CMUL_FLOORS_REQUIRED",
+      "field": "four_signed_cmul_floors_paid",
+      "mutation": false,
+      "rejected": true
+    },
+    {
+      "dedicated_tag": "NO_ERROR_INDEPENDENCE",
+      "field": "error_independence_assumed",
+      "mutation": true,
+      "rejected": true
+    }
+  ],
+  "passed": true,
+  "positive_first": true
+}

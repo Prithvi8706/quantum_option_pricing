@@ -1,0 +1,109 @@
+{
+  "accepted_interface": {
+    "coordinate_quantity": "per_coordinate_squared_L2",
+    "extra_spot_multiplier": 1,
+    "native_error_or_stock_independence_assumed": false,
+    "output_encoding": "canonical-nonnegative-rational-base2p32-v1",
+    "profiles": [
+      "primary90",
+      "independent130"
+    ],
+    "projection_and_both_unconditional_continuous_tails": true,
+    "source_scope": {
+      "F": 40,
+      "W": 72,
+      "case": "B4x12",
+      "date_one_based": 1,
+      "raw_logs": [
+        3542,
+        3660
+      ],
+      "stocks": [
+        4021,
+        4417
+      ],
+      "subtotal": 5573
+    }
+  },
+  "both_saved_unconditional_Gaussian_tails_reused": true,
+  "no_native_error_or_stock_independence": true,
+  "old_guard_moment_tail_series_or_native_provider_called": false,
+  "opaque_ROOT_numeric_tokens_are_not_numeric_recipe_inputs": true,
+  "projection_theorem": {
+    "C16_unevaluated_exact_product_factors": [
+      1,
+      3,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23,
+      25,
+      27,
+      29,
+      31
+    ],
+    "Gaussian_moment_identity": "For a centered continuous N(0,v), E W^32=(31)!!*v^16=C16*v^16, by Gaussian integration-by-parts recurrence; no moment of digital coordinates is used.",
+    "M_fixed": 256,
+    "M_guard_unevaluated": "b <= 8*own_saved_ln2_lower implies exp(b)<=2^8=M",
+    "Q": 1099511627776,
+    "continuous_exponential_tilt_identity": "E[exp(2L)1{L>b}]=exp(2mu+2v)*P(N(mu+2v,v)>b); complete square in the unconditional continuous Gaussian density.",
+    "continuous_normal_law": "Only original continuous ideal Z0,Z1 are independent standard normals. Native shared finite pair is never assumed independent. L has mean mu=ln100-1/800 and variance v=3/400.",
+    "core_projection_bound": "P fixes L_N because all native L_N belong to [a,b]; |L_N-P(L)|<=|L_N-L|. On [a,b], exp is M-Lipschitz.",
+    "d_lower_unevaluated": "mu_lower-a",
+    "d_upper_tilted_unevaluated": "b-mu_upper-2*v",
+    "even_moment_order": 32,
+    "exact_tilt_mass": "exp(2mu+2v)=10000*exp(1/80)<=10000*80/79, using exp(x)<=1/(1-x) for 0<=x<1; analytic inequality only, no series evaluated.",
+    "exactly_two_own_profile_bounds": "Evaluate this rational formula once using primary90 original inputs and once using independent130 own original inputs; do not select a minimum, require nesting, mix adapters, or return a third candidate.",
+    "ideal_reference": "L=ln100-1/800+sqrt(3/1000)Z0+sqrt(9/2000)Z1; S=exp(L)",
+    "interval_authority_JSON_pointer": [
+      "cases",
+      "B4x12",
+      "prefixes",
+      0,
+      "actual_raw_log_bounds",
+      0
+    ],
+    "interval_authority_expected_SHA256": "4b9a6c0cb574ed2c8008f4802957d4949fbc8922c5ec79861cf6bcd838a93373",
+    "interval_authority_path": "results/limitation_program_20261001/A02_BM_native_financial_bridge_run002/raw_log_prefix_envelopes.json",
+    "lower_projection_tail_pointwise": "On L<a, 0<=exp(a)-exp(L)<=exp(a)<=M; lower squared-tail contribution <=M^2*P(L<a).",
+    "lower_tail_bound_unevaluated": "T_lower=M^2*C16*v^16/(mu_lower-a)^32",
+    "moment_half_order": 16,
+    "mu_lower_unevaluated": "5063438167381/Q - e0 - 1/800",
+    "mu_upper_unevaluated": "5063438167381/Q + e0 - 1/800",
+    "native_all_input_interval_raw": [
+      4155861047200,
+      5968266508490
+    ],
+    "native_clip_inactive_for_all_inputs_at_this_site_only": true,
+    "native_exponential_allowance_unevaluated": "A=alpha*M+beta from original full-clipped-domain absolute envelope |S_N-exp(L_N)|<=alpha*exp(L_N)+beta; original clip inactive at site",
+    "native_initial_log_literal_raw": 5063438167381,
+    "new_numerical_moments_products_tail_allowances_bounds": null,
+    "new_proof_guard_values": null,
+    "pointwise_three_term_proof": "|S_N-exp(L)|<=A+M*|L_N-L|+|exp(P(L))-exp(L)|; square with pointwise Cauchy for three terms, then take expectation.",
+    "projection": "P(x)=min(max(x,a),b), a=raw_lower/Q, b=raw_upper/Q; mathematical comparison only, no source/policy change",
+    "prospective_stock_squared_L2_formula": "B_stock=3*((alpha*M+beta)^2+M^2*B_log+T_lower+T_upper)",
+    "selected_scope": {
+      "asset_zero_based": 0,
+      "case": "B4x12",
+      "clipped_log": 3579,
+      "contractual_date_one_based": 1,
+      "raw_log": 3542,
+      "saved_date_zero_based": 0,
+      "stock": 4021,
+      "units": "dollars_squared"
+    },
+    "upper_projection_tail_pointwise": "On L>b, 0<=exp(L)-exp(b)<=exp(L); upper squared-tail contribution <=E exp(2L)1{L>b}.",
+    "upper_tail_bound_unevaluated": "T_upper=(10000*80/79)*C16*v^16/(b-mu_upper-2v)^32",
+    "v_exact": [
+      3,
+      400
+    ]
+  },
+  "source_rows_and_scope_unchanged": true
+}

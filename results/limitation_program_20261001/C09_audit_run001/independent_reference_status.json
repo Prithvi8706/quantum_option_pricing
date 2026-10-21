@@ -1,0 +1,83 @@
+{
+  "cases": [
+    {
+      "case": "B4x12",
+      "ref_A_complete": true,
+      "ref_B_complete": true,
+      "primary_reference_agreement": true,
+      "reference_resolution_dollars": 0.0005323678559824936,
+      "reference_resolves_1e4_dollars": false,
+      "ref_A": {
+        "price": 3.5189322310450994,
+        "se": 0.0001849969892806938,
+        "hw99": 0.0004913788327363672,
+        "total_scrambles": 64,
+        "actual_points_per_scramble": 4194304,
+        "recorded_wall_seconds": 226.97712683677673,
+        "algorithm": "timeordered canonicalassetPCA OSS RQMC",
+        "raw_prefixes_reconciled": true,
+        "complete_spec_code_environment_hash_binding_present": false
+      },
+      "ref_B": {
+        "price": 3.518677292829827,
+        "se": 1.591294236370906e-05,
+        "hw99": 4.09890232461265e-05,
+        "actual_paths": 126666244096,
+        "recorded_wall_seconds": 21600.284415721893,
+        "fixed_machine_budget_seconds": 21600,
+        "workers": 16,
+        "worker_aggregates_reconciled": true,
+        "captured_worker_checkpoints_match_final": true,
+        "algorithm": "PCG64 iidnormal onefactor exactdate float64plain monitored payoff",
+        "complete_spec_code_environment_hash_binding_present": false
+      },
+      "absolute_reference_gap_dollars": 0.0002549382152725599,
+      "combined_reference": {
+        "price": 3.5186791652576863,
+        "hw99": 4.084092744374116e-05,
+        "inversevariance_reference_arithmetic": true
+      }
+    },
+    {
+      "case": "B8x52",
+      "ref_A_complete": true,
+      "ref_B_complete": true,
+      "primary_reference_agreement": true,
+      "reference_resolution_dollars": 0.0006379514675273543,
+      "reference_resolves_1e4_dollars": false,
+      "ref_A": {
+        "price": 3.281643935193758,
+        "se": 0.00020027101084071962,
+        "hw99": 0.0005319488491162978,
+        "total_scrambles": 64,
+        "actual_points_per_scramble": 4194304,
+        "recorded_wall_seconds": 1431.9497442245483,
+        "algorithm": "timeordered canonicalassetPCA OSS RQMC",
+        "raw_prefixes_reconciled": true,
+        "complete_spec_code_environment_hash_binding_present": false
+      },
+      "ref_B": {
+        "price": 3.2817661155820614,
+        "se": 4.115281174300226e-05,
+        "hw99": 0.00010600261841105651,
+        "actual_paths": 15870656512,
+        "recorded_wall_seconds": 21600.858620643616,
+        "fixed_machine_budget_seconds": 21600,
+        "workers": 16,
+        "worker_aggregates_reconciled": true,
+        "captured_worker_checkpoints_match_final": true,
+        "algorithm": "PCG64 iidnormal onefactor exactdate float64plain monitored payoff",
+        "complete_spec_code_environment_hash_binding_present": false
+      },
+      "absolute_reference_gap_dollars": 0.00012218038830358324,
+      "combined_reference": {
+        "price": 3.281761165605554,
+        "hw99": 0.00010384002091489699,
+        "inversevariance_reference_arithmetic": true
+      }
+    }
+  ],
+  "complete": true,
+  "references_same_continuous_financial_model_not_current_exact_BM_finite_law": true,
+  "primary_agreement_does_not_close_common_quantum_law_bridge": true
+}

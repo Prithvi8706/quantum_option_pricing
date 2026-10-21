@@ -1,0 +1,74 @@
+{
+  "G2_transfer": false,
+  "L2_bridge": false,
+  "common_parameter_and_absolute_ordered_date_family_preserved": true,
+  "complete_original_packet_and_held_history_retained": true,
+  "continuous_moment_certificate_only": true,
+  "cost_comparison": false,
+  "digital_moment_transfer": false,
+  "estimator_schedule_emitted": false,
+  "fits_or_pilots": 0,
+  "fixture_credit": 0,
+  "fresh_bound_adoption_or_other_programme_credit": false,
+  "full_E10_completed": false,
+  "full_price_certificate": false,
+  "independent_integer_nearest_even_source_and_date_conversion": true,
+  "item": "E10",
+  "local_only": true,
+  "new_global_fixture_credit": 0,
+  "performance_winner": null,
+  "physical_certificate": false,
+  "policy_code_or_finite_digital_law_verified": false,
+  "prices_or_paths_sampled": 0,
+  "quantum_advantage": false,
+  "semantic_scope": {
+    "covariance_hull": "Entrywise interval enclosure of that legitimate common-parameter family, not assertion arbitrary entries are Gaussian covariances",
+    "date_values": "Hull of exact k*T/dates and legacy binary64 integer-times-maturity/division date values",
+    "excluded": [
+      "Intermediate legacy floating evaluation",
+      "finite Box-Muller/input law",
+      "guarded/clipped digital source Y_d",
+      "L2 bridge",
+      "policy regression or finite policy rounding",
+      "full financial price",
+      "estimator schedule",
+      "performance winner"
+    ],
+    "law": "Continuous GBM mathematical Gaussian laws with common rho/sigma/r and ordered contractual future-date family",
+    "parameter_values": "Outward hull of exact intended decimals and exact legacy binary64 source-literal dyadics"
+  },
+  "source_emission": false,
+  "theorem": {
+    "actual_policy_code_or_digital_law_verified": false,
+    "applies_uniformly_to_every_policy_satisfying_premises": true,
+    "derivation_SHA256": "dd2e7fd510572c7451110356d996bf41ddf62b63f1b936a1a30e86d6a7666822",
+    "premises": {
+      "Kc_dollars_exact": [
+        6,
+        1
+      ],
+      "accrued_average_nonnegative": true,
+      "complement": "R=q*((k-G)+-(k-A)+)",
+      "conditional_clipping": "L<=V<=U",
+      "continuation_interval": "g<=L<=C<=U<=c0",
+      "forward_plus_put": "c0=F+Pg",
+      "future_average_equal_weights": true,
+      "geometric_control": "g=q*E[(G-k)+|X]",
+      "inner_strike_dollars_exact": [
+        100,
+        1
+      ],
+      "proof_conditional_on_premises_not_policy_code_validation": true,
+      "residual": "Y=1(V>Kc)*(h-R)",
+      "shift": "h=c0-V"
+    },
+    "steps": [
+      "AM-GM: 0<=R<=q*(A-G)",
+      "V>=g and put-call parity: 0<=h=c0-V<=q*E[A-G|X]",
+      "Nonnegative h,R: (h-R)^2<=h^2+R^2",
+      "Conditional Jensen: h^2<=q^2*E[(A-G)^2|X]",
+      "R^2<=q^2*(A-G)^2; 1(V>Kc)<=1",
+      "Tower: E[Y^2]<=2*q^2*E[(A-G)^2]"
+    ]
+  }
+}

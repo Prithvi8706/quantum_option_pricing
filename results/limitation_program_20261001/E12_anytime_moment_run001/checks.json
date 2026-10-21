@@ -1,0 +1,64 @@
+{
+  "checks": [
+    {
+      "cs_exp_lower": [
+        10874850912426471285779006946454860430231053191899354859128159,
+        66817393316733278271956739615215247136652982684326171875
+      ],
+      "fixed_exp_lower": [
+        4993782152512178965747669193793946984395531643473811454401283673377107204445321,
+        616281677093084901044936683024110376406675413091758468864409600000000000000
+      ],
+      "id": "log-majorants",
+      "passed": true,
+      "per_sign_per_lambda_failure": [
+        1,
+        64000
+      ]
+    },
+    {
+      "id": "all-data-fallback-radius",
+      "passed": true,
+      "radius_upper": [
+        909651689428639268863,
+        151114574530324039991296
+      ]
+    },
+    {
+      "coverage_proof": false,
+      "history_count": 510,
+      "id": "complete-short-histories",
+      "laws": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          256
+        ],
+        [
+          1,
+          65536
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "cases": 7,
+      "id": "sqrt-enclosures",
+      "passed": true
+    },
+    {
+      "id": "zero-observation-term",
+      "passed": true,
+      "sum_bound": [
+        24,
+        1
+      ]
+    }
+  ],
+  "passed": true,
+  "proof_basis": "Howard Theorem 4 and Lemma 1; finite union, rational majorants",
+  "simulation_is_coverage_proof": false
+}

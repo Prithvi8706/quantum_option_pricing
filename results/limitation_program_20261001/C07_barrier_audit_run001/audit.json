@@ -1,0 +1,111 @@
+{
+  "passed": true,
+  "audit_independent_of_target_implementation": true,
+  "source_contract": {
+    "builder_sha256": "1e0e225131c668f133ef05a5de3f78fbad4fb5307a2fc8c452d99d14c8dda929",
+    "assets": 4,
+    "dates": 12,
+    "date": 1,
+    "common_log_variance_exact": [
+      3,
+      1000
+    ],
+    "barrier_dollars_exact": [
+      140,
+      1
+    ],
+    "strict_alive_less_than_barrier": true,
+    "continuous_endpoint_mass_exact": [
+      0,
+      1
+    ],
+    "digital_endpoint_mass_claimed_zero": false,
+    "original_source_ast_checks": 11
+  },
+  "historical_manifests": {
+    "run001": {
+      "receipt_files": 8,
+      "frozen_inputs": 8
+    },
+    "run002": {
+      "receipt_files": 10,
+      "frozen_inputs": 8
+    }
+  },
+  "run001_tests": {
+    "tests": 51,
+    "failures": 1,
+    "errors": 0,
+    "skipped": 0
+  },
+  "run001_passed_tests": 50,
+  "run001_produced_candidates": 0,
+  "run001_failure": "test_local_relative_log_radius_covers_both_barrier_sides[delta1]",
+  "run002_tests": {
+    "tests": 51,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "run002_only_reference_precision_changed": true,
+  "independent_numeric_enclosure": {
+    "log_length": [
+      [
+        900617284489169833914080320038465927182488223195257632735906072402597059752289559113539446227723267772984698477,
+        630432099142311667396464641602297820881275828327447146687172694467931548343955369782628260078158650252906047844909056
+      ],
+      [
+        450308642244584916957040160019232963591244111597628816367953036201298529876144779556769723113861633886493922101,
+        315216049571155833698232320801148910440637914163723573343586347233965774171977684891314130039079325126453023922454528
+      ]
+    ],
+    "density": [
+      [
+        409986666971976041150768694865864495305642301529473462857625679873040188369412460681994477642932433424469164735,
+        39402006196394479212279040100143613805079739270465446667948293404245721771497210611414266254884915640806627990306816
+      ],
+      [
+        819973333943952082301537389731728990611284603058946925715251359746080376738824921363988955285864866848941193521,
+        78804012392788958424558080200287227610159478540930893335896586808491443542994421222828532509769831281613255980613632
+      ]
+    ],
+    "centered_interval_maximum": [
+      [
+        819973333920710207757225788322826536218181747924982667438335209092104737990292500271705781907205586232367928273,
+        78804012392788958424558080200287227610159478540930893335896586808491443542994421222828532509769831281613255980613632
+      ],
+      [
+        819973333920710207757225788322826536218181747924982667438335209092104737990292500271705781907205586232370792379,
+        78804012392788958424558080200287227610159478540930893335896586808491443542994421222828532509769831281613255980613632
+      ]
+    ],
+    "independent_integrated_taylor_terms": 64,
+    "mp_iv_digits": 110,
+    "all_interval_endpoints_exact_binary_rationals": true
+  },
+  "proof": {
+    "original_factorization": "At t=1/12 the continuous original GBM is S_i=100 exp(-t*3/200+(3/10)sqrt((2/5)t)Z+(3/10)sqrt((3/5)t)Z_i). The continuous drivers are independent. Thus B=exp(s_c Z)W, W>0 finite almost surely and independent of Z, with s_c^2=3/1000. This assertion concerns the continuous model only, not the joint digital pair law.",
+    "density_bound": "For 0<=eta<140, conditional on W, the log interval has length L=log((140+eta)/(140-eta)); the standard-normal interval length is L/s_c. Since phi(z)<=1/sqrt(2*pi), its probability is at most min(1,L/sqrt(2*pi*s_c^2)). Average this uniform bound over W.",
+    "centered_maximum": "For half length d=L/(2*s_c), g(c)=Phi(c+d)-Phi(c-d) is even. For c>=0, (c+d)^2-(c-d)^2=4cd>=0, hence g'(c)<=0; for c<=0 the sign reverses. Its exact supremum over every positive W is g(0)=erf(L/sqrt(8*s_c^2)), also at most the density bound.",
+    "endpoint_and_good_event": "The conditional lognormal law has no atom at either deterministic endpoint or H=140; averaging preserves zero endpoint probability. The original strict basket<H test is preserved. Digital equality can have positive mass. Decision disagreement implies a bad event or the unconditional continuous band. No conditional-on-good-event independence or Gaussian law is used.",
+    "outward_arithmetic": "For exact x=eta/H in [0,1), log((1+x)/(1-x))=2 sum x^(2k+1)/(2k+1). The remainder after N terms is at most 2*x^(2N+1)/((2N+1)*(1-x^2)). Integer isqrt of floor(q*2^(2p)) brackets sqrt(q) on dyadics. Every dyadic lower endpoint uses floor and upper uses ceiling; multiplication takes the minimum and maximum of four products. For exp(-z^2/2), the integrated degree-N Taylor remainder on [0,8] is at most 8^(2N+3)/(2^(N+1)*(N+1)!*(2N+3)), since every exp(-t) derivative has magnitude at most one for t>=0. Above8, monotonicity supplies the lower bound at min(z_lower,8), and one supplies the upper. Positive denominator lower endpoints and upper numerators give outward quotient uppers. Clipping by a second proved upper is valid.",
+    "relative_log_radius": "If exp(-delta)<=S_d/S_c<=exp(delta) holds for every stock INCLUDING native exp/clipping, positive sums preserve these inequalities. The decision band has log length 2*delta. A symmetric dollar radius H*(exp(delta)-1) covers both sides because exp(delta)+exp(-delta)>=2. On 0<=delta<=1/2, sum_{k=1}^{80}delta^k/k! is a lower endpoint. The remaining positive terms are bounded by delta^81/81! divided by 1-delta/82: all following ratios are at most delta/82. The upper endpoint is exact rational (no float or rounded-down radius). A discrepancy of raw pre-exp logs alone is not this stock ratio claim.",
+    "scope": "One-date bands do not provide full smooth Asian payoff zeta, an any-date band union, a native discrepancy radius, or tail dollars. These remain null in the audited production artifact. The fixed eta=1/10000 dollar is exploratory only, not a financial certificate."
+  },
+  "verified_null_production_fields": [
+    "eta",
+    "path_log_discrepancy",
+    "bad_event_probability",
+    "proved_discrepancy_band_bounds",
+    "one_date_decision_disagreement_upper_exact",
+    "discounted_smooth_payoff_zeta",
+    "discounted_tail_dollars",
+    "any_contractual_date_band_probability",
+    "dollar_bias_upper_exact"
+  ],
+  "finite_financial_samples_used": 0,
+  "new_financial_gate_replays": 0,
+  "new_production_eta_values": 0,
+  "full_G2_closed": false,
+  "full_price_error_dollars": null
+}

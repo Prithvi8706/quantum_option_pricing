@@ -1,0 +1,85 @@
+{
+  "schema": "e12-dyadic-eb-preregistration-v1",
+  "item": "E12",
+  "version": 1,
+  "scope": "One conservative iid empirical-Bernstein confidence-sequence design; not a complete option-price certificate or implementation of the more general Howard conditional-mean theorem.",
+  "primary_theorem": {
+    "title": "Maurer and Pontil, Empirical Bernstein Bounds and Sample Variance Penalization (2009)",
+    "url": "https://www.learningtheory.org/colt2009/papers/012.pdf",
+    "location": "Theorems 1 and 4, PDF pages 1-2; actual hypotheses and constants inspected 2026-10-04",
+    "method": "Apply Theorem 4 to X and 1-X, then a countable union over fixed dyadic sample counts. Carry the last interval between permitted looks."
+  },
+  "hypotheses": {
+    "observation": "One normalized outer-group average of squared single-path residuals, not the square of an inner mean.",
+    "range": "Proved deterministic [0,1] after division by the deterministic residual support squared.",
+    "iid": "Outer states iid; each has a fresh disjoint iid inner group, independent across groups and of fixed policy training. Condition on that training. Within-group dependence from the common outer state is allowed because the group is one observation.",
+    "excluded": "Individual Sobol points, shared future-factor groups, adaptive policy refitting, changing inner-group size from the observed data, and mere constant conditional mean without iid are not certified by this implementation.",
+    "numerics": "Exact rational sufficient statistics, outward Decimal enclosures for confidence arithmetic. No PRNG or financial path-evaluation proof is implied."
+  },
+  "allocation": {
+    "per_price_moment_failure": "1/1000",
+    "per_stream_failure": "1/2000",
+    "unused_second_stream_failure_reserved": "1/2000",
+    "look_failure": "alpha_j=alpha_stream/(j*(j+1)), n_j=2^j, j>=1",
+    "sides": "Two-sided at each look: log(4/alpha_j); total over all j is alpha_stream. If both moment streams are implemented, selecting their minimum requires both split budgets.",
+    "other_price_allocations": "Surrogate .002, regret .001, quantum mean .004, physical .002 are unchanged and are not borrowed."
+  },
+  "toy_corpus": {
+    "laws": ["1/2", "1/256", "1/65536"],
+    "law_definition": "R is 1 with probability p and 0 otherwise; X=R^2, exact support [0,1], exact mean p, exact variance p*(1-p).",
+    "target_upper": "1/128",
+    "target_uses_true_p": false,
+    "replicates_per_law": 128,
+    "root_seed": 20261004012,
+    "sample_cap": 65536,
+    "permitted_looks": "2^j for j=1,...,16",
+    "fixed_n_baseline": "Same complete stream to n=65536; one terminal two-sided Maurer-Pontil interval at alpha_stream=1/2000. This is a paired method comparison; selecting the better certificate after observing both is not certified at a single stream alpha.",
+    "paired_diagnostics": "Generate independent binomial increments over disjoint dyadic blocks; both methods use the same full count trajectory. The confidence-sequence controller is replayed prospectively and stops at the first nonempty interval with upper<=1/128. Truth is read only after the stop decision for diagnostic coverage.",
+    "cap_action": "Return the deterministic support bound 1 if no target certificate was obtained; retain failed target attempts and all paired terminal fixed-N results.",
+    "cost_scope": "Logical Bernoulli observations and confidence evaluations only. Compressed binomial simulation is not a measured sampling latency, finance acquisition, or quantum source implementation."
+  },
+  "finance_admission": {
+    "selection": "Exactly C4, compound strike 6, original uncapped parity-residual contract; no other finance row may be substituted.",
+    "support_squared": "W=10000*exp(-3/100) dollars squared, original strike 100 and half-maturity discount exp(-.015).",
+    "target": "Archived C4/strike6 second_moment_upper literal 0.19448064336973883 dollars squared, as a fixed desired certificate-quality threshold, not an endorsement of its PRNG/rounding assumptions.",
+    "sample_cap": 1048576,
+    "inner_group_size": 16,
+    "rule": "Before any finance draw, enclose the all-zero nonnegative-observation range floor at all 20 permitted looks for each split moment stream. If the minimum lower floor exceeds the fixed target, reject this stopping design without acquisition. This proves failure of this fixed target rule only; a larger-moment/complete-latency tradeoff is unresolved.",
+    "additional_gate": "Even if the floor gate passes, no finance launch is authorized in this version unless exact numerical/IID premises and complete acquisition-plus-estimation comparator latency are supplied. They currently remain unresolved.",
+    "complete_acquisition_plus_estimation_latency": null,
+    "matched_complete_latency": null,
+    "finance_acquisitions_authorized": 0
+  },
+  "acceptance": [
+    "Every optional-stopping guarantee derives from the primary fixed-N theorem plus the explicit countable union, not simulated coverage.",
+    "Exact rational variance agrees with an independent pair-difference oracle, scale transformation and Bernoulli count identities; invalid support/count/variance inputs are refused.",
+    "Zero observations retain the nonzero range term; all look allocations telescope to at most the fixed stream failure.",
+    "All 384 declared paired toy attempts and all 20 finance admission floors are retained, including target failures and cap fallbacks.",
+    "Directed 80-digit numerical enclosures contain a separate 140-digit reference for the fixed validation corpus.",
+    "No financial promotion without smaller complete acquisition-plus-estimation latency and all finance premises; unknown costs remain null."
+  ],
+  "budgets": {
+    "cpu_seconds": 60,
+    "wall_seconds": 180,
+    "artifact_bytes": 33554432,
+    "maximum_stopping_rule_revisions": 0,
+    "timings_are": "Administrative run-body budgets only; timer starts before NumPy import and includes initial/final input verification and terminal sealing, with a final guard. Python startup and preceding standard-library imports are unmeasured; receipt timing subtotal precedes terminal sealing. Preparation and finite-oracle QA are separate metadata/preflight actions. No matched Stage C, complete-process or sampling-performance timing claims.",
+    "runtime_pin_scope": "Selected Python launcher, NumPy init and NumPy RNG binaries only; not complete runtime closure or financial evaluation provenance."
+  },
+  "stopping_rule": "Exactly this protocol, one fresh run. On a failure write a retained failure receipt; do not increase budgets, retune targets, add laws, promote partial artifacts, or start a finance acquisition.",
+  "input_paths": [
+    "manuscript/advantage-frontier-2026-09-23/WHY_NO_ADVANTAGE.md",
+    "docs/limitation_audit_20261001/IMPLEMENTATION_PLAN.md",
+    "docs/limitation_audit_20261001/implementation_plan/roadmap.json",
+    "docs/limitation_audit_20261001/implementation_plan/FORMULATIONS.md",
+    "docs/limitation_audit_20261001/ESTIMATION_AND_CERTIFICATION.md",
+    "docs/controlled_residual_feasibility/DERIVATION.md",
+    "research/controlled_residual_feasibility/parity_iid.py",
+    "research/controlled_residual_feasibility/parity_acquire.py",
+    "research/controlled_residual_feasibility/parity.py",
+    "research/compound_feasibility/model.py",
+    "results/controlled_residual_feasibility/parity_iid_v1/plan.json",
+    "results/controlled_residual_feasibility/parity_iid_v1/summaries.json",
+    ".context/parallel_110_chat_reservation_20261004.json"
+  ]
+}

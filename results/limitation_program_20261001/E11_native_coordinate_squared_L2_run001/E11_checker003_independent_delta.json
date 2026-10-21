@@ -1,0 +1,63 @@
+{
+  "ROOT_checker002_expected_SHA256": "4ad491ad86cd724166bdf3ac15e203f0696c47e6f9742ba3648c85321256f8e2",
+  "ROOT_checker003_expected_SHA256": "bb06b0f3316fc1987b5a5defc7f19f479a995cb6e306f670b31355fc50b47fe1",
+  "ROOT_checker_executed_by_peer": false,
+  "all_original_checker_helper_definitions_AST_exact": true,
+  "author_method_SHA256": {
+    "E11_SCALAR_MIDPOINT_L2_NUMERICAL_PREFLIGHT_V2.md": "c9055a5c36600cbf5912aa2dba918372277aafbcc4e1dbd28908d035b2347ba3",
+    "e11_scalar_midpoint_l2_numerical_preflight_v2.json": "deb59afbd4bad7672dfe9d9ff8ae6a852de19bd385b3fd937290c3036fe8b715",
+    "experiment_e11_scalar_midpoint_l2_v2.py": "37a3fc6d539f1afd41e4d2ce043a443e2b334f3042b938aae95811345d47a188"
+  },
+  "blockers": [],
+  "completed_source_manifest_expected_SHA256": "129ae9a650ac5c216b4f5221174dbcb5847b30100e493445171750fcd5a24170",
+  "cost": null,
+  "fixture_credit": 0,
+  "new_top_level_AST_statements": [
+    "assert set(unions[0]) == set(unions[1])",
+    "assert all((unions[0][k] == unions[1][k] for k in unions[0] if k not in ('unique_paths', 'unique_bytes')))",
+    "executed_names = ['executed_' + name for name in AUTHORS] + ['executed_' + Path(READY_KEY).name]",
+    "assert unions[1]['unique_paths'] - unions[0]['unique_paths'] == len(executed_names) == 4",
+    "assert unions[1]['unique_bytes'] - unions[0]['unique_bytes'] == sum(((OUTPUT / name).stat().st_size for name in executed_names))",
+    "report = {'schema': 'root-e11-scalar-midpoint-L2-numerical-actual-result-verification-v2', 'passed': True, 'manifest_SHA256': mf_sha, 'ROOT_READY_SHA256': ready_sha, 'complete_counts': [len(packet[k]) for k in ('files', 'frozen_inputs', 'external_runtime_inputs')], 'inclusive_owned_files': 20, 'owned_nonmanifest_bytes': total, 'all_saved_owned_hashes_inventory_executed_authors_and_scopes_checked': True, 'saved_log_argument_count': len(arguments), 'fixed_role_references': 85, 'all_saved_endpoint_signed_windows_precision_and_strict_method_containment_checked': True, 'all30_saved_bin_argument_coefficient_ledger_joins_sums_and4telescopes_checked': True, 'three_precise_saved_controls_and_complete_own_M2_rejection_predicate_checked': True, 'both_saved_full_input_unions_and_all_absences_checked_no_third_union': True, 'fixed_union_fields_equal_and_growth_exactly_four_hashed_executed_copies': True, 'prior_ROOT_metadata_checker_failed_at_overstrict_union_equality_and_remains_frozen': '4ad491ad86cd724166bdf3ac15e203f0696c47e6f9742ba3648c85321256f8e2', 'terminal_budget_observation': packet['terminal_budget_observation_before_seal'], 'scalar_squared_L2_allowance_upper_outward_scaled_integer': upper_ceil_scaled, 'scalar_allowance_upper_scale': scale, 'units': 'Squared scalar function difference; no currency', 'ROOT_metadata_saved_record_checks_only_log_series_not_recomputed': True, 'target_import_new_scalar_numerics_or_native_gate_evaluation': False, 'financial_same_law_or_native_source_bridge': False, 'full_E11_completed': False, 'full_G2': False, 'adoption': False, 'cost_transfer': False, 'quantum_advantage': False, 'fixture_credit': 0}",
+    "path = ROOT / '.context/E11_SCALAR_MIDPOINT_L2_NUMERICAL_ACTUAL_RESULT_ROOT_VERIFICATION_run003.json'"
+  ],
+  "passed": true,
+  "removed_top_level_AST_statements": [
+    "assert unions[0] == unions[1]",
+    "report = {'schema': 'root-e11-scalar-midpoint-L2-numerical-actual-result-verification-v2', 'passed': True, 'manifest_SHA256': mf_sha, 'ROOT_READY_SHA256': ready_sha, 'complete_counts': [len(packet[k]) for k in ('files', 'frozen_inputs', 'external_runtime_inputs')], 'inclusive_owned_files': 20, 'owned_nonmanifest_bytes': total, 'all_saved_owned_hashes_inventory_executed_authors_and_scopes_checked': True, 'saved_log_argument_count': len(arguments), 'fixed_role_references': 85, 'all_saved_endpoint_signed_windows_precision_and_strict_method_containment_checked': True, 'all30_saved_bin_argument_coefficient_ledger_joins_sums_and4telescopes_checked': True, 'three_precise_saved_controls_and_complete_own_M2_rejection_predicate_checked': True, 'both_saved_full_input_unions_and_all_absences_checked_no_third_union': True, 'terminal_budget_observation': packet['terminal_budget_observation_before_seal'], 'scalar_squared_L2_allowance_upper_outward_scaled_integer': upper_ceil_scaled, 'scalar_allowance_upper_scale': scale, 'units': 'Squared scalar function difference; no currency', 'ROOT_metadata_saved_record_checks_only_log_series_not_recomputed': True, 'target_import_new_scalar_numerics_or_native_gate_evaluation': False, 'financial_same_law_or_native_source_bridge': False, 'full_E11_completed': False, 'full_G2': False, 'adoption': False, 'cost_transfer': False, 'quantum_advantage': False, 'fixture_credit': 0}",
+    "path = ROOT / '.context/E11_SCALAR_MIDPOINT_L2_NUMERICAL_ACTUAL_RESULT_ROOT_VERIFICATION_run002.json'"
+  ],
+  "result": null,
+  "result_receipt_created_by_peer": false,
+  "schema": "e11-sealed-result-ROOT-checker003-independent-static-delta-supplement-v1",
+  "scientific_target_import_or_series_numerical_controls_gate_or_resource_evaluation_by_peer": false,
+  "sections": {
+    "exact_union_delta": {
+      "exact_copy_bytes": 2844042,
+      "exact_executed_copy_names": [
+        "executed_experiment_e11_scalar_midpoint_l2_v2.py",
+        "executed_E11_SCALAR_MIDPOINT_L2_NUMERICAL_PREFLIGHT_V2.md",
+        "executed_e11_scalar_midpoint_l2_numerical_preflight_v2.json",
+        "executed_E11_SCALAR_MIDPOINT_L2_NUMERICAL_ROOT_READY_run002.json"
+      ],
+      "new_bytes": 116649066,
+      "new_paths": 3020,
+      "notes": [
+        "All non-count/byte union fields remain exactly equal and both saved reports remain joined to packet/summary by original checker.",
+        "Only four exact previously hash-checked executed author/READY copies account for count+4 and byte+2844042; source copy() hashes its targets into_OBSERVED after first union.",
+        "This fixes an overstrict equality of union size headers, without dropping full fresh physical/SHA guards or inferring new runtime/old-input expectations."
+      ],
+      "old_bytes": 113805024,
+      "old_paths": 3016,
+      "passed": true
+    },
+    "unchanged_result_validation": {
+      "notes": [
+        "All owned fullSHA/inventory/author/schema/policy/scope/all30 saved bin/argument/window/controls/allowance/terminal predicates are unchanged; no log oracle series or target rerun performed by reviewer.",
+        "Other top-level edits only add exact executed-copy allowance proof and ROOT failure-history note/result003 path. Checker002 failure remains immutable metadata-only.",
+        "Saved metadata read by reviewer is only union headers and opaque executed copies; no rational/window/series/bin/scalar/control comparison evaluated."
+      ],
+      "passed": true
+    }
+  }
+}

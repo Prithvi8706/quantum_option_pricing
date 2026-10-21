@@ -1,0 +1,59 @@
+..............................FF...                                      [100%]
+================================== FAILURES ===================================
+___________ test_actual_archive_three_counts_and_t_resource_totals ____________
+
+    def test_actual_archive_three_counts_and_t_resource_totals():
+>       result = exporter.export_archive(ROOT)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+research\limitation_program_20261001\test_estimator_ledger_export_v2.py:223: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+research\limitation_program_20261001\estimator_ledger_export_v2.py:621: in export_archive
+    audited = audit_wrapper(root, wrapper, row["method"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+research\limitation_program_20261001\estimator_ledger_export_v2.py:439: in audit_wrapper
+    phase = audit_wave(root, calls[1])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+research\limitation_program_20261001\estimator_ledger_export_v2.py:353: in audit_wave
+    require(resources["random_hadamards"] == len(random), "Random preparation width")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+condition = False, message = 'Random preparation width'
+
+    def require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Random preparation width
+
+research\limitation_program_20261001\estimator_ledger_export_v2.py:26: ValueError
+_____ test_actual_archive_preserves_unknown_costs_and_financial_boundary ______
+
+    def test_actual_archive_preserves_unknown_costs_and_financial_boundary():
+>       result = exporter.export_archive(ROOT)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+research\limitation_program_20261001\test_estimator_ledger_export_v2.py:244: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+research\limitation_program_20261001\estimator_ledger_export_v2.py:621: in export_archive
+    audited = audit_wrapper(root, wrapper, row["method"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+research\limitation_program_20261001\estimator_ledger_export_v2.py:439: in audit_wrapper
+    phase = audit_wave(root, calls[1])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+research\limitation_program_20261001\estimator_ledger_export_v2.py:353: in audit_wave
+    require(resources["random_hadamards"] == len(random), "Random preparation width")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+condition = False, message = 'Random preparation width'
+
+    def require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Random preparation width
+
+research\limitation_program_20261001\estimator_ledger_export_v2.py:26: ValueError
+- generated xml file: C:\Users\prith\quantum_option_pricing\results\limitation_program_20261001\E02_archive_run002\pytest.xml -
+=========================== short test summary info ===========================
+FAILED research/limitation_program_20261001/test_estimator_ledger_export_v2.py::test_actual_archive_three_counts_and_t_resource_totals
+FAILED research/limitation_program_20261001/test_estimator_ledger_export_v2.py::test_actual_archive_preserves_unknown_costs_and_financial_boundary
+2 failed, 33 passed in 3.28s

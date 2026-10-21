@@ -1,0 +1,86 @@
+{
+  "completed_utc": "2026-10-01T10:13:46.521801+00:00",
+  "passed": true,
+  "local_only": true,
+  "accepted_baseline": "results/limitation_program_20261001/A09_run001",
+  "cases": [
+    {
+      "case": "B4x12",
+      "before_round_t_depth": 2436454,
+      "current_resources": {
+        "source_gates": 200556188,
+        "x": 755998,
+        "cx": 107110548,
+        "ccx": 92689642,
+        "t_count": 648827494,
+        "t_depth": 1218582,
+        "clifford_t_depth": 3569495,
+        "clifford_cx": 663248400,
+        "clifford_h": 185379284,
+        "logical_qubits": 550141,
+        "random_hadamards": 1920,
+        "ssa_words": 5698,
+        "max_reused_scratch_qubits": 195017,
+        "output_words": 1,
+        "t_depth_schedule": "Compact exact SSA; memory-capped independent leaf batches",
+        "ccx_expansion": "exact 7 T and 6 CX, 2 H per CCX; no relative-phase substitution"
+      },
+      "round_depth_reduction_percent": 49.985429644885556,
+      "depth_factor_against_stage_a": 4.950572058343222,
+      "last_multiplier_extra_t_count": 20724480,
+      "last_multiplier_extra_t_percent": 3.299535193760428
+    },
+    {
+      "case": "B8x52",
+      "before_round_t_depth": 2624696,
+      "current_resources": {
+        "source_gates": 1643752552,
+        "x": 6243338,
+        "cx": 876585908,
+        "ccx": 760923306,
+        "t_count": 5326463142,
+        "t_depth": 1268304,
+        "clifford_t_depth": 3735217,
+        "clifford_cx": 5442125744,
+        "clifford_h": 1521846612,
+        "logical_qubits": 4460481,
+        "random_hadamards": 14976,
+        "ssa_words": 46802,
+        "max_reused_scratch_qubits": 1516961,
+        "output_words": 1,
+        "t_depth_schedule": "Compact exact SSA; memory-capped independent leaf batches",
+        "ccx_expansion": "exact 7 T and 6 CX, 2 H per CCX; no relative-phase substitution"
+      },
+      "round_depth_reduction_percent": 51.67806100211225,
+      "depth_factor_against_stage_a": 5.040703175263975,
+      "last_multiplier_extra_t_count": 170631552,
+      "last_multiplier_extra_t_percent": 3.309486530377548
+    }
+  ],
+  "distinct_successful_pytest_cases": 153,
+  "complete_financial_emitted_gate_replays": 18,
+  "pytest_counts_by_run": {
+    "A06_regression": 55,
+    "A10_regression": 41,
+    "A08_direct_adders": 22,
+    "A09_prefix_multiplier": 24,
+    "A07_normal_ranges": 11
+  },
+  "gates_passed_in_scope": [
+    "G0",
+    "G1"
+  ],
+  "gates_open": [
+    "G2",
+    "G3",
+    "G4",
+    "G5"
+  ],
+  "next_item": "A11",
+  "next_component": "Unsigned46-bit radius sqrt with full72-bit clean XOR interface; proof ready, circuit not emitted",
+  "attribution": "Measured combined source; last multiplier jointly changes signed partials/correction and prefix final addition; no independent improvement factors multiplied",
+  "stopped_branches": [
+    "A08 direct prefix add/sub below2% full-depth threshold; baseline retained"
+  ],
+  "no_advantage_claim": true
+}

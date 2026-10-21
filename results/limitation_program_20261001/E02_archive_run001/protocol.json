@@ -1,0 +1,59 @@
+{
+  "created_utc": "2026-10-02T06:44:14.837397+00:00",
+  "item": "E02 archived estimator invocation ledger",
+  "local_only": true,
+  "before_meaningful_test_execution": true,
+  "before_meaningful_archive_expansion": true,
+  "executed_dependencies": [
+    {
+      "original": "research/limitation_program_20261001/experiment_estimator_archive.py",
+      "snapshot": "executed/experiment_estimator_archive.py",
+      "sha256": "24dbf8166eaabfdadf466f5d192a12ea95fb6b2fd85f77dc24fa043635bd74fb"
+    },
+    {
+      "original": "research/limitation_program_20261001/estimator_ledger_export.py",
+      "snapshot": "executed/estimator_ledger_export.py",
+      "sha256": "2d76d5c484d05152a743215a7b3986f24b22c5c0bc41644f4421c84d9354e067"
+    },
+    {
+      "original": "research/limitation_program_20261001/test_estimator_ledger_export.py",
+      "snapshot": "executed/test_estimator_ledger_export.py",
+      "sha256": "33661e341087494959e1ac6ba383e5a634951eb7b1046a78c78f6592aea5109b"
+    }
+  ],
+  "frozen_input_count": 242,
+  "declared_tests": 34,
+  "selected_rows": [
+    {
+      "model": "C4",
+      "method": "hadamard",
+      "mode": "continuous_moment_conditional"
+    },
+    {
+      "model": "H8",
+      "method": "hadamard",
+      "mode": "continuous_moment_conditional"
+    },
+    {
+      "model": "C4",
+      "method": "bounded_QAE",
+      "mode": "unconditional_digital_support"
+    }
+  ],
+  "expected_controlled_calls": [
+    1203320,
+    2967610,
+    7864305
+  ],
+  "maximum_rows": 3,
+  "parameter_scans": 0,
+  "new_financial_candidate_attempts": 0,
+  "complete_financial_replays": 0,
+  "new_quantum_unitary_tests": 0,
+  "contract": "Only original C4/H8, Kc=6, one-strike residual mean error .002/discount and ideal estimator failure .003.",
+  "audit": "Expand actual integer Hadamard stages or QPE powers; validate wrapper compute/inverse, literal selector inverse, phase synthesis, signed reflection, native schedule and leaf metadata; independently reconcile saved T resources.",
+  "gate_arrays": "The unchanged archived gate arrays are SHA-addressed in native metadata but not replayed or rehashed by this count audit.",
+  "unknowns": "Readout, reset, feedback, Clifford time, routing, factories and full-price obligations stay explicitly unknown, never free zero.",
+  "financial_transfer": "No archived call count multiplied by current B4 depth. A fresh dollar selector, proved support and bound wrapper are separate pending work.",
+  "freeze_semantics": "Any failed first execution keeps this receipt; executed code changes require a new version and receipt."
+}

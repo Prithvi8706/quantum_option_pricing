@@ -1,0 +1,70 @@
+{
+  "created_utc": "2026-10-02T08:10:17.823273+00:00",
+  "local_only": true,
+  "before_meaningful_tests_and_census_expansion": true,
+  "executed_dependencies": [
+    {
+      "original": "research/limitation_program_20261001/experiment_factory_supply_census.py",
+      "snapshot": "executed_code/experiment_factory_supply_census.py",
+      "sha256": "c670fd859772adb73698471206cc7308d089b417c1f15957a668b29cf206a340"
+    },
+    {
+      "original": "research/limitation_program_20261001/factory_supply_census.py",
+      "snapshot": "executed_code/factory_supply_census.py",
+      "sha256": "47bef5cf692a1c303a0692cf6defa420ad777b1d1c2fa0b4027a582b97898663"
+    },
+    {
+      "original": "research/limitation_program_20261001/test_factory_supply_census.py",
+      "snapshot": "executed_code/test_factory_supply_census.py",
+      "sha256": "72b07881dd6f2ad726bd058e8e43451e90fc1efb1bfc8fd500efd075b03a3549"
+    }
+  ],
+  "declared_tests": 18,
+  "H05_primary_demand_case": "B4x12",
+  "H05_factory_methods": [
+    "15-to-1",
+    "cultivation-with-escape"
+  ],
+  "H05_stop_rule": "Two methods on one demand profile; absent finite matched output/noise makes physical supply conditional",
+  "H06_separate_interface_category": "CCZ-and-catalysis-interface",
+  "actual_demand_companion_cases": [
+    "B4x12",
+    "B8x52"
+  ],
+  "B8_physical_factory_comparison": false,
+  "fixed_ideal_raw_input_Z_error_exact": [
+    1,
+    1000
+  ],
+  "fixed_maximum_cascade_levels": 3,
+  "fixed_upward_dyadic_enclosure_bits": 192,
+  "fixed_ideal_eight_to_CCZ_input_Z_error_exact": [
+    1,
+    8589934592
+  ],
+  "exact_all_orders_bound": "binom(n,d)*p**d/(1-p)**n capped at1",
+  "denominator_proof": "An error-free attempt is accepted; probability at least(1-p)**n",
+  "ideal_factory_Clifford_and_measurement_error_zero_is_assumption": true,
+  "successive_disjoint_independent_input_blocks_and_fresh_iid_retries_required": true,
+  "accepted_current_magic_failure_allowance_exact": [
+    1,
+    1000
+  ],
+  "prospective_native_CCZ_and_residual_T_allowances_exact": [
+    [
+      1,
+      2000
+    ],
+    [
+      1,
+      2000
+    ]
+  ],
+  "catalytic_seed_conversion_storage_allocations": null,
+  "paper_modeled_output_errors_are_not_device_certificates": true,
+  "source_docs_and_public_primary_artifacts_frozen": true,
+  "publication_table_rates_or_footprints_adopted": false,
+  "physical_architecture_rows": 0,
+  "no_C4_H8_cap_clock_rate_or_depth_transferred": true,
+  "new_factory_simulations_financial_prices_gate_replays": 0
+}

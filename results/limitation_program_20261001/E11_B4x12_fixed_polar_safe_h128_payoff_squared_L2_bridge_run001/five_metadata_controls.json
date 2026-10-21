@@ -1,0 +1,37 @@
+{
+  "artificial_metadata_only": true,
+  "controls": [
+    {
+      "dedicated_tag": "JUMP_CONSTANT",
+      "field": "payoff_jump_constant_C_J",
+      "mutation": "40*U+tau (eta dropped)",
+      "rejected": true
+    },
+    {
+      "dedicated_tag": "PROBABILITY",
+      "field": "bad_or_mismatch_probability_upper",
+      "mutation": "60*lambda only (band dropped)",
+      "rejected": true
+    },
+    {
+      "dedicated_tag": "LP_FORM",
+      "field": "G_restricted_disjoint_LP_combination",
+      "mutation": "2*E_s^2+2*C_J^2*p (Young (a+b)^2 split)",
+      "rejected": true
+    },
+    {
+      "dedicated_tag": "FAILED_CRITERION",
+      "field": "criterion_or_check_failure_seals_negative_with_L2SQ_BASE_L1_RMS_None",
+      "mutation": false,
+      "rejected": true
+    },
+    {
+      "dedicated_tag": "INDEPENDENCE",
+      "field": "same_coupling_no_native_or_error_independence",
+      "mutation": false,
+      "rejected": true
+    }
+  ],
+  "passed": true,
+  "positive_first": true
+}
