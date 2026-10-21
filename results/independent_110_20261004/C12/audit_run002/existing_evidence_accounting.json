@@ -1,0 +1,86 @@
+{
+  "MCX_fragment_record": {
+    "baseline": {
+      "ccx": 7,
+      "clifford_cx": 42,
+      "clifford_h": 14,
+      "clifford_t_depth": 65,
+      "cx": 0,
+      "qubits": 10,
+      "schedule": "exact seven-T Toffoli; all-to-all ASAP within each leaf",
+      "source_gates": 7,
+      "t_count": 49,
+      "t_depth": 25,
+      "x": 0
+    },
+    "branches": 8,
+    "candidate": {
+      "conditional_cz_max": 3,
+      "conditional_reset_x_max": 3,
+      "measurements": 3,
+      "qubits": 10,
+      "retained_ccx": 4,
+      "sequential_cleanup_feedback_rounds": 3,
+      "t_count": 28
+    },
+    "disposition": "Verified dynamic backend candidate; do not insert measurements into the existing unitary Program or reverse their instruction sequence.",
+    "full_kraus_columns": 128,
+    "max_forward_branch_error": 5.551115123125783e-17,
+    "max_inverse_branch_error": 5.551115123125783e-17,
+    "negative_control_fidelity_without_corrections": 0.5859374999999998,
+    "passed": true,
+    "real_fragment": "primitives.mcx with five quantum controls and arbitrary target",
+    "timing": "No hardware latency measured. T-count savings do not include measurement/feedback/routing time. Reference qubit counted equally in both."
+  },
+  "archived_replay_records_checked": 10,
+  "costs_are_historical_logical_component_records": true,
+  "historical_complete_manifest_or_gate_bytes_revalidated": false,
+  "lookup_log_example": {
+    "baseline": {
+      "ccx": 448,
+      "clifford_cx": 12523,
+      "clifford_h": 896,
+      "clifford_t_depth": 12235,
+      "cx": 9835,
+      "qubits": 724,
+      "schedule": "exact seven-T Toffoli; all-to-all ASAP within each leaf",
+      "source_gates": 10443,
+      "t_count": 3136,
+      "t_depth": 1600,
+      "x": 160
+    },
+    "candidate": {
+      "ccx": 60,
+      "clifford_cx": 5759,
+      "clifford_h": 120,
+      "clifford_t_depth": 5959,
+      "cx": 5399,
+      "qubits": 724,
+      "schedule": "exact seven-T Toffoli; all-to-all ASAP within each leaf",
+      "source_gates": 5765,
+      "t_count": 420,
+      "t_depth": 226,
+      "x": 306
+    }
+  },
+  "new_replays_or_global_fixture_credit": 0,
+  "recorded_output_values_compared": 10,
+  "same_target_identity": [
+    {
+      "case": "B4x12",
+      "original_fraction_bits": 40,
+      "original_target_included": true,
+      "original_width": 72,
+      "replacement_stages": 3,
+      "target_sha256": "a7a682731b3cdb6f16b32a9b1a467d6bfeccb32ea97e583ab79e5252bb7a9384"
+    },
+    {
+      "case": "B8x52",
+      "original_fraction_bits": 40,
+      "original_target_included": true,
+      "original_width": 72,
+      "replacement_stages": 3,
+      "target_sha256": "267dcaa74aa9dd5cb1339c65006b122389331f42f0002f483bd6eed05c31090b"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "audited_source_imports": 0,
+  "budgets": {
+    "cpu_seconds": 10,
+    "input_bytes": 4194304,
+    "integrand_evaluations": 1601,
+    "output_bytes": 2097152,
+    "output_files": 16,
+    "validation_normal_pairs": 2048,
+    "wall_seconds": 30
+  },
+  "disposition": "STATIC_REVIEW_PASS_FOR_ONE_FROZEN_RUN002_DIAGNOSTIC",
+  "findings": [
+    "Original D1 plain unconditioned PCA Asian integrand/contract retained; no F03 transform or new workload.",
+    "Training33x33 Gaussian-weighted cube is unnormalized truncated contribution; separate512 fixed validation points follow the conditioned cube law.",
+    "One weighted matrix SVD and prescribed ranks2/4/8 share1089 training and512 validation targets; negative fits remain, no validation-based rank selection.",
+    "Finite weighted-grid SVD residual and Cauchy checks are floating diagnostics, with tail/interpolation/continuum price certificates unresolved.",
+    "Contraction operation counts include two core sums and rank dot product; training/setup obligations are explicit. No coherent loader, finite normalization or20percent gain follows.",
+    "Version2 binds exact launcher/Python3.12.4/NumPy2.0.2 and rechecks inputs after science. Timer scope excludes import and data preparation; complete runtime dependency closure is not certified.",
+    "Original prepared-v1 environment mismatch remains rejected with zero science; fresh environment preparation is not a scientific retry."
+  ],
+  "fresh_six_input_pins_match": true,
+  "full_F30_acceptance": false,
+  "input_sha256": {
+    "docs/independent_110_20261004/F30/ASSUMPTIONS_run002.txt": "a2f5915bf7a442116d2718399555eb1155c7d9b73eb39c85325288b2952575b1",
+    "research/independent_110_20261004/F30/corpus_run002/fixed_data.npz": "a9b21d8596a906a4865ebb22e2cd8cd5ba65a07b3eb00554ee6dda3d5b0a9ed8",
+    "research/independent_110_20261004/F30/primary_sources/Sakurai_Takahashi_Miyamoto_2405_00701v1.html": "fd1966350f7277e2d45b19e5be6081ffeade795bcc7279e916e42e30d80086aa",
+    "research/independent_110_20261004/F30/rank_screen_v2.py": "5638a1d54a5b470bef0689384fbc2dd772ab098c1d75ccf05bac24b3421c2450",
+    "research/journal_sprint/asian_basket.py": "cb23ff2bf2896bcde6d8329e86884c6035b1c088daefc9ddcf848c125c27dbd9",
+    "research/release_checks/targets.py": "946c560682d2956c4125f25a6d7fc6eb99e884e26030f8802ea568ed347f0bc1"
+  },
+  "item": "F30",
+  "new_fixture_credit": 0,
+  "no_payoff_or_fit_invocation_marker": true,
+  "prior_rejection_sha256": "2f70b47cf1fe86209b975252fff8696819dd4aee899910737e1f0b101ed9c4dc",
+  "protocol_sha256": "32359eab663811c19f12c18fcfeddbe93ac1d6fb10eab6984ec644f6185676d3",
+  "quantum_advantage": false,
+  "scientific_core_AST_unchanged_beyond_environment_guards": true,
+  "scientific_invocations_by_reviewer": 0,
+  "selected_launcher_sha256": "41123879d2e991377997acadf5f0cf8f34fa10d86362eded8c69b6041e2893b5",
+  "unresolved": [
+    "Continuum/tail/interpolation and finite-law error",
+    "Numerical enclosures",
+    "Quantum core loading/sign/normalization/rotation/inverse",
+    "Estimator/readout and complete physical costs",
+    "Matched full training-inclusive performance"
+  ]
+}

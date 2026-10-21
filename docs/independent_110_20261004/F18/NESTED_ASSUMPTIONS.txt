@@ -1,0 +1,72 @@
+F18: one existing compound-contract theorem map
+
+Contract: d0 E[(E[H|F_tau]-Kc)+], H=d1(A_T-100)+,
+d0=exp(-r*tau), d1=exp(-r*(T-tau)), tau=T/2. The fixed C4/C8/H4/H8
+development models in compound_feasibility are GBM; H labels do not mean Heston.
+The conditional state X consists of spots at tau and accrued fixings. Future
+returns R are independent of F_tau in the ideal correlated GBM population.
+
+Primary source: Sun, Wang and Blanchet, Optimal Quantum Speedups for Repeatedly
+Nested Expectation Estimation, arXiv2602.08120v1, 8February2026.
+https://arxiv.org/html/2602.08120v1
+Locators: Section1.2 equation1.1 and Definition1.1; Theorems1.4/1.6; Section3.3.
+The version is frozen locally; conference versions are not silently substituted.
+
+The paper assumes fixed depth, unit-cost conditional trajectory access, free
+function evaluation, last-argument Lipschitz constants, and a square-integrable
+terminal payoff. Theorem1.4 uses L^{p_d}, p_d=2-delta/2^d, with complexity
+O(epsilon^{-2(1+delta/2^{d-1})}), delta in(0,1/2). Theorem1.6 uses RMSE and
+O(epsilon^{-1} log^{3(D-d)+1}(epsilon^{-1})). Constants and logarithms depend
+on the fixed problem; these statements supply no finite circuit or time ratio.
+
+Our mapping, conditional on a vector-block interpretation: y0=X,y1=R,
+g1(X,R)=H, gamma1(X)=E[H|X], g0(X,z)=d0(z-Kc)+. Thus D=1,d=0 literally
+in equation1.1, with two expectations. Contractual dates12/24 and assets4/8
+do not count as nonlinear nesting. A remark in the paper labels an earlier
+single-nesting construction D=2; we do not import that convention into this
+explicit mapping. The paper writes scalar-coordinate spaces; vector state
+blocks need a checked extension or implementable reduction. Neither is claimed
+here. A purely measurable real encoding would not establish cheap finite access.
+
+Global outer Lipschitz proof: positive part is1-Lipschitz, so
+|g0(X,z)-g0(X,z')|<=d0|z-z'|. The exercise kink requires no derivative under
+this condition. This is not a claim that the digital policy is smooth.
+Terminal-moment proof: let A=(d*N)^{-1}sum_i,l S_i(t_l). For nonnegative strike,
+0<=H<=d1 A and A^2<=(d*N)^{-1}sum_i,l S_i(t_l)^2. Each ideal GBM marginal
+has E[S_i(t)^2]=s_i^2 exp(2rt+sigma_i^2t)<infinity by completing the Gaussian
+square. No independence of assets or dates is needed for Jensen's inequality.
+Conditional moments are finite almost surely by conditional integrability;
+no uniform bound over arbitrarily large exercise-date spots follows from this.
+
+Dollar-confidence conversion, derived here: if an actual algorithm has dollar
+RMSE<=r about its specified target and deterministic target bias<=b<epsilon,
+Markov applied to squared error gives failure<=r^2/(epsilon-b)^2. Hence a
+declared statistical allowance alpha requires r^2<=alpha(epsilon-b)^2.
+For an L^p norm boundr, replace squares by p powers. Add every separate fault,
+normalizer, source-certificate and readout failure to the joint1% allowance.
+No independence is needed for this union bound. A theorem's nominal RMSE equal
+to epsilon alone permits failure bound1; it does not give99% delivery. The
+fixed rational checks illustrate this conversion without revising any active
+confidence or dollar allocation. Unknown actual norm constants remain unknown.
+
+Paid costs: classical future-factor reuse charges J*d*n path setup, I*d*n outer
+path setup, I*J*d products and each control/payoff calculation. Shared future
+samples couple outer outputs; the I*J products are not iid observations. The
+existing classical comparator includes geometric controls, policies and nested
+MLRQMC; its archived empirical intervals are not promoted to rigorous99% ones.
+No classical cubic exponent is required or assumed.
+
+For the quantum candidate, conditional Gaussian preparation, terminal payoff,
+source inverse, outer preparation, coherent level processing/median, reflections,
+finite arithmetic, synthesis, confidence repetitions and readout must be paid.
+The existing quantum_schedule.py is an explicit bounded hierarchy resource
+model, not an emitted implementation of the frozen paper's deterministic-level
+algorithm. Gaussian clipping/loading, caps and fixed-point changes require
+their own dollar-law bridge. No pending A13/A14/A20 or E12 improvement is used.
+
+Decision: this single theorem map reaches its bounded stop rule. Ideal payoff
+Lipschitz and integrability are proved; useful error-norm conversions are
+provided. Literal block access, finite constants, compatible coherent sources,
+joint99% delivery and matched comparator cost remain unresolved. Practical
+theorem transfer is closed until those interfaces exist. This neither refutes
+the paper nor establishes universal classical or quantum hardness or advantage.

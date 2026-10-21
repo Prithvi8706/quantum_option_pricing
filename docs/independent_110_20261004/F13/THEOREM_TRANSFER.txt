@@ -1,0 +1,61 @@
+F13: S4 DOES NOT SATISFY THE NOMINATED NON-GLOBALLY-LIPSCHITZ THEOREM
+
+Primary evidence: Pang and Wang arXiv2305.12992v2 (11September2024),
+Assumptions3.1-3.3, equations3.1-3.5, Section5 and Theorem5.1:
+https://arxiv.org/html/2305.12992v2
+Their required domain is R^d; drift is C1, diffusion columns are C2,
+coefficient derivatives obey polynomial local growth bounds, and a coupled
+monotonicity inequality holds. The modified scheme has additional admissibility
+conditions. The variance result also uses its specified smooth payoff class.
+These are precise requirements, not a claim that every non-Lipschitz SDE is covered.
+
+Current frozen S4 variance: dv=kappa(theta-v)dt+xi*sqrt(v)dW,
+kappa=2, theta=1/25, xi=1/2, v0=1/25. Its algebraic Feller ratio
+2*kappa*theta/xi^2=16/25 is recorded only as a parameter fact here; no
+boundary-hitting or convergence theorem is inferred from it.
+
+Necessary-condition counterexample
+The scalar variance component already defeats equation3.2. Set w=0,v=h>0,
+and keep other state coordinates equal. The scalar contribution to the
+required left side divided by h^2 is
+ -2*kappa + (2*p1-1)*xi^2/h.
+Additional price diffusion differences cannot reduce this contribution.
+For every finite C>=0 and p1>1, let c=(2*p1-1)*xi^2>0 and
+ h=c/[2*(C+2*kappa+1)]. The ratio becomes2*C+2*kappa+2>C.
+Hence no finite C satisfies the required inequality even on the closed
+physical half-space. This is an analytic forall-C proof, not a sampled claim.
+Independently, sqrt(v) has derivative1/(2sqrt(v)) on v>0 and no finite
+right derivative at0; the diffusion is not C2 across the zero boundary.
+An arbitrary extension to negative v cannot repair its right derivative at0
+while preserving the original square-root coefficient for all v>=0.
+
+The log-price/variance drift is affine, so its differentiability is not the
+obstruction. On the physical half-space its coercivity growth can be bounded
+by Young inequalities: |x*v|<=(x^2+v^2)/2, and all remaining drift/diffusion
+terms have at most quadratic growth. That restricted inequality does not
+remove the full-domain, diffusion smoothness or coupled-monotonicity failures.
+Deterministic initial state has every finite moment. High scheme/trajectory
+moments and Assumption3.3's exact modification bounds are unverified; they
+are not set to satisfied merely because selected numerical paths are positive.
+The original positive-part payoff has a kink at strike; the left derivative
+is0 and right derivative1. It therefore does not meet a C2 payoff premise
+without a separately certified smoothing/boundary argument.
+
+One optional Lamperti transform
+For Y=2sqrt(v)/xi and while v>0, Ito's rule gives
+ dY=[a/Y-kappa*Y/2]dt+dW, a=2*kappa*theta/xi^2-1/2=7/50.
+Although diffusion is now constant, the drift derivative is
+ -a/Y^2-kappa/2, and its derivative grows as2*a/Y^3 near0. These
+singularities on a bounded neighborhood cannot meet the specified polynomial
+derivative bounds on all R^d. The transform is undefined at the same boundary;
+the Ito identity before hitting it is not a global boundary-preserving process
+construction. No transformed boundary extension or complete antithetic
+scheme is supplied, and no numerical simulation is used to infer one.
+
+Decision and completion scope
+Completed the single F13 theorem-transfer audit and optional transform screen:
+reject this direct application for unchanged S4. This does not refute the
+paper, prove an S4 variance lower bound, or rule out another boundary-specific
+theorem/scheme. Keep F12's empirical coupling question separate and preserve
+all prior rates as observations. No existing workload, payoff, source,
+confidence allocation or quantum-advantage claim changes.

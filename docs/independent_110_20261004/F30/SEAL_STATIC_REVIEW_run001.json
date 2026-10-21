@@ -1,0 +1,86 @@
+{
+  "LF_normalization_exactly_matches_original_expectation": true,
+  "budgets": {
+    "cpu_seconds": 2,
+    "input_bytes": 2097152,
+    "output_bytes": 131072,
+    "output_files": 8,
+    "wall_seconds": 10
+  },
+  "disposition": "STATIC_REVIEW_PASS_FOR_ONE_FROZEN_METADATA_RECOVERY",
+  "expected_corrected_manifest": "docs/independent_110_20261004/F30/SEAL_RECOVERY_EXPECTED_MANIFEST_run001.json",
+  "expected_corrected_manifest_sha256": "eb1e368145ab9c9e02aac90df75819dab79f12c74d0b82bcff3ba07da5bdfb6f",
+  "findings": [
+    "Canonical UTF8 write_bytes avoids newline translation; hashes come from actual raw owned/external bytes.",
+    "Frozen membership and sole declared SUCCESS mismatch are checked; old failed manifest remains explicit and included externally.",
+    "All original scientific inputs remain bound; no experiment, project or NumPy import and no payoff/fit/SVD call occurs.",
+    "Failure and CPU/wall/output caps remain separate metadata scope. Recovery cannot certify mathematics, full price error or quantum loading."
+  ],
+  "full_F30_acceptance": false,
+  "item": "F30",
+  "matching_old_manifest_rows": 7,
+  "new_scientific_credit": false,
+  "nineteen_frozen_input_pins_match": true,
+  "old_manifest_rows": 8,
+  "original_actual_output_inventory": [
+    {
+      "bytes": 76,
+      "path": "results/independent_110_20261004/F30/run002/ATTEMPT.json",
+      "sha256": "958ff3e0dde8b9bd56853a6747bc0eac185cea4283cfce90eb7abe57375e54f9"
+    },
+    {
+      "bytes": 125,
+      "path": "results/independent_110_20261004/F30/run002/SUCCESS.json",
+      "sha256": "0fff776683c987a25162b3e43ec6a8c4f0540ae124472d4f48bb5dcb941bdb18"
+    },
+    {
+      "bytes": 1269,
+      "path": "results/independent_110_20261004/F30/run002/manifest.json",
+      "sha256": "1517f89a97f724bf01c0597985027827faf1f3505f6d52fc32d83d55071f7a6b"
+    },
+    {
+      "bytes": 2585,
+      "path": "results/independent_110_20261004/F30/run002/protocol.json",
+      "sha256": "32359eab663811c19f12c18fcfeddbe93ac1d6fb10eab6984ec644f6185676d3"
+    },
+    {
+      "bytes": 14906,
+      "path": "results/independent_110_20261004/F30/run002/rank_2_cores.npz",
+      "sha256": "296cb4b0e38b5208ffde73792976312a94f05fadc3a61d103d28afce9e9041d9"
+    },
+    {
+      "bytes": 15962,
+      "path": "results/independent_110_20261004/F30/run002/rank_4_cores.npz",
+      "sha256": "4f72f1c58feb00e008925f0aea6f5db4c1b56a748945be29129c73615246c3ef"
+    },
+    {
+      "bytes": 18074,
+      "path": "results/independent_110_20261004/F30/run002/rank_8_cores.npz",
+      "sha256": "2b3f3817dd19c1a292d44edd954812287a4ffdb3bd40142d5bf3400c88b08846"
+    },
+    {
+      "bytes": 4968,
+      "path": "results/independent_110_20261004/F30/run002/summary.json",
+      "sha256": "d6a08003f28cd74d33f70d6e81c4d47c3d1fbfde95205693586887b8e36f139a"
+    },
+    {
+      "bytes": 14702,
+      "path": "results/independent_110_20261004/F30/run002/training_and_validation.npz",
+      "sha256": "28a43fb4f9a356c79abef02ef493e76e3322c9112351b08b43e26886ceb4aec9"
+    }
+  ],
+  "original_owned_files": 9,
+  "protocol_sha256": "35f3097a2071c432dfc4e5b5fcbc6f6b6ad8890d128bcc9f0fb6716fb40bbc80",
+  "recovery_not_executed_at_review": true,
+  "retained_original_mismatch": [
+    {
+      "actual_bytes": 125,
+      "actual_sha256": "0fff776683c987a25162b3e43ec6a8c4f0540ae124472d4f48bb5dcb941bdb18",
+      "path": "SUCCESS.json",
+      "recorded_bytes": 121,
+      "recorded_sha256": "0c7bf109403dda115ba0c4eb32e4939775b73019387828726c1f360eff4ff593"
+    }
+  ],
+  "scientific_reruns": 0,
+  "source_sha256": "5e378b7e465a4cd4da392c649c6edd9ee2138371b8c29ede7b311d72a8a2c6e1"
+}

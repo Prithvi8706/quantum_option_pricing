@@ -1,0 +1,73 @@
+F16: EXACT CURRENT GBM FACTOR REUSE AND ITS LIMITS
+
+Population assumptions and proof
+Let tau=T/2 and t_l=tau+l*T/N, l=1,...,n, N=2n. The current models
+have finite deterministic r,sigma,rho and positive spot. For a correlated
+Brownian vector W with valid fixed covariance, future vector increments
+W(t_l)-W(tau) are jointly independent of F_tau. Components within the
+future vector are correlated; no asset/date independence is claimed.
+
+The GBM solution gives S_i(t_l)=s_i R_li where
+R_li=exp((r-sigma^2/2)*(t_l-tau)+sigma*(W_i(t_l)-W_i(tau))).
+This is also a pointwise algebraic identity for any positive return factors.
+The complete accrued-plus-future arithmetic average equals
+ a + sum_i s_i C_i, C_i=sum_l R_li/(d*N).
+Each scenario's C vector can therefore be prepared once and reused across
+outer states. The future-only geometric mean equals G(s)*G(R), because
+the product of all d*n future prices is (product_i s_i)^n*product_li R_li.
+Taking the unique positive d*n root proves the identity. The future contribution
+to the complete geometric control is one half of that mean, since N=2n.
+
+Implementation connection
+model.py future_factors constructs exp(logs).sum(axis=1)/(assets*dates)
+and exp(logs.mean(axis=(1,2))). inner_samples adds the spot/factor dot product
+to accrued and uses .5 times the geometric spot mean and future geometric factor.
+All four model declarations and the critical AST functions are pinned. H4/H8
+in this module are GBM development model names, not Heston variance processes.
+The source association is a proof in ideal real arithmetic. It does not certify
+every NumPy/Numba floating evaluation or a binary native reversible circuit.
+
+Paid work and uncertainty
+For I outer states and J future scenarios, source factor preparation still
+requires J*d*n returns plus J geometric factors. The arithmetic evaluation
+still requires I*J*d spot/factor products and crossed payoffs. The code's inner
+arrays include two I-by-J matrices. Reuse removes repeated return generation;
+it does not make conditional payoffs, setup, memory or readout free. These are
+symbolic operation counts, not measured complete latency or a speedup ratio.
+Reusing one future scenario set couples outer-state estimates. IID inference
+for every crossed payoff is invalid without an additional design/proof.
+Scrambled Sobol coordinates clipped before inverse-normal evaluation are not
+an exact iid real Gaussian oracle. The pointwise identity survives arbitrary
+positive factors; exact continuous-law/uncertainty transfer needs its own proof.
+
+Extensions that cannot be imported
+The controlled digital finance source resets/clips its tau log state and clips
+future stock logs. Saturation at U=4096 is not homogeneous in spot: with the
+same positive return4, s=1024 has output4096 while s=4096 also has output4096,
+so output/spot is4 versus1. This is an exact ideal-clamp counterexample to a
+single spot-independent multiplicative factor for the clipped stock function;
+it is not an emitted-circuit or q32-reachability counterexample. Fixed-point
+rounding also needs a separate integer proof: floor(3/3)/3 differs from
+floor(4/3)/4, even though both products use the same rational multiplier.
+Future raw log increments may still be reused with spot-dependent clipping
+reapplied; the compressed unclipped C vector is not an exact digital replacement.
+
+An existing Heston state includes variance at tau. Its return distribution
+generally depends on that variance, so the GBM state-independent factor law
+does not transfer across variance states. Reusing random drivers or scaling
+spot at fixed variance can still be possible; no universal impossibility follows.
+State-dependent volatility/rates require a new conditional generator/law proof.
+No such new financial workload is selected or executed in this audit.
+
+Decision and exact scope
+Completed F16's current-contract factorization audit: the GBM reuse identity
+holds and the exact assumptions/paid operations are explicit. No justified
+new model is nominated. Keep the existing classical reuse; do not claim a
+sampling bottleneck by regenerating the same futures for every outer state.
+Native-source equality, continuous-price delivery and quantum advantage are
+not established by this audit. No shared source, old receipt or budget is changed.
+
+Primary source checked: Karl Sigman (2007), sections1.2.3 and1.3, pages4-6:
+https://www.columbia.edu/~ks20/4703-07/4703-07-Notes-BM-GBM-I.pdf
+The model-specific weighted identities above are derived here, rather than
+quoted from the notes. The frozen local PDF hash is recorded in protocol.json.

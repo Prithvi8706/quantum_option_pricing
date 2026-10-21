@@ -1,0 +1,130 @@
+{
+  "schema": "c12-existing-arithmetic-static-peer-selection-v1",
+  "scope": "Read-only discovery and static review; no project imports, scientific tests, gate replays, new backend, benchmarks or new implementation credit",
+  "review_notes": "docs/independent_110_20261004/C12/peer_run001/ARITHMETIC_EVIDENCE_STATIC_REVIEW.md",
+  "selected_count": 4,
+  "historical_whole_manifest_integrity": "not checked",
+  "same_target_sha256_declared_in_receipts": {
+    "B4x12": "a7a682731b3cdb6f16b32a9b1a467d6bfeccb32ea97e583ab79e5252bb7a9384",
+    "B8x52": "267dcaa74aa9dd5cb1339c65006b122389331f42f0002f483bd6eed05c31090b"
+  },
+  "evidence": [
+    {
+      "id": "shared_prefix_exact_lookup",
+      "target": "Clean XOR of the unchanged coefficient table indexed by the low address bits",
+      "source": "research/controlled_source_completion/exact_lookup.py",
+      "baseline_and_integration": "research/controlled_source_completion/primitives.py",
+      "producer": "research/limitation_audit_20261001/experiment_lookup.py",
+      "correctness_sources": ["research/limitation_audit_20261001/test_lookup.py"],
+      "receipts": [
+        "results/limitation_audit_20261001/lookup_v2/protocol.json",
+        "results/limitation_audit_20261001/lookup_v2/summary.json",
+        "results/limitation_audit_20261001/execution_verification_v1.json"
+      ],
+      "metadata_keys": [
+        "leaves[name=log].every_address_and_inverse_passed",
+        "leaves[name=log].baseline.{qubits,t_count,t_depth}",
+        "leaves[name=log].candidate.{qubits,t_count,t_depth}",
+        "cases[*].target_sha256",
+        "cases[*].replays[*].{expected,actual.values,actual.all_input_and_workspace_bits_restored}",
+        "cases[*].schedules.all.candidate"
+      ],
+      "limitations": ["Shared Program/compiler/gate interpreter/resource model", "Small coherent check, sampled full sources", "No independent complete pricing backend"]
+    },
+    {
+      "id": "signed_truncated_carry_save_multiplier",
+      "target": "out ^= ((signed_w(a)*signed_w(b)) >> f) modulo 2**w; production w=72 f=40",
+      "source": "research/controlled_source_completion/carry_save_multiplier.py",
+      "baseline_and_integration": "research/controlled_completion_followup/truncated_multiplier.py",
+      "producer": "research/limitation_audit_20261001/experiment_multiplier.py",
+      "correctness_sources": [
+        "research/limitation_audit_20261001/test_carry_save_multiplier.py",
+        "research/controlled_completion_followup/test_truncated_multiplier.py"
+      ],
+      "receipts": [
+        "results/limitation_audit_20261001/multiplier_v2/protocol.json",
+        "results/limitation_audit_20261001/multiplier_v2/summary.json",
+        "results/limitation_audit_20261001/multiplier_v2/leaves/9d1f0ace5d924241b3d0.json",
+        "results/limitation_audit_20261001/execution_verification_v1.json"
+      ],
+      "metadata_keys": [
+        "cases[*].source_target_sha256",
+        "cases[*].candidate.{logical_qubits,t_count,t_depth}",
+        "cases[*].qubit_cap",
+        "cases[*].uniform_limit_best_depth",
+        "cases[*].gate_replay.{expected,actual.values,actual.all_input_and_workspace_bits_restored,passed}",
+        "leaf.lowering",
+        "leaf.resources.{qubits,t_count,t_depth}"
+      ],
+      "limitations": ["Shared Program/add/copy/subtract and basis_run", "Candidate combines existing lookup and new schedule", "Uniform schedule screen failed", "All-to-all logical model, no physical latency"]
+    },
+    {
+      "id": "guarded_ln2_signed_digit_constant_multiplier",
+      "target": "72-bit clean XOR floor(signed72(A)*762123384786/2**40), conditional on same-SSA proof A low40 bits zero",
+      "source": "research/controlled_source_completion/constant_multiplier.py",
+      "baseline_and_integration": "research/controlled_source_completion/primitives.py",
+      "producer": "research/limitation_audit_20261001/experiment_constant_multiplier.py",
+      "archived_producer": "results/limitation_audit_20261001/constant_multiplier_v1/executed_experiment_constant_multiplier.py",
+      "correctness_sources": ["research/limitation_audit_20261001/test_constant_multiplier.py"],
+      "receipts": [
+        "results/limitation_audit_20261001/constant_multiplier_v1/protocol.json",
+        "results/limitation_audit_20261001/constant_multiplier_v1/summary.json",
+        "results/limitation_audit_20261001/constant_multiplier_v1/verification.json",
+        "results/limitation_audit_20261001/constant_multiplier_v1/manifest.json",
+        "results/limitation_audit_20261001/constant_multiplier_v1/leaves/8b42212b3a9fb0f6bb47.json",
+        "results/limitation_audit_20261001/constant_multiplier_v1/B4x12/signed-digit-carry-save/input_proofs.json",
+        "results/limitation_audit_20261001/constant_multiplier_v1/B8x52/signed-digit-carry-save/input_proofs.json"
+      ],
+      "metadata_keys": [
+        "leaves[strategy=signed-digit-carry-save].{baseline,candidate}",
+        "cases[*].original_target_sha256",
+        "cases[*].best.{strategy,proved_calls,candidate,qubit_cap}",
+        "cases[*].replays[*].{expected,actual.values,actual.all_input_and_workspace_bits_restored,passed,negative_operands}",
+        "leaf.input_contract.zero_low_bits",
+        "leaf.spec.{coefficient,width,fraction_bits,strategy}",
+        "verification.tests.evidence",
+        "protocol.producer_sha256",
+        "verification.executed_producer_sha256"
+      ],
+      "limitations": ["Requires explicit proved input promise", "Shared Program/compressor/compiler/scheduler", "Includes prior lookup/variable-multiply gains", "Fixed batches over cap; valid repacked schedule required", "Historical suites overlap, do not sum test counts"]
+    },
+    {
+      "id": "dynamic_mcx_cleanup_fragment",
+      "target": "Same five-control X with arbitrary target/reference and three clean scratch bits",
+      "source": "research/limitation_audit_20261001/experiment_mcx_cleanup.py",
+      "baseline_and_integration": "research/controlled_source_completion/primitives.py",
+      "correctness_sources": ["research/limitation_audit_20261001/experiment_mcx_cleanup.py"],
+      "receipts": [
+        "results/limitation_audit_20261001/mcx_cleanup_v1/result.json",
+        "results/limitation_audit_20261001/mcx_cleanup_v1/mcx5.qasm",
+        "results/limitation_audit_20261001/execution_verification_v1.json"
+      ],
+      "metadata_keys": [
+        "full_kraus_columns",
+        "branches",
+        "max_forward_branch_error",
+        "max_inverse_branch_error",
+        "negative_control_fidelity_without_corrections",
+        "baseline.t_count",
+        "candidate.{t_count,measurements,sequential_cleanup_feedback_rounds}",
+        "disposition",
+        "timing"
+      ],
+      "limitations": ["Shared Program/primitives/local NumPy/Qiskit", "Floating-point branch diagnostics, no new interval proof", "Exported QASM not independently parsed or replayed here", "Dynamic full-source backend absent", "Measurement/feedback/routing latency unknown"]
+    }
+  ],
+  "exclusions": {
+    "gaussian_v3": "Explicitly different finite law from archived digital Box-Muller law",
+    "pebbling_v1": "Different isolated toy transition",
+    "compact_storage_v1": "Exact same-target storage evidence; not selected as one of four independently structured arithmetic operations"
+  },
+  "completion": {
+    "static_discovery_and_review": "complete",
+    "fresh_scientific_checks": 0,
+    "new_backend": false,
+    "historical_binary_integrity": "unresolved in this peer review",
+    "independent_complete_pricing_backend": "absent",
+    "c12_limitation_complete": false,
+    "quantum_advantage_claim": false
+  }
+}

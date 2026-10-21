@@ -1,0 +1,93 @@
+F24 exact development D1 backward formulation and bounded grid diagnostics.
+
+Contract preserved: existing D1, development only, one asset, spot100,
+sigma.2, rate.03, maturity1, strike95, fixing dates1/2 and1, each weight1/2.
+Repository binary64 parameter values are preserved exactly as rational
+inputs to the finite coefficient/conditioning audit. Decimal .2/.03 below
+are conventional parameter labels; no rounding error is silently certified.
+Correlation3/10 is inert for one asset. No time0 fixing, barrier, dividends,
+exercise or conditional outer payoff is added. This is not originalB4/B8.
+Let X=log(S/100), and Q_j=(S(t1)+...+S(tj))/2. Q is a cumulative contribution
+to the final average, not the running average divided by j.
+Between fixings Q is constant, dX=(r-sigma^2/2)dt+sigma dW. The discounted
+conditional value solves
+  partial_t V + (r-sigma^2/2)partial_x V + (sigma^2/2)partial_xx V - rV=0,
+with coefficients approximately1/100,1/50 and3/100 respectively.
+At each actual date tj, BEFORE-to-AFTER update is
+  V(tj-,x,q)=V(tj+,x,q+100*exp(x)/2).
+After the final fixing V(1+,x,q)=(q-95)+; target V(0,0,0).
+The tower property and GBM Markov transition prove this finite-date
+recursion; q never evolves continuously between dates.
+
+For q>=95 all paths remain in the linear payoff region (stock positive),
+so the exact value after processed fixing j is
+  exp(-r*(1-t))*(q-95) + (s/2)*sum_{l>j}exp(-r*(1-t_l)).
+This formula supplies exact q>=K continuation and prevents numerical
+average-state truncation of that plain-Asian branch. It is valid at all t
+between dates with the remaining-date set fixed. It is not valid after
+introducing a knock-out indicator.
+At s=0, future stock contributions vanish; exact limiting value is
+exp(-r*(1-t))*(q-K)+. As s→infinity the same linear expression is an
+asymptotic boundary, not an exact finite-s boundary condition. The selected
+finite upper-s boundary therefore has an unresolved continuum bias.
+
+Two fixed grids, no optimization/refinement beyond them:
+Nx=Nq=17 and33; X∈[-2,2], Q∈[0,95], 64 equal time steps total, each event
+exactly on a time level. Central log-X drift/diffusion, backward implicit
+Euler between dates, piecewise linear interpolation inQ at events. When
+shiftedQ>=K use the exact linear continuation above. Lower-X boundary0
+and upper-X asymptotic linear boundary are assumptions at finiteX, not
+certificates. Date interpolation is contract-correct but approximate.
+The exact q=K linear branch takes precedence at its lower-X corner.
+
+Interior rates a-=sigma^2/(2h^2)-mu/(2h), a+=sigma^2/(2h^2)+mu/(2h) are
+nonnegative on both grids. M=I-dt*L has positive diagonal, nonpositive
+off-diagonal, row diagonal-dominance margin≥1+dt*r. Thus each implicit
+step is monotone and ||M^-1||inf≤1/(1+dt*r). An analytic upper for condition
+number in infinity norm is
+  [1+dt*(r+2*sigma^2/h^2)]/[1+dt*r].
+This is a finite-system stability/conditioning fact, not a global price
+bias bound. Numerically estimated condition2, grid price change, minimum
+value, matrix norms and point-price amplitude are diagnostics only.
+
+Barrier extension, formal only; no new numerical workload:
+For any discrete monitor tj and basket B(x)=sum_i w_i exp(x_i), the jump
+operator is 1{B(x)<H} times V(tj+,x,q+B(x)/m). Equality B=H is killed.
+There is no absorbing boundary at B=H between dates: crossing and returning
+before a monitor is permitted. Continuous-average drift s*partial_q and
+continuous barrier absorption would change these contracts.
+For originalB4, x_i=logS_i, four assets, sigma.3, correlation.4,r.03,
+dates j/12, w_i=1/4, strike100,H140. Between dates the generator is
+  sum_i(r-sigma^2/2)partial_xi
+  + (1/2)sum_ij sigma^2*rho_ij partial_xi_xj,
+q is constant, and each jump adds B/12 and kills B>=140. OriginalB8 has
+eight assets/52 dates and its own corresponding state dimension. This
+formal contract identity does not validate any barrier grid/circuit.
+
+Primary transfer audit: exact Miyamoto/Kubo2109.12896v1 HTML, Eq6/9/11,
+Assumption2.1, Theorem3.1 and5.1. Matrix-access/state-preparation/norm and
+diagonalization premises are not free interfaces. Their uniform third/
+fourth-derivative bounds are not supplied across our fixing/payoff kinks;
+the augmented generator is degenerate inQ and the event map must be paid.
+No theorem cost is transferred directly into this finite-date D1 solver.
+
+Complete quantum ledger obligations: matrix-index/value access and inverse,
+boundary source loading, payoff and event interpolation/exponentiation,
+all discrete dates, QLS/evolution condition/growth parameters, normalized
+solution and point-price extraction, synthesis, repetitions/confidence,
+physical supply/reaction/routing/readout. Missing entries remain null.
+An amplitude at the target grid cell is not a delivered classical price.
+
+Acceptance scope: validate archived D1 parameters and exact event-order
+identities; check only the two prescribed grids, finite M-matrix dominance,
+nonnegative rates/values and numerical normalization/extraction diagnostics.
+Never infer bias from coarse/fine agreement. Domain/time/average-event,
+floating, quantum preparation and scalar extraction bias certificates are
+unresolved; no cheapest eligible classical screen or quantum time exists.
+Stop after the two grids and initial mathematical/interface audit. No
+high-dimensional/barrier/quantum compilation before those obligations.
+
+Prospective budget: one metadata prepare and one fixed diagnostic invocation,
+10CPU/30wall seconds,4MiB input,2MiB output,16files. NumPy2.0.2/Python3.12.4,
+no project imports, no Monte Carlo samples or competing timing benchmark.
+Preserve failures. Logical dimension/counts are not physical speedups.

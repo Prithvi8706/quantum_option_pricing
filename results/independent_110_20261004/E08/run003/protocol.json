@@ -1,0 +1,46 @@
+{
+  "acceptance": [
+    "Recompute all saved binomial tails/calls exactly, including saved threshold.",
+    "Five candidates per row; feasible schedules have exact summed tail <=3/1000 and unchanged geometry/probability promises; fixed-cap resource rejections are retained.",
+    "Any promoted candidate must strictly beat saved calls; nonimproving selections are retained as negative diagnostics only. No comparison to superseded billion-call schedule.",
+    "No source/law/geometry/synthesis/physical or financial-delivery claim; no shared ledger change."
+  ],
+  "allocations": [
+    "uniform",
+    "ceil-dyadic40 sqrt(T)",
+    "T",
+    "T^2",
+    "best prior plus three deterministic greedy slack rounds"
+  ],
+  "alpha_exact": [
+    3,
+    1000
+  ],
+  "author_sha256": "52d3d80dc5224749cf26c2eb66cf23cd2146d704f781fe62398beb7570fe41a4",
+  "budgets": {
+    "admission_cpu_seconds": 90,
+    "cpu_seconds": 120,
+    "output_bytes": 16777216,
+    "wall_seconds": 300
+  },
+  "corpus": {
+    "docs/controlled_priority_completion/ESTIMATOR_REDESIGN.md": "8d9a7105a0ea56d897eb577c6879bacd768d5d19feaabb48cb867a8fbe8fe87a",
+    "docs/limitation_audit_20261001/implementation_plan/roadmap.json": "59333ddeba6ee73950cba5a7a669fdc6dd3a9db8629297335d507b65c6a02b6a",
+    "research/controlled_priority_completion/estimator_hadamard.py": "70c4cc7ce22718fdf65d326ba1b7e70d712afcc730df5707c25bf6ee05267776",
+    "results/controlled_priority_completion/estimator_hadamard.json": "551e2219b33f66bfe8d3e853de40e23a94be74bb05dc94f381b5e9782075ac86"
+  },
+  "finance_draws": 0,
+  "frozen_inputs": "Source family, continuous/support mode, moment, normalizer, interval geometry, chain T and certified stage probability bounds are unchanged. This screen assumes archived probability promises, and does not recertify their population financial bridge.",
+  "local_rule": "Each round visits stages descending T then index; lower repetitions by one only if exact sum of max(small,large) tails stays <=3/1000. At most three rounds.",
+  "max_repetitions": 128,
+  "new_global_fixture_credit": 0,
+  "row_count": 4,
+  "schema": "e08-fixed-geometry-allocation-preregistration-v1",
+  "stage_counts": [
+    27,
+    43,
+    25,
+    54
+  ],
+  "stopping_rule": "Four declared allocations and one local candidate with at most three rounds, all four saved rows. No adaptive observed data or further sweep."
+}

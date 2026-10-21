@@ -1,0 +1,82 @@
+{
+  "acceptance": [
+    "Bind S4 parameters to frozen source AST and primary hypothesis locators.",
+    "Classify each required hypothesis proved, failed or unresolved for the original state/payoff.",
+    "Prove a failed coupled monotonicity condition for every finite C, p1>1 and xi>0.",
+    "Check one optional Lamperti transform without claiming a boundary repair.",
+    "Keep actual scheme admissibility, boundary behavior and population variance exponent unresolved where not proved."
+  ],
+  "assumptions": [
+    "The variance equation is CIR: drift kappa(theta-v), diffusion xi*sqrt(v) on v>=0.",
+    "Lamperti Ito algebra is asserted only on v>0; no boundary extension is assumed.",
+    "Exact counterexample sequences are analytic proof witnesses, not finite-difference derivative proofs."
+  ],
+  "author_sha256": "8f02bb5fda860055c3184c60f44fb38101e49b6d900e34e354f639c61ea0efd8",
+  "budgets": {
+    "cpu_seconds": 30,
+    "output_bytes": 4194304,
+    "wall_seconds": 60
+  },
+  "corpus": {
+    "docs/antithetic_feasibility/RESULTS.md": "fd7dedf1586e4e5a23cbe136e701021a860085f28058f87948741d90d0232cfb",
+    "docs/limitation_audit_20261001/implementation_plan/roadmap.json": "59333ddeba6ee73950cba5a7a669fdc6dd3a9db8629297335d507b65c6a02b6a",
+    "research/antithetic_feasibility/classical.py": "286affe493c339e0aa6d070f849aa7a4e2b1cbbb29539fe93861a001327112a9",
+    "research/independent_110_20261004/F13/primary_sources/Pang_Wang_2305_12992v2.html": "aa6fbde4206ded725b6fdb71b8b76e35bd1d72143724c9df0b068dee91bccc0b"
+  },
+  "diagnostic_menu": {
+    "C_values": [
+      0,
+      1,
+      2,
+      10,
+      100,
+      10000
+    ],
+    "Lamperti_y": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        16
+      ],
+      [
+        1,
+        32
+      ]
+    ],
+    "p1_values": [
+      [
+        3,
+        2
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        3,
+        1
+      ]
+    ]
+  },
+  "finance_draws": 0,
+  "model": "Existing S4: kappa2, theta.04, xi.5, v0.04, leverage-.7; no model change.",
+  "new_global_fixture_credit": 0,
+  "schema": "f13-primary-theorem-transfer-preflight-v1",
+  "stop_rule": "One theorem assumption map and one optional transform; stop direct transfer on a failed necessary condition. No path simulation, fitting, payoff smoothing, compilation or additional theorem search.",
+  "theorem": "Pang and Wang arXiv2305.12992v2, Assumptions3.1-3.3 and Theorem5.1/Section5 payoff condition"
+}

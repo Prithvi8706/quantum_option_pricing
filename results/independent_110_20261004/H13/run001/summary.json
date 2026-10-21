@@ -1,0 +1,228 @@
+{
+  "audit_passed": true,
+  "bounded_step_completed": true,
+  "entire_limitation_solved": false,
+  "financial_G2_completed": false,
+  "findings": {
+    "H03_failed_map_reused_as_accepted_evidence": false,
+    "actual_physical_inputs": {
+      "CCZ_factory_blocks": null,
+      "CCZ_factory_failure": null,
+      "Pauli_frame_dispatch": null,
+      "actual_memory_capacity": null,
+      "code_cycle_seconds": null,
+      "code_distance": null,
+      "complete_execution_seconds": null,
+      "complete_failure_upper": null,
+      "nonlocal_connection_schedule": null,
+      "oriented_port_network": null,
+      "physical_module_capacity": null,
+      "reaction_seconds": null,
+      "resource_buffer_peak": null
+    },
+    "admission_reason": "Missing active-volume schedule or physical cost",
+    "baseline_idle_and_active_block_ratio_claimed": false,
+    "broader_obligations": [
+      "Emit compatible oriented port and nonlocal connection network",
+      "Certify module/buffer/factory allocation and dwell",
+      "Track every reactive byproduct and frame",
+      "Choose finite code/noise/factory/readout parameters",
+      "Complete union-bound failure and latency accounting"
+    ],
+    "cases": [
+      {
+        "CCZ_states_required": 11244,
+        "actual_physical_capacity": null,
+        "assumed_diagnostic_module_capacity": 20000,
+        "assumed_memory_modules": 10000,
+        "assumed_workspace_modules": 10000,
+        "case": "multiply_leaf",
+        "complete_seconds": null,
+        "component_registry_instances_emitted": true,
+        "cycle_lower_bound_is_executable_schedule": false,
+        "declared_serial_CCZ_and_reactive_output_memory_reservation": 5800,
+        "declared_serial_reservation_fits_assumed_capacity": true,
+        "full_active_volume": null,
+        "full_volume_formula": "subtotal + CCX_count*C_CCZ + frame + routing + prep/readout",
+        "isolated_Toffoli_reaction_depth": 1,
+        "known_subtotal_workspace_cycles_lower": 19,
+        "logical_baseline_metrics": {
+          "all_allocated_ideal_wire_layers": 14205323,
+          "ccx": 11244,
+          "clifford_cx": 78910,
+          "clifford_h": 22488,
+          "clifford_t_depth": 2453,
+          "cx": 11446,
+          "gate_wire_touches": 259240,
+          "ideal_all_to_all_idle_wire_layers": 13946083,
+          "native_CCX_wire_dependency_proxy": 234,
+          "physical_idle_qubit_seconds": null,
+          "physical_reaction_depth": null,
+          "qubits": 5791,
+          "source_gates": 22914,
+          "t_count": 78708,
+          "t_depth": 908,
+          "x": 224
+        },
+        "oriented_or_routed_block_network_emitted": false,
+        "physical_idle_seconds": null,
+        "physical_reaction_layers": null,
+        "reactive_output_qubits_per_serial_Toffoli": 6,
+        "same_capacity_measured_comparison": null,
+        "simultaneous_CCZ_and_reactive_output_liveness_certified": false,
+        "temporary_AND_substitution_applied": false,
+        "unoptimized_primary_CNOT_Toffoli_block_subtotal": 180712
+      },
+      {
+        "CCZ_states_required": 23064,
+        "actual_physical_capacity": null,
+        "assumed_diagnostic_module_capacity": 20000,
+        "assumed_memory_modules": 10000,
+        "assumed_workspace_modules": 10000,
+        "case": "compute_copy_inverse_chain",
+        "complete_seconds": null,
+        "component_registry_instances_emitted": true,
+        "cycle_lower_bound_is_executable_schedule": false,
+        "declared_serial_CCZ_and_reactive_output_memory_reservation": 6126,
+        "declared_serial_reservation_fits_assumed_capacity": true,
+        "full_active_volume": null,
+        "full_volume_formula": "subtotal + CCX_count*C_CCZ + frame + routing + prep/readout",
+        "isolated_Toffoli_reaction_depth": 1,
+        "known_subtotal_workspace_cycles_lower": 38,
+        "logical_baseline_metrics": {
+          "all_allocated_ideal_wire_layers": 72382461,
+          "ccx": 23064,
+          "clifford_cx": 163948,
+          "clifford_h": 46128,
+          "clifford_t_depth": 11833,
+          "cx": 25564,
+          "gate_wire_touches": 535920,
+          "ideal_all_to_all_idle_wire_layers": 71846541,
+          "native_CCX_wire_dependency_proxy": 1044,
+          "physical_idle_qubit_seconds": null,
+          "physical_reaction_depth": null,
+          "qubits": 6117,
+          "source_gates": 49076,
+          "t_count": 161448,
+          "t_depth": 4120,
+          "x": 448
+        },
+        "oriented_or_routed_block_network_emitted": false,
+        "physical_idle_seconds": null,
+        "physical_reaction_layers": null,
+        "reactive_output_qubits_per_serial_Toffoli": 6,
+        "same_capacity_measured_comparison": null,
+        "simultaneous_CCZ_and_reactive_output_liveness_certified": false,
+        "temporary_AND_substitution_applied": false,
+        "unoptimized_primary_CNOT_Toffoli_block_subtotal": 379024
+      }
+    ],
+    "chain_segments": [
+      {
+        "call": 27,
+        "copy_CX": 288,
+        "kind": "forward_call",
+        "leaf": "1e0b2dc8929b29814d9a",
+        "native_rows": 23202
+      },
+      {
+        "call": 28,
+        "copy_CX": 220,
+        "kind": "forward_call",
+        "leaf": "e82b3b95aeec6ad90fab",
+        "native_rows": 1300
+      },
+      {
+        "kind": "output_XOR",
+        "native_rows": 72
+      },
+      {
+        "call": 28,
+        "copy_CX": 220,
+        "kind": "inverse_call",
+        "leaf": "e82b3b95aeec6ad90fab",
+        "native_rows": 1300
+      },
+      {
+        "call": 27,
+        "copy_CX": 288,
+        "kind": "inverse_call",
+        "leaf": "1e0b2dc8929b29814d9a",
+        "native_rows": 23202
+      }
+    ],
+    "checks": {
+      "mapped_cases": 2,
+      "metadata_leaf_rows": 2,
+      "negative_interface_controls": 13
+    },
+    "decision": "COMPONENT_MAPPING_COMPLETE_PHYSICAL_NETWORK_AND_SCHEDULE_UNRESOLVED",
+    "locators": [
+      "Fig7f/g",
+      "Fig14c",
+      "Fig15",
+      "Section1/4/5"
+    ],
+    "negative_controls": [
+      {
+        "missing_field": "physical_module_capacity",
+        "rejected": true
+      },
+      {
+        "missing_field": "code_distance",
+        "rejected": true
+      },
+      {
+        "missing_field": "code_cycle_seconds",
+        "rejected": true
+      },
+      {
+        "missing_field": "reaction_seconds",
+        "rejected": true
+      },
+      {
+        "missing_field": "CCZ_factory_blocks",
+        "rejected": true
+      },
+      {
+        "missing_field": "CCZ_factory_failure",
+        "rejected": true
+      },
+      {
+        "missing_field": "actual_memory_capacity",
+        "rejected": true
+      },
+      {
+        "missing_field": "resource_buffer_peak",
+        "rejected": true
+      },
+      {
+        "missing_field": "oriented_port_network",
+        "rejected": true
+      },
+      {
+        "missing_field": "nonlocal_connection_schedule",
+        "rejected": true
+      },
+      {
+        "missing_field": "Pauli_frame_dispatch",
+        "rejected": true
+      },
+      {
+        "missing_field": "complete_failure_upper",
+        "rejected": true
+      },
+      {
+        "missing_field": "complete_execution_seconds",
+        "rejected": true
+      }
+    ],
+    "primary_url": "https://arxiv.org/html/2211.15465v1",
+    "units_ideal_wire_layers_not_physical_code_cycles": true
+  },
+  "item": "H13",
+  "new_global_fixture_credit": 0,
+  "quantum_advantage": false,
+  "scientific_scope": "Prospectively frozen proof/interface audit; numerical diagnostics are not financial acquisition or a derivative proof.",
+  "source_adoption": false
+}

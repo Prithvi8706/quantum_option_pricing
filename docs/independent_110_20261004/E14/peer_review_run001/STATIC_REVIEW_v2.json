@@ -1,0 +1,30 @@
+{
+  "disposition": "STATIC_REVIEW_PASS_FOR_ONE_FROZEN_ARITHMETIC_RUN",
+  "entire_limitation_solved": false,
+  "findings": [
+    "Corrected base bound 17/8 follows E[g(R)^2] <= 2*g(p)^2 + 2*E[(R-p)^2], using g(p)<=1/4 and RMSE at base <=1.",
+    "Positive levels retain 6*2^-n without an unsupported bounded-output cap.",
+    "Rare-positive exact control has mean-square error 1 and base second moment 21/16, above 1 and below 17/8; it properly rejects the removed generic cap.",
+    "Three-error cutoff factor-four and explicit Delta0 convention remain selected-text diagnostics; neither proves universal theorem invalidity.",
+    "Runtime validates pinned inputs before and after the one invocation, retains failure, and scopes 30 CPU/60 wall/4 MiB output to this arithmetic audit.",
+    "The prepared protocol pins the original static hold, revised source, proof and new helper; no source adoption or finance paths are authorized by this review."
+  ],
+  "new_fixture_credit": 0,
+  "prospective_review": true,
+  "protocol_input_pins_all_match": true,
+  "quantum_advantage": false,
+  "remaining_obligations": [
+    "Finite QAMC controller and decoder",
+    "Preparation/inverse and median costs",
+    "Finite constants and financial theorem transfer",
+    "Executable compiled implementation"
+  ],
+  "reviewed_sha256": {
+    "docs/independent_110_20261004/E14/PROOF_AND_LIMITS_v2.txt": "fb3a6a9f4303d1b6ca78629bdbf6ef03beb51c3124ee227bcbf8fc972bcb1d26",
+    "research/independent_110_20261004/E14/deterministic_schedule_audit_v2.py": "4267279616afb34b809920dfff79396e1710d052e931de7822ad35d20f32d401",
+    "research/independent_110_20261004/scoped_audit_runtime_v2.py": "44941bafd8d4574c458168c016a89b1401d116463b79f4e1fffde93084938123",
+    "results/independent_110_20261004/E14/run002/protocol.json": "a87861ec1bc0010ba8078d966bf15868fe328253bdc4687270d144ee716732e1"
+  },
+  "scientific_invocations": 0,
+  "source_imports": 0
+}

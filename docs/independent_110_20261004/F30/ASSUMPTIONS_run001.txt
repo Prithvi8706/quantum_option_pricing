@@ -1,0 +1,77 @@
+F30 prospective fixed rank2/4/8 development D1 diagnostic.
+
+Contract exactly existing plain D1:1asset,2dates(.5,1),spot100,sigma.2,
+r.03,T1,K95,correlation.3 (inert for one asset). Use existing unconditioned
+asian_basket.evaluate target:exp(-rT)*(mean(exp(means+factor*z))-K)+.
+Reproduce existing pca_factor covariance/order/sign convention from frozen
+source without importing/executing project code. This is the current PCA
+map, not an alternative F03 transform, smoothing or preintegration screen.
+No barrier is added; no originalB4/B8 outcome is inferred.
+
+Fix before payoff evaluations: training33by33 tensor-product Gauss-Legendre
+nodes on z1,z2∈[-4,4], weights multiplied by standard Gaussian density.
+Weights remain unnormalized: this is a truncated Gaussian contribution,
+not replacement of the full Gaussian law by a unit-mass finite grid.
+During metadata prepare, generate/hash nodes/weights and512 separate
+validation normals, default_rng seed2026100430, rejection outside[-4,4]^2.
+Draw at most2048 raw normal pairs; preserve preparation failure if fewer
+than512 survive. No payoff is evaluated during data preparation.
+Validation points are disjoint from the training tensor nodes and fixed
+for all three ranks, never used to select a rank/hyperparameter.
+
+Training cost: evaluate1089 unique discounted D1 payoffs once, shared by all
+three ranks. Evaluate512 validation targets once; do not double-count these
+as three new evidence sets. Total1601 original-integrand evaluations.
+One weighted matrix SVD on G_ij=sqrt(w_i)*F_ij*sqrt(w_j); retain exactly
+r=2,4,8 singular components. In two dimensions this is a two-core TT.
+Core A=U_r*sqrt(S_r)/sqrt(w),core B=sqrt(S_r)*V_r/sqrt(w); no positivity,
+universal barrier-rank or high-dimensional TT claim follows.
+For validation, interpolate each core linearly on training nodes and clamp
+outside the extreme nodes to its endpoint value. Record any negative fitted
+payoff values; never silently clip/retrain them into a certified loader.
+
+Diagnostics fixed in advance: weighted training residual norm, discarded
+singular-value norm, separate validation RMSE/max absolute error, negative
+fit counts, truncated weighted grid integral, direct TT contraction and
+matrix-sum consistency. Cauchy gives a finite weighted-grid inequality
+|sum(w_iw_j*(F-Fr))|<=sqrt(sum(w_iw_j))*||sqrt(w_iw_j)*(F-Fr)||2.
+Its measured residual/float computation is not a directed numerical
+certificate. It bounds no unobserved interpolation or full Gaussian tail.
+No integral/price error certificate will be inferred from validation points.
+
+Classical contraction is fully paid: after training, two weighted core sums
+and one rank-r dot product use (2n+1)r multiplications and[2(n-1)+1]r-1
+additions. Training/SVD/setup and original1089 evaluations remain charged
+for a single delivered price. Producing a trained tensor also already makes
+its direct classical weighted-grid sum available; it is not free quantum
+data. Record operations only; no contraction/loading or matched timings.
+
+Quantum loading obligations: finite core lookup/access and inverse, signs,
+normalization, conditional rotations and synthesis, workspace/uncompute,
+estimator reflections/repetitions/readout, original price-error bridge and
+physical preparation/supply/routing/control costs. No efficient unitary or
+finite20% loading-plus-estimation gain is assumed from a compact tensor.
+
+One primary context: exact Sakurai/Takahashi/Miyamoto2405.00701v1 HTML,
+SecII.1.2 SVD and SecIII.2 contraction. Its European/Fourier/parameter
+learning demonstration is not a D1 Asian or barrier-error theorem. HTML
+displayed24Aug2026 date is retained apart from its v1 stamp17Apr2024.
+No new Fourier integrand or transform is adopted.
+
+Acceptance: archive parameter/default bindings, actual frozen data hashes,
+covariance reconstruction diagnostic, exactly three prescribed ranks and
+one SVD,1601 unique targets, separate validation, finite contraction
+consistency. Root static review before metadata prepare/sole diagnostic run.
+No continuum certificate is supplied, so quantum tensor loading closes at
+the bounded diagnostic stage without compilation or adoption.
+
+Budget: metadata-only data/protocol prepare, then one fixed diagnostic run,
+10CPU/30wall seconds,4MiB input,2MiB output,16output files,1601 financial
+integrand evaluations,2048 prospective validation normal-pair draws.
+NumPy2.0.2/Python3.12.4, local-only; no project imports or timing benchmarks.
+The accounting timer starts inside run after NumPy import and protocol
+read. Import/data preparation are outside this check timer; no end-to-end
+setup timing is measured or credited. Recheck frozen input hashes before
+sealing the diagnostic outputs.
+Preserve any failure. Stop after ranks2/4/8; do not search/tune new ranks,
+transform, validation seeds or models to rescue an unsuccessful result.

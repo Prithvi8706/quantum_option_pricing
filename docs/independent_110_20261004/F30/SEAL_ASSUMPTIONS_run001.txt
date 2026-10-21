@@ -1,0 +1,29 @@
+F30 prospective metadata-only recovery of the run002 output inventory.
+All run002 files, including the invalid original manifest and SUCCESS
+receipt, remain read-only. Scientific diagnostics ran once, with no rerun.
+
+Freeze nineteen specified files before metadata checks: six original
+scientific inputs, nine original outputs including the invalid manifest,
+the seal-failure receipt, the pre-science static-review receipt, this
+prospective plan and the metadata recovery author. Hash actual raw bytes.
+Retain exactly one recovery attempt, any failure and all partial outputs.
+
+Checks: every frozen input matches its metadata pin; original run002
+directory has exactly its nine nominated files; all original manifest
+entries except the declared SUCCESS receipt mismatch match actual bytes.
+The sole mismatch must be exactly the recorded LF121-byte success versus
+actual Windows CRLF125-byte success listed in SEAL_FAILURE_run002.json.
+The original failed manifest and scientific summary must match their
+recorded failure-receipt hashes. All six science inputs must still match
+the original frozen scientific protocol. Record actual original outputs
+in root-relative external_artifacts and record owned recovery outputs in
+its own manifest. Write canonical UTF8 bytes directly, avoiding newline
+translation. Recheck frozen inputs before sealing.
+
+Budget: one metadata-only prepare then one fixed recovery invocation,
+2CPU/10wall seconds,2MiB frozen inputs,128KiB owned outputs,8owned files.
+Timer starts inside the recovery check after protocol read. No NumPy,
+scientific project import, payoff, fit, SVD, financial simulation, circuit,
+backend or timing benchmark. No new scientific credit or wholeF30 pass.
+Recovery success means inventory repair, not repair of a mathematical
+certificate. Stop once the fixed metadata inventory completes or fails.

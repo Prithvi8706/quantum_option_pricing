@@ -1,0 +1,76 @@
+{
+  "schema": "f15-a1-negative-leverage-independent-static-review-v1",
+  "reviewer": "/root/a13_continuation",
+  "review_type": "Read-only mathematical derivation and source/protocol inspection; no source import, arithmetic run, SDE draw, gate, timing or source mutation",
+  "reviewed_files_sha256": {
+    "docs/independent_110_20261004/F15/NEGATIVE_LEVERAGE_TAIL_PROOF.txt": "bb7671ed6266fc482778599328adab87e52de07b97ae308b1912d4fff6ab8bd9",
+    "research/independent_110_20261004/F15/negative_leverage_tail_v1.py": "3d644c684ceec40ffa8092c4bd4e43edd929727d38daeeb7f787614493ca671a",
+    "results/independent_110_20261004/F15/run001/protocol.json": "0eeb74b1c629eea999be683383c9f946f337f564935ed5f5159aeeaca45c1171"
+  },
+  "disposition": "STATIC_REVIEW_PASS_FOR_ONE_FROZEN_ARITHMETIC_RUN",
+  "blocking_defects_found": [],
+  "mathematical_checks": [
+    {
+      "claim": "Stock supersolution drift",
+      "reason": "Ito on S^p exp(lambda v) has constant drift pr+kappa theta lambda and v drift p(p-1)/2+(rho xi p-kappa)lambda+xi^2 lambda^2/2. The cross variation term includes rho xi p lambda with its negative sign.",
+      "manually_derived_coefficients": {
+        "p8_lambda12": [-98,25],
+        "p2_lambda1": [-251,200]
+      },
+      "status": "PASS_SYMBOLIC_STATIC"
+    },
+    {
+      "claim": "Localization and moment-domain argument",
+      "reason": "Given the stated nonnegative nonexplosive CIR/Heston solution, localize S/v and the stochastic integrals so the stopped stochastic term is integrable. Nonpositive drift bounds each stopped expectation by its initial value. Positivity permits Fatou as localizations tend to infinity. The resulting inequality, not a true-martingale equality or an assumed affine-transform domain, bounds E S^p because exp(lambda v)>=1.",
+      "status": "PASS_CONDITIONAL_ON_STATED_CONTINUOUS_SDE"
+    },
+    {
+      "claim": "CIR endpoint and integrated-variance moments",
+      "reason": "For exp(s I+v-kappa theta t), the v drift is xi^2/2-kappa+s. The same localization gives E exp(I_t) and E exp(v_t)<=exp(v0+kappa theta t) for the two fixed s values.",
+      "manually_derived_coefficients": {
+        "s0_lambda1": [-391,200],
+        "s1_lambda1": [-191,200]
+      },
+      "status": "PASS_SYMBOLIC_STATIC"
+    },
+    {
+      "claim": "Original parameter obstruction retained",
+      "reason": "With the stated A1 parameters, 2 kappa xi rho-rho^2 xi^2=-249/400 and eta=4 kappa theta/xi^2=8. Passing eta alone does not alter the retained full direct-transfer failure. The negative sign holds for positive kappa/xi and negative rho; time-unit changes do not reverse it.",
+      "status": "PASS_SCOPE_RETENTION; NOT_A_NEW_PROOF_OF_THE_PUBLISHED_FULL_BOUND"
+    },
+    {
+      "claim": "Tail and payoff composition",
+      "reason": "Let A_M be the average clipped stocks and B the endpoint/integral exclusion event. The nonnegative call payoff loss is <=A-A_M+A 1_B for nonnegative strike. Each excess is <=S^8/M^7, A^2<=mean S^2 pointwise, and E[A 1_B]<=sqrt(E A^2 P(B)). Markov plus the 12 endpoint events and one total-integral event gives the 13-event probability bound. No independence is used. Positive r permits dropping the discount as an upper bound.",
+      "status": "PASS_SYMBOLIC_STATIC"
+    },
+    {
+      "claim": "Exact arithmetic implementation intended for the fixed run",
+      "reason": "exp(q)<= (1-q/n)^(-n) follows by bounding each positive Taylor coefficient by the geometric series and taking the nth power. The maximal stock8/stock2/CIR arguments are respectively87/25<8,33/100<1 and27/100<1. exp(-64)<=2^-64 is conservative. The integer isqrt and exact squared comparisons implement the least 80-bit dyadic upper endpoint for the fixed strictly positive square-root input. These are source inspections, not executed cutoff arithmetic.",
+      "status": "PASS_STATIC; NUMERICAL_TAIL_BUDGET_PASS_REMAINS_FOR_PARENT_RUN"
+    }
+  ],
+  "source_and_protocol_checks": [
+    "Model defaults and MODELS establish the nominal A1 values theta/v0.09,xi.3,rho-.5 and12 dates; assets1 is selected separately from the Model default assets4.",
+    "The script parses archived/model metadata as AST/JSON without importing the scientific source.",
+    "The frozen target is an unconditional original-law clipped/excluded payoff, with no resampling, renormalization or removed contractual date.",
+    "Exactly two named supersolution methods and frozen cutoffs stock1024,v/I64 are used; no cutoff search or new A4 model.",
+    "The standalone1/400 tail allowance is explicitly proposed and does not revise the active shared error allocation.",
+    "Three intended negative drift controls reject removing the stock tilt, reusing it after changing leverage and using integral exponent3 without another supersolution.",
+    "One-invocation guard, retained failure marker, input checks,30CPU/60wall/4MiB caps and output scope are explicit. Complete runtime closure and hard supervisor coverage are not certified by this static review."
+  ],
+  "remaining_obligations": [
+    "Actual fixed rational cutoff arithmetic and its budget comparison have not yet run.",
+    "Continuous nominal SDE target is not certified equivalent to the existing finite discrete-SDE sampler/source.",
+    "Conditional CIR/integrated-CIR and Gaussian loading, joint increment boxes and a lower integrated-variance endpoint remain unresolved.",
+    "Loading/discretization, reversible stock/payoff precision, source inverse and total financial error remain unresolved.",
+    "Complete transition cost, matched comparator and20percent improvement remain unresolved; no large compiler is approved by this receipt."
+  ],
+  "scope": "Initial continuous A1 upper-state tail lemma and fixed arithmetic readiness only",
+  "new_scientific_checks_executed": 0,
+  "new_fixture_credit": 0,
+  "active_allocation_changed": false,
+  "original_direct_transfer_reopened": false,
+  "financial_G2_complete": false,
+  "whole_F15_limitation_complete": false,
+  "quantum_advantage": false
+}

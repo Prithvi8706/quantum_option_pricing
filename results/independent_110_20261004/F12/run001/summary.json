@@ -1,0 +1,107 @@
+{
+  "audit_passed": true,
+  "bounded_step_completed": true,
+  "entire_limitation_solved": false,
+  "financial_G2_completed": false,
+  "findings": {
+    "20percent_at_three_of_four_levels": null,
+    "Feller_ratio": [
+      16,
+      25
+    ],
+    "beta2_proved": false,
+    "boundary_inverse_moment_hypotheses": null,
+    "candidate": "Alfonsi2005 equation4 drift-implicit square-root scheme, same coupled Brownian inputs.",
+    "candidate_is_exact_CIR_sampler": false,
+    "candidate_unique_positive_root": true,
+    "checks": 253,
+    "decision": "POSITIVITY_PROVED_BIAS_AND_MATCHED_COST_VARIANCE_TRANSFER_CLOSED",
+    "equity_weak_bias_bound": null,
+    "existing_scheme_positive_margin": [
+      7,
+      400
+    ],
+    "four_frozen_levels": [
+      {
+        "candidate_cost_times_variance": null,
+        "certified_weak_bias": null,
+        "internal_steps": 24,
+        "level": 1,
+        "matched_finance_paths": 0,
+        "monitoring_dates": 12,
+        "step": [
+          1,
+          24
+        ],
+        "timing_measurements": 0
+      },
+      {
+        "candidate_cost_times_variance": null,
+        "certified_weak_bias": null,
+        "internal_steps": 48,
+        "level": 2,
+        "matched_finance_paths": 0,
+        "monitoring_dates": 12,
+        "step": [
+          1,
+          48
+        ],
+        "timing_measurements": 0
+      },
+      {
+        "candidate_cost_times_variance": null,
+        "certified_weak_bias": null,
+        "internal_steps": 96,
+        "level": 3,
+        "matched_finance_paths": 0,
+        "monitoring_dates": 12,
+        "step": [
+          1,
+          96
+        ],
+        "timing_measurements": 0
+      },
+      {
+        "candidate_cost_times_variance": null,
+        "certified_weak_bias": null,
+        "internal_steps": 192,
+        "level": 4,
+        "matched_finance_paths": 0,
+        "monitoring_dates": 12,
+        "step": [
+          1,
+          192
+        ],
+        "timing_measurements": 0
+      }
+    ],
+    "historical_beta_observations": [
+      {
+        "beta": 1.2337678611041398,
+        "conditional": false,
+        "method": "mc",
+        "scope": "Descriptive fit, five development levels, no confidence band or theorem."
+      },
+      {
+        "beta": 1.2396803093647746,
+        "conditional": true,
+        "method": "rqmc",
+        "scope": "Descriptive fit, five development levels, no confidence band or theorem."
+      }
+    ],
+    "new_finance_samples": 0,
+    "proposed_matched_protocol": "Keep original multivariate ws/wv covariance and fine/coarse sum/adjacent swap; replace variance recurrence only, retain all12dates. No pilot before a stated certified bias allowance and matched timing ownership.",
+    "remaining": [
+      "Prove full equity/payoff bias at the nominated four levels, including accessible variance boundary.",
+      "Freeze a justified finite sample budget and independent reference certificate before acquisition.",
+      "Obtain matched per-path costs and correction variances; positivity alone cannot admit a source."
+    ],
+    "same_Brownian_marginals_are_complete_Heston_bias_certificate": false,
+    "strong_rate_constants": null
+  },
+  "item": "F12",
+  "new_global_fixture_credit": 0,
+  "quantum_advantage": false,
+  "scientific_scope": "Prospectively frozen proof/interface audit; numerical diagnostics are not financial acquisition or a derivative proof.",
+  "source_adoption": false
+}

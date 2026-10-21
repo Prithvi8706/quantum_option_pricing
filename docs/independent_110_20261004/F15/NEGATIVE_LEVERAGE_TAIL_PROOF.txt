@@ -1,0 +1,71 @@
+F15: A1 upper-state tails with negative leverage
+
+Keep the existing one-asset A1 Heston arithmetic Asian call: S0=K100,
+r=.03,T1,kappa2,theta=v0=.09,xi=.3,rho=-.5, twelve dates t_l=l/12.
+The assertions below concern its nominal continuous risk-neutral Heston SDE
+dS=rSdt+S sqrt(v)dW_S, dv=kappa(theta-v)dt+xi sqrt(v)dW_v,
+d<W_S,W_v>_t=rho dt. Use its nonnegative, nonexplosive CIR/Heston solution.
+No equivalence to the existing finite discrete-SDE sampler is asserted.
+
+The prior direct screen stays closed. Herman et al., arXiv2602.03725v1,
+3February2026, Section6.2.2's truncation lemma and Section6.2.3 discuss
+parameter restrictions and increment-space bounds. Their required middle
+expression is2*kappa*xi*rho-rho^2*xi^2=-249/400<0 for A1. Changing time units
+cannot remove negative leverage or make this expression nonnegative when
+kappa,xi>0,rho<0. Passing eta=8 alone does not repair the full theorem.
+https://arxiv.org/html/2602.03725v1
+The source also distinguishes stock moments from usable increment-space boxes
+and needs lower truncation of the integrated variance. Those interfaces remain
+unresolved here; this proof is not a substitute claim of the full published bound.
+
+Method1, affine-MGF supersolution. For p>1,lambda>=0 define
+M_t=exp(-(p*r+kappa*theta*lambda)t) S_t^p exp(lambda*v_t).
+Ito gives its drift coefficient, multiplyingv_tM_t,
+q(p,lambda)=xi^2 lambda^2/2+(rho*xi*p-kappa)lambda+p(p-1)/2.
+Ifq<=0, stop at the usual bounded S/v/stochastic-integral localization times.
+The stopped positive process is a supermartingale. Fatou after localization
+yields E M_t<=S0^p exp(lambda*v0); no unproved true-martingale/Novikov equality
+is needed. Sinceexp(lambda*v)>=1,
+E S_t^p <= S0^p exp((p*r+kappa*theta*lambda)t+lambda*v0).
+For(p,lambda)=(8,12),q=-98/25; for(2,1),q=-251/200. These inequalities prove
+usable finite moments over all twelve dates before Chernoff/Markov is applied.
+They assert bounds for these powers and model only, not all Heston moments.
+
+Method2, CIR exponential moments and Holder/Cauchy-Schwarz. Let I_t=int_0^t v_s ds.
+Forlambda=1,s=1 the positive process exp(sI_t+v_t-kappa*theta*t) has drift
+coefficient xi^2/2-kappa+s=-191/200 timesv_t. The same localization/Fatou argument
+gives E exp(I_t)<=exp(v0+kappa*theta*t). Setting s=0 gives E exp(v_t) bounded
+by the same quantity; its drift coefficient is-391/200. No observed moment,
+sample maximum or assumption of a finite affine transform beyond its domain
+is used. This proof supplies an upper-state cutoff, not a lower-endpoint bound.
+
+Fixed target for the tail ledger: clip every stock at M=1024, evaluate the same
+Asian positive part, and return0 if any of the12variance endpoints exceeds64
+or totalI_T exceeds64. It is an unconditional original-law truncated target;
+it does not resample, normalize a conditional law or delete monitoring dates.
+It has not been compiled or adopted. Its bias is charged against a standalone
+proposed tail allowance1/400, without revising an active sharedG2allocation.
+
+For each date E(S-M)+<=E S^8/M^7. For A=mean_l S(t_l), Jensen gives
+E A^2<=mean_l E S(t_l)^2. Denote the excluded variance/integral event byB.
+Markov and a union bound, with I_t monotone, give
+P(B)<=(12+1)exp(v0+kappa*theta*T)*exp(-64).
+Cauchy-Schwarz gives E[A1_B]<=sqrt(E A^2*P(B)). The positive-part payoff is
+1-Lipschitz; discount exp(-rT)<=1. Therefore the dollar truncation error is
+at most mean_l E S(t_l)^8/M^7 + sqrt(mean_l E S(t_l)^2*P(B)).
+No independence among dates, stocks, variance or the event is assumed.
+
+The accountant uses exact rational bounds exp(a)<=(1-a/n)^(-n) for0<=a<n,
+with n8 for stockp8 and n1 for stockp2/CIR moments, derived from the exponential
+series. It uses exp(-64)<=2^-64 and rounds the final square root upward on an
+80-bit dyadic grid with an exact squared-endpoint check. All inputs, methods,
+cutoffs and the allowance are frozen before these checks; no cutoff search.
+
+Primitive decision: conditional CIR loading, conditional integrated-CIR CF
+inversion, Gaussian equity factor, a compatible increment box, lower integrated
+variance cutoff, finite loading/discretization/stock/payoff error, inverse cleanup
+and a complete20%cost improvement remain unknown. In particular an upper tail
+for v or S does not supply a bound for every auxiliary increment used by the
+published circuit. No fullG2, fast-forward transition, A4joint-covariance extension,
+source adoption or advantage is claimed. Defer the compiler and retain this
+initial mathematical tail component with its remaining obligations.

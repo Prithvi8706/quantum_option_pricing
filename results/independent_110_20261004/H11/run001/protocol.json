@@ -1,0 +1,63 @@
+{
+  "acceptance": [
+    "Original ordered gate stream hash/counts and signed call binding match.",
+    "All eight full H-CCZ-H columns exactly equal Toffoli; omission rejects.",
+    "One finite theorem input and qubit length reconcile without arbitrary constants.",
+    "Eight guard-negative rows and actual missing interface reject."
+  ],
+  "assumptions": [
+    "Conditional code theorem parameter extraction is not emitted stabilizers/noisy hardware.",
+    "Encoded target H and other Clifford gates are required separately.",
+    "Missing physical facts remain null; all block wires count."
+  ],
+  "budgets": {
+    "CPU_seconds": 30,
+    "input_bytes": 33554432,
+    "output_bytes": 4194304,
+    "owned_files": 16,
+    "script_wall_seconds": 60
+  },
+  "candidate": {
+    "candidate_count": 1,
+    "k": 5791,
+    "m": 10923,
+    "n0": 32768,
+    "q": 1073741824,
+    "qubit_block": 3538944000,
+    "t": 30,
+    "version": "2502.01864v1 Theorem6.1 full intrablock variant"
+  },
+  "corpus": {
+    "CCZ_phase_states": 8,
+    "H_CCZ_H_columns": 8,
+    "admission_negative_controls": 8,
+    "fraction_bits": 40,
+    "matrix_coefficients": 16,
+    "native_rows": 22914,
+    "omitted_H_negative_controls": 1,
+    "original_leaf": "1e0b2dc8929b29814d9a",
+    "original_width": 72
+  },
+  "corpus_sha256": {
+    "docs/independent_110_20261004/H11/FINITE_PARAMETERS_AND_LIMITS.txt": "fe984216fc84776ab5bccf50c44a8d9b07aec1822a97172ce6a47fc0c5c94b86",
+    "docs/independent_110_20261004/H11/PREFLIGHT_PRIMARY_run001.json": "f09a774ba7e4ff90777740dbd091c0c8b070e1742d06e8c01fdaaead538500f2",
+    "docs/limitation_audit_20261001/HARDWARE_AND_COST_MODEL.md": "476be18f926ed2d0bd2c24ec22b10b3cc34f8824da637e643879e02f44b14a9b",
+    "docs/limitation_audit_20261001/implementation_plan/roadmap.json": "59333ddeba6ee73950cba5a7a669fdc6dd3a9db8629297335d507b65c6a02b6a",
+    "research/independent_110_20261004/H11/PRIMARY_RETRIEVAL_run001.json": "9e24a35182d42420c8f1f53d911909481e8e303741ecde0252bae529060b7480",
+    "research/independent_110_20261004/H11/addressable_ccz_audit_v1.py": "dde80c75bff4726f722ca686c775471f2f93ecff1b859ebb5ac2b31c37f86f1f",
+    "research/independent_110_20261004/H11/primary_sources/He_2502_01864v1.pdf": "abf92d2ea0a3ab8b19ff934b4ff16ec949868d48b817fead4dde83127cc2c746",
+    "results/limitation_program_20261001/A10_coefficient_run001/B4x12/min-depth/leaves/1e0b2dc8929b29814d9a.json": "ea18453c4248a8ef4cfce23048639736583dd90ebec830ba43695cf1b02571fb",
+    "results/limitation_program_20261001/A10_coefficient_run001/B4x12/min-depth/leaves/1e0b2dc8929b29814d9a.npy": "22a87b30a12cc38ff180f02c7ad242325978c3843e928e74ed0cd98a22018dff",
+    "results/limitation_program_20261001/A10_coefficient_run001/B4x12/min-depth/source.json": "d40db71a1946f49e40683b6686579bc572f668de03f5968ccc5911189760e21f",
+    "results/limitation_program_20261001/A10_coefficient_run001/B4x12/min-depth/target.json": "a7a682731b3cdb6f16b32a9b1a467d6bfeccb32ea97e583ab79e5252bb7a9384",
+    "results/limitation_program_20261001/H17_demand_run002/hardware_provenance.json": "def6466d0fd6923db16a77c3d869b0ec5b1f5f76f306f4a668fd54daf5e417d5",
+    "results/limitation_program_20261001/H17_demand_run002/manifest.json": "9386fc8051a21e1cce8088ff8b9b5c57c8a0194c42d01debd4dc498ca5c8801a",
+    "results/limitation_program_20261001/H17_demand_run002/summary.json": "83d045a18b604624cafeba7c9b2adedddaf714b9a1f70111c4a8bf77fce7e738"
+  },
+  "item": "H11",
+  "new_finance_paths": 0,
+  "new_fixture_credit": 0,
+  "source_adoption": false,
+  "stop": "One finite parameter extraction and one original leaf interface. Missing compatible physical CCZ/error/extraction/Clifford facts closes timing/integration; no next code or noise scenario.",
+  "timing_benchmarks": 0
+}

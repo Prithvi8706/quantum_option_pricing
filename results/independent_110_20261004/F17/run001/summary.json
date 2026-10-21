@@ -1,0 +1,240 @@
+{
+  "audit_passed": true,
+  "bounded_step_completed": true,
+  "entire_limitation_solved": false,
+  "financial_G2_completed": false,
+  "findings": {
+    "20percent_complete_localization_saving": null,
+    "E12_inputs_or_acquisitions_changed": false,
+    "cases": [
+      {
+        "assets": 4,
+        "bands": [
+          {
+            "localized_complete_cost": null,
+            "population_band_probability": null,
+            "population_continuation_error_second_moment": null,
+            "total_population_regret": null,
+            "unsampled_tail_error": null,
+            "width": [
+              1,
+              100
+            ]
+          },
+          {
+            "localized_complete_cost": null,
+            "population_band_probability": null,
+            "population_continuation_error_second_moment": null,
+            "total_population_regret": null,
+            "unsampled_tail_error": null,
+            "width": [
+              1,
+              20
+            ]
+          },
+          {
+            "localized_complete_cost": null,
+            "population_band_probability": null,
+            "population_continuation_error_second_moment": null,
+            "total_population_regret": null,
+            "unsampled_tail_error": null,
+            "width": [
+              1,
+              10
+            ]
+          }
+        ],
+        "case": "C4",
+        "dates": 12,
+        "fixed_policy_selector": "moment",
+        "observed_rmse_is_population_moment_bound": false,
+        "observed_validation_rmse": 0.0026765750383420757,
+        "policy_retrained": false
+      },
+      {
+        "assets": 8,
+        "bands": [
+          {
+            "localized_complete_cost": null,
+            "population_band_probability": null,
+            "population_continuation_error_second_moment": null,
+            "total_population_regret": null,
+            "unsampled_tail_error": null,
+            "width": [
+              1,
+              100
+            ]
+          },
+          {
+            "localized_complete_cost": null,
+            "population_band_probability": null,
+            "population_continuation_error_second_moment": null,
+            "total_population_regret": null,
+            "unsampled_tail_error": null,
+            "width": [
+              1,
+              20
+            ]
+          },
+          {
+            "localized_complete_cost": null,
+            "population_band_probability": null,
+            "population_continuation_error_second_moment": null,
+            "total_population_regret": null,
+            "unsampled_tail_error": null,
+            "width": [
+              1,
+              10
+            ]
+          }
+        ],
+        "case": "C8",
+        "dates": 12,
+        "fixed_policy_selector": "moment",
+        "observed_rmse_is_population_moment_bound": false,
+        "observed_validation_rmse": 0.012161376689298549,
+        "policy_retrained": false
+      },
+      {
+        "assets": 4,
+        "bands": [
+          {
+            "localized_complete_cost": null,
+            "population_band_probability": null,
+            "population_continuation_error_second_moment": null,
+            "total_population_regret": null,
+            "unsampled_tail_error": null,
+            "width": [
+              1,
+              100
+            ]
+          },
+          {
+            "localized_complete_cost": null,
+            "population_band_probability": null,
+            "population_continuation_error_second_moment": null,
+            "total_population_regret": null,
+            "unsampled_tail_error": null,
+            "width": [
+              1,
+              20
+            ]
+          },
+          {
+            "localized_complete_cost": null,
+            "population_band_probability": null,
+            "population_continuation_error_second_moment": null,
+            "total_population_regret": null,
+            "unsampled_tail_error": null,
+            "width": [
+              1,
+              10
+            ]
+          }
+        ],
+        "case": "H4",
+        "dates": 12,
+        "fixed_policy_selector": "regression",
+        "observed_rmse_is_population_moment_bound": false,
+        "observed_validation_rmse": 0.02806961878202483,
+        "policy_retrained": false
+      },
+      {
+        "assets": 8,
+        "bands": [
+          {
+            "localized_complete_cost": null,
+            "population_band_probability": null,
+            "population_continuation_error_second_moment": null,
+            "total_population_regret": null,
+            "unsampled_tail_error": null,
+            "width": [
+              1,
+              100
+            ]
+          },
+          {
+            "localized_complete_cost": null,
+            "population_band_probability": null,
+            "population_continuation_error_second_moment": null,
+            "total_population_regret": null,
+            "unsampled_tail_error": null,
+            "width": [
+              1,
+              20
+            ]
+          },
+          {
+            "localized_complete_cost": null,
+            "population_band_probability": null,
+            "population_continuation_error_second_moment": null,
+            "total_population_regret": null,
+            "unsampled_tail_error": null,
+            "width": [
+              1,
+              10
+            ]
+          }
+        ],
+        "case": "H8",
+        "dates": 24,
+        "fixed_policy_selector": "regression",
+        "observed_rmse_is_population_moment_bound": false,
+        "observed_validation_rmse": 0.02782893985226589,
+        "policy_retrained": false
+      }
+    ],
+    "checks": 1362,
+    "conditional_interval_scope": "Analytic real-law AM-GM/Jensen intervals for the capped continuation; floating implementation is not an interval enclosure.",
+    "decision": "POINTWISE_BOUNDARY_LEDGER_PROVED_POPULATION_AND_LOCALIZED_COST_CERTIFICATION_UNAVAILABLE_RETAIN_POLICY",
+    "historical_sampled_brackets": "Previously observed about4e-8 through6e-6 dollars; observations only, not population bounds.",
+    "new_samples": 0,
+    "outside_decision_interval_numeric_certificate": null,
+    "pointwise_regret": "r=(C-K)+-1{pred>K}(C-K)=|C-K|1{wrong}<=|C-pred|.",
+    "population_band_bound": "r <= (w+|C-pred|)1{|pred-K|<=w}+(C-pred)^2/w*1{|pred-K|>w}; expectation <=w*p+sqrt(m2*p)+m2/w when population m2 and p are certified.",
+    "population_regret_dollar_allowance_assigned": null,
+    "rare_unsampled_counterexample": {
+      "continuation": [
+        1000000,
+        1
+      ],
+      "population_regret": [
+        999997,
+        1000000
+      ],
+      "predictor": [
+        0,
+        1
+      ],
+      "probability": [
+        1,
+        1000000
+      ],
+      "workload_role": "Algebraic implication counterexample only, no new financial contract."
+    },
+    "remaining": [
+      "Outward continuation intervals on the unchanged capped law plus cap/unsampled-tail transfer.",
+      "Independent population expectation certificate for regret envelope or band/error moments.",
+      "Boundary-detection, confidence and padded/coherent source cost before compiler admission."
+    ],
+    "three_band_widths": [
+      [
+        1,
+        100
+      ],
+      [
+        1,
+        20
+      ],
+      [
+        1,
+        10
+      ]
+    ]
+  },
+  "item": "F17",
+  "new_global_fixture_credit": 0,
+  "quantum_advantage": false,
+  "scientific_scope": "Prospectively frozen proof/interface audit; numerical diagnostics are not financial acquisition or a derivative proof.",
+  "source_adoption": false
+}

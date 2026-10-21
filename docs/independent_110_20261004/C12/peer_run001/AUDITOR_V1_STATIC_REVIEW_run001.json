@@ -1,0 +1,49 @@
+{
+  "schema": "c12-inventory-auditor-independent-static-review-v1",
+  "review_type": "Read-only source/JSON review; no auditor execution, project imports or source edits",
+  "reviewed_files_sha256": {
+    "research/independent_110_20261004/C12/audit_evidence_family_v1.py": "48cd6159b8d575ca6b0e060572c53f8f891a1a829ef522ce928775519c0ef751",
+    "research/independent_110_20261004/C12/evidence_family_data_v1.json": "4670e53d559a58841d4a3ffe264bbe85e72caa68966de2cc798ceaaededfa624",
+    "results/independent_110_20261004/C12/audit_run001/protocol.json": "bbd9bee8f5dd19f42f8dbe888b1bc13e0c9a675d7b75223bdc5b5a232dca1aff"
+  },
+  "disposition": "STATIC_REJECTED_BEFORE_CHECKS; preserve v1 and prepared protocol; fresh reviewed version required",
+  "guaranteed_runtime_failure": {
+    "function": "audit_existing_records",
+    "issue": "row_m.gate_replay is a single dict in the existing multiplier receipt, but the loop requires every replays object to be a nonempty list",
+    "required_fix": "Normalize that single record to [row_m['gate_replay']] before list/replay validation"
+  },
+  "scope_guard_gaps": [
+    {
+      "issue": "The acceptance wording claims identical original target bytes, but only the three replacement-stage target copies are frozen and compared",
+      "required_fix": "Include and compare both original results/frontier_completion_20260927/stage_a/{B4x12,B8x52}/target.json files, or narrow the original-byte identity claim"
+    },
+    {
+      "issue": "The family-map validator enforces 1/4/1 counts but not exact S1/S2-S5/S6 attachments; swapping S1 and S6 families could preserve counts",
+      "required_fix": "Enforce S1 -> HestonAsian, S2-S5 -> GBMCompoundAsian, S6 -> GBMKnockoutAsian, with a fixed negative attachment control"
+    },
+    {
+      "issue": "Replacement applicability checks target names and prohibits cost transfer but does not validate the applicability contract_family field",
+      "required_fix": "Enforce GBMKnockoutAsian for R_lookup/R_multiply/R_ln2 and null family with empty full-source targets for R_mcx; add fixed negative family control"
+    }
+  ],
+  "additional_accounting_fix": {
+    "severity": "nonblocking for the small actual fixed output, but declared complete-owned cap should be enforced",
+    "issue": "The retained-byte cap is checked on owned files before manifest serialization, excluding the manifest bytes",
+    "recommended_fix": "Precompute and charge the manifest bytes before writing it; include any retained failure-marker allowance in complete-owned accounting"
+  },
+  "confirmed_boundaries": [
+    "Current data correctly maps six constructions to three historical families with multiplicities 1/4/1",
+    "Actual replacement_applicability binds lookup/multiply/ln2 only to later Stage A B4x12/B8x52 knock-out targets and prohibits cost transfer to other constructions",
+    "MCX is attached to no full pricing source or contract family",
+    "Auditor imports only Python standard-library modules; frozen scientific sources are parsed as AST or read as JSON/bytes",
+    "Current-reference AST and archived-cost links are explicitly qualified as topology, not proof of historical source provenance",
+    "Recorded source replays are metadata checks, not newly executed arithmetic, gate or financial correctness tests",
+    "Existing logical component costs are not presented as physical runtime or quantum advantage",
+    "One-attempt/fresh-output/failure-marker policy is explicit; v1 was prepared but scientific/accounting checks were not run"
+  ],
+  "new_scientific_checks": 0,
+  "new_fixture_credit": 0,
+  "new_backend_created": false,
+  "c12_limitation_complete": false,
+  "quantum_advantage": false
+}

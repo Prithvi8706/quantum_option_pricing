@@ -1,0 +1,138 @@
+{
+  "H17_error_targets": [
+    {
+      "case": "B4x12",
+      "requirements": {
+        "allocation_exact": {
+          "control": [
+            1,
+            1000
+          ],
+          "data": [
+            1,
+            1000
+          ],
+          "magic_states": [
+            1,
+            1000
+          ]
+        },
+        "code_distance": null,
+        "complete_execution_failure_upper": null,
+        "dependence_assumption": "Union bound requires marginal bounds; independence is not assumed",
+        "idle_or_code_cycle_opportunity_count": null,
+        "known_consumed_T_state_opportunity_count": 511911060861915,
+        "known_elementary_gate_opportunity_count": 1182602002711185,
+        "known_gate_union_targets_cover_idle_and_feedback": false,
+        "physical_control_reset_feedback_opportunity_count": null,
+        "physical_failure_allowance_exact": [
+          3,
+          1000
+        ],
+        "published_factory_reliability_transferred": false,
+        "required_control_error_per_elementary_logical_operation_exact": [
+          1,
+          1182602002711185000
+        ],
+        "required_data_error_per_elementary_logical_gate_exact": [
+          1,
+          1182602002711185000
+        ],
+        "required_error_per_consumed_T_state_exact": [
+          1,
+          511911060861915000
+        ]
+      }
+    },
+    {
+      "case": "B8x52",
+      "requirements": {
+        "allocation_exact": {
+          "control": [
+            1,
+            1000
+          ],
+          "data": [
+            1,
+            1000
+          ],
+          "magic_states": [
+            1,
+            1000
+          ]
+        },
+        "code_distance": null,
+        "complete_execution_failure_upper": null,
+        "dependence_assumption": "Union bound requires marginal bounds; independence is not assumed",
+        "idle_or_code_cycle_opportunity_count": null,
+        "known_consumed_T_state_opportunity_count": 4195204814583315,
+        "known_elementary_gate_opportunity_count": 9691531767803025,
+        "known_gate_union_targets_cover_idle_and_feedback": false,
+        "physical_control_reset_feedback_opportunity_count": null,
+        "physical_failure_allowance_exact": [
+          3,
+          1000
+        ],
+        "published_factory_reliability_transferred": false,
+        "required_control_error_per_elementary_logical_operation_exact": [
+          1,
+          9691531767803025000
+        ],
+        "required_data_error_per_elementary_logical_gate_exact": [
+          1,
+          9691531767803025000
+        ],
+        "required_error_per_consumed_T_state_exact": [
+          1,
+          4195204814583315000
+        ]
+      }
+    }
+  ],
+  "actual_admitted": false,
+  "actual_physical_interface": {
+    "actual_connectivity": null,
+    "allocated_failure_upper": null,
+    "complete_failure_upper": null,
+    "complete_physical_qubits": null,
+    "encoded_Clifford_interfaces": null,
+    "finite_code_certificate": null,
+    "labeled_LDPC": false,
+    "physical_CCZ_channel": null,
+    "physical_CCZ_duration": null,
+    "physical_CCZ_error": null,
+    "physical_cap": null,
+    "preparation_idle_controller_bill": null,
+    "stabilizer_extraction_and_decoder": null
+  },
+  "admission_reason": "Missing compatible finite code/gate/interface fact",
+  "all_block_data_qubits": 3538944000,
+  "conditional_distance_lower": 5133,
+  "exact_noisy_distance": null,
+  "financial_leaf_replays": 0,
+  "gauge_fixed_and_embedding_wires_included": true,
+  "generator_or_stabilizer_constructed": false,
+  "labeled_LDPC": false,
+  "leaf_logical_demands": {
+    "CCZ": 11244,
+    "CNOT": 11446,
+    "X": 224,
+    "archived_baseline_T": 78708,
+    "original_native_qubits": 5791,
+    "target_H": 22488
+  },
+  "physical_latency": null,
+  "quantum_channel_identity_conditional_on_ideal_logical_interfaces": true,
+  "stabilizer_ancillas": null,
+  "theorem_inputs": {
+    "candidate_count": 1,
+    "k": 5791,
+    "m": 10923,
+    "n0": 32768,
+    "q": 1073741824,
+    "qubit_block": 3538944000,
+    "t": 30,
+    "version": "2502.01864v1 Theorem6.1 full intrablock variant"
+  },
+  "unused_logical_slots": 0
+}

@@ -1,0 +1,122 @@
+{
+  "barrier_extension_formal_only": true,
+  "barrier_numerical_workloads": 0,
+  "continuum_price_bias_upper": null,
+  "contract": {
+    "assets": 1,
+    "correlation": 0.3,
+    "dates": 2,
+    "id": "D1",
+    "sigma": 0.2,
+    "split": "development",
+    "strike": 95.0
+  },
+  "controls": {
+    "D1_has_no_barrier": true,
+    "coarse_fine_difference_is_not_bias_bound": true,
+    "continuous_average_drift_rejected": true,
+    "continuous_barrier_absorption_rejected": true,
+    "no_time0_fixing": true,
+    "terminal_after_second_fixing": true
+  },
+  "full_F24_acceptance": false,
+  "full_source_credit": false,
+  "grid_price_change_diagnostic": 0.3536147553040596,
+  "matched_timings": 0,
+  "price_delivery_or_quantum_advantage_claimed": false,
+  "quantum_compilations": 0,
+  "rows": [
+    {
+      "Nq": 17,
+      "Nx": 17,
+      "classical_reference_with_certified_bias": false,
+      "condition2_diagnostic": 1.019602749962235,
+      "condition_inf_upper_exact": [
+        662322085607245299123890372434985,
+        649341343460908228611412250853376
+      ],
+      "date_updates": 2,
+      "eligible_measured_classical_time": null,
+      "event_interpolation_max_neighbors": 2,
+      "full_grid_values": 289,
+      "grid_time_boundary_event_bias_upper": null,
+      "implicit_steps": 64,
+      "interior_matrix_dimension": 15,
+      "inverse_inf_norm_upper_exact": [
+        2305843009213693952,
+        2306923873124262871
+      ],
+      "maximum_row_sparsity": 3,
+      "minimum_grid_value_diagnostic": 0.0,
+      "normalized_solution_state_cost": null,
+      "numerical_enclosure": null,
+      "off_diagonal_rates_exact": [
+        [
+          97355566097528031725889673379185,
+          324518553658426726783156020576256
+        ],
+        [
+          110336308243865096473760271926559,
+          324518553658426726783156020576256
+        ]
+      ],
+      "optimistic_complete_quantum_time": null,
+      "original_B4_B8_validated": false,
+      "price_grid_diagnostic": 9.717283255453491,
+      "quantum_event_update_cost": null,
+      "quantum_matrix_access_cost": null,
+      "scalar_price_extraction_cost": null,
+      "sparse_block_generator_nonzeros": 731,
+      "target_amplitude_diagnostic": 0.0022387197353674008,
+      "target_probability_diagnostic": 5.011866053523485e-06,
+      "vector_L2_norm_diagnostic": 4340.553711096297
+    },
+    {
+      "Nq": 33,
+      "Nx": 33,
+      "classical_reference_with_certified_bias": false,
+      "condition2_diagnostic": 1.0795621577712042,
+      "condition_inf_upper_exact": [
+        175316078011564127665331184294953,
+        162335335865227057152853062713344
+      ],
+      "date_updates": 2,
+      "eligible_measured_classical_time": null,
+      "event_interpolation_max_neighbors": 2,
+      "full_grid_values": 1089,
+      "grid_time_boundary_event_bias_upper": null,
+      "implicit_steps": 64,
+      "interior_matrix_dimension": 31,
+      "inverse_inf_norm_upper_exact": [
+        2305843009213693952,
+        2306923873124262871
+      ],
+      "maximum_row_sparsity": 3,
+      "minimum_grid_value_diagnostic": 0.0,
+      "normalized_solution_state_cost": null,
+      "numerical_enclosure": null,
+      "off_diagonal_rates_exact": [
+        [
+          201201503268224595825714646032057,
+          162259276829213363391578010288128
+        ],
+        [
+          214182245414561660573585244579431,
+          162259276829213363391578010288128
+        ]
+      ],
+      "optimistic_complete_quantum_time": null,
+      "original_B4_B8_validated": false,
+      "price_grid_diagnostic": 10.070898010757551,
+      "quantum_event_update_cost": null,
+      "quantum_matrix_access_cost": null,
+      "scalar_price_extraction_cost": null,
+      "sparse_block_generator_nonzeros": 3003,
+      "target_amplitude_diagnostic": 0.001256290789874087,
+      "target_probability_diagnostic": 1.5782665487224573e-06,
+      "vector_L2_norm_diagnostic": 8016.374944344627
+    }
+  ],
+  "status": "PASS_D1_FORMULATION_AND_TWO_GRID_DIAGNOSTICS_ONLY",
+  "theorem_transfer": "Miyamoto/Kubo v1 derivative, matrix-access, norm and event premises unresolved"
+}

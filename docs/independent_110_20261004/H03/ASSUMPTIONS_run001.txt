@@ -1,0 +1,108 @@
+H03 prospective reaction-dependency screen, run001
+
+Scope and corpus
+Use original A10_coefficient_run001 B4x12/min-depth, native 72-bit/F40
+arrays. Never import a repository builder, run a financial gate replay,
+attach a clock to logical T-depth, or adopt new A14 arithmetic.
+Exactly one multiply leaf: 1e0b2dc8929b29814d9a.
+Exactly one dependent multiply-add slice: source calls 27 then 28, producing
+SSA 37 then 38. Inputs SSA 27/36/35 are supplied by the archived upstream
+source. This is a source slice, not a replacement financial workload.
+The multiply's two operands satisfy its archived signed-active-40 contract;
+this screen does not re-prove upstream range claims.
+
+The chain pays the H17 compact argument copies (144 and 110 active bits),
+full native leaf registers, one 72-bit named-output XOR, and literal reverse
+cleanup of both calls. Compact SSA width 35=38 implies native higher input
+bits start at zero, exactly the archived compact interface. Other selected
+SSA words are 72 bits. Private clean scratch is reused serially; it is not
+the full H17 simultaneous source-batch allocation. No full-source qubit
+credit follows. Chain outputs can be arbitrary XOR targets, never measured
+as an intermediate price readout.
+
+Two schedule interfaces, fixed before checks
+1. Conventional baseline: exact seven-T CCX, arbitrary all-to-all logical
+Clifford operations as in the archived ASAP control. Each T/Tdg uses a
+corresponding |A> / |A*> injection, a Z ancilla measurement, decoded bit m,
+and materialized S/Sdg conditional on m before the next wire operation.
+This conservatively represents dependencies even where a correction could
+commute. Lattice-surgery realization, parity-measurement decomposition,
+distance, durations, preparation and topology are unknown. The number of
+physical parity measurements is not equated to the logical CX count.
+2. Time-optimal candidate interface: two-qubit resource
+(I tensor T^s)|Phi+>, s=+1/-1, ordinary Bell measurement bits a,b; conditional
+S^s selection and tracked Pauli frame. Incoming frame X^x Z^z yields
+u=a xor x, output frame x'=u, z'=b xor z xor u (up to global phase).
+The S selection depends on u. H exchanges frames; CX propagates control-X
+to target and target-Z to control. Every T event and XOR expression is
+recorded. Bell resources require one matching T state plus stabilizer
+preparation. Realization of the conditional S by Fowler's selective
+source/destination teleportation is a missing fault-tolerant macro. Its
+additional measurements, states, resource layout, decoding, routing and
+workspace remain null, not zero. The Bell-resource map is therefore an
+interface-level dependency diagnostic, not a literal Fig. 2 implementation.
+
+Resource/timing assumptions
+Preparation is paid, even if scheduled offline. No overlap is assumed
+without an explicit dependency/layout certificate. For each interface the
+ledger records Clifford operations, T resources, readout, preparation,
+feedback, routing and peak workspace separately. Known base Bell resource
+qubits are 2 per T if all are prepared simultaneously; resource consumption
+is distinct from a peak footprint. Additional selective-cell resources are
+unknown. Clifford throughput, measurement acquisition, transport, decoder,
+conditional dispatch, code-cycle duration and all physical errors are null.
+Conventional latency includes Clifford/surgery, injection measurement,
+decode/feedback and materialized correction. Candidate latency includes
+prepared Clifford/Bell/selective resources plus all online basis decisions
+and terminal frame interpretation. Their maxima can be lower bounds only;
+no compatible executable time is claimed.
+
+Exact primary anchor
+Fowler arXiv:1210.4626v3, exact official PDF cached and hashed. Figures 1/2
+motivate selective teleportation and prepared resources. Figure 3 explicitly
+requires propagation of measurement byproducts when deciding independence
+of T gates. The PDF displayed header says November 27, 2024 while arXiv's
+v3 submission history says February 2, 2013. Preserve both with unresolved
+document-header/version chronology. No timing factor or volume percentage
+is transferred from its defect architecture to generic lattice surgery.
+No further construction will be searched in this bounded run.
+
+Failure allowance
+Both alternatives inherit the same H17 B4x12 physical allocation 3/1000,
+split 1/1000 each to data, magic states and control. Existing marginal
+targets are 1/511911060861915000 per consumed T state and
+1/1182602002711185000 per elementary logical gate/control opportunity.
+These provisional targets are necessary, not sufficient: added resource
+preparation, selective measurements, routing, idling, reset and feedback
+have unknown opportunity counts/error bounds. Never grant the entire
+3/1000 independently to this leaf or chain. No independence assumption;
+use a union bound only after all opportunities and marginal errors exist.
+
+Fixed acceptance checks
+A. Validate NPY headers, wire ranges, gate kinds and pinned hashes without
+scientific-module imports; recover all archived forward count/depth fields.
+B. Independently scan literal reversed native arrays for inverse controls;
+build only the two prescribed cases and verify chain compute/copy/uncompute
+segments and compact copies match the selected source/H17 call records.
+C. Verify both T signs' injection/teleportation identities on all frame and
+measurement cases and the exact seven-T CCX identity on eight basis columns.
+These are gadget identities, not new financial replay/correctness credit.
+D. Export wire-predecessor and explicit measurement/correction records,
+plus a topological XOR-expression frame DAG for candidate selection and
+final frame interpretation. Recover original all-to-all logical T/depth
+control. Include Fig. 3's H/CX byproduct example as a positive dependency
+control and a disjoint-T example as a no-dependency control.
+E. Admission guard: no physical schedule passes with any required time,
+layout, preparation, workspace or complete failure bound unresolved. Test
+a synthetic complete accounting record and six missing/cost/failure
+negative controls; the synthetic record is never a hardware observation.
+
+Budget and stopping rule
+One metadata prepare followed by at most one fixed check invocation.
+60 CPU seconds, 90 script-wall seconds, 16 MiB frozen input, 32 MiB output,
+32 output files, at most 600000 expanded elementary gates across the two
+cases. No timing benchmarks. Preserve any failed run/partial output; any
+scientific correction requires a fresh prospective version/output path.
+Stop after these two cases/two interfaces. If the selective macro/layout or
+physical fields remain unknown, close the transfer as unresolved; do not
+scale into H17 or change any accepted compilation/hardware scenario.

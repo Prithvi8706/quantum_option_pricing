@@ -1,0 +1,58 @@
+F08: FINITE SIZE-BIASED LAW, ONE PREDICATE AND ROUNDING
+
+For a finite source Omega with probabilities p_x, A_x>=0 and survival I_x,
+let m=sum_x p_x A_x. If m>0 define Q_A(x)=p_x A_x/m. For K>=0,
+ E_P[(A-K)+ I] = m E_Q[(1-K/A)+ I]
+               = m P_(Q times Uniform[0,1])(U A>K and I).
+A=0 states have zero Q mass and contribute zero to the original payoff.
+The reciprocal expression is defined as0 there. If m=0 then A=0 P-almost
+surely and the original price is0; Q_A is undefined and is not constructed.
+These identities follow by cancelling A in each finite summand. They are
+not a claim that a coherent Q sampler, reciprocal or variable-width uniform
+register is free.
+
+For a fixed grid U=j/M, j=1,...,M, the strict predicate j*A>K*M has
+c_M(A,K)=max(0,min(M,M-floor(K*M/A))) accepted indices for A>0.
+Thus 0<=c_M/M-(1-K/A)+<=1/M. Multiplication by m and summation over
+Q gives price overstatement between0 and m/M (before discount). Exact
+event endpoints include j*A=K*M, which is rejected. Replacing > by >=
+without an endpoint proof changes the finite-grid event.
+For integer A,K an alternative conditional register J uniform on1,...,A
+would give exactly (A-K)+/A; its size/state dependence and preparation must
+be explicitly implemented. It is not the fixed M register used here.
+
+Error and normalization ledger
+Let discount and m have certified intervals D_L..D_U and m_L..m_U,
+and estimates Dhat,mhat within them. A conservative dollar budget is
+ D_U*(m_U*(e_stat + eta_preparation + eta_arithmetic + eta_synthesis
+                + 1/M) + e_m) + m_U*e_discount + b_law <= epsilon.
+Here eta terms are explicit bounds on event-probability errors, not observed
+sample differences. A total-variation preparation certificate bounds event
+error; a coherent operator-error/synthesis certificate must first imply such
+a bound over the complete estimator. e_m is the normalizer error. The
+reciprocal alternative substitutes its separately certified evaluation error
+for1/M. Failure probability has a separate joint99% estimator/acquisition/
+hardware allocation. Missing terms are unresolved, never set to zero.
+The archived floating normalizer103.04884928817364 is a diagnostic value,
+not a rigorous production m interval. No full G2 or G3 budget is issued here.
+
+Retained evidence and screen
+The previous two-probability finite identity/mixture result is retained
+without rerunning or crediting its131072 samples. Its equal-cost inverse-
+precision screen was10.15187018795802 times direct estimation; its naive
+shifted finite-grid branch changed the law. Both losing shortcuts stay closed.
+For that SAME archived barrier development case, the direct bounded range is
+D*(140-100), whereas the one-predicate/reciprocal scale is D*m. Under the
+explicit equal-source/equal-estimator-constant diagnostic assumption,
+the ratio is m/40=2.576221232204341. This normalization-only change cannot
+meet the20% improvement gate. It is not a measured ratio, a certified
+production m bound, a universal source-cost lower bound or a B4/B8 result.
+A truly cheaper preparation/predicate would need a new quantified complete
+cost premise; none is supplied. No sampler is emitted.
+
+Both candidate ledgers charge normalization setup, Q preparation/inverse,
+Gaussian/path stock work, arithmetic or predicate, every barrier observation,
+cleanup, estimator confidence/repetition, rotations/synthesis and readout.
+Their production cost/error fields remain null. Keep direct bounded-payoff
+estimation and the exact mathematical identity. No financial contract,
+shared progress/source or quantum-advantage claim is changed by this screen.

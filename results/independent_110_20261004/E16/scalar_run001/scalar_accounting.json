@@ -1,0 +1,665 @@
+{
+  "algebra_orders": [
+    0,
+    1,
+    2,
+    4
+  ],
+  "counts": {
+    "candidate_rows": 6,
+    "cap_factor_coefficients": 4,
+    "density_coefficient_identities": 2,
+    "moment_orders": 4,
+    "negative_controls": 8
+  },
+  "exact_majority_failure_upper": [
+    735009797275709869673,
+    81402749386839761113321
+  ],
+  "moment_bound": {
+    "lower_exact": [
+      108083970263366784708341998639808800625,
+      10384593717069655257060992658440192
+    ],
+    "upper_exact": [
+      864671762106934277666735989118470426875,
+      83076749736557242056487941267521536
+    ]
+  },
+  "negative_controls": [
+    {
+      "cap": 1024,
+      "epsilon_exact": [
+        1,
+        100
+      ],
+      "kind": "fixed_half_cap_fails",
+      "rejected": true,
+      "tail_bound": {
+        "lower_exact": [
+          16597935946656415038389696219166017,
+          1329227995784915872903807060280344576
+        ],
+        "upper_exact": [
+          8298967973328207519194848109583009,
+          664613997892457936451903530140172288
+        ]
+      }
+    },
+    {
+      "construction": "capped",
+      "diagnostic_radius_exact": [
+        25,
+        512
+      ],
+      "epsilon_exact": [
+        1,
+        100
+      ],
+      "kind": "coarse_grid_budget_fails",
+      "rejected": true
+    },
+    {
+      "construction": "quantile",
+      "diagnostic_radius_exact": [
+        25,
+        512
+      ],
+      "epsilon_exact": [
+        1,
+        100
+      ],
+      "kind": "coarse_grid_budget_fails",
+      "rejected": true
+    },
+    {
+      "construction": "weighted",
+      "diagnostic_radius_exact": [
+        5,
+        512
+      ],
+      "epsilon_exact": [
+        1,
+        100
+      ],
+      "kind": "coarse_grid_budget_fails",
+      "rejected": true
+    },
+    {
+      "cap": 2048,
+      "epsilon_exact": [
+        1,
+        1000
+      ],
+      "kind": "fixed_half_cap_fails",
+      "rejected": true,
+      "tail_bound": {
+        "lower_exact": [
+          259342749166506484974839003424469,
+          166153499473114484112975882535043072
+        ],
+        "upper_exact": [
+          2074741993332051879798712027395753,
+          1329227995784915872903807060280344576
+        ]
+      }
+    },
+    {
+      "construction": "capped",
+      "diagnostic_radius_exact": [
+        25,
+        512
+      ],
+      "epsilon_exact": [
+        1,
+        1000
+      ],
+      "kind": "coarse_grid_budget_fails",
+      "rejected": true
+    },
+    {
+      "construction": "quantile",
+      "diagnostic_radius_exact": [
+        25,
+        512
+      ],
+      "epsilon_exact": [
+        1,
+        1000
+      ],
+      "kind": "coarse_grid_budget_fails",
+      "rejected": true
+    },
+    {
+      "construction": "weighted",
+      "diagnostic_radius_exact": [
+        5,
+        512
+      ],
+      "epsilon_exact": [
+        1,
+        1000
+      ],
+      "kind": "coarse_grid_budget_fails",
+      "rejected": true
+    }
+  ],
+  "pi_interval": {
+    "lower_exact": [
+      1043973226625944089706719114415889435,
+      332306998946228968225951765070086144
+    ],
+    "upper_exact": [
+      32624163332060752803334972325496545,
+      10384593717069655257060992658440192
+    ]
+  },
+  "rows": [
+    {
+      "IQFT_H": 231,
+      "IQFT_controlled_phases": 2310,
+      "M": 2097152,
+      "approximate_loading_and_arithmetic_budget_pass_if_interfaces_met": true,
+      "centering_calls": 0,
+      "classical_controller_cost": null,
+      "coherent_preparation_per_call": null,
+      "complete_work": null,
+      "construction": "capped",
+      "continuous_second_moment_upper": {
+        "lower_exact": [
+          108083970263366784708341998639808800625,
+          10384593717069655257060992658440192
+        ],
+        "upper_exact": [
+          864671762106934277666735989118470426875,
+          83076749736557242056487941267521536
+        ]
+      },
+      "each_reflection_calls": 23068661,
+      "epsilon_exact": [
+        1,
+        100
+      ],
+      "estimator_including_readout_upper": {
+        "lower_exact": [
+          4285718399838217213419425500575907,
+          1329227995784915872903807060280344576
+        ],
+        "upper_exact": [
+          1071429599959554303354856375145001,
+          332306998946228968225951765070086144
+        ]
+      },
+      "exact_Gaussian_cells": 16777216,
+      "finite_coupling_upper": {
+        "lower_exact": [
+          15385986358060569360456646103421,
+          332306998946228968225951765070086144
+        ],
+        "upper_exact": [
+          61543945432242277441826584417781,
+          1329227995784915872903807060280344576
+        ]
+      },
+      "full_financial_error_certified": false,
+      "implemented_arithmetic_error": null,
+      "implemented_loader_TV": null,
+      "independent_shots": 11,
+      "measured_bits": 231,
+      "output_rotation_and_cleanup_per_call": null,
+      "payoff_and_likelihood_per_call": null,
+      "physical_time": null,
+      "quantile_calls": 0,
+      "readout_allowance_exact": [
+        1,
+        6400
+      ],
+      "required_arithmetic_error_exact": [
+        1,
+        6400
+      ],
+      "required_loader_TV_exact": [
+        1,
+        13107200
+      ],
+      "source_forward_calls": 23068672,
+      "source_inverse_calls": 23068661,
+      "status": "CONDITIONAL_LOADING_ARITHMETIC_SYNTHESIS",
+      "strict_complete_improvement": null,
+      "support_exact": [
+        2048,
+        1
+      ],
+      "tail_bias_upper": {
+        "lower_exact": [
+          259342749166506484974839003424469,
+          166153499473114484112975882535043072
+        ],
+        "upper_exact": [
+          2074741993332051879798712027395753,
+          1329227995784915872903807060280344576
+        ]
+      }
+    },
+    {
+      "approximate_loading_and_arithmetic_budget_pass_if_interfaces_met": true,
+      "centering_calls": null,
+      "coherent_preparation_per_call": null,
+      "comparison_calls": null,
+      "complete_work": null,
+      "construction": "quantile",
+      "continuous_second_moment_upper": {
+        "lower_exact": [
+          108083970263366784708341998639808800625,
+          10384593717069655257060992658440192
+        ],
+        "upper_exact": [
+          864671762106934277666735989118470426875,
+          83076749736557242056487941267521536
+        ]
+      },
+      "controller_work": null,
+      "epsilon_exact": [
+        1,
+        100
+      ],
+      "exact_Gaussian_cells": 16777216,
+      "finite_coupling_upper": {
+        "lower_exact": [
+          15385971163646817100647855251233,
+          332306998946228968225951765070086144
+        ],
+        "upper_exact": [
+          61543884654587268402591421005033,
+          1329227995784915872903807060280344576
+        ]
+      },
+      "finite_moment_with_required_interfaces_upper": {
+        "lower_exact": [
+          13834906974637407586451665244604969475959,
+          1329227995784915872903807060280344576
+        ],
+        "upper_exact": [
+          6917453487318703793225832622302484913353,
+          664613997892457936451903530140172288
+        ]
+      },
+      "full_financial_error_certified": false,
+      "implemented_arithmetic_error": null,
+      "implemented_loader_TV": null,
+      "output_rotation_and_cleanup_per_call": null,
+      "payoff_and_likelihood_per_call": null,
+      "physical_time": null,
+      "quantile_calls": null,
+      "readout": null,
+      "required_arithmetic_error_exact": [
+        1,
+        6400
+      ],
+      "required_loader_TV_exact": [
+        1,
+        3200000
+      ],
+      "rotation_calls": null,
+      "source_forward_calls": null,
+      "source_inverse_calls": null,
+      "status": "CONDITIONAL_FINITE_QUANTILE_PRIMITIVES",
+      "strict_complete_improvement": null,
+      "support_exact": [
+        500,
+        1
+      ],
+      "tail_bias_upper": {
+        "lower_exact": [
+          0,
+          1
+        ],
+        "upper_exact": [
+          0,
+          1
+        ]
+      },
+      "theorem_n": 104000
+    },
+    {
+      "IQFT_H": 176,
+      "IQFT_controlled_phases": 1320,
+      "M": 65536,
+      "approximate_loading_and_arithmetic_budget_pass_if_interfaces_met": true,
+      "centering_calls": 0,
+      "classical_controller_cost": null,
+      "coherent_preparation_per_call": null,
+      "complete_work": null,
+      "construction": "weighted",
+      "continuous_second_moment_upper": {
+        "lower_exact": [
+          10000,
+          1
+        ],
+        "upper_exact": [
+          10000,
+          1
+        ]
+      },
+      "each_reflection_calls": 720885,
+      "epsilon_exact": [
+        1,
+        100
+      ],
+      "estimator_including_readout_upper": {
+        "lower_exact": [
+          6579904224596009280109286971576803,
+          1329227995784915872903807060280344576
+        ],
+        "upper_exact": [
+          1644976056149002320027321742894251,
+          332306998946228968225951765070086144
+        ]
+      },
+      "exact_Gaussian_cells": 16777216,
+      "finite_coupling_upper": {
+        "lower_exact": [
+          1584563671124371529641624486395,
+          166153499473114484112975882535043072
+        ],
+        "upper_exact": [
+          396140917781092882410406121605,
+          41538374868278621028243970633760768
+        ]
+      },
+      "full_financial_error_certified": false,
+      "implemented_arithmetic_error": null,
+      "implemented_loader_TV": null,
+      "independent_shots": 11,
+      "measured_bits": 176,
+      "output_rotation_and_cleanup_per_call": null,
+      "payoff_and_likelihood_per_call": null,
+      "physical_time": null,
+      "quantile_calls": 0,
+      "readout_allowance_exact": [
+        1,
+        6400
+      ],
+      "required_arithmetic_error_exact": [
+        1,
+        6400
+      ],
+      "required_loader_TV_exact": [
+        1,
+        640000
+      ],
+      "source_forward_calls": 720896,
+      "source_inverse_calls": 720885,
+      "status": "CONDITIONAL_LOADING_ARITHMETIC_SYNTHESIS",
+      "strict_complete_improvement": null,
+      "support_exact": [
+        100,
+        1
+      ],
+      "tail_bias_upper": {
+        "lower_exact": [
+          0,
+          1
+        ],
+        "upper_exact": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "IQFT_H": 275,
+      "IQFT_controlled_phases": 3300,
+      "M": 33554432,
+      "approximate_loading_and_arithmetic_budget_pass_if_interfaces_met": true,
+      "centering_calls": 0,
+      "classical_controller_cost": null,
+      "coherent_preparation_per_call": null,
+      "complete_work": null,
+      "construction": "capped",
+      "continuous_second_moment_upper": {
+        "lower_exact": [
+          108083970263366784708341998639808800625,
+          10384593717069655257060992658440192
+        ],
+        "upper_exact": [
+          864671762106934277666735989118470426875,
+          83076749736557242056487941267521536
+        ]
+      },
+      "each_reflection_calls": 369098741,
+      "epsilon_exact": [
+        1,
+        1000
+      ],
+      "estimator_including_readout_upper": {
+        "lower_exact": [
+          33157611701504183281415475038081,
+          83076749736557242056487941267521536
+        ],
+        "upper_exact": [
+          530521787224066932502647600617489,
+          1329227995784915872903807060280344576
+        ]
+      },
+      "exact_Gaussian_cells": 16777216,
+      "finite_coupling_upper": {
+        "lower_exact": [
+          15386003595629481857946380950909,
+          332306998946228968225951765070086144
+        ],
+        "upper_exact": [
+          61544014382517927431785523811829,
+          1329227995784915872903807060280344576
+        ]
+      },
+      "full_financial_error_certified": false,
+      "implemented_arithmetic_error": null,
+      "implemented_loader_TV": null,
+      "independent_shots": 11,
+      "measured_bits": 275,
+      "output_rotation_and_cleanup_per_call": null,
+      "payoff_and_likelihood_per_call": null,
+      "physical_time": null,
+      "quantile_calls": 0,
+      "readout_allowance_exact": [
+        1,
+        64000
+      ],
+      "required_arithmetic_error_exact": [
+        1,
+        64000
+      ],
+      "required_loader_TV_exact": [
+        1,
+        262144000
+      ],
+      "source_forward_calls": 369098752,
+      "source_inverse_calls": 369098741,
+      "status": "CONDITIONAL_LOADING_ARITHMETIC_SYNTHESIS",
+      "strict_complete_improvement": null,
+      "support_exact": [
+        4096,
+        1
+      ],
+      "tail_bias_upper": {
+        "lower_exact": [
+          259342749166506484974839003424469,
+          1329227995784915872903807060280344576
+        ],
+        "upper_exact": [
+          129671374583253242487419501712235,
+          664613997892457936451903530140172288
+        ]
+      }
+    },
+    {
+      "approximate_loading_and_arithmetic_budget_pass_if_interfaces_met": true,
+      "centering_calls": null,
+      "coherent_preparation_per_call": null,
+      "comparison_calls": null,
+      "complete_work": null,
+      "construction": "quantile",
+      "continuous_second_moment_upper": {
+        "lower_exact": [
+          108083970263366784708341998639808800625,
+          10384593717069655257060992658440192
+        ],
+        "upper_exact": [
+          864671762106934277666735989118470426875,
+          83076749736557242056487941267521536
+        ]
+      },
+      "controller_work": null,
+      "epsilon_exact": [
+        1,
+        1000
+      ],
+      "exact_Gaussian_cells": 16777216,
+      "finite_coupling_upper": {
+        "lower_exact": [
+          15385971163646817100647855251233,
+          332306998946228968225951765070086144
+        ],
+        "upper_exact": [
+          61543884654587268402591421005033,
+          1329227995784915872903807060280344576
+        ]
+      },
+      "finite_moment_with_required_interfaces_upper": {
+        "lower_exact": [
+          13834775373489384571072629502839242679295,
+          1329227995784915872903807060280344576
+        ],
+        "upper_exact": [
+          6917387686744692285536314751419621515021,
+          664613997892457936451903530140172288
+        ]
+      },
+      "full_financial_error_certified": false,
+      "implemented_arithmetic_error": null,
+      "implemented_loader_TV": null,
+      "output_rotation_and_cleanup_per_call": null,
+      "payoff_and_likelihood_per_call": null,
+      "physical_time": null,
+      "quantile_calls": null,
+      "readout": null,
+      "required_arithmetic_error_exact": [
+        1,
+        64000
+      ],
+      "required_loader_TV_exact": [
+        1,
+        32000000
+      ],
+      "rotation_calls": null,
+      "source_forward_calls": null,
+      "source_inverse_calls": null,
+      "status": "CONDITIONAL_FINITE_QUANTILE_PRIMITIVES",
+      "strict_complete_improvement": null,
+      "support_exact": [
+        500,
+        1
+      ],
+      "tail_bias_upper": {
+        "lower_exact": [
+          0,
+          1
+        ],
+        "upper_exact": [
+          0,
+          1
+        ]
+      },
+      "theorem_n": 1040000
+    },
+    {
+      "IQFT_H": 220,
+      "IQFT_controlled_phases": 2090,
+      "M": 1048576,
+      "approximate_loading_and_arithmetic_budget_pass_if_interfaces_met": true,
+      "centering_calls": 0,
+      "classical_controller_cost": null,
+      "coherent_preparation_per_call": null,
+      "complete_work": null,
+      "construction": "weighted",
+      "continuous_second_moment_upper": {
+        "lower_exact": [
+          10000,
+          1
+        ],
+        "upper_exact": [
+          10000,
+          1
+        ]
+      },
+      "each_reflection_calls": 11534325,
+      "epsilon_exact": [
+        1,
+        1000
+      ],
+      "estimator_including_readout_upper": {
+        "lower_exact": [
+          52376820236958504099171739303885,
+          166153499473114484112975882535043072
+        ],
+        "upper_exact": [
+          419014561895668032793373914431281,
+          1329227995784915872903807060280344576
+        ]
+      },
+      "exact_Gaussian_cells": 16777216,
+      "finite_coupling_upper": {
+        "lower_exact": [
+          1584563671124371529641624486395,
+          166153499473114484112975882535043072
+        ],
+        "upper_exact": [
+          396140917781092882410406121605,
+          41538374868278621028243970633760768
+        ]
+      },
+      "full_financial_error_certified": false,
+      "implemented_arithmetic_error": null,
+      "implemented_loader_TV": null,
+      "independent_shots": 11,
+      "measured_bits": 220,
+      "output_rotation_and_cleanup_per_call": null,
+      "payoff_and_likelihood_per_call": null,
+      "physical_time": null,
+      "quantile_calls": 0,
+      "readout_allowance_exact": [
+        1,
+        64000
+      ],
+      "required_arithmetic_error_exact": [
+        1,
+        64000
+      ],
+      "required_loader_TV_exact": [
+        1,
+        6400000
+      ],
+      "source_forward_calls": 11534336,
+      "source_inverse_calls": 11534325,
+      "status": "CONDITIONAL_LOADING_ARITHMETIC_SYNTHESIS",
+      "strict_complete_improvement": null,
+      "support_exact": [
+        100,
+        1
+      ],
+      "tail_bias_upper": {
+        "lower_exact": [
+          0,
+          1
+        ],
+        "upper_exact": [
+          0,
+          1
+        ]
+      }
+    }
+  ],
+  "selected_repetitions": 11,
+  "weighted_support": 100
+}

@@ -1,0 +1,191 @@
+{
+  "E17_single_relevance_audit_complete": true,
+  "Heston_reason": "Parameter/maturity-specific affine moment-domain proof not performed; GBM theorem does not transfer",
+  "Heston_uncapped_second_moment": null,
+  "continuous_rows": [
+    {
+      "all_finite_positive_moments": true,
+      "case": "B4x12",
+      "finite_first_and_second_moments": true,
+      "infinite_variance_branch_relevant": false,
+      "knockout_support_symbolic": "[0, exp(-r*T)*(H-K)+]",
+      "law": "original continuous finite-parameter GBM",
+      "payoffs": [
+        "arithmetic-average positive part",
+        "fixed digital",
+        "monitored knockout"
+      ]
+    },
+    {
+      "all_finite_positive_moments": true,
+      "case": "B8x52",
+      "finite_first_and_second_moments": true,
+      "infinite_variance_branch_relevant": false,
+      "knockout_support_symbolic": "[0, exp(-r*T)*(H-K)+]",
+      "law": "original continuous finite-parameter GBM",
+      "payoffs": [
+        "arithmetic-average positive part",
+        "fixed digital",
+        "monitored knockout"
+      ]
+    },
+    {
+      "H_label_denotes_Heston": false,
+      "all_finite_positive_moments": true,
+      "case": "C4",
+      "compound_strikes": [
+        3,
+        6,
+        9
+      ],
+      "finite_first_and_second_moments": true,
+      "infinite_variance_branch_relevant": false,
+      "law": "original continuous GBM compound contract",
+      "model": {
+        "assets": 4,
+        "dates": 12,
+        "maturity": 1.0,
+        "name": "C4",
+        "rate": 0.03,
+        "rho": 0.2,
+        "sigma": 0.2,
+        "spot": 100.0,
+        "strike": 100.0
+      },
+      "proof": "Conditional Jensen plus finite GBM fixing moments"
+    },
+    {
+      "H_label_denotes_Heston": false,
+      "all_finite_positive_moments": true,
+      "case": "C8",
+      "compound_strikes": [
+        3,
+        6,
+        9
+      ],
+      "finite_first_and_second_moments": true,
+      "infinite_variance_branch_relevant": false,
+      "law": "original continuous GBM compound contract",
+      "model": {
+        "assets": 8,
+        "dates": 12,
+        "maturity": 1.0,
+        "name": "C8",
+        "rate": 0.03,
+        "rho": 0.2,
+        "sigma": 0.4,
+        "spot": 100.0,
+        "strike": 100.0
+      },
+      "proof": "Conditional Jensen plus finite GBM fixing moments"
+    },
+    {
+      "H_label_denotes_Heston": false,
+      "all_finite_positive_moments": true,
+      "case": "H4",
+      "compound_strikes": [
+        3,
+        6,
+        9
+      ],
+      "finite_first_and_second_moments": true,
+      "infinite_variance_branch_relevant": false,
+      "law": "original continuous GBM compound contract",
+      "model": {
+        "assets": 4,
+        "dates": 12,
+        "maturity": 3.0,
+        "name": "H4",
+        "rate": 0.03,
+        "rho": 0.7,
+        "sigma": 0.4,
+        "spot": 100.0,
+        "strike": 100.0
+      },
+      "proof": "Conditional Jensen plus finite GBM fixing moments"
+    },
+    {
+      "H_label_denotes_Heston": false,
+      "all_finite_positive_moments": true,
+      "case": "H8",
+      "compound_strikes": [
+        3,
+        6,
+        9
+      ],
+      "finite_first_and_second_moments": true,
+      "infinite_variance_branch_relevant": false,
+      "law": "original continuous GBM compound contract",
+      "model": {
+        "assets": 8,
+        "dates": 24,
+        "maturity": 3.0,
+        "name": "H8",
+        "rate": 0.03,
+        "rho": 0.2,
+        "sigma": 0.4,
+        "spot": 100.0,
+        "strike": 100.0
+      },
+      "proof": "Conditional Jensen plus finite GBM fixing moments"
+    }
+  ],
+  "financial_error_or_confidence_certified": false,
+  "likelihood_weighted_transform_second_moment": null,
+  "native_rows": [
+    {
+      "all_finite_positive_moments": true,
+      "case": "B4x12",
+      "certificate": "results/limitation_program_20261001/E03_support_run001/B4x12_certificate.json",
+      "continuous_law_bridge_claimed_by_this_audit": false,
+      "finite_first_and_second_moments": true,
+      "fraction_bits": 40,
+      "independent_audit": "results/limitation_program_20261001/E03_support_audit_run002/B4x12_audit.json",
+      "law": "actual finite-word native source",
+      "output": {
+        "Y": 5697
+      },
+      "proof": "Bounded total native output; all-input support certificate and independent audit",
+      "support_raw": [
+        0,
+        42680645928225
+      ],
+      "width": 72
+    },
+    {
+      "all_finite_positive_moments": true,
+      "case": "B8x52",
+      "certificate": "results/limitation_program_20261001/E03_support_run001/B8x52_certificate.json",
+      "continuous_law_bridge_claimed_by_this_audit": false,
+      "finite_first_and_second_moments": true,
+      "fraction_bits": 40,
+      "independent_audit": "results/limitation_program_20261001/E03_support_audit_run002/B8x52_audit.json",
+      "law": "actual finite-word native source",
+      "output": {
+        "Y": 46801
+      },
+      "proof": "Bounded total native output; all-input support certificate and independent audit",
+      "support_raw": [
+        0,
+        42680645956484
+      ],
+      "width": 72
+    }
+  ],
+  "new_Pareto_or_heavy_tail_contract": false,
+  "new_fixture_credit": 0,
+  "new_gate_replay_credit": 0,
+  "new_samples": 0,
+  "passed": true,
+  "proof": "docs/independent_110_20261004/E17/MOMENT_PROOF.md",
+  "quantum_advantage": false,
+  "schema": "e17-workload-moment-relevance-certificate-v1",
+  "signed_residual": {
+    "E10_E12_computation_performed": false,
+    "finite_moments_under_documented_support_premises": true,
+    "new_numerical_analytic_bound": null
+  },
+  "source_adoption": false,
+  "status": "AUDITED_DORMANT_FOR_NOMINATED_PROGRAM",
+  "timing_benchmark": false
+}

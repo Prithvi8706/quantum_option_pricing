@@ -1,0 +1,296 @@
+{
+  "artifact_dependencies": [
+    {
+      "from_module": "research.controlled_residual_feasibility.cost",
+      "kind": "Reads archived arithmetic block costs",
+      "source_fragments": [
+        "results/antithetic_feasibility/compiled_blocks_v1/blocks.json"
+      ],
+      "to_module": "research.antithetic_feasibility.compile_blocks"
+    },
+    {
+      "from_module": "research.controlled_residual_feasibility.cost",
+      "kind": "Reads inherited compound oracle costs",
+      "source_fragments": [
+        "results/compound_feasibility/cost_v3/oracles.json"
+      ],
+      "to_module": "research.compound_feasibility.compile"
+    },
+    {
+      "from_module": "research.advantage_frontier_20260923.barrier_oracle_depth",
+      "kind": "Scores against priority range-specialized f40 leaf library, without adopting its input ranges",
+      "source_fragments": [
+        "range_compile_v1",
+        "leaves_f40",
+        "controlled_priority_completion"
+      ],
+      "to_module": "research.controlled_priority_completion.ranged_run"
+    }
+  ],
+  "constructions": [
+    {
+      "contract_family": "HestonAsian",
+      "entry_module": "research.antithetic_feasibility.compile_blocks",
+      "evidence": "docs/antithetic_feasibility/RESULTS.md",
+      "extent": "Emitted arithmetic blocks, Gaussian loader and explicit schedule; no certified monolithic continuous-price circuit",
+      "id": "S1",
+      "independent_replication": false,
+      "name": "Antithetic quantum MLMC"
+    },
+    {
+      "contract_family": "GBMCompoundAsian",
+      "entry_module": "research.compound_feasibility.compile",
+      "evidence": "docs/compound_feasibility/RESULTS.md",
+      "extent": "Partial compiled path/payoff blocks and nested query schedule",
+      "id": "S2",
+      "independent_replication": false,
+      "name": "Quantum-inside-quantum compound Asian"
+    },
+    {
+      "contract_family": "GBMCompoundAsian",
+      "entry_module": "research.controlled_residual_feasibility.cost",
+      "evidence": "docs/controlled_residual_feasibility/RESULTS.md",
+      "extent": "Residual/control and moment evidence with inherited partial block costs; no complete source emission at this stage",
+      "id": "S3",
+      "independent_replication": false,
+      "name": "Controlled parity residual"
+    },
+    {
+      "contract_family": "GBMCompoundAsian",
+      "entry_module": "research.controlled_source_completion.run",
+      "evidence": "docs/controlled_source_completion/RESULTS.md",
+      "extent": "Hierarchical emitted complete financial sources; explicit estimator with outstanding financial/rotation terms disclosed",
+      "id": "S4",
+      "independent_replication": false,
+      "name": "Complete controlled compound source"
+    },
+    {
+      "contract_family": "GBMCompoundAsian",
+      "entry_module": "research.controlled_priority_completion.ranged_run",
+      "evidence": "docs/controlled_priority_completion/RESULTS.md",
+      "extent": "Range-specialized emitted sources, estimator changes and paid wave schedules; refinement of S4",
+      "id": "S5",
+      "independent_replication": false,
+      "name": "Priority completion and composed optimization"
+    },
+    {
+      "contract_family": "GBMKnockoutAsian",
+      "entry_module": "research.advantage_frontier_20260923.barrier_oracle_depth",
+      "evidence": "docs/research_investigation/2026-09-23/H1_FALSIFIER_RESULTS.md",
+      "extent": "Original reversible IR built and scored using inherited cheapest/median leaf costs; original stage was not emitted or scheduled",
+      "id": "S6",
+      "independent_replication": false,
+      "name": "Discretely monitored knock-out basket"
+    }
+  ],
+  "contract_families": [
+    {
+      "development_cases": [
+        "A1",
+        "A4",
+        "S4",
+        "B8"
+      ],
+      "financial_target": "Discretely monitored arithmetic Asian basket under correlated Heston dynamics",
+      "id": "HestonAsian",
+      "source": "docs/antithetic_feasibility/RESULTS.md"
+    },
+    {
+      "development_cases": [
+        "C4",
+        "C8",
+        "H4",
+        "H8"
+      ],
+      "financial_target": "Call on the conditional value of an arithmetic Asian-basket call, exercise tau=T/2 under correlated GBM",
+      "id": "GBMCompoundAsian",
+      "source": "docs/compound_feasibility/RESULTS.md",
+      "strikes": [
+        3,
+        6,
+        9
+      ]
+    },
+    {
+      "development_cases": [
+        "B4x12",
+        "B8x52"
+      ],
+      "financial_target": "Arithmetic Asian basket call knocked out when any contractual monitored basket is at least140, correlated GBM",
+      "id": "GBMKnockoutAsian",
+      "source": "docs/research_investigation/2026-09-23/H1_FALSIFIER_RESULTS.md"
+    }
+  ],
+  "correlated_assumptions": [
+    {
+      "id": "A_fixed_point",
+      "remaining": "Digital equality is not a continuous financial-law certificate",
+      "shared": "Finite signed arithmetic words, range-reduction/polynomial conventions and semantic oracle"
+    },
+    {
+      "id": "A_core_program",
+      "remaining": "No complete independently developed pricing compiler/interpreter in this bounded corpus",
+      "shared": "journal_sprint.reversible_fixed_point Program/gate conventions and dependent interpreters"
+    },
+    {
+      "id": "A_gaussians",
+      "remaining": "A direct Gaussian replacement changing the finite law requires separate bias/target proof and is excluded from positive same-target evidence",
+      "shared": "Gaussian loading/Box-Muller and correlated path representation across compound refinements and knock-out"
+    },
+    {
+      "id": "A_resource",
+      "remaining": "Logical costs and all-to-all schedules do not certify physical latency",
+      "shared": "Exact seven-T CCX convention and logical source gate/resource accounting"
+    },
+    {
+      "id": "A_schedule",
+      "remaining": "No global optimality/lower bound for all reversible storage or arithmetic implementations",
+      "shared": "SSA retention and paid wave/capped schedule framework"
+    },
+    {
+      "id": "A_estimator",
+      "remaining": "Source correctness does not imply compatible full estimator/delivery cost",
+      "shared": "Explicit estimator wrappers, normalization/confidence and inherited schedule assumptions"
+    },
+    {
+      "id": "A_classical",
+      "remaining": "Strongest tested comparator is not a proof of strongest applicable comparator",
+      "shared": "Reusable classical methods, controls and development cases"
+    },
+    {
+      "id": "A_hardware",
+      "remaining": "No independent complete hardware execution or physical speedup",
+      "shared": "Hypothetical logical clocks, factory/protection/memory/routing assumptions"
+    },
+    {
+      "id": "A_refinement",
+      "remaining": "Their outcomes cannot be treated as four independent replications",
+      "shared": "S2-S5 use the same compound Asian contract family and successive code/control refinements"
+    },
+    {
+      "id": "A_provenance",
+      "remaining": "This audit checks selected evidence metadata only, not complete historical hash closure or new circuit/backend correctness",
+      "shared": "Local Python ecosystem and existing archived tests/cost receipts"
+    }
+  ],
+  "existing_replacements": [
+    {
+      "correctness_receipt": "results/limitation_audit_20261001/lookup_v2/summary.json",
+      "correctness_source": "research/limitation_audit_20261001/test_lookup.py",
+      "cost_receipt": "results/limitation_audit_20261001/lookup_v2/summary.json",
+      "id": "R_lookup",
+      "independence": "Prefix-tree decomposition and complex-state/table oracle differ from equality scan; Program/primitives/interpreters remain shared",
+      "name": "Shared-prefix clean-XOR lookup",
+      "new_credit": 0,
+      "numerical_target": "Same72-bit/f40 table outputs, including32-row log and separately recorded all-address atan/cos/CDF checks, dirty XOR output and restored workspace",
+      "protocol": "results/limitation_audit_20261001/lookup_v2/protocol.json",
+      "same_target_claim": true,
+      "scope": "Exact table component and recorded full-source basis replays, not a new loader or financial-law bridge",
+      "source": "research/controlled_source_completion/exact_lookup.py",
+      "target_receipt_field": "cases[].target_sha256"
+    },
+    {
+      "correctness_receipt": "results/limitation_audit_20261001/multiplier_v2/summary.json",
+      "correctness_source": "research/limitation_audit_20261001/test_carry_save_multiplier.py",
+      "cost_receipt": "results/limitation_audit_20261001/multiplier_v2/summary.json",
+      "id": "R_multiply",
+      "independence": "Carry-save structure and independent signed-integer oracle; common Program and resource/macro assumptions persist",
+      "name": "Signed truncated carry-save multiplication",
+      "new_credit": 0,
+      "numerical_target": "Same signed72/f40 product-window floor and dirty-XOR clean interface",
+      "protocol": "results/limitation_audit_20261001/multiplier_v2/protocol.json",
+      "same_target_claim": true,
+      "scope": "Emitted alternative multiply and recorded capped source schedules; extra workspace prevents unconditional substitution",
+      "source": "research/controlled_source_completion/carry_save_multiplier.py",
+      "target_receipt_field": "cases[].source_target_sha256"
+    },
+    {
+      "correctness_receipt": "results/limitation_audit_20261001/constant_multiplier_v1/verification.json",
+      "correctness_source": "research/limitation_audit_20261001/test_constant_multiplier.py",
+      "cost_receipt": "results/limitation_audit_20261001/constant_multiplier_v1/summary.json",
+      "id": "R_ln2",
+      "independence": "Four alternative arithmetic structures and independent signed oracle/guard/cache checks; shared compiler and exact Toffoli cost convention",
+      "name": "Guarded ln2 signed-digit/carry-save constant multiplication",
+      "new_credit": 0,
+      "numerical_target": "Same72/f40 coefficient762123384786 product on source-proved low40-zero input domain",
+      "protocol": "results/limitation_audit_20261001/constant_multiplier_v1/protocol.json",
+      "same_target_claim": true,
+      "scope": "Exact guarded source calls only; general multiplier retained outside proved domain",
+      "source": "research/controlled_source_completion/constant_multiplier.py",
+      "target_receipt_field": "cases[].original_target_sha256"
+    },
+    {
+      "correctness_receipt": "results/limitation_audit_20261001/mcx_cleanup_v1/result.json",
+      "correctness_source": "research/limitation_audit_20261001/experiment_mcx_cleanup.py",
+      "cost_receipt": "results/limitation_audit_20261001/mcx_cleanup_v1/result.json",
+      "id": "R_mcx",
+      "independence": "Full Kraus-column/branch check is structurally different from a unitary basis replay, but remains a local numerical NumPy/Qiskit fragment check",
+      "name": "Measured cleanup of an existing five-control MCX fragment",
+      "new_credit": 0,
+      "numerical_target": "Same coherent five-control X channel on controls plus arbitrary target after corrected branches and cleaned workspace",
+      "protocol": null,
+      "same_target_claim": true,
+      "scope": "Dynamic channel candidate only, not integrated into reversible unitary Program; feedback/routing/hardware cost remains unresolved",
+      "source": "research/limitation_audit_20261001/experiment_mcx_cleanup.py",
+      "target_receipt_field": "real_fragment"
+    }
+  ],
+  "missing_independent_backends": [
+    {
+      "backend": "Full pricing source independently compiled and executed with the identical finite target",
+      "status": "UNRESOLVED_NOT_ESTABLISHED_IN_FROZEN_CORPUS"
+    },
+    {
+      "backend": "Independent financial-law and estimator-to-dollar end-to-end replication",
+      "status": "UNRESOLVED_NOT_ESTABLISHED_IN_FROZEN_CORPUS"
+    },
+    {
+      "backend": "Complete alternative Gaussian loader with proven same finite numerical target",
+      "status": "UNRESOLVED_NOT_ESTABLISHED_IN_FROZEN_CORPUS"
+    },
+    {
+      "backend": "Independent fault-tolerant hardware/software stack with complete latency",
+      "status": "UNRESOLVED_NOT_ESTABLISHED_IN_FROZEN_CORPUS"
+    }
+  ],
+  "new_backend_created": false,
+  "new_fixture_credit": 0,
+  "quantum_advantage": false,
+  "replacement_applicability": {
+    "R_ln2": {
+      "contract_family": "GBMKnockoutAsian",
+      "cost_transfer_to_other_constructions": false,
+      "demonstrated_full_source_targets": [
+        "B4x12",
+        "B8x52"
+      ],
+      "historical_construction_attachment": "Guarded later Stage A replacement only on actual source-proved low40-zero call sites"
+    },
+    "R_lookup": {
+      "contract_family": "GBMKnockoutAsian",
+      "cost_transfer_to_other_constructions": false,
+      "demonstrated_full_source_targets": [
+        "B4x12",
+        "B8x52"
+      ],
+      "historical_construction_attachment": "Later Stage A exact replacement evidence for the S6 family; shared lookup relevance to S4/S5 is not a demonstrated cost transfer"
+    },
+    "R_mcx": {
+      "contract_family": null,
+      "cost_transfer_to_other_constructions": false,
+      "demonstrated_full_source_targets": [],
+      "historical_construction_attachment": "Five-control fragment channel only, unintegrated into a pricing source"
+    },
+    "R_multiply": {
+      "contract_family": "GBMKnockoutAsian",
+      "cost_transfer_to_other_constructions": false,
+      "demonstrated_full_source_targets": [
+        "B4x12",
+        "B8x52"
+      ],
+      "historical_construction_attachment": "Later Stage A exact replacement evidence for the S6 family; shared multiplier relevance is not a six-construction replay"
+    }
+  },
+  "schema": "c12-evidence-family-map-v1",
+  "source_adoption": false
+}

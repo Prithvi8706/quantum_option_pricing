@@ -1,0 +1,24 @@
+{
+  "status": "ORIGINAL_SEAL_FAILED_WINDOWS_NEWLINE_ACCOUNTING",
+  "scope": "Post-run inventory only; scientific diagnostics completed once",
+  "original_manifest": "results/independent_110_20261004/F30/run002/manifest.json",
+  "original_manifest_sha256": "1517f89a97f724bf01c0597985027827faf1f3505f6d52fc32d83d55071f7a6b",
+  "original_summary_sha256": "d6a08003f28cd74d33f70d6e81c4d47c3d1fbfde95205693586887b8e36f139a",
+  "failed_check": "Every original manifest entry must match its actual raw bytes/hash",
+  "mismatches": [
+    {
+      "path": "SUCCESS.json",
+      "recorded_bytes": 121,
+      "actual_bytes": 125,
+      "recorded_sha256": "0c7bf109403dda115ba0c4eb32e4939775b73019387828726c1f360eff4ff593",
+      "actual_sha256": "0fff776683c987a25162b3e43ec6a8c4f0540ae124472d4f48bb5dcb941bdb18"
+    }
+  ],
+  "other_original_entries": "Seven entries match; the original manifest itself is retained and separately hashed",
+  "original_output_files_including_manifest": 9,
+  "original_output_bytes_including_manifest": 72667,
+  "preservation": "All run002 files and frozen inputs remain read-only",
+  "scientific_invocations": 1,
+  "scientific_reruns": 0,
+  "recovery": "Fresh seal_recovery_run001 metadata-only exact-byte inventory"
+}

@@ -1,0 +1,1540 @@
+{
+  "construction_ancestry": [
+    {
+      "contract_family": "HestonAsian",
+      "id": "S1",
+      "mapped_reference_modules": [
+        "research.antithetic_feasibility.compile_blocks",
+        "research.antithetic_feasibility.reversible",
+        "research.journal_sprint.reversible_fixed_point",
+        "research.stronger_arithmetic.circuits"
+      ],
+      "scope": "Current reference AST plus explicitly bound historical cost links; no old-code provenance replacement"
+    },
+    {
+      "contract_family": "GBMCompoundAsian",
+      "id": "S2",
+      "mapped_reference_modules": [
+        "research.antithetic_feasibility.reversible",
+        "research.compound_feasibility.compile",
+        "research.compound_feasibility.model",
+        "research.compound_feasibility.reversible",
+        "research.journal_sprint.reversible_fixed_point",
+        "research.stronger_arithmetic.circuits"
+      ],
+      "scope": "Current reference AST plus explicitly bound historical cost links; no old-code provenance replacement"
+    },
+    {
+      "contract_family": "GBMCompoundAsian",
+      "id": "S3",
+      "mapped_reference_modules": [
+        "research.antithetic_feasibility.compile_blocks",
+        "research.antithetic_feasibility.estimator",
+        "research.antithetic_feasibility.reversible",
+        "research.compound_feasibility.compile",
+        "research.compound_feasibility.model",
+        "research.compound_feasibility.reversible",
+        "research.controlled_residual_feasibility.bounds",
+        "research.controlled_residual_feasibility.cost",
+        "research.journal_sprint.reversible_fixed_point",
+        "research.stronger_arithmetic.circuits"
+      ],
+      "scope": "Current reference AST plus explicitly bound historical cost links; no old-code provenance replacement"
+    },
+    {
+      "contract_family": "GBMCompoundAsian",
+      "id": "S4",
+      "mapped_reference_modules": [
+        "research.antithetic_feasibility.reversible",
+        "research.compound_feasibility.model",
+        "research.controlled_source_completion.compiler",
+        "research.controlled_source_completion.exact_lookup",
+        "research.controlled_source_completion.finance",
+        "research.controlled_source_completion.ir",
+        "research.controlled_source_completion.primitives",
+        "research.controlled_source_completion.run",
+        "research.journal_sprint.reversible_fixed_point",
+        "research.stronger_arithmetic.circuits"
+      ],
+      "scope": "Current reference AST plus explicitly bound historical cost links; no old-code provenance replacement"
+    },
+    {
+      "contract_family": "GBMCompoundAsian",
+      "id": "S5",
+      "mapped_reference_modules": [
+        "research.antithetic_feasibility.reversible",
+        "research.compound_feasibility.model",
+        "research.controlled_priority_completion.ranged_multiplier",
+        "research.controlled_priority_completion.ranged_run",
+        "research.controlled_source_completion.compiler",
+        "research.controlled_source_completion.exact_lookup",
+        "research.controlled_source_completion.finance",
+        "research.controlled_source_completion.ir",
+        "research.controlled_source_completion.primitives",
+        "research.controlled_source_completion.run",
+        "research.journal_sprint.reversible_fixed_point",
+        "research.stronger_arithmetic.circuits"
+      ],
+      "scope": "Current reference AST plus explicitly bound historical cost links; no old-code provenance replacement"
+    },
+    {
+      "contract_family": "GBMKnockoutAsian",
+      "id": "S6",
+      "mapped_reference_modules": [
+        "research.advantage_frontier_20260923.barrier_oracle_depth",
+        "research.antithetic_feasibility.reversible",
+        "research.compound_feasibility.model",
+        "research.controlled_priority_completion.ranged_multiplier",
+        "research.controlled_priority_completion.ranged_run",
+        "research.controlled_source_completion.compiler",
+        "research.controlled_source_completion.exact_lookup",
+        "research.controlled_source_completion.finance",
+        "research.controlled_source_completion.ir",
+        "research.controlled_source_completion.primitives",
+        "research.controlled_source_completion.run",
+        "research.journal_sprint.reversible_fixed_point",
+        "research.stronger_arithmetic.circuits"
+      ],
+      "scope": "Current reference AST plus explicitly bound historical cost links; no old-code provenance replacement"
+    }
+  ],
+  "edges": [
+    {
+      "from": "research.advantage_frontier_20260923.barrier_oracle_depth",
+      "kind": "AST_import",
+      "line": 27,
+      "source": "research/advantage_frontier_20260923/barrier_oracle_depth.py",
+      "to": "research.controlled_source_completion.ir"
+    },
+    {
+      "from": "research.advantage_frontier_20260923.barrier_oracle_depth",
+      "kind": "AST_import",
+      "line": 28,
+      "source": "research/advantage_frontier_20260923/barrier_oracle_depth.py",
+      "to": "research.controlled_source_completion.finance"
+    },
+    {
+      "from": "research.antithetic_feasibility.compile_blocks",
+      "kind": "AST_import",
+      "line": 10,
+      "source": "research/antithetic_feasibility/compile_blocks.py",
+      "to": "research.antithetic_feasibility.reversible"
+    },
+    {
+      "from": "research.antithetic_feasibility.reversible",
+      "kind": "AST_import",
+      "line": 3,
+      "source": "research/antithetic_feasibility/reversible.py",
+      "to": "research.journal_sprint.reversible_fixed_point"
+    },
+    {
+      "from": "research.antithetic_feasibility.reversible",
+      "kind": "AST_import",
+      "line": 6,
+      "source": "research/antithetic_feasibility/reversible.py",
+      "to": "research.stronger_arithmetic.circuits"
+    },
+    {
+      "from": "research.compound_feasibility.compile",
+      "kind": "AST_import",
+      "line": 8,
+      "source": "research/compound_feasibility/compile.py",
+      "to": "research.compound_feasibility.model"
+    },
+    {
+      "from": "research.compound_feasibility.compile",
+      "kind": "AST_import",
+      "line": 9,
+      "source": "research/compound_feasibility/compile.py",
+      "to": "research.compound_feasibility.reversible"
+    },
+    {
+      "from": "research.compound_feasibility.compile",
+      "kind": "AST_import",
+      "line": 10,
+      "source": "research/compound_feasibility/compile.py",
+      "to": "research.antithetic_feasibility.reversible"
+    },
+    {
+      "from": "research.compound_feasibility.reversible",
+      "kind": "AST_import",
+      "line": 3,
+      "source": "research/compound_feasibility/reversible.py",
+      "to": "research.journal_sprint.reversible_fixed_point"
+    },
+    {
+      "from": "research.compound_feasibility.reversible",
+      "kind": "AST_import",
+      "line": 4,
+      "source": "research/compound_feasibility/reversible.py",
+      "to": "research.antithetic_feasibility.reversible"
+    },
+    {
+      "from": "research.controlled_completion_followup.test_truncated_multiplier",
+      "kind": "AST_import",
+      "line": 7,
+      "source": "research/controlled_completion_followup/test_truncated_multiplier.py",
+      "to": "research.controlled_completion_followup.truncated_multiplier"
+    },
+    {
+      "from": "research.controlled_completion_followup.test_truncated_multiplier",
+      "kind": "AST_import",
+      "line": 8,
+      "source": "research/controlled_completion_followup/test_truncated_multiplier.py",
+      "to": "research.controlled_source_completion.primitives"
+    },
+    {
+      "from": "research.controlled_completion_followup.truncated_multiplier",
+      "kind": "AST_import",
+      "line": 15,
+      "source": "research/controlled_completion_followup/truncated_multiplier.py",
+      "to": "research.journal_sprint.reversible_fixed_point"
+    },
+    {
+      "from": "research.controlled_completion_followup.truncated_multiplier",
+      "kind": "AST_import",
+      "line": 21,
+      "source": "research/controlled_completion_followup/truncated_multiplier.py",
+      "to": "research.controlled_source_completion.primitives"
+    },
+    {
+      "from": "research.controlled_priority_completion.ranged_multiplier",
+      "kind": "AST_import",
+      "line": 9,
+      "source": "research/controlled_priority_completion/ranged_multiplier.py",
+      "to": "research.journal_sprint.reversible_fixed_point"
+    },
+    {
+      "from": "research.controlled_priority_completion.ranged_multiplier",
+      "kind": "AST_import",
+      "line": 10,
+      "source": "research/controlled_priority_completion/ranged_multiplier.py",
+      "to": "research.controlled_source_completion.primitives"
+    },
+    {
+      "from": "research.controlled_priority_completion.ranged_run",
+      "kind": "AST_import",
+      "line": 8,
+      "source": "research/controlled_priority_completion/ranged_run.py",
+      "to": "research.compound_feasibility.model"
+    },
+    {
+      "from": "research.controlled_priority_completion.ranged_run",
+      "kind": "AST_import",
+      "line": 11,
+      "source": "research/controlled_priority_completion/ranged_run.py",
+      "to": "research.controlled_priority_completion.ranged_multiplier"
+    },
+    {
+      "from": "research.controlled_priority_completion.ranged_run",
+      "kind": "AST_import",
+      "line": 12,
+      "source": "research/controlled_priority_completion/ranged_run.py",
+      "to": "research.controlled_source_completion.compiler"
+    },
+    {
+      "from": "research.controlled_priority_completion.ranged_run",
+      "kind": "AST_import",
+      "line": 13,
+      "source": "research/controlled_priority_completion/ranged_run.py",
+      "to": "research.controlled_source_completion.ir"
+    },
+    {
+      "from": "research.controlled_priority_completion.ranged_run",
+      "kind": "AST_import",
+      "line": 14,
+      "source": "research/controlled_priority_completion/ranged_run.py",
+      "to": "research.controlled_source_completion.run"
+    },
+    {
+      "from": "research.controlled_residual_feasibility.bounds",
+      "kind": "AST_import",
+      "line": 8,
+      "source": "research/controlled_residual_feasibility/bounds.py",
+      "to": "research.compound_feasibility.model"
+    },
+    {
+      "from": "research.controlled_residual_feasibility.cost",
+      "kind": "AST_import",
+      "line": 6,
+      "source": "research/controlled_residual_feasibility/cost.py",
+      "to": "research.compound_feasibility.model"
+    },
+    {
+      "from": "research.controlled_residual_feasibility.cost",
+      "kind": "AST_import",
+      "line": 7,
+      "source": "research/controlled_residual_feasibility/cost.py",
+      "to": "research.antithetic_feasibility.estimator"
+    },
+    {
+      "from": "research.controlled_residual_feasibility.cost",
+      "kind": "AST_import",
+      "line": 8,
+      "source": "research/controlled_residual_feasibility/cost.py",
+      "to": "research.controlled_residual_feasibility.bounds"
+    },
+    {
+      "from": "research.controlled_source_completion.carry_save_multiplier",
+      "kind": "AST_import",
+      "line": 7,
+      "source": "research/controlled_source_completion/carry_save_multiplier.py",
+      "to": "research.journal_sprint.reversible_fixed_point"
+    },
+    {
+      "from": "research.controlled_source_completion.compiler",
+      "kind": "AST_import",
+      "line": 10,
+      "source": "research/controlled_source_completion/compiler.py",
+      "to": "research.controlled_source_completion.primitives"
+    },
+    {
+      "from": "research.controlled_source_completion.compiler",
+      "kind": "AST_import",
+      "line": 106,
+      "source": "research/controlled_source_completion/compiler.py",
+      "to": "research.controlled_source_completion.ir"
+    },
+    {
+      "from": "research.controlled_source_completion.constant_multiplier",
+      "kind": "AST_import",
+      "line": 8,
+      "source": "research/controlled_source_completion/constant_multiplier.py",
+      "to": "research.journal_sprint.reversible_fixed_point"
+    },
+    {
+      "from": "research.controlled_source_completion.finance",
+      "kind": "AST_import",
+      "line": 7,
+      "source": "research/controlled_source_completion/finance.py",
+      "to": "research.controlled_source_completion.ir"
+    },
+    {
+      "from": "research.controlled_source_completion.finance",
+      "kind": "AST_import",
+      "line": 8,
+      "source": "research/controlled_source_completion/finance.py",
+      "to": "research.compound_feasibility.model"
+    },
+    {
+      "from": "research.controlled_source_completion.primitives",
+      "kind": "AST_import",
+      "line": 8,
+      "source": "research/controlled_source_completion/primitives.py",
+      "to": "research.journal_sprint.reversible_fixed_point"
+    },
+    {
+      "from": "research.controlled_source_completion.primitives",
+      "kind": "AST_import",
+      "line": 10,
+      "source": "research/controlled_source_completion/primitives.py",
+      "to": "research.antithetic_feasibility.reversible"
+    },
+    {
+      "from": "research.controlled_source_completion.primitives",
+      "kind": "AST_import",
+      "line": 11,
+      "source": "research/controlled_source_completion/primitives.py",
+      "to": "research.controlled_source_completion.exact_lookup"
+    },
+    {
+      "from": "research.controlled_source_completion.run",
+      "kind": "AST_import",
+      "line": 8,
+      "source": "research/controlled_source_completion/run.py",
+      "to": "research.compound_feasibility.model"
+    },
+    {
+      "from": "research.controlled_source_completion.run",
+      "kind": "AST_import",
+      "line": 9,
+      "source": "research/controlled_source_completion/run.py",
+      "to": "research.controlled_source_completion.finance"
+    },
+    {
+      "from": "research.controlled_source_completion.run",
+      "kind": "AST_import",
+      "line": 10,
+      "source": "research/controlled_source_completion/run.py",
+      "to": "research.controlled_source_completion.ir"
+    },
+    {
+      "from": "research.controlled_source_completion.run",
+      "kind": "AST_import",
+      "line": 11,
+      "source": "research/controlled_source_completion/run.py",
+      "to": "research.controlled_source_completion.compiler"
+    },
+    {
+      "from": "research.controlled_source_completion.run",
+      "kind": "AST_import",
+      "line": 12,
+      "source": "research/controlled_source_completion/run.py",
+      "to": "research.controlled_source_completion.primitives"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_constant_multiplier",
+      "kind": "AST_import",
+      "line": 14,
+      "source": "research/limitation_audit_20261001/experiment_constant_multiplier.py",
+      "to": "research.controlled_source_completion.compiler"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_constant_multiplier",
+      "kind": "AST_import",
+      "line": 15,
+      "source": "research/limitation_audit_20261001/experiment_constant_multiplier.py",
+      "to": "research.controlled_source_completion.constant_multiplier"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_constant_multiplier",
+      "kind": "AST_import",
+      "line": 18,
+      "source": "research/limitation_audit_20261001/experiment_constant_multiplier.py",
+      "to": "research.controlled_source_completion.ir"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_constant_multiplier",
+      "kind": "AST_import",
+      "line": 19,
+      "source": "research/limitation_audit_20261001/experiment_constant_multiplier.py",
+      "to": "research.controlled_source_completion.primitives"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_constant_multiplier",
+      "kind": "AST_import",
+      "line": 20,
+      "source": "research/limitation_audit_20261001/experiment_constant_multiplier.py",
+      "to": "research.limitation_audit_20261001.experiment_lookup"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_constant_multiplier",
+      "kind": "AST_import",
+      "line": 91,
+      "source": "research/limitation_audit_20261001/experiment_constant_multiplier.py",
+      "to": "research.controlled_source_completion.primitives"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_lookup",
+      "kind": "AST_import",
+      "line": 18,
+      "source": "research/limitation_audit_20261001/experiment_lookup.py",
+      "to": "research.controlled_source_completion.compiler"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_lookup",
+      "kind": "AST_import",
+      "line": 19,
+      "source": "research/limitation_audit_20261001/experiment_lookup.py",
+      "to": "research.controlled_source_completion.ir"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_lookup",
+      "kind": "AST_import",
+      "line": 20,
+      "source": "research/limitation_audit_20261001/experiment_lookup.py",
+      "to": "research.controlled_source_completion.primitives"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_mcx_cleanup",
+      "kind": "AST_import",
+      "line": 17,
+      "source": "research/limitation_audit_20261001/experiment_mcx_cleanup.py",
+      "to": "research.controlled_source_completion.primitives"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_mcx_cleanup",
+      "kind": "AST_import",
+      "line": 18,
+      "source": "research/limitation_audit_20261001/experiment_mcx_cleanup.py",
+      "to": "research.journal_sprint.reversible_fixed_point"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_multiplier",
+      "kind": "AST_import",
+      "line": 10,
+      "source": "research/limitation_audit_20261001/experiment_multiplier.py",
+      "to": "research.controlled_source_completion.carry_save_multiplier"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_multiplier",
+      "kind": "AST_import",
+      "line": 12,
+      "source": "research/limitation_audit_20261001/experiment_multiplier.py",
+      "to": "research.controlled_source_completion.compiler"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_multiplier",
+      "kind": "AST_import",
+      "line": 13,
+      "source": "research/limitation_audit_20261001/experiment_multiplier.py",
+      "to": "research.controlled_source_completion.ir"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_multiplier",
+      "kind": "AST_import",
+      "line": 14,
+      "source": "research/limitation_audit_20261001/experiment_multiplier.py",
+      "to": "research.controlled_source_completion.primitives"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_multiplier",
+      "kind": "AST_import",
+      "line": 16,
+      "source": "research/limitation_audit_20261001/experiment_multiplier.py",
+      "to": "research.limitation_audit_20261001.experiment_lookup"
+    },
+    {
+      "from": "research.limitation_audit_20261001.test_carry_save_multiplier",
+      "kind": "AST_import",
+      "line": 7,
+      "source": "research/limitation_audit_20261001/test_carry_save_multiplier.py",
+      "to": "research.controlled_source_completion.carry_save_multiplier"
+    },
+    {
+      "from": "research.limitation_audit_20261001.test_carry_save_multiplier",
+      "kind": "AST_import",
+      "line": 8,
+      "source": "research/limitation_audit_20261001/test_carry_save_multiplier.py",
+      "to": "research.controlled_completion_followup.truncated_multiplier"
+    },
+    {
+      "from": "research.limitation_audit_20261001.test_carry_save_multiplier",
+      "kind": "AST_import",
+      "line": 11,
+      "source": "research/limitation_audit_20261001/test_carry_save_multiplier.py",
+      "to": "research.controlled_completion_followup.test_truncated_multiplier"
+    },
+    {
+      "from": "research.limitation_audit_20261001.test_carry_save_multiplier",
+      "kind": "AST_import",
+      "line": 12,
+      "source": "research/limitation_audit_20261001/test_carry_save_multiplier.py",
+      "to": "research.controlled_source_completion.primitives"
+    },
+    {
+      "from": "research.limitation_audit_20261001.test_constant_multiplier",
+      "kind": "AST_import",
+      "line": 8,
+      "source": "research/limitation_audit_20261001/test_constant_multiplier.py",
+      "to": "research.controlled_source_completion.constant_multiplier"
+    },
+    {
+      "from": "research.limitation_audit_20261001.test_constant_multiplier",
+      "kind": "AST_import",
+      "line": 11,
+      "source": "research/limitation_audit_20261001/test_constant_multiplier.py",
+      "to": "research.controlled_source_completion.primitives"
+    },
+    {
+      "from": "research.limitation_audit_20261001.test_constant_multiplier",
+      "kind": "AST_import",
+      "line": 12,
+      "source": "research/limitation_audit_20261001/test_constant_multiplier.py",
+      "to": "research.controlled_source_completion.compiler"
+    },
+    {
+      "from": "research.limitation_audit_20261001.test_constant_multiplier",
+      "kind": "AST_import",
+      "line": 13,
+      "source": "research/limitation_audit_20261001/test_constant_multiplier.py",
+      "to": "research.controlled_source_completion.ir"
+    },
+    {
+      "from": "research.limitation_audit_20261001.test_constant_multiplier",
+      "kind": "AST_import",
+      "line": 14,
+      "source": "research/limitation_audit_20261001/test_constant_multiplier.py",
+      "to": "research.limitation_audit_20261001.experiment_constant_multiplier"
+    },
+    {
+      "from": "research.limitation_audit_20261001.test_lookup",
+      "kind": "AST_import",
+      "line": 9,
+      "source": "research/limitation_audit_20261001/test_lookup.py",
+      "to": "research.controlled_source_completion.compiler"
+    },
+    {
+      "from": "research.limitation_audit_20261001.test_lookup",
+      "kind": "AST_import",
+      "line": 10,
+      "source": "research/limitation_audit_20261001/test_lookup.py",
+      "to": "research.controlled_source_completion.exact_lookup"
+    },
+    {
+      "from": "research.limitation_audit_20261001.test_lookup",
+      "kind": "AST_import",
+      "line": 11,
+      "source": "research/limitation_audit_20261001/test_lookup.py",
+      "to": "research.controlled_source_completion.ir"
+    },
+    {
+      "from": "research.limitation_audit_20261001.test_lookup",
+      "kind": "AST_import",
+      "line": 12,
+      "source": "research/limitation_audit_20261001/test_lookup.py",
+      "to": "research.controlled_source_completion.primitives"
+    },
+    {
+      "from": "research.limitation_audit_20261001.test_lookup",
+      "kind": "AST_import",
+      "line": 15,
+      "source": "research/limitation_audit_20261001/test_lookup.py",
+      "to": "research.journal_sprint.reversible_fixed_point"
+    },
+    {
+      "from": "research.stronger_arithmetic.circuits",
+      "kind": "AST_import",
+      "line": 10,
+      "source": "research/stronger_arithmetic/circuits.py",
+      "to": "research.journal_sprint.reversible_fixed_point"
+    },
+    {
+      "from": "research.controlled_residual_feasibility.cost",
+      "kind": "archived_cost_dependency",
+      "source": "research/controlled_residual_feasibility/cost.py",
+      "source_fragments": [
+        "results/antithetic_feasibility/compiled_blocks_v1/blocks.json"
+      ],
+      "to": "research.antithetic_feasibility.compile_blocks"
+    },
+    {
+      "from": "research.controlled_residual_feasibility.cost",
+      "kind": "archived_cost_dependency",
+      "source": "research/controlled_residual_feasibility/cost.py",
+      "source_fragments": [
+        "results/compound_feasibility/cost_v3/oracles.json"
+      ],
+      "to": "research.compound_feasibility.compile"
+    },
+    {
+      "from": "research.advantage_frontier_20260923.barrier_oracle_depth",
+      "kind": "archived_cost_dependency",
+      "source": "research/advantage_frontier_20260923/barrier_oracle_depth.py",
+      "source_fragments": [
+        "range_compile_v1",
+        "leaves_f40",
+        "controlled_priority_completion"
+      ],
+      "to": "research.controlled_priority_completion.ranged_run"
+    }
+  ],
+  "external_or_unmapped_imports": [
+    {
+      "from": "research.advantage_frontier_20260923.barrier_oracle_depth",
+      "import": "glob",
+      "line": 18,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.advantage_frontier_20260923.barrier_oracle_depth",
+      "import": "json",
+      "line": 19,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.advantage_frontier_20260923.barrier_oracle_depth",
+      "import": "math",
+      "line": 20,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.advantage_frontier_20260923.barrier_oracle_depth",
+      "import": "os",
+      "line": 21,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.advantage_frontier_20260923.barrier_oracle_depth",
+      "import": "statistics",
+      "line": 22,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.advantage_frontier_20260923.barrier_oracle_depth",
+      "import": "sys",
+      "line": 23,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.antithetic_feasibility.compile_blocks",
+      "import": "argparse",
+      "line": 2,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.antithetic_feasibility.compile_blocks",
+      "import": "gc",
+      "line": 3,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.antithetic_feasibility.compile_blocks",
+      "import": "hashlib",
+      "line": 4,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.antithetic_feasibility.compile_blocks",
+      "import": "json",
+      "line": 5,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.antithetic_feasibility.compile_blocks",
+      "import": "pathlib",
+      "line": 6,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.antithetic_feasibility.compile_blocks",
+      "import": "time",
+      "line": 7,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.antithetic_feasibility.compile_blocks",
+      "import": "numpy",
+      "line": 8,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.antithetic_feasibility.compile_blocks",
+      "import": "scipy.special",
+      "line": 9,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.antithetic_feasibility.compile_blocks",
+      "import": "qiskit",
+      "line": 14,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.antithetic_feasibility.compile_blocks",
+      "import": "qiskit.circuit.library",
+      "line": 15,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.antithetic_feasibility.estimator",
+      "import": "math",
+      "line": 7,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.antithetic_feasibility.estimator",
+      "import": "numpy",
+      "line": 8,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.antithetic_feasibility.estimator",
+      "import": "scipy.stats",
+      "line": 9,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.antithetic_feasibility.reversible",
+      "import": "math",
+      "line": 2,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.compound_feasibility.compile",
+      "import": "argparse",
+      "line": 2,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.compound_feasibility.compile",
+      "import": "hashlib",
+      "line": 3,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.compound_feasibility.compile",
+      "import": "json",
+      "line": 4,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.compound_feasibility.compile",
+      "import": "math",
+      "line": 5,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.compound_feasibility.compile",
+      "import": "pathlib",
+      "line": 6,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.compound_feasibility.compile",
+      "import": "time",
+      "line": 7,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.compound_feasibility.model",
+      "import": "dataclasses",
+      "line": 2,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.compound_feasibility.model",
+      "import": "math",
+      "line": 3,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.compound_feasibility.model",
+      "import": "numpy",
+      "line": 4,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.compound_feasibility.model",
+      "import": "numba",
+      "line": 5,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.compound_feasibility.model",
+      "import": "scipy.special",
+      "line": 6,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.compound_feasibility.model",
+      "import": "scipy.stats",
+      "line": 7,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.compound_feasibility.model",
+      "import": "research.antithetic_feasibility.classical",
+      "line": 8,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.compound_feasibility.reversible",
+      "import": "math",
+      "line": 2,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_completion_followup.test_truncated_multiplier",
+      "import": "random",
+      "line": 3,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_completion_followup.test_truncated_multiplier",
+      "import": "pytest",
+      "line": 5,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_completion_followup.truncated_multiplier",
+      "import": "hashlib",
+      "line": 9,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_completion_followup.truncated_multiplier",
+      "import": "json",
+      "line": 10,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_completion_followup.truncated_multiplier",
+      "import": "shutil",
+      "line": 11,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_completion_followup.truncated_multiplier",
+      "import": "numpy",
+      "line": 13,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_priority_completion.ranged_multiplier",
+      "import": "hashlib",
+      "line": 3,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_priority_completion.ranged_multiplier",
+      "import": "json",
+      "line": 4,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_priority_completion.ranged_multiplier",
+      "import": "shutil",
+      "line": 5,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_priority_completion.ranged_multiplier",
+      "import": "numpy",
+      "line": 7,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_priority_completion.ranged_multiplier",
+      "import": "research.controlled_priority_completion.range_audit",
+      "line": 65,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_priority_completion.ranged_run",
+      "import": "hashlib",
+      "line": 3,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_priority_completion.ranged_run",
+      "import": "json",
+      "line": 4,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_priority_completion.ranged_run",
+      "import": "pathlib",
+      "line": 5,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_priority_completion.ranged_run",
+      "import": "time",
+      "line": 6,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_priority_completion.ranged_run",
+      "import": "research.controlled_priority_completion.parallel_source",
+      "line": 9,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_priority_completion.ranged_run",
+      "import": "research.controlled_priority_completion.range_audit",
+      "line": 10,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_residual_feasibility.bounds",
+      "import": "math",
+      "line": 6,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_residual_feasibility.bounds",
+      "import": "numpy",
+      "line": 7,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_residual_feasibility.cost",
+      "import": "argparse",
+      "line": 2,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_residual_feasibility.cost",
+      "import": "json",
+      "line": 3,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_residual_feasibility.cost",
+      "import": "math",
+      "line": 4,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_residual_feasibility.cost",
+      "import": "pathlib",
+      "line": 5,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_source_completion.compiler",
+      "import": "json",
+      "line": 6,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_source_completion.compiler",
+      "import": "math",
+      "line": 7,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_source_completion.compiler",
+      "import": "collections",
+      "line": 8,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_source_completion.compiler",
+      "import": "pathlib",
+      "line": 9,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_source_completion.compiler",
+      "import": "numpy",
+      "line": 11,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_source_completion.compiler",
+      "import": "numba",
+      "line": 12,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_source_completion.finance",
+      "import": "dataclasses",
+      "line": 2,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_source_completion.finance",
+      "import": "json",
+      "line": 3,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_source_completion.finance",
+      "import": "math",
+      "line": 4,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_source_completion.finance",
+      "import": "pathlib",
+      "line": 5,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_source_completion.finance",
+      "import": "numpy",
+      "line": 6,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_source_completion.finance",
+      "import": "research.controlled_residual_feasibility.parity",
+      "line": 121,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_source_completion.ir",
+      "import": "math",
+      "line": 7,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_source_completion.ir",
+      "import": "json",
+      "line": 8,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_source_completion.ir",
+      "import": "functools",
+      "line": 9,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_source_completion.ir",
+      "import": "mpmath",
+      "line": 10,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_source_completion.primitives",
+      "import": "hashlib",
+      "line": 2,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_source_completion.primitives",
+      "import": "json",
+      "line": 3,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_source_completion.primitives",
+      "import": "math",
+      "line": 4,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_source_completion.primitives",
+      "import": "pathlib",
+      "line": 5,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_source_completion.primitives",
+      "import": "numpy",
+      "line": 6,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_source_completion.primitives",
+      "import": "numba",
+      "line": 7,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_source_completion.run",
+      "import": "argparse",
+      "line": 2,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_source_completion.run",
+      "import": "hashlib",
+      "line": 3,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_source_completion.run",
+      "import": "json",
+      "line": 4,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_source_completion.run",
+      "import": "time",
+      "line": 5,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_source_completion.run",
+      "import": "pathlib",
+      "line": 6,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.controlled_source_completion.run",
+      "import": "numpy",
+      "line": 7,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.independent_110_20261004.C12.audit_evidence_family_v1",
+      "import": "time",
+      "line": 2,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.independent_110_20261004.C12.audit_evidence_family_v1",
+      "import": "argparse",
+      "line": 4,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.independent_110_20261004.C12.audit_evidence_family_v1",
+      "import": "ast",
+      "line": 5,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.independent_110_20261004.C12.audit_evidence_family_v1",
+      "import": "copy",
+      "line": 6,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.independent_110_20261004.C12.audit_evidence_family_v1",
+      "import": "hashlib",
+      "line": 7,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.independent_110_20261004.C12.audit_evidence_family_v1",
+      "import": "json",
+      "line": 8,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.independent_110_20261004.C12.audit_evidence_family_v1",
+      "import": "os",
+      "line": 9,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.independent_110_20261004.C12.audit_evidence_family_v1",
+      "import": "pathlib",
+      "line": 10,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.independent_110_20261004.C12.audit_evidence_family_v2",
+      "import": "time",
+      "line": 2,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.independent_110_20261004.C12.audit_evidence_family_v2",
+      "import": "argparse",
+      "line": 4,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.independent_110_20261004.C12.audit_evidence_family_v2",
+      "import": "ast",
+      "line": 5,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.independent_110_20261004.C12.audit_evidence_family_v2",
+      "import": "copy",
+      "line": 6,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.independent_110_20261004.C12.audit_evidence_family_v2",
+      "import": "hashlib",
+      "line": 7,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.independent_110_20261004.C12.audit_evidence_family_v2",
+      "import": "json",
+      "line": 8,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.independent_110_20261004.C12.audit_evidence_family_v2",
+      "import": "os",
+      "line": 9,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.independent_110_20261004.C12.audit_evidence_family_v2",
+      "import": "pathlib",
+      "line": 10,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.journal_sprint.reversible_fixed_point",
+      "import": "collections",
+      "line": 8,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.journal_sprint.reversible_fixed_point",
+      "import": "array",
+      "line": 9,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.journal_sprint.reversible_fixed_point",
+      "import": "qiskit",
+      "line": 89,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_constant_multiplier",
+      "import": "argparse",
+      "line": 3,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_constant_multiplier",
+      "import": "hashlib",
+      "line": 4,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_constant_multiplier",
+      "import": "json",
+      "line": 5,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_constant_multiplier",
+      "import": "shutil",
+      "line": 6,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_constant_multiplier",
+      "import": "time",
+      "line": 7,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_constant_multiplier",
+      "import": "pathlib",
+      "line": 8,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_constant_multiplier",
+      "import": "numpy",
+      "line": 10,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_constant_multiplier",
+      "import": "research.controlled_priority_completion.parallel_source",
+      "line": 12,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_constant_multiplier",
+      "import": "research.controlled_source_completion.budget_schedule",
+      "line": 13,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_lookup",
+      "import": "argparse",
+      "line": 7,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_lookup",
+      "import": "hashlib",
+      "line": 8,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_lookup",
+      "import": "json",
+      "line": 9,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_lookup",
+      "import": "shutil",
+      "line": 10,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_lookup",
+      "import": "time",
+      "line": 11,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_lookup",
+      "import": "pathlib",
+      "line": 12,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_lookup",
+      "import": "numpy",
+      "line": 14,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_lookup",
+      "import": "research.controlled_priority_completion.parallel_source",
+      "line": 16,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_lookup",
+      "import": "research.controlled_priority_completion.parallel_source",
+      "line": 17,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_mcx_cleanup",
+      "import": "argparse",
+      "line": 8,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_mcx_cleanup",
+      "import": "itertools",
+      "line": 9,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_mcx_cleanup",
+      "import": "json",
+      "line": 10,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_mcx_cleanup",
+      "import": "math",
+      "line": 11,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_mcx_cleanup",
+      "import": "pathlib",
+      "line": 12,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_mcx_cleanup",
+      "import": "numpy",
+      "line": 14,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_mcx_cleanup",
+      "import": "qiskit",
+      "line": 15,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_multiplier",
+      "import": "argparse",
+      "line": 3,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_multiplier",
+      "import": "hashlib",
+      "line": 4,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_multiplier",
+      "import": "json",
+      "line": 5,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_multiplier",
+      "import": "pathlib",
+      "line": 6,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_multiplier",
+      "import": "numpy",
+      "line": 8,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_multiplier",
+      "import": "research.controlled_source_completion.budget_schedule",
+      "line": 11,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.experiment_multiplier",
+      "import": "research.controlled_priority_completion.parallel_source",
+      "line": 15,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.test_carry_save_multiplier",
+      "import": "random",
+      "line": 3,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.test_carry_save_multiplier",
+      "import": "pytest",
+      "line": 5,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.test_constant_multiplier",
+      "import": "hashlib",
+      "line": 3,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.test_constant_multiplier",
+      "import": "random",
+      "line": 4,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.test_constant_multiplier",
+      "import": "pytest",
+      "line": 6,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.test_lookup",
+      "import": "hashlib",
+      "line": 3,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.test_lookup",
+      "import": "json",
+      "line": 4,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.test_lookup",
+      "import": "numpy",
+      "line": 6,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.test_lookup",
+      "import": "pytest",
+      "line": 7,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.test_lookup",
+      "import": "qiskit",
+      "line": 51,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    },
+    {
+      "from": "research.limitation_audit_20261001.test_lookup",
+      "import": "qiskit.quantum_info",
+      "line": 52,
+      "status": "EXTERNAL_OR_OUTSIDE_FROZEN_CORPUS"
+    }
+  ],
+  "shared_module_construction_counts": {
+    "research.advantage_frontier_20260923.barrier_oracle_depth": 1,
+    "research.antithetic_feasibility.compile_blocks": 2,
+    "research.antithetic_feasibility.estimator": 1,
+    "research.antithetic_feasibility.reversible": 6,
+    "research.compound_feasibility.compile": 2,
+    "research.compound_feasibility.model": 5,
+    "research.compound_feasibility.reversible": 2,
+    "research.controlled_completion_followup.test_truncated_multiplier": 0,
+    "research.controlled_completion_followup.truncated_multiplier": 0,
+    "research.controlled_priority_completion.ranged_multiplier": 2,
+    "research.controlled_priority_completion.ranged_run": 2,
+    "research.controlled_residual_feasibility.bounds": 1,
+    "research.controlled_residual_feasibility.cost": 1,
+    "research.controlled_source_completion.carry_save_multiplier": 0,
+    "research.controlled_source_completion.compiler": 3,
+    "research.controlled_source_completion.constant_multiplier": 0,
+    "research.controlled_source_completion.exact_lookup": 3,
+    "research.controlled_source_completion.finance": 3,
+    "research.controlled_source_completion.ir": 3,
+    "research.controlled_source_completion.primitives": 3,
+    "research.controlled_source_completion.run": 3,
+    "research.independent_110_20261004.C12.audit_evidence_family_v1": 0,
+    "research.independent_110_20261004.C12.audit_evidence_family_v2": 0,
+    "research.journal_sprint.reversible_fixed_point": 6,
+    "research.limitation_audit_20261001.experiment_constant_multiplier": 0,
+    "research.limitation_audit_20261001.experiment_lookup": 0,
+    "research.limitation_audit_20261001.experiment_mcx_cleanup": 0,
+    "research.limitation_audit_20261001.experiment_multiplier": 0,
+    "research.limitation_audit_20261001.test_carry_save_multiplier": 0,
+    "research.limitation_audit_20261001.test_constant_multiplier": 0,
+    "research.limitation_audit_20261001.test_lookup": 0,
+    "research.stronger_arithmetic.circuits": 6
+  }
+}

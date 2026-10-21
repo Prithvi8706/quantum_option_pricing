@@ -1,0 +1,55 @@
+{
+  "acceptance": [
+    "Check intended XOR output and all scratch restored for both outer states and every three-bit output word.",
+    "Every basis state is a bijective permutation with exact inverse; nonlinear payoff independently evaluated over all count words.",
+    "Check global intended superposition and reversal algebraically; measurement negative control fails coherence.",
+    "Inventory padding/control resources and exact toy inner error; financial oracle, finite error constants and flattening regret remain unproved."
+  ],
+  "author_sha256": "ef3b070201259e1534c288fd77dbc82c69d47bfb056be23ff996a0d9af95a0cc",
+  "budgets": {
+    "cpu_seconds": 30,
+    "maximum_full_basis_checks": 12288,
+    "maximum_width": 13,
+    "output_bytes": 4194304,
+    "wall_seconds": 60
+  },
+  "corpus": {
+    "docs/compound_feasibility/RESULTS.md": "c97e3d9137bc1dbae4b5df167e93d2fa4afe65068b2dfe7d10a2a766b5a2dce5",
+    "docs/controlled_residual_feasibility/DERIVATION.md": "dd2e7fd510572c7451110356d996bf41ddf62b63f1b936a1a30e86d6a7666822",
+    "docs/limitation_audit_20261001/implementation_plan/roadmap.json": "59333ddeba6ee73950cba5a7a669fdc6dd3a9db8629297335d507b65c6a02b6a",
+    "research/compound_feasibility/quantum_schedule.py": "950beb67c9212028821d0c32f30733488efc99f329e955242a132d6d743b49a9",
+    "research/compound_feasibility/reversible.py": "ad052ac4cfc560bb127110f6c13d5edf99e4c9ab794f4207769225893a1a44bf"
+  },
+  "new_finance_draws": 0,
+  "new_global_fixture_credit": 0,
+  "proof_sha256": "d23c49473cfe29f56812d3aea6f9d6f4c56e41bba0ae8ac8de8b7c999b173de1",
+  "stop": "Two declared toys and one existing flattening identity only; no financial sampling, source compilation or price-oracle substitution.",
+  "toy": {
+    "designs": [
+      "Fixed four-query exact finite enumeration",
+      "Stored halt record with four-slot padding and reversible controller"
+    ],
+    "good": "j<1+2*x",
+    "inner_means_exact": [
+      [
+        1,
+        4
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    "inner_uniform_labels": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "outer_payoff": "positive part(z-1/2), returned in quarters",
+    "outer_states": [
+      0,
+      1
+    ]
+  }
+}

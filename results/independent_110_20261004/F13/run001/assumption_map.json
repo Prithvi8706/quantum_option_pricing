@@ -1,0 +1,249 @@
+{
+  "Feller_ratio_parameter_only": "16/25",
+  "Lamperti_checks": [
+    {
+      "Ito_drift_identity": true,
+      "drift_derivative": "-57/50",
+      "y": "1"
+    },
+    {
+      "Ito_drift_identity": true,
+      "drift_derivative": "-39/25",
+      "y": "1/2"
+    },
+    {
+      "Ito_drift_identity": true,
+      "drift_derivative": "-81/25",
+      "y": "1/4"
+    },
+    {
+      "Ito_drift_identity": true,
+      "drift_derivative": "-249/25",
+      "y": "1/8"
+    },
+    {
+      "Ito_drift_identity": true,
+      "drift_derivative": "-921/25",
+      "y": "1/16"
+    },
+    {
+      "Ito_drift_identity": true,
+      "drift_derivative": "-3609/25",
+      "y": "1/32"
+    }
+  ],
+  "mapping": [
+    {
+      "hypothesis": "3.1 full R^d coercivity/domain",
+      "proof": "Young inequalities for affine log-price/variance drift; square-root diffusion lacks declared negative-v extension.",
+      "status": "unresolved_full_domain; restricted physical-space growth bounded"
+    },
+    {
+      "hypothesis": "3.2 drift C1",
+      "proof": "Affine drift in log-price/variance state.",
+      "status": "proved"
+    },
+    {
+      "hypothesis": "3.2 diffusion C2",
+      "proof": "Right derivative xi/(2sqrt(v)) diverges at0.",
+      "status": "failed"
+    },
+    {
+      "hypothesis": "3.2 equation3.2 coupled monotonicity",
+      "proof": "Universal C/p1 variance-component counterexample above.",
+      "status": "failed"
+    },
+    {
+      "hypothesis": "3.2 equations3.3-3.4 derivative growth",
+      "proof": "Boundary derivatives diverge on bounded sets.",
+      "status": "failed_for_diffusion; other directional products not needed after necessary failures"
+    },
+    {
+      "hypothesis": "3.2 equation3.5 initial finite moments",
+      "proof": "Fixed deterministic finite S4 initial state.",
+      "status": "proved"
+    },
+    {
+      "hypothesis": "3.3 modified scheme bounds",
+      "proof": "No identity with all prescribed modifications and finite bounds is certified.",
+      "status": "unresolved"
+    },
+    {
+      "hypothesis": "Section5 smooth payoff premise",
+      "proof": "At strike the one-sided derivatives are0 and1.",
+      "status": "failed_for_unchanged_positive_part"
+    },
+    {
+      "hypothesis": "Theorem5.1 required high scheme moments",
+      "proof": "No high-moment numerical-scheme certificate; simulation positivity is insufficient.",
+      "status": "unresolved"
+    },
+    {
+      "hypothesis": "Lamperti optional transform",
+      "proof": "Constant diffusion but singular drift/derivatives and unresolved boundary extension.",
+      "status": "failed_direct_transfer"
+    }
+  ],
+  "model": {
+    "assets": 4,
+    "correlation": 0.3,
+    "dates": 12,
+    "kappa": 2.0,
+    "leverage": -0.7,
+    "maturity": 1.0,
+    "name": "S4",
+    "rate": 0.03,
+    "spot": 100.0,
+    "strike": 100.0,
+    "theta": 0.04,
+    "v0": 0.04,
+    "xi": 0.5
+  },
+  "monotonicity_witnesses": [
+    {
+      "C": 0,
+      "h": "1/20",
+      "left": "3/200",
+      "p1": "3/2",
+      "required_inequality_fails": true,
+      "right": "0"
+    },
+    {
+      "C": 0,
+      "h": "3/40",
+      "left": "27/800",
+      "p1": "2",
+      "required_inequality_fails": true,
+      "right": "0"
+    },
+    {
+      "C": 0,
+      "h": "1/8",
+      "left": "3/32",
+      "p1": "3",
+      "required_inequality_fails": true,
+      "right": "0"
+    },
+    {
+      "C": 1,
+      "h": "1/24",
+      "left": "1/72",
+      "p1": "3/2",
+      "required_inequality_fails": true,
+      "right": "1/576"
+    },
+    {
+      "C": 1,
+      "h": "1/16",
+      "left": "1/32",
+      "p1": "2",
+      "required_inequality_fails": true,
+      "right": "1/256"
+    },
+    {
+      "C": 1,
+      "h": "5/48",
+      "left": "25/288",
+      "p1": "3",
+      "required_inequality_fails": true,
+      "right": "25/2304"
+    },
+    {
+      "C": 2,
+      "h": "1/28",
+      "left": "5/392",
+      "p1": "3/2",
+      "required_inequality_fails": true,
+      "right": "1/392"
+    },
+    {
+      "C": 2,
+      "h": "3/56",
+      "left": "45/1568",
+      "p1": "2",
+      "required_inequality_fails": true,
+      "right": "9/1568"
+    },
+    {
+      "C": 2,
+      "h": "5/56",
+      "left": "125/1568",
+      "p1": "3",
+      "required_inequality_fails": true,
+      "right": "25/1568"
+    },
+    {
+      "C": 10,
+      "h": "1/60",
+      "left": "13/1800",
+      "p1": "3/2",
+      "required_inequality_fails": true,
+      "right": "1/360"
+    },
+    {
+      "C": 10,
+      "h": "1/40",
+      "left": "13/800",
+      "p1": "2",
+      "required_inequality_fails": true,
+      "right": "1/160"
+    },
+    {
+      "C": 10,
+      "h": "1/24",
+      "left": "13/288",
+      "p1": "3",
+      "required_inequality_fails": true,
+      "right": "5/288"
+    },
+    {
+      "C": 100,
+      "h": "1/420",
+      "left": "103/88200",
+      "p1": "3/2",
+      "required_inequality_fails": true,
+      "right": "1/1764"
+    },
+    {
+      "C": 100,
+      "h": "1/280",
+      "left": "103/39200",
+      "p1": "2",
+      "required_inequality_fails": true,
+      "right": "1/784"
+    },
+    {
+      "C": 100,
+      "h": "1/168",
+      "left": "103/14112",
+      "p1": "3",
+      "required_inequality_fails": true,
+      "right": "25/7056"
+    },
+    {
+      "C": 10000,
+      "h": "1/40020",
+      "left": "10003/800800200",
+      "p1": "3/2",
+      "required_inequality_fails": true,
+      "right": "25/4004001"
+    },
+    {
+      "C": 10000,
+      "h": "1/26680",
+      "left": "10003/355911200",
+      "p1": "2",
+      "required_inequality_fails": true,
+      "right": "25/1779556"
+    },
+    {
+      "C": 10000,
+      "h": "1/16008",
+      "left": "10003/128128032",
+      "p1": "3",
+      "required_inequality_fails": true,
+      "right": "625/16016004"
+    }
+  ],
+  "primary_html_sha256": "aa6fbde4206ded725b6fdb71b8b76e35bd1d72143724c9df0b068dee91bccc0b"
+}

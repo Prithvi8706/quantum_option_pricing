@@ -1,0 +1,61 @@
+E15: coherence is a requirement on the entire inner controller
+
+Fixed finite toy: outerx in{0,1}, inner labelj uniform on{0,1,2,3},
+good(x,j)=1{j<1+2x}. Thus the two exact inner means are1/4 and3/4.
+The outer function isg(z)=(z-1/2)+, so output quarter-words are0 and1.
+This deliberately tiny table is not a financial mean oracle. Exact enumeration
+of all four entries supplies the inner value; no mean-estimation scaling follows.
+
+Both designs explicitly emit X/CX/CCX permutations in their own local namespace.
+The fixed design computes four flags, counts them with reversible increments,
+XORs the complete three-bit nonlinear payoff table into the returned output,
+then reverses every flag/count operation. The stored-record design also computes
+halt=1-x, has a branch-dependent classical2/4query interpretation, retains that
+record coherently, pads both branches to four forward slots and uncomputes it.
+Its known-zero slots and extra controls are still charged in the fixed schedule.
+No measurement, reset or irreversible early exit occurs within either oracle.
+
+For any outer superposition and arbitrary output word, each design's action is
+|x>|b>|0scratch> -> |x>|b XOR payoff(x)>|0scratch>. The full-state relative
+phases are preserved because each elementary gate is exactly a basis permutation
+with matrix entries0/1. These gates introduce no phases. Intended truth-table
+checks on bothx values and every output word, plus scratch restoration and full
+finite-basis bijection/inverse checks, certify this toy unitary exactly. A
+balanced outer input maps to the intended entangled superposition; tracing out
+its different returned outputs is not the test of oracle coherence. Reversing
+the complete oracle restores the initial joint superposition.
+
+Negative control: flag1=x. Measuring it before cleanup and discarding the
+external record destroys the off-diagonal between the two intended output
+branches. For a balanced outer input, the ideal output has off-diagonal1/2;
+the measured channel has0. Its fidelity with the ideal pure state is1/2 and
+trace distance is1/2. Reversing the available quantum registers cannot erase
+an inaccessible classical/environmental record. Separately executed measured
+inner estimation therefore needs a new valid coherent interface before it can
+be used inside an outer amplitude-estimation oracle.
+
+Exact finite enumeration has zero inner and outer error in this toy. It does
+not prove that approximate coherent QPE/median, measuredIQAE, or an unbounded
+financial conditional mean has zero error. For general inner error e(X),
+the outer positive-part Lipschitz bound charges d0 E|e(X)| to price bias;
+if only an inner failure event is controlled, the bounded output on failures
+and uniform law/moment assumptions also have to be paid. Those financial
+interfaces remain unresolved here. The stored-record toy adds gates/qubits
+without reducing its worst-case padded query slots; retain its fixed fallback.
+
+Existing flattening interface: for true continuationC, digital predictorR and
+pi=1{R>Kc}, pointwise
+(C-Kc)+ = pi(R-Kc) + pi(C-R)
+            + |C-Kc| 1{pi differs from1{C>Kc}}.
+At equalityC=Kc the last term iszero. Conditioning replacesC-R in the mean
+by an unbiased inner payoffH-R, giving a scalar residual source. The last
+term is nonnegative exercise-policy regret and cannot be deleted because one
+residual component or confidence experiment succeeds. Baseline acquisition,
+residual source/inverse/estimation, identical digital policy/law and a certified
+regret bound are separate obligations. ProtectedE12 evidence is read-only and
+none of its moment acquisition, confidence or finance work is repeated here.
+
+Scope: the two nominated finite toys reach the bounded coherence stop rule.
+The measured incompatible design is rejected before finance compilation.
+No financial coherent estimator, flattening delivery certificate, adoption,
+performance improvement, new global fixture credit or quantum advantage follows.

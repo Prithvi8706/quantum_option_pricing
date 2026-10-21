@@ -1,0 +1,48 @@
+F14 initial A1 Broadie-Kaya exact-transition inventory
+
+Primary: Broadie and Kaya, Operations Research54(2),217-231(2006),
+doi10.1287/opre.1050.0247, Section3 equations8-16 and stock recovery.
+Author PDF https://www.columbia.edu/~mnb2/broadie/Assets/broadie_kaya_exact_sim_or_2006.pdf.
+The one fixed case is existing A1: kappa2,theta=v0.09,xi.3,rho-.5,
+S0=K100,r.03,T1, twelve dates. These are not the S4 parameters.
+
+For h=1/12, q=exp(-kappa*h), c=xi^2(1-q)/(4*kappa),
+nu=4*kappa*theta/xi^2=8 and lambda=q*v/c, the CIR endpoint has law
+c*chi-square_noncentral(nu,lambda). Its mean is q*v+theta*(1-q),
+and variance xi^2*v*q*(1-q)/kappa+theta*xi^2*(1-q)^2/(2*kappa).
+Substitution into c(nu+lambda) and2*c^2(nu+2lambda) proves these identities.
+For this integer nu only, an endpoint can use one shifted squared normal
+plus seven independent squared normals. Eight Gaussian draws per interval
+give96 at twelve dates. This counts real-distribution primitive draws,
+not emitted loading circuits. q,lambda,square root, finite Gaussian loading,
+quantization and cleanup are not free. General noninteger nu would require
+a different central-chi-square/Gamma or Poisson-mixture implementation.
+
+With I=integral_v over the interval and variance endpoints v,v', integration
+of the CIR SDE gives J=integral_sqrt(v)dW=(v'-v-kappa*theta*h+kappa*I)/xi.
+Conditional on these variance data, the independent stock driver gives
+log(S'/S)=r*h-I/2+rho*J+sqrt((1-rho^2)*I)*Z.
+This identity accommodates the original negative rho. Omitting rho*J changes
+the law. A further independent equity Gaussian at each date is paid.
+
+The remaining conditional I law requires the primary conditional transform,
+with complex square-root branch gamma(a)=sqrt(kappa^2-2i*xi^2*a), modified
+Bessel function order nu/2-1=3, Fourier quadrature and CDF inversion. Its
+tail, quadrature, special-function and inverse errors must be enclosed for
+the actual endpoint domain. An endpoint transition alone, or replacing I
+with a trapezoidal mean of v and v', does not provide that certificate.
+
+If a capped payoff is bounded by B and transition total-variation errors are
+eta_j, a sequential coupling gives dollar error<=B sum eta_j. This requires
+actual numerical eta_j bounds; they are not zero. The uncapped contract needs
+its separately charged tail and path-loading/stock error bounds. No standalone
+tail proof closes conditional I lower endpoints or all transition primitives.
+
+The frozen run validates endpoint moment algebra and leverage identities,
+with no random paths and no empirical conditional-moment/price interval.
+The law inventory is complete at that scope. An end-to-end classical transition
+pilot is stopped on missing conditional-I inverse accuracy, as the plan permits;
+its price comparison and complete cost remain unresolved. All twelve dates,
+special-function repetitions, preparation, inverses, arithmetic, readout and
+precision are explicit obligations. No emitted quantum transition, cheaper
+delivered source, A4 covariance extension or whole F14 completion is claimed.

@@ -1,0 +1,72 @@
+{
+  "item": "F10",
+  "version": "archived-menu-conditional-grid-v1",
+  "action": "one exact accounting/allocation run; no sampling, finance execution, source import, timing or compilation",
+  "corpus": {
+    "cases": ["A1", "A4"],
+    "model": "original antithetic Heston arithmetic Asian development contract, distinct from G0 GBM B4/B8",
+    "contractual_dates": 12,
+    "levels": [0, 1, 2, 3, 4, 5],
+    "internal_steps": [12, 24, 48, 96, 192, 384],
+    "epsilons": ["1/10", "3/100", "1/100"],
+    "fraction_bits": [24, 32],
+    "quantum_masks": "all integers 0..63, bit l means quantum level l",
+    "expected_assignments": 768,
+    "base_pilot": {"method": "mc", "conditional": false, "power": 12},
+    "correction_pilot": {"method": "mc", "conditional": false, "power": 10},
+    "quantum_schedules": "unchanged archived bins, shared M and repetitions"
+  },
+  "statistical_model": {
+    "dollar_budget": "9 epsilon/20",
+    "failure_per_level": "1/1500",
+    "joint_statistical_failure_cap": "1/250",
+    "remaining_dollar_obligation": "11 epsilon/20, certified bound null",
+    "remaining_failure_obligation": "3/500, certified bound null",
+    "moment": "max(4 pilot[var+correction_mean^2], all archived same-level second_moments)+max(1,max)*2^-40; conditional population premise only",
+    "support": "quantum centered magnitude<=1024 is assumed, actual certificate null",
+    "classical": "iid Chebyshev n=ceil(V/(delta e^2)); no RQMC-iid transfer",
+    "quantum": "pi<22/7, rational sqrt at2^-64, exact majority failure, disjoint signed-bin bound; padded-moment bin-geometry misses reject the affected assignments; source/noise/finite-law premises unresolved"
+  },
+  "allocation": {
+    "error_slots": 64,
+    "classical_sample_cap_per_level": 1152921504606846976,
+    "objective": "minimum conditional classical linear warm sample-cost model within fixed error grid per Q mask; quantum query/gate vectors stay separate",
+    "cost_anchor": "archived iid pilot seconds minus fit divided by observed paths; assumed linear extrapolation only",
+    "base_fit": "archive base pilot fit charged once per assignment; all further setup/preprocessing complete costs null",
+    "analytic_coarse_mean": "not supplied; unbuilt interface rejected before compilation; base question to F11"
+  },
+  "checks": [
+    "24 macro plans and72 schedules integer source/inverse/reflection/QFT/loader/native join",
+    "all12 archive whole-quantum native ledgers independently recomputed",
+    "exact outward conditional quantum error and majority failure retained pass/fail",
+    "all768 assignments including base and signed corrections, exact classical Chebyshev ceiling, slot feasibility and DP optimum",
+    "six legacy fixed-allocation free-correction base+fit floors against warm total/10",
+    "independent tiny-grid brute-force DP control and invalid/missing input, slot and sample-cap controls",
+    "all complete costs/statistical population certificates/99percent eligibility remain null or false, no mixed-unit score"
+  ],
+  "acceptance": "accounting checks pass and every fixed menu row is retained; no finance/global F10 acceptance inferred",
+  "stop_rule": "one frozen run; no resampling, cap/grid increase, schedule revision, physical conversion, winning compilation or timing claim",
+  "budgets": {
+    "cpu_seconds": 120,
+    "wall_seconds": 300,
+    "input_files": 32,
+    "input_bytes": 8388608,
+    "output_files": 12,
+    "output_bytes": 8388608,
+    "manifest_bytes": 49152,
+    "emergency_reserve_bytes": 16384,
+    "run_admission_cpu_seconds": 90,
+    "runtime_scope": "selected launcher/base executable byte pins, not complete stdlib/OS/runtime closure",
+    "administrative_scope": "run guard starts after stdlib import, before freeze verification; CPU/wall is receipt budget only, no performance result"
+  },
+  "failure": "prewritten FAILED_UNSEALED marker authoritative, removed only after sealed complete manifest/final guard; any failure retained with unknown unfinished checks and no retry",
+  "scope": {
+    "bounded_initial_scope_complete_if_checks_pass": true,
+    "full_limitation_complete": false,
+    "delivered_99percent_financial_guarantee": false,
+    "advantage": false,
+    "global_fixture_credit": 0,
+    "finance_acquisitions": 0,
+    "timing_runs": 0
+  }
+}

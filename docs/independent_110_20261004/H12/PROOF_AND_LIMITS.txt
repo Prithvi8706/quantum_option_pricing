@@ -1,0 +1,58 @@
+H12 finite constant-overhead construction audit; prospective scope.
+
+Primary is Han/Liu arXiv2609.28461v1, September23,2026, exact local HTML.
+Definition2.1 requires an adaptive Clifford+CCZ circuit with classical I/O.
+Theorem3.12/Eq54-59 fixes positive constants p*, A, C_add, C_layer, C_F,
+C_S, C_T, C_B, b_B, c_B for its chosen code family and compilation data.
+L=log(WD/epsilon); n is the first usable n_d>=A*L after the cutoff d0.
+The theorem bounds quantum space by C_add[W+F(n)], physical depth by
+C_layer(D+1)[n+(1+n/k_CCZ)g(n)+log(W+1)], and a bad-event probability
+by C_B(D+1)[W+F(n)](n+2)^b_B exp(-c_B*n). Locally stochastic noise
+p<p* is required. Noiseless polynomial classical hardware is excluded
+from quantum width, but its runtime is charged. Eq58, W>=C_F*F(n),
+is the finite constant-space condition. n*F(n) is recorded only as an
+additional diagnostic requested by the audit; it is not Eq58.
+
+Eq26-29 is more specific than asymptotic O notation:
+ell=ceil(log2(lambda_Y*n)), lambda_Y>=1;
+h_j=floor(2log2(4j)), u_j=2^h_j-1, M=product_{j=1}^ell u_j;
+F(n)=n^2+n*M(n), g(n)=log(n+2)^b. Consequently the exact integer product
+at lambda_Y=1 is a lower bound on actual F for any proposed integer n.
+The nine prescribed illustrative n values1,2,3,4,5,8,9,16,64 test this
+algebra; none is a chosen usable family length. C_F=1 rows are explicitly
+conditional diagnostics. Changing unknown positive C_F from1 to1000
+reverses the test at n4 and current B4 width. Therefore an asymptotic
+constant cannot determine finite admission. The actual n, lambda_Y,
+C_F, other constants, cutoff, code matrices and compatible decoder are
+unavailable and remain null. A logarithm or a bit length is not n.
+
+Original archived A10 B4 min-depth source has width550141, Clifford+T
+depth1661253, X1248066, CX85871756, CCX74388666 and1920 random H gates.
+For this source alone, exact CCX=H_target*CCZ*H_target yields a valid
+serialized Clifford+CCZ depth upper X+CX+3CCX+1920=310287740 on the same
+allocated width, under its existing logical connectivity convention.
+This is not optimized depth. The full H17 estimator includes confidence
+repetitions, reflections and IQFT rotations; its archived gate/T ledger
+does not supply a complete Clifford+CCZ compilation or D. Full D stays
+null; the source-only bound is never substituted for it. The original
+H17 physical failure allocation3/1000 is kept separate from statistical
+failure. B4/B8 widths550141/4460479 are the original source allocations,
+not measured physical capacities. Neither cap nor complete architecture
+has been supplied.
+
+Corollary3.13 proves eventual width admission under polynomial D and
+inverse-polynomial epsilon. Its sufficiently-large-W qualifier supplies
+no finite cutoff for either current width. Failure bounds are union
+bounds on original faulty supports; no independence of windows is used.
+The paper's existence result is not challenged by absence of a deployed
+code/controller in this repository. This bounded audit closes direct
+finite numerical transfer on missing facts, not the full H12 limitation.
+
+Freeze before the sole exact bookkeeping/control run: one full-text audit,
+nine integer examples, two original width rows, one missing-input rejection
+and one finite C_F witness. Eight additional interface flags are documentary,
+not executed negative cases;
+30CPU/60wall,32MiB pinned inputs,4MiB output, no financial samples or
+timings. Broader obligations are finite code/decoder/constants, complete
+allowed-gate compilation, width/noise proofs and routing/resource/control/
+readout/error/duration certificates. No source adoption or speedup claim.

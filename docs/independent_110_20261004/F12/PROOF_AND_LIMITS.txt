@@ -1,0 +1,48 @@
+F12 initial S4 coupling and boundary preflight
+
+Frozen S4 has kappa2,theta=v0.04,xi.5,rho-.7, four assets, twelve dates.
+Its Feller ratio2*kappa*theta/xi^2 is16/25=.64. The accessible zero boundary
+does not imply its existing discrete variance scheme produces negative values.
+The current update numerator equals
+(sqrt(v)+xi*dw/2)^2+(kappa*theta-xi^2/4)h.
+Here the last coefficient is7/400>0, and the denominator1+kappa*h>0.
+Thus the current scheme is already positive for every v>=0 and real dw.
+
+The one nominated alternative is Alfonsi2005 equation4, in the primary
+author PDF https://cermics.enpc.fr/~alfonsi/SC_preprint.pdf, pp3-4.
+For Y=sqrt(v), Ito's formula away from zero gives drift
+(kappa*theta-xi^2/4)/(2Y)-kappa*Y/2 and noise xi*dW/2.
+Its implicit drift step solves A*y^2-B*y-a*h=0, where
+A=1+kappa*h/2>0, B=sqrt(v)+xi*dw/2 and a=7/800>0.
+The roots have opposite signs and discriminant B^2+4*A*a*h>B^2; hence
+there is exactly one positive root for every increment and every frozen h.
+This algebra gives positivity. It neither proves that discrete transitions
+are exact CIR transitions nor gives a strong or weak convergence rate.
+
+The existing coarse path sums consecutive Brownian increments and the
+antithetic path swaps them. A candidate must keep the original correlated
+stock/variance Gaussian vectors, all twelve contractual fixings and this
+fine/coarse coupling. Two independent h increments have variance2h and
+stock/variance cross covariance2*rho*h. Coupling a marginal exact CIR draw
+to an unrelated stock normal would lose the required joint law.
+
+The primary paper's convergence results have additional hypotheses and
+test-function domains. Proposition3.1 requires its (HS) scheme hypothesis
+and gives logarithmic univariate variance-process bounds, not beta=2.
+Proposition4.2 requires (HW), a C4 terminal test function and polynomial
+fourth-derivative growth; it concerns a single CIR endpoint. A raw Asian
+positive-part payoff has an exercise kink and also uses the coupled stock
+and date average. No theorem for its conditional smoothed version has been
+instantiated here. Its positivity result is not a beta=2 theorem for
+this coupled multidimensional Heston Asian. At zero sqrt(v) lacks bounded
+derivatives; its inverse-moment and full equity/payoff error obligations
+remain open. The implicit Y drift is singular there. The existing rational
+Milstein variance update also has conditional mean(v+kappa*theta*h)/(1+kappa*h),
+while exact CIR has theta+(v-theta)*exp(-kappa*h); these differ off v=theta.
+
+Levels1,2,3,4 are fixed for an eventual matched diagnostic. Current historical
+S4 beta observations near1.24 remain descriptive fits with no confidence band.
+No path acquisition is performed in this initial audit: full equity weak
+bias, reference accuracy and matched timing are unresolved. Finite algebra
+controls at those four h values validate interface signs/covariance only.
+No 20-percent cost-times-variance result or complete F12 solution is claimed.

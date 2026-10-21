@@ -1,0 +1,44 @@
+F17 initial fixed-policy boundary ledger
+
+Keep C4,C8,H4,H8 and the saved pilot policy selector and coefficients unchanged.
+Compound strike is3. The original arithmetic/GBM target, monitoring dates,
+accrued average and discount factors remain intact. No regression is refitted
+and no E12 sampling/rule or moment acquisition is reused as new evidence.
+
+Write exact continuation C(X), fixed prediction p(X), and d=1{p>K}.
+Regret r=(C-K)+-d(C-K) is nonnegative. If the decision is wrong, K lies
+between p and C, so r=|C-K|<=|C-p|; otherwise r=0.
+For any certified L<=C<=U the pointwise envelope is (K-L)+ if d=1
+and (U-K)+ if d=0. It vanishes when the interval and policy agree entirely
+on one side of K. Exercise at equality may follow either convention without
+nonzero regret. An interval merely crossing K gives no certified decision.
+
+For frozen width w>0, inside |p-K|<=w, r<=w+|C-p|. Outside it, a wrong
+decision implies |C-p|>w, hence r<=|C-p|^2/w. If population p_band and
+m2>=E[(C-p)^2] are certified, Cauchy-Schwarz gives
+E r<=w*p_band+sqrt(m2*p_band)+m2/w.
+This deliberately conservative expression does not assume independence.
+An explicit tail event may be excluded only after its regret/payoff contribution
+has a separately proved unconditional bound. Three widths .01,.05,.1 are fixed
+before the checks. None supplies p_band or m2 by itself.
+
+Existing AM-GM/call-Lipschitz and Jensen bounds yield real-law intervals for
+the capped continuation. The capped call is not convex: its Jensen lower bound
+must subtract a valid cap-tail bound, as the existing implementation does.
+Floating exp/Phi/subtraction and clamping an inverted interval are not outward
+certification. An interval for the capped target also does not certify the
+original uncapped continuation without its tail bridge.
+
+The old sampled brackets around4e-8 to6e-6 dollars and validation RMSEs
+are observations. They do not bound an unsampled population. An algebraic
+counterexample has probability10^-6 at C=10^6,p=0 and zero regret elsewhere:
+any sample missing it sees zero regret although its population regret is
+0.999997. This is an implication test, not a proposed finance workload.
+
+This run validates exact pointwise/band inequalities on rational controls,
+pins the saved policies and records all three population-band fields as
+unresolved for every original case. Localization stops because population
+certification and full cost reduction are unavailable. Neither a reversible
+boundary flag nor a favorable numerical bracket closes that obligation.
+Keep the existing fixed policy; no20-percent localization saving, source
+adoption, full G2 or whole F17 completion is claimed.

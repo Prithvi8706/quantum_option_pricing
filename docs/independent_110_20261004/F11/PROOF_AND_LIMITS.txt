@@ -1,0 +1,38 @@
+F11 initial A4 coarse-control proof and acquisition hold
+
+The target remains the four-asset Heston arithmetic Asian at twelve original
+monitoring dates. A frozen-volatility control shares its Gaussian price drivers,
+with volatility sqrt(theta). Its geometric log average is normal, with mean
+log(S0)+(r-theta/2) mean(t_j) and variance
+theta [1+(d-1)c]/d * T(N+1)(2N+1)/(6N^2).
+This follows by summing Cov(W_i(s),W_k(t))=c_ik min(s,t) over every original
+asset and date. Integration of exp(Z) above log(K) by completing the square
+gives its discounted lognormal call mean. The root/evaluation in machine
+arithmetic still needs an outward error enclosure. The Heston target is not
+replaced by this auxiliary GBM law; the same-driver subtraction is centered.
+
+For any coefficient fitted on independent training data, conditional on that
+training the estimator Y-c(G-EG) has mean EY. A floating EG error b incurs
+at most |c|b systematic error and must be charged. Training is paid for the
+single delivered price; future prices are not assumed for amortization.
+
+The existing orthogonal Gaussian factorization makes the omitted common price
+mode independent of all variance Brownian inputs and remaining price modes.
+At each step variance therefore does not depend on this scalar Z. The equity
+log update, including its price/variance cross term, is affine in Z; the
+contractual average is a sum exp(a_j+b_j Z). Integrating its call conditional
+on all other drivers uses the tower property. For the centered coarse residual
+R, E[E(R|other drivers)]=ER and Var(E(R|other drivers))<=Var(R) by the law of
+total variance. This is a mathematical variance statement, not a cost claim
+or a certificate for the scalar exercise-root solver. No steps/dates vanish
+from the Heston simulation and no weak-bias obligation is removed.
+
+Both candidates already have repository implementations: geometric control
+is in the saved hybrid base and conditional_call is an existing conditional
+method. They are not new independent replications or new performance gains.
+The historical 10.17/13.75-second base fraction permits at most 13.75/10.17
+free-correction improvement for that exact allocation. It is not a universal
+base lower bound. This run checks the Gaussian covariance algebra and finite
+tower/centering diagnostics only. Matched training-inclusive performance,
+new uncertainty allocation and the tenfold budget test are held while other
+work is concurrent. No cheaper delivered base or whole F11 completion follows.

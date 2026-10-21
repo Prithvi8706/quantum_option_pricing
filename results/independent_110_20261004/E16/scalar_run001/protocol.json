@@ -1,0 +1,82 @@
+{
+  "budgets": {
+    "admission_cpu_seconds": 60,
+    "cpu_seconds": 90,
+    "emergency_reserve_bytes": 16384,
+    "input_bytes": 8388608,
+    "input_files": 20,
+    "output_bytes": 2097152,
+    "output_files": 16,
+    "single_input_bytes": 2097152,
+    "wall_seconds": 180
+  },
+  "caps_fixed": [
+    2048,
+    4096
+  ],
+  "checks": [
+    "Completing-square and likelihood exponent identities for fixed orders0,1,2,4",
+    "p4 cap inequality factorization and cap-half negative controls",
+    "All six fixed candidate moment/coupling/error-budget rows",
+    "Coarse-grid negative controls on each construction/target",
+    "Explicit forward/inverse/reflection/IQFT/measurement multiplicities and null-preserving complete ledger"
+  ],
+  "comparison": "Same scalar continuous target and same transforms available classically; analytic lognormal call formula is comparator, finite numerical CDF error/runtime unmeasured. Strict complete-work comparison stays null unless loading, arithmetic, inverse, quantile, confidence, readout and physical costs all supplied.",
+  "confidence": "Ideal BHMT single-shot failure<=23/121 from pi<22/7; exact first odd repeats<=31 whose independent majority tail<=1/100; no sampling or quantum gate execution",
+  "constructions": [
+    "p4-certified capped bounded BHMT AE",
+    "Hamoudi2108.12172v1 quantile finite-variance theorem conditional on complete finite primitive constants",
+    "stock-numeraire normal shift theta=sigma; exact fully weighted bounded payoff BHMT AE"
+  ],
+  "corpus": "Existing compound_feasibility/model.py C4 terminal single-stock vanilla component; diagnostic only, not its compound payoff or G0 B4/B8 replacement",
+  "error_allocation": "Cap tail<=epsilon/4; source coupling<=epsilon/4; estimator including readout<=epsilon/2. Within source allowance reserve epsilon/64 for arithmetic/likelihood error and epsilon/64 for probability-loading total-variation times support. These are required interfaces, not proved implemented errors.",
+  "finite_law": "Clamp independent scalar U~N(0,1) to [-8,8], partition into 2^24 equal cells width2^-20, pushforward exact Gaussian cell probabilities including clamped tail mass to edge cells, evaluate at cell midpoint. Exact probabilities mathematical prescription; approximate loading error is unresolved, never zero.",
+  "new_gate_replay_credit": 0,
+  "new_global_fixture_credit": 0,
+  "parameters_exact": {
+    "K": 100,
+    "S0": 100,
+    "T": 1,
+    "r": [
+      3,
+      100
+    ],
+    "sigma": [
+      1,
+      5
+    ]
+  },
+  "quantum_advantage": false,
+  "runtime_scope": "-I -S -B stdlib, owned pinned numerical helper; selected launcher/base only. Administrative CPU begins before imports except time, wall after imports. No performance inference.",
+  "schema": "E16-scalar-three-construction-two-target-v1",
+  "source_precision": {
+    "L": 8,
+    "arithmetic_allowance_fraction": [
+      1,
+      64
+    ],
+    "delta_exact": [
+      1,
+      1048576
+    ],
+    "loading_allowance_fraction": [
+      1,
+      64
+    ],
+    "readout_allowance_fraction": [
+      1,
+      64
+    ]
+  },
+  "stop_rule": "One scalar, exactly three constructions at exactly two targets; one exact symbolic/interval accounting screen. Preserve all failures and caps; no cap tuning, source emission, multi-asset compilation, sampling/timing, finance adoption or protected E10/E12 changes. Missing finite implementation closes advancement as conditional even if scalar mathematical budgets pass.",
+  "targets_exact": [
+    [
+      1,
+      100
+    ],
+    [
+      1,
+      1000
+    ]
+  ]
+}

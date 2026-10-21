@@ -1,0 +1,9 @@
+H07 bounded step completed: the original72/F40 add leaf was reconstructed in exact native order (1080 gates); eight MAJ/UMA cases and4680 dirty-output modular-addition/cleanup/inverse cases passed. Six bookkeeping controls rejected incomplete physical admission. This earns no new financial fixture credit.
+
+The nominated cat interface has an illustrative d3 raw bill only. Preparation, full error correction, control fault detection, coherent noisy channel, leakage/nonadiabatic/bias data, topology, idle exposure, feedback and durations remain unresolved. Physical integration is closed; no complete hardware error or speed result is claimed. The archived seven-T baseline retains missing physical factory facts.
+
+Frozen source: research/independent_110_20261004/H07/cat_adder_screen_v1.py. Proof/interface: docs/independent_110_20261004/H07/GATE_AND_NOISE_ASSUMPTIONS.txt. Receipt directory: results/independent_110_20261004/H07/run001/ (protocol, logical_identity_checks, gate_noise_ledger, negative_admission_controls, summary, manifest, HANDOFF_INTEGRITY). One authorized scientific invocation stayed inside30CPU/60wall/4MiB. All18 input pins and6 owned artifact hashes freshly matched after sealing. No source adoption, price draws, timing benchmarks, shared edits, or quantum advantage.
+
+Retained preparation failure: research/independent_110_20261004/H07/COLLECTOR_LAUNCH_FAILED_001.json records the initial quoting error before any retrieval or science. The corrected metadata-only collector obtained the two exact versioned primary PDFs. No scientific failure or retry occurred.
+
+Broader H07 obligations: finite complete cat-gate/channel/noise/duration certificate; all ancillas/correction/preparation/extraction/routing/control costs; compatibility with original H17 per-operation and currently missing idle/feedback failure counts; full original source physical mapping. This bounded initial screen does not solve the entire limitation.

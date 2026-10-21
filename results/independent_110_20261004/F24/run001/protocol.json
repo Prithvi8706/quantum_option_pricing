@@ -1,0 +1,83 @@
+{
+  "D1": {
+    "assets": 1,
+    "correlation": 0.3,
+    "dates": 2,
+    "id": "D1",
+    "sigma": 0.2,
+    "split": "development",
+    "strike": 95.0
+  },
+  "acceptance": "Finite diagnostics only; no error/runtimes transferred",
+  "budgets": {
+    "cpu_seconds": 10,
+    "input_bytes": 4194304,
+    "output_bytes": 2097152,
+    "output_files": 16,
+    "wall_seconds": 30
+  },
+  "corpus": [
+    {
+      "bytes": 1506,
+      "path": "research/release_checks/targets.py",
+      "sha256": "946c560682d2956c4125f25a6d7fc6eb99e884e26030f8802ea568ed347f0bc1"
+    },
+    {
+      "bytes": 7161,
+      "path": "research/journal_sprint/asian_basket.py",
+      "sha256": "cb23ff2bf2896bcde6d8329e86884c6035b1c088daefc9ddcf848c125c27dbd9"
+    },
+    {
+      "bytes": 9918,
+      "path": "research/journal_sprint/run_minimal_pivot_week2.py",
+      "sha256": "12f022ccaf102ab7e0cc93cd2336dbcda0e9fe2018221a85719b1eb431a5647a"
+    },
+    {
+      "bytes": 1074330,
+      "path": "research/independent_110_20261004/F24/primary_sources/Miyamoto_Kubo_2109_12896v1.html",
+      "sha256": "b39ef237abe2a70ea7e653d77164e02156a57c4e27303d87742b18160f87366f"
+    },
+    {
+      "bytes": 9161,
+      "path": "research/independent_110_20261004/F24/pde_screen_v1.py",
+      "sha256": "cbb10a1d432ab29f46b7b3600ad91b53f59d55f37dfd11270b785d39fbdb0f5e"
+    },
+    {
+      "bytes": 5695,
+      "path": "docs/independent_110_20261004/F24/FORMULATION_run001.txt",
+      "sha256": "eca2e2444a1047d3107fe4bc574787927da669cd8dae3956e53d3d30d43f18da"
+    }
+  ],
+  "corpus_bytes": 1107771,
+  "dates_exact": [
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      1
+    ]
+  ],
+  "grids": [
+    17,
+    33
+  ],
+  "log_spot_ratio_domain": [
+    -2,
+    2
+  ],
+  "matched_timings": false,
+  "maturity": 1.0,
+  "new_barrier_numerical_contracts": 0,
+  "numpy": "2.0.2",
+  "rate": 0.03,
+  "remaining_ITM_branch_exact": true,
+  "spot": 100.0,
+  "stop": "Two fixed grids then close incomplete quantum transfer",
+  "sum_average_domain": [
+    0,
+    95
+  ],
+  "total_implicit_steps": 64
+}

@@ -1,0 +1,112 @@
+F25 nominated D1 forward density/normalization proof and two readout ledgers.
+
+Exact contract: existing plain D1 Asian, one asset,two dates1/2 and1,
+spot100,sigma.2,r.03,T1,K95; development only. The forward state is the law
+of (X,Q), X=log(S/100),Q=half the sum of processed fixings. Between dates
+  partial_t p = -(r-sigma^2/2)partial_x p + (sigma^2/2)partial_xx p,
+and Q is fixed. At tj the probability measure is pushed forward by
+(x,q)->(x,q+100*exp(x)/2), initial delta at(0,0). Terminal payoff is(q-95)+.
+This forward/backward duality follows from the same discrete Markov/tower
+recursion. It does not import a European terminal-stock substitute.
+
+One nominated finite representation, no state evolved:
+33by33 cell-mass vector on X[-2,2],Q[0,300],N1089 valid cells, padded by zeros
+to D2048 basis states (11qubits). This is a forward candidate grid distinct
+from F24's exact-linear-tail backward-Q shortcut. It preserves the continuum
+D1 definition but introduces unresolved truncation/discretization bias.
+Let nonnegative cell masses m_i have M=sum_i m_i>0, and nonnegative chosen
+cell-payoff representatives f_i=(q_i-95)+<=205. Uniform state is the exact
+D-dimensional Hadamard state. Let p=m/||m||2, fhat=f/||f||2; zero padding is
+included. Positive payoff norm is required; zero-payoff case returns zero
+only after an independent exact payoff/contract check.
+
+Define c=<fhat,p>,d=<u_D,p>,a=c^2,b=d^2, and
+  B=exp(-rT)*M*||f||2/sqrt(D).
+Then the finite-grid price is exactly B*c/d = B*sqrt(a/b), up to the chosen
+cell quadrature/payoff representation. This identity includes M; it must
+not be removed by replacing a truncated/subprobability density with a
+normalized one. Since ||m||2<=M, d>=1/sqrt(D), b>=1/D. With D2048 we may
+use d0=1/64,b0=1/4096. B<=205 since M<=1 and discount<=1 for this D1 rate.
+Bounds hold without a density smoothness or lower bound on numeratorc.
+Nonnegativity is essential: signed-amplitude encodings cannot reuse them.
+
+Squared-overlap swap readout, stable absolute-dollar inequality:
+Clip overlap estimates into[0,1]. Suppose errors<=eta_a andeta_b, with
+eta_b<=b0/2. Using |sqrt(ahat)-sqrt(a)|<=sqrt(eta_a) and the derivative of
+1/sqrt(b) on[b0/2,1],
+  |sqrt(ahat/bhat)-sqrt(a/b)|
+    <=sqrt(2*eta_a/b0)+sqrt(2)*eta_b/b0^(3/2).
+This global bound also holds whena=0; a linear relative-error formula does
+not. Select overlap-dollar allowance e_o=1/1000, Bmax205,
+  eta_a=e_o^2*b0/(8*Bmax^2), eta_b=e_o*b0^2/(4*Bmax).
+The first dollar term<=e_o/2; second<=3e_o/8 because sqrt2<3/2 andsqrtb0<=1.
+Thus overlap error<=7e_o/8; B uncertainty is separate. Require the estimate
+Bhat to be clipped into[0,Bmax205], which cannot increase its error since
+the trueB is in that interval. Decompose Bhat*Rhat-B*R as
+Bhat*(Rhat-R)+(Bhat-B)*R, using the true ratioR=c/d<=1/d0.
+An additional B error eta_B then contributes at mosteta_B/d0. This bound
+does not substitute an uncontrolled measured ratio forR. Exact grid payoff
+norm, total mass, discount and their numerical enclosures are unpaid
+normalization obligations. Neither M nor its preparation success becomes1.
+
+State-evolution/loading contributions:
+For normalized states, ||phat-p||2<=delta_p and||fhat_approx-fhat||2<=delta_f
+give overlap-amplitude error<=delta_p+delta_f by Cauchy and triangle bounds;
+the squared-overlap error<=2(delta_p+delta_f). Denominator amplitude error
+<=delta_p if uniform preparation exact, and squared error<=2delta_p.
+These contributions consume the same eta budgets as shot error and do not
+vanish as copy counts grow. A postselected Schrödingerisation state needs a
+success-probability/cost bound; normalized-state access is not supplied by
+the PDE equation alone. Mass/tail/event/grid errors need their own proof.
+
+Swap finite shot count at statistical failurealpha3/1000:
+Split two overlap failures equally, eachdelta3/2000. Allocate half of each
+total overlap tolerance to shot error and half to all state/loading/basis
+errors combined; the latter has no supplied certificate. For swap ancilla
+probability(1+overlap_squared)/2, Hoeffding gives failure<=2exp(-n*eta^2/2).
+Choose n=ceil(16/eta_shot^2),eta_shot=eta/2; then2exp(-8)<3/2000. A positive rational Taylor
+partial sum proves exp8>4000/3. Every one ofn_a+n_b copies requires a fresh
+full density initial-preparation,evolution,event sequence, postselection/
+amplification and readout. Numerator also needsn_a full payoff preparations;
+denominator paysn_b uniform11H preparations. Failed state preparations,
+reset,routing and sustained physical error are additional costs, not zero.
+Shot tolerance is conditional on state errors being included in the budget;
+the ideal-copy count ledger is not a complete implementation certificate.
+
+Coherent alternative, explicitly specified rather than swap-gate timing:
+Hadamard-test W_c uses controlled(U_f_inverse U_p), encoding realc via
+probability(1+c)/2. W_d uses controlled(U_u_inverse U_p) similarly.
+Normalized real nonnegative state access and controlled unitary/inverse
+access are assumptions, not supplied by postselection. For amplitudes use
+  |chat/dhat-c/d|<=2eta_c/d0+2eta_d/d0^2,
+wheneta_d<=d0/2. Selecteta_c=e_o*d0/(4Bmax),eta_d=e_o*d0^2/(4Bmax), giving
+at moste_o dollars. Canonical BHMT QPE AE at power-of-twoM has probability
+error<=pi/M+pi^2/M^2, so overlap error<=2(pi/M+pi^2/M^2). Use pi<22/7 to
+choose the smallest power of two satisfying half the respective total
+amplitude tolerance. The other half is reserved for state/control/synthesis
+error and remains uncertified.
+Each independent run pays W forwardM times, W inverseM-1 times, M-1 zero/
+flag reflections, controlled operations,QPE preparation,IQFT and readout.
+Use35 fresh runs per overlap. Per-run failure<1/4 (8/pi^2>3/4), and an exact
+binomial-majority bound for35 runs, doubled by union bound, fitsalpha.003.
+All source/inverse/evolution costs and reflection/synthesis remain paid
+null physical fields. No coherent AE instance is compiled or executed.
+
+Primary anchors: exact Guseynov2511.04942v1, TheoremIII.5,Remark3,AppendixC
+Eq55-59. Its state preparation/Schrödingerisation are conditional transfer
+interfaces, not a D1 date-event implementation. Table1's call/put labels
+appear reversed relative to actual functions; use D1's explicit payoff.
+HTML displayed header24Aug2026 differs from arXiv v1 stamp07Nov2025.
+BHMT quant-ph/0005055v1, AlgorithmEst_Amp,Theorem12 (PDFpp17-19), defines
+the coherent measurement-free source/inverse requirement and error bound.
+No European payoff CNOT constant, factorization assertion or asymptotic
+runtime is reused as a demonstrated D1 cost.
+
+Acceptance/stopping: one normalization proof audit plus exactly two finite
+readout accounting ledgers, fixed N/padding/error/alpha choices. Check exact
+integer/fraction confidence/call counts and positive/negative accounting
+controls. No forward density solve/samples or quantum state preparation.
+Stop with actual complete time, M certification, state-error bounds,
+coherent access and original-price bias unresolved; no fullF25 acceptance.
+Budget one metadata prepare+one fixed accounting run,5CPU/15wall seconds,
+4MiB input,1MiB output,16files. Preserve failures; no timing/cost adoption.
