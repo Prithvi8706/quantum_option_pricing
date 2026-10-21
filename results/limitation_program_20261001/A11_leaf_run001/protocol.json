@@ -1,0 +1,45 @@
+{
+  "task": "A11 narrowed unsigned exact square-root leaf screen",
+  "frozen_before_tests": true,
+  "width": 72,
+  "fraction_bits": 40,
+  "active_input_bits": 46,
+  "input_contract": {
+    "unsigned_input_bits": 46
+  },
+  "function": "output XOR isqrt(unsigned raw argument << 40)",
+  "range_proof": "results\\limitation_program_20261001\\A07_run003\\summary.json",
+  "range_proof_sha256": "9b1c2cee192a3046eee1efd44129cc238be033050f111982fda3221f7d79c1f7",
+  "producer_sha256": "3616e2aaec2f9210ec235ac01eee8ee814b3d595f189342d05c2eb270728fee3",
+  "implementation_sha256": "e37f0e8666a0d4af4e84408b0351aa776c8146a5fd5df042ca55f9a545e4bebc",
+  "dependencies": {
+    "research\\controlled_source_completion\\primitives.py": "02b983af3f5afb538f5448aad372e214f6a3740a0c19fb017d633e302a278daf",
+    "research\\antithetic_feasibility\\reversible.py": "5105a9cb7eac541843f1a7540e9826543dfd9c5e5617d25614e435040ba8000a",
+    "research\\journal_sprint\\reversible_fixed_point.py": "52584dee87c84541b9f9e2f070114d7276de3d49d306d33c471214795b729b8b"
+  },
+  "environment": {
+    "python": "3.12.4",
+    "executable": "C:\\Users\\prith\\quantum_option_pricing\\.context\\frontier_t0_env\\Scripts\\python.exe",
+    "numpy": "2.0.2",
+    "numba": "0.60.0",
+    "pytest": "8.4.2"
+  },
+  "algorithms": [
+    "padded-historical",
+    "tight-digit-by-digit"
+  ],
+  "embeddings": [
+    "clean-child-twice",
+    "fused-child-copy"
+  ],
+  "selection": "Minimum exact seven-T/all-to-all leaf T-depth, then T count and qubits",
+  "acceptance": [
+    "Small external widths1..6: exhaustive promised unsigned inputs, all f0..w, all active input widths, output XOR and inverse with full cleanup.",
+    "Production signed-bit trap, scaled perfect-square neighbors, powers and seeded randoms equal independent isqrt and historical full72 clean leaf.",
+    "Invalid high-input promises are rejected by a separate predicate and exhibit a deliberate historical mismatch; no graph dispatch proof here.",
+    "Fused child must match literal compute/copy/exact-reverse structure.",
+    "All stored remainder and arithmetic workspace wires are included in costs."
+  ],
+  "stop_rule": "At most four declared exact variants, one finite leaf screen; 30 CPU minute ceiling per candidate. No approximation or precision changes.",
+  "exclusions": "No full-source integration/replay, total source resource gain, physical hardware timing or quantum advantage claim."
+}

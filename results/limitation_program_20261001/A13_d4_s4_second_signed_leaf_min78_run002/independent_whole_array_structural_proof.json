@@ -1,0 +1,29 @@
+{
+  "actual_rows_consumed": 18488,
+  "all34_high_output_CX_sources_equal_computed_product77": true,
+  "all_CSA_disjoint_majority_and_full78_ripple_structurally_matched": true,
+  "allocated_wires": 4940,
+  "compute_copy_inverse_rows": [
+    9208,
+    72,
+    9208
+  ],
+  "full72_copy_and_all_private_literal_inverse": true,
+  "independent_signed_coefficients_and_complement_correction": true,
+  "passed": true,
+  "producer_builder_or_plane_method_called": false,
+  "universal_signed_floor_sign_extension": {
+    "clean_phase_composition": "Each checked output CX preserves computed product/sign and XORs an arbitrary dirty target. Literal reversed compute restores all private zero and both full72 inputs. Fresh exact absolute-phase CCX plus X/CX gives the exact basis operator; linearity tensor reference identity proves arbitrary entanglement on the promise.",
+    "finite_native_and_toy_cases_are_not_the_universal_proof": true,
+    "fixture_credit": 0,
+    "full_residue_argument": "All signed coefficients, negative complemented planes, correction modulo2^78, every low column and full CSA/ripple carry give R=P mod2^78.",
+    "negative_case": "For P<0, R=P+2^78; floor(R/2^40)=floor(P/2^40)+2^38. Computed product bit77 is1. All34 high copies contribute2^72-2^38, yielding floor(P/2^40) modulo2^72 including negative nonmultiples.",
+    "no_truncation_toward_zero_or_operand_sign_XOR_shortcut": true,
+    "nonnegative_case": "For P>=0, R=P and floor(R/2^40)=floor(P/2^40) fits signed38 with computed sign0, including zero.",
+    "passed": true,
+    "promised_span": "all distinct full72 sign extensions of ordered signed38 and signed40; arbitrary dirty72; private zero; arbitrary reference entanglement",
+    "remaining_leaves_repeated_ports_caller_fullsource_G2_adoption_still_open": true,
+    "schema": "a13-v8-minimum78-universal-floor40-sign38-to72-theorem-v1",
+    "signed_range_argument": "Absolute product<=2^(38+40-2)=2^76<2^77; exact product fits signed78. Positive min-times-min is2^76, outside signed77."
+  }
+}

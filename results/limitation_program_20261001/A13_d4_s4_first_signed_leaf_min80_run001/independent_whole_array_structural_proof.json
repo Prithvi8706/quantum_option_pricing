@@ -1,0 +1,29 @@
+{
+  "actual_rows_consumed": 19396,
+  "all32_high_output_CX_sources_equal_computed_product79": true,
+  "all_CSA_disjoint_majority_and_full80_ripple_structurally_matched": true,
+  "allocated_wires": 5170,
+  "compute_copy_inverse_rows": [
+    9662,
+    72,
+    9662
+  ],
+  "full72_copy_and_all_private_literal_inverse": true,
+  "independent_signed_coefficients_and_complement_correction": true,
+  "passed": true,
+  "producer_builder_or_plane_method_called": false,
+  "universal_signed_floor_sign_extension": {
+    "all_other_five_leaves_caller_fullsource_G2_adoption_still_open": true,
+    "clean_phase_composition": "Every checked output CX preserves product/sign and XORs arbitrary dirty target. Reverse all checked compute rows to restore private zero and preserve both full72 inputs. Fresh absolute-phase CCX and X/CX equality extends by linearity tensor reference identity.",
+    "finite_native_and_toy_cases_are_not_the_universal_proof": true,
+    "fixture_credit": 0,
+    "full_residue_argument": "All signed coefficients, negative complemented planes, correction modulo2^80, every low column and full CSA/ripple carry give R=P mod2^80.",
+    "negative_case": "For P<0, R=P+2^80, floor(R/2^40)=floor(P/2^40)+2^40; computed product bit79 is1. Add2^72-2^40 through32 high copies gives floor(P/2^40) modulo2^72, including negative nonmultiples.",
+    "no_truncation_toward_zero_or_operand_sign_XOR_shortcut": true,
+    "nonnegative_case": "For P>=0, R=P and floor(R/2^40)=floor(P/2^40) fits signed40 with sign0.",
+    "passed": true,
+    "promised_span": "all distinct full72 sign extensions of ordered signed38 andsigned42; arbitrary dirty72; private zero; arbitrary reference entanglement",
+    "schema": "a13-minimum80-universal-floor40-sign40-to72-theorem-v1",
+    "signed_range_argument": "Absolute product<=2^(38+42-2)<2^79; the exact mathematical product fits signed80 including min-times-min positive endpoint."
+  }
+}

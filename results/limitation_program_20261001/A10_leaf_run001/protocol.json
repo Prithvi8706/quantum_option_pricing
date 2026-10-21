@@ -1,0 +1,42 @@
+{
+  "task": "A10 exact signed7 ln2 leaf experiment",
+  "family": "47-bit child with full72 output sign extension; safe twice and literal-structure-checked fused embedding",
+  "input_contract": {
+    "zero_low_bits": 40,
+    "signed_upper_bits": 7
+  },
+  "same_graph_dispatch_proof": "C:\\Users\\prith\\quantum_option_pricing\\results\\limitation_program_20261001\\A07_run001\\result.json",
+  "proof_result_sha256": "02943bd3ca190520f8219084282d6404aa8ae99c1feac913121f0e867b4fb047",
+  "producer_sha256": "7d8dca1a117ad2c8be209ef9d8e5ded1f7010fc59ad81310f3d257123dc487bb",
+  "implementation_sha256": "3aa552a1f59b51b2cdbd3e6f1338378456405520bd40d98449284f9a23a9137f",
+  "dependency_sha256": {
+    "research\\controlled_source_completion\\constant_multiplier.py": "625619ede05d6470b877c30f6081d358a5a437cd98454f9e29a444b7c142eaab",
+    "research\\controlled_source_completion\\primitives.py": "02b983af3f5afb538f5448aad372e214f6a3740a0c19fb017d633e302a278daf",
+    "research\\journal_sprint\\reversible_fixed_point.py": "52584dee87c84541b9f9e2f070114d7276de3d49d306d33c471214795b729b8b",
+    "research\\limitation_program_20261001\\prove_log_exponent.py": "10fed6708a9c4f2892d9d0c949c6a24291dac20626d0628b2328ca7c26f18af3"
+  },
+  "fixed_coefficient": 762123384786,
+  "width": 72,
+  "fraction_bits": 40,
+  "strategies": [
+    "binary-shift-add",
+    "signed-digit-shift-add",
+    "binary-carry-save",
+    "signed-digit-carry-save"
+  ],
+  "embeddings": [
+    "clean-child-twice",
+    "fused-child-copy"
+  ],
+  "acceptance": [
+    "All128 signed7 inputs agree with the independent product and old72 general leaf.",
+    "Arbitrary output XOR, input preservation, inverse and workspace cleanup hold.",
+    "Output never controls computation; ignored sign/zero input wires are untouched.",
+    "Invalid-domain negative controls differ and are not admitted by the same-SSA guard.",
+    "Only log-derived calls are eligible; exponential calls retain their wider fallback.",
+    "Measured complete clean-leaf resource frontier improves on current signed32 leaf."
+  ],
+  "selection": "Lowest exact seven-T/all-to-all leaf T-depth, then T count and qubits",
+  "stop_rule": "One child family, four arithmetic strategies, two wrappers. Reject a failed semantic/structure candidate; no full financial replay in this run.",
+  "exclusions": "No library integration, financial full-source replay, changed precision/law, physical timing or advantage claim."
+}

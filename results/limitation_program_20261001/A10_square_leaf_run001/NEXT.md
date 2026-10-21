@@ -1,0 +1,1 @@
+Require identical SSA identifiers for both multiplication operands; retain generic fallback otherwise. Cost and replay both full sources under existing caps before adoption. The native second argument still counts in copies/interface.

@@ -1,0 +1,132 @@
+{
+  "passed": true,
+  "accepted": false,
+  "selected": null,
+  "cases": [
+    {
+      "case": "B4x12",
+      "baseline": {
+        "source_gates": 193749608,
+        "x": 751318,
+        "cx": 102435528,
+        "ccx": 90562762,
+        "t_count": 633939334,
+        "t_depth": 979360,
+        "clifford_t_depth": 2860691,
+        "clifford_cx": 645812100,
+        "clifford_h": 181125524,
+        "logical_qubits": 550141,
+        "random_hadamards": 1920,
+        "ssa_words": 5698,
+        "max_reused_scratch_qubits": 195017,
+        "output_words": 1,
+        "t_depth_schedule": "Compact exact SSA; memory-capped independent leaf batches",
+        "ccx_expansion": "exact 7 T and 6 CX, 2 H per CCX; no relative-phase substitution"
+      },
+      "trials": [
+        {
+          "variant": "brent-kung",
+          "resources": {
+            "source_gates": 185732840,
+            "x": 727126,
+            "cx": 98466888,
+            "ccx": 86538826,
+            "t_count": 605771782,
+            "t_depth": 961916,
+            "clifford_t_depth": 2812949,
+            "clifford_cx": 617699844,
+            "clifford_h": 173077652,
+            "logical_qubits": 550141,
+            "random_hadamards": 1920,
+            "ssa_words": 5698,
+            "max_reused_scratch_qubits": 195017,
+            "output_words": 1,
+            "t_depth_schedule": "Compact exact SSA; memory-capped independent leaf batches",
+            "ccx_expansion": "exact 7 T and 6 CX, 2 H per CCX; no relative-phase substitution"
+          },
+          "eligible": false,
+          "full_t_depth_gain_percent": 1.7811632086260465,
+          "t_count_change": -28167552,
+          "t_count_change_percent": -4.443256710743871,
+          "batches": 168,
+          "changed_calls": 144,
+          "target_bytes_unchanged": true,
+          "ssa_storage_and_copy_accounting_unchanged": true,
+          "fallback_metadata_and_gate_bytes_unchanged": true,
+          "clean_leaf_work_or_scratch_improved": true
+        }
+      ],
+      "accepted": false,
+      "replay_passed": false,
+      "replays": []
+    },
+    {
+      "case": "B8x52",
+      "baseline": {
+        "source_gates": 1590661228,
+        "x": 6206834,
+        "cx": 840120752,
+        "ccx": 744333642,
+        "t_count": 5210335494,
+        "t_depth": 1029082,
+        "clifford_t_depth": 3026413,
+        "clifford_cx": 5306122604,
+        "clifford_h": 1488667284,
+        "logical_qubits": 4460481,
+        "random_hadamards": 14976,
+        "ssa_words": 46802,
+        "max_reused_scratch_qubits": 1516961,
+        "output_words": 1,
+        "t_depth_schedule": "Compact exact SSA; memory-capped independent leaf batches",
+        "ccx_expansion": "exact 7 T and 6 CX, 2 H per CCX; no relative-phase substitution"
+      },
+      "trials": [
+        {
+          "variant": "brent-kung",
+          "resources": {
+            "source_gates": 1521182572,
+            "x": 5997170,
+            "cx": 805725872,
+            "ccx": 709459530,
+            "t_count": 4966216710,
+            "t_depth": 1012802,
+            "clifford_t_depth": 2984383,
+            "clifford_cx": 5062483052,
+            "clifford_h": 1418919060,
+            "logical_qubits": 4460474,
+            "random_hadamards": 14976,
+            "ssa_words": 46802,
+            "max_reused_scratch_qubits": 1516954,
+            "output_words": 1,
+            "t_depth_schedule": "Compact exact SSA; memory-capped independent leaf batches",
+            "ccx_expansion": "exact 7 T and 6 CX, 2 H per CCX; no relative-phase substitution"
+          },
+          "eligible": false,
+          "full_t_depth_gain_percent": 1.5819924942813146,
+          "t_count_change": -244118784,
+          "t_count_change_percent": -4.685279561769429,
+          "batches": 181,
+          "changed_calls": 1248,
+          "target_bytes_unchanged": true,
+          "ssa_storage_and_copy_accounting_unchanged": true,
+          "fallback_metadata_and_gate_bytes_unchanged": true,
+          "clean_leaf_work_or_scratch_improved": true
+        }
+      ],
+      "accepted": false,
+      "replay_passed": false,
+      "replays": []
+    }
+  ],
+  "decision": "No eligible exact both-case source gain; A11 baseline retained",
+  "financial_gate_replays_run": false,
+  "leaf_candidates": 1,
+  "financial_function_changed": false,
+  "precision_or_input_law_changed": false,
+  "new_external_input_promise": false,
+  "internal_same_ssa_promise_proved_at_actual_sites": true,
+  "ssa_storage_or_copy_savings_claimed": false,
+  "gates_G2_to_G5_closed": false,
+  "seconds": 63.89318090000597,
+  "cpu_seconds": 60.09375
+}

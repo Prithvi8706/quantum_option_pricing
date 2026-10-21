@@ -1,0 +1,1 @@
+Run a fresh proof-dispatched full-source screen only when source_screen_allowed. Preserve accepted shifts, native copies and unsigned guards. Reconcile complete cleanup and costs independently; G2-G5 remain open.

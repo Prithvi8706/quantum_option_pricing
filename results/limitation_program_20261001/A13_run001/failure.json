@@ -1,0 +1,12 @@
+{
+  "phase": "run",
+  "error_type": "MathematicalGuardError",
+  "error": "Every actual stored72 intermediate must be signed-safe",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\prith\\quantum_option_pricing\\research\\limitation_program_20261001\\experiment_exp_frontier.py\", line 2794, in run\n    domain, graphs, sources, catalogs, _ = source_domain_binding(\n                                           ^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\prith\\quantum_option_pricing\\research\\limitation_program_20261001\\experiment_exp_frontier.py\", line 2191, in source_domain_binding\n    signed_range(bounds)\n  File \"C:\\Users\\prith\\quantum_option_pricing\\research\\limitation_program_20261001\\experiment_exp_frontier.py\", line 1079, in signed_range\n    guard(\n  File \"C:\\Users\\prith\\quantum_option_pricing\\research\\limitation_program_20261001\\experiment_exp_frontier.py\", line 63, in guard\n    raise MathematicalGuardError(message)\nMathematicalGuardError: Every actual stored72 intermediate must be signed-safe\n",
+  "failed": true,
+  "all_fixture_credit": 0,
+  "budget": {
+    "process_CPU_seconds": 22.34375,
+    "wall_seconds": 23.715137499995762
+  }
+}

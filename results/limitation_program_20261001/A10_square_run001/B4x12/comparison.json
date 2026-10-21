@@ -1,0 +1,57 @@
+{
+  "case": "B4x12",
+  "baseline": {
+    "source_gates": 193749608,
+    "x": 751318,
+    "cx": 102435528,
+    "ccx": 90562762,
+    "t_count": 633939334,
+    "t_depth": 979360,
+    "clifford_t_depth": 2860691,
+    "clifford_cx": 645812100,
+    "clifford_h": 181125524,
+    "logical_qubits": 550141,
+    "random_hadamards": 1920,
+    "ssa_words": 5698,
+    "max_reused_scratch_qubits": 195017,
+    "output_words": 1,
+    "t_depth_schedule": "Compact exact SSA; memory-capped independent leaf batches",
+    "ccx_expansion": "exact 7 T and 6 CX, 2 H per CCX; no relative-phase substitution"
+  },
+  "trials": [
+    {
+      "variant": "brent-kung",
+      "resources": {
+        "source_gates": 185732840,
+        "x": 727126,
+        "cx": 98466888,
+        "ccx": 86538826,
+        "t_count": 605771782,
+        "t_depth": 961916,
+        "clifford_t_depth": 2812949,
+        "clifford_cx": 617699844,
+        "clifford_h": 173077652,
+        "logical_qubits": 550141,
+        "random_hadamards": 1920,
+        "ssa_words": 5698,
+        "max_reused_scratch_qubits": 195017,
+        "output_words": 1,
+        "t_depth_schedule": "Compact exact SSA; memory-capped independent leaf batches",
+        "ccx_expansion": "exact 7 T and 6 CX, 2 H per CCX; no relative-phase substitution"
+      },
+      "eligible": false,
+      "full_t_depth_gain_percent": 1.7811632086260465,
+      "t_count_change": -28167552,
+      "t_count_change_percent": -4.443256710743871,
+      "batches": 168,
+      "changed_calls": 144,
+      "target_bytes_unchanged": true,
+      "ssa_storage_and_copy_accounting_unchanged": true,
+      "fallback_metadata_and_gate_bytes_unchanged": true,
+      "clean_leaf_work_or_scratch_improved": true
+    }
+  ],
+  "accepted": false,
+  "replay_passed": false,
+  "replays": []
+}

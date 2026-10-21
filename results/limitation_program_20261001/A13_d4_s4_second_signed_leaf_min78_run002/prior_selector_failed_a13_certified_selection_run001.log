@@ -1,0 +1,32 @@
+﻿.context/frontier_t0_env/Scripts/python.exe : Traceback (most recent call last):
+At line:8 char:1
++ .context/frontier_t0_env/Scripts/python.exe -B -m research.limitation ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File 
+"C:\Users\prith\quantum_option_pricing\research\limitation_program_20261001\select_a13_certified_candidates_v1.py", 
+line 2105, in <module>
+    main()
+  File 
+"C:\Users\prith\quantum_option_pricing\research\limitation_program_20261001\select_a13_certified_candidates_v1.py", 
+line 2015, in main
+    report = selection_screen()
+             ^^^^^^^^^^^^^^^^^^
+  File 
+"C:\Users\prith\quantum_option_pricing\research\limitation_program_20261001\select_a13_certified_candidates_v1.py", 
+line 1920, in selection_screen
+    result, coordinates = row_screen(actual, descriptor, domain, allowance)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File 
+"C:\Users\prith\quantum_option_pricing\research\limitation_program_20261001\select_a13_certified_candidates_v1.py", 
+line 1673, in row_screen
+    require(
+  File 
+"C:\Users\prith\quantum_option_pricing\research\limitation_program_20261001\select_a13_certified_candidates_v1.py", 
+line 197, in require
+    raise ValueError(message)
+ValueError: Unchanged actual32-round quantized candidate and closed uniform proof scalar

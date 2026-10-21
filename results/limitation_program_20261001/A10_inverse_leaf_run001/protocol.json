@@ -1,0 +1,31 @@
+{
+  "acceptance": "Every independent signed floor/modular XOR, historical equivalence and cleanup check passes; emitted gate/resource metadata and hashes agree",
+  "coefficient": 1586259972792,
+  "created_utc": "2026-10-01T08:57:33.663940+00:00",
+  "domain": "All signed 72-bit raw inputs; no range or zero-low promise",
+  "exclusions": "No full financial-source replay, loading-law change, estimator, physical resource time, cloud/package/push action or achieved full-source depth gain",
+  "fraction_bits": 40,
+  "frozen_inputs": {
+    "research/controlled_source_completion/constant_multiplier.py": "625619ede05d6470b877c30f6081d358a5a437cd98454f9e29a444b7c142eaab",
+    "research/controlled_source_completion/primitives.py": "02b983af3f5afb538f5448aad372e214f6a3740a0c19fb017d633e302a278daf",
+    "research/limitation_program_20261001/test_inverse_ln2_multiplier.py": "e2a9e5d94df5292415d58310aab30a8c78becd09f7e43f4ea3ece98433be703b",
+    "results/limitation_audit_20261001/constant_multiplier_v1/leaves/18e3e6a4b0b5c576252e.json": "b675d51203a1f11d87bcd6642e94e9a23484df1a2f5a598f099174ba2d9c2174",
+    "results/limitation_audit_20261001/constant_multiplier_v1/leaves/18e3e6a4b0b5c576252e.npy": "2343b3e0fbbe0f09573d1be293e64c92fe87da971731331d0b5613101a4efc15"
+  },
+  "historical_control": "Build default historical cmul once; require identical gate array/registers/resources to archived leaf18e3e6a4b0b5c576252e; cache its observations across all strategies",
+  "item": "A10",
+  "local_only": true,
+  "production_tests": "Signed extrema, every nominated binary boundary +/-1, nonzero low40 bits, 128 seeded full72 random inputs; both gate directions, arbitrary XOR outputs, full cleanup and input restoration",
+  "random_seed": 20261001072,
+  "selection": "Report the full leaf Pareto set in T-depth/T-count/qubits; no default source replacement before capped complete-source measurement",
+  "small_tests": "Widths1..5, every fractional width, coefficients -17,-7,-3,-1,0,1,3,7,17; every raw input, arbitrary/zero/all-ones outputs, both gate directions",
+  "stop_rule": "Four strategies and one frozen test suite. Reject any failing candidate before full-source integration; keep archived source unchanged.",
+  "strategies": [
+    "binary-shift-add",
+    "signed-digit-shift-add",
+    "binary-carry-save",
+    "signed-digit-carry-save"
+  ],
+  "width": 72,
+  "zero_bits": 0
+}

@@ -1,0 +1,18 @@
+{
+  "integer_function": "out XOR isqrt(unsigned(raw_input)<<fraction_bits)",
+  "external_width": 72,
+  "fraction_bits": 40,
+  "unsigned_active_input_bits": 46,
+  "result_bits": 43,
+  "tight_remainder_bits": 45,
+  "output_interface_bits": 72,
+  "arbitrary_output_xor": true,
+  "input_and_remainder_workspace_restored": true,
+  "promise_scope": "Proved B4/B8 SSA inputs only; generic sites keep old bytes",
+  "architecture": "Four narrowed variants of stored-remainder digit-by-digit root",
+  "not_yet_screened": [
+    "non-restoring root",
+    "Newton reciprocal root",
+    "Heston source"
+  ]
+}

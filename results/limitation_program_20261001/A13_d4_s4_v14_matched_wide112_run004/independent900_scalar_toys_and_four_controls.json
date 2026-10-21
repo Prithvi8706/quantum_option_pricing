@@ -1,0 +1,49 @@
+{
+  "alternative_native_or_toy_gate_arrays_constructed": 0,
+  "controls": [
+    {
+      "bad_output": 33554431,
+      "category": "bad_short_modulus65_without_full112_window",
+      "correct_output": 4722366482869645213695
+    },
+    {
+      "bad_output": 1,
+      "category": "dropped_low40_carry",
+      "correct_output": 2
+    },
+    {
+      "category": "invalid_full72_sign_extension",
+      "exact_rejection": true,
+      "negative_validator_args": [
+        134217727,
+        1,
+        27,
+        38
+      ],
+      "positive_validator_first": true
+    },
+    {
+      "category": "omitted_or_corrupted_full112_output_window",
+      "positive_plan_first": true,
+      "structural_rejections": [
+        {
+          "exact_dedicated_rejection": true,
+          "mutation": "omitted_last_copy"
+        },
+        {
+          "exact_dedicated_rejection": true,
+          "mutation": "corrupted_first_source"
+        }
+      ]
+    }
+  ],
+  "expected_controls_are_not_actual_run_failures": true,
+  "fixture_credit": 0,
+  "passed": true,
+  "scalar_toy_ordered_pairs": 900,
+  "toy_native_fraction_residue_bits": [
+    8,
+    4,
+    12
+  ]
+}

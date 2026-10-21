@@ -1,0 +1,98 @@
+[
+  {
+    "strategy": "binary-shift-add",
+    "resources": {
+      "source_gates": 197066804,
+      "x": 166846,
+      "cx": 106517820,
+      "ccx": 90382138,
+      "t_count": 632674966,
+      "t_depth": 2077734,
+      "clifford_t_depth": 6177619,
+      "clifford_cx": 648810648,
+      "clifford_h": 180764276,
+      "logical_qubits": 550150,
+      "random_hadamards": 1920,
+      "ssa_words": 5698,
+      "max_reused_scratch_qubits": 195026,
+      "output_words": 1,
+      "t_depth_schedule": "Compact exact SSA; memory-capped independent leaf batches",
+      "ccx_expansion": "exact 7 T and 6 CX, 2 H per CCX; no relative-phase substitution"
+    },
+    "eligible": false,
+    "batches": 173,
+    "changed_calls": 30
+  },
+  {
+    "strategy": "signed-digit-shift-add",
+    "resources": {
+      "source_gates": 196824164,
+      "x": 166846,
+      "cx": 106356060,
+      "ccx": 90301258,
+      "t_count": 632108806,
+      "t_depth": 2074246,
+      "clifford_t_depth": 6162945,
+      "clifford_cx": 648163608,
+      "clifford_h": 180602516,
+      "logical_qubits": 550150,
+      "random_hadamards": 1920,
+      "ssa_words": 5698,
+      "max_reused_scratch_qubits": 195026,
+      "output_words": 1,
+      "t_depth_schedule": "Compact exact SSA; memory-capped independent leaf batches",
+      "ccx_expansion": "exact 7 T and 6 CX, 2 H per CCX; no relative-phase substitution"
+    },
+    "eligible": true,
+    "batches": 173,
+    "changed_calls": 30
+  },
+  {
+    "strategy": "binary-carry-save",
+    "resources": {
+      "source_gates": 196720484,
+      "x": 171766,
+      "cx": 106286820,
+      "ccx": 90261898,
+      "t_count": 631833286,
+      "t_depth": 2074246,
+      "clifford_t_depth": 6162945,
+      "clifford_cx": 647858208,
+      "clifford_h": 180523796,
+      "logical_qubits": 550150,
+      "random_hadamards": 1920,
+      "ssa_words": 5698,
+      "max_reused_scratch_qubits": 195026,
+      "output_words": 1,
+      "t_depth_schedule": "Compact exact SSA; memory-capped independent leaf batches",
+      "ccx_expansion": "exact 7 T and 6 CX, 2 H per CCX; no relative-phase substitution"
+    },
+    "eligible": true,
+    "batches": 173,
+    "changed_calls": 30
+  },
+  {
+    "strategy": "signed-digit-carry-save",
+    "resources": {
+      "source_gates": 196677404,
+      "x": 175006,
+      "cx": 106255380,
+      "ccx": 90247018,
+      "t_count": 631729126,
+      "t_depth": 2074246,
+      "clifford_t_depth": 6162945,
+      "clifford_cx": 647737488,
+      "clifford_h": 180494036,
+      "logical_qubits": 550150,
+      "random_hadamards": 1920,
+      "ssa_words": 5698,
+      "max_reused_scratch_qubits": 195026,
+      "output_words": 1,
+      "t_depth_schedule": "Compact exact SSA; memory-capped independent leaf batches",
+      "ccx_expansion": "exact 7 T and 6 CX, 2 H per CCX; no relative-phase substitution"
+    },
+    "eligible": true,
+    "batches": 173,
+    "changed_calls": 30
+  }
+]

@@ -1,0 +1,41 @@
+{
+  "task": "A10 exact same-SSA signed square finite leaf experiment",
+  "frozen_before_tests_and_counts": true,
+  "width": 72,
+  "fraction_bits": 40,
+  "product_width": 112,
+  "input_contract": {
+    "same_ssa_arguments": true
+  },
+  "native_input_registers": 2,
+  "function": "Under equal arguments, output XOR floor(signed(a)**2/2**40) mod2**72",
+  "variant": "brent-kung",
+  "lowering": "same-ssa-signed-square-csa-prefix-v1",
+  "producer_sha256": "8cd13a6a0754b8ba239baf1dbc6e7672d5e4d03c65dd33ee0728ca5da006dadf",
+  "implementation_sha256": "df38cdbfd2eeb0e7df1709843a2fdf72b433e542e8d7fd1e668f3e3fce587c7c",
+  "dependencies": {
+    "research\\controlled_source_completion\\prefix_multiplier.py": "1142fd2a4b9155144992659899b51d48231caddccbcfa0f184cf9cf7d7bb8393",
+    "research\\controlled_source_completion\\carry_lookahead.py": "5dc4ff809919cbe190075d53ffb9e838a5ef7090011c4396126d770829c7c4af",
+    "research\\controlled_source_completion\\primitives.py": "02b983af3f5afb538f5448aad372e214f6a3740a0c19fb017d633e302a278daf",
+    "research\\journal_sprint\\reversible_fixed_point.py": "52584dee87c84541b9f9e2f070114d7276de3d49d306d33c471214795b729b8b"
+  },
+  "environment": {
+    "python": "3.12.4",
+    "executable": "C:\\Users\\prith\\quantum_option_pricing\\.context\\frontier_t0_env\\Scripts\\python.exe",
+    "executable_sha256": "41123879d2e991377997acadf5f0cf8f34fa10d86362eded8c69b6041e2893b5",
+    "numpy": "2.0.2",
+    "numba": "0.60.0",
+    "pytest": "8.4.2"
+  },
+  "acceptance": [
+    "Exhaust widths1..6, f0..w, every signed raw input and output word, forward/inverse; independent integer square/floor and complete input/scratch restoration.",
+    "Production72/f40 signed endpoints, all single-bit/adjacent/negated powers and 128 seeded random words equal independent floor and frozen general prefix multiply.",
+    "Inspect literal diagonal CX/offdiagonal CCX, no output controls and no use of b; complete outer compute/copy/exact-reverse structure.",
+    "Reject unequal or malformed invocations at explicit API boundary; show deliberate inequality mismatch. Whole-source same SSA proof is separate work.",
+    "Negative controls demonstrate missing sign correction and low-column carry fail."
+  ],
+  "selection": "One declared exact variant; no adaptive search or precision change.",
+  "stop_rule": "One finite candidate; at most 30 CPU minutes. Stop on any semantic failure.",
+  "resource_model": "Actual X/CX/CCX arrays; seven-T exact CCX; all-to-all logical scheduling.",
+  "exclusions": "No source adoption/full-source gain, physical runtime or quantum advantage claim."
+}

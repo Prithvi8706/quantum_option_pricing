@@ -1,0 +1,58 @@
+{
+  "alternative_native_or_toy_gate_arrays_constructed": 0,
+  "controls": [
+    {
+      "a": -1,
+      "b": 1,
+      "bad_method_rejected": true,
+      "bad_output": 1099511627775,
+      "correct_output": 4722366482869645213695,
+      "name": "bad-short-modulus"
+    },
+    {
+      "a": 2097151,
+      "b": 1048577,
+      "bad_method_rejected": true,
+      "bad_output": 1,
+      "correct_output": 2,
+      "name": "dropped-low-carry"
+    },
+    {
+      "name": "invalid-sign-extension",
+      "promise_rejected_before_any_logical_case": true,
+      "raw_a": 274877906943,
+      "raw_b": 1
+    },
+    {
+      "a": -1,
+      "b": 1,
+      "bad_corrupted_output": 4722366481770133585919,
+      "bad_method_rejected": true,
+      "bad_omitted_output": 1099511627775,
+      "correct_output": 4722366482869645213695,
+      "name": "omitted-or-corrupted-output-high-sign-copies",
+      "structural_rejections": [
+        {
+          "exact_structural_rejection": true,
+          "mutation": "omitted-high32"
+        },
+        {
+          "exact_structural_rejection": true,
+          "mutation": "corrupted-first-high-sign-copy"
+        }
+      ]
+    }
+  ],
+  "expected_control_rejections_are_not_actual_run_failures": true,
+  "fixture_credit": 0,
+  "operand_sign_XOR_is_not_sign_authority_at_zero": true,
+  "passed": true,
+  "scalar_toy_ordered_pairs": 900,
+  "toy_L_less_equal_F_branch_computed_product_sign_to_all8": true,
+  "toy_actual_product_bits": "L=wa+wb, all low columns and carries retained",
+  "toy_native_fraction_residue_bits": [
+    8,
+    4,
+    12
+  ]
+}

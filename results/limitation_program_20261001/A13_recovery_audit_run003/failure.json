@@ -1,0 +1,12 @@
+{
+  "budget": {
+    "process_CPU_seconds": 270.0625,
+    "wall_seconds": 283.67518860002747
+  },
+  "error": "Fixed independent A13 CPU/wall censor",
+  "error_type": "BudgetCensoredError",
+  "failed": true,
+  "new_test_credit": 0,
+  "phase": "run",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\prith\\quantum_option_pricing\\research\\limitation_program_20261001\\audit_exp_frontier_recovery_v3.py\", line 4709, in run\n    statuses, row_evidence = audit_rows(\n                             ^^^^^^^^^^^\n  File \"C:\\Users\\prith\\quantum_option_pricing\\research\\limitation_program_20261001\\audit_exp_frontier_recovery_v3.py\", line 4530, in audit_rows\n    proof = audit_architecture(\n            ^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\prith\\quantum_option_pricing\\research\\limitation_program_20261001\\audit_exp_frontier_recovery_v3.py\", line 3448, in audit_architecture\n    coefficients, quantized, evidence = audit_fit_segment(fit, degree, segment, started)\n                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\prith\\quantum_option_pricing\\research\\limitation_program_20261001\\audit_exp_frontier_recovery_v3.py\", line 1951, in audit_fit_segment\n    check(started, admission=True)\n  File \"C:\\Users\\prith\\quantum_option_pricing\\research\\limitation_program_20261001\\audit_exp_frontier_recovery_v3.py\", line 156, in check\n    raise BudgetCensoredError(\"Fixed independent A13 CPU/wall censor\")\nBudgetCensoredError: Fixed independent A13 CPU/wall censor\n"
+}
