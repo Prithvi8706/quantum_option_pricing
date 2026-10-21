@@ -1,0 +1,3 @@
+# Next local action
+
+The task and reconciled B4/B8 arithmetic baseline are frozen. Combine compact SSA allocation with the accepted carry-save/ln(2) leaves and capped parallel schedule (A06/H15/C13), preserving target hashes and using the original caps. Validate bindings, signed values, arbitrary output XOR and cleanup before adoption. A01 category and operation ledgers then rank subsequent leaf trials. Do not use C4/H8 estimator counts for these B4/B8 sources. G2 price error, G3 estimator, G4 actual matched time-to-accuracy and G5 physical mapping remain unresolved. Failed exact candidates retain this accepted baseline. All work remains local.

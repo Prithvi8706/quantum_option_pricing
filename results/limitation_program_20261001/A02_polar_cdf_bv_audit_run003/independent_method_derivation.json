@@ -1,0 +1,52 @@
+{
+  "analytic_derivation": {
+    "actual_point_value_BV_convention": [
+      "Variation includes the actual value at every point: at a crossing or atom, both |f(a)-f(a-)| and |f(a+)-f(a)| are charged. Strict-tie singleton defects therefore have two jumps; no right-continuous representative replaces the priced value.",
+      "For these piecewise smooth conditional functions, write the left-to-point jump as a closed threshold 1{x>=a} and the point-to-right jump as an open threshold 1{x>a}. Both threshold expectation differences are bounded by the same CDF discrepancy D because the comparison radial/angle law is continuous and one-sided CDF limits are bounded by D.",
+      "The continuous variation and both actual jump variations give the CDF/BV error <=D*TV with the actual priced point values. The same finite-jump argument applies on the circle after a cut, and uniform midpoint D=1/(2N) yields TV/(2N), including extrema ties at midpoint atoms."
+    ],
+    "angular_BV": [
+      "Condition on other variables after this pair's radius is finite and replaced. Positive ideal role coefficients give every stock c_i exp(A_i*cos(theta)+B_i*sin(theta)), c_i>0,A_i>=0,B_i>=0, with A_i^2+B_i^2<=kappa^2<2.",
+      "Put x_i=A_i*c+B_i*s,y_i=-A_i*s+B_i*c,w_i=c_i*exp(x_i). For first-quadrant s,c>0, y_i^2<=kappa*(s^2*A_i+c^2*B_i) by the independently checked nonnegative polynomial remainder and A_i,B_i<=kappa.",
+      "At a stationary point, U=sum(w_i*A_i),V=sum(w_i*B_i) satisfy -s*U+c*V=0. X=sum(w_i*x_i)=c*U+s*V then yields U=c*X,V=s*X, so sum(w_i*y_i^2)<=kappa*s*c*(s+c)*X<=kappa*X/sqrt(2)<X when X>0.",
+      "Consequently every first-quadrant stationary point is a strict maximum. In quadrantIII x_i<=0 makes basket second derivative=sum(w_i*(y_i^2-x_i))>0 unless all directions vanish; quadrantsII andIV have fixed derivative signs.",
+      "Derivative continuity plus quadrant endpoint signs gives one circular maximum and one minimum. If an axis derivative vanishes all positive-weight directions have that coordinate zero; the one-axis semicircle case, all-zero directions, zero radius and constant functions are handled directly.",
+      "Every strict threshold indicator has circular TV<=2, including a strict tie removing an extremal point. A closed finite band can be two arcs and has TV<=4. The average basket has the same positive form, so its nonnegative payoff capped at C has circular TV<=2C.",
+      "Product variation with nt survival indicators is <=2C+sum_j C*2=2C*(nt+1). Each current whole-pair angle midpoint replacement costs <=TV/(2N)=C*(nt+1)/N."
+    ],
+    "fixture_credit": 0,
+    "full_G2": false,
+    "native_financial_bridge_open": true,
+    "radial_BV": [
+      "Condition on every other variable and the current angle. Every ideal stock is c_i exp(d_i*r), c_i>0, with unrestricted signed d_i; each date basket is positive and convex on r>=0.",
+      "A strict convex sublevel is one interval, possibly empty or unbounded. All-date strict survival is the intersection of these intervals and hence also one interval.",
+      "The time/stock average is convex; its positive part above K, scaled by positive discount, is convex and nonnegative. Cap it at C=(H-K)*discount, which equals the ideal surviving payoff because every date basket is <H.",
+      "A nonnegative capped convex function on the half-line decreases then increases, with total variation <=2C. Restricting it to one survival interval adds at most two endpoint jumps of size C, so payoff TV<=4C, including strict endpoint ties.",
+      "The CDF/BV inequality on [0,infinity) thus costs <=4C*D_S per whole pair's radius replacement."
+    ],
+    "squared_radius_CDF": [
+      "For every original midpoint U, Lhat differs from log(U) by at most E_L; therefore max(-2Lhat,0) differs from -2log(U) by at most 2E_L, since positive-part is 1-Lipschitz and -2log(U)>=0.",
+      "The raw isqrt divides by Q and rounds the nonnegative square root down by less than EPS. With true/root upper bound B, squared radius discrepancy is at most eta=2E_L+2EPS*B+EPS^2.",
+      "Uniform midpoint CDF has discrepancy <=1/(2N) from uniform[0,1]. Exact -2log(U) is Exp(rate1/2), whose interval probability is <= interval_length/2.",
+      "Event inclusions S<=t-eta implies Shat<=t implies S<=t+eta yield KS(Shat,Exp)<=1/(2N)+eta/2. No order of Shat(U) is needed; sqrt maps this to a Rayleigh radius CDF bound."
+    ],
+    "whole_pair_order_and_open_native_bridge": [
+      "Replace a current pair radius first while its current angle may remain continuous, then replace that pair's ideal angle. Other pair values only change positive weights; no independence of the pair's two output coordinates is claimed.",
+      "The source supplies exactly30/234 complete pairs, possibly spanning dates. Uniform positive source-role norm guards apply to every stock prefix and all fixed pair conditionings; sum per-pair radial and angular costs once.",
+      "These lemmas certify exact unclipped ideal GBM with internal native Rhat and exact ideal angle. They do not certify rounded native cosine/product, log-domain clamps, exp/financial floors, barrier bands or native dollar bias; no AS scalar2C, old Holder, cutoff or old grid term is transferred."
+    ]
+  },
+  "exact_formal_identity_audit": {
+    "angular_payoff_TV": "2*C*(nt+1)",
+    "axis_zero_radius_constant_and_strict_ties_retained": true,
+    "closed_band_TV": 4,
+    "current_radius_replaced_before_current_angle": true,
+    "exact_source_roles_positive": true,
+    "exponent_vector_ring": true,
+    "independent_formal_identities": 5,
+    "native_financial_bridge_open": true,
+    "radial_convexity_unclipped_only": true,
+    "radial_payoff_TV_multiplier": 4,
+    "strict_threshold_TV": 2
+  }
+}

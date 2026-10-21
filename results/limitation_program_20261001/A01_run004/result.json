@@ -1,0 +1,127 @@
+{
+  "G2_G5": "unresolved",
+  "cases": [
+    {
+      "batch_count": 173,
+      "case": "B4x12",
+      "clifford_t_depth": 6162945,
+      "copy_ledger": {
+        "clean_argument_copy_cx": 2184324,
+        "clean_shared_control_copy_depth": 4324,
+        "full_width_total_copy_cx": 2711016,
+        "output_copy_cx": 72,
+        "output_copy_depth": 1,
+        "saved_copy_cx": 526620,
+        "total_copy_cx": 2184396
+      },
+      "counts": {
+        "ccx": 90322618,
+        "clifford_cx": 648351888,
+        "clifford_h": 180645236,
+        "cx": 106416180,
+        "source_gates": 196936004,
+        "t_count": 632258326,
+        "x": 197206
+      },
+      "logical_qubits": 550150,
+      "peak_private_scratch_qubits": 195026,
+      "qubit_cap": 550158,
+      "retained_ssa_qubits": 355052,
+      "t_depth": 2074246,
+      "top_three_depth_owner_leaves": [
+        {
+          "exclusive_batch_t_depth": 901824,
+          "fixed_batch_zero_cost_depth_diagnostic": 1251242,
+          "leaf": "9d1f0ace5d924241b3d0",
+          "op": "mul",
+          "optimistic_fixed_batch_depth_saving": 823004,
+          "owned_batches": 122,
+          "params": {}
+        },
+        {
+          "exclusive_batch_t_depth": 450386,
+          "fixed_batch_zero_cost_depth_diagnostic": 1623860,
+          "leaf": "64238d79903cb4f6c9b6",
+          "op": "sqrt",
+          "optimistic_fixed_batch_depth_saving": 450386,
+          "owned_batches": 1,
+          "params": {}
+        },
+        {
+          "exclusive_batch_t_depth": 315008,
+          "fixed_batch_zero_cost_depth_diagnostic": 1767224,
+          "leaf": "18e3e6a4b0b5c576252e",
+          "op": "cmul",
+          "optimistic_fixed_batch_depth_saving": 307022,
+          "owned_batches": 4,
+          "params": {
+            "c": 1586259972792
+          }
+        }
+      ]
+    },
+    {
+      "batch_count": 183,
+      "case": "B8x52",
+      "clifford_t_depth": 6768275,
+      "copy_ledger": {
+        "clean_argument_copy_cx": 18376036,
+        "clean_shared_control_copy_depth": 25088,
+        "full_width_total_copy_cx": 22591080,
+        "output_copy_cx": 72,
+        "output_copy_depth": 1,
+        "saved_copy_cx": 4214972,
+        "total_copy_cx": 18376108
+      },
+      "counts": {
+        "ccx": 741626522,
+        "clifford_cx": 5320991536,
+        "clifford_h": 1483253044,
+        "cx": 871232404,
+        "source_gates": 1614447328,
+        "t_count": 5191385654,
+        "x": 1588402
+      },
+      "logical_qubits": 4460481,
+      "peak_private_scratch_qubits": 1516961,
+      "qubit_cap": 4460490,
+      "retained_ssa_qubits": 2943448,
+      "t_depth": 2272184,
+      "top_three_depth_owner_leaves": [
+        {
+          "exclusive_batch_t_depth": 909216,
+          "fixed_batch_zero_cost_depth_diagnostic": 1604940,
+          "leaf": "9d1f0ace5d924241b3d0",
+          "op": "mul",
+          "optimistic_fixed_batch_depth_saving": 667244,
+          "owned_batches": 123,
+          "params": {}
+        },
+        {
+          "exclusive_batch_t_depth": 472512,
+          "fixed_batch_zero_cost_depth_diagnostic": 1818712,
+          "leaf": "18e3e6a4b0b5c576252e",
+          "op": "cmul",
+          "optimistic_fixed_batch_depth_saving": 453472,
+          "owned_batches": 6,
+          "params": {
+            "c": 1586259972792
+          }
+        },
+        {
+          "exclusive_batch_t_depth": 450386,
+          "fixed_batch_zero_cost_depth_diagnostic": 1821798,
+          "leaf": "64238d79903cb4f6c9b6",
+          "op": "sqrt",
+          "optimistic_fixed_batch_depth_saving": 450386,
+          "owned_batches": 1,
+          "params": {}
+        }
+      ]
+    }
+  ],
+  "decision": "completed_scoped_cost_audit",
+  "new_gate_replays": 0,
+  "next": "Complete the proved seven-bit logarithm-exponent integration already underway, then re-rank. Further exact trials should target the actual mul/cmul/sqrt owner leaves with capped source-wide validation.",
+  "passed": true
+}

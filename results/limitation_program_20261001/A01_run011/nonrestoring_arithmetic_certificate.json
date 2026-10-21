@@ -1,0 +1,21 @@
+{
+  "algebraic_all_guarded_input_identity": true,
+  "cleanup": "All k+1 remainder snapshots, private k root bits, operand and helper are charged. Operand construction is reversed per stage; complete compute is reversed after copying root bits to arbitrary output.",
+  "finite_bookkeeping_inputs": 68127,
+  "finite_bookkeeping_stages": 549489,
+  "induction": "In either old-sign branch the trial equals M-(2Q+1)\u00b2, with M=4N+d. If trial>=0 choose new Q=2Q+1 and R=M-Q'\u00b2; otherwise choose Q'=2Q and R=M-(Q'+1)\u00b2. Since Q\u00b2<=N<(Q+1)\u00b2, M lies between (2Q)\u00b2 and (2Q+2)\u00b2, so this choice is exactly isqrt(M).",
+  "initial": "N=Q=R=0",
+  "input_formula": "isqrt(unsigned_x << fraction_bits)",
+  "intermediate_policy": "4R+d may overflow signed k+2. All updates are modulo2**(k+2); the proved final exact remainder fits that signed word, so the final sign is correct. No promise that every pre-add intermediate fits.",
+  "invariant": "Q=isqrt(N); R=N-Q\u00b2 if nonnegative, else N-(Q+1)\u00b2",
+  "negative_new_cases": 242512,
+  "negative_old_cases": 208503,
+  "operand_identity": "Low bits11; each higher bit is Q_bit XOR NOT(old_R_sign). This equals -(4Q+1) or +(4Q+3) modulo2**(k+2), respectively.",
+  "overflowing_preadd_shift_cases": 16816,
+  "passed": true,
+  "proof_scope": "Algebraic induction covers every guarded input. Finite bookkeeping and emitted tests check realization; no exhaustive72-bit enumeration, continuous-dollar or physical-speedup certification.",
+  "recurrence": "R'=4R+d-(4Q+1) if old R>=0; R'=4R+d+(4Q+3) otherwise; Q'=2Q+int(R'>=0)",
+  "remainder_correction": "No remainder is externally output. A negative final R would become the usual nonnegative remainder after adding 2Q+1; root-only clean-XOR emission may reverse the uncorrected signed history directly.",
+  "scaling": "Read radicand pair at original source indices 2*position+bit-fraction_bits; absent indices are zero. Leading padding and all lower fractional zeros are retained.",
+  "signed_bound": "-(2Q+1)<=R<=2Q, Q<2**stage. At final k stages, R lies strictly within [-2**(k+1),2**(k+1)), representable in signed k+2 bits."
+}

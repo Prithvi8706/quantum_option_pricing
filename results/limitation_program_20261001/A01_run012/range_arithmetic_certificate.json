@@ -1,0 +1,15 @@
+{
+  "all_guarded_input_algebraic_identity": true,
+  "carry_identity": "Fresh sum=x XOR y XOR z; carry=(x AND y) XOR ((x XOR y) AND z). The two carry terms are disjoint, so sum+2*carry=x+y+z. No low column is discarded",
+  "cleanup": "All partial, correction, CSA and prefix scratch wires are retained and charged; native output XOR followed by literal reverse restores every workspace bit",
+  "complement_identity": "For t in {0,1}, -t*2**column=(1-t)*2**column-2**column. Sum fixed corrections modulo the FULL 2**(native_width+fraction_bits), including high sign extension",
+  "finite_bookkeeping_inputs": 6844,
+  "negative_products": 2521,
+  "passed": true,
+  "prefix_identity": "A prefix pair is G (carry generated) and P (all propagate); G*P=0. Composition (Gh XOR Ph*Gl, Ph*Pl) exactly represents the concatenated interval. Addition output bit=propagate XOR preceding prefix G",
+  "proof_scope": "All guarded signed inputs follow from these identities. Finite arithmetic and saved emitted tests check realization; no exhaustive72-bit, continuous-dollar or physical advantage certification",
+  "sign_extension_policy": "Active signed intervals prove every high native input bit equals its active sign bit. Native inputs/output remain full width; compute does not target inputs or externally supplied output",
+  "signed_identity": "a=sum(low ai*2**i)-a_sign*2**(abits-1), likewise b; distributivity makes a term negative iff exactly one factor is its active sign bit",
+  "slice_identity": "For any integer p, ((p mod 2**(w+f)) >> f) equals floor(p/2**f) mod 2**w, including negative products smaller in magnitude than 2**f",
+  "tiny_negative_products": 1241
+}

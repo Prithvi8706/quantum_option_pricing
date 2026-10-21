@@ -1,0 +1,17 @@
+{
+  "all_input_algebraic_identity": true,
+  "carry_identity": "Fresh sum=x XOR y XOR z; carry=(x AND y) XOR ((x XOR y) AND z). Carry terms are disjoint; sum+2*carry=x+y+z. Every low column is retained",
+  "cleanup": "Native input/output full width; output XOR occurs between actual compute and its literal reverse. Retained partial/correction/compressor/prefix scratch is fully counted",
+  "coefficient_identity": "Each binary or nonadjacent signed-digit expansion sums exactly to c; no coefficient rounding occurs",
+  "complement_identity": "For t in {0,1}, -t*2**column=(1-t)*2**column-2**column. Corrections are reduced modulo the full 2**(w+f), never only an active product width",
+  "finite_bookkeeping_inputs": 47874,
+  "negative_products": 22388,
+  "passed": true,
+  "prefix_identity": "Pair (G,P) satisfies G*P=0; concatenation produces (Gh XOR Ph*Gl, Ph*Pl), and result bit is propagate XOR preceding G",
+  "proof_scope": "Algebra covers all signed native inputs. Finite arithmetic and saved emitted tests check realization; no exhaustive72-bit, continuous-dollar or advantage certification",
+  "ripple_identity": "Cuccaro MAJ/UMA gives modular addition, preserves the addend and restores its zero helper; reversal gives modular subtraction",
+  "signed_identity": "signed(x)=sum(low xi*2**i)-x_sign*2**(w-1); distributing exact coefficient digits yields each signed bit weight",
+  "slice_identity": "For all integer products p, (p mod2**(w+f)) >> f equals floor(p/2**f) mod2**w, including tiny negative products",
+  "tiny_negative_products": 2274,
+  "unrestricted_signed_native_input": true
+}

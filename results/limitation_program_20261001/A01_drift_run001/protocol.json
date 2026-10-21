@@ -1,0 +1,78 @@
+{
+  "created_utc": "2026-10-02T07:47:54.316416+00:00",
+  "local_only": true,
+  "before_old_blob_payload_search_tests_and_reconciliation": true,
+  "executed_dependencies": [
+    {
+      "original": "research/limitation_program_20261001/experiment_historical_drift_reconciliation.py",
+      "snapshot": "executed_code/experiment_historical_drift_reconciliation.py",
+      "sha256": "c875ee52420cf291eeee30b48dcc3e51d327923b36c69e0ecf1a36f70979bf30"
+    },
+    {
+      "original": "research/limitation_program_20261001/historical_drift_reconciliation.py",
+      "snapshot": "executed_code/historical_drift_reconciliation.py",
+      "sha256": "7f7e97d507bb56c0f7cd722615bf02d2b816c8ffc771ab2f73a226e6b7f210dc"
+    },
+    {
+      "original": "research/limitation_program_20261001/test_historical_drift_reconciliation.py",
+      "snapshot": "executed_code/test_historical_drift_reconciliation.py",
+      "sha256": "de4ae1243043112f4a775d88dd14ccd40f9f7ccb43c4bcd6bf8b8e759fac6e5f"
+    }
+  ],
+  "declared_tests": 9,
+  "affected_receipts": [
+    "A18_run001",
+    "A18_B4_run001",
+    "A01_run015",
+    "A01_run016"
+  ],
+  "declared_drift_paths": [
+    "research/frontier_classical_20261001/c1_rates.py",
+    "research/frontier_classical_20261001/c2_timing.py",
+    "research/frontier_classical_20261001/c4_coverage.py",
+    "research/frontier_classical_20261001/c5_smoothers.py",
+    "research/frontier_classical_20261001/c7_c8_cases.py",
+    "research/frontier_classical_20261001/decision.py",
+    "research/frontier_classical_20261001/fit.py",
+    "research/frontier_classical_20261001/kernels.py",
+    "research/frontier_classical_20261001/scrambles.py"
+  ],
+  "transformations": [
+    "identity",
+    "normalize_CRLF_to_LF",
+    "materialize_LF_as_CRLF"
+  ],
+  "commits": [
+    "9d734ff59f253f99269ecd616a192ecc942a7411",
+    "7320bf34ccc9b003ffd2cd92142155b282842000",
+    "f961193c87ce67e26ca67f20209d5de9040ff2cd",
+    "0083f08649bb19a140f4c8cb31c895c8156dac06",
+    "f1200964b0eed27e2c4f256f320b5bfad197f871",
+    "4e5ab609e94f4b2ff034c388f9a5f61eacf32f6d",
+    "9adb674d34ea30ebcd5e0b8c44b89fd49ecfcc85",
+    "18d0ca31c7402da154cb6acac1f390e5ad933ccc",
+    "9799f03ab0df17188fbeeaf8e47b298574a794bf",
+    "230fa6d9cbb0695f2b2fa40111a7e1d51081d03d",
+    "9079e185c3493e26f4357a17ff9ba7ee9704c724",
+    "56ea264634883e3c2d073a0663f479664321ff42",
+    "82f41ed5b5144b4631eaa129e4625c71a061ec2d",
+    "08c6f8b4611c533cf92ede8a0ecd181b3bcf3d99",
+    "7150efc7136140bb0dbbf78c2612ae4851b5b326",
+    "22ae29c1f11240d81f7b3dda751200c21e4db4dd",
+    "f004520da4b6de86e1f31531941c984e9fa8fc0f",
+    "0e9eb0594104c970dd13bf3ef639e0006cb10119"
+  ],
+  "git_object_format": "sha1",
+  "git_blob_candidate_count": 20,
+  "local_archive_filename_candidate_count": 28,
+  "max_commit_candidates": 256,
+  "max_archive_candidates": 1000,
+  "original_expected_hashes_are_never_waived": true,
+  "global_live_integrity_false_until_original_live_expectations_match": true,
+  "restore_live_sources_or_edit_historical_receipts": false,
+  "runtime_import_nonexecution_claim": false,
+  "actor_attribution": false,
+  "finance_or_quantum_executions": 0,
+  "acceptance": "Recover and hash exact original byte strings; distinguish raw Git bytes from explicit line-ending materialization; report legitimate live mismatches unchanged",
+  "full_program_quantum_array_scan_repeated": false
+}

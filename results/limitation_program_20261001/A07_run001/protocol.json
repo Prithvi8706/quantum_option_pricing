@@ -1,0 +1,54 @@
+{
+  "task": "A07/A10 signed7 logarithm-exponent metadata proof",
+  "source_family": "unchanged archived B4/B8 72/40 knock-out arithmetic",
+  "proof_version": "same-ssa-log-exponent-signed7-v1",
+  "producer_path": "C:\\Users\\prith\\quantum_option_pricing\\research\\limitation_program_20261001\\prove_log_exponent.py",
+  "producer_sha256": "10fed6708a9c4f2892d9d0c949c6a24291dac20626d0628b2328ca7c26f18af3",
+  "inputs": {
+    "B4x12": {
+      "strategy": "signed-digit-carry-save",
+      "target_path": "C:\\Users\\prith\\quantum_option_pricing\\results\\limitation_audit_20261001\\constant_multiplier_v1\\B4x12\\signed-digit-carry-save\\target.json",
+      "target_sha256": "a7a682731b3cdb6f16b32a9b1a467d6bfeccb32ea97e583ab79e5252bb7a9384",
+      "source_path": "C:\\Users\\prith\\quantum_option_pricing\\results\\limitation_audit_20261001\\constant_multiplier_v1\\B4x12\\signed-digit-carry-save\\source.json",
+      "source_sha256": "caa0c83f5f74ecde942b6f06902b3495ee9a5b45c2ba67f52ee01fdbcff875e2",
+      "comparison_sha256": "b63c7975afec492c083b77e815f940074a87eae98ef06fa7e140333d9de2bc9e"
+    },
+    "B8x52": {
+      "strategy": "signed-digit-carry-save",
+      "target_path": "C:\\Users\\prith\\quantum_option_pricing\\results\\limitation_audit_20261001\\constant_multiplier_v1\\B8x52\\signed-digit-carry-save\\target.json",
+      "target_sha256": "267dcaa74aa9dd5cb1339c65006b122389331f42f0002f483bd6eed05c31090b",
+      "source_path": "C:\\Users\\prith\\quantum_option_pricing\\results\\limitation_audit_20261001\\constant_multiplier_v1\\B8x52\\signed-digit-carry-save\\source.json",
+      "source_sha256": "8c9340544ec63f7bedaec8197b677d0b38a6692124f04c54e38ee9171642974f",
+      "comparison_sha256": "b44d0a9efa30043ae296644ea05309ccefceb22e5a2ae20c72dc48095144dbc9"
+    }
+  },
+  "expected_counts": {
+    "B4x12": {
+      "log": 30,
+      "exp": 48
+    },
+    "B8x52": {
+      "log": 234,
+      "exp": 416
+    }
+  },
+  "hypothesis": "Canonical msb-minus40 log chains fit signed7; exponent left40 operands have low40 zeros plus sign extension above bit46.",
+  "conservative_range": [
+    -40,
+    31
+  ],
+  "actual_guard_refinement_to_check": [
+    -40,
+    30
+  ],
+  "candidate_scope": "One structural theorem and one canonical dispatch guard.",
+  "acceptance": [
+    "Every ln2 call is classified from same-graph provenance and bound to its source call.",
+    "Expected log/exp counts hold and no call is unclassified.",
+    "All72 possible raw msb indices, zero/negative patterns, small exhaustive chains, signed shift semantics and clean production primitive leaves pass.",
+    "Invalid coefficient-only, shift, sign, guard, constant and provenance matches are rejected.",
+    "Exp signed32 bound remains separate, with no unproved signed7 dispatch."
+  ],
+  "stop_rule": "Stop and record a counterexample/mismatch at the first failed assertion; do not edit archived graphs or relax the guard to recover expected counts.",
+  "exclusions": "No new multiplier, compiler integration, full-source replay, resource gain, precision change, input-law change, price certificate or advantage claim."
+}

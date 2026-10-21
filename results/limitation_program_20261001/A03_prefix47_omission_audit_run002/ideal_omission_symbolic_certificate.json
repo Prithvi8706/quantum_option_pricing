@@ -1,0 +1,2666 @@
+{
+  "schema": "ideal-Gaussian47-symbolic-obligations-v1",
+  "source_binding": {
+    "function_AST_bindings": [
+      {
+        "function": "gaussian_probabilities",
+        "exact_AST_sha256": "ec76984114b34f2be4ae8c29c42c374da7bf59d417c4fb9fd8e5dd2fde6aa28e"
+      },
+      {
+        "function": "prepare",
+        "exact_AST_sha256": "6a215b72da9d98e39812103fa8a4a6f4e1ac9e3962d36b6d7414f5e5126af67b"
+      }
+    ],
+    "exact_bin_law_only": true,
+    "original_90_digit_to_binary64_conversion_present": true,
+    "binary64_target_reflection_certified": false,
+    "numerical_functions_evaluated": 0
+  },
+  "analytic_premises": [
+    "Standard erf CDF derivative is exp(-x*x/2)/sqrt(2*pi), the positive standard Gaussian density.",
+    "Even integrable density gives I(a,b)=I(-b,-a) by orientation-preserving change of variable.",
+    "Positive density and positive interval width give L>0,R>0 and a common positive normalizer.",
+    "For r in(0,1), principal acos(sqrt(r)) is in(0,pi/2); sin is positive there.",
+    "sin^2(alpha)+cos^2(alpha)=1 and cos(pi/2-alpha)=sin(alpha); principal acos is unique.",
+    "A finite bijection preserves a symbolic sum; a no-fixed-point sign-negating involution cancels it."
+  ],
+  "density_exponent": [
+    {
+      "monomial": [
+        "x",
+        "x"
+      ],
+      "coefficient": [
+        -1,
+        2
+      ]
+    }
+  ],
+  "reflected_density_exponent": [
+    {
+      "monomial": [
+        "x",
+        "x"
+      ],
+      "coefficient": [
+        -1,
+        2
+      ]
+    }
+  ],
+  "edge_polynomial": [
+    {
+      "monomial": [],
+      "coefficient": [
+        -6,
+        1
+      ]
+    },
+    {
+      "monomial": [
+        "j"
+      ],
+      "coefficient": [
+        3,
+        256
+      ]
+    }
+  ],
+  "reflected_edge_polynomial": [
+    {
+      "monomial": [],
+      "coefficient": [
+        6,
+        1
+      ]
+    },
+    {
+      "monomial": [
+        "j"
+      ],
+      "coefficient": [
+        -3,
+        256
+      ]
+    }
+  ],
+  "normalized_bin_identity": "p_j=p_(1023-j): reflected intervals, even density, identical positive denominator",
+  "prefix_interval_obligations": [
+    {
+      "level": 0,
+      "prefixes": 1,
+      "bins_per_prefix": 1024,
+      "original_left_bin_endpoints": [
+        [
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              1024,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              512,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              1024,
+              1
+            ]
+          }
+        ]
+      ],
+      "original_right_bin_endpoints": [
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              512,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              1024,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              1024,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              1024,
+              1
+            ]
+          }
+        ]
+      ],
+      "reflected_left_bin_endpoints": [
+        [
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              -1024,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              512,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              -1024,
+              1
+            ]
+          }
+        ]
+      ],
+      "reflected_right_bin_endpoints": [
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              512,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              -1024,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              1024,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              -1024,
+              1
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "level": 1,
+      "prefixes": 2,
+      "bins_per_prefix": 512,
+      "original_left_bin_endpoints": [
+        [
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              512,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              256,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              512,
+              1
+            ]
+          }
+        ]
+      ],
+      "original_right_bin_endpoints": [
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              256,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              512,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              512,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              512,
+              1
+            ]
+          }
+        ]
+      ],
+      "reflected_left_bin_endpoints": [
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              512,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              -512,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              768,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              -512,
+              1
+            ]
+          }
+        ]
+      ],
+      "reflected_right_bin_endpoints": [
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              768,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              -512,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              1024,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              -512,
+              1
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "level": 2,
+      "prefixes": 4,
+      "bins_per_prefix": 256,
+      "original_left_bin_endpoints": [
+        [
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              256,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              128,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              256,
+              1
+            ]
+          }
+        ]
+      ],
+      "original_right_bin_endpoints": [
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              128,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              256,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              256,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              256,
+              1
+            ]
+          }
+        ]
+      ],
+      "reflected_left_bin_endpoints": [
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              768,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              -256,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              896,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              -256,
+              1
+            ]
+          }
+        ]
+      ],
+      "reflected_right_bin_endpoints": [
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              896,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              -256,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              1024,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              -256,
+              1
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "level": 3,
+      "prefixes": 8,
+      "bins_per_prefix": 128,
+      "original_left_bin_endpoints": [
+        [
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              128,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              64,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              128,
+              1
+            ]
+          }
+        ]
+      ],
+      "original_right_bin_endpoints": [
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              64,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              128,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              128,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              128,
+              1
+            ]
+          }
+        ]
+      ],
+      "reflected_left_bin_endpoints": [
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              896,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              -128,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              960,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              -128,
+              1
+            ]
+          }
+        ]
+      ],
+      "reflected_right_bin_endpoints": [
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              960,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              -128,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              1024,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              -128,
+              1
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "level": 4,
+      "prefixes": 16,
+      "bins_per_prefix": 64,
+      "original_left_bin_endpoints": [
+        [
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              64,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              32,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              64,
+              1
+            ]
+          }
+        ]
+      ],
+      "original_right_bin_endpoints": [
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              32,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              64,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              64,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              64,
+              1
+            ]
+          }
+        ]
+      ],
+      "reflected_left_bin_endpoints": [
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              960,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              -64,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              992,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              -64,
+              1
+            ]
+          }
+        ]
+      ],
+      "reflected_right_bin_endpoints": [
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              992,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              -64,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              1024,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              -64,
+              1
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "level": 5,
+      "prefixes": 32,
+      "bins_per_prefix": 32,
+      "original_left_bin_endpoints": [
+        [
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              32,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              16,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              32,
+              1
+            ]
+          }
+        ]
+      ],
+      "original_right_bin_endpoints": [
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              16,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              32,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              32,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              32,
+              1
+            ]
+          }
+        ]
+      ],
+      "reflected_left_bin_endpoints": [
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              992,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              -32,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              1008,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              -32,
+              1
+            ]
+          }
+        ]
+      ],
+      "reflected_right_bin_endpoints": [
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              1008,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              -32,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              1024,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              -32,
+              1
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "level": 6,
+      "prefixes": 64,
+      "bins_per_prefix": 16,
+      "original_left_bin_endpoints": [
+        [
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              16,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              8,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              16,
+              1
+            ]
+          }
+        ]
+      ],
+      "original_right_bin_endpoints": [
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              8,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              16,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              16,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              16,
+              1
+            ]
+          }
+        ]
+      ],
+      "reflected_left_bin_endpoints": [
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              1008,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              -16,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              1016,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              -16,
+              1
+            ]
+          }
+        ]
+      ],
+      "reflected_right_bin_endpoints": [
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              1016,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              -16,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              1024,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              -16,
+              1
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "level": 7,
+      "prefixes": 128,
+      "bins_per_prefix": 8,
+      "original_left_bin_endpoints": [
+        [
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              8,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              4,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              8,
+              1
+            ]
+          }
+        ]
+      ],
+      "original_right_bin_endpoints": [
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              4,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              8,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              8,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              8,
+              1
+            ]
+          }
+        ]
+      ],
+      "reflected_left_bin_endpoints": [
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              1016,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              -8,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              1020,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              -8,
+              1
+            ]
+          }
+        ]
+      ],
+      "reflected_right_bin_endpoints": [
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              1020,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              -8,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              1024,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              -8,
+              1
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "level": 8,
+      "prefixes": 256,
+      "bins_per_prefix": 4,
+      "original_left_bin_endpoints": [
+        [
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              4,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              2,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              4,
+              1
+            ]
+          }
+        ]
+      ],
+      "original_right_bin_endpoints": [
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              2,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              4,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              4,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              4,
+              1
+            ]
+          }
+        ]
+      ],
+      "reflected_left_bin_endpoints": [
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              1020,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              -4,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              1022,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              -4,
+              1
+            ]
+          }
+        ]
+      ],
+      "reflected_right_bin_endpoints": [
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              1022,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              -4,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              1024,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              -4,
+              1
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "level": 9,
+      "prefixes": 512,
+      "bins_per_prefix": 2,
+      "original_left_bin_endpoints": [
+        [
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              2,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              1,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              2,
+              1
+            ]
+          }
+        ]
+      ],
+      "original_right_bin_endpoints": [
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              1,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              2,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              2,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              2,
+              1
+            ]
+          }
+        ]
+      ],
+      "reflected_left_bin_endpoints": [
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              1022,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              -2,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              1023,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              -2,
+              1
+            ]
+          }
+        ]
+      ],
+      "reflected_right_bin_endpoints": [
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              1023,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              -2,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "monomial": [],
+            "coefficient": [
+              1024,
+              1
+            ]
+          },
+          {
+            "monomial": [
+              "j"
+            ],
+            "coefficient": [
+              -2,
+              1
+            ]
+          }
+        ]
+      ]
+    }
+  ],
+  "conditional_ratio_obligation": {
+    "total": [
+      {
+        "monomial": [
+          "L"
+        ],
+        "coefficient": [
+          1,
+          1
+        ]
+      },
+      {
+        "monomial": [
+          "R"
+        ],
+        "coefficient": [
+          1,
+          1
+        ]
+      }
+    ],
+    "total_minus_left": [
+      {
+        "monomial": [
+          "R"
+        ],
+        "coefficient": [
+          1,
+          1
+        ]
+      }
+    ]
+  },
+  "angle_complement_derivation": [
+    "Set alpha=acos(sqrt(r)); cos(alpha)=sqrt(r) and sin(alpha)=sqrt(1-r).",
+    "The reflected ratio is1-r, and acos(sqrt(1-r))=pi/2-alpha by the principal range.",
+    "Therefore theta_jbar=pi-theta_j; at root theta_0=pi/2. Ideal clipping is inactive."
+  ],
+  "butterfly_induction": {
+    "base_coefficient": 1,
+    "next_bit_kernel": [
+      {
+        "new_mask_bit": 0,
+        "new_input_bit": 0,
+        "sum_or_difference_coefficient": 1,
+        "character_factor": 1
+      },
+      {
+        "new_mask_bit": 0,
+        "new_input_bit": 1,
+        "sum_or_difference_coefficient": 1,
+        "character_factor": 1
+      },
+      {
+        "new_mask_bit": 1,
+        "new_input_bit": 0,
+        "sum_or_difference_coefficient": 1,
+        "character_factor": 1
+      },
+      {
+        "new_mask_bit": 1,
+        "new_input_bit": 1,
+        "sum_or_difference_coefficient": -1,
+        "character_factor": -1
+      }
+    ],
+    "low_and_high_bit_intersections_disjoint": true,
+    "induction": "chi_(h+2^k*a)(j+2^k*b)=chi_h(j)*(-1)^(a*b); stride-doubling source matches this kernel",
+    "final_normalization": "1/2^level from the source division by len(beta)"
+  },
+  "even_character_paired_polynomial": [
+    {
+      "monomial": [
+        "chi",
+        "pi"
+      ],
+      "coefficient": [
+        1,
+        1
+      ]
+    }
+  ],
+  "cancellation_derivation": [
+    "Complement jbar=2^level-1-j is a bijection; even mask implies chi_h(jbar)=chi_h(j).",
+    "Let A=sum_j theta_j*chi_h(j). Then2*A=sum_j(theta_j+theta_jbar)*chi_h(j)=pi*sum_j chi_h(j).",
+    "For h!=0 choose a set bit k; j->j xor2^k is a no-fixed-point involution and negates chi_h.",
+    "Thus sum_j chi_h(j)=0 and beta_h=A/2^level=0. No odd-mask zero follows."
+  ],
+  "actual_absent_slot_witnesses": [
+    {
+      "level": 4,
+      "target_qubit": 5,
+      "gray_sequence_index": 4,
+      "Walsh_mask": 6,
+      "mask_Hamming_weight": 2,
+      "following_CX_QASM_line": 41,
+      "following_CX_control": 6,
+      "following_CX_target": 5,
+      "cancellation_toggle_bit": 1,
+      "complemented_character": [
+        6,
+        0
+      ],
+      "toggled_character": [
+        6,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 5,
+      "target_qubit": 4,
+      "gray_sequence_index": 4,
+      "Walsh_mask": 6,
+      "mask_Hamming_weight": 2,
+      "following_CX_QASM_line": 72,
+      "following_CX_control": 5,
+      "following_CX_target": 4,
+      "cancellation_toggle_bit": 1,
+      "complemented_character": [
+        6,
+        0
+      ],
+      "toggled_character": [
+        6,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 5,
+      "target_qubit": 4,
+      "gray_sequence_index": 8,
+      "Walsh_mask": 12,
+      "mask_Hamming_weight": 2,
+      "following_CX_QASM_line": 79,
+      "following_CX_control": 5,
+      "following_CX_target": 4,
+      "cancellation_toggle_bit": 2,
+      "complemented_character": [
+        12,
+        0
+      ],
+      "toggled_character": [
+        12,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 5,
+      "target_qubit": 4,
+      "gray_sequence_index": 12,
+      "Walsh_mask": 10,
+      "mask_Hamming_weight": 2,
+      "following_CX_QASM_line": 86,
+      "following_CX_control": 5,
+      "following_CX_target": 4,
+      "cancellation_toggle_bit": 1,
+      "complemented_character": [
+        10,
+        0
+      ],
+      "toggled_character": [
+        10,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 5,
+      "target_qubit": 4,
+      "gray_sequence_index": 16,
+      "Walsh_mask": 24,
+      "mask_Hamming_weight": 2,
+      "following_CX_QASM_line": 93,
+      "following_CX_control": 5,
+      "following_CX_target": 4,
+      "cancellation_toggle_bit": 3,
+      "complemented_character": [
+        24,
+        0
+      ],
+      "toggled_character": [
+        24,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 5,
+      "target_qubit": 4,
+      "gray_sequence_index": 20,
+      "Walsh_mask": 30,
+      "mask_Hamming_weight": 4,
+      "following_CX_QASM_line": 100,
+      "following_CX_control": 5,
+      "following_CX_target": 4,
+      "cancellation_toggle_bit": 1,
+      "complemented_character": [
+        30,
+        0
+      ],
+      "toggled_character": [
+        30,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 5,
+      "target_qubit": 4,
+      "gray_sequence_index": 24,
+      "Walsh_mask": 20,
+      "mask_Hamming_weight": 2,
+      "following_CX_QASM_line": 107,
+      "following_CX_control": 5,
+      "following_CX_target": 4,
+      "cancellation_toggle_bit": 2,
+      "complemented_character": [
+        20,
+        0
+      ],
+      "toggled_character": [
+        20,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 5,
+      "target_qubit": 4,
+      "gray_sequence_index": 28,
+      "Walsh_mask": 18,
+      "mask_Hamming_weight": 2,
+      "following_CX_QASM_line": 114,
+      "following_CX_control": 5,
+      "following_CX_target": 4,
+      "cancellation_toggle_bit": 1,
+      "complemented_character": [
+        18,
+        0
+      ],
+      "toggled_character": [
+        18,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 6,
+      "target_qubit": 3,
+      "gray_sequence_index": 4,
+      "Walsh_mask": 6,
+      "mask_Hamming_weight": 2,
+      "following_CX_QASM_line": 129,
+      "following_CX_control": 4,
+      "following_CX_target": 3,
+      "cancellation_toggle_bit": 1,
+      "complemented_character": [
+        6,
+        0
+      ],
+      "toggled_character": [
+        6,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 6,
+      "target_qubit": 3,
+      "gray_sequence_index": 26,
+      "Walsh_mask": 23,
+      "mask_Hamming_weight": 4,
+      "following_CX_QASM_line": 172,
+      "following_CX_control": 4,
+      "following_CX_target": 3,
+      "cancellation_toggle_bit": 0,
+      "complemented_character": [
+        23,
+        0
+      ],
+      "toggled_character": [
+        23,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 6,
+      "target_qubit": 3,
+      "gray_sequence_index": 34,
+      "Walsh_mask": 51,
+      "mask_Hamming_weight": 4,
+      "following_CX_QASM_line": 187,
+      "following_CX_control": 4,
+      "following_CX_target": 3,
+      "cancellation_toggle_bit": 0,
+      "complemented_character": [
+        51,
+        0
+      ],
+      "toggled_character": [
+        51,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 6,
+      "target_qubit": 3,
+      "gray_sequence_index": 36,
+      "Walsh_mask": 54,
+      "mask_Hamming_weight": 4,
+      "following_CX_QASM_line": 190,
+      "following_CX_control": 4,
+      "following_CX_target": 3,
+      "cancellation_toggle_bit": 1,
+      "complemented_character": [
+        54,
+        0
+      ],
+      "toggled_character": [
+        54,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 6,
+      "target_qubit": 3,
+      "gray_sequence_index": 38,
+      "Walsh_mask": 53,
+      "mask_Hamming_weight": 4,
+      "following_CX_QASM_line": 193,
+      "following_CX_control": 4,
+      "following_CX_target": 3,
+      "cancellation_toggle_bit": 0,
+      "complemented_character": [
+        53,
+        0
+      ],
+      "toggled_character": [
+        53,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 6,
+      "target_qubit": 3,
+      "gray_sequence_index": 46,
+      "Walsh_mask": 57,
+      "mask_Hamming_weight": 4,
+      "following_CX_QASM_line": 208,
+      "following_CX_control": 4,
+      "following_CX_target": 3,
+      "cancellation_toggle_bit": 0,
+      "complemented_character": [
+        57,
+        0
+      ],
+      "toggled_character": [
+        57,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 6,
+      "target_qubit": 3,
+      "gray_sequence_index": 52,
+      "Walsh_mask": 46,
+      "mask_Hamming_weight": 4,
+      "following_CX_QASM_line": 219,
+      "following_CX_control": 4,
+      "following_CX_target": 3,
+      "cancellation_toggle_bit": 1,
+      "complemented_character": [
+        46,
+        0
+      ],
+      "toggled_character": [
+        46,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 7,
+      "target_qubit": 2,
+      "gray_sequence_index": 4,
+      "Walsh_mask": 6,
+      "mask_Hamming_weight": 2,
+      "following_CX_QASM_line": 250,
+      "following_CX_control": 3,
+      "following_CX_target": 2,
+      "cancellation_toggle_bit": 1,
+      "complemented_character": [
+        6,
+        0
+      ],
+      "toggled_character": [
+        6,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 7,
+      "target_qubit": 2,
+      "gray_sequence_index": 18,
+      "Walsh_mask": 27,
+      "mask_Hamming_weight": 4,
+      "following_CX_QASM_line": 277,
+      "following_CX_control": 3,
+      "following_CX_target": 2,
+      "cancellation_toggle_bit": 0,
+      "complemented_character": [
+        27,
+        0
+      ],
+      "toggled_character": [
+        27,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 7,
+      "target_qubit": 2,
+      "gray_sequence_index": 20,
+      "Walsh_mask": 30,
+      "mask_Hamming_weight": 4,
+      "following_CX_QASM_line": 280,
+      "following_CX_control": 3,
+      "following_CX_target": 2,
+      "cancellation_toggle_bit": 1,
+      "complemented_character": [
+        30,
+        0
+      ],
+      "toggled_character": [
+        30,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 7,
+      "target_qubit": 2,
+      "gray_sequence_index": 36,
+      "Walsh_mask": 54,
+      "mask_Hamming_weight": 4,
+      "following_CX_QASM_line": 311,
+      "following_CX_control": 3,
+      "following_CX_target": 2,
+      "cancellation_toggle_bit": 1,
+      "complemented_character": [
+        54,
+        0
+      ],
+      "toggled_character": [
+        54,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 7,
+      "target_qubit": 2,
+      "gray_sequence_index": 48,
+      "Walsh_mask": 40,
+      "mask_Hamming_weight": 2,
+      "following_CX_QASM_line": 334,
+      "following_CX_control": 3,
+      "following_CX_target": 2,
+      "cancellation_toggle_bit": 3,
+      "complemented_character": [
+        40,
+        0
+      ],
+      "toggled_character": [
+        40,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 7,
+      "target_qubit": 2,
+      "gray_sequence_index": 56,
+      "Walsh_mask": 36,
+      "mask_Hamming_weight": 2,
+      "following_CX_QASM_line": 349,
+      "following_CX_control": 3,
+      "following_CX_target": 2,
+      "cancellation_toggle_bit": 2,
+      "complemented_character": [
+        36,
+        0
+      ],
+      "toggled_character": [
+        36,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 7,
+      "target_qubit": 2,
+      "gray_sequence_index": 72,
+      "Walsh_mask": 108,
+      "mask_Hamming_weight": 4,
+      "following_CX_QASM_line": 380,
+      "following_CX_control": 3,
+      "following_CX_target": 2,
+      "cancellation_toggle_bit": 2,
+      "complemented_character": [
+        108,
+        0
+      ],
+      "toggled_character": [
+        108,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 7,
+      "target_qubit": 2,
+      "gray_sequence_index": 80,
+      "Walsh_mask": 120,
+      "mask_Hamming_weight": 4,
+      "following_CX_QASM_line": 395,
+      "following_CX_control": 3,
+      "following_CX_target": 2,
+      "cancellation_toggle_bit": 3,
+      "complemented_character": [
+        120,
+        0
+      ],
+      "toggled_character": [
+        120,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 7,
+      "target_qubit": 2,
+      "gray_sequence_index": 82,
+      "Walsh_mask": 123,
+      "mask_Hamming_weight": 6,
+      "following_CX_QASM_line": 398,
+      "following_CX_control": 3,
+      "following_CX_target": 2,
+      "cancellation_toggle_bit": 0,
+      "complemented_character": [
+        123,
+        0
+      ],
+      "toggled_character": [
+        123,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 7,
+      "target_qubit": 2,
+      "gray_sequence_index": 120,
+      "Walsh_mask": 68,
+      "mask_Hamming_weight": 2,
+      "following_CX_QASM_line": 473,
+      "following_CX_control": 3,
+      "following_CX_target": 2,
+      "cancellation_toggle_bit": 2,
+      "complemented_character": [
+        68,
+        0
+      ],
+      "toggled_character": [
+        68,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 8,
+      "target_qubit": 1,
+      "gray_sequence_index": 4,
+      "Walsh_mask": 6,
+      "mask_Hamming_weight": 2,
+      "following_CX_QASM_line": 496,
+      "following_CX_control": 2,
+      "following_CX_target": 1,
+      "cancellation_toggle_bit": 1,
+      "complemented_character": [
+        6,
+        0
+      ],
+      "toggled_character": [
+        6,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 8,
+      "target_qubit": 1,
+      "gray_sequence_index": 10,
+      "Walsh_mask": 15,
+      "mask_Hamming_weight": 4,
+      "following_CX_QASM_line": 507,
+      "following_CX_control": 2,
+      "following_CX_target": 1,
+      "cancellation_toggle_bit": 0,
+      "complemented_character": [
+        15,
+        0
+      ],
+      "toggled_character": [
+        15,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 8,
+      "target_qubit": 1,
+      "gray_sequence_index": 34,
+      "Walsh_mask": 51,
+      "mask_Hamming_weight": 4,
+      "following_CX_QASM_line": 554,
+      "following_CX_control": 2,
+      "following_CX_target": 1,
+      "cancellation_toggle_bit": 0,
+      "complemented_character": [
+        51,
+        0
+      ],
+      "toggled_character": [
+        51,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 8,
+      "target_qubit": 1,
+      "gray_sequence_index": 56,
+      "Walsh_mask": 36,
+      "mask_Hamming_weight": 2,
+      "following_CX_QASM_line": 597,
+      "following_CX_control": 2,
+      "following_CX_target": 1,
+      "cancellation_toggle_bit": 2,
+      "complemented_character": [
+        36,
+        0
+      ],
+      "toggled_character": [
+        36,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 8,
+      "target_qubit": 1,
+      "gray_sequence_index": 74,
+      "Walsh_mask": 111,
+      "mask_Hamming_weight": 6,
+      "following_CX_QASM_line": 632,
+      "following_CX_control": 2,
+      "following_CX_target": 1,
+      "cancellation_toggle_bit": 0,
+      "complemented_character": [
+        111,
+        0
+      ],
+      "toggled_character": [
+        111,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 8,
+      "target_qubit": 1,
+      "gray_sequence_index": 78,
+      "Walsh_mask": 105,
+      "mask_Hamming_weight": 4,
+      "following_CX_QASM_line": 639,
+      "following_CX_control": 2,
+      "following_CX_target": 1,
+      "cancellation_toggle_bit": 0,
+      "complemented_character": [
+        105,
+        0
+      ],
+      "toggled_character": [
+        105,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 8,
+      "target_qubit": 1,
+      "gray_sequence_index": 116,
+      "Walsh_mask": 78,
+      "mask_Hamming_weight": 4,
+      "following_CX_QASM_line": 714,
+      "following_CX_control": 2,
+      "following_CX_target": 1,
+      "cancellation_toggle_bit": 1,
+      "complemented_character": [
+        78,
+        0
+      ],
+      "toggled_character": [
+        78,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 8,
+      "target_qubit": 1,
+      "gray_sequence_index": 128,
+      "Walsh_mask": 192,
+      "mask_Hamming_weight": 2,
+      "following_CX_QASM_line": 737,
+      "following_CX_control": 2,
+      "following_CX_target": 1,
+      "cancellation_toggle_bit": 6,
+      "complemented_character": [
+        192,
+        0
+      ],
+      "toggled_character": [
+        192,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 8,
+      "target_qubit": 1,
+      "gray_sequence_index": 130,
+      "Walsh_mask": 195,
+      "mask_Hamming_weight": 4,
+      "following_CX_QASM_line": 740,
+      "following_CX_control": 2,
+      "following_CX_target": 1,
+      "cancellation_toggle_bit": 0,
+      "complemented_character": [
+        195,
+        0
+      ],
+      "toggled_character": [
+        195,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 8,
+      "target_qubit": 1,
+      "gray_sequence_index": 146,
+      "Walsh_mask": 219,
+      "mask_Hamming_weight": 6,
+      "following_CX_QASM_line": 771,
+      "following_CX_control": 2,
+      "following_CX_target": 1,
+      "cancellation_toggle_bit": 0,
+      "complemented_character": [
+        219,
+        0
+      ],
+      "toggled_character": [
+        219,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 8,
+      "target_qubit": 1,
+      "gray_sequence_index": 170,
+      "Walsh_mask": 255,
+      "mask_Hamming_weight": 8,
+      "following_CX_QASM_line": 818,
+      "following_CX_control": 2,
+      "following_CX_target": 1,
+      "cancellation_toggle_bit": 0,
+      "complemented_character": [
+        255,
+        0
+      ],
+      "toggled_character": [
+        255,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 8,
+      "target_qubit": 1,
+      "gray_sequence_index": 174,
+      "Walsh_mask": 249,
+      "mask_Hamming_weight": 6,
+      "following_CX_QASM_line": 825,
+      "following_CX_control": 2,
+      "following_CX_target": 1,
+      "cancellation_toggle_bit": 0,
+      "complemented_character": [
+        249,
+        0
+      ],
+      "toggled_character": [
+        249,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 8,
+      "target_qubit": 1,
+      "gray_sequence_index": 184,
+      "Walsh_mask": 228,
+      "mask_Hamming_weight": 4,
+      "following_CX_QASM_line": 844,
+      "following_CX_control": 2,
+      "following_CX_target": 1,
+      "cancellation_toggle_bit": 2,
+      "complemented_character": [
+        228,
+        0
+      ],
+      "toggled_character": [
+        228,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 8,
+      "target_qubit": 1,
+      "gray_sequence_index": 192,
+      "Walsh_mask": 160,
+      "mask_Hamming_weight": 2,
+      "following_CX_QASM_line": 859,
+      "following_CX_control": 2,
+      "following_CX_target": 1,
+      "cancellation_toggle_bit": 5,
+      "complemented_character": [
+        160,
+        0
+      ],
+      "toggled_character": [
+        160,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 8,
+      "target_qubit": 1,
+      "gray_sequence_index": 200,
+      "Walsh_mask": 172,
+      "mask_Hamming_weight": 4,
+      "following_CX_QASM_line": 874,
+      "following_CX_control": 2,
+      "following_CX_target": 1,
+      "cancellation_toggle_bit": 2,
+      "complemented_character": [
+        172,
+        0
+      ],
+      "toggled_character": [
+        172,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 8,
+      "target_qubit": 1,
+      "gray_sequence_index": 216,
+      "Walsh_mask": 180,
+      "mask_Hamming_weight": 4,
+      "following_CX_QASM_line": 905,
+      "following_CX_control": 2,
+      "following_CX_target": 1,
+      "cancellation_toggle_bit": 2,
+      "complemented_character": [
+        180,
+        0
+      ],
+      "toggled_character": [
+        180,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 9,
+      "target_qubit": 0,
+      "gray_sequence_index": 4,
+      "Walsh_mask": 6,
+      "mask_Hamming_weight": 2,
+      "following_CX_QASM_line": 992,
+      "following_CX_control": 1,
+      "following_CX_target": 0,
+      "cancellation_toggle_bit": 1,
+      "complemented_character": [
+        6,
+        0
+      ],
+      "toggled_character": [
+        6,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 9,
+      "target_qubit": 0,
+      "gray_sequence_index": 116,
+      "Walsh_mask": 78,
+      "mask_Hamming_weight": 4,
+      "following_CX_QASM_line": 1215,
+      "following_CX_control": 1,
+      "following_CX_target": 0,
+      "cancellation_toggle_bit": 1,
+      "complemented_character": [
+        78,
+        0
+      ],
+      "toggled_character": [
+        78,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 9,
+      "target_qubit": 0,
+      "gray_sequence_index": 268,
+      "Walsh_mask": 394,
+      "mask_Hamming_weight": 4,
+      "following_CX_QASM_line": 1518,
+      "following_CX_control": 1,
+      "following_CX_target": 0,
+      "cancellation_toggle_bit": 1,
+      "complemented_character": [
+        394,
+        0
+      ],
+      "toggled_character": [
+        394,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 9,
+      "target_qubit": 0,
+      "gray_sequence_index": 352,
+      "Walsh_mask": 464,
+      "mask_Hamming_weight": 4,
+      "following_CX_QASM_line": 1685,
+      "following_CX_control": 1,
+      "following_CX_target": 0,
+      "cancellation_toggle_bit": 4,
+      "complemented_character": [
+        464,
+        0
+      ],
+      "toggled_character": [
+        464,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 9,
+      "target_qubit": 0,
+      "gray_sequence_index": 364,
+      "Walsh_mask": 474,
+      "mask_Hamming_weight": 6,
+      "following_CX_QASM_line": 1708,
+      "following_CX_control": 1,
+      "following_CX_target": 0,
+      "cancellation_toggle_bit": 1,
+      "complemented_character": [
+        474,
+        0
+      ],
+      "toggled_character": [
+        474,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    },
+    {
+      "level": 9,
+      "target_qubit": 0,
+      "gray_sequence_index": 380,
+      "Walsh_mask": 450,
+      "mask_Hamming_weight": 4,
+      "following_CX_QASM_line": 1739,
+      "following_CX_control": 1,
+      "following_CX_target": 0,
+      "cancellation_toggle_bit": 1,
+      "complemented_character": [
+        450,
+        0
+      ],
+      "toggled_character": [
+        450,
+        1
+      ],
+      "exact_ideal_beta_zero": true,
+      "actual_binary64_or_QASM_accuracy_proved": false
+    }
+  ],
+  "exact_ideal_absence_applicability_count": 47,
+  "CDF_conditional_angle_Walsh_table_or_statevector_evaluations": 0,
+  "binary64_target_reflection_certified": false,
+  "literal_zero740_accuracy_certified": false,
+  "complete_loader_accuracy_certified": false,
+  "financial_law_adopted": false
+}

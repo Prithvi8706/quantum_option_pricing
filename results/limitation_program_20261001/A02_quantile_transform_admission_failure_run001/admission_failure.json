@@ -1,0 +1,27 @@
+{
+  "schema": "root-reported-pre-mkdir-producer-admission-failure-v1",
+  "diagnostic_created_utc": "2026-10-02T10:37:39.814579+00:00",
+  "evidence_origin": "Parent agent reported the executed prepare failure; author inspected immutable source and prerequisite manifest read-only",
+  "reported_producer": "research/limitation_program_20261001/experiment_quantile_transform.py",
+  "reported_mode": "prepare",
+  "reported_output": "results/limitation_program_20261001/A02_quantile_transform_run001",
+  "reported_error_type": "ValueError",
+  "reported_error_message": "Explicit prerequisite manifest schema required",
+  "reported_traceback_line": 141,
+  "demonstrated_rejected_receipt": "results/limitation_program_20261001/C06_pair_run001/manifest.json",
+  "observed_manifest_keys": [
+    "files",
+    "frozen_inputs",
+    "historical_receipts_unchanged",
+    "manifest_self_hash_excluded"
+  ],
+  "demonstrated_extra_field": {
+    "historical_receipts_unchanged": true
+  },
+  "failed_output_directory_absent_when_recorded": true,
+  "producer_protocol_was_not_created": true,
+  "diagnostic_is_not_a_prospective_producer_protocol": true,
+  "executed_producer_sha256": "c9edc85d7e4a6062e3607d5c0c89a1768d966fd5721384f0258384567694be58",
+  "tests_proof_evaluations_or_quantum_gates_from_failed_attempt": 0,
+  "executed_producer_or_prior_receipt_modified": false
+}

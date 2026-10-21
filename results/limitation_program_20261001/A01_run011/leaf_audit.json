@@ -1,0 +1,65 @@
+{
+  "actual_gate_scan": {
+    "ccx": 7740,
+    "clifford_cx": 76847,
+    "clifford_h": 15480,
+    "clifford_t_depth": 93052,
+    "cx": 30407,
+    "source_gates": 45973,
+    "t_count": 54180,
+    "t_depth": 30960,
+    "x": 7826
+  },
+  "baseline_resources": {
+    "ccx": 31304,
+    "clifford_cx": 257963,
+    "clifford_h": 62608,
+    "clifford_t_depth": 312836,
+    "cx": 70139,
+    "qubits": 2350,
+    "schedule": "exact seven-T Toffoli; all-to-all ASAP within each leaf",
+    "source_gates": 101701,
+    "t_count": 219128,
+    "t_depth": 105582,
+    "x": 258
+  },
+  "candidate_resources": {
+    "ccx": 7740,
+    "clifford_cx": 76847,
+    "clifford_h": 15480,
+    "clifford_t_depth": 93052,
+    "cx": 30407,
+    "qubits": 2213,
+    "schedule": "exact seven-T Toffoli; all-to-all ASAP within each leaf",
+    "source_gates": 45973,
+    "t_count": 54180,
+    "t_depth": 30960,
+    "x": 7826
+  },
+  "decision": {
+    "clean_leaf_work_or_scratch_improved": true,
+    "dominated_by_accepted": false,
+    "leaf_nondominated": true,
+    "source_screen_allowed": true,
+    "strict_any_metric_improvement": true
+  },
+  "passed": true,
+  "structural_parser": {
+    "algorithm": "independent actual-gate recurrence and MAJ/UMA parser",
+    "all_stages": 43,
+    "arbitrary_output_xor": true,
+    "complete_operand_complements_and_sign_controls_charged": true,
+    "full_native_argument_bits": 72,
+    "full_native_output_bits": 72,
+    "input_high_bits_untouched": true,
+    "literal_forward_reverse_cleanup": true,
+    "one_clean_Cuccaro_helper": true,
+    "operand_bits": 45,
+    "output_high_bits_unchanged": true,
+    "parsed_forward_gates": 22965,
+    "passed": true,
+    "qubits": 2213,
+    "retained_remainder_history_count": 44,
+    "signed_remainder_bits": 45
+  }
+}

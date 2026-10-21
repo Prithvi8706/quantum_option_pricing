@@ -1,0 +1,55 @@
+{
+  "passed": true,
+  "budget_censored": false,
+  "local_only": true,
+  "new_test_credit": 0,
+  "cases": [
+    {
+      "case": "B4x12",
+      "normal_coordinates": 60,
+      "independent_scalar_KS_upper_exact": [
+        38776723903835608418061353262184653359983398597842531205998444814945441287702054735470153453641716987467,
+        12222215858006916517610674130456268966308810361995617503816842696126287798580020237100384256000000000000000000000
+      ],
+      "independent_ideal_GBM_price_bias_upper_exact": [
+        38776723903835608418061353262184653359983398597842531205998444814945441287702054735470153453641716987467,
+        2546294970418107607835557110511722701314335492082420313295175561692976624704170882729246720000000000000000000
+      ],
+      "fits_separate_exploratory_law_allowance": true,
+      "native_financial_error_or_complete_price_claim_adopted": false
+    },
+    {
+      "case": "B8x52",
+      "normal_coordinates": 468,
+      "independent_scalar_KS_upper_exact": [
+        38776723903835608418061353262184653359983398597842531205998444814945441287702054735470153453641716987467,
+        12222215858006916517610674130456268966308810361995617503816842696126287798580020237100384256000000000000000000000
+      ],
+      "independent_ideal_GBM_price_bias_upper_exact": [
+        1512292232249588728304392777225201481039352545315858717033939347782872210220380134683335984692026962511213,
+        12731474852090538039177785552558613506571677460412101566475877808464883123520854413646233600000000000000000000
+      ],
+      "fits_separate_exploratory_law_allowance": true,
+      "native_financial_error_or_complete_price_claim_adopted": false
+    }
+  ],
+  "log_classes_checked": 960,
+  "fresh_tail_rows_checked": 1024,
+  "midpoint_KS_plus_native_displacement_without_monotonicity_verified": true,
+  "original_ideal_GBM_BV80_and_independent60_468_conversions_verified": true,
+  "old_BM_obligation_or_native_financial_cost_bias_adopted": false,
+  "native_financial_price_error_or_coherent_cost": null,
+  "new_financial_samples_or_gate_evaluations": 0,
+  "full_G2_or_quantum_advantage_claim": false,
+  "independent_theorem": {
+    "same_midpoint_coupling": "At every raw word k, X=Phi_inverse((k+1/2)/2^32), |Z-X|<=E. Therefore {X<=x-E} subset {Z<=x} subset {X<=x+E}; no ordering or distinctness of the Z values is used.",
+    "midpoint_KS": "Counting midpoints below Phi(x) differs from Phi(x) by at most1/(2N), including exact midpoint ties. Since Phi is continuous, the same bound holds for left CDF limits.",
+    "density": "Alternating Machin sums give pi>16*(1/5-1/(3*5^3))-4/239>25/8. Thus phi(x)<=1/sqrt(2*pi)<2/5; a displacement E adds at most(2/5)E.",
+    "coordinate_BV": "Every affected ideal GBM stock has a positive coefficient for a common or idiosyncratic increment. With other finite coordinates fixed, all affected baskets and the Asian average are nondecreasing. Strict barrier survival is a lower half-line, empty or full. On survival the Asian average<140, so the already-discounted positive payoff<40; an increase of at most40 followed by a downward knockout jump of at most40 gives total variation<=80. The strict endpoint value is zero.",
+    "atom_aware_integration": "For the right-continuous BV coordinate payoff, integrate its signed Stieltjes measure against half-line probabilities. Closed lower half-lines use F(x), closed upper ones use1-F(x-); left CDF limits are controlled too. Thus the expectation discrepancy is at mostTV*KS, including discrete atoms at the knockout endpoint.",
+    "independent_product": "Replace d independent scalar coordinates one at a time. The uniform BV bound holds for every mixture of discrete and continuous other coordinates. Bounded payoff permits iterated integration; triangle inequality gives80*d*(2^-33+(2/5)E). No second discount is applied.",
+    "scope": "This is the independent NEW AS241 law versus the original continuous ideal GBM. E already includes native scalar log/root/Horner/division error once. No old hypothetical transform-floor ULP, Box-Muller joint law, native financial exp/clipping/path error, coherent compiler cost or complete original price certificate is adopted."
+  },
+  "CPU_seconds": 7.671875,
+  "wall_seconds": 7.922000000020489
+}

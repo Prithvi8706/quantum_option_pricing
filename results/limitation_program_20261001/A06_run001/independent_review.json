@@ -1,0 +1,215 @@
+{
+  "created_utc": "2026-10-01T08:45:33.330435+00:00",
+  "scope": "Independent read-only static audit of eight saved compact schedules, unchanged source/target/leaf provenance and recorded full gate replay receipts; no expensive replay repeated",
+  "passed": true,
+  "producer_protocol_hash_matches": true,
+  "implementation_protocol_hash_matches": true,
+  "validated_trial_count": 8,
+  "cases": [
+    {
+      "case": "B4x12",
+      "source_sha256": "caa0c83f5f74ecde942b6f06902b3495ee9a5b45c2ba67f52ee01fdbcff875e2",
+      "target_sha256": "a7a682731b3cdb6f16b32a9b1a467d6bfeccb32ea97e583ab79e5252bb7a9384",
+      "unchanged_leaf_keys": 54,
+      "trials": [
+        {
+          "schedule": "schedule_trial_0.json",
+          "sha256": "ab469e0c6b0bcbaeba8af5db37e5e0be30f468332b59f5e61e2b0e04b3f316c9",
+          "cap": 550158,
+          "logical_qubits": 550150,
+          "t_depth": 2074246,
+          "clifford_t_depth": 6162945,
+          "batches": 173,
+          "call_coverage": 4978,
+          "valid": true
+        },
+        {
+          "schedule": "schedule_trial_1.json",
+          "sha256": "c2e074adba906b964670224dd50d5f62c2e42de1ed81be1f5a41ab52ee798fa4",
+          "cap": 522556,
+          "logical_qubits": 522546,
+          "t_depth": 2207302,
+          "clifford_t_depth": 6553829,
+          "batches": 191,
+          "call_coverage": 4978,
+          "valid": true
+        },
+        {
+          "schedule": "schedule_trial_2.json",
+          "sha256": "2433ae19a17fd4cb6bbdf6caffb0f7c907cdbcb9e5dfde4db80d7f4eec03b9ab",
+          "cap": 494954,
+          "logical_qubits": 494954,
+          "t_depth": 2436454,
+          "clifford_t_depth": 7226967,
+          "batches": 222,
+          "call_coverage": 4978,
+          "valid": true
+        },
+        {
+          "schedule": "schedule_trial_3.json",
+          "sha256": "ab37b38958d746ff2ae09ad94f3340bddea9e283f10c82e7f740f0076f732b52",
+          "cap": 467352,
+          "logical_qubits": 467327,
+          "t_depth": 3219480,
+          "clifford_t_depth": 9538801,
+          "batches": 268,
+          "call_coverage": 4978,
+          "valid": true
+        }
+      ],
+      "selected": "schedule_trial_0.json",
+      "selected_depth_reduction": 0.14866194888144824,
+      "selected_clifford_depth_reduction": 0.14722420593107188,
+      "t_count_unchanged": true,
+      "copy_cx_before": 2711016,
+      "copy_cx_after": 2184396,
+      "copy_cx_saved": 526620,
+      "copy_cx_reduction": 0.19425189670588439,
+      "retained_ssa_before": 410256,
+      "retained_ssa_after": 355052,
+      "memory_selected": "schedule_trial_2.json",
+      "memory_selected_qubits": 494954,
+      "memory_qubit_reduction": 0.10034208354690832,
+      "stage_a_t_depth": 6032678,
+      "selected_gain_vs_stage_a": 2.908371523917607,
+      "stage_a_t_count": 907483318,
+      "t_count_reduction_vs_stage_a": 0.3032838031739995,
+      "replay_receipts": [
+        {
+          "label": "previous_random",
+          "schedule": "schedule_trial_0.json",
+          "receipt_passed": true,
+          "cleanup_receipt_passed": true
+        },
+        {
+          "label": "all_zero",
+          "schedule": "schedule_trial_0.json",
+          "receipt_passed": true,
+          "cleanup_receipt_passed": true
+        },
+        {
+          "label": "all_maximum",
+          "schedule": "schedule_trial_0.json",
+          "receipt_passed": true,
+          "cleanup_receipt_passed": true
+        },
+        {
+          "label": "memory_pareto_random",
+          "schedule": "schedule_trial_2.json",
+          "receipt_passed": true,
+          "cleanup_receipt_passed": true
+        }
+      ],
+      "all_checks_passed": true
+    },
+    {
+      "case": "B8x52",
+      "source_sha256": "8c9340544ec63f7bedaec8197b677d0b38a6692124f04c54e38ee9171642974f",
+      "target_sha256": "267dcaa74aa9dd5cb1339c65006b122389331f42f0002f483bd6eed05c31090b",
+      "unchanged_leaf_keys": 54,
+      "trials": [
+        {
+          "schedule": "schedule_trial_0.json",
+          "sha256": "6bdd2d2df1e74e9553688a4ebee2490cb53e9ff2a981ce5f2198f2e5038f5508",
+          "cap": 4460490,
+          "logical_qubits": 4460481,
+          "t_depth": 2272184,
+          "clifford_t_depth": 6768275,
+          "batches": 183,
+          "call_coverage": 41186,
+          "valid": true
+        },
+        {
+          "schedule": "schedule_trial_1.json",
+          "sha256": "a5f3f236c140bf6652afc251ad8b656aac333a30ae4ffb464ee352b29d4765ff",
+          "cap": 4247342,
+          "logical_qubits": 4247316,
+          "t_depth": 2410328,
+          "clifford_t_depth": 7173795,
+          "batches": 201,
+          "call_coverage": 41186,
+          "valid": true
+        },
+        {
+          "schedule": "schedule_trial_2.json",
+          "sha256": "1affaa21bf7262365c6596e61a981e008288fd5bbe5af7b1c338fb1ba565520e",
+          "cap": 4034194,
+          "logical_qubits": 4034194,
+          "t_depth": 2624696,
+          "clifford_t_depth": 7803357,
+          "batches": 230,
+          "call_coverage": 41186,
+          "valid": true
+        },
+        {
+          "schedule": "schedule_trial_3.json",
+          "sha256": "37e4543e20dbcc3049b3978934e2a1e2b06067684a48b20f00a407d79cdc8364",
+          "cap": 3821046,
+          "logical_qubits": 3821037,
+          "t_depth": 3274186,
+          "clifford_t_depth": 9723111,
+          "batches": 260,
+          "call_coverage": 41186,
+          "valid": true
+        }
+      ],
+      "selected": "schedule_trial_0.json",
+      "selected_depth_reduction": 0.13430583960961573,
+      "selected_clifford_depth_reduction": 0.13265329006173576,
+      "t_count_unchanged": true,
+      "copy_cx_before": 22591080,
+      "copy_cx_after": 18376108,
+      "copy_cx_saved": 4214972,
+      "copy_cx_reduction": 0.18657682589765523,
+      "retained_ssa_before": 3369744,
+      "retained_ssa_after": 2943448,
+      "memory_selected": "schedule_trial_2.json",
+      "memory_selected_qubits": 4034194,
+      "memory_qubit_reduction": 0.09557156276552581,
+      "stage_a_t_depth": 6393144,
+      "selected_gain_vs_stage_a": 2.813655936315017,
+      "stage_a_t_count": 7458042774,
+      "t_count_reduction_vs_stage_a": 0.303921174587782,
+      "replay_receipts": [
+        {
+          "label": "previous_random",
+          "schedule": "schedule_trial_0.json",
+          "receipt_passed": true,
+          "cleanup_receipt_passed": true
+        },
+        {
+          "label": "memory_pareto_random",
+          "schedule": "schedule_trial_2.json",
+          "receipt_passed": true,
+          "cleanup_receipt_passed": true
+        }
+      ],
+      "all_checks_passed": true
+    }
+  ],
+  "test_receipts": {
+    "distinct_new_cases": 16,
+    "primary_suite": {
+      "tests": 15,
+      "seconds": 31.49,
+      "reporting": "Observed by root in its test session; not rerun here"
+    },
+    "targeted_lookup_negative_control": {
+      "tests": 1,
+      "seconds": 1.4,
+      "reporting": "Observed by this independent reviewer"
+    },
+    "older_regression_suite": "Pending receipt; omitted from numerical test claims here"
+  },
+  "qualifications": [
+    "Four declared cap budgets per case, not an exhaustive schedule/Pareto search or global memory minimum.",
+    "Memory-selected points preserve T-depth; B4 Clifford+T depth increases by 44 layers, B8 decreases by 68.",
+    "Full replay receipts are sampled financial inputs; arithmetic and binding proofs/tests provide the exact replacement argument.",
+    "This is unchanged digital-source evidence; no estimator, continuous-law price certificate, physical layout/runtime or quantum advantage claim."
+  ],
+  "reviewed_code_sha256": {
+    "research/controlled_source_completion/compact_parallel.py": "2c65386644dce0687d3caae9f25c4c3a1ae49242825efe6e0917af791b026c14",
+    "research/limitation_program_20261001/experiment_compact_parallel.py": "171dd8b20b958a6fb7dd2bc8244e146028d305e2fd5e97b0e0abf8c77fa5a974",
+    "research/limitation_program_20261001/test_compact_parallel.py": "cb83f0bd5e4140ce361a61aeeb8c8c30d8d116f98d0a36be1e67eedf72fa7012"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "independent_Machin_pi_lower_exact": [
+    1549720982780685757685860164701015675319826043427590881295064109462816409988478332492008856561497739305105733945406823774064177683899282972,
+    493291509645552306652241074139291769345966087717473907968589007476041603023305487181510569382194353006876119046864914707839488983154296875
+  ],
+  "Gaussian_peak_density_proof": "pi>25/8 implies1/sqrt(2*pi)<2/5",
+  "Mills_tail_proof": "For x>=6,1<=x/6. Thus Q(6)<=integral_6^infinity x*phi(x)/6 dx=phi(6)/6<exp(-18)/15. Every omitted positive term of exp(18) is nonnegative, so the rational Horner polynomial is a lower bound and its reciprocal supplies an upper bound.",
+  "normalized_truncation_proof": "Write q=Q(6). On[-6,6],F_T(x)=(F(x)-q)/(1-2q). Its difference from F is q*(2F-1)/(1-2q); because F lies in[q,1-q], its magnitude is at most q. Outside[-6,6] it is also at most q. This is a one-sided-tail bound, not the two-sided2q mass.",
+  "midpoint_CDF_proof": "Binning conditional mass into uniform-x midpoints makes its discrete CDF at any x equal the conditional CDF at an adjacent bin edge at distance at most h/2. The density is at most phi(0)/(1-2q), so the discrepancy is at most phi(0)*h/[2*(1-2q)], including left/right limits at the atoms. Triangle inequality and q<=q_upper then yield the saved KS upper.",
+  "coordinate_BV_transfer": "For a bounded-variation scalar observable, Stieltjes/step-function integration bounds an expectation difference by TV(f)*KS. The original positive GBM coefficients make each coordinate payoff increase on a single survival half-line and then drop to zero. Each discounted payoff lies in[0,40], so variation is at most80. This bound is uniform in every other continuous or discrete driver. Replacing independent scalar laws one at a time gives80*d*KS.",
+  "clipping_to_40_reason": "Both ideal original and alternative laws use the same strict monitored barrier and already-discounted payoff in[0,40]. Their absolute expectation difference is also at most40.",
+  "actual_price_bias_lower_bound": false,
+  "native_exp_clipping_and_payoff_arithmetic_included": false,
+  "paired_Box_Muller_outputs_assumed_independent": false
+}

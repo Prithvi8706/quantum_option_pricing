@@ -1,0 +1,18 @@
+{
+  "created_utc": "2026-10-01T08:37:39.128880+00:00",
+  "items": [
+    "A06",
+    "H15",
+    "C13"
+  ],
+  "source_root": "C:\\Users\\prith\\quantum_option_pricing\\results\\limitation_audit_20261001\\constant_multiplier_v1",
+  "changed": "Exact compact SSA bindings and memory-capped batch packing",
+  "unchanged": "Financial IR, precision, tables, input law and all arithmetic leaf gate bytes",
+  "candidates": "Four fixed cap points: original, half retained saving, full retained saving, 1.5 times retained saving (bounded by one-leaf minimum)",
+  "selection": "Minimum T-depth, then Clifford+T depth, then actual logical qubits under the original cap",
+  "acceptance": "Exact output XOR and full cleanup in emitted replays; T count unchanged; complete depth or memory Pareto improvement",
+  "replays": "Chosen B4 previous random/zero/max, chosen B8 previous random; one additional memory Pareto point per case when distinct",
+  "exclusions": "No changed financial law, estimator, routing, physical runtime or advantage claim",
+  "producer_sha256": "171dd8b20b958a6fb7dd2bc8244e146028d305e2fd5e97b0e0abf8c77fa5a974",
+  "implementation_sha256": "2c65386644dce0687d3caae9f25c4c3a1ae49242825efe6e0917af791b026c14"
+}

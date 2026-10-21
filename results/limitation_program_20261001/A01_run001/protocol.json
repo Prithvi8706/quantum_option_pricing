@@ -1,0 +1,27 @@
+{
+  "accepted_strategy": "signed-digit-carry-save ln(2), exact variable carry-save and exact shared-prefix lookup",
+  "classification": "Uniform inputs separately; scalar-normal ancestor closures, correlation-to-GBM-increment closures stopping at normal roots, path/payoff closure stopping at correlation/normal roots; intersections assigned once to shared.",
+  "created_utc": "2026-10-01T08:30:53.306774+00:00",
+  "exclusions": "No new gate replay, pricing acquisition, Stage C edit, estimator fit, package installation, push, external service or physical-time claim.",
+  "fixed_inputs": {
+    "results/limitation_audit_20261001/constant_multiplier_v1/B4x12/signed-digit-carry-save/input_proofs.json": "818f93e487d305c0506f11be659a872bc7701ac3524a46ab8568368cfa079908",
+    "results/limitation_audit_20261001/constant_multiplier_v1/B4x12/signed-digit-carry-save/schedule_capped.json": "c215c89b536317dd28bb2d694c1665c66f9f6bfb8f72461854c33ffd0517ff52",
+    "results/limitation_audit_20261001/constant_multiplier_v1/B4x12/signed-digit-carry-save/source.json": "caa0c83f5f74ecde942b6f06902b3495ee9a5b45c2ba67f52ee01fdbcff875e2",
+    "results/limitation_audit_20261001/constant_multiplier_v1/B4x12/signed-digit-carry-save/target.json": "a7a682731b3cdb6f16b32a9b1a467d6bfeccb32ea97e583ab79e5252bb7a9384",
+    "results/limitation_audit_20261001/constant_multiplier_v1/B8x52/signed-digit-carry-save/input_proofs.json": "2452e3baa88929b2de6b4e8e876fb54cf81af0ab79a6776596bbd375c4abf29c",
+    "results/limitation_audit_20261001/constant_multiplier_v1/B8x52/signed-digit-carry-save/schedule_capped.json": "6f31d6cadd43a85b919091d7afd60939f1db058c7d5151aa2cb2c0d5fa29ac44",
+    "results/limitation_audit_20261001/constant_multiplier_v1/B8x52/signed-digit-carry-save/source.json": "8c9340544ec63f7bedaec8197b677d0b38a6692124f04c54e38ee9171642974f",
+    "results/limitation_audit_20261001/constant_multiplier_v1/B8x52/signed-digit-carry-save/target.json": "267dcaa74aa9dd5cb1339c65006b122389331f42f0002f483bd6eed05c31090b",
+    "results/limitation_audit_20261001/constant_multiplier_v1/protocol.json": "92e532c4f2afc93b3bc9cf3e83400585e31d6cdaf056c1870bb6363a95a97c49",
+    "results/limitation_audit_20261001/constant_multiplier_v1/summary.json": "214bdc3513ffab4a6c2135f4749b8584407c52b6c9739ada0a03c350f1eff12d",
+    "results/limitation_audit_20261001/constant_multiplier_v1/verification.json": "2b1c5437ca62fc8689879f82ea24606b80cda75fdbfad17a06a657e496cf61d0"
+  },
+  "independent_checks": "Scan X/CX/CCX gate arrays and seven-T expansion; reconstruct source copy counts, serial costs, Kahn DAG and every capped batch from leaf weights.",
+  "local_only": true,
+  "preparation_reads": "Repository task/specification and accepted archives were inspected to design this analysis. Protocols are saved before the new graph reconstruction, categorization and independent count derivation; this is not retrospective preregistration of earlier experiments.",
+  "producer_sha256": "c464bea78deeec906857090389727c6ca3d36e9ffd9a6d300c2d9fd52329db6e",
+  "scope": "G0/C01-C03/C13 for current B4/B8 arithmetic, plus A01 accounting only",
+  "source_family": "B4x12 and B8x52 plain discretely monitored GBM arithmetic-Asian equal-weight basket knock-out Y; not C4/H8 residual, Heston or compound estimators",
+  "stop": "One analysis per case. Any identity/hash/count/binding mismatch aborts acceptance and leaves the prior accepted source unchanged.",
+  "success": "Recover the exact task from the archived builder/targets; verify immutable hashes; create nonzero-filled error/failure ledgers; exactly reconcile every node, call, gate/copy count, DAG depth and capped batch resource."
+}

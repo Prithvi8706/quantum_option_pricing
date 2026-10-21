@@ -1,0 +1,58 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "case": "B4x12",
+      "sqrt_sites": 30,
+      "maximum_input_unsigned_bits": 46,
+      "maximum_output_unsigned_bits": 43,
+      "rule_counts": {
+        "uniform input domain": 60,
+        "bit extraction with modulo fallback": 396,
+        "literal word": 27,
+        "signed endpoints with overflow fallback": 3429,
+        "signed comparison": 318,
+        "branch union or same-SSA min/max": 318,
+        "unsigned MSB": 30,
+        "same-SSA MSB normalization": 30,
+        "same-SSA bin-local residual": 1,
+        "all literal coefficient rows": 750,
+        "constant signed floor": 230,
+        "positive part": 31,
+        "exact unsigned integer square root": 30,
+        "shift endpoints with overflow fallback": 48
+      },
+      "sampled_trace_values_checked": 74074,
+      "samples": 13,
+      "passed": true
+    },
+    {
+      "case": "B8x52",
+      "sqrt_sites": 234,
+      "maximum_input_unsigned_bits": 46,
+      "maximum_output_unsigned_bits": 43,
+      "rule_counts": {
+        "uniform input domain": 468,
+        "bit extraction with modulo fallback": 3172,
+        "literal word": 27,
+        "signed endpoints with overflow fallback": 29065,
+        "signed comparison": 2522,
+        "branch union or same-SSA min/max": 2522,
+        "unsigned MSB": 234,
+        "same-SSA MSB normalization": 234,
+        "same-SSA bin-local residual": 1,
+        "all literal coefficient rows": 5850,
+        "constant signed floor": 1822,
+        "positive part": 235,
+        "exact unsigned integer square root": 234,
+        "shift endpoints with overflow fallback": 416
+      },
+      "sampled_trace_values_checked": 514822,
+      "samples": 11,
+      "passed": true
+    }
+  ],
+  "integrated": false,
+  "seconds": 5.76520249999885,
+  "decision": "Exact interval proof component; no resource improvement adopted"
+}

@@ -1,0 +1,5 @@
+{
+  "failure_type": "ValueError",
+  "message": "Fixed rank threshold rejected a deficient isometry",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\prith\\quantum_option_pricing\\research\\limitation_program_20261001\\experiment_mps_components.py\", line 420, in run\n    canonical = right_canonicalize(cores)\n  File \"C:\\Users\\prith\\quantum_option_pricing\\research\\limitation_program_20261001\\mps_sequential_structure_v2.py\", line 125, in right_canonicalize\n    q, r = _positive_diagonal_qr(core.reshape(left, 2 * right).conjugate().T)\n  File \"C:\\Users\\prith\\quantum_option_pricing\\research\\limitation_program_20261001\\mps_sequential_structure_v2.py\", line 107, in _positive_diagonal_qr\n    raise ValueError(\"Fixed rank threshold rejected a deficient isometry\")\nValueError: Fixed rank threshold rejected a deficient isometry\n"
+}

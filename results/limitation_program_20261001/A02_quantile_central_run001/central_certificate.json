@@ -1,0 +1,174 @@
+{
+  "certified": false,
+  "budget_censored": false,
+  "reason": "fixed_method_error_bound_exceeds_target",
+  "real_approximation_error_upper_exact": [
+    3191559919424853210114420691834965390113800897,
+    46768052394588893382517914646921056628989841375232000
+  ],
+  "native_arithmetic": {
+    "coefficient_rounding": "exact nearest-even to f40, no fit/tuning",
+    "native_A_raw_ascending": [
+      3724191978462,
+      146390811988507,
+      2167787175079987,
+      15098156964236858,
+      50491722317932882,
+      73959497285562873,
+      36757306577399584,
+      2758763656169775
+    ],
+    "native_B_raw_ascending": [
+      1099511627776,
+      46523999116341,
+      755570105194111,
+      5930981248059551,
+      23324813503842711,
+      43219488495609330,
+      31587963821799896,
+      5746592331615081
+    ],
+    "rconstant_raw": 198599287768,
+    "rconstant_rounding": "ceil_f40(289/1600), fixed to preserve r_native>=0",
+    "q32_midpoint_and_q_exactly_representable_f40": true,
+    "r_argument_error_upper_exact": [
+      49,
+      27487790694400
+    ],
+    "r_native_lower_exact": [
+      0,
+      1
+    ],
+    "r_native_upper_exact": [
+      198599287769,
+      1099511627776
+    ],
+    "numerator_polynomial_error_upper_exact": [
+      53302507926197575663356662091002173857107678520843050818249184327818055805847137211728596828275570321,
+      8148143905337944345073782753637512644205873574663745002544561797417525199053346824733589504000000000000000000
+    ],
+    "denominator_polynomial_error_upper_exact": [
+      567506505266584860911972370151541792425670875975785155187398170457999785319705176935786701734206848767,
+      203703597633448608626844568840937816105146839366593625063614044935438129976333670618339737600000000000000000000
+    ],
+    "native_denominator_lower_exact": [
+      1,
+      1
+    ],
+    "division_semantics": "unsigned floor((a_raw<<40)/b_raw); positive magnitudes only; nonzero denominator",
+    "signed_restoration": "negate the magnitude quotient when q<0; absolute error retained; exact Gaussian floor not claimed",
+    "new_central_approximation_law_not_prior_exact_floor_quantile_law": true,
+    "native_arithmetic_error_upper_exact": [
+      11343755514410287556931828136769908697403246897588521580239368827511134743452251147826371151213905662489,
+      1629628781067588869014756550727502528841174714932749000508912359483505039810669364946717900800000000000000000000
+    ],
+    "maximum_stored_fixed_point_value_upper_exact": [
+      97546763431819296160749966603756489721919,
+      1329227995784915872903807060280344576
+    ],
+    "maximum_full_product_raw_upper_exact": [
+      19372717741730446409435819500396574698684682267908711,
+      1208925819614629174706176
+    ],
+    "maximum_shifted_division_numerator_raw_upper_exact": [
+      8557574848532969341844538354945269373207949628899911753887834353415629643484226780833876120304320759,
+      70673882591135373183331900029716740633099355875024758324864248051704791040
+    ],
+    "signed72_stored_values_no_overflow": true,
+    "signed144_full_multiply_products_no_overflow": true,
+    "unsigned112_division_numerator_no_truncation": true,
+    "native_divider_clamp_inactive": true,
+    "actual_reversible_leaf_emitted_or_replayed": false,
+    "division_gate_cost_charged": false,
+    "quantile_quantum_cost": null
+  },
+  "total_central_quantile_error_upper_exact": [
+    122553387622123690210304877769415713854176040277614918549294256367911221435269567093503171151213905662489,
+    1629628781067588869014756550727502528841174714932749000508912359483505039810669364946717900800000000000000000000
+  ],
+  "required_uniform_quantile_error_exact": [
+    1,
+    100000000
+  ],
+  "central_true_quantile_and_rational_approximation_domain": [
+    -1.5,
+    1.5
+  ],
+  "normal_density_lower_exact": [
+    1,
+    8
+  ],
+  "proved_endpoint_CDF_intervals_exact": [
+    [
+      [
+        22733312575130546103023956630440119969,
+        340282366920938463463374607431768211456
+      ],
+      [
+        355208008986414782859749322350626881,
+        5316911983139663491615228241121378304
+      ]
+    ],
+    [
+      [
+        4961703974153248708755478918770751423,
+        5316911983139663491615228241121378304
+      ],
+      [
+        317549054345807917360350650801328091487,
+        340282366920938463463374607431768211456
+      ]
+    ]
+  ],
+  "elapsed_CPU_seconds": 75.15625,
+  "source_coefficients": {
+    "primary_source": "https://svn.r-project.org/R/trunk/src/nmath/qnorm.c",
+    "local_path": "results/limitation_program_20261001/A02_quantile_census_run001/primary_sources/R_qnorm.c",
+    "sha256": "c38699b57a332eebd4989e810d3572d5c906e8135685835b6091cd60320e016e",
+    "coefficient_tokens_exactly_match_official_central_branch": true,
+    "A_decimals_ascending": [
+      "3.387132872796366608",
+      "133.14166789178437745",
+      "1971.5909503065514427",
+      "13731.693765509461125",
+      "45921.953931549871457",
+      "67265.770927008700853",
+      "33430.575583588128105",
+      "2509.0809287301226727"
+    ],
+    "B_decimals_ascending": [
+      "1",
+      "42.313330701600911252",
+      "687.1870074920579083",
+      "5394.1960214247511077",
+      "21213.794301586595867",
+      "39307.89580009271061",
+      "28729.085735721942674",
+      "5226.495278852854561"
+    ],
+    "coefficient_fit_or_tuning": false
+  },
+  "uniform_bits": 32,
+  "fraction_bits": 40,
+  "native_word_width": 72,
+  "central_domain_only": true,
+  "domain_u_exact": [
+    [
+      3,
+      40
+    ],
+    [
+      37,
+      40
+    ]
+  ],
+  "completed_fixed_cells": 2048,
+  "new_approximation_law_not_prior_exact_floor_law": true,
+  "ordinary_and_extreme_tails_certified": false,
+  "native_mathematical_interface_proof_contingent_on_complete_cells": true,
+  "actual_reversible_leaf_or_division_gate_cost": null,
+  "native_financial_path_arithmetic_certified": false,
+  "coherent_loader_implemented": false,
+  "full_G2_closed": false,
+  "accepted_Box_Muller_baseline_changed": false
+}

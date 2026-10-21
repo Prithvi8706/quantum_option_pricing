@@ -1,0 +1,34 @@
+{
+  "schema": "financial-admission-failure-diagnostic-v2",
+  "failure_report_written_utc": "2026-10-03T04:11:15.486888+00:00",
+  "timestamp_is_report_time_not_exact_process_failure_time": true,
+  "reported_command": "frontier_t0_env/Scripts/python.exe -m research.limitation_program_20261001.experiment_as241_financial_v2 prepare --output results/limitation_program_20261001/A02_quantile_financial_run002",
+  "observed_exit_code": 1,
+  "reported_failure_type": "ValueError",
+  "reported_message": "Complete actual native coefficient inventory",
+  "reported_stack": [
+    "experiment_as241_financial_v2.py:699 main",
+    "experiment_as241_financial_v2.py:320 prepare_body",
+    "experiment_as241_financial_v2.py:385 bind_case",
+    "experiment_as241_financial_v2.py:290 extract_financial",
+    "as241_financial_native_v2.py:451 require",
+    "as241_financial_native_v2.py:23 ValueError"
+  ],
+  "error_report_from_root_tool_not_reexecuted": true,
+  "original_output_directory_observed_absent": true,
+  "no_producer_protocol_or_preparation_fabricated": true,
+  "source_hashes_observed_after_failure_originals_preserved": true,
+  "actual_saved_drift_word_examples": {
+    "B4x12": {
+      "canonical_unsigned72_drift_word": 4722366482868270824161,
+      "signed_drift_word": -1374389535
+    },
+    "B8x52": {
+      "canonical_unsigned72_drift_word": 4722366482869328046880,
+      "signed_drift_word": -317166816
+    }
+  },
+  "new_test_credit": 0,
+  "new_prices_gates_or_proof_evaluations": 0,
+  "planned_correction": "Canonical unsigned72 semantic inventory words must be signed-decoded for exact comparison with actual signed coefficients/drift; NEW v3, immutable originals and actualtargets/math/budgets unchanged."
+}

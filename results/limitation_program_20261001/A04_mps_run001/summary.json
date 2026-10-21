@@ -1,0 +1,56 @@
+{
+  "passed": true,
+  "budget_censored": false,
+  "local_only": true,
+  "new_unique_pytest_cases": 16,
+  "prior_structural_fixture_counts_added_again": 0,
+  "fixed_q10_target_tables": 1,
+  "fixed_bond_attempts": [
+    {
+      "bond": 2,
+      "attempted_once": true,
+      "supported": true,
+      "native_emission_completed": true,
+      "actual_SDK_calls": 10,
+      "dirty_reference_inverse_diagnostic_completed": true,
+      "terminal_status": "supported",
+      "stage": "fixed_target_assessments",
+      "native_rotations": 144,
+      "synthesis_eligible": false
+    },
+    {
+      "bond": 4,
+      "attempted_once": true,
+      "supported": false,
+      "native_emission_completed": false,
+      "actual_SDK_calls": null,
+      "dirty_reference_inverse_diagnostic_completed": false,
+      "terminal_status": "unsupported",
+      "stage": "SDK_decomposition",
+      "unsupported_reason": "\"Unable to translate the operations in the circuit: ['u', 'cx'] to the backend's (or manually specified) target basis: ['delay', 'rz', 'ry', 'snapshot', 'cx', 'reset', 'barrier', 'measure']. This likely means the target basis is not universal or there are additional equivalence rules needed in the EquivalenceLibrary being used. For more details on this error see: https://docs.quantum-computing.ibm.com/api/qiskit/qiskit.transpiler.passes.BasisTranslator#translation-errors\""
+    },
+    {
+      "bond": 8,
+      "attempted_once": true,
+      "supported": false,
+      "native_emission_completed": false,
+      "actual_SDK_calls": null,
+      "dirty_reference_inverse_diagnostic_completed": false,
+      "terminal_status": "unsupported",
+      "stage": "canonicalization",
+      "unsupported_reason": "Fixed rank threshold rejected a deficient isometry"
+    }
+  ],
+  "fixed_bond_target_assessments": 9,
+  "native_circuits_completed": 1,
+  "component_rows_eligible_for_future_registry": 0,
+  "new_synthesis_calls": 0,
+  "full_preparation_Clifford_T_error_or_cost": null,
+  "actual_dirty_reference_statevectors": 1,
+  "native_dense_full_operators_or_financial_replays": 0,
+  "q10_uniform_price_law_certificate_failed_separately": true,
+  "source_law_or_financial_ledger_adopted": false,
+  "G2_or_G5_or_quantum_advantage_established": false,
+  "CPU_seconds": 99.59375,
+  "wall_seconds": 104.79699999999139
+}

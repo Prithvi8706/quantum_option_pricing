@@ -1,0 +1,34 @@
+{
+  "domain": {
+    "all_q32_ordinary_tail_inputs_covered": true,
+    "true_quantile_absolute_upper_exact": [
+      13,
+      2
+    ],
+    "Chernoff_density_conversion": "Gaussian mgf Markov gives Phi(-x)<=exp(-x^2/2), hence true |q|<=sqrt(2)*t; saved positive rational |z|^2<=2*t_lower^2 ensures every point between them has density>=prefactor*exp(-t_upper^2).",
+    "central_branch_tie_not_a_q32_midpoint": true,
+    "exact_transform_floor_hypothetical": true
+  },
+  "widths": {
+    "maximum_stored_fixed_point_value_upper_exact": [
+      48517906066874162868505673909,
+      109951162777600000000000000
+    ],
+    "maximum_full_product_raw_upper_exact": [
+      3245478447771826125363597153587429376,
+      6103515625
+    ],
+    "maximum_shifted_division_numerator_raw_upper_exact": [
+      3255981559806633101056397153587429376,
+      6103515625
+    ],
+    "maximum_denominator_raw_upper_exact": [
+      1521354643043238810440665271,
+      20000000000000
+    ],
+    "positive_denominator_at_least_one": true,
+    "mathematical_unsigned64_divisor_verified": true,
+    "signed_restored_output72_safe": true,
+    "actual_gate_divider_interface_or_cost_validated": false
+  }
+}

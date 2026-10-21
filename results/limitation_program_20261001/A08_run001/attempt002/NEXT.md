@@ -1,0 +1,1 @@
+Retain the accepted A10 inverse baseline. This bounded A08 family did not meet its preregistered full-source threshold; do not attribute leaf savings to full-source advantage. Next screen A09 inner multiplier accumulation separately, or another dominant arithmetic operation.

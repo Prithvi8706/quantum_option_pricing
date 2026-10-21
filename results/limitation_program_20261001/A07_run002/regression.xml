@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="5" skipped="0" tests="10" time="0.875" timestamp="2026-10-01T15:26:08.419966+05:30" hostname="PRITHVI"><testcase classname="research.limitation_program_20261001.test_interval_bounds" name="test_every_small_signed_input_and_fraction[1]" time="0.004"><failure message="ValueError: invalid word/fraction metadata">width = 1
+
+    @pytest.mark.parametrize("width", range(1, 6))
+    def test_every_small_signed_input_and_fraction(width):
+        for fraction in range(width + 1):
+            graph = Graph(fraction, width - fraction)
+            a, b = graph.input("a", width), graph.input("b", width)
+            graph.add(a, b)
+            graph.sub(a, b)
+            graph.mul(a, b)
+            graph.node("cmul", (a,), {"c": -7})
+            graph.node("cmul", (a,), {"c": 5})
+            graph.maximum(a, b)
+            graph.minimum(a, b)
+            graph.select(a, a, b)
+            graph.node("positive", (a,))
+            graph.node("sqrt", (a,))
+            graph.node("msb", (a,))
+            graph.shift(a, b)
+            graph.const_int(1 &lt;&lt; (width + 3))
+            for shift in (-width, -1, 0, 1, width):
+                for bits in (max(0, width - 1), width):
+                    graph.bits(a, shift, bits, signed=False)
+                    graph.bits(a, shift, bits, signed=True)
+            graph.outputs = {"a": a}
+&gt;           contain(
+                graph.as_dict(),
+                ({"a": x, "b": y} for x in range(1 &lt;&lt; width) for y in range(1 &lt;&lt; width)),
+            )
+
+research\limitation_program_20261001\test_interval_bounds.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+research\limitation_program_20261001\test_interval_bounds.py:12: in contain
+    intervals, rules = bound_graph(target)
+                       ^^^^^^^^^^^^^^^^^^^
+research\limitation_program_20261001\interval_bounds.py:14: in bound_graph
+    context = SSAContext(target)
+              ^^^^^^^^^^^^^^^^^^
+research\limitation_program_20261001\prove_log_exponent.py:108: in __init__
+    self.producers, self.locations = index_graph(self.target)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+target = {'format': 'reversible-fixed-point-ssa-v1', 'fraction_bits': 1, 'inputs': [0, 1], 'nodes': [{'args': [], 'op': 'input'...0, 1], 'op': 'mul', 'out': [4], 'params': {}}, {'args': [0], 'op': 'cmul', 'out': [5], 'params': {'c': -7}}, ...], ...}
+
+    def index_graph(target: dict) -&gt; tuple[dict, dict]:
+        """Validate unique, ordered SSA provenance before any structural dispatch."""
+        width, fraction = target.get("width"), target.get("fraction_bits")
+        if type(width) is not int or type(fraction) is not int:
+            raise ValueError("integer width/fraction metadata required")
+        if not 0 &lt;= fraction &lt; width:
+&gt;           raise ValueError("invalid word/fraction metadata")
+E           ValueError: invalid word/fraction metadata
+
+research\limitation_program_20261001\prove_log_exponent.py:47: ValueError</failure></testcase><testcase classname="research.limitation_program_20261001.test_interval_bounds" name="test_every_small_signed_input_and_fraction[2]" time="0.005"><failure message="ValueError: invalid word/fraction metadata">width = 2
+
+    @pytest.mark.parametrize("width", range(1, 6))
+    def test_every_small_signed_input_and_fraction(width):
+        for fraction in range(width + 1):
+            graph = Graph(fraction, width - fraction)
+            a, b = graph.input("a", width), graph.input("b", width)
+            graph.add(a, b)
+            graph.sub(a, b)
+            graph.mul(a, b)
+            graph.node("cmul", (a,), {"c": -7})
+            graph.node("cmul", (a,), {"c": 5})
+            graph.maximum(a, b)
+            graph.minimum(a, b)
+            graph.select(a, a, b)
+            graph.node("positive", (a,))
+            graph.node("sqrt", (a,))
+            graph.node("msb", (a,))
+            graph.shift(a, b)
+            graph.const_int(1 &lt;&lt; (width + 3))
+            for shift in (-width, -1, 0, 1, width):
+                for bits in (max(0, width - 1), width):
+                    graph.bits(a, shift, bits, signed=False)
+                    graph.bits(a, shift, bits, signed=True)
+            graph.outputs = {"a": a}
+&gt;           contain(
+                graph.as_dict(),
+                ({"a": x, "b": y} for x in range(1 &lt;&lt; width) for y in range(1 &lt;&lt; width)),
+            )
+
+research\limitation_program_20261001\test_interval_bounds.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+research\limitation_program_20261001\test_interval_bounds.py:12: in contain
+    intervals, rules = bound_graph(target)
+                       ^^^^^^^^^^^^^^^^^^^
+research\limitation_program_20261001\interval_bounds.py:14: in bound_graph
+    context = SSAContext(target)
+              ^^^^^^^^^^^^^^^^^^
+research\limitation_program_20261001\prove_log_exponent.py:108: in __init__
+    self.producers, self.locations = index_graph(self.target)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+target = {'format': 'reversible-fixed-point-ssa-v1', 'fraction_bits': 2, 'inputs': [0, 1], 'nodes': [{'args': [], 'op': 'input'...0, 1], 'op': 'mul', 'out': [4], 'params': {}}, {'args': [0], 'op': 'cmul', 'out': [5], 'params': {'c': -7}}, ...], ...}
+
+    def index_graph(target: dict) -&gt; tuple[dict, dict]:
+        """Validate unique, ordered SSA provenance before any structural dispatch."""
+        width, fraction = target.get("width"), target.get("fraction_bits")
+        if type(width) is not int or type(fraction) is not int:
+            raise ValueError("integer width/fraction metadata required")
+        if not 0 &lt;= fraction &lt; width:
+&gt;           raise ValueError("invalid word/fraction metadata")
+E           ValueError: invalid word/fraction metadata
+
+research\limitation_program_20261001\prove_log_exponent.py:47: ValueError</failure></testcase><testcase classname="research.limitation_program_20261001.test_interval_bounds" name="test_every_small_signed_input_and_fraction[3]" time="0.015"><failure message="ValueError: invalid word/fraction metadata">width = 3
+
+    @pytest.mark.parametrize("width", range(1, 6))
+    def test_every_small_signed_input_and_fraction(width):
+        for fraction in range(width + 1):
+            graph = Graph(fraction, width - fraction)
+            a, b = graph.input("a", width), graph.input("b", width)
+            graph.add(a, b)
+            graph.sub(a, b)
+            graph.mul(a, b)
+            graph.node("cmul", (a,), {"c": -7})
+            graph.node("cmul", (a,), {"c": 5})
+            graph.maximum(a, b)
+            graph.minimum(a, b)
+            graph.select(a, a, b)
+            graph.node("positive", (a,))
+            graph.node("sqrt", (a,))
+            graph.node("msb", (a,))
+            graph.shift(a, b)
+            graph.const_int(1 &lt;&lt; (width + 3))
+            for shift in (-width, -1, 0, 1, width):
+                for bits in (max(0, width - 1), width):
+                    graph.bits(a, shift, bits, signed=False)
+                    graph.bits(a, shift, bits, signed=True)
+            graph.outputs = {"a": a}
+&gt;           contain(
+                graph.as_dict(),
+                ({"a": x, "b": y} for x in range(1 &lt;&lt; width) for y in range(1 &lt;&lt; width)),
+            )
+
+research\limitation_program_20261001\test_interval_bounds.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+research\limitation_program_20261001\test_interval_bounds.py:12: in contain
+    intervals, rules = bound_graph(target)
+                       ^^^^^^^^^^^^^^^^^^^
+research\limitation_program_20261001\interval_bounds.py:14: in bound_graph
+    context = SSAContext(target)
+              ^^^^^^^^^^^^^^^^^^
+research\limitation_program_20261001\prove_log_exponent.py:108: in __init__
+    self.producers, self.locations = index_graph(self.target)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+target = {'format': 'reversible-fixed-point-ssa-v1', 'fraction_bits': 3, 'inputs': [0, 1], 'nodes': [{'args': [], 'op': 'input'...0, 1], 'op': 'mul', 'out': [4], 'params': {}}, {'args': [0], 'op': 'cmul', 'out': [5], 'params': {'c': -7}}, ...], ...}
+
+    def index_graph(target: dict) -&gt; tuple[dict, dict]:
+        """Validate unique, ordered SSA provenance before any structural dispatch."""
+        width, fraction = target.get("width"), target.get("fraction_bits")
+        if type(width) is not int or type(fraction) is not int:
+            raise ValueError("integer width/fraction metadata required")
+        if not 0 &lt;= fraction &lt; width:
+&gt;           raise ValueError("invalid word/fraction metadata")
+E           ValueError: invalid word/fraction metadata
+
+research\limitation_program_20261001\prove_log_exponent.py:47: ValueError</failure></testcase><testcase classname="research.limitation_program_20261001.test_interval_bounds" name="test_every_small_signed_input_and_fraction[4]" time="0.065"><failure message="ValueError: invalid word/fraction metadata">width = 4
+
+    @pytest.mark.parametrize("width", range(1, 6))
+    def test_every_small_signed_input_and_fraction(width):
+        for fraction in range(width + 1):
+            graph = Graph(fraction, width - fraction)
+            a, b = graph.input("a", width), graph.input("b", width)
+            graph.add(a, b)
+            graph.sub(a, b)
+            graph.mul(a, b)
+            graph.node("cmul", (a,), {"c": -7})
+            graph.node("cmul", (a,), {"c": 5})
+            graph.maximum(a, b)
+            graph.minimum(a, b)
+            graph.select(a, a, b)
+            graph.node("positive", (a,))
+            graph.node("sqrt", (a,))
+            graph.node("msb", (a,))
+            graph.shift(a, b)
+            graph.const_int(1 &lt;&lt; (width + 3))
+            for shift in (-width, -1, 0, 1, width):
+                for bits in (max(0, width - 1), width):
+                    graph.bits(a, shift, bits, signed=False)
+                    graph.bits(a, shift, bits, signed=True)
+            graph.outputs = {"a": a}
+&gt;           contain(
+                graph.as_dict(),
+                ({"a": x, "b": y} for x in range(1 &lt;&lt; width) for y in range(1 &lt;&lt; width)),
+            )
+
+research\limitation_program_20261001\test_interval_bounds.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+research\limitation_program_20261001\test_interval_bounds.py:12: in contain
+    intervals, rules = bound_graph(target)
+                       ^^^^^^^^^^^^^^^^^^^
+research\limitation_program_20261001\interval_bounds.py:14: in bound_graph
+    context = SSAContext(target)
+              ^^^^^^^^^^^^^^^^^^
+research\limitation_program_20261001\prove_log_exponent.py:108: in __init__
+    self.producers, self.locations = index_graph(self.target)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+target = {'format': 'reversible-fixed-point-ssa-v1', 'fraction_bits': 4, 'inputs': [0, 1], 'nodes': [{'args': [], 'op': 'input'...0, 1], 'op': 'mul', 'out': [4], 'params': {}}, {'args': [0], 'op': 'cmul', 'out': [5], 'params': {'c': -7}}, ...], ...}
+
+    def index_graph(target: dict) -&gt; tuple[dict, dict]:
+        """Validate unique, ordered SSA provenance before any structural dispatch."""
+        width, fraction = target.get("width"), target.get("fraction_bits")
+        if type(width) is not int or type(fraction) is not int:
+            raise ValueError("integer width/fraction metadata required")
+        if not 0 &lt;= fraction &lt; width:
+&gt;           raise ValueError("invalid word/fraction metadata")
+E           ValueError: invalid word/fraction metadata
+
+research\limitation_program_20261001\prove_log_exponent.py:47: ValueError</failure></testcase><testcase classname="research.limitation_program_20261001.test_interval_bounds" name="test_every_small_signed_input_and_fraction[5]" time="0.304"><failure message="ValueError: invalid word/fraction metadata">width = 5
+
+    @pytest.mark.parametrize("width", range(1, 6))
+    def test_every_small_signed_input_and_fraction(width):
+        for fraction in range(width + 1):
+            graph = Graph(fraction, width - fraction)
+            a, b = graph.input("a", width), graph.input("b", width)
+            graph.add(a, b)
+            graph.sub(a, b)
+            graph.mul(a, b)
+            graph.node("cmul", (a,), {"c": -7})
+            graph.node("cmul", (a,), {"c": 5})
+            graph.maximum(a, b)
+            graph.minimum(a, b)
+            graph.select(a, a, b)
+            graph.node("positive", (a,))
+            graph.node("sqrt", (a,))
+            graph.node("msb", (a,))
+            graph.shift(a, b)
+            graph.const_int(1 &lt;&lt; (width + 3))
+            for shift in (-width, -1, 0, 1, width):
+                for bits in (max(0, width - 1), width):
+                    graph.bits(a, shift, bits, signed=False)
+                    graph.bits(a, shift, bits, signed=True)
+            graph.outputs = {"a": a}
+&gt;           contain(
+                graph.as_dict(),
+                ({"a": x, "b": y} for x in range(1 &lt;&lt; width) for y in range(1 &lt;&lt; width)),
+            )
+
+research\limitation_program_20261001\test_interval_bounds.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+research\limitation_program_20261001\test_interval_bounds.py:12: in contain
+    intervals, rules = bound_graph(target)
+                       ^^^^^^^^^^^^^^^^^^^
+research\limitation_program_20261001\interval_bounds.py:14: in bound_graph
+    context = SSAContext(target)
+              ^^^^^^^^^^^^^^^^^^
+research\limitation_program_20261001\prove_log_exponent.py:108: in __init__
+    self.producers, self.locations = index_graph(self.target)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+target = {'format': 'reversible-fixed-point-ssa-v1', 'fraction_bits': 5, 'inputs': [0, 1], 'nodes': [{'args': [], 'op': 'input'...0, 1], 'op': 'mul', 'out': [4], 'params': {}}, {'args': [0], 'op': 'cmul', 'out': [5], 'params': {'c': -7}}, ...], ...}
+
+    def index_graph(target: dict) -&gt; tuple[dict, dict]:
+        """Validate unique, ordered SSA provenance before any structural dispatch."""
+        width, fraction = target.get("width"), target.get("fraction_bits")
+        if type(width) is not int or type(fraction) is not int:
+            raise ValueError("integer width/fraction metadata required")
+        if not 0 &lt;= fraction &lt; width:
+&gt;           raise ValueError("invalid word/fraction metadata")
+E           ValueError: invalid word/fraction metadata
+
+research\limitation_program_20261001\prove_log_exponent.py:47: ValueError</failure></testcase><testcase classname="research.limitation_program_20261001.test_interval_bounds" name="test_msb_normalization_is_proved_for_every_input" time="0.017" /><testcase classname="research.limitation_program_20261001.test_interval_bounds" name="test_wrong_normalization_literal_does_not_receive_special_bound" time="0.017" /><testcase classname="research.limitation_program_20261001.test_interval_bounds" name="test_bin_local_residual_covers_all_values" time="0.005" /><testcase classname="research.limitation_program_20261001.test_interval_bounds" name="test_changed_bin_center_does_not_receive_special_bound" time="0.004" /><testcase classname="research.limitation_program_20261001.test_interval_bounds" name="test_bounds_snapshot_does_not_mutate_target" time="0.001" /></testsuite></testsuites>

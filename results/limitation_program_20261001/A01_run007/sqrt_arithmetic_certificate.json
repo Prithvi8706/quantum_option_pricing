@@ -1,0 +1,276 @@
+{
+  "active_input_bits": 46,
+  "algebraic_induction": "t=0 gives r'<4*q+1=2*q'+1; t=1 gives 0<=r'<=4*q+2<2*q'+1. Both preserve the displayed polynomial identity. Final invariant uniquely gives q=floor(sqrt(N)).",
+  "arithmetic_no_overflow": true,
+  "finite_recurrence_checks": 16384,
+  "fraction_bits": 40,
+  "high_input_zero_required": true,
+  "invariant": "Processed radicand prefix = q*q+r, 0<=r<2*q+1",
+  "passed": true,
+  "proof_scope": "Exact integer recurrence and width bound hold for all promised inputs. Actual comparison/subtraction realization is covered by unchanged primitive semantics, physical structure and saved finite leaf tests; no exhaustive72 input claim.",
+  "radicand_bits": 86,
+  "recurrence": "q' = 2*q + t; r' = 4*r+d-t*(4*q+1), t=[4*r+d >= 4*q+1]",
+  "result_bits": 43,
+  "stages": [
+    {
+      "maximum_candidate_remainder": 3,
+      "maximum_root_prefix": 0,
+      "maximum_trial": 1,
+      "stage": 0
+    },
+    {
+      "maximum_candidate_remainder": 11,
+      "maximum_root_prefix": 1,
+      "maximum_trial": 5,
+      "stage": 1
+    },
+    {
+      "maximum_candidate_remainder": 27,
+      "maximum_root_prefix": 3,
+      "maximum_trial": 13,
+      "stage": 2
+    },
+    {
+      "maximum_candidate_remainder": 59,
+      "maximum_root_prefix": 7,
+      "maximum_trial": 29,
+      "stage": 3
+    },
+    {
+      "maximum_candidate_remainder": 123,
+      "maximum_root_prefix": 15,
+      "maximum_trial": 61,
+      "stage": 4
+    },
+    {
+      "maximum_candidate_remainder": 251,
+      "maximum_root_prefix": 31,
+      "maximum_trial": 125,
+      "stage": 5
+    },
+    {
+      "maximum_candidate_remainder": 507,
+      "maximum_root_prefix": 63,
+      "maximum_trial": 253,
+      "stage": 6
+    },
+    {
+      "maximum_candidate_remainder": 1019,
+      "maximum_root_prefix": 127,
+      "maximum_trial": 509,
+      "stage": 7
+    },
+    {
+      "maximum_candidate_remainder": 2043,
+      "maximum_root_prefix": 255,
+      "maximum_trial": 1021,
+      "stage": 8
+    },
+    {
+      "maximum_candidate_remainder": 4091,
+      "maximum_root_prefix": 511,
+      "maximum_trial": 2045,
+      "stage": 9
+    },
+    {
+      "maximum_candidate_remainder": 8187,
+      "maximum_root_prefix": 1023,
+      "maximum_trial": 4093,
+      "stage": 10
+    },
+    {
+      "maximum_candidate_remainder": 16379,
+      "maximum_root_prefix": 2047,
+      "maximum_trial": 8189,
+      "stage": 11
+    },
+    {
+      "maximum_candidate_remainder": 32763,
+      "maximum_root_prefix": 4095,
+      "maximum_trial": 16381,
+      "stage": 12
+    },
+    {
+      "maximum_candidate_remainder": 65531,
+      "maximum_root_prefix": 8191,
+      "maximum_trial": 32765,
+      "stage": 13
+    },
+    {
+      "maximum_candidate_remainder": 131067,
+      "maximum_root_prefix": 16383,
+      "maximum_trial": 65533,
+      "stage": 14
+    },
+    {
+      "maximum_candidate_remainder": 262139,
+      "maximum_root_prefix": 32767,
+      "maximum_trial": 131069,
+      "stage": 15
+    },
+    {
+      "maximum_candidate_remainder": 524283,
+      "maximum_root_prefix": 65535,
+      "maximum_trial": 262141,
+      "stage": 16
+    },
+    {
+      "maximum_candidate_remainder": 1048571,
+      "maximum_root_prefix": 131071,
+      "maximum_trial": 524285,
+      "stage": 17
+    },
+    {
+      "maximum_candidate_remainder": 2097147,
+      "maximum_root_prefix": 262143,
+      "maximum_trial": 1048573,
+      "stage": 18
+    },
+    {
+      "maximum_candidate_remainder": 4194299,
+      "maximum_root_prefix": 524287,
+      "maximum_trial": 2097149,
+      "stage": 19
+    },
+    {
+      "maximum_candidate_remainder": 8388603,
+      "maximum_root_prefix": 1048575,
+      "maximum_trial": 4194301,
+      "stage": 20
+    },
+    {
+      "maximum_candidate_remainder": 16777211,
+      "maximum_root_prefix": 2097151,
+      "maximum_trial": 8388605,
+      "stage": 21
+    },
+    {
+      "maximum_candidate_remainder": 33554427,
+      "maximum_root_prefix": 4194303,
+      "maximum_trial": 16777213,
+      "stage": 22
+    },
+    {
+      "maximum_candidate_remainder": 67108859,
+      "maximum_root_prefix": 8388607,
+      "maximum_trial": 33554429,
+      "stage": 23
+    },
+    {
+      "maximum_candidate_remainder": 134217723,
+      "maximum_root_prefix": 16777215,
+      "maximum_trial": 67108861,
+      "stage": 24
+    },
+    {
+      "maximum_candidate_remainder": 268435451,
+      "maximum_root_prefix": 33554431,
+      "maximum_trial": 134217725,
+      "stage": 25
+    },
+    {
+      "maximum_candidate_remainder": 536870907,
+      "maximum_root_prefix": 67108863,
+      "maximum_trial": 268435453,
+      "stage": 26
+    },
+    {
+      "maximum_candidate_remainder": 1073741819,
+      "maximum_root_prefix": 134217727,
+      "maximum_trial": 536870909,
+      "stage": 27
+    },
+    {
+      "maximum_candidate_remainder": 2147483643,
+      "maximum_root_prefix": 268435455,
+      "maximum_trial": 1073741821,
+      "stage": 28
+    },
+    {
+      "maximum_candidate_remainder": 4294967291,
+      "maximum_root_prefix": 536870911,
+      "maximum_trial": 2147483645,
+      "stage": 29
+    },
+    {
+      "maximum_candidate_remainder": 8589934587,
+      "maximum_root_prefix": 1073741823,
+      "maximum_trial": 4294967293,
+      "stage": 30
+    },
+    {
+      "maximum_candidate_remainder": 17179869179,
+      "maximum_root_prefix": 2147483647,
+      "maximum_trial": 8589934589,
+      "stage": 31
+    },
+    {
+      "maximum_candidate_remainder": 34359738363,
+      "maximum_root_prefix": 4294967295,
+      "maximum_trial": 17179869181,
+      "stage": 32
+    },
+    {
+      "maximum_candidate_remainder": 68719476731,
+      "maximum_root_prefix": 8589934591,
+      "maximum_trial": 34359738365,
+      "stage": 33
+    },
+    {
+      "maximum_candidate_remainder": 137438953467,
+      "maximum_root_prefix": 17179869183,
+      "maximum_trial": 68719476733,
+      "stage": 34
+    },
+    {
+      "maximum_candidate_remainder": 274877906939,
+      "maximum_root_prefix": 34359738367,
+      "maximum_trial": 137438953469,
+      "stage": 35
+    },
+    {
+      "maximum_candidate_remainder": 549755813883,
+      "maximum_root_prefix": 68719476735,
+      "maximum_trial": 274877906941,
+      "stage": 36
+    },
+    {
+      "maximum_candidate_remainder": 1099511627771,
+      "maximum_root_prefix": 137438953471,
+      "maximum_trial": 549755813885,
+      "stage": 37
+    },
+    {
+      "maximum_candidate_remainder": 2199023255547,
+      "maximum_root_prefix": 274877906943,
+      "maximum_trial": 1099511627773,
+      "stage": 38
+    },
+    {
+      "maximum_candidate_remainder": 4398046511099,
+      "maximum_root_prefix": 549755813887,
+      "maximum_trial": 2199023255549,
+      "stage": 39
+    },
+    {
+      "maximum_candidate_remainder": 8796093022203,
+      "maximum_root_prefix": 1099511627775,
+      "maximum_trial": 4398046511101,
+      "stage": 40
+    },
+    {
+      "maximum_candidate_remainder": 17592186044411,
+      "maximum_root_prefix": 2199023255551,
+      "maximum_trial": 8796093022205,
+      "stage": 41
+    },
+    {
+      "maximum_candidate_remainder": 35184372088827,
+      "maximum_root_prefix": 4398046511103,
+      "maximum_trial": 17592186044413,
+      "stage": 42
+    }
+  ],
+  "tight_remainder_bits": 45,
+  "unsigned_highest_active_bit_permitted": true
+}

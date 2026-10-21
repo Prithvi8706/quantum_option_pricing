@@ -1,0 +1,33 @@
+{
+  "two_factor_product_distance_squared": [
+    1921,
+    4225
+  ],
+  "density_matrix_exact_arithmetic": true,
+  "correlated_joint_trace_distance_exact": [
+    1,
+    1
+  ],
+  "correlated_marginal_distances_exact": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      1
+    ]
+  ],
+  "pure_product_derivation": "For pure factors Fi=|<psi_i|phi_i>|^2=1-di^2. Independent tensor overlaps multiply, so D^2=1-product(Fi). Two factors expand to d1^2+d2^2-d1^2*d2^2.",
+  "product_upper_derivation": "For 0<=xi<=1, 1-product(1-xi)<=sum(xi), by induction from x+y-xy<=x+y. With xi=di^2 this yields D<=sqrt(sum(di^2)).",
+  "general_tensor_derivation": "Expand tensor(rho_i)-tensor(sigma_i) as the sum of one changed factor with preceding rho and succeeding sigma factors. The trace norm of a tensor product multiplies, and every density operator has trace norm one. Triangle inequality therefore gives D<=sum(di); D<=1 supplies the cap.",
+  "bounded_observable_derivation": "For Delta=rho-sigma with trace zero, Jordan parts have Tr(Delta+)=Tr(Delta-)=D. If 0<=Y<=40*I, both Tr(Y*Delta+) and Tr(Y*Delta-) lie in [0,40D], hence |Tr(Y*Delta)|<=40D.",
+  "arbitrary_correlated_state_bound_from_marginals_valid": false,
+  "full_unitary_operator_bound_from_prepared_state_bound_valid": false,
+  "producer_guard_review": {
+    "pure_product_keyword_requires_literal_True": true,
+    "exact_rational_and_nonempty_error_inputs_checked": true,
+    "general_product_bound_has_unit_cap": true,
+    "producer_functions_executed_by_auditor": 0
+  }
+}

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="4" failures="0" skipped="0" tests="16" time="1.095" timestamp="2026-10-02T16:09:37.183802+05:30" hostname="PRITHVI"><testcase classname="research.limitation_program_20261001.test_mps_sequential_structure" name="test_contraction_uses_most_significant_site_first" time="0.006" /><testcase classname="research.limitation_program_20261001.test_mps_sequential_structure" name="test_boundary_bond_dimension_must_be_one" time="0.004" /><testcase classname="research.limitation_program_20261001.test_mps_sequential_structure" name="test_nonpower_rank_and_rank_jumps_are_rejected_without_adaptation" time="0.003" /><testcase classname="research.limitation_program_20261001.test_mps_sequential_structure" name="test_nonfinite_core_literals_are_rejected" time="0.002" /><testcase classname="research.limitation_program_20261001.test_mps_sequential_structure" name="test_right_canonical_rows_and_one_fixed_normalization" time="0.007" /><testcase classname="research.limitation_program_20261001.test_mps_sequential_structure" name="test_complex_preparation_phase_is_preserved_in_right_canonical_cores" time="0.006" /><testcase classname="research.limitation_program_20261001.test_mps_sequential_structure" name="test_expand_transition_columns_use_low_bond_bits_then_output" time="0.005" /><testcase classname="research.limitation_program_20261001.test_mps_sequential_structure" name="test_equal_rank_transition_has_no_swap_or_extra_memory_lane" time="0.003" /><testcase classname="research.limitation_program_20261001.test_mps_sequential_structure" name="test_shrink_swap_clears_retired_bond_even_when_entangled_with_reference" time="0.004" /><testcase classname="research.limitation_program_20261001.test_mps_sequential_structure" name="test_fresh_output_cannot_alias_any_bond_wire" time="0.003" /><testcase classname="research.limitation_program_20261001.test_mps_sequential_structure" name="test_zero_state_and_dependent_isometry_are_rejected" time="0.002" /><testcase classname="research.limitation_program_20261001.test_mps_sequential_structure" name="test_full_toy_emission_prepares_state_with_exact_structural_scratch_zero" time="0.004"><error message="failed on setup with &quot;TypeError: zip() takes no keyword arguments&quot;">@pytest.fixture(scope="module")
+    def emitted_toy():
+        cores = fixed_toy_cores()
+        canonical = right_canonicalize(cores)
+&gt;       plan = make_structure_plan(canonical)
+
+research\limitation_program_20261001\test_mps_sequential_structure.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+canonical = CanonicalMPS(cores=(array([[[-0.+0.5j, -0.+0.5j],
+        [-0.+0.5j, -0.+0.5j]]]), array([[[ 5.00000000e-01+0.00000000...0j), reconstruction_residual_numeric=3.488821756485609e-16, maximum_row_isometry_defect_numeric=3.2189288747661586e-16)
+
+    def make_structure_plan(canonical):
+        cores = validate_cores(canonical.cores if isinstance(canonical, CanonicalMPS) else canonical)
+        count = len(cores)
+        largest = max(max(core.shape[0], core.shape[2]) for core in cores)
+        scratch = tuple(range(count, count + largest.bit_length() - 1))
+        outputs = tuple(reversed(range(count)))
+        transitions = tuple(
+            transition_from_core(core, site, output, scratch)
+&gt;           for site, (core, output) in enumerate(zip(cores, outputs, strict=True))
+        )
+E       TypeError: zip() takes no keyword arguments
+
+research\limitation_program_20261001\mps_sequential_structure.py:221: TypeError</error></testcase><testcase classname="research.limitation_program_20261001.test_mps_sequential_structure" name="test_independent_dense_full_operator_matches_all_emitted_local_columns" time="0.002"><error message="failed on setup with &quot;TypeError: zip() takes no keyword arguments&quot;">@pytest.fixture(scope="module")
+    def emitted_toy():
+        cores = fixed_toy_cores()
+        canonical = right_canonicalize(cores)
+&gt;       plan = make_structure_plan(canonical)
+
+research\limitation_program_20261001\test_mps_sequential_structure.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+canonical = CanonicalMPS(cores=(array([[[-0.+0.5j, -0.+0.5j],
+        [-0.+0.5j, -0.+0.5j]]]), array([[[ 5.00000000e-01+0.00000000...0j), reconstruction_residual_numeric=3.488821756485609e-16, maximum_row_isometry_defect_numeric=3.2189288747661586e-16)
+
+    def make_structure_plan(canonical):
+        cores = validate_cores(canonical.cores if isinstance(canonical, CanonicalMPS) else canonical)
+        count = len(cores)
+        largest = max(max(core.shape[0], core.shape[2]) for core in cores)
+        scratch = tuple(range(count, count + largest.bit_length() - 1))
+        outputs = tuple(reversed(range(count)))
+        transitions = tuple(
+            transition_from_core(core, site, output, scratch)
+&gt;           for site, (core, output) in enumerate(zip(cores, outputs, strict=True))
+        )
+E       TypeError: zip() takes no keyword arguments
+
+research\limitation_program_20261001\mps_sequential_structure.py:221: TypeError</error></testcase><testcase classname="research.limitation_program_20261001.test_mps_sequential_structure" name="test_literal_inverse_restores_dirty_register_entangled_with_reference" time="0.002"><error message="failed on setup with &quot;TypeError: zip() takes no keyword arguments&quot;">@pytest.fixture(scope="module")
+    def emitted_toy():
+        cores = fixed_toy_cores()
+        canonical = right_canonicalize(cores)
+&gt;       plan = make_structure_plan(canonical)
+
+research\limitation_program_20261001\test_mps_sequential_structure.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+canonical = CanonicalMPS(cores=(array([[[-0.+0.5j, -0.+0.5j],
+        [-0.+0.5j, -0.+0.5j]]]), array([[[ 5.00000000e-01+0.00000000...0j), reconstruction_residual_numeric=3.488821756485609e-16, maximum_row_isometry_defect_numeric=3.2189288747661586e-16)
+
+    def make_structure_plan(canonical):
+        cores = validate_cores(canonical.cores if isinstance(canonical, CanonicalMPS) else canonical)
+        count = len(cores)
+        largest = max(max(core.shape[0], core.shape[2]) for core in cores)
+        scratch = tuple(range(count, count + largest.bit_length() - 1))
+        outputs = tuple(reversed(range(count)))
+        transitions = tuple(
+            transition_from_core(core, site, output, scratch)
+&gt;           for site, (core, output) in enumerate(zip(cores, outputs, strict=True))
+        )
+E       TypeError: zip() takes no keyword arguments
+
+research\limitation_program_20261001\mps_sequential_structure.py:221: TypeError</error></testcase><testcase classname="research.limitation_program_20261001.test_mps_sequential_structure" name="test_tracked_global_phase_is_paid_in_the_operator_comparison" time="0.003" /><testcase classname="research.limitation_program_20261001.test_mps_sequential_structure" name="test_fixed_local_call_cap_rejects_before_any_additional_sdk_call" time="0.002"><error message="failed on setup with &quot;TypeError: zip() takes no keyword arguments&quot;">@pytest.fixture(scope="module")
+    def emitted_toy():
+        cores = fixed_toy_cores()
+        canonical = right_canonicalize(cores)
+&gt;       plan = make_structure_plan(canonical)
+
+research\limitation_program_20261001\test_mps_sequential_structure.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+canonical = CanonicalMPS(cores=(array([[[-0.+0.5j, -0.+0.5j],
+        [-0.+0.5j, -0.+0.5j]]]), array([[[ 5.00000000e-01+0.00000000...0j), reconstruction_residual_numeric=3.488821756485609e-16, maximum_row_isometry_defect_numeric=3.2189288747661586e-16)
+
+    def make_structure_plan(canonical):
+        cores = validate_cores(canonical.cores if isinstance(canonical, CanonicalMPS) else canonical)
+        count = len(cores)
+        largest = max(max(core.shape[0], core.shape[2]) for core in cores)
+        scratch = tuple(range(count, count + largest.bit_length() - 1))
+        outputs = tuple(reversed(range(count)))
+        transitions = tuple(
+            transition_from_core(core, site, output, scratch)
+&gt;           for site, (core, output) in enumerate(zip(cores, outputs, strict=True))
+        )
+E       TypeError: zip() takes no keyword arguments
+
+research\limitation_program_20261001\mps_sequential_structure.py:221: TypeError</error></testcase></testsuite></testsuites>

@@ -1,0 +1,17 @@
+{
+  "passed": false,
+  "local_only": true,
+  "recorded_utc": "2026-10-01T16:53:18.259199+00:00",
+  "type": "AssertionError",
+  "stage": "saved financial replay cardinality audit",
+  "producer": "research/limitation_program_20261001/reconcile_nonrestoring.py",
+  "line": 697,
+  "failed_assertion": "len(comparison[replays]) == len(old_replays) == 2",
+  "actual_baseline_replays": {
+    "B4x12": 3,
+    "B8x52": 1
+  },
+  "producer_replays_passed": 4,
+  "semantic_or_cost_failure_established": false,
+  "decision": "Preserve failed audit; correct bookkeeping in a versioned auditor and a fresh receipt. This failed audit is not a successful experiment."
+}

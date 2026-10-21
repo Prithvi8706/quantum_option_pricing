@@ -1,0 +1,1 @@
+Require a validated actual SSA count interval proof. Keep full native argument copies and generic archived fallback. Screen both complete capped sources, then financial replay and independent audit before adoption.

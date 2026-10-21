@@ -1,0 +1,301 @@
+[
+  {
+    "path": "research/controlled_source_completion/ir.py",
+    "sha256": "3a4af54bd2e439ef060b747ea8f26a0897ce9e4a119509b57fb018d936d5d223",
+    "functions": [
+      {
+        "name": "coefficients",
+        "line": 14
+      },
+      {
+        "name": "evaluate",
+        "line": 103
+      },
+      {
+        "name": "__init__",
+        "line": 29
+      },
+      {
+        "name": "node",
+        "line": 31
+      },
+      {
+        "name": "input",
+        "line": 35
+      },
+      {
+        "name": "const_int",
+        "line": 37
+      },
+      {
+        "name": "c",
+        "line": 41
+      },
+      {
+        "name": "add",
+        "line": 42
+      },
+      {
+        "name": "sub",
+        "line": 43
+      },
+      {
+        "name": "mul",
+        "line": 44
+      },
+      {
+        "name": "cmul",
+        "line": 45
+      },
+      {
+        "name": "lt",
+        "line": 46
+      },
+      {
+        "name": "select",
+        "line": 47
+      },
+      {
+        "name": "pos",
+        "line": 48
+      },
+      {
+        "name": "neg",
+        "line": 49
+      },
+      {
+        "name": "maximum",
+        "line": 50
+      },
+      {
+        "name": "minimum",
+        "line": 51
+      },
+      {
+        "name": "clip",
+        "line": 52
+      },
+      {
+        "name": "summation",
+        "line": 53
+      },
+      {
+        "name": "mean",
+        "line": 57
+      },
+      {
+        "name": "bits",
+        "line": 58
+      },
+      {
+        "name": "shift",
+        "line": 60
+      },
+      {
+        "name": "div",
+        "line": 61
+      },
+      {
+        "name": "sqrt",
+        "line": 62
+      },
+      {
+        "name": "interpolate",
+        "line": 63
+      },
+      {
+        "name": "log",
+        "line": 74
+      },
+      {
+        "name": "exp",
+        "line": 78
+      },
+      {
+        "name": "cdf",
+        "line": 85
+      },
+      {
+        "name": "cos_unit",
+        "line": 89
+      },
+      {
+        "name": "atan",
+        "line": 90
+      },
+      {
+        "name": "as_dict",
+        "line": 96
+      },
+      {
+        "name": "dump",
+        "line": 100
+      },
+      {
+        "name": "signed",
+        "line": 105
+      }
+    ],
+    "operation_literal_evidence_lines": {
+      "log": [
+        16,
+        64,
+        77
+      ],
+      "cdf": [
+        17,
+        64,
+        86
+      ],
+      "add": [
+        42,
+        110
+      ],
+      "sub": [
+        43,
+        111
+      ],
+      "mul": [
+        44,
+        112
+      ],
+      "cmul": [
+        45,
+        113
+      ],
+      "lt": [
+        46,
+        114
+      ],
+      "select": [
+        47,
+        115
+      ],
+      "divide": [
+        61,
+        117
+      ],
+      "sqrt": [
+        62,
+        118
+      ],
+      "lookup": [
+        70,
+        126
+      ]
+    },
+    "numeric_quantum_cost_newly_inferred": false
+  },
+  {
+    "path": "research/controlled_source_completion/primitives.py",
+    "sha256": "02b983af3f5afb538f5448aad372e214f6a3740a0c19fb017d633e302a278daf",
+    "functions": [
+      {
+        "name": "compare",
+        "line": 14
+      },
+      {
+        "name": "select",
+        "line": 18
+      },
+      {
+        "name": "divide",
+        "line": 25
+      },
+      {
+        "name": "highest_bit",
+        "line": 43
+      },
+      {
+        "name": "variable_shift",
+        "line": 55
+      },
+      {
+        "name": "mcx",
+        "line": 84
+      },
+      {
+        "name": "lookup_equality",
+        "line": 93
+      },
+      {
+        "name": "lookup",
+        "line": 108
+      },
+      {
+        "name": "build",
+        "line": 113
+      },
+      {
+        "name": "run_gates",
+        "line": 148
+      },
+      {
+        "name": "gate_resources",
+        "line": 159
+      },
+      {
+        "name": "array_gates",
+        "line": 177
+      },
+      {
+        "name": "resources",
+        "line": 180
+      },
+      {
+        "name": "basis_run",
+        "line": 188
+      },
+      {
+        "name": "__init__",
+        "line": 203
+      },
+      {
+        "name": "get",
+        "line": 206
+      }
+    ],
+    "operation_literal_evidence_lines": {
+      "add": [
+        114,
+        119,
+        121
+      ],
+      "sub": [
+        114,
+        119
+      ],
+      "mul": [
+        114,
+        123
+      ],
+      "cmul": [
+        114,
+        124
+      ],
+      "lt": [
+        114,
+        125
+      ],
+      "select": [
+        115,
+        129
+      ],
+      "divide": [
+        115,
+        131
+      ],
+      "sqrt": [
+        115,
+        132
+      ],
+      "lookup": [
+        115,
+        116,
+        210,
+        140
+      ]
+    },
+    "numeric_quantum_cost_newly_inferred": false
+  }
+]

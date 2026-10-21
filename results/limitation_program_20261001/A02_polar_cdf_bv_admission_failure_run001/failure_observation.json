@@ -1,0 +1,32 @@
+{
+    "actual_exec_session":  2335,
+    "actual_exit_code":  1,
+    "operation":  "prepare",
+    "command":  [
+                    ".context/frontier_t0_env/Scripts/python.exe",
+                    "-B",
+                    "-m",
+                    "research.limitation_program_20261001.experiment_box_muller_polar_cdf_bv",
+                    "prepare",
+                    "--output",
+                    "C:\\Users\\prith\\quantum_option_pricing\\results\\limitation_program_20261001\\A02_polar_cdf_bv_run001"
+                ],
+    "exception_type":  "ValueError",
+    "exception_message":  "Runtime cap",
+    "actual_stack_tail":  [
+                              "prepare line2082: interpreter=runtime(frozen,external,started)",
+                              "runtime line684: counts=inventory([path for path in roots if path.exists()],frozen,external,started)",
+                              "inventory line628: len(files)\u003cMAX_RUNTIME_FILES and total\u003c=MAX_RUNTIME_BYTES",
+                              "require line89: raise ValueError(message)"
+                          ],
+    "failure_before_mkdir":  true,
+    "intended_receipt_absent":  true,
+    "last_observed_process_CPU_seconds":  77.390625,
+    "exact_final_process_CPU_seconds":  null,
+    "exact_final_wall_seconds":  null,
+    "last_CPU_observation_is_not_a_terminal_measurement":  true,
+    "runtime_file_cap":  24000,
+    "runtime_byte_cap":  2147483648,
+    "no_scientific_source_walk_or_interval_or_proof_executed":  true,
+    "failed_invocation_observed_runtime_SHA_map_not_retained":  true
+}

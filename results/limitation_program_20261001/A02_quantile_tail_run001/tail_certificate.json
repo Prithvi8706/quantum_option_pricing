@@ -1,0 +1,199 @@
+{
+  "certified": true,
+  "budget_censored": false,
+  "reason": null,
+  "domain_proof": {
+    "q32_midpoint_minimum_tail_probability_exact": [
+      1,
+      8589934592
+    ],
+    "ordinary_tail_probability_upper_exclusive_exact": [
+      3,
+      40
+    ],
+    "expanded_r_domain_exact": [
+      [
+        0,
+        1
+      ],
+      [
+        321,
+        100
+      ]
+    ],
+    "expanded_t_domain_exact": [
+      [
+        8,
+        5
+      ],
+      [
+        481,
+        100
+      ]
+    ],
+    "positive_degree4_exp_7_over_10_lower_exact": [
+      482921,
+      240000
+    ],
+    "ln2_upper_exclusive_exact": [
+      7,
+      10
+    ],
+    "33_ln2_upper_exclusive_exact": [
+      231,
+      10
+    ],
+    "actual_q32_extreme_tail_branch_absent": true,
+    "central_tail_branch_tie_not_a_q32_midpoint": "3/40 has denominator factor5; q32 midpoint denominators are powers of2",
+    "expanded_minimum_probability_interval_exact": [
+      [
+        30476064372176221292098025793,
+        340282366920938463463374607431768211456
+      ],
+      [
+        15238032186088110646049012897,
+        170141183460469231731687303715884105728
+      ]
+    ],
+    "expanded_maximum_probability_interval_exact": [
+      [
+        26305440052254835295122129056642872877,
+        340282366920938463463374607431768211456
+      ],
+      [
+        26305440052254835295122129056642872879,
+        340282366920938463463374607431768211456
+      ]
+    ],
+    "Phi_minus_6_point_5_interval_exact": [
+      [
+        13665741842314514244058656347,
+        340282366920938463463374607431768211456
+      ],
+      [
+        13665741842314514266165449959,
+        340282366920938463463374607431768211456
+      ]
+    ],
+    "expanded_true_quantile_magnitude_upper_exact": [
+      13,
+      2
+    ],
+    "Gaussian_Chernoff_proof": "Completing the square gives E[exp(-sZ)]=exp(s^2/2); Markov with s=x gives Phi(-x)<=exp(-x^2/2). For p=exp(-t^2), the positive true quantile magnitude is therefore <=sqrt(2)*t."
+  },
+  "native_interface": {
+    "coefficient_rounding": "nearest-even f40, exact published decimals, no fit/tuning",
+    "native_A_raw_ascending": [
+      1565085654677,
+      5091110302380,
+      6343629281417,
+      4010851649440,
+      1396883621175,
+      265840718705,
+      24985131793,
+      851621249
+    ],
+    "native_B_raw_ascending": [
+      1099511627776,
+      2257508067541,
+      1843204613414,
+      758407205276,
+      162842044202,
+      16711110613,
+      602085760,
+      1155
+    ],
+    "hypothetical_transform": "FLOOR_f40(sqrt(-ln(min(u,1-u)))-8/5)",
+    "hypothetical_transform_implemented": false,
+    "rounding_ties": "nearest-even coefficients; floor transform/division inclusive at ties",
+    "division_semantics": "unsigned floor((A_raw<<40)/B_raw), positive magnitudes only",
+    "signed_restoration": "negate magnitude when u<1/2; exact inverse-CDF floor not claimed",
+    "maximum_stored_fixed_point_value_upper_exact": [
+      48517906066874162868505673909,
+      109951162777600000000000000
+    ],
+    "maximum_full_product_raw_upper_exact": [
+      3245478447771826125363597153587429376,
+      6103515625
+    ],
+    "maximum_shifted_division_numerator_raw_upper_exact": [
+      3255981559806633101056397153587429376,
+      6103515625
+    ],
+    "maximum_denominator_raw_upper_exact": [
+      1521354643043238810440665271,
+      20000000000000
+    ],
+    "signed72_stored_values_no_overflow": true,
+    "signed144_full_products_no_overflow": true,
+    "unsigned112_dividend_no_truncation": true,
+    "unsigned64_denominator_no_truncation": true,
+    "native_denominator_floor_at_one_guard_inactive": true,
+    "native_quotient_output72_no_truncation": true,
+    "actual_coherent_log_sqrt_transform_error_bound": null,
+    "actual_coherent_transform_leaf": null,
+    "actual_reversible_divider_emitted_or_replayed": false,
+    "actual_quantum_gate_cost": null
+  },
+  "real_approximation_error_upper_exact": [
+    277635400671023230716378413069183308152912282400350720917241856,
+    1616100734792967364735094464012692552297031634142537937889694571149609375
+  ],
+  "native_rational_arithmetic_error_upper_exact": [
+    15662526557334051342517817014881318360254465081,
+    47406946125791875000000000000000000000000000000000000000
+  ],
+  "total_conditioned_tail_quantile_error_upper_exact": [
+    98493611930229159800833297191423335238227135995061060757837833959317252771059340559870984412380306936648884768583,
+    196132865198548138645104714711513779383357886955689519405035440529307936880509488125000000000000000000000000000000000000000
+  ],
+  "required_uniform_quantile_error_exact": [
+    1,
+    100000000
+  ],
+  "actual_coherent_log_sqrt_error_included": false,
+  "elapsed_CPU_seconds": 154.734375,
+  "source_coefficients": {
+    "primary_source": "https://svn.r-project.org/R/trunk/src/nmath/qnorm.c",
+    "local_path": "results/limitation_program_20261001/A02_quantile_census_run001/primary_sources/R_qnorm.c",
+    "sha256": "c38699b57a332eebd4989e810d3572d5c906e8135685835b6091cd60320e016e",
+    "exact_official_ordinary_tail_coefficients_and_shift_match": true,
+    "A_decimals_ascending": [
+      "1.42343711074968357734",
+      "4.6303378461565452959",
+      "5.7694972214606914055",
+      "3.64784832476320460504",
+      "1.27045825245236838258",
+      ".24178072517745061177",
+      ".0227238449892691845833",
+      "7.7454501427834140764e-4"
+    ],
+    "B_decimals_ascending": [
+      "1",
+      "2.05319162663775882187",
+      "1.6763848301838038494",
+      ".68976733498510000455",
+      ".14810397642748007459",
+      ".0151986665636164571966",
+      "5.475938084995344946e-4",
+      "1.05075007164441684324e-9"
+    ],
+    "coefficient_fit_or_tuning": false,
+    "published_accuracy_statement_adopted_as_proof": false
+  },
+  "uniform_bits": 32,
+  "fraction_bits": 40,
+  "native_word_width": 72,
+  "ordinary_tail_only": true,
+  "completed_fixed_cells": 1024,
+  "conditioned_on_hypothetical_exact_transform_floor": true,
+  "actual_coherent_log_sqrt_input_error_certificate": null,
+  "actual_coherent_log_sqrt_transform_implemented": false,
+  "native_mathematical_interface_proof_contingent_on_complete_cells": true,
+  "actual_reversible_divider_width_cleanup_validation": null,
+  "actual_quantum_gate_cost": null,
+  "coherent_loader_implemented_or_adopted": false,
+  "native_financial_path_arithmetic_certified": false,
+  "accepted_Box_Muller_baseline_changed": false,
+  "full_G2_closed": false
+}

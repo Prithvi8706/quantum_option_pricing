@@ -1,0 +1,84 @@
+{
+  "scope": "Exactly frozen three-method comparison, absolute error1e-8 against independent scalar q32 midpoint quantile, no native-path certificate or originalBMchange",
+  "methods": [
+    {
+      "method": "rigorous_fixed_precision_CDF_bisection",
+      "globally_certified_q32_f40_error_at_target": false,
+      "coherent_loader_implemented": false,
+      "quantile_quantum_T_count": null,
+      "quantile_quantum_T_depth": null,
+      "actual_implementation": "Local classical rational interval solver, sixteen certified floorwords; all-input mathematically defined floorlaw is separate from solver completeness",
+      "existing_work_receipt": "results/limitation_program_20261001/C06_quantile_rounding_run001/summary.json",
+      "required_primitives": [
+        "Rigorous GaussianCDF lower/upper enclosure",
+        "Exact comparison of CDF interval to q32 midpoint",
+        "Reversible bisection history and final f40 floorbin selection",
+        "Paid coherent cleanup"
+      ],
+      "native_interface_gap": "Audited C07 method uses224-bit outward endpoints and1760-bit work precision; this is not a72-bit/f40 arithmetic leaf. No certified finite CDF comparison leaf or bounded all-input decision proof exists.",
+      "why_no_quantum_cost": "704 classical bisections/736 CDF calls and51.6875 CPU seconds over16 words do not specify native gates, coherent branches, comparison storage or cleanup. No quantumcost extrapolation.",
+      "smallest_missing_certificate": "A globally defined bounded interval-comparison/fallback contract for all q32 words, before any native CDF interval leaf; no additional word tests are proposed"
+    },
+    {
+      "method": "AS241_piecewise_rational_inverse_normal",
+      "globally_certified_q32_f40_error_at_target": false,
+      "coherent_loader_implemented": false,
+      "quantile_quantum_T_count": null,
+      "quantile_quantum_T_depth": null,
+      "primary_source": "https://svn.r-project.org/R/trunk/src/nmath/qnorm.c",
+      "exact_central_domain": "abs(u-1/2)<=17/40; r=289/1600-(u-1/2)^2>=0; degree7 numerator/degree7 denominator",
+      "exact_q32_tail_domain": "u_min=min(u,1-u)>=2^-33; r=sqrt(-log(u_min)); ordinary tail uses r-8/5 and degree7 numerator/denominator",
+      "extreme_tail_branch_needed_for_exact_q32_domain": false,
+      "extreme_tail_exclusion_proof": "-log(u_min)<=33*log(2)<33*(3/4)=99/4<25, because exp(3/4)>1+3/4+(3/4)^2/2=65/32>2. Thus r<5. This exact-domain observation is not an approximate native branch certificate.",
+      "structural_scalar_arithmetic_only": {
+        "central": "Two degree7 Horner polynomials, fourteen polynomial multiplies/adds; q-square and q-times-numerator plus one variable division; sign, constants and exact branch controls additional",
+        "ordinary_tail": "One log, one square root, two degree7 Horner polynomials and one variable division; symmetry/sign and exact branch controls additional"
+      },
+      "required_primitives": [
+        "Signed add/sub and f40multiply",
+        "Exact rational-domain predicate from q32 rawword",
+        "Positive-magnitude unsigned fixed-point division",
+        "Native log and square root on proved positive input ranges",
+        "Signed output restoration and clean XOR/cleanup"
+      ],
+      "existing_reversible_support": "Graph and primitives already expose add/sub/mul/cmul/lt/select/divide/sqrt/msb/shift/lookup. Graph.log is a coefficient-lookup/multiply macro. Existing divide is unsigned; negative rational numerators require magnitude and sign restoration.",
+      "denominator_contract": "Central exact r>=0 and displayed positive denominator coefficients with constant1 imply denominator>=1 in real arithmetic. A native coefficient/rounding/nooverflow bound and ordinary-tail transformed-argument range still need proof; the graph max(denominator,raw1) clamp cannot silently change the approximant.",
+      "uncertified_terms": [
+        "AS241 real rational approximation residual on complete q32 domain",
+        "Coefficient serialization and f40 Horner rounding",
+        "Native log/sqrt error in ordinary tail",
+        "Positive denominator, no wraparound and exact branch agreement",
+        "Actual emitted argument-copy/private/high-output/inverse resource ledger"
+      ],
+      "smallest_missing_certificate": "Freeze the unmodified AS241 central coefficient lists and prove its positive-magnitude rational evaluation contract on u in[3/40,37/40], including f40 rounding/nooverflow and denominator bounds. This smaller branch needs no log or sqrt; it is not a full-domain quantile certificate."
+    },
+    {
+      "method": "archived_prefix_rotation_Gaussian_preparation",
+      "globally_certified_q32_f40_error_at_target": false,
+      "coherent_loader_implemented": false,
+      "quantile_quantum_T_count": null,
+      "quantile_quantum_T_depth": null,
+      "actual_implementation": "Existing numerical q4/q6/q8/q10 Gaussian prefix-rotation circuits and QASM, with numerical inverse checks",
+      "actual_law": "Conditioned normal binned uniformly across[-6,6]; unequal binned probability amplitudes, not independent q32 uniform-to-quantile mapping",
+      "actual_largest_archive_interface": {
+        "qubits": 10,
+        "CX": 1022,
+        "arbitrary_RY": 976,
+        "logical_depth": 1989,
+        "rotation_synthesis_T_count": null
+      },
+      "incompatible_with_frozen_quantile_output_target": true,
+      "required_primitives": [
+        "Coherent prefix-controlled RY rotations and synthesis",
+        "Numeric coefficient/angle certificate",
+        "Native72/f40 signed normal output mapping",
+        "Preparation/inverse or equivalent full-loader cleanup"
+      ],
+      "QSVT_available_local_interface": false,
+      "why_not_next": "Archive is a different truncated/binned law and has no rigorous q32 quantile error bridge or synthesized scalar gatecost. Retuning its grid/angles or adding QSVT would violate this frozen three-method census.",
+      "smallest_missing_certificate": "A compatible finite-law/error/normal-word mapping plus angle and synthesis certificates; larger than the central rational-branch contract"
+    }
+  ],
+  "smallest_missing_prerequisite": "AS241 central positive-magnitude rational evaluator certificate with fixed published coefficients, denominator>=1, native72/f40 nooverflow/error bounds and explicit signed-magnitude use of the existing unsigned divider. No new primitive arithmetic kernel is logically required for that central branch; its approximation certificate and actual validated emitted interface are missing.",
+  "next_fixed_bounded_work": "One central-domain certificate using unmodified published coefficient lists and fixed q32/f40/native72 semantics. Prove approximation plus coefficient/floor errors against1e-8 without fitting or sampling success; retain tails as open. Only after that proof and exact primitive contracts survive should one central reversible leaf be proposed and charged. No full quantile loader adoption."
+}

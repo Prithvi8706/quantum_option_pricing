@@ -1,0 +1,27 @@
+{
+  "before_analysis": true,
+  "checks": "Exact unchanged target/source hashes and immutable leaf hashes, independent possible-one masks, real register-wire metadata, Kahn DAG, every compact capped batch, counts and resource fields",
+  "classification": "Reuse frozen A01_run003 attribution; assign every call once and recompute compact argument/output CX costs from proved widths.",
+  "created_utc": "2026-10-01T08:47:32.003069+00:00",
+  "depth_interpretation": "Overlap diagnostics are not serial sums. One deterministic maximum owner per batch gives attribution; frozen-batch zero-cost estimates are not achievable improvements.",
+  "frozen_inputs": {
+    "results/limitation_program_20261001/A01_run003/B4x12_accounting.json": "5e98c734875f30c44379727e1c7975065d2e162960a6765c6769a9264dd000ba",
+    "results/limitation_program_20261001/A01_run003/B8x52_accounting.json": "b5cd719bdb053febda10cb4d72f3cde0400cd4e8591ec39246c962866c51a40f",
+    "results/limitation_program_20261001/A01_run003/manifest.json": "a410ecde549417755e370dabb80239377fdc278c6f88f1e925bb66eded2ad22a",
+    "results/limitation_program_20261001/A06_run001/B4x12/comparison.json": "02e8692e6384c50c1f92dd1dba6f4df8b990a76855fcc6f5277e456d84280d2b",
+    "results/limitation_program_20261001/A06_run001/B4x12/schedule_capped.json": "ab469e0c6b0bcbaeba8af5db37e5e0be30f468332b59f5e61e2b0e04b3f316c9",
+    "results/limitation_program_20261001/A06_run001/B4x12/source.json": "caa0c83f5f74ecde942b6f06902b3495ee9a5b45c2ba67f52ee01fdbcff875e2",
+    "results/limitation_program_20261001/A06_run001/B4x12/target.json": "a7a682731b3cdb6f16b32a9b1a467d6bfeccb32ea97e583ab79e5252bb7a9384",
+    "results/limitation_program_20261001/A06_run001/B4x12/unchanged_leaves.json": "cb33373cdd51901de1c0a8dca62bccb0ea7479a1a5b459dce3b90093a4486e63",
+    "results/limitation_program_20261001/A06_run001/B8x52/comparison.json": "0997800682788fab45c7bd121f1bfdb31c537fc8dd22bc9460c529c1fb7abfe4",
+    "results/limitation_program_20261001/A06_run001/B8x52/schedule_capped.json": "6bdd2d2df1e74e9553688a4ebee2490cb53e9ff2a981ce5f2198f2e5038f5508",
+    "results/limitation_program_20261001/A06_run001/B8x52/source.json": "8c9340544ec63f7bedaec8197b677d0b38a6692124f04c54e38ee9171642974f",
+    "results/limitation_program_20261001/A06_run001/B8x52/target.json": "267dcaa74aa9dd5cb1339c65006b122389331f42f0002f483bd6eed05c31090b",
+    "results/limitation_program_20261001/A06_run001/B8x52/unchanged_leaves.json": "d8b1702e0e79705e9f1f2711bd2c2f22c95988e4cdc1f99099eed0e864035b7a"
+  },
+  "item": "A01",
+  "local_only": true,
+  "producer_sha256": "738214f69f59f9c1d002ad10d26bf32ff742feb040468a4ce4bb9258144e5ebb",
+  "scope": "Independent accounting update after accepted A06 compact integration",
+  "stop_rule": "Two existing cases, one pass each; abort on mismatch. No new full gate or financial replay, no old manifests or progress edit."
+}

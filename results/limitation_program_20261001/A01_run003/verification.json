@@ -1,0 +1,23 @@
+{
+  "checks": [
+    "Current optimized builder equals each accepted target",
+    "Current original builder equals each Stage A original target",
+    "Every used leaf gate hash and actual X/CX/CCX expansion matches metadata",
+    "Every non-input node and call assigned once",
+    "All count totals and copy costs reconcile",
+    "Independent Kahn DAG matches archived dependency depth",
+    "Every capped group/copy/scratch/depth checked",
+    "Input, code and leaf hashes unchanged after analysis"
+  ],
+  "command": ".context/frontier_t0_env/Scripts/python.exe -m research.limitation_program_20261001.baseline --output results/limitation_program_20261001 --g0-run G0_run003 --a01-run A01_run003",
+  "environment_sha256": "f81fc4fdbc1e6e3b322a68d5f7c4854957fdc65410b0542f218d592f1b4bc07b",
+  "new_replays": 0,
+  "passed": true,
+  "prior_replay_source": "results/limitation_audit_20261001/constant_multiplier_v1/verification.json",
+  "prior_replays": {
+    "B4x12": 3,
+    "B8x52": 1
+  },
+  "producer_sha256": "9ac7e7f1375f49d78a6ead98d61314cdd9ff9a81dfaa074ad062615002816b17",
+  "qualification": "Existing sampled full-source replays are reused, not claimed newly run or exhaustive. G2-G5 remain open."
+}

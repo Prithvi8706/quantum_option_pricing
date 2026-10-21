@@ -1,0 +1,154 @@
+{
+  "case": "B4x12",
+  "new_law": "independent q32 midpoint inputs, mathematical-native signed-restored AS241",
+  "uniform_bits": 32,
+  "fraction_bits": 40,
+  "native_width": 72,
+  "normal_coordinates": 60,
+  "uniform_quantile_error_upper_exact": [
+    37353870711287467008696512998397896348282417026271139955081590022656204750686521167470153453641716987467,
+    4888886343202766607044269652182507586523524144798247001526737078450515119432008094840153702400000000000000000000
+  ],
+  "new_law_monotonicity_required": false,
+  "grid_KS_error_upper_exact": [
+    1,
+    8589934592
+  ],
+  "quantile_displacement_KS_error_upper_exact": [
+    37353870711287467008696512998397896348282417026271139955081590022656204750686521167470153453641716987467,
+    12222215858006916517610674130456268966308810361995617503816842696126287798580020237100384256000000000000000000000
+  ],
+  "scalar_Gaussian_KS_error_upper_exact": [
+    38776723903835608418061353262184653359983398597842531205998444814945441287702054735470153453641716987467,
+    12222215858006916517610674130456268966308810361995617503816842696126287798580020237100384256000000000000000000000
+  ],
+  "coordinate_total_variation_upper_dollars_exact": [
+    80,
+    1
+  ],
+  "ideal_GBM_new_law_price_bias_upper_dollars_exact": [
+    38776723903835608418061353262184653359983398597842531205998444814945441287702054735470153453641716987467,
+    2546294970418107607835557110511722701314335492082420313295175561692976624704170882729246720000000000000000000
+  ],
+  "separate_exploratory_law_allowance_dollars_exact": [
+    1,
+    1000
+  ],
+  "new_law_bias_fits_separate_exploratory_allowance": true,
+  "Gaussian_density_proof": {
+    "Machin_alternating_lower_bound_exact": [
+      281476,
+      89625
+    ],
+    "pi_strict_lower_guard_exact": [
+      25,
+      8
+    ],
+    "Gaussian_density_strict_upper_exact": [
+      2,
+      5
+    ],
+    "numerical_Gaussian_evaluations": 0
+  },
+  "previous_exact_floor_quantile_law_ULP_added": false,
+  "quantile_native_scalar_arithmetic_already_in_E": true,
+  "independent_raw_uniform_coordinates_required": true,
+  "original_continuous_ideal_GBM_payoff_used": true,
+  "accepted_Box_Muller_law_certified": false,
+  "accepted_Box_Muller_baseline_changed": false,
+  "native_financial_exp_clipping_or_path_certified": false,
+  "coherent_divider_or_loader_adopted": false,
+  "actual_quantum_gate_cost": null,
+  "native_financial_price_error_bound": null,
+  "complete_original_price_certified": false,
+  "full_G2_closed": false,
+  "quantum_advantage_established": false,
+  "second_discount_applied": false,
+  "proof": {
+    "pointwise_cdf_sandwich": "Let U be uniform on the q32 midpoints, X=Phi_inverse(U), and Z be the deterministic signed-restored AS241 result at the same input. If |Z-X|<=E at EVERY input, then {X<=x-E} subset {Z<=x} subset {X<=x+E}. Thus Fgrid(x-E)<=Fnew(x)<=Fgrid(x+E). This argument does not require the new outputs to be monotone in their input or distinct.",
+    "midpoint_grid_cdf": "With N=2^32, Fgrid(x) counts midpoints (k+1/2)/N<=Phi(x), divided by N. The nearest-grid counting error is at most1/(2N), including a threshold exactly equal to a midpoint. Left CDF limits obey the same bound because Phi is continuous. No previous rounded-floor quantile law or its1ulp error is added.",
+    "gaussian_density": "Machin's identity and the alternating atan series give pi>16*(1/5-1/(3*5^3))-4/239>25/8. Hence phi(x)<=1/sqrt(2*pi)<2/5. Integrating over an interval of length E bounds |Phi(x+E)-Phi(x)| by(2/5)E for every real x.",
+    "kolmogorov_bound": "Combining the sandwich, midpoint counting and density bound gives sup_x |Fnew(x)-Phi(x)|<=2^-33+(2/5)E. Atoms and equal outputs are permitted. The comparison law is the continuous scalar Gaussian.",
+    "coordinate_variation": "In the ORIGINAL equal-volatility GBM, one common or idiosyncratic normal increment has positive coefficients in every affected later stock. Each positive-weight basket and Asian average is nondecreasing. Fixing all other coordinates, strict barrier survival is a lower half-line, empty, or full. The discounted positive Asian payoff increases on survival and drops to zero at its finite endpoint. Survival gives the date/asset average<140, so discounted payoff<40 and its coordinate total variation<=80. This remains true with the other coordinates held at arbitrary finite discrete values.",
+    "cdf_to_bounded_variation": "For the right-continuous strict-knockout coordinate payoff f, its signed Stieltjes variation measure has total mass<=TV(f). A half-line indicator's expectation differs by at most KS. Closed upper half-lines [x,infinity) use1-F(x-); closed lower half-lines useF(x), so discrete ties are retained. Integrating the indicator representation gives |Enew[f]-Egaussian[f]|<=TV*KS. Left CDF differences are also bounded by KS since Phi is continuous. One-sided finite limits exist and constants cancel between laws.",
+    "independent_product": "Use independent q32 raw words for the NEW scalar AS241 law. Replace one of d=(assets+1)*dates independent Gaussian coordinates at a time. The uniform coordinate variation bound survives every mixture of continuous and discrete remaining coordinates. Bounded payoff permits iterated integration, and triangle inequality gives ideal-GBM price-law bias<=80*d*(2^-33+(2/5)E) discounted dollars.",
+    "scope": "E uses the successful NEW central arithmetic and ordinary-tail native log/sqrt/input-sensitivity certificate. The mathematical all-input law includes those scalar arithmetic errors once. No native financial exp/clipping/path/barrier error, coherent divider or loader, gate cost, full-price accuracy or quantum advantage is certified. The accepted paired Box-Muller source is unchanged."
+  },
+  "proof_premise_bound_to_successful_all_input_certificate": true,
+  "original_model_binding": {
+    "case": "B4x12",
+    "assets": 4,
+    "dates": 12,
+    "volatility_exact": [
+      3,
+      10
+    ],
+    "correlation_exact": [
+      2,
+      5
+    ],
+    "spot_dollars_exact": [
+      100,
+      1
+    ],
+    "rate_exact": [
+      3,
+      100
+    ],
+    "maturity_years_exact": [
+      1,
+      1
+    ],
+    "strike_dollars_exact": [
+      100,
+      1
+    ],
+    "barrier_dollars_exact": [
+      140,
+      1
+    ],
+    "equal_asset_volatility": true,
+    "basket": "positive equal-weight arithmetic spot basket",
+    "builder_path": "C:\\Users\\prith\\quantum_option_pricing\\research\\advantage_frontier_20260923\\barrier_oracle_depth.py",
+    "builder_sha256": "1e0e225131c668f133ef05a5de3f78fbad4fb5307a2fc8c452d99d14c8dda929",
+    "continuous_driver_law": "independent common and idiosyncratic Brownian drivers",
+    "digital_paired_outputs_claimed_independent_gaussian": false
+  },
+  "original_economic_template_checked": {
+    "parameter_bindings_exact": {
+      "SIGMA": [
+        3,
+        10
+      ],
+      "CORR": [
+        2,
+        5
+      ],
+      "S0": [
+        100,
+        1
+      ],
+      "RATE": [
+        3,
+        100
+      ],
+      "T": [
+        1,
+        1
+      ],
+      "K": [
+        100,
+        1
+      ],
+      "H": [
+        140,
+        1
+      ]
+    },
+    "positive_increment_coefficients_and_average_template_checked": true,
+    "strict_less_than_survival_template_checked": true,
+    "native_clipping_exp_and_rounding_accuracy_audited": false,
+    "builder_path": "C:\\Users\\prith\\quantum_option_pricing\\research\\advantage_frontier_20260923\\barrier_oracle_depth.py",
+    "builder_sha256": "1e0e225131c668f133ef05a5de3f78fbad4fb5307a2fc8c452d99d14c8dda929"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "all_low_columns_retained": true,
+  "complemented_sign_terms": 40,
+  "correction": 4722366482869645213696,
+  "diagonal_cx_terms": 56,
+  "finite_bookkeeping_checks": 4096,
+  "fraction_bits": 40,
+  "low_column_carry_counterexample": {
+    "correct_result": 1,
+    "fraction_bits": 3,
+    "independently_truncated_terms_result": 0,
+    "raw": 3,
+    "width": 3
+  },
+  "negative_encoding": "-t*2**k = (1-t)*2**k -2**k, with one common fixed correction modulo2**112",
+  "off_diagonal_ccx_terms": 2300,
+  "passed": true,
+  "polynomial": "x = sum(i<71) x_i*2**i - x_71*2**71; x*x has diagonal x_i at2i and off-diagonal x_i*x_j at i+j+1, negative exactly when j=71 and i<j",
+  "proof_scope": "Polynomial expansion and modular truncation are structural all-word identities. Finite small-word enumeration checks bookkeeping; saved emitted-circuit tests support realization and are not exhaustive72 input enumeration.",
+  "retained_product_bits": 112,
+  "square_all_signed_bit_patterns": true,
+  "truncation": "floor(x*x/2**40) mod2**72 = (x*x mod2**112)>>40; only columns>=112 can be omitted before summation",
+  "unique_partial_terms": 2356,
+  "width": 72
+}

@@ -1,0 +1,21 @@
+{
+  "admissible_count_interval": [
+    -64,
+    63
+  ],
+  "all_word_identity": true,
+  "direction": "nonnegative count: left modulo2**72; negative count: arithmetic right",
+  "finite_bookkeeping_checks": 37632,
+  "full_native_width": 72,
+  "magnitude": "Select negative7=(~k_low7+1)mod128 when k6=1, else low7; interpret selected7 as unsigned, including -64->64",
+  "minimum_count_magnitude": 64,
+  "oversized_branch": "Maximum magnitude64<width72, so no oversized comparison/saturation branch is needed under the guard; generic fallback retains all fullword counts",
+  "passed": true,
+  "proof_scope": "Two's-complement magnitude and modular left/arithmetic-right mux composition are algebraic all-data identities on the signed7 guard. Finite enumeration checks bookkeeping; saved emitted tests and structural parser check realization, without exhaustive72 data enumeration.",
+  "signed_count_bits": 7,
+  "stages": "Conditional reversal R for negative count; fill=negative_count AND negative_data; for j=0..6, mux maps each bit z to old[z-2**j] if in range, else fill, when unsigned magnitude bit j is set; conditional final R gives arithmetic right for negative counts and modular left otherwise",
+  "unsigned_magnitude_interval": [
+    0,
+    64
+  ]
+}

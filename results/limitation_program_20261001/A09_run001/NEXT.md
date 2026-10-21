@@ -1,0 +1,1 @@
+Reconcile the accepted exact signed-complement CSA/prefix multiplier. Next bound the remaining dominant square-root/shift or specialize proven same-SSA self-products separately. G2 financial error and G3-G5 estimator, classical and physical accounting remain open.

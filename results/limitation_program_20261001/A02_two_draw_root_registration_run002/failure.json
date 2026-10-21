@@ -1,0 +1,8 @@
+{
+  "passed": false,
+  "error": "ValueError('Verifier process CPU budget exhausted')",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\prith\\quantum_option_pricing\\research\\limitation_program_20261001\\verify_two_draw_loader_receipts.py\", line 968, in main\n    seal(output, summary, frozen, guard)\n  File \"C:\\Users\\prith\\quantum_option_pricing\\research\\limitation_program_20261001\\verify_two_draw_loader_receipts.py\", line 723, in seal\n    digest(canonical(name, fresh=True), guard, fresh=True) == expected,\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\prith\\quantum_option_pricing\\research\\limitation_program_20261001\\verify_two_draw_loader_receipts.py\", line 133, in digest\n    guard.check()\n  File \"C:\\Users\\prith\\quantum_option_pricing\\research\\limitation_program_20261001\\verify_two_draw_loader_receipts.py\", line 70, in check\n    require(self.cpu_elapsed() < cpu_limit, \"Verifier process CPU budget exhausted\")\n  File \"C:\\Users\\prith\\quantum_option_pricing\\research\\limitation_program_20261001\\verify_two_draw_loader_receipts.py\", line 57, in require\n    raise ValueError(message)\nValueError: Verifier process CPU budget exhausted\n",
+  "partial_files_preserved": true,
+  "no_retry_or_overwrite": true,
+  "producer_fixture_credit": 0
+}

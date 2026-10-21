@@ -1,0 +1,28 @@
+{
+  "schema": "financial-admission-failure-diagnostic-v1",
+  "failure_observed_utc": "2026-10-03T03:52:05.949873+00:00",
+  "reported_command": "frontier_t0_env/Scripts/python.exe -m research.limitation_program_20261001.experiment_as241_financial prepare --output results/limitation_program_20261001/A02_quantile_financial_run001",
+  "observed_exit_code": 1,
+  "reported_failure_type": "ValueError",
+  "reported_message": "Actual clamp literals",
+  "reported_stack": [
+    "experiment_as241_financial.py:240 prepare_body",
+    "experiment_as241_financial.py:304 bind_case",
+    "experiment_as241_financial.py:211 extract_financial",
+    "as241_financial_native.py:362 require",
+    "as241_financial_native.py:23 ValueError"
+  ],
+  "error_report_from_root_tool_not_reexecuted": true,
+  "original_output_directory_observed_absent": true,
+  "no_producer_protocol_or_preparation_fabricated": true,
+  "source_hashes_observed_after_failure_originals_preserved": true,
+  "concrete_saved_source_word": {
+    "width": 72,
+    "lower_clip_modular_word": 4722366470675671057123,
+    "decoded_signed_lower_clip": -12193974156573,
+    "upper_clip_word": 9145480617430
+  },
+  "new_test_credit": 0,
+  "new_prices_gates_or_proof_evaluations": 0,
+  "planned_correction": "Decode saved modular72 constant before exact semanticcomparison and returnedfinancialscope; unchanged actualtargets/clamps/budgets; NEWv2/newreceipt."
+}

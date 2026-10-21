@@ -1,0 +1,17 @@
+{
+  "integer_function": "out XOR ((signed(data)<<count if count>=0 else signed(data)>>-count)mod2**w)",
+  "external_width": 72,
+  "fraction_bits": 40,
+  "signed_count_bits": 7,
+  "minimum_count_unsigned_magnitude": 64,
+  "native_argument_count": 2,
+  "full_native_output_xor_bits": 72,
+  "promise": {
+    "signed_shift_count_bits": 7
+  },
+  "all_signed_data_patterns_and_all_signed7_counts": true,
+  "input_and_workspace_restored": true,
+  "positive_left_negative_arithmetic_right": true,
+  "specialization_scope": "Actual validated shift sites with signed7 interval proof only",
+  "architecture": "Conditional reversal, unsigned magnitude, single barrel and inverse"
+}

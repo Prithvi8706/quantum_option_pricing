@@ -1,0 +1,2311 @@
+{
+  "actual_case_coefficient_call_counts": {
+    "B4x12": {
+      "1067016148260": 1,
+      "22906492245": 1,
+      "60222732077": 12
+    },
+    "B8x52": {
+      "1067016148260": 1,
+      "22906492245": 0,
+      "60222732077": 0
+    }
+  },
+  "baseline_coefficients": {
+    "1067016148260": {
+      "ccx": 10212,
+      "clifford_cx": 82056,
+      "clifford_h": 20424,
+      "clifford_t_depth": 122548,
+      "cx": 20784,
+      "qubits": 433,
+      "schedule": "exact seven-T Toffoli; all-to-all ASAP within each leaf",
+      "source_gates": 30996,
+      "t_count": 71484,
+      "t_depth": 40848,
+      "x": 0
+    },
+    "22906492245": {
+      "ccx": 9144,
+      "clifford_cx": 73512,
+      "clifford_h": 18288,
+      "clifford_t_depth": 109732,
+      "cx": 18648,
+      "qubits": 433,
+      "schedule": "exact seven-T Toffoli; all-to-all ASAP within each leaf",
+      "source_gates": 27792,
+      "t_count": 64008,
+      "t_depth": 36576,
+      "x": 0
+    },
+    "60222732077": {
+      "ccx": 10244,
+      "clifford_cx": 82312,
+      "clifford_h": 20488,
+      "clifford_t_depth": 122932,
+      "cx": 20848,
+      "qubits": 433,
+      "schedule": "exact seven-T Toffoli; all-to-all ASAP within each leaf",
+      "source_gates": 31092,
+      "t_count": 71708,
+      "t_depth": 40976,
+      "x": 0
+    }
+  },
+  "candidates": [
+    {
+      "actual_gate_scan": {
+        "ccx": 7524,
+        "clifford_cx": 60488,
+        "clifford_h": 15048,
+        "clifford_t_depth": 90292,
+        "cx": 15344,
+        "source_gates": 22868,
+        "t_count": 52668,
+        "t_depth": 30096,
+        "x": 0
+      },
+      "coefficient": 1067016148260,
+      "decision": {
+        "any_resource_improvement": true,
+        "clean_leaf_work_or_scratch_improved": true,
+        "leaf_nondominated": false,
+        "source_screen_allowed": false
+      },
+      "strategy": "binary-shift-add",
+      "structural_parser": {
+        "algorithm": "independent exact digits, Cuccaro/CSA/Brent-Kung actual-gate parser",
+        "arbitrary_output_xor": true,
+        "charged_correction_wires": 0,
+        "coefficient": 1067016148260,
+        "complemented_negative_terms": 0,
+        "compressors": 0,
+        "csa_layers": 0,
+        "every_low_column_and_carry_retained": true,
+        "exact_digits": [
+          [
+            2,
+            1
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            8,
+            1
+          ],
+          [
+            10,
+            1
+          ],
+          [
+            12,
+            1
+          ],
+          [
+            14,
+            1
+          ],
+          [
+            17,
+            1
+          ],
+          [
+            18,
+            1
+          ],
+          [
+            19,
+            1
+          ],
+          [
+            20,
+            1
+          ],
+          [
+            24,
+            1
+          ],
+          [
+            25,
+            1
+          ],
+          [
+            26,
+            1
+          ],
+          [
+            27,
+            1
+          ],
+          [
+            29,
+            1
+          ],
+          [
+            30,
+            1
+          ],
+          [
+            35,
+            1
+          ],
+          [
+            36,
+            1
+          ],
+          [
+            37,
+            1
+          ],
+          [
+            38,
+            1
+          ],
+          [
+            39,
+            1
+          ]
+        ],
+        "fixed_full_modulus_correction": 0,
+        "full_modular_product_bits": 112,
+        "full_native_output_bits": 72,
+        "literal_forward_reverse_cleanup": true,
+        "native_input_untouched": true,
+        "parsed_forward_gates": 11398,
+        "passed": true,
+        "prefix_nodes": 0,
+        "qubits": 369,
+        "signed_bit_terms": 0,
+        "strategy": "binary-shift-add",
+        "unrestricted_signed_input_bits": 72
+      }
+    },
+    {
+      "actual_gate_scan": {
+        "ccx": 4836,
+        "clifford_cx": 38984,
+        "clifford_h": 9672,
+        "clifford_t_depth": 58049,
+        "cx": 9968,
+        "source_gates": 14804,
+        "t_count": 33852,
+        "t_depth": 19344,
+        "x": 0
+      },
+      "coefficient": 1067016148260,
+      "decision": {
+        "any_resource_improvement": true,
+        "clean_leaf_work_or_scratch_improved": true,
+        "leaf_nondominated": true,
+        "source_screen_allowed": true
+      },
+      "strategy": "signed-digit-shift-add",
+      "structural_parser": {
+        "algorithm": "independent exact digits, Cuccaro/CSA/Brent-Kung actual-gate parser",
+        "arbitrary_output_xor": true,
+        "charged_correction_wires": 0,
+        "coefficient": 1067016148260,
+        "complemented_negative_terms": 0,
+        "compressors": 0,
+        "csa_layers": 0,
+        "every_low_column_and_carry_retained": true,
+        "exact_digits": [
+          [
+            2,
+            1
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            8,
+            1
+          ],
+          [
+            10,
+            1
+          ],
+          [
+            12,
+            1
+          ],
+          [
+            14,
+            1
+          ],
+          [
+            17,
+            -1
+          ],
+          [
+            21,
+            1
+          ],
+          [
+            24,
+            -1
+          ],
+          [
+            28,
+            -1
+          ],
+          [
+            31,
+            1
+          ],
+          [
+            35,
+            -1
+          ],
+          [
+            40,
+            1
+          ]
+        ],
+        "fixed_full_modulus_correction": 0,
+        "full_modular_product_bits": 112,
+        "full_native_output_bits": 72,
+        "literal_forward_reverse_cleanup": true,
+        "native_input_untouched": true,
+        "parsed_forward_gates": 7366,
+        "passed": true,
+        "prefix_nodes": 0,
+        "qubits": 369,
+        "signed_bit_terms": 0,
+        "strategy": "signed-digit-shift-add",
+        "unrestricted_signed_input_bits": 72
+      }
+    },
+    {
+      "actual_gate_scan": {
+        "ccx": 5856,
+        "clifford_cx": 47598,
+        "clifford_h": 11712,
+        "clifford_t_depth": 5378,
+        "cx": 12462,
+        "source_gates": 18398,
+        "t_count": 40992,
+        "t_depth": 1792,
+        "x": 80
+      },
+      "coefficient": 1067016148260,
+      "decision": {
+        "any_resource_improvement": true,
+        "clean_leaf_work_or_scratch_improved": true,
+        "leaf_nondominated": false,
+        "source_screen_allowed": false
+      },
+      "strategy": "binary-carry-save",
+      "structural_parser": {
+        "algorithm": "independent exact digits, Cuccaro/CSA/Brent-Kung actual-gate parser",
+        "arbitrary_output_xor": true,
+        "charged_correction_wires": 19,
+        "coefficient": 1067016148260,
+        "complemented_negative_terms": 21,
+        "compressors": 1352,
+        "csa_layers": 11,
+        "every_low_column_and_carry_retained": true,
+        "exact_digits": [
+          [
+            2,
+            1
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            8,
+            1
+          ],
+          [
+            10,
+            1
+          ],
+          [
+            12,
+            1
+          ],
+          [
+            14,
+            1
+          ],
+          [
+            17,
+            1
+          ],
+          [
+            18,
+            1
+          ],
+          [
+            19,
+            1
+          ],
+          [
+            20,
+            1
+          ],
+          [
+            24,
+            1
+          ],
+          [
+            25,
+            1
+          ],
+          [
+            26,
+            1
+          ],
+          [
+            27,
+            1
+          ],
+          [
+            29,
+            1
+          ],
+          [
+            30,
+            1
+          ],
+          [
+            35,
+            1
+          ],
+          [
+            36,
+            1
+          ],
+          [
+            37,
+            1
+          ],
+          [
+            38,
+            1
+          ],
+          [
+            39,
+            1
+          ]
+        ],
+        "fixed_full_modulus_correction": 2672876210922981574735171069935616,
+        "full_modular_product_bits": 112,
+        "full_native_output_bits": 72,
+        "literal_forward_reverse_cleanup": true,
+        "native_input_untouched": true,
+        "parsed_forward_gates": 9163,
+        "passed": true,
+        "prefix_nodes": 0,
+        "qubits": 4604,
+        "signed_bit_terms": 1512,
+        "strategy": "binary-carry-save",
+        "unrestricted_signed_input_bits": 72
+      }
+    },
+    {
+      "actual_gate_scan": {
+        "ccx": 3584,
+        "clifford_cx": 29414,
+        "clifford_h": 7168,
+        "clifford_t_depth": 5378,
+        "cx": 7910,
+        "source_gates": 12142,
+        "t_count": 25088,
+        "t_depth": 1792,
+        "x": 648
+      },
+      "coefficient": 1067016148260,
+      "decision": {
+        "any_resource_improvement": true,
+        "clean_leaf_work_or_scratch_improved": true,
+        "leaf_nondominated": true,
+        "source_screen_allowed": true
+      },
+      "strategy": "signed-digit-carry-save",
+      "structural_parser": {
+        "algorithm": "independent exact digits, Cuccaro/CSA/Brent-Kung actual-gate parser",
+        "arbitrary_output_xor": true,
+        "charged_correction_wires": 31,
+        "coefficient": 1067016148260,
+        "complemented_negative_terms": 293,
+        "compressors": 784,
+        "csa_layers": 8,
+        "every_low_column_and_carry_retained": true,
+        "exact_digits": [
+          [
+            2,
+            1
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            8,
+            1
+          ],
+          [
+            10,
+            1
+          ],
+          [
+            12,
+            1
+          ],
+          [
+            14,
+            1
+          ],
+          [
+            17,
+            -1
+          ],
+          [
+            21,
+            1
+          ],
+          [
+            24,
+            -1
+          ],
+          [
+            28,
+            -1
+          ],
+          [
+            31,
+            1
+          ],
+          [
+            35,
+            -1
+          ],
+          [
+            40,
+            1
+          ]
+        ],
+        "fixed_full_modulus_correction": 2509269436361006074914400008011776,
+        "full_modular_product_bits": 112,
+        "full_native_output_bits": 72,
+        "literal_forward_reverse_cleanup": true,
+        "native_input_untouched": true,
+        "parsed_forward_gates": 6035,
+        "passed": true,
+        "prefix_nodes": 0,
+        "qubits": 2904,
+        "signed_bit_terms": 936,
+        "strategy": "signed-digit-carry-save",
+        "unrestricted_signed_input_bits": 72
+      }
+    },
+    {
+      "actual_gate_scan": {
+        "ccx": 7524,
+        "clifford_cx": 58888,
+        "clifford_h": 15048,
+        "clifford_t_depth": 1191,
+        "cx": 13744,
+        "source_gates": 21348,
+        "t_count": 52668,
+        "t_depth": 436,
+        "x": 80
+      },
+      "coefficient": 1067016148260,
+      "decision": {
+        "any_resource_improvement": true,
+        "clean_leaf_work_or_scratch_improved": true,
+        "leaf_nondominated": false,
+        "source_screen_allowed": false
+      },
+      "strategy": "binary-prefix-carry-save",
+      "structural_parser": {
+        "algorithm": "independent exact digits, Cuccaro/CSA/Brent-Kung actual-gate parser",
+        "arbitrary_output_xor": true,
+        "charged_correction_wires": 19,
+        "coefficient": 1067016148260,
+        "complemented_negative_terms": 21,
+        "compressors": 1352,
+        "csa_layers": 11,
+        "every_low_column_and_carry_retained": true,
+        "exact_digits": [
+          [
+            2,
+            1
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            8,
+            1
+          ],
+          [
+            10,
+            1
+          ],
+          [
+            12,
+            1
+          ],
+          [
+            14,
+            1
+          ],
+          [
+            17,
+            1
+          ],
+          [
+            18,
+            1
+          ],
+          [
+            19,
+            1
+          ],
+          [
+            20,
+            1
+          ],
+          [
+            24,
+            1
+          ],
+          [
+            25,
+            1
+          ],
+          [
+            26,
+            1
+          ],
+          [
+            27,
+            1
+          ],
+          [
+            29,
+            1
+          ],
+          [
+            30,
+            1
+          ],
+          [
+            35,
+            1
+          ],
+          [
+            36,
+            1
+          ],
+          [
+            37,
+            1
+          ],
+          [
+            38,
+            1
+          ],
+          [
+            39,
+            1
+          ]
+        ],
+        "fixed_full_modulus_correction": 2672876210922981574735171069935616,
+        "full_modular_product_bits": 112,
+        "full_native_output_bits": 72,
+        "literal_forward_reverse_cleanup": true,
+        "native_input_untouched": true,
+        "parsed_forward_gates": 10638,
+        "passed": true,
+        "prefix_nodes": 209,
+        "qubits": 5356,
+        "signed_bit_terms": 1512,
+        "strategy": "binary-prefix-carry-save",
+        "unrestricted_signed_input_bits": 72
+      }
+    },
+    {
+      "actual_gate_scan": {
+        "ccx": 5252,
+        "clifford_cx": 40704,
+        "clifford_h": 10504,
+        "clifford_t_depth": 1048,
+        "cx": 9192,
+        "source_gates": 15092,
+        "t_count": 36764,
+        "t_depth": 385,
+        "x": 648
+      },
+      "coefficient": 1067016148260,
+      "decision": {
+        "any_resource_improvement": true,
+        "clean_leaf_work_or_scratch_improved": true,
+        "leaf_nondominated": true,
+        "source_screen_allowed": true
+      },
+      "strategy": "signed-digit-prefix-carry-save",
+      "structural_parser": {
+        "algorithm": "independent exact digits, Cuccaro/CSA/Brent-Kung actual-gate parser",
+        "arbitrary_output_xor": true,
+        "charged_correction_wires": 31,
+        "coefficient": 1067016148260,
+        "complemented_negative_terms": 293,
+        "compressors": 784,
+        "csa_layers": 8,
+        "every_low_column_and_carry_retained": true,
+        "exact_digits": [
+          [
+            2,
+            1
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            8,
+            1
+          ],
+          [
+            10,
+            1
+          ],
+          [
+            12,
+            1
+          ],
+          [
+            14,
+            1
+          ],
+          [
+            17,
+            -1
+          ],
+          [
+            21,
+            1
+          ],
+          [
+            24,
+            -1
+          ],
+          [
+            28,
+            -1
+          ],
+          [
+            31,
+            1
+          ],
+          [
+            35,
+            -1
+          ],
+          [
+            40,
+            1
+          ]
+        ],
+        "fixed_full_modulus_correction": 2509269436361006074914400008011776,
+        "full_modular_product_bits": 112,
+        "full_native_output_bits": 72,
+        "literal_forward_reverse_cleanup": true,
+        "native_input_untouched": true,
+        "parsed_forward_gates": 7510,
+        "passed": true,
+        "prefix_nodes": 209,
+        "qubits": 3656,
+        "signed_bit_terms": 936,
+        "strategy": "signed-digit-prefix-carry-save",
+        "unrestricted_signed_input_bits": 72
+      }
+    },
+    {
+      "actual_gate_scan": {
+        "ccx": 7684,
+        "clifford_cx": 61768,
+        "clifford_h": 15368,
+        "clifford_t_depth": 92212,
+        "cx": 15664,
+        "source_gates": 23348,
+        "t_count": 53788,
+        "t_depth": 30736,
+        "x": 0
+      },
+      "coefficient": 60222732077,
+      "decision": {
+        "any_resource_improvement": true,
+        "clean_leaf_work_or_scratch_improved": true,
+        "leaf_nondominated": false,
+        "source_screen_allowed": false
+      },
+      "strategy": "binary-shift-add",
+      "structural_parser": {
+        "algorithm": "independent exact digits, Cuccaro/CSA/Brent-Kung actual-gate parser",
+        "arbitrary_output_xor": true,
+        "charged_correction_wires": 0,
+        "coefficient": 60222732077,
+        "complemented_negative_terms": 0,
+        "compressors": 0,
+        "csa_layers": 0,
+        "every_low_column_and_carry_retained": true,
+        "exact_digits": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            8,
+            1
+          ],
+          [
+            9,
+            1
+          ],
+          [
+            10,
+            1
+          ],
+          [
+            12,
+            1
+          ],
+          [
+            13,
+            1
+          ],
+          [
+            14,
+            1
+          ],
+          [
+            15,
+            1
+          ],
+          [
+            16,
+            1
+          ],
+          [
+            18,
+            1
+          ],
+          [
+            19,
+            1
+          ],
+          [
+            23,
+            1
+          ],
+          [
+            24,
+            1
+          ],
+          [
+            26,
+            1
+          ],
+          [
+            33,
+            1
+          ],
+          [
+            34,
+            1
+          ],
+          [
+            35,
+            1
+          ]
+        ],
+        "fixed_full_modulus_correction": 0,
+        "full_modular_product_bits": 112,
+        "full_native_output_bits": 72,
+        "literal_forward_reverse_cleanup": true,
+        "native_input_untouched": true,
+        "parsed_forward_gates": 11638,
+        "passed": true,
+        "prefix_nodes": 0,
+        "qubits": 369,
+        "signed_bit_terms": 0,
+        "strategy": "binary-shift-add",
+        "unrestricted_signed_input_bits": 72
+      }
+    },
+    {
+      "actual_gate_scan": {
+        "ccx": 4976,
+        "clifford_cx": 40104,
+        "clifford_h": 9952,
+        "clifford_t_depth": 59732,
+        "cx": 10248,
+        "source_gates": 15224,
+        "t_count": 34832,
+        "t_depth": 19904,
+        "x": 0
+      },
+      "coefficient": 60222732077,
+      "decision": {
+        "any_resource_improvement": true,
+        "clean_leaf_work_or_scratch_improved": true,
+        "leaf_nondominated": true,
+        "source_screen_allowed": true
+      },
+      "strategy": "signed-digit-shift-add",
+      "structural_parser": {
+        "algorithm": "independent exact digits, Cuccaro/CSA/Brent-Kung actual-gate parser",
+        "arbitrary_output_xor": true,
+        "charged_correction_wires": 0,
+        "coefficient": 60222732077,
+        "complemented_negative_terms": 0,
+        "compressors": 0,
+        "csa_layers": 0,
+        "every_low_column_and_carry_retained": true,
+        "exact_digits": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            -1
+          ],
+          [
+            4,
+            -1
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            8,
+            -1
+          ],
+          [
+            11,
+            -1
+          ],
+          [
+            17,
+            -1
+          ],
+          [
+            20,
+            1
+          ],
+          [
+            23,
+            -1
+          ],
+          [
+            25,
+            -1
+          ],
+          [
+            27,
+            1
+          ],
+          [
+            33,
+            -1
+          ],
+          [
+            36,
+            1
+          ]
+        ],
+        "fixed_full_modulus_correction": 0,
+        "full_modular_product_bits": 112,
+        "full_native_output_bits": 72,
+        "literal_forward_reverse_cleanup": true,
+        "native_input_untouched": true,
+        "parsed_forward_gates": 7576,
+        "passed": true,
+        "prefix_nodes": 0,
+        "qubits": 369,
+        "signed_bit_terms": 0,
+        "strategy": "signed-digit-shift-add",
+        "unrestricted_signed_input_bits": 72
+      }
+    },
+    {
+      "actual_gate_scan": {
+        "ccx": 5568,
+        "clifford_cx": 45300,
+        "clifford_h": 11136,
+        "clifford_t_depth": 5417,
+        "cx": 11892,
+        "source_gates": 17544,
+        "t_count": 38976,
+        "t_depth": 1808,
+        "x": 84
+      },
+      "coefficient": 60222732077,
+      "decision": {
+        "any_resource_improvement": true,
+        "clean_leaf_work_or_scratch_improved": true,
+        "leaf_nondominated": false,
+        "source_screen_allowed": false
+      },
+      "strategy": "binary-carry-save",
+      "structural_parser": {
+        "algorithm": "independent exact digits, Cuccaro/CSA/Brent-Kung actual-gate parser",
+        "arbitrary_output_xor": true,
+        "charged_correction_wires": 22,
+        "coefficient": 60222732077,
+        "complemented_negative_terms": 20,
+        "compressors": 1280,
+        "csa_layers": 10,
+        "every_low_column_and_carry_retained": true,
+        "exact_digits": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            8,
+            1
+          ],
+          [
+            9,
+            1
+          ],
+          [
+            10,
+            1
+          ],
+          [
+            12,
+            1
+          ],
+          [
+            13,
+            1
+          ],
+          [
+            14,
+            1
+          ],
+          [
+            15,
+            1
+          ],
+          [
+            16,
+            1
+          ],
+          [
+            18,
+            1
+          ],
+          [
+            19,
+            1
+          ],
+          [
+            23,
+            1
+          ],
+          [
+            24,
+            1
+          ],
+          [
+            26,
+            1
+          ],
+          [
+            33,
+            1
+          ],
+          [
+            34,
+            1
+          ],
+          [
+            35,
+            1
+          ]
+        ],
+        "fixed_full_modulus_correction": 5050099952801195901620266519756800,
+        "full_modular_product_bits": 112,
+        "full_native_output_bits": 72,
+        "literal_forward_reverse_cleanup": true,
+        "native_input_untouched": true,
+        "parsed_forward_gates": 8736,
+        "passed": true,
+        "prefix_nodes": 0,
+        "qubits": 4391,
+        "signed_bit_terms": 1440,
+        "strategy": "binary-carry-save",
+        "unrestricted_signed_input_bits": 72
+      }
+    },
+    {
+      "actual_gate_scan": {
+        "ccx": 3596,
+        "clifford_cx": 29510,
+        "clifford_h": 7192,
+        "clifford_t_depth": 5445,
+        "cx": 7934,
+        "source_gates": 12750,
+        "t_count": 25172,
+        "t_depth": 1816,
+        "x": 1220
+      },
+      "coefficient": 60222732077,
+      "decision": {
+        "any_resource_improvement": true,
+        "clean_leaf_work_or_scratch_improved": true,
+        "leaf_nondominated": true,
+        "source_screen_allowed": true
+      },
+      "strategy": "signed-digit-carry-save",
+      "structural_parser": {
+        "algorithm": "independent exact digits, Cuccaro/CSA/Brent-Kung actual-gate parser",
+        "arbitrary_output_xor": true,
+        "charged_correction_wires": 37,
+        "coefficient": 60222732077,
+        "complemented_negative_terms": 573,
+        "compressors": 787,
+        "csa_layers": 10,
+        "every_low_column_and_carry_retained": true,
+        "exact_digits": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            -1
+          ],
+          [
+            4,
+            -1
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            8,
+            -1
+          ],
+          [
+            11,
+            -1
+          ],
+          [
+            17,
+            -1
+          ],
+          [
+            20,
+            1
+          ],
+          [
+            23,
+            -1
+          ],
+          [
+            25,
+            -1
+          ],
+          [
+            27,
+            1
+          ],
+          [
+            33,
+            -1
+          ],
+          [
+            36,
+            1
+          ]
+        ],
+        "fixed_full_modulus_correction": 5009336433242807551049203863128340,
+        "full_modular_product_bits": 112,
+        "full_native_output_bits": 72,
+        "literal_forward_reverse_cleanup": true,
+        "native_input_untouched": true,
+        "parsed_forward_gates": 6339,
+        "passed": true,
+        "prefix_nodes": 0,
+        "qubits": 2916,
+        "signed_bit_terms": 936,
+        "strategy": "signed-digit-carry-save",
+        "unrestricted_signed_input_bits": 72
+      }
+    },
+    {
+      "actual_gate_scan": {
+        "ccx": 7236,
+        "clifford_cx": 56590,
+        "clifford_h": 14472,
+        "clifford_t_depth": 1101,
+        "cx": 13174,
+        "source_gates": 20494,
+        "t_count": 50652,
+        "t_depth": 401,
+        "x": 84
+      },
+      "coefficient": 60222732077,
+      "decision": {
+        "any_resource_improvement": true,
+        "clean_leaf_work_or_scratch_improved": true,
+        "leaf_nondominated": true,
+        "source_screen_allowed": true
+      },
+      "strategy": "binary-prefix-carry-save",
+      "structural_parser": {
+        "algorithm": "independent exact digits, Cuccaro/CSA/Brent-Kung actual-gate parser",
+        "arbitrary_output_xor": true,
+        "charged_correction_wires": 22,
+        "coefficient": 60222732077,
+        "complemented_negative_terms": 20,
+        "compressors": 1280,
+        "csa_layers": 10,
+        "every_low_column_and_carry_retained": true,
+        "exact_digits": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            8,
+            1
+          ],
+          [
+            9,
+            1
+          ],
+          [
+            10,
+            1
+          ],
+          [
+            12,
+            1
+          ],
+          [
+            13,
+            1
+          ],
+          [
+            14,
+            1
+          ],
+          [
+            15,
+            1
+          ],
+          [
+            16,
+            1
+          ],
+          [
+            18,
+            1
+          ],
+          [
+            19,
+            1
+          ],
+          [
+            23,
+            1
+          ],
+          [
+            24,
+            1
+          ],
+          [
+            26,
+            1
+          ],
+          [
+            33,
+            1
+          ],
+          [
+            34,
+            1
+          ],
+          [
+            35,
+            1
+          ]
+        ],
+        "fixed_full_modulus_correction": 5050099952801195901620266519756800,
+        "full_modular_product_bits": 112,
+        "full_native_output_bits": 72,
+        "literal_forward_reverse_cleanup": true,
+        "native_input_untouched": true,
+        "parsed_forward_gates": 10211,
+        "passed": true,
+        "prefix_nodes": 209,
+        "qubits": 5143,
+        "signed_bit_terms": 1440,
+        "strategy": "binary-prefix-carry-save",
+        "unrestricted_signed_input_bits": 72
+      }
+    },
+    {
+      "actual_gate_scan": {
+        "ccx": 5264,
+        "clifford_cx": 40800,
+        "clifford_h": 10528,
+        "clifford_t_depth": 1132,
+        "cx": 9216,
+        "source_gates": 15700,
+        "t_count": 36848,
+        "t_depth": 417,
+        "x": 1220
+      },
+      "coefficient": 60222732077,
+      "decision": {
+        "any_resource_improvement": true,
+        "clean_leaf_work_or_scratch_improved": true,
+        "leaf_nondominated": true,
+        "source_screen_allowed": true
+      },
+      "strategy": "signed-digit-prefix-carry-save",
+      "structural_parser": {
+        "algorithm": "independent exact digits, Cuccaro/CSA/Brent-Kung actual-gate parser",
+        "arbitrary_output_xor": true,
+        "charged_correction_wires": 37,
+        "coefficient": 60222732077,
+        "complemented_negative_terms": 573,
+        "compressors": 787,
+        "csa_layers": 10,
+        "every_low_column_and_carry_retained": true,
+        "exact_digits": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            -1
+          ],
+          [
+            4,
+            -1
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            8,
+            -1
+          ],
+          [
+            11,
+            -1
+          ],
+          [
+            17,
+            -1
+          ],
+          [
+            20,
+            1
+          ],
+          [
+            23,
+            -1
+          ],
+          [
+            25,
+            -1
+          ],
+          [
+            27,
+            1
+          ],
+          [
+            33,
+            -1
+          ],
+          [
+            36,
+            1
+          ]
+        ],
+        "fixed_full_modulus_correction": 5009336433242807551049203863128340,
+        "full_modular_product_bits": 112,
+        "full_native_output_bits": 72,
+        "literal_forward_reverse_cleanup": true,
+        "native_input_untouched": true,
+        "parsed_forward_gates": 7814,
+        "passed": true,
+        "prefix_nodes": 209,
+        "qubits": 3668,
+        "signed_bit_terms": 936,
+        "strategy": "signed-digit-prefix-carry-save",
+        "unrestricted_signed_input_bits": 72
+      }
+    },
+    {
+      "actual_gate_scan": {
+        "ccx": 6840,
+        "clifford_cx": 55016,
+        "clifford_h": 13680,
+        "clifford_t_depth": 82084,
+        "cx": 13976,
+        "source_gates": 20816,
+        "t_count": 47880,
+        "t_depth": 27360,
+        "x": 0
+      },
+      "coefficient": 22906492245,
+      "decision": {
+        "any_resource_improvement": true,
+        "clean_leaf_work_or_scratch_improved": true,
+        "leaf_nondominated": true,
+        "source_screen_allowed": true
+      },
+      "strategy": "binary-shift-add",
+      "structural_parser": {
+        "algorithm": "independent exact digits, Cuccaro/CSA/Brent-Kung actual-gate parser",
+        "arbitrary_output_xor": true,
+        "charged_correction_wires": 0,
+        "coefficient": 22906492245,
+        "complemented_negative_terms": 0,
+        "compressors": 0,
+        "csa_layers": 0,
+        "every_low_column_and_carry_retained": true,
+        "exact_digits": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            8,
+            1
+          ],
+          [
+            10,
+            1
+          ],
+          [
+            12,
+            1
+          ],
+          [
+            14,
+            1
+          ],
+          [
+            16,
+            1
+          ],
+          [
+            18,
+            1
+          ],
+          [
+            20,
+            1
+          ],
+          [
+            22,
+            1
+          ],
+          [
+            24,
+            1
+          ],
+          [
+            26,
+            1
+          ],
+          [
+            28,
+            1
+          ],
+          [
+            30,
+            1
+          ],
+          [
+            32,
+            1
+          ],
+          [
+            34,
+            1
+          ]
+        ],
+        "fixed_full_modulus_correction": 0,
+        "full_modular_product_bits": 112,
+        "full_native_output_bits": 72,
+        "literal_forward_reverse_cleanup": true,
+        "native_input_untouched": true,
+        "parsed_forward_gates": 10372,
+        "passed": true,
+        "prefix_nodes": 0,
+        "qubits": 369,
+        "signed_bit_terms": 0,
+        "strategy": "binary-shift-add",
+        "unrestricted_signed_input_bits": 72
+      }
+    },
+    {
+      "actual_gate_scan": {
+        "ccx": 6840,
+        "clifford_cx": 55016,
+        "clifford_h": 13680,
+        "clifford_t_depth": 82084,
+        "cx": 13976,
+        "source_gates": 20816,
+        "t_count": 47880,
+        "t_depth": 27360,
+        "x": 0
+      },
+      "coefficient": 22906492245,
+      "decision": {
+        "any_resource_improvement": true,
+        "clean_leaf_work_or_scratch_improved": true,
+        "leaf_nondominated": true,
+        "source_screen_allowed": true
+      },
+      "strategy": "signed-digit-shift-add",
+      "structural_parser": {
+        "algorithm": "independent exact digits, Cuccaro/CSA/Brent-Kung actual-gate parser",
+        "arbitrary_output_xor": true,
+        "charged_correction_wires": 0,
+        "coefficient": 22906492245,
+        "complemented_negative_terms": 0,
+        "compressors": 0,
+        "csa_layers": 0,
+        "every_low_column_and_carry_retained": true,
+        "exact_digits": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            8,
+            1
+          ],
+          [
+            10,
+            1
+          ],
+          [
+            12,
+            1
+          ],
+          [
+            14,
+            1
+          ],
+          [
+            16,
+            1
+          ],
+          [
+            18,
+            1
+          ],
+          [
+            20,
+            1
+          ],
+          [
+            22,
+            1
+          ],
+          [
+            24,
+            1
+          ],
+          [
+            26,
+            1
+          ],
+          [
+            28,
+            1
+          ],
+          [
+            30,
+            1
+          ],
+          [
+            32,
+            1
+          ],
+          [
+            34,
+            1
+          ]
+        ],
+        "fixed_full_modulus_correction": 0,
+        "full_modular_product_bits": 112,
+        "full_native_output_bits": 72,
+        "literal_forward_reverse_cleanup": true,
+        "native_input_untouched": true,
+        "parsed_forward_gates": 10372,
+        "passed": true,
+        "prefix_nodes": 0,
+        "qubits": 369,
+        "signed_bit_terms": 0,
+        "strategy": "signed-digit-shift-add",
+        "unrestricted_signed_input_bits": 72
+      }
+    },
+    {
+      "actual_gate_scan": {
+        "ccx": 5000,
+        "clifford_cx": 40752,
+        "clifford_h": 10000,
+        "clifford_t_depth": 5382,
+        "cx": 10752,
+        "source_gates": 15836,
+        "t_count": 35000,
+        "t_depth": 1792,
+        "x": 84
+      },
+      "coefficient": 22906492245,
+      "decision": {
+        "any_resource_improvement": true,
+        "clean_leaf_work_or_scratch_improved": true,
+        "leaf_nondominated": true,
+        "source_screen_allowed": true
+      },
+      "strategy": "binary-carry-save",
+      "structural_parser": {
+        "algorithm": "independent exact digits, Cuccaro/CSA/Brent-Kung actual-gate parser",
+        "arbitrary_output_xor": true,
+        "charged_correction_wires": 24,
+        "coefficient": 22906492245,
+        "complemented_negative_terms": 18,
+        "compressors": 1138,
+        "csa_layers": 8,
+        "every_low_column_and_carry_retained": true,
+        "exact_digits": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            8,
+            1
+          ],
+          [
+            10,
+            1
+          ],
+          [
+            12,
+            1
+          ],
+          [
+            14,
+            1
+          ],
+          [
+            16,
+            1
+          ],
+          [
+            18,
+            1
+          ],
+          [
+            20,
+            1
+          ],
+          [
+            22,
+            1
+          ],
+          [
+            24,
+            1
+          ],
+          [
+            26,
+            1
+          ],
+          [
+            28,
+            1
+          ],
+          [
+            30,
+            1
+          ],
+          [
+            32,
+            1
+          ],
+          [
+            34,
+            1
+          ]
+        ],
+        "fixed_full_modulus_correction": 5138210432925876901813781933326336,
+        "full_modular_product_bits": 112,
+        "full_native_output_bits": 72,
+        "literal_forward_reverse_cleanup": true,
+        "native_input_untouched": true,
+        "parsed_forward_gates": 7882,
+        "passed": true,
+        "prefix_nodes": 0,
+        "qubits": 3965,
+        "signed_bit_terms": 1296,
+        "strategy": "binary-carry-save",
+        "unrestricted_signed_input_bits": 72
+      }
+    },
+    {
+      "actual_gate_scan": {
+        "ccx": 5000,
+        "clifford_cx": 40752,
+        "clifford_h": 10000,
+        "clifford_t_depth": 5382,
+        "cx": 10752,
+        "source_gates": 15836,
+        "t_count": 35000,
+        "t_depth": 1792,
+        "x": 84
+      },
+      "coefficient": 22906492245,
+      "decision": {
+        "any_resource_improvement": true,
+        "clean_leaf_work_or_scratch_improved": true,
+        "leaf_nondominated": true,
+        "source_screen_allowed": true
+      },
+      "strategy": "signed-digit-carry-save",
+      "structural_parser": {
+        "algorithm": "independent exact digits, Cuccaro/CSA/Brent-Kung actual-gate parser",
+        "arbitrary_output_xor": true,
+        "charged_correction_wires": 24,
+        "coefficient": 22906492245,
+        "complemented_negative_terms": 18,
+        "compressors": 1138,
+        "csa_layers": 8,
+        "every_low_column_and_carry_retained": true,
+        "exact_digits": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            8,
+            1
+          ],
+          [
+            10,
+            1
+          ],
+          [
+            12,
+            1
+          ],
+          [
+            14,
+            1
+          ],
+          [
+            16,
+            1
+          ],
+          [
+            18,
+            1
+          ],
+          [
+            20,
+            1
+          ],
+          [
+            22,
+            1
+          ],
+          [
+            24,
+            1
+          ],
+          [
+            26,
+            1
+          ],
+          [
+            28,
+            1
+          ],
+          [
+            30,
+            1
+          ],
+          [
+            32,
+            1
+          ],
+          [
+            34,
+            1
+          ]
+        ],
+        "fixed_full_modulus_correction": 5138210432925876901813781933326336,
+        "full_modular_product_bits": 112,
+        "full_native_output_bits": 72,
+        "literal_forward_reverse_cleanup": true,
+        "native_input_untouched": true,
+        "parsed_forward_gates": 7882,
+        "passed": true,
+        "prefix_nodes": 0,
+        "qubits": 3965,
+        "signed_bit_terms": 1296,
+        "strategy": "signed-digit-carry-save",
+        "unrestricted_signed_input_bits": 72
+      }
+    },
+    {
+      "actual_gate_scan": {
+        "ccx": 6668,
+        "clifford_cx": 52042,
+        "clifford_h": 13336,
+        "clifford_t_depth": 1054,
+        "cx": 12034,
+        "source_gates": 18786,
+        "t_count": 46676,
+        "t_depth": 385,
+        "x": 84
+      },
+      "coefficient": 22906492245,
+      "decision": {
+        "any_resource_improvement": true,
+        "clean_leaf_work_or_scratch_improved": true,
+        "leaf_nondominated": true,
+        "source_screen_allowed": true
+      },
+      "strategy": "binary-prefix-carry-save",
+      "structural_parser": {
+        "algorithm": "independent exact digits, Cuccaro/CSA/Brent-Kung actual-gate parser",
+        "arbitrary_output_xor": true,
+        "charged_correction_wires": 24,
+        "coefficient": 22906492245,
+        "complemented_negative_terms": 18,
+        "compressors": 1138,
+        "csa_layers": 8,
+        "every_low_column_and_carry_retained": true,
+        "exact_digits": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            8,
+            1
+          ],
+          [
+            10,
+            1
+          ],
+          [
+            12,
+            1
+          ],
+          [
+            14,
+            1
+          ],
+          [
+            16,
+            1
+          ],
+          [
+            18,
+            1
+          ],
+          [
+            20,
+            1
+          ],
+          [
+            22,
+            1
+          ],
+          [
+            24,
+            1
+          ],
+          [
+            26,
+            1
+          ],
+          [
+            28,
+            1
+          ],
+          [
+            30,
+            1
+          ],
+          [
+            32,
+            1
+          ],
+          [
+            34,
+            1
+          ]
+        ],
+        "fixed_full_modulus_correction": 5138210432925876901813781933326336,
+        "full_modular_product_bits": 112,
+        "full_native_output_bits": 72,
+        "literal_forward_reverse_cleanup": true,
+        "native_input_untouched": true,
+        "parsed_forward_gates": 9357,
+        "passed": true,
+        "prefix_nodes": 209,
+        "qubits": 4717,
+        "signed_bit_terms": 1296,
+        "strategy": "binary-prefix-carry-save",
+        "unrestricted_signed_input_bits": 72
+      }
+    },
+    {
+      "actual_gate_scan": {
+        "ccx": 6668,
+        "clifford_cx": 52042,
+        "clifford_h": 13336,
+        "clifford_t_depth": 1054,
+        "cx": 12034,
+        "source_gates": 18786,
+        "t_count": 46676,
+        "t_depth": 385,
+        "x": 84
+      },
+      "coefficient": 22906492245,
+      "decision": {
+        "any_resource_improvement": true,
+        "clean_leaf_work_or_scratch_improved": true,
+        "leaf_nondominated": true,
+        "source_screen_allowed": true
+      },
+      "strategy": "signed-digit-prefix-carry-save",
+      "structural_parser": {
+        "algorithm": "independent exact digits, Cuccaro/CSA/Brent-Kung actual-gate parser",
+        "arbitrary_output_xor": true,
+        "charged_correction_wires": 24,
+        "coefficient": 22906492245,
+        "complemented_negative_terms": 18,
+        "compressors": 1138,
+        "csa_layers": 8,
+        "every_low_column_and_carry_retained": true,
+        "exact_digits": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            8,
+            1
+          ],
+          [
+            10,
+            1
+          ],
+          [
+            12,
+            1
+          ],
+          [
+            14,
+            1
+          ],
+          [
+            16,
+            1
+          ],
+          [
+            18,
+            1
+          ],
+          [
+            20,
+            1
+          ],
+          [
+            22,
+            1
+          ],
+          [
+            24,
+            1
+          ],
+          [
+            26,
+            1
+          ],
+          [
+            28,
+            1
+          ],
+          [
+            30,
+            1
+          ],
+          [
+            32,
+            1
+          ],
+          [
+            34,
+            1
+          ]
+        ],
+        "fixed_full_modulus_correction": 5138210432925876901813781933326336,
+        "full_modular_product_bits": 112,
+        "full_native_output_bits": 72,
+        "literal_forward_reverse_cleanup": true,
+        "native_input_untouched": true,
+        "parsed_forward_gates": 9357,
+        "passed": true,
+        "prefix_nodes": 209,
+        "qubits": 4717,
+        "signed_bit_terms": 1296,
+        "strategy": "signed-digit-prefix-carry-save",
+        "unrestricted_signed_input_bits": 72
+      }
+    }
+  ],
+  "eligible_candidates": [
+    {
+      "coefficient": 1067016148260,
+      "strategy": "signed-digit-shift-add"
+    },
+    {
+      "coefficient": 1067016148260,
+      "strategy": "signed-digit-carry-save"
+    },
+    {
+      "coefficient": 1067016148260,
+      "strategy": "signed-digit-prefix-carry-save"
+    },
+    {
+      "coefficient": 60222732077,
+      "strategy": "signed-digit-shift-add"
+    },
+    {
+      "coefficient": 60222732077,
+      "strategy": "signed-digit-carry-save"
+    },
+    {
+      "coefficient": 60222732077,
+      "strategy": "binary-prefix-carry-save"
+    },
+    {
+      "coefficient": 60222732077,
+      "strategy": "signed-digit-prefix-carry-save"
+    },
+    {
+      "coefficient": 22906492245,
+      "strategy": "binary-shift-add"
+    },
+    {
+      "coefficient": 22906492245,
+      "strategy": "signed-digit-shift-add"
+    },
+    {
+      "coefficient": 22906492245,
+      "strategy": "binary-carry-save"
+    },
+    {
+      "coefficient": 22906492245,
+      "strategy": "signed-digit-carry-save"
+    },
+    {
+      "coefficient": 22906492245,
+      "strategy": "binary-prefix-carry-save"
+    },
+    {
+      "coefficient": 22906492245,
+      "strategy": "signed-digit-prefix-carry-save"
+    }
+  ],
+  "emitted_family": [
+    "min-depth",
+    "min-work"
+  ],
+  "passed": true,
+  "portfolio_replacements": {
+    "min-depth": {
+      "1067016148260": "signed-digit-prefix-carry-save",
+      "22906492245": "binary-prefix-carry-save",
+      "60222732077": "binary-prefix-carry-save"
+    },
+    "min-work": {
+      "1067016148260": "signed-digit-carry-save",
+      "22906492245": "binary-carry-save",
+      "60222732077": "signed-digit-carry-save"
+    }
+  },
+  "preserved_actual_range_leaf_parsers": {
+    "0d5149452181f9ada528": {
+      "active_operand_bits": [
+        24,
+        72
+      ],
+      "algorithm": "independent actual-gate signed-plane, CSA and Brent-Kung parser",
+      "arbitrary_output_xor": true,
+      "charged_correction_wires": 19,
+      "complemented_negative_terms": 94,
+      "compressors": 1563,
+      "csa_layers": 21,
+      "every_low_column_and_carry_retained": true,
+      "fixed_full_modulus_correction": 5192257244455931679603134388240384,
+      "full_modular_product_bits": 112,
+      "full_native_argument_bits": [
+        72,
+        72
+      ],
+      "full_native_output_bits": 72,
+      "literal_forward_reverse_cleanup": true,
+      "native_inputs_untouched": true,
+      "parsed_forward_gates": 11987,
+      "passed": true,
+      "prefix_nodes": 209,
+      "qubits": 6066,
+      "signed_partial_terms": 1728
+    },
+    "0e53da079f2257cd8c6b": {
+      "active_operand_bits": [
+        40,
+        72
+      ],
+      "algorithm": "independent actual-gate signed-plane, CSA and Brent-Kung parser",
+      "arbitrary_output_xor": true,
+      "charged_correction_wires": 3,
+      "complemented_negative_terms": 110,
+      "compressors": 2699,
+      "csa_layers": 37,
+      "every_low_column_and_carry_retained": true,
+      "fixed_full_modulus_correction": 2596148429269774997507232743030784,
+      "full_modular_product_bits": 112,
+      "full_native_argument_bits": [
+        72,
+        72
+      ],
+      "full_native_output_bits": 72,
+      "literal_forward_reverse_cleanup": true,
+      "native_inputs_untouched": true,
+      "parsed_forward_gates": 18819,
+      "passed": true,
+      "prefix_nodes": 209,
+      "qubits": 9474,
+      "signed_partial_terms": 2880
+    },
+    "1e0b2dc8929b29814d9a": {
+      "active_operand_bits": [
+        40,
+        40
+      ],
+      "algorithm": "independent actual-gate signed-plane, CSA and Brent-Kung parser",
+      "arbitrary_output_xor": true,
+      "charged_correction_wires": 34,
+      "complemented_negative_terms": 78,
+      "compressors": 1482,
+      "csa_layers": 38,
+      "every_low_column_and_carry_retained": true,
+      "fixed_full_modulus_correction": 5192296857930364718724281253494784,
+      "full_modular_product_bits": 112,
+      "full_native_argument_bits": [
+        72,
+        72
+      ],
+      "full_native_output_bits": 72,
+      "literal_forward_reverse_cleanup": true,
+      "native_inputs_untouched": true,
+      "parsed_forward_gates": 11421,
+      "passed": true,
+      "prefix_nodes": 209,
+      "qubits": 5791,
+      "signed_partial_terms": 1600
+    },
+    "44e04a2a2977eac24772": {
+      "active_operand_bits": [
+        72,
+        40
+      ],
+      "algorithm": "independent actual-gate signed-plane, CSA and Brent-Kung parser",
+      "arbitrary_output_xor": true,
+      "charged_correction_wires": 3,
+      "complemented_negative_terms": 110,
+      "compressors": 2699,
+      "csa_layers": 37,
+      "every_low_column_and_carry_retained": true,
+      "fixed_full_modulus_correction": 2596148429269774997507232743030784,
+      "full_modular_product_bits": 112,
+      "full_native_argument_bits": [
+        72,
+        72
+      ],
+      "full_native_output_bits": 72,
+      "literal_forward_reverse_cleanup": true,
+      "native_inputs_untouched": true,
+      "parsed_forward_gates": 18819,
+      "passed": true,
+      "prefix_nodes": 209,
+      "qubits": 9474,
+      "signed_partial_terms": 2880
+    },
+    "bb37d8eada9f1cbcbe7e": {
+      "active_operand_bits": [
+        72,
+        24
+      ],
+      "algorithm": "independent actual-gate signed-plane, CSA and Brent-Kung parser",
+      "arbitrary_output_xor": true,
+      "charged_correction_wires": 19,
+      "complemented_negative_terms": 94,
+      "compressors": 1563,
+      "csa_layers": 21,
+      "every_low_column_and_carry_retained": true,
+      "fixed_full_modulus_correction": 5192257244455931679603134388240384,
+      "full_modular_product_bits": 112,
+      "full_native_argument_bits": [
+        72,
+        72
+      ],
+      "full_native_output_bits": 72,
+      "literal_forward_reverse_cleanup": true,
+      "native_inputs_untouched": true,
+      "parsed_forward_gates": 11987,
+      "passed": true,
+      "prefix_nodes": 209,
+      "qubits": 6066,
+      "signed_partial_terms": 1728
+    }
+  }
+}

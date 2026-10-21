@@ -1,0 +1,1108 @@
+{
+  "passed": true,
+  "local_only": true,
+  "affected_receipts": [
+    "A18_run001",
+    "A18_B4_run001",
+    "A01_run015",
+    "A01_run016"
+  ],
+  "distinct_drift_paths": 9,
+  "old_expected_reference_count": 36,
+  "rows": [
+    {
+      "path": "research/frontier_classical_20261001/c1_rates.py",
+      "expected_old_sha256": "2e8fb5ae00f7d99e54e6997ce8a1ad0b406a50ab0c3a6d1229928f211031ca0e",
+      "live_current_sha256": "ce4f6f7ef6335993c513d9982d1fef2723493d90c045ce47a934fd7fe35471af",
+      "expected_live_matches": false,
+      "historical_old_bytes_recovered": true,
+      "recovered_snapshot_path": "results/limitation_program_20261001/A01_drift_run001/recovered_original_inventory/c1_rates.py",
+      "recovered_snapshot_sha256": "2e8fb5ae00f7d99e54e6997ce8a1ad0b406a50ab0c3a6d1229928f211031ca0e",
+      "source_evidence": {
+        "kind": "local Git blob",
+        "oid": "37cd0c669f8b22c8a65ebde93ed851e78612aa34",
+        "object_format": "sha1",
+        "raw_blob_sha256": "976bb14826567aaf692c1241cb244d6353cd77591a098cf529642abb07a37f71",
+        "retained_raw_blob": "results/limitation_program_20261001/A01_drift_run001/archived_git_blobs/37cd0c669f8b22c8a65ebde93ed851e78612aa34.blob",
+        "commit_path_references": [
+          {
+            "commit": "7320bf34ccc9b003ffd2cd92142155b282842000",
+            "path": "research/frontier_classical_20261001/c1_rates.py"
+          },
+          {
+            "commit": "f961193c87ce67e26ca67f20209d5de9040ff2cd",
+            "path": "research/frontier_classical_20261001/c1_rates.py"
+          },
+          {
+            "commit": "0083f08649bb19a140f4c8cb31c895c8156dac06",
+            "path": "research/frontier_classical_20261001/c1_rates.py"
+          },
+          {
+            "commit": "f1200964b0eed27e2c4f256f320b5bfad197f871",
+            "path": "research/frontier_classical_20261001/c1_rates.py"
+          },
+          {
+            "commit": "4e5ab609e94f4b2ff034c388f9a5f61eacf32f6d",
+            "path": "research/frontier_classical_20261001/c1_rates.py"
+          },
+          {
+            "commit": "9adb674d34ea30ebcd5e0b8c44b89fd49ecfcc85",
+            "path": "research/frontier_classical_20261001/c1_rates.py"
+          },
+          {
+            "commit": "18d0ca31c7402da154cb6acac1f390e5ad933ccc",
+            "path": "research/frontier_classical_20261001/c1_rates.py"
+          },
+          {
+            "commit": "9799f03ab0df17188fbeeaf8e47b298574a794bf",
+            "path": "research/frontier_classical_20261001/c1_rates.py"
+          },
+          {
+            "commit": "230fa6d9cbb0695f2b2fa40111a7e1d51081d03d",
+            "path": "research/frontier_classical_20261001/c1_rates.py"
+          },
+          {
+            "commit": "9079e185c3493e26f4357a17ff9ba7ee9704c724",
+            "path": "research/frontier_classical_20261001/c1_rates.py"
+          }
+        ]
+      },
+      "exact_byte_materialization": "materialize_LF_as_CRLF",
+      "references": [
+        {
+          "receipt": "A18_run001",
+          "expected_sha256": "2e8fb5ae00f7d99e54e6997ce8a1ad0b406a50ab0c3a6d1229928f211031ca0e",
+          "manifest_sha256": "399818588b33541878ba484fbc2edf84e99175ca82ffbea2faeebaac5e36ec63",
+          "protocol_sha256": "996e4162b7d62a432f79e02cdaa16ee707b037a351e121872766e8b9fecf7939",
+          "declared_executed_snapshot": false,
+          "literal_project_import_reachable": false,
+          "legitimate_frozen_expectation_retained": true,
+          "classification": "blanket research inventory"
+        },
+        {
+          "receipt": "A18_B4_run001",
+          "expected_sha256": "2e8fb5ae00f7d99e54e6997ce8a1ad0b406a50ab0c3a6d1229928f211031ca0e",
+          "manifest_sha256": "50fe6d3ec599dea5cb93cf35bdf08b6d8e590568a85f7f511623b9519d95c5d9",
+          "protocol_sha256": "fd6085907c9bbe4326326015e340ce53cf6fdd9bb3e0e4e92b01467574756cf7",
+          "declared_executed_snapshot": false,
+          "literal_project_import_reachable": false,
+          "legitimate_frozen_expectation_retained": true,
+          "classification": "inherited blanket research inventory"
+        },
+        {
+          "receipt": "A01_run015",
+          "expected_sha256": "2e8fb5ae00f7d99e54e6997ce8a1ad0b406a50ab0c3a6d1229928f211031ca0e",
+          "manifest_sha256": "0c8d51b859e39869e7012766d4f9a17af679292d07a2191088e995aabf45886a",
+          "protocol_sha256": "1d5654447b0c849203afa41684f0a627697c34a361791c0081b9a0ca5e50901b",
+          "declared_executed_snapshot": false,
+          "literal_project_import_reachable": false,
+          "legitimate_frozen_expectation_retained": true,
+          "classification": "inherited blanket research inventory"
+        },
+        {
+          "receipt": "A01_run016",
+          "expected_sha256": "2e8fb5ae00f7d99e54e6997ce8a1ad0b406a50ab0c3a6d1229928f211031ca0e",
+          "manifest_sha256": "72a12eaea09074662e9ecf9c3abe7fe54902b020890b37d53017e96162db78c8",
+          "protocol_sha256": "80bdcfd8731e344d47543637c1ca8cf11d7c5ac41e0451379ab94438686ba674",
+          "declared_executed_snapshot": false,
+          "literal_project_import_reachable": false,
+          "legitimate_frozen_expectation_retained": true,
+          "classification": "inherited blanket research inventory"
+        }
+      ],
+      "expected_hash_waived": false,
+      "actor_or_reason_attributed": false
+    },
+    {
+      "path": "research/frontier_classical_20261001/c2_timing.py",
+      "expected_old_sha256": "1d873c58bec226fac4c8f664b23d173a89cab7158fba5a9937d4f18e08159436",
+      "live_current_sha256": "d4f1156e77b74eaf33ea3fe828a7515b09825bf1d4ca0ece08907659ce3b685c",
+      "expected_live_matches": false,
+      "historical_old_bytes_recovered": true,
+      "recovered_snapshot_path": "results/limitation_program_20261001/A01_drift_run001/recovered_original_inventory/c2_timing.py",
+      "recovered_snapshot_sha256": "1d873c58bec226fac4c8f664b23d173a89cab7158fba5a9937d4f18e08159436",
+      "source_evidence": {
+        "kind": "local Git blob",
+        "oid": "155beecc816cf7693531391e7871732b8875063b",
+        "object_format": "sha1",
+        "raw_blob_sha256": "2d18422ea2bef4729a1e8199cc35d5eb7a09637df41f4d121c7221f9e654cada",
+        "retained_raw_blob": "results/limitation_program_20261001/A01_drift_run001/archived_git_blobs/155beecc816cf7693531391e7871732b8875063b.blob",
+        "commit_path_references": [
+          {
+            "commit": "7320bf34ccc9b003ffd2cd92142155b282842000",
+            "path": "research/frontier_classical_20261001/c2_timing.py"
+          },
+          {
+            "commit": "f961193c87ce67e26ca67f20209d5de9040ff2cd",
+            "path": "research/frontier_classical_20261001/c2_timing.py"
+          },
+          {
+            "commit": "0083f08649bb19a140f4c8cb31c895c8156dac06",
+            "path": "research/frontier_classical_20261001/c2_timing.py"
+          },
+          {
+            "commit": "f1200964b0eed27e2c4f256f320b5bfad197f871",
+            "path": "research/frontier_classical_20261001/c2_timing.py"
+          },
+          {
+            "commit": "4e5ab609e94f4b2ff034c388f9a5f61eacf32f6d",
+            "path": "research/frontier_classical_20261001/c2_timing.py"
+          },
+          {
+            "commit": "9adb674d34ea30ebcd5e0b8c44b89fd49ecfcc85",
+            "path": "research/frontier_classical_20261001/c2_timing.py"
+          },
+          {
+            "commit": "18d0ca31c7402da154cb6acac1f390e5ad933ccc",
+            "path": "research/frontier_classical_20261001/c2_timing.py"
+          },
+          {
+            "commit": "9799f03ab0df17188fbeeaf8e47b298574a794bf",
+            "path": "research/frontier_classical_20261001/c2_timing.py"
+          },
+          {
+            "commit": "230fa6d9cbb0695f2b2fa40111a7e1d51081d03d",
+            "path": "research/frontier_classical_20261001/c2_timing.py"
+          }
+        ]
+      },
+      "exact_byte_materialization": "materialize_LF_as_CRLF",
+      "references": [
+        {
+          "receipt": "A18_run001",
+          "expected_sha256": "1d873c58bec226fac4c8f664b23d173a89cab7158fba5a9937d4f18e08159436",
+          "manifest_sha256": "399818588b33541878ba484fbc2edf84e99175ca82ffbea2faeebaac5e36ec63",
+          "protocol_sha256": "996e4162b7d62a432f79e02cdaa16ee707b037a351e121872766e8b9fecf7939",
+          "declared_executed_snapshot": false,
+          "literal_project_import_reachable": false,
+          "legitimate_frozen_expectation_retained": true,
+          "classification": "blanket research inventory"
+        },
+        {
+          "receipt": "A18_B4_run001",
+          "expected_sha256": "1d873c58bec226fac4c8f664b23d173a89cab7158fba5a9937d4f18e08159436",
+          "manifest_sha256": "50fe6d3ec599dea5cb93cf35bdf08b6d8e590568a85f7f511623b9519d95c5d9",
+          "protocol_sha256": "fd6085907c9bbe4326326015e340ce53cf6fdd9bb3e0e4e92b01467574756cf7",
+          "declared_executed_snapshot": false,
+          "literal_project_import_reachable": false,
+          "legitimate_frozen_expectation_retained": true,
+          "classification": "inherited blanket research inventory"
+        },
+        {
+          "receipt": "A01_run015",
+          "expected_sha256": "1d873c58bec226fac4c8f664b23d173a89cab7158fba5a9937d4f18e08159436",
+          "manifest_sha256": "0c8d51b859e39869e7012766d4f9a17af679292d07a2191088e995aabf45886a",
+          "protocol_sha256": "1d5654447b0c849203afa41684f0a627697c34a361791c0081b9a0ca5e50901b",
+          "declared_executed_snapshot": false,
+          "literal_project_import_reachable": false,
+          "legitimate_frozen_expectation_retained": true,
+          "classification": "inherited blanket research inventory"
+        },
+        {
+          "receipt": "A01_run016",
+          "expected_sha256": "1d873c58bec226fac4c8f664b23d173a89cab7158fba5a9937d4f18e08159436",
+          "manifest_sha256": "72a12eaea09074662e9ecf9c3abe7fe54902b020890b37d53017e96162db78c8",
+          "protocol_sha256": "80bdcfd8731e344d47543637c1ca8cf11d7c5ac41e0451379ab94438686ba674",
+          "declared_executed_snapshot": false,
+          "literal_project_import_reachable": false,
+          "legitimate_frozen_expectation_retained": true,
+          "classification": "inherited blanket research inventory"
+        }
+      ],
+      "expected_hash_waived": false,
+      "actor_or_reason_attributed": false
+    },
+    {
+      "path": "research/frontier_classical_20261001/c4_coverage.py",
+      "expected_old_sha256": "afec36c737edab5cf2f74c74061f3956ace7c1d976d02e5e05c206070237a0cc",
+      "live_current_sha256": "eb66ee469ff0c5ddb7f6e3a4393fc5a56572935c8b8752ea19c970aea1b51527",
+      "expected_live_matches": false,
+      "historical_old_bytes_recovered": true,
+      "recovered_snapshot_path": "results/limitation_program_20261001/A01_drift_run001/recovered_original_inventory/c4_coverage.py",
+      "recovered_snapshot_sha256": "afec36c737edab5cf2f74c74061f3956ace7c1d976d02e5e05c206070237a0cc",
+      "source_evidence": {
+        "kind": "existing archived file",
+        "path": "results/limitation_program_20261001/C09_audit_run001/historical_git_objects/18d0ca31c7402da154cb6acac1f390e5ad933ccc/c4_coverage.py",
+        "sha256": "afec36c737edab5cf2f74c74061f3956ace7c1d976d02e5e05c206070237a0cc"
+      },
+      "exact_byte_materialization": "identity",
+      "references": [
+        {
+          "receipt": "A18_run001",
+          "expected_sha256": "afec36c737edab5cf2f74c74061f3956ace7c1d976d02e5e05c206070237a0cc",
+          "manifest_sha256": "399818588b33541878ba484fbc2edf84e99175ca82ffbea2faeebaac5e36ec63",
+          "protocol_sha256": "996e4162b7d62a432f79e02cdaa16ee707b037a351e121872766e8b9fecf7939",
+          "declared_executed_snapshot": false,
+          "literal_project_import_reachable": false,
+          "legitimate_frozen_expectation_retained": true,
+          "classification": "blanket research inventory"
+        },
+        {
+          "receipt": "A18_B4_run001",
+          "expected_sha256": "afec36c737edab5cf2f74c74061f3956ace7c1d976d02e5e05c206070237a0cc",
+          "manifest_sha256": "50fe6d3ec599dea5cb93cf35bdf08b6d8e590568a85f7f511623b9519d95c5d9",
+          "protocol_sha256": "fd6085907c9bbe4326326015e340ce53cf6fdd9bb3e0e4e92b01467574756cf7",
+          "declared_executed_snapshot": false,
+          "literal_project_import_reachable": false,
+          "legitimate_frozen_expectation_retained": true,
+          "classification": "inherited blanket research inventory"
+        },
+        {
+          "receipt": "A01_run015",
+          "expected_sha256": "afec36c737edab5cf2f74c74061f3956ace7c1d976d02e5e05c206070237a0cc",
+          "manifest_sha256": "0c8d51b859e39869e7012766d4f9a17af679292d07a2191088e995aabf45886a",
+          "protocol_sha256": "1d5654447b0c849203afa41684f0a627697c34a361791c0081b9a0ca5e50901b",
+          "declared_executed_snapshot": false,
+          "literal_project_import_reachable": false,
+          "legitimate_frozen_expectation_retained": true,
+          "classification": "inherited blanket research inventory"
+        },
+        {
+          "receipt": "A01_run016",
+          "expected_sha256": "afec36c737edab5cf2f74c74061f3956ace7c1d976d02e5e05c206070237a0cc",
+          "manifest_sha256": "72a12eaea09074662e9ecf9c3abe7fe54902b020890b37d53017e96162db78c8",
+          "protocol_sha256": "80bdcfd8731e344d47543637c1ca8cf11d7c5ac41e0451379ab94438686ba674",
+          "declared_executed_snapshot": false,
+          "literal_project_import_reachable": false,
+          "legitimate_frozen_expectation_retained": true,
+          "classification": "inherited blanket research inventory"
+        }
+      ],
+      "expected_hash_waived": false,
+      "actor_or_reason_attributed": false
+    },
+    {
+      "path": "research/frontier_classical_20261001/c5_smoothers.py",
+      "expected_old_sha256": "e649f10f738c1369704a151fea779621218de1889d04140b9b04447a488b8677",
+      "live_current_sha256": "447d7781a5e081c0e81b5e225f261e17e8f2a8277cad452ce399fb03fd9eea87",
+      "expected_live_matches": false,
+      "historical_old_bytes_recovered": true,
+      "recovered_snapshot_path": "results/limitation_program_20261001/A01_drift_run001/recovered_original_inventory/c5_smoothers.py",
+      "recovered_snapshot_sha256": "e649f10f738c1369704a151fea779621218de1889d04140b9b04447a488b8677",
+      "source_evidence": {
+        "kind": "local Git blob",
+        "oid": "a3eb64ea5ab139752ac41c01b09ac07176ca386b",
+        "object_format": "sha1",
+        "raw_blob_sha256": "e649f10f738c1369704a151fea779621218de1889d04140b9b04447a488b8677",
+        "retained_raw_blob": "results/limitation_program_20261001/A01_drift_run001/archived_git_blobs/a3eb64ea5ab139752ac41c01b09ac07176ca386b.blob",
+        "commit_path_references": [
+          {
+            "commit": "7320bf34ccc9b003ffd2cd92142155b282842000",
+            "path": "research/frontier_classical_20261001/c5_smoothers.py"
+          },
+          {
+            "commit": "f961193c87ce67e26ca67f20209d5de9040ff2cd",
+            "path": "research/frontier_classical_20261001/c5_smoothers.py"
+          },
+          {
+            "commit": "0083f08649bb19a140f4c8cb31c895c8156dac06",
+            "path": "research/frontier_classical_20261001/c5_smoothers.py"
+          },
+          {
+            "commit": "f1200964b0eed27e2c4f256f320b5bfad197f871",
+            "path": "research/frontier_classical_20261001/c5_smoothers.py"
+          },
+          {
+            "commit": "4e5ab609e94f4b2ff034c388f9a5f61eacf32f6d",
+            "path": "research/frontier_classical_20261001/c5_smoothers.py"
+          },
+          {
+            "commit": "9adb674d34ea30ebcd5e0b8c44b89fd49ecfcc85",
+            "path": "research/frontier_classical_20261001/c5_smoothers.py"
+          }
+        ]
+      },
+      "exact_byte_materialization": "identity",
+      "references": [
+        {
+          "receipt": "A18_run001",
+          "expected_sha256": "e649f10f738c1369704a151fea779621218de1889d04140b9b04447a488b8677",
+          "manifest_sha256": "399818588b33541878ba484fbc2edf84e99175ca82ffbea2faeebaac5e36ec63",
+          "protocol_sha256": "996e4162b7d62a432f79e02cdaa16ee707b037a351e121872766e8b9fecf7939",
+          "declared_executed_snapshot": false,
+          "literal_project_import_reachable": false,
+          "legitimate_frozen_expectation_retained": true,
+          "classification": "blanket research inventory"
+        },
+        {
+          "receipt": "A18_B4_run001",
+          "expected_sha256": "e649f10f738c1369704a151fea779621218de1889d04140b9b04447a488b8677",
+          "manifest_sha256": "50fe6d3ec599dea5cb93cf35bdf08b6d8e590568a85f7f511623b9519d95c5d9",
+          "protocol_sha256": "fd6085907c9bbe4326326015e340ce53cf6fdd9bb3e0e4e92b01467574756cf7",
+          "declared_executed_snapshot": false,
+          "literal_project_import_reachable": false,
+          "legitimate_frozen_expectation_retained": true,
+          "classification": "inherited blanket research inventory"
+        },
+        {
+          "receipt": "A01_run015",
+          "expected_sha256": "e649f10f738c1369704a151fea779621218de1889d04140b9b04447a488b8677",
+          "manifest_sha256": "0c8d51b859e39869e7012766d4f9a17af679292d07a2191088e995aabf45886a",
+          "protocol_sha256": "1d5654447b0c849203afa41684f0a627697c34a361791c0081b9a0ca5e50901b",
+          "declared_executed_snapshot": false,
+          "literal_project_import_reachable": false,
+          "legitimate_frozen_expectation_retained": true,
+          "classification": "inherited blanket research inventory"
+        },
+        {
+          "receipt": "A01_run016",
+          "expected_sha256": "e649f10f738c1369704a151fea779621218de1889d04140b9b04447a488b8677",
+          "manifest_sha256": "72a12eaea09074662e9ecf9c3abe7fe54902b020890b37d53017e96162db78c8",
+          "protocol_sha256": "80bdcfd8731e344d47543637c1ca8cf11d7c5ac41e0451379ab94438686ba674",
+          "declared_executed_snapshot": false,
+          "literal_project_import_reachable": false,
+          "legitimate_frozen_expectation_retained": true,
+          "classification": "inherited blanket research inventory"
+        }
+      ],
+      "expected_hash_waived": false,
+      "actor_or_reason_attributed": false
+    },
+    {
+      "path": "research/frontier_classical_20261001/c7_c8_cases.py",
+      "expected_old_sha256": "ab869c3da9039e1d4c2edbc761fbba56c8d170de9380ece9e9edea63c752926c",
+      "live_current_sha256": "b5929ba742f156dea8212e4a948b7fac724590bae9b5b158219f3bd7c62eb6a1",
+      "expected_live_matches": false,
+      "historical_old_bytes_recovered": true,
+      "recovered_snapshot_path": "results/limitation_program_20261001/A01_drift_run001/recovered_original_inventory/c7_c8_cases.py",
+      "recovered_snapshot_sha256": "ab869c3da9039e1d4c2edbc761fbba56c8d170de9380ece9e9edea63c752926c",
+      "source_evidence": {
+        "kind": "local Git blob",
+        "oid": "245b21423f1783685552e784cd41eef3c1be8504",
+        "object_format": "sha1",
+        "raw_blob_sha256": "c2cba7773368f5e29813cf627c460fa90540c9572b9f8c376cdb1743e7574e44",
+        "retained_raw_blob": "results/limitation_program_20261001/A01_drift_run001/archived_git_blobs/245b21423f1783685552e784cd41eef3c1be8504.blob",
+        "commit_path_references": [
+          {
+            "commit": "7320bf34ccc9b003ffd2cd92142155b282842000",
+            "path": "research/frontier_classical_20261001/c7_c8_cases.py"
+          },
+          {
+            "commit": "f961193c87ce67e26ca67f20209d5de9040ff2cd",
+            "path": "research/frontier_classical_20261001/c7_c8_cases.py"
+          },
+          {
+            "commit": "0083f08649bb19a140f4c8cb31c895c8156dac06",
+            "path": "research/frontier_classical_20261001/c7_c8_cases.py"
+          },
+          {
+            "commit": "f1200964b0eed27e2c4f256f320b5bfad197f871",
+            "path": "research/frontier_classical_20261001/c7_c8_cases.py"
+          },
+          {
+            "commit": "4e5ab609e94f4b2ff034c388f9a5f61eacf32f6d",
+            "path": "research/frontier_classical_20261001/c7_c8_cases.py"
+          }
+        ]
+      },
+      "exact_byte_materialization": "materialize_LF_as_CRLF",
+      "references": [
+        {
+          "receipt": "A18_run001",
+          "expected_sha256": "ab869c3da9039e1d4c2edbc761fbba56c8d170de9380ece9e9edea63c752926c",
+          "manifest_sha256": "399818588b33541878ba484fbc2edf84e99175ca82ffbea2faeebaac5e36ec63",
+          "protocol_sha256": "996e4162b7d62a432f79e02cdaa16ee707b037a351e121872766e8b9fecf7939",
+          "declared_executed_snapshot": false,
+          "literal_project_import_reachable": false,
+          "legitimate_frozen_expectation_retained": true,
+          "classification": "blanket research inventory"
+        },
+        {
+          "receipt": "A18_B4_run001",
+          "expected_sha256": "ab869c3da9039e1d4c2edbc761fbba56c8d170de9380ece9e9edea63c752926c",
+          "manifest_sha256": "50fe6d3ec599dea5cb93cf35bdf08b6d8e590568a85f7f511623b9519d95c5d9",
+          "protocol_sha256": "fd6085907c9bbe4326326015e340ce53cf6fdd9bb3e0e4e92b01467574756cf7",
+          "declared_executed_snapshot": false,
+          "literal_project_import_reachable": false,
+          "legitimate_frozen_expectation_retained": true,
+          "classification": "inherited blanket research inventory"
+        },
+        {
+          "receipt": "A01_run015",
+          "expected_sha256": "ab869c3da9039e1d4c2edbc761fbba56c8d170de9380ece9e9edea63c752926c",
+          "manifest_sha256": "0c8d51b859e39869e7012766d4f9a17af679292d07a2191088e995aabf45886a",
+          "protocol_sha256": "1d5654447b0c849203afa41684f0a627697c34a361791c0081b9a0ca5e50901b",
+          "declared_executed_snapshot": false,
+          "literal_project_import_reachable": false,
+          "legitimate_frozen_expectation_retained": true,
+          "classification": "inherited blanket research inventory"
+        },
+        {
+          "receipt": "A01_run016",
+          "expected_sha256": "ab869c3da9039e1d4c2edbc761fbba56c8d170de9380ece9e9edea63c752926c",
+          "manifest_sha256": "72a12eaea09074662e9ecf9c3abe7fe54902b020890b37d53017e96162db78c8",
+          "protocol_sha256": "80bdcfd8731e344d47543637c1ca8cf11d7c5ac41e0451379ab94438686ba674",
+          "declared_executed_snapshot": false,
+          "literal_project_import_reachable": false,
+          "legitimate_frozen_expectation_retained": true,
+          "classification": "inherited blanket research inventory"
+        }
+      ],
+      "expected_hash_waived": false,
+      "actor_or_reason_attributed": false
+    },
+    {
+      "path": "research/frontier_classical_20261001/decision.py",
+      "expected_old_sha256": "f5386a0dfc1fac4bc6fe2040f7aed0c084f8b028c166af2511d64f9edef37824",
+      "live_current_sha256": "5fdb48c581301d291d1553eba6e98c3732e7a2e0282a63265bd8bcf818f23616",
+      "expected_live_matches": false,
+      "historical_old_bytes_recovered": true,
+      "recovered_snapshot_path": "results/limitation_program_20261001/A01_drift_run001/recovered_original_inventory/decision.py",
+      "recovered_snapshot_sha256": "f5386a0dfc1fac4bc6fe2040f7aed0c084f8b028c166af2511d64f9edef37824",
+      "source_evidence": {
+        "kind": "local Git blob",
+        "oid": "0045ca0e257aacf7ec5836a478cc4394b7dd8235",
+        "object_format": "sha1",
+        "raw_blob_sha256": "f5386a0dfc1fac4bc6fe2040f7aed0c084f8b028c166af2511d64f9edef37824",
+        "retained_raw_blob": "results/limitation_program_20261001/A01_drift_run001/archived_git_blobs/0045ca0e257aacf7ec5836a478cc4394b7dd8235.blob",
+        "commit_path_references": [
+          {
+            "commit": "7320bf34ccc9b003ffd2cd92142155b282842000",
+            "path": "research/frontier_classical_20261001/decision.py"
+          }
+        ]
+      },
+      "exact_byte_materialization": "identity",
+      "references": [
+        {
+          "receipt": "A18_run001",
+          "expected_sha256": "f5386a0dfc1fac4bc6fe2040f7aed0c084f8b028c166af2511d64f9edef37824",
+          "manifest_sha256": "399818588b33541878ba484fbc2edf84e99175ca82ffbea2faeebaac5e36ec63",
+          "protocol_sha256": "996e4162b7d62a432f79e02cdaa16ee707b037a351e121872766e8b9fecf7939",
+          "declared_executed_snapshot": false,
+          "literal_project_import_reachable": false,
+          "legitimate_frozen_expectation_retained": true,
+          "classification": "blanket research inventory"
+        },
+        {
+          "receipt": "A18_B4_run001",
+          "expected_sha256": "f5386a0dfc1fac4bc6fe2040f7aed0c084f8b028c166af2511d64f9edef37824",
+          "manifest_sha256": "50fe6d3ec599dea5cb93cf35bdf08b6d8e590568a85f7f511623b9519d95c5d9",
+          "protocol_sha256": "fd6085907c9bbe4326326015e340ce53cf6fdd9bb3e0e4e92b01467574756cf7",
+          "declared_executed_snapshot": false,
+          "literal_project_import_reachable": false,
+          "legitimate_frozen_expectation_retained": true,
+          "classification": "inherited blanket research inventory"
+        },
+        {
+          "receipt": "A01_run015",
+          "expected_sha256": "f5386a0dfc1fac4bc6fe2040f7aed0c084f8b028c166af2511d64f9edef37824",
+          "manifest_sha256": "0c8d51b859e39869e7012766d4f9a17af679292d07a2191088e995aabf45886a",
+          "protocol_sha256": "1d5654447b0c849203afa41684f0a627697c34a361791c0081b9a0ca5e50901b",
+          "declared_executed_snapshot": false,
+          "literal_project_import_reachable": false,
+          "legitimate_frozen_expectation_retained": true,
+          "classification": "inherited blanket research inventory"
+        },
+        {
+          "receipt": "A01_run016",
+          "expected_sha256": "f5386a0dfc1fac4bc6fe2040f7aed0c084f8b028c166af2511d64f9edef37824",
+          "manifest_sha256": "72a12eaea09074662e9ecf9c3abe7fe54902b020890b37d53017e96162db78c8",
+          "protocol_sha256": "80bdcfd8731e344d47543637c1ca8cf11d7c5ac41e0451379ab94438686ba674",
+          "declared_executed_snapshot": false,
+          "literal_project_import_reachable": false,
+          "legitimate_frozen_expectation_retained": true,
+          "classification": "inherited blanket research inventory"
+        }
+      ],
+      "expected_hash_waived": false,
+      "actor_or_reason_attributed": false
+    },
+    {
+      "path": "research/frontier_classical_20261001/fit.py",
+      "expected_old_sha256": "34178ee79497d7d0a4e073a836154f197a33f4026f5cf6d8023dc710b1d9e016",
+      "live_current_sha256": "5c896bedb35af50836e45d6f25a15abc99273f51826fa1b6694921bbf6269720",
+      "expected_live_matches": false,
+      "historical_old_bytes_recovered": true,
+      "recovered_snapshot_path": "results/limitation_program_20261001/A01_drift_run001/recovered_original_inventory/fit.py",
+      "recovered_snapshot_sha256": "34178ee79497d7d0a4e073a836154f197a33f4026f5cf6d8023dc710b1d9e016",
+      "source_evidence": {
+        "kind": "local Git blob",
+        "oid": "9e698b86e5c0a46e556dbd7102f2064f60993c66",
+        "object_format": "sha1",
+        "raw_blob_sha256": "554941a74c2c19f7982f49480fd9e2524e6b124bbab57ca42cb4c341478a749a",
+        "retained_raw_blob": "results/limitation_program_20261001/A01_drift_run001/archived_git_blobs/9e698b86e5c0a46e556dbd7102f2064f60993c66.blob",
+        "commit_path_references": [
+          {
+            "commit": "7320bf34ccc9b003ffd2cd92142155b282842000",
+            "path": "research/frontier_classical_20261001/fit.py"
+          },
+          {
+            "commit": "f961193c87ce67e26ca67f20209d5de9040ff2cd",
+            "path": "research/frontier_classical_20261001/fit.py"
+          },
+          {
+            "commit": "0083f08649bb19a140f4c8cb31c895c8156dac06",
+            "path": "research/frontier_classical_20261001/fit.py"
+          },
+          {
+            "commit": "f1200964b0eed27e2c4f256f320b5bfad197f871",
+            "path": "research/frontier_classical_20261001/fit.py"
+          },
+          {
+            "commit": "4e5ab609e94f4b2ff034c388f9a5f61eacf32f6d",
+            "path": "research/frontier_classical_20261001/fit.py"
+          },
+          {
+            "commit": "9adb674d34ea30ebcd5e0b8c44b89fd49ecfcc85",
+            "path": "research/frontier_classical_20261001/fit.py"
+          },
+          {
+            "commit": "18d0ca31c7402da154cb6acac1f390e5ad933ccc",
+            "path": "research/frontier_classical_20261001/fit.py"
+          },
+          {
+            "commit": "9799f03ab0df17188fbeeaf8e47b298574a794bf",
+            "path": "research/frontier_classical_20261001/fit.py"
+          },
+          {
+            "commit": "230fa6d9cbb0695f2b2fa40111a7e1d51081d03d",
+            "path": "research/frontier_classical_20261001/fit.py"
+          },
+          {
+            "commit": "9079e185c3493e26f4357a17ff9ba7ee9704c724",
+            "path": "research/frontier_classical_20261001/fit.py"
+          }
+        ]
+      },
+      "exact_byte_materialization": "materialize_LF_as_CRLF",
+      "references": [
+        {
+          "receipt": "A18_run001",
+          "expected_sha256": "34178ee79497d7d0a4e073a836154f197a33f4026f5cf6d8023dc710b1d9e016",
+          "manifest_sha256": "399818588b33541878ba484fbc2edf84e99175ca82ffbea2faeebaac5e36ec63",
+          "protocol_sha256": "996e4162b7d62a432f79e02cdaa16ee707b037a351e121872766e8b9fecf7939",
+          "declared_executed_snapshot": false,
+          "literal_project_import_reachable": false,
+          "legitimate_frozen_expectation_retained": true,
+          "classification": "blanket research inventory"
+        },
+        {
+          "receipt": "A18_B4_run001",
+          "expected_sha256": "34178ee79497d7d0a4e073a836154f197a33f4026f5cf6d8023dc710b1d9e016",
+          "manifest_sha256": "50fe6d3ec599dea5cb93cf35bdf08b6d8e590568a85f7f511623b9519d95c5d9",
+          "protocol_sha256": "fd6085907c9bbe4326326015e340ce53cf6fdd9bb3e0e4e92b01467574756cf7",
+          "declared_executed_snapshot": false,
+          "literal_project_import_reachable": false,
+          "legitimate_frozen_expectation_retained": true,
+          "classification": "inherited blanket research inventory"
+        },
+        {
+          "receipt": "A01_run015",
+          "expected_sha256": "34178ee79497d7d0a4e073a836154f197a33f4026f5cf6d8023dc710b1d9e016",
+          "manifest_sha256": "0c8d51b859e39869e7012766d4f9a17af679292d07a2191088e995aabf45886a",
+          "protocol_sha256": "1d5654447b0c849203afa41684f0a627697c34a361791c0081b9a0ca5e50901b",
+          "declared_executed_snapshot": false,
+          "literal_project_import_reachable": false,
+          "legitimate_frozen_expectation_retained": true,
+          "classification": "inherited blanket research inventory"
+        },
+        {
+          "receipt": "A01_run016",
+          "expected_sha256": "34178ee79497d7d0a4e073a836154f197a33f4026f5cf6d8023dc710b1d9e016",
+          "manifest_sha256": "72a12eaea09074662e9ecf9c3abe7fe54902b020890b37d53017e96162db78c8",
+          "protocol_sha256": "80bdcfd8731e344d47543637c1ca8cf11d7c5ac41e0451379ab94438686ba674",
+          "declared_executed_snapshot": false,
+          "literal_project_import_reachable": false,
+          "legitimate_frozen_expectation_retained": true,
+          "classification": "inherited blanket research inventory"
+        }
+      ],
+      "expected_hash_waived": false,
+      "actor_or_reason_attributed": false
+    },
+    {
+      "path": "research/frontier_classical_20261001/kernels.py",
+      "expected_old_sha256": "d2bfbb97a229f682ae325a6109c98fe29267cc22a97f1fded30d925a5d5def3c",
+      "live_current_sha256": "b0762f0e7d82ce9b4a5b7fe28c10278bfa3ccc0b390afe3a72e9d09404e97987",
+      "expected_live_matches": false,
+      "historical_old_bytes_recovered": true,
+      "recovered_snapshot_path": "results/limitation_program_20261001/A01_drift_run001/recovered_original_inventory/kernels.py",
+      "recovered_snapshot_sha256": "d2bfbb97a229f682ae325a6109c98fe29267cc22a97f1fded30d925a5d5def3c",
+      "source_evidence": {
+        "kind": "existing archived file",
+        "path": "results/limitation_program_20261001/C09_audit_run001/historical_git_objects/18d0ca31c7402da154cb6acac1f390e5ad933ccc/kernels.py",
+        "sha256": "d2bfbb97a229f682ae325a6109c98fe29267cc22a97f1fded30d925a5d5def3c"
+      },
+      "exact_byte_materialization": "identity",
+      "references": [
+        {
+          "receipt": "A18_run001",
+          "expected_sha256": "d2bfbb97a229f682ae325a6109c98fe29267cc22a97f1fded30d925a5d5def3c",
+          "manifest_sha256": "399818588b33541878ba484fbc2edf84e99175ca82ffbea2faeebaac5e36ec63",
+          "protocol_sha256": "996e4162b7d62a432f79e02cdaa16ee707b037a351e121872766e8b9fecf7939",
+          "declared_executed_snapshot": false,
+          "literal_project_import_reachable": false,
+          "legitimate_frozen_expectation_retained": true,
+          "classification": "blanket research inventory"
+        },
+        {
+          "receipt": "A18_B4_run001",
+          "expected_sha256": "d2bfbb97a229f682ae325a6109c98fe29267cc22a97f1fded30d925a5d5def3c",
+          "manifest_sha256": "50fe6d3ec599dea5cb93cf35bdf08b6d8e590568a85f7f511623b9519d95c5d9",
+          "protocol_sha256": "fd6085907c9bbe4326326015e340ce53cf6fdd9bb3e0e4e92b01467574756cf7",
+          "declared_executed_snapshot": false,
+          "literal_project_import_reachable": false,
+          "legitimate_frozen_expectation_retained": true,
+          "classification": "inherited blanket research inventory"
+        },
+        {
+          "receipt": "A01_run015",
+          "expected_sha256": "d2bfbb97a229f682ae325a6109c98fe29267cc22a97f1fded30d925a5d5def3c",
+          "manifest_sha256": "0c8d51b859e39869e7012766d4f9a17af679292d07a2191088e995aabf45886a",
+          "protocol_sha256": "1d5654447b0c849203afa41684f0a627697c34a361791c0081b9a0ca5e50901b",
+          "declared_executed_snapshot": false,
+          "literal_project_import_reachable": false,
+          "legitimate_frozen_expectation_retained": true,
+          "classification": "inherited blanket research inventory"
+        },
+        {
+          "receipt": "A01_run016",
+          "expected_sha256": "d2bfbb97a229f682ae325a6109c98fe29267cc22a97f1fded30d925a5d5def3c",
+          "manifest_sha256": "72a12eaea09074662e9ecf9c3abe7fe54902b020890b37d53017e96162db78c8",
+          "protocol_sha256": "80bdcfd8731e344d47543637c1ca8cf11d7c5ac41e0451379ab94438686ba674",
+          "declared_executed_snapshot": false,
+          "literal_project_import_reachable": false,
+          "legitimate_frozen_expectation_retained": true,
+          "classification": "inherited blanket research inventory"
+        }
+      ],
+      "expected_hash_waived": false,
+      "actor_or_reason_attributed": false
+    },
+    {
+      "path": "research/frontier_classical_20261001/scrambles.py",
+      "expected_old_sha256": "5a406160fe579002d80d195f68830a1bc085dd3fe83933e9e98b0cfc454c0419",
+      "live_current_sha256": "40403b81a1b92d336bcb23a352029f2607ef859589f640e329075a597c49dc0f",
+      "expected_live_matches": false,
+      "historical_old_bytes_recovered": true,
+      "recovered_snapshot_path": "results/limitation_program_20261001/A01_drift_run001/recovered_original_inventory/scrambles.py",
+      "recovered_snapshot_sha256": "5a406160fe579002d80d195f68830a1bc085dd3fe83933e9e98b0cfc454c0419",
+      "source_evidence": {
+        "kind": "local Git blob",
+        "oid": "cc0d47e40b16d70d150d3eeb20a528406e617650",
+        "object_format": "sha1",
+        "raw_blob_sha256": "2fddf11ddee7f7c06b944615c017d3a42becc60feeef3a831d99b7c4d7faf141",
+        "retained_raw_blob": "results/limitation_program_20261001/A01_drift_run001/archived_git_blobs/cc0d47e40b16d70d150d3eeb20a528406e617650.blob",
+        "commit_path_references": [
+          {
+            "commit": "7320bf34ccc9b003ffd2cd92142155b282842000",
+            "path": "research/frontier_classical_20261001/scrambles.py"
+          },
+          {
+            "commit": "f961193c87ce67e26ca67f20209d5de9040ff2cd",
+            "path": "research/frontier_classical_20261001/scrambles.py"
+          },
+          {
+            "commit": "0083f08649bb19a140f4c8cb31c895c8156dac06",
+            "path": "research/frontier_classical_20261001/scrambles.py"
+          },
+          {
+            "commit": "f1200964b0eed27e2c4f256f320b5bfad197f871",
+            "path": "research/frontier_classical_20261001/scrambles.py"
+          },
+          {
+            "commit": "4e5ab609e94f4b2ff034c388f9a5f61eacf32f6d",
+            "path": "research/frontier_classical_20261001/scrambles.py"
+          },
+          {
+            "commit": "9adb674d34ea30ebcd5e0b8c44b89fd49ecfcc85",
+            "path": "research/frontier_classical_20261001/scrambles.py"
+          },
+          {
+            "commit": "18d0ca31c7402da154cb6acac1f390e5ad933ccc",
+            "path": "research/frontier_classical_20261001/scrambles.py"
+          },
+          {
+            "commit": "9799f03ab0df17188fbeeaf8e47b298574a794bf",
+            "path": "research/frontier_classical_20261001/scrambles.py"
+          },
+          {
+            "commit": "230fa6d9cbb0695f2b2fa40111a7e1d51081d03d",
+            "path": "research/frontier_classical_20261001/scrambles.py"
+          },
+          {
+            "commit": "9079e185c3493e26f4357a17ff9ba7ee9704c724",
+            "path": "research/frontier_classical_20261001/scrambles.py"
+          }
+        ]
+      },
+      "exact_byte_materialization": "materialize_LF_as_CRLF",
+      "references": [
+        {
+          "receipt": "A18_run001",
+          "expected_sha256": "5a406160fe579002d80d195f68830a1bc085dd3fe83933e9e98b0cfc454c0419",
+          "manifest_sha256": "399818588b33541878ba484fbc2edf84e99175ca82ffbea2faeebaac5e36ec63",
+          "protocol_sha256": "996e4162b7d62a432f79e02cdaa16ee707b037a351e121872766e8b9fecf7939",
+          "declared_executed_snapshot": false,
+          "literal_project_import_reachable": false,
+          "legitimate_frozen_expectation_retained": true,
+          "classification": "blanket research inventory"
+        },
+        {
+          "receipt": "A18_B4_run001",
+          "expected_sha256": "5a406160fe579002d80d195f68830a1bc085dd3fe83933e9e98b0cfc454c0419",
+          "manifest_sha256": "50fe6d3ec599dea5cb93cf35bdf08b6d8e590568a85f7f511623b9519d95c5d9",
+          "protocol_sha256": "fd6085907c9bbe4326326015e340ce53cf6fdd9bb3e0e4e92b01467574756cf7",
+          "declared_executed_snapshot": false,
+          "literal_project_import_reachable": false,
+          "legitimate_frozen_expectation_retained": true,
+          "classification": "inherited blanket research inventory"
+        },
+        {
+          "receipt": "A01_run015",
+          "expected_sha256": "5a406160fe579002d80d195f68830a1bc085dd3fe83933e9e98b0cfc454c0419",
+          "manifest_sha256": "0c8d51b859e39869e7012766d4f9a17af679292d07a2191088e995aabf45886a",
+          "protocol_sha256": "1d5654447b0c849203afa41684f0a627697c34a361791c0081b9a0ca5e50901b",
+          "declared_executed_snapshot": false,
+          "literal_project_import_reachable": false,
+          "legitimate_frozen_expectation_retained": true,
+          "classification": "inherited blanket research inventory"
+        },
+        {
+          "receipt": "A01_run016",
+          "expected_sha256": "5a406160fe579002d80d195f68830a1bc085dd3fe83933e9e98b0cfc454c0419",
+          "manifest_sha256": "72a12eaea09074662e9ecf9c3abe7fe54902b020890b37d53017e96162db78c8",
+          "protocol_sha256": "80bdcfd8731e344d47543637c1ca8cf11d7c5ac41e0451379ab94438686ba674",
+          "declared_executed_snapshot": false,
+          "literal_project_import_reachable": false,
+          "legitimate_frozen_expectation_retained": true,
+          "classification": "inherited blanket research inventory"
+        }
+      ],
+      "expected_hash_waived": false,
+      "actor_or_reason_attributed": false
+    }
+  ],
+  "execution_provenance": [
+    {
+      "receipt": "A18_run001",
+      "declared_execution_roots": [
+        {
+          "original": "research/limitation_program_20261001/checkpoint_circuit.py",
+          "snapshot": "executed_code/checkpoint_circuit.py",
+          "sha256": "304c4f3835ce1895427307ed77b691fb8f24b4a0c77855407f832b3da489315e",
+          "binding": "explicit protocol executed_dependencies",
+          "snapshot_workspace_path": "results/limitation_program_20261001/A18_run001/executed_code/checkpoint_circuit.py"
+        },
+        {
+          "original": "research/limitation_program_20261001/checkpoint_scheduler.py",
+          "snapshot": "executed_code/checkpoint_scheduler.py",
+          "sha256": "6f6aea3e56544d88ca6f30309c25158a01a3543dbaf2a7e39ed20ce6b06302ea",
+          "binding": "explicit protocol executed_dependencies",
+          "snapshot_workspace_path": "results/limitation_program_20261001/A18_run001/executed_code/checkpoint_scheduler.py"
+        },
+        {
+          "original": "research/limitation_program_20261001/checkpoint_scope.py",
+          "snapshot": "executed_code/checkpoint_scope.py",
+          "sha256": "a294a4f945645c054fb17840dd454d2dd89308f7d9a274290307dac0b8b1b0d5",
+          "binding": "explicit protocol executed_dependencies",
+          "snapshot_workspace_path": "results/limitation_program_20261001/A18_run001/executed_code/checkpoint_scope.py"
+        },
+        {
+          "original": "research/limitation_program_20261001/experiment_checkpoint.py",
+          "snapshot": "executed_code/experiment_checkpoint.py",
+          "sha256": "7bde04c2db4fa17bb977617d32e7043db948f2102bc299d73b0b0ba2e5f1dee6",
+          "binding": "explicit protocol executed_dependencies",
+          "snapshot_workspace_path": "results/limitation_program_20261001/A18_run001/executed_code/experiment_checkpoint.py"
+        },
+        {
+          "original": "research/limitation_program_20261001/reconcile_checkpoint.py",
+          "snapshot": "executed_code/reconcile_checkpoint.py",
+          "sha256": "e21732b8e844418fd00b320facaa9275137007da60838b550e38f6f88431305c",
+          "binding": "explicit protocol executed_dependencies",
+          "snapshot_workspace_path": "results/limitation_program_20261001/A18_run001/executed_code/reconcile_checkpoint.py"
+        },
+        {
+          "original": "research/limitation_program_20261001/test_checkpoint_circuit.py",
+          "snapshot": "executed_code/test_checkpoint_circuit.py",
+          "sha256": "30292e3c35f25bfae0ee04c2c0431381b6eb68cc799a4c8a6e0153affc8c60d8",
+          "binding": "explicit protocol executed_dependencies",
+          "snapshot_workspace_path": "results/limitation_program_20261001/A18_run001/executed_code/test_checkpoint_circuit.py"
+        },
+        {
+          "original": "research/limitation_program_20261001/test_checkpoint_scheduler.py",
+          "snapshot": "executed_code/test_checkpoint_scheduler.py",
+          "sha256": "2136c97d2444a8797ed6f4cdddf91fc8a7ed9e165c510bcedb2a64daf1c577f4",
+          "binding": "explicit protocol executed_dependencies",
+          "snapshot_workspace_path": "results/limitation_program_20261001/A18_run001/executed_code/test_checkpoint_scheduler.py"
+        },
+        {
+          "original": "research/limitation_program_20261001/test_checkpoint_scope.py",
+          "snapshot": "executed_code/test_checkpoint_scope.py",
+          "sha256": "8af46ac05429274d994b3499ca4145176757b2723c7f81de097fe8c38b7e3bf7",
+          "binding": "explicit protocol executed_dependencies",
+          "snapshot_workspace_path": "results/limitation_program_20261001/A18_run001/executed_code/test_checkpoint_scope.py"
+        }
+      ],
+      "literal_project_import_source_paths": [
+        "research/advantage_frontier_20260923/barrier_oracle_depth.py",
+        "research/antithetic_feasibility/classical.py",
+        "research/antithetic_feasibility/reversible.py",
+        "research/compound_feasibility/model.py",
+        "research/controlled_priority_completion/parallel_source.py",
+        "research/controlled_residual_feasibility/parity.py",
+        "research/controlled_source_completion/carry_lookahead.py",
+        "research/controlled_source_completion/compact_parallel_v7.py",
+        "research/controlled_source_completion/compact_storage.py",
+        "research/controlled_source_completion/compiler.py",
+        "research/controlled_source_completion/constant_multiplier.py",
+        "research/controlled_source_completion/exact_lookup.py",
+        "research/controlled_source_completion/finance.py",
+        "research/controlled_source_completion/ir.py",
+        "research/controlled_source_completion/log_constant_multiplier.py",
+        "research/controlled_source_completion/narrow_shift.py",
+        "research/controlled_source_completion/narrow_sqrt.py",
+        "research/controlled_source_completion/nonrestoring_sqrt.py",
+        "research/controlled_source_completion/optimize.py",
+        "research/controlled_source_completion/prefix_constant_multiplier.py",
+        "research/controlled_source_completion/prefix_multiplier.py",
+        "research/controlled_source_completion/primitives.py",
+        "research/controlled_source_completion/range_multiplier.py",
+        "research/controlled_source_completion/run.py",
+        "research/controlled_source_completion/signed_square.py",
+        "research/journal_sprint/reversible_fixed_point.py",
+        "research/limitation_program_20261001/baseline.py",
+        "research/limitation_program_20261001/checkpoint_circuit.py",
+        "research/limitation_program_20261001/checkpoint_scheduler.py",
+        "research/limitation_program_20261001/checkpoint_scope.py",
+        "research/limitation_program_20261001/compact_ledger.py",
+        "research/limitation_program_20261001/constant_library.py",
+        "research/limitation_program_20261001/experiment_checkpoint.py",
+        "research/limitation_program_20261001/interval_bounds.py",
+        "research/limitation_program_20261001/progress.py",
+        "research/limitation_program_20261001/prove_coefficient_input.py",
+        "research/limitation_program_20261001/prove_log_exponent.py",
+        "research/limitation_program_20261001/prove_nonrestoring_input.py",
+        "research/limitation_program_20261001/prove_range_input.py",
+        "research/limitation_program_20261001/prove_shift_input.py",
+        "research/limitation_program_20261001/prove_sqrt_input.py",
+        "research/limitation_program_20261001/prove_square_input.py",
+        "research/limitation_program_20261001/reconcile_checkpoint.py",
+        "research/limitation_program_20261001/test_checkpoint_circuit.py",
+        "research/limitation_program_20261001/test_checkpoint_scheduler.py",
+        "research/limitation_program_20261001/test_checkpoint_scope.py",
+        "research/stronger_arithmetic/circuits.py"
+      ],
+      "possible_dynamic_import_or_execution_calls": [],
+      "runtime_import_trace_available": false,
+      "inventory_construction_evidence": {
+        "archived_source": "results/limitation_program_20261001/A18_run001/executed_code/experiment_checkpoint.py",
+        "archived_source_sha256": "7bde04c2db4fa17bb977617d32e7043db948f2102bc299d73b0b0ba2e5f1dee6",
+        "line": 93,
+        "statement": "for p in ROOT.joinpath(\"research\").rglob(\"*.py\"):"
+      },
+      "classification_scope": "Explicit snapshots plus literal imports and frozen producer inventory construction; not a runtime non-execution proof"
+    },
+    {
+      "receipt": "A18_B4_run001",
+      "declared_execution_roots": [
+        {
+          "original": "research/limitation_program_20261001/checkpoint_B4.py",
+          "snapshot": "executed_code/checkpoint_B4.py",
+          "sha256": "443a24716839988feb70fe38308c10daefb76ad930ef5884ccd2c8788ed8bbb7",
+          "binding": "explicit protocol executed_dependencies",
+          "snapshot_workspace_path": "results/limitation_program_20261001/A18_B4_run001/executed_code/checkpoint_B4.py"
+        },
+        {
+          "original": "research/limitation_program_20261001/test_checkpoint_B4.py",
+          "snapshot": "executed_code/test_checkpoint_B4.py",
+          "sha256": "ccc65244baf94c34f5da9e23f0950010b71742b3f6a4d5703726c5a587e566da",
+          "binding": "explicit protocol executed_dependencies",
+          "snapshot_workspace_path": "results/limitation_program_20261001/A18_B4_run001/executed_code/test_checkpoint_B4.py"
+        },
+        {
+          "original": "research/limitation_program_20261001/experiment_checkpoint_B4.py",
+          "snapshot": "executed_code/experiment_checkpoint_B4.py",
+          "sha256": "77fb4d0fc4e4c2e6c07b330c12b03395dc934686af73a675b15e075c59e94631",
+          "binding": "explicit protocol executed_dependencies",
+          "snapshot_workspace_path": "results/limitation_program_20261001/A18_B4_run001/executed_code/experiment_checkpoint_B4.py"
+        }
+      ],
+      "literal_project_import_source_paths": [
+        "research/advantage_frontier_20260923/barrier_oracle_depth.py",
+        "research/antithetic_feasibility/classical.py",
+        "research/antithetic_feasibility/reversible.py",
+        "research/compound_feasibility/model.py",
+        "research/controlled_priority_completion/parallel_source.py",
+        "research/controlled_residual_feasibility/parity.py",
+        "research/controlled_source_completion/carry_lookahead.py",
+        "research/controlled_source_completion/compact_parallel_v7.py",
+        "research/controlled_source_completion/compact_storage.py",
+        "research/controlled_source_completion/compiler.py",
+        "research/controlled_source_completion/constant_multiplier.py",
+        "research/controlled_source_completion/exact_lookup.py",
+        "research/controlled_source_completion/finance.py",
+        "research/controlled_source_completion/ir.py",
+        "research/controlled_source_completion/log_constant_multiplier.py",
+        "research/controlled_source_completion/narrow_shift.py",
+        "research/controlled_source_completion/narrow_sqrt.py",
+        "research/controlled_source_completion/nonrestoring_sqrt.py",
+        "research/controlled_source_completion/optimize.py",
+        "research/controlled_source_completion/prefix_constant_multiplier.py",
+        "research/controlled_source_completion/prefix_multiplier.py",
+        "research/controlled_source_completion/primitives.py",
+        "research/controlled_source_completion/range_multiplier.py",
+        "research/controlled_source_completion/run.py",
+        "research/controlled_source_completion/signed_square.py",
+        "research/journal_sprint/reversible_fixed_point.py",
+        "research/limitation_program_20261001/baseline.py",
+        "research/limitation_program_20261001/checkpoint_B4.py",
+        "research/limitation_program_20261001/checkpoint_circuit.py",
+        "research/limitation_program_20261001/checkpoint_scheduler.py",
+        "research/limitation_program_20261001/checkpoint_scope.py",
+        "research/limitation_program_20261001/constant_library.py",
+        "research/limitation_program_20261001/experiment_checkpoint.py",
+        "research/limitation_program_20261001/experiment_checkpoint_B4.py",
+        "research/limitation_program_20261001/interval_bounds.py",
+        "research/limitation_program_20261001/progress.py",
+        "research/limitation_program_20261001/prove_coefficient_input.py",
+        "research/limitation_program_20261001/prove_log_exponent.py",
+        "research/limitation_program_20261001/prove_nonrestoring_input.py",
+        "research/limitation_program_20261001/prove_range_input.py",
+        "research/limitation_program_20261001/prove_shift_input.py",
+        "research/limitation_program_20261001/prove_sqrt_input.py",
+        "research/limitation_program_20261001/prove_square_input.py",
+        "research/limitation_program_20261001/test_checkpoint_B4.py",
+        "research/limitation_program_20261001/test_checkpoint_circuit.py",
+        "research/stronger_arithmetic/circuits.py"
+      ],
+      "possible_dynamic_import_or_execution_calls": [],
+      "runtime_import_trace_available": false,
+      "inventory_construction_evidence": {
+        "archived_source": "results/limitation_program_20261001/A18_B4_run001/executed_code/experiment_checkpoint_B4.py",
+        "archived_source_sha256": "77fb4d0fc4e4c2e6c07b330c12b03395dc934686af73a675b15e075c59e94631",
+        "line": 46,
+        "statement": "frozen = dict(prior[\"frozen_inputs\"])"
+      },
+      "classification_scope": "Explicit snapshots plus literal imports and frozen producer inventory construction; not a runtime non-execution proof"
+    },
+    {
+      "receipt": "A01_run015",
+      "declared_execution_roots": [
+        {
+          "original": "research/limitation_program_20261001/reconcile_checkpoint_v2.py",
+          "snapshot": "executed_reconcile_checkpoint_v2.py",
+          "binding": "own-script archived by prepare and manifest",
+          "sha256": "a188d8b4136ae4da51b16b2e2929dcda5b47abd254cf6a745a5dbc3943d9ecf4",
+          "snapshot_workspace_path": "results/limitation_program_20261001/A01_run015/executed_reconcile_checkpoint_v2.py"
+        }
+      ],
+      "literal_project_import_source_paths": [
+        "research/advantage_frontier_20260923/barrier_oracle_depth.py",
+        "research/antithetic_feasibility/classical.py",
+        "research/antithetic_feasibility/reversible.py",
+        "research/compound_feasibility/model.py",
+        "research/controlled_priority_completion/parallel_source.py",
+        "research/controlled_residual_feasibility/parity.py",
+        "research/controlled_source_completion/compiler.py",
+        "research/controlled_source_completion/constant_multiplier.py",
+        "research/controlled_source_completion/exact_lookup.py",
+        "research/controlled_source_completion/finance.py",
+        "research/controlled_source_completion/ir.py",
+        "research/controlled_source_completion/log_constant_multiplier.py",
+        "research/controlled_source_completion/optimize.py",
+        "research/controlled_source_completion/primitives.py",
+        "research/controlled_source_completion/run.py",
+        "research/journal_sprint/reversible_fixed_point.py",
+        "research/limitation_program_20261001/baseline.py",
+        "research/limitation_program_20261001/compact_ledger.py",
+        "research/limitation_program_20261001/constant_library.py",
+        "research/limitation_program_20261001/progress.py",
+        "research/limitation_program_20261001/prove_log_exponent.py",
+        "research/limitation_program_20261001/reconcile_checkpoint_v2.py",
+        "research/stronger_arithmetic/circuits.py"
+      ],
+      "possible_dynamic_import_or_execution_calls": [],
+      "runtime_import_trace_available": false,
+      "inventory_construction_evidence": {
+        "archived_source": "results/limitation_program_20261001/A01_run015/executed_reconcile_checkpoint_v2.py",
+        "archived_source_sha256": "a188d8b4136ae4da51b16b2e2929dcda5b47abd254cf6a745a5dbc3943d9ecf4",
+        "line": 187,
+        "statement": "for path, expected in protocol[\"frozen_inputs\"].items():"
+      },
+      "classification_scope": "Explicit snapshots plus literal imports and frozen producer inventory construction; not a runtime non-execution proof"
+    },
+    {
+      "receipt": "A01_run016",
+      "declared_execution_roots": [
+        {
+          "original": "research/limitation_program_20261001/reconcile_checkpoint_B4.py",
+          "snapshot": "reconcile_checkpoint_B4.py",
+          "binding": "own-script archived by prepare and manifest",
+          "sha256": "a08b3ba61eb33657b9347f48f1dba8d8230ae96a1e8c77a86ead437759a4b5d5",
+          "snapshot_workspace_path": "results/limitation_program_20261001/A01_run016/reconcile_checkpoint_B4.py"
+        }
+      ],
+      "literal_project_import_source_paths": [
+        "research/advantage_frontier_20260923/barrier_oracle_depth.py",
+        "research/antithetic_feasibility/classical.py",
+        "research/antithetic_feasibility/reversible.py",
+        "research/compound_feasibility/model.py",
+        "research/controlled_priority_completion/parallel_source.py",
+        "research/controlled_residual_feasibility/parity.py",
+        "research/controlled_source_completion/carry_lookahead.py",
+        "research/controlled_source_completion/compact_parallel_v7.py",
+        "research/controlled_source_completion/compact_storage.py",
+        "research/controlled_source_completion/compiler.py",
+        "research/controlled_source_completion/constant_multiplier.py",
+        "research/controlled_source_completion/exact_lookup.py",
+        "research/controlled_source_completion/finance.py",
+        "research/controlled_source_completion/ir.py",
+        "research/controlled_source_completion/log_constant_multiplier.py",
+        "research/controlled_source_completion/narrow_shift.py",
+        "research/controlled_source_completion/narrow_sqrt.py",
+        "research/controlled_source_completion/nonrestoring_sqrt.py",
+        "research/controlled_source_completion/optimize.py",
+        "research/controlled_source_completion/prefix_constant_multiplier.py",
+        "research/controlled_source_completion/prefix_multiplier.py",
+        "research/controlled_source_completion/primitives.py",
+        "research/controlled_source_completion/range_multiplier.py",
+        "research/controlled_source_completion/run.py",
+        "research/controlled_source_completion/signed_square.py",
+        "research/journal_sprint/reversible_fixed_point.py",
+        "research/limitation_program_20261001/baseline.py",
+        "research/limitation_program_20261001/checkpoint_circuit.py",
+        "research/limitation_program_20261001/checkpoint_scheduler.py",
+        "research/limitation_program_20261001/checkpoint_scope.py",
+        "research/limitation_program_20261001/compact_ledger.py",
+        "research/limitation_program_20261001/constant_library.py",
+        "research/limitation_program_20261001/experiment_checkpoint.py",
+        "research/limitation_program_20261001/interval_bounds.py",
+        "research/limitation_program_20261001/progress.py",
+        "research/limitation_program_20261001/prove_coefficient_input.py",
+        "research/limitation_program_20261001/prove_log_exponent.py",
+        "research/limitation_program_20261001/prove_nonrestoring_input.py",
+        "research/limitation_program_20261001/prove_range_input.py",
+        "research/limitation_program_20261001/prove_shift_input.py",
+        "research/limitation_program_20261001/prove_sqrt_input.py",
+        "research/limitation_program_20261001/prove_square_input.py",
+        "research/limitation_program_20261001/reconcile_checkpoint_B4.py",
+        "research/limitation_program_20261001/reconcile_checkpoint_v2.py",
+        "research/stronger_arithmetic/circuits.py"
+      ],
+      "possible_dynamic_import_or_execution_calls": [],
+      "runtime_import_trace_available": false,
+      "inventory_construction_evidence": {
+        "archived_source": "results/limitation_program_20261001/A01_run016/reconcile_checkpoint_B4.py",
+        "archived_source_sha256": "a08b3ba61eb33657b9347f48f1dba8d8230ae96a1e8c77a86ead437759a4b5d5",
+        "line": 145,
+        "statement": "frozen = dict(protocol[\"frozen_inputs\"])"
+      },
+      "classification_scope": "Explicit snapshots plus literal imports and frozen producer inventory construction; not a runtime non-execution proof"
+    }
+  ],
+  "original_receipt_owned_files_hash_checked": 37,
+  "original_declared_executed_snapshots_hash_checked": 13,
+  "historical_snapshot_integrity": true,
+  "historical_snapshot_integrity_scope": "Nine recovered old inventory byte strings, receipt-owned files and declared execution snapshots/literal project imports only",
+  "global_live_integrity": false,
+  "global_live_integrity_reason": "Nine legitimate frozen live external expectations still differ; reconstruction never replaces or waives them",
+  "legitimate_expected_hashes_waived": false,
+  "old_receipts_or_live_sources_modified": false,
+  "full_program_external_dependency_or_quantum_array_scan_repeated": false,
+  "old_runtime_import_trace_available": false,
+  "actor_attribution": null,
+  "new_financial_or_quantum_executions": 0,
+  "next": "Keep both archived reconstruction and unresolved live external drift in the versioned full-program validator report"
+}

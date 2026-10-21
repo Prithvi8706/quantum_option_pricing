@@ -1,0 +1,704 @@
+{
+    "schema":  "exact-bin-Gaussian-prefix47-omission-author-preflight-v3",
+    "status":  "author-only-independent-auditor-authored-not-imported-evaluated-or-prepared",
+    "local_only":  true,
+    "execution_release":  {
+                              "after_fixed18_queue_only":  true,
+                              "required_cumulative_packet":  "results/limitation_program_20261001/WAVE10_run002",
+                              "prospective_cumulative_finalizer":  "research/limitation_program_20261001/finalize_quantile_loading_wave_v2.py",
+                              "fixed18_selected_label_source":  "results/limitation_program_20261001/WAVE10_run002/progress_snapshot.json:static_author_preflights.dependency_order",
+                              "fixed18_planned_fixture_inventory_not_credit":  252,
+                              "fixed18_selected_labels":  [
+                                                              "C09_stagec_timing_update_run001",
+                                                              "A02_quantile_tail_audit_run001",
+                                                              "A02_quantile_transform_run002",
+                                                              "A02_quantile_transform_audit_run001",
+                                                              "A02_quantile_law_run001",
+                                                              "A02_quantile_law_audit_run001",
+                                                              "A16_direct_control_run001",
+                                                              "A16_clean_xor_w2_run001",
+                                                              "A04_structure_run002",
+                                                              "A17_quantile_divider_run001",
+                                                              "A02_quantile_scalar_run001",
+                                                              "A02_quantile_scalar_audit_run001",
+                                                              "A16_clean_xor_native_run001",
+                                                              "C09_conservative_coverage_run001",
+                                                              "A02_quantile_financial_target_run001",
+                                                              "A02_quantile_financial_run005",
+                                                              "A02_quantile_financial_audit_run001",
+                                                              "A04_mps_run001"
+                                                          ],
+                              "gate":  "Actual WAVE10run002 must pass its selected18/252 reconciliation, including financial_run005. Preserve global LIVE false36 references/9 paths and no expected-SHA waiver. Original censored W10run001 receives zero credit and all13 owned/14987 frozen obligations remain strict active. All other scientific jobs and timing ownership must be terminal before root-authorized execution."
+                          },
+    "prospective_receipt":  "A03_prefix47_omission_audit_run002",
+    "scope":  "Exactly 47 absent archived q10 RY slots; analytic zero applicability for the ideal exact symmetric Gaussian bins; all other loader gaps retained.",
+    "ideal_exact_law":  {
+                            "q":  10,
+                            "cutoff_exact":  [
+                                                 6,
+                                                 1
+                                             ],
+                            "edge_formula":  "e_j=-6+12*j/1024; j=0..1024",
+                            "density":  "positive even standard Gaussian density exp(-x*x/2)/sqrt(2*pi)",
+                            "normalized_bins":  "exact integral on [e_j,e_(j+1)] divided by exact integral on [-6,6]",
+                            "reflection":  "p_j=p_(1023-j)"
+                        },
+    "source_conventions":  {
+                               "archive_producer":  "research/limitation_audit_20261001/experiment_gaussian.py",
+                               "Ry":  "theta=2*acos(sqrt(left conditional mass)); principal range [0,pi]",
+                               "binary_prefix_order":  "probabilities.reshape(2^level,-1), ordered contiguous bin blocks; target=9-level; controls=target+1..9",
+                               "butterfly":  "in-place ordinary binary Walsh butterfly and division by 2^level",
+                               "gray_order":  "index i -\u003e Walsh mask h=i xor (i\u003e\u003e1)",
+                               "cyclic_CX":  "following=(i+1) mod 2^level; control=target+1+bit_length(h xor gray(following))-1; every slot emits CX irrespective of omitted RY"
+                           },
+    "analytic_candidate_theorem":  {
+                                       "conditional_reflection":  "theta_j+theta_(2^level-1-j)=pi",
+                                       "character_complement":  "chi_h(jbar)=(-1)^popcount(h)*chi_h(j)",
+                                       "Walsh":  "beta_h=2^-level sum_j theta_j*chi_h(j)",
+                                       "zero_condition":  "h!=0 and popcount(h) even",
+                                       "argument":  "Pair complementary j values: angles sum to pi while characters agree. Nontrivial Walsh character sums to zero; beta_h=0 exactly. beta_0=pi/2; no conclusion for odd masks.",
+                                       "all47_inventory_masks_meet_condition":  true,
+                                       "not_a_completed_independent_audit":  true,
+                                       "literal_binary64_target_symmetry_verified":  false
+                                   },
+    "archived_readonly_inventory":  {
+                                        "QASM_operation_rows":  1998,
+                                        "potential_RY_slots":  1023,
+                                        "archived_RY_rows":  976,
+                                        "archived_CX_rows":  1022,
+                                        "omitted_RY_slots":  47,
+                                        "root_RY_QASM_line":  4,
+                                        "root_RY_literal":  "pi/2",
+                                        "omission_slots":  [
+                                                               {
+                                                                   "level":  4,
+                                                                   "target_qubit":  5,
+                                                                   "gray_sequence_index":  4,
+                                                                   "Walsh_mask":  6,
+                                                                   "mask_Hamming_weight":  2,
+                                                                   "following_CX_QASM_line":  41,
+                                                                   "following_CX_control":  6,
+                                                                   "following_CX_target":  5
+                                                               },
+                                                               {
+                                                                   "level":  5,
+                                                                   "target_qubit":  4,
+                                                                   "gray_sequence_index":  4,
+                                                                   "Walsh_mask":  6,
+                                                                   "mask_Hamming_weight":  2,
+                                                                   "following_CX_QASM_line":  72,
+                                                                   "following_CX_control":  5,
+                                                                   "following_CX_target":  4
+                                                               },
+                                                               {
+                                                                   "level":  5,
+                                                                   "target_qubit":  4,
+                                                                   "gray_sequence_index":  8,
+                                                                   "Walsh_mask":  12,
+                                                                   "mask_Hamming_weight":  2,
+                                                                   "following_CX_QASM_line":  79,
+                                                                   "following_CX_control":  5,
+                                                                   "following_CX_target":  4
+                                                               },
+                                                               {
+                                                                   "level":  5,
+                                                                   "target_qubit":  4,
+                                                                   "gray_sequence_index":  12,
+                                                                   "Walsh_mask":  10,
+                                                                   "mask_Hamming_weight":  2,
+                                                                   "following_CX_QASM_line":  86,
+                                                                   "following_CX_control":  5,
+                                                                   "following_CX_target":  4
+                                                               },
+                                                               {
+                                                                   "level":  5,
+                                                                   "target_qubit":  4,
+                                                                   "gray_sequence_index":  16,
+                                                                   "Walsh_mask":  24,
+                                                                   "mask_Hamming_weight":  2,
+                                                                   "following_CX_QASM_line":  93,
+                                                                   "following_CX_control":  5,
+                                                                   "following_CX_target":  4
+                                                               },
+                                                               {
+                                                                   "level":  5,
+                                                                   "target_qubit":  4,
+                                                                   "gray_sequence_index":  20,
+                                                                   "Walsh_mask":  30,
+                                                                   "mask_Hamming_weight":  4,
+                                                                   "following_CX_QASM_line":  100,
+                                                                   "following_CX_control":  5,
+                                                                   "following_CX_target":  4
+                                                               },
+                                                               {
+                                                                   "level":  5,
+                                                                   "target_qubit":  4,
+                                                                   "gray_sequence_index":  24,
+                                                                   "Walsh_mask":  20,
+                                                                   "mask_Hamming_weight":  2,
+                                                                   "following_CX_QASM_line":  107,
+                                                                   "following_CX_control":  5,
+                                                                   "following_CX_target":  4
+                                                               },
+                                                               {
+                                                                   "level":  5,
+                                                                   "target_qubit":  4,
+                                                                   "gray_sequence_index":  28,
+                                                                   "Walsh_mask":  18,
+                                                                   "mask_Hamming_weight":  2,
+                                                                   "following_CX_QASM_line":  114,
+                                                                   "following_CX_control":  5,
+                                                                   "following_CX_target":  4
+                                                               },
+                                                               {
+                                                                   "level":  6,
+                                                                   "target_qubit":  3,
+                                                                   "gray_sequence_index":  4,
+                                                                   "Walsh_mask":  6,
+                                                                   "mask_Hamming_weight":  2,
+                                                                   "following_CX_QASM_line":  129,
+                                                                   "following_CX_control":  4,
+                                                                   "following_CX_target":  3
+                                                               },
+                                                               {
+                                                                   "level":  6,
+                                                                   "target_qubit":  3,
+                                                                   "gray_sequence_index":  26,
+                                                                   "Walsh_mask":  23,
+                                                                   "mask_Hamming_weight":  4,
+                                                                   "following_CX_QASM_line":  172,
+                                                                   "following_CX_control":  4,
+                                                                   "following_CX_target":  3
+                                                               },
+                                                               {
+                                                                   "level":  6,
+                                                                   "target_qubit":  3,
+                                                                   "gray_sequence_index":  34,
+                                                                   "Walsh_mask":  51,
+                                                                   "mask_Hamming_weight":  4,
+                                                                   "following_CX_QASM_line":  187,
+                                                                   "following_CX_control":  4,
+                                                                   "following_CX_target":  3
+                                                               },
+                                                               {
+                                                                   "level":  6,
+                                                                   "target_qubit":  3,
+                                                                   "gray_sequence_index":  36,
+                                                                   "Walsh_mask":  54,
+                                                                   "mask_Hamming_weight":  4,
+                                                                   "following_CX_QASM_line":  190,
+                                                                   "following_CX_control":  4,
+                                                                   "following_CX_target":  3
+                                                               },
+                                                               {
+                                                                   "level":  6,
+                                                                   "target_qubit":  3,
+                                                                   "gray_sequence_index":  38,
+                                                                   "Walsh_mask":  53,
+                                                                   "mask_Hamming_weight":  4,
+                                                                   "following_CX_QASM_line":  193,
+                                                                   "following_CX_control":  4,
+                                                                   "following_CX_target":  3
+                                                               },
+                                                               {
+                                                                   "level":  6,
+                                                                   "target_qubit":  3,
+                                                                   "gray_sequence_index":  46,
+                                                                   "Walsh_mask":  57,
+                                                                   "mask_Hamming_weight":  4,
+                                                                   "following_CX_QASM_line":  208,
+                                                                   "following_CX_control":  4,
+                                                                   "following_CX_target":  3
+                                                               },
+                                                               {
+                                                                   "level":  6,
+                                                                   "target_qubit":  3,
+                                                                   "gray_sequence_index":  52,
+                                                                   "Walsh_mask":  46,
+                                                                   "mask_Hamming_weight":  4,
+                                                                   "following_CX_QASM_line":  219,
+                                                                   "following_CX_control":  4,
+                                                                   "following_CX_target":  3
+                                                               },
+                                                               {
+                                                                   "level":  7,
+                                                                   "target_qubit":  2,
+                                                                   "gray_sequence_index":  4,
+                                                                   "Walsh_mask":  6,
+                                                                   "mask_Hamming_weight":  2,
+                                                                   "following_CX_QASM_line":  250,
+                                                                   "following_CX_control":  3,
+                                                                   "following_CX_target":  2
+                                                               },
+                                                               {
+                                                                   "level":  7,
+                                                                   "target_qubit":  2,
+                                                                   "gray_sequence_index":  18,
+                                                                   "Walsh_mask":  27,
+                                                                   "mask_Hamming_weight":  4,
+                                                                   "following_CX_QASM_line":  277,
+                                                                   "following_CX_control":  3,
+                                                                   "following_CX_target":  2
+                                                               },
+                                                               {
+                                                                   "level":  7,
+                                                                   "target_qubit":  2,
+                                                                   "gray_sequence_index":  20,
+                                                                   "Walsh_mask":  30,
+                                                                   "mask_Hamming_weight":  4,
+                                                                   "following_CX_QASM_line":  280,
+                                                                   "following_CX_control":  3,
+                                                                   "following_CX_target":  2
+                                                               },
+                                                               {
+                                                                   "level":  7,
+                                                                   "target_qubit":  2,
+                                                                   "gray_sequence_index":  36,
+                                                                   "Walsh_mask":  54,
+                                                                   "mask_Hamming_weight":  4,
+                                                                   "following_CX_QASM_line":  311,
+                                                                   "following_CX_control":  3,
+                                                                   "following_CX_target":  2
+                                                               },
+                                                               {
+                                                                   "level":  7,
+                                                                   "target_qubit":  2,
+                                                                   "gray_sequence_index":  48,
+                                                                   "Walsh_mask":  40,
+                                                                   "mask_Hamming_weight":  2,
+                                                                   "following_CX_QASM_line":  334,
+                                                                   "following_CX_control":  3,
+                                                                   "following_CX_target":  2
+                                                               },
+                                                               {
+                                                                   "level":  7,
+                                                                   "target_qubit":  2,
+                                                                   "gray_sequence_index":  56,
+                                                                   "Walsh_mask":  36,
+                                                                   "mask_Hamming_weight":  2,
+                                                                   "following_CX_QASM_line":  349,
+                                                                   "following_CX_control":  3,
+                                                                   "following_CX_target":  2
+                                                               },
+                                                               {
+                                                                   "level":  7,
+                                                                   "target_qubit":  2,
+                                                                   "gray_sequence_index":  72,
+                                                                   "Walsh_mask":  108,
+                                                                   "mask_Hamming_weight":  4,
+                                                                   "following_CX_QASM_line":  380,
+                                                                   "following_CX_control":  3,
+                                                                   "following_CX_target":  2
+                                                               },
+                                                               {
+                                                                   "level":  7,
+                                                                   "target_qubit":  2,
+                                                                   "gray_sequence_index":  80,
+                                                                   "Walsh_mask":  120,
+                                                                   "mask_Hamming_weight":  4,
+                                                                   "following_CX_QASM_line":  395,
+                                                                   "following_CX_control":  3,
+                                                                   "following_CX_target":  2
+                                                               },
+                                                               {
+                                                                   "level":  7,
+                                                                   "target_qubit":  2,
+                                                                   "gray_sequence_index":  82,
+                                                                   "Walsh_mask":  123,
+                                                                   "mask_Hamming_weight":  6,
+                                                                   "following_CX_QASM_line":  398,
+                                                                   "following_CX_control":  3,
+                                                                   "following_CX_target":  2
+                                                               },
+                                                               {
+                                                                   "level":  7,
+                                                                   "target_qubit":  2,
+                                                                   "gray_sequence_index":  120,
+                                                                   "Walsh_mask":  68,
+                                                                   "mask_Hamming_weight":  2,
+                                                                   "following_CX_QASM_line":  473,
+                                                                   "following_CX_control":  3,
+                                                                   "following_CX_target":  2
+                                                               },
+                                                               {
+                                                                   "level":  8,
+                                                                   "target_qubit":  1,
+                                                                   "gray_sequence_index":  4,
+                                                                   "Walsh_mask":  6,
+                                                                   "mask_Hamming_weight":  2,
+                                                                   "following_CX_QASM_line":  496,
+                                                                   "following_CX_control":  2,
+                                                                   "following_CX_target":  1
+                                                               },
+                                                               {
+                                                                   "level":  8,
+                                                                   "target_qubit":  1,
+                                                                   "gray_sequence_index":  10,
+                                                                   "Walsh_mask":  15,
+                                                                   "mask_Hamming_weight":  4,
+                                                                   "following_CX_QASM_line":  507,
+                                                                   "following_CX_control":  2,
+                                                                   "following_CX_target":  1
+                                                               },
+                                                               {
+                                                                   "level":  8,
+                                                                   "target_qubit":  1,
+                                                                   "gray_sequence_index":  34,
+                                                                   "Walsh_mask":  51,
+                                                                   "mask_Hamming_weight":  4,
+                                                                   "following_CX_QASM_line":  554,
+                                                                   "following_CX_control":  2,
+                                                                   "following_CX_target":  1
+                                                               },
+                                                               {
+                                                                   "level":  8,
+                                                                   "target_qubit":  1,
+                                                                   "gray_sequence_index":  56,
+                                                                   "Walsh_mask":  36,
+                                                                   "mask_Hamming_weight":  2,
+                                                                   "following_CX_QASM_line":  597,
+                                                                   "following_CX_control":  2,
+                                                                   "following_CX_target":  1
+                                                               },
+                                                               {
+                                                                   "level":  8,
+                                                                   "target_qubit":  1,
+                                                                   "gray_sequence_index":  74,
+                                                                   "Walsh_mask":  111,
+                                                                   "mask_Hamming_weight":  6,
+                                                                   "following_CX_QASM_line":  632,
+                                                                   "following_CX_control":  2,
+                                                                   "following_CX_target":  1
+                                                               },
+                                                               {
+                                                                   "level":  8,
+                                                                   "target_qubit":  1,
+                                                                   "gray_sequence_index":  78,
+                                                                   "Walsh_mask":  105,
+                                                                   "mask_Hamming_weight":  4,
+                                                                   "following_CX_QASM_line":  639,
+                                                                   "following_CX_control":  2,
+                                                                   "following_CX_target":  1
+                                                               },
+                                                               {
+                                                                   "level":  8,
+                                                                   "target_qubit":  1,
+                                                                   "gray_sequence_index":  116,
+                                                                   "Walsh_mask":  78,
+                                                                   "mask_Hamming_weight":  4,
+                                                                   "following_CX_QASM_line":  714,
+                                                                   "following_CX_control":  2,
+                                                                   "following_CX_target":  1
+                                                               },
+                                                               {
+                                                                   "level":  8,
+                                                                   "target_qubit":  1,
+                                                                   "gray_sequence_index":  128,
+                                                                   "Walsh_mask":  192,
+                                                                   "mask_Hamming_weight":  2,
+                                                                   "following_CX_QASM_line":  737,
+                                                                   "following_CX_control":  2,
+                                                                   "following_CX_target":  1
+                                                               },
+                                                               {
+                                                                   "level":  8,
+                                                                   "target_qubit":  1,
+                                                                   "gray_sequence_index":  130,
+                                                                   "Walsh_mask":  195,
+                                                                   "mask_Hamming_weight":  4,
+                                                                   "following_CX_QASM_line":  740,
+                                                                   "following_CX_control":  2,
+                                                                   "following_CX_target":  1
+                                                               },
+                                                               {
+                                                                   "level":  8,
+                                                                   "target_qubit":  1,
+                                                                   "gray_sequence_index":  146,
+                                                                   "Walsh_mask":  219,
+                                                                   "mask_Hamming_weight":  6,
+                                                                   "following_CX_QASM_line":  771,
+                                                                   "following_CX_control":  2,
+                                                                   "following_CX_target":  1
+                                                               },
+                                                               {
+                                                                   "level":  8,
+                                                                   "target_qubit":  1,
+                                                                   "gray_sequence_index":  170,
+                                                                   "Walsh_mask":  255,
+                                                                   "mask_Hamming_weight":  8,
+                                                                   "following_CX_QASM_line":  818,
+                                                                   "following_CX_control":  2,
+                                                                   "following_CX_target":  1
+                                                               },
+                                                               {
+                                                                   "level":  8,
+                                                                   "target_qubit":  1,
+                                                                   "gray_sequence_index":  174,
+                                                                   "Walsh_mask":  249,
+                                                                   "mask_Hamming_weight":  6,
+                                                                   "following_CX_QASM_line":  825,
+                                                                   "following_CX_control":  2,
+                                                                   "following_CX_target":  1
+                                                               },
+                                                               {
+                                                                   "level":  8,
+                                                                   "target_qubit":  1,
+                                                                   "gray_sequence_index":  184,
+                                                                   "Walsh_mask":  228,
+                                                                   "mask_Hamming_weight":  4,
+                                                                   "following_CX_QASM_line":  844,
+                                                                   "following_CX_control":  2,
+                                                                   "following_CX_target":  1
+                                                               },
+                                                               {
+                                                                   "level":  8,
+                                                                   "target_qubit":  1,
+                                                                   "gray_sequence_index":  192,
+                                                                   "Walsh_mask":  160,
+                                                                   "mask_Hamming_weight":  2,
+                                                                   "following_CX_QASM_line":  859,
+                                                                   "following_CX_control":  2,
+                                                                   "following_CX_target":  1
+                                                               },
+                                                               {
+                                                                   "level":  8,
+                                                                   "target_qubit":  1,
+                                                                   "gray_sequence_index":  200,
+                                                                   "Walsh_mask":  172,
+                                                                   "mask_Hamming_weight":  4,
+                                                                   "following_CX_QASM_line":  874,
+                                                                   "following_CX_control":  2,
+                                                                   "following_CX_target":  1
+                                                               },
+                                                               {
+                                                                   "level":  8,
+                                                                   "target_qubit":  1,
+                                                                   "gray_sequence_index":  216,
+                                                                   "Walsh_mask":  180,
+                                                                   "mask_Hamming_weight":  4,
+                                                                   "following_CX_QASM_line":  905,
+                                                                   "following_CX_control":  2,
+                                                                   "following_CX_target":  1
+                                                               },
+                                                               {
+                                                                   "level":  9,
+                                                                   "target_qubit":  0,
+                                                                   "gray_sequence_index":  4,
+                                                                   "Walsh_mask":  6,
+                                                                   "mask_Hamming_weight":  2,
+                                                                   "following_CX_QASM_line":  992,
+                                                                   "following_CX_control":  1,
+                                                                   "following_CX_target":  0
+                                                               },
+                                                               {
+                                                                   "level":  9,
+                                                                   "target_qubit":  0,
+                                                                   "gray_sequence_index":  116,
+                                                                   "Walsh_mask":  78,
+                                                                   "mask_Hamming_weight":  4,
+                                                                   "following_CX_QASM_line":  1215,
+                                                                   "following_CX_control":  1,
+                                                                   "following_CX_target":  0
+                                                               },
+                                                               {
+                                                                   "level":  9,
+                                                                   "target_qubit":  0,
+                                                                   "gray_sequence_index":  268,
+                                                                   "Walsh_mask":  394,
+                                                                   "mask_Hamming_weight":  4,
+                                                                   "following_CX_QASM_line":  1518,
+                                                                   "following_CX_control":  1,
+                                                                   "following_CX_target":  0
+                                                               },
+                                                               {
+                                                                   "level":  9,
+                                                                   "target_qubit":  0,
+                                                                   "gray_sequence_index":  352,
+                                                                   "Walsh_mask":  464,
+                                                                   "mask_Hamming_weight":  4,
+                                                                   "following_CX_QASM_line":  1685,
+                                                                   "following_CX_control":  1,
+                                                                   "following_CX_target":  0
+                                                               },
+                                                               {
+                                                                   "level":  9,
+                                                                   "target_qubit":  0,
+                                                                   "gray_sequence_index":  364,
+                                                                   "Walsh_mask":  474,
+                                                                   "mask_Hamming_weight":  6,
+                                                                   "following_CX_QASM_line":  1708,
+                                                                   "following_CX_control":  1,
+                                                                   "following_CX_target":  0
+                                                               },
+                                                               {
+                                                                   "level":  9,
+                                                                   "target_qubit":  0,
+                                                                   "gray_sequence_index":  380,
+                                                                   "Walsh_mask":  450,
+                                                                   "mask_Hamming_weight":  4,
+                                                                   "following_CX_QASM_line":  1739,
+                                                                   "following_CX_control":  1,
+                                                                   "following_CX_target":  0
+                                                               }
+                                                           ],
+                                        "only_absence_of_RY_before_retained_slot_CX_counts_as_omission":  true
+                                    },
+    "separate_serialized_zero_defect":  {
+                                            "archived_emitted_literal_ry0_rows":  740,
+                                            "even_weight_mask_rows":  455,
+                                            "odd_weight_mask_rows":  285,
+                                            "literal_approximation_error_certified":  false,
+                                            "claim":  "These emitted approximate QASM rows are distinct from the 47 absences. Exact-bin symmetry does not certify every original binary64 target or 740 serialized literal values.",
+                                            "no_full_loader_accuracy_or_zero740_inference":  true
+                                        },
+    "future_independent_audit":  {
+                                     "process_CPU_seconds":  180,
+                                     "work_admission_CPU_seconds":  150,
+                                     "wall_seconds":  600,
+                                     "numerical_threads":  1,
+                                     "JIT_disk_cache":  false,
+                                     "new_pytest_credit":  0,
+                                     "new_gate_emission_replays_or_synthesis":  0,
+                                     "CDF_conditional_angle_Walsh_table_or_statevector_evaluation":  0,
+                                     "all1020_remaining_conditional_nodes_evaluated":  false,
+                                     "required_steps":  [
+                                                            "verify immutable archived input hashes and copied auditor identity/interpreter origins",
+                                                            "parse all archived operation rows and structurally verify complete 1022 cyclic Gray CNOT slots",
+                                                            "derive all missing rotations from source branch convention and QASM slot layout; bind exactly the 47 enumerated rows",
+                                                            "independently verify exact-bin/density/normalization reflection, Ry angle complement and butterfly-character proof",
+                                                            "match every omitted nonzero even mask to analytic zero theorem, preserving every row",
+                                                            "keep literal floating target symmetry and serialized zero rows explicitly unproved",
+                                                            "terminal rejection/censor on mismatch, missing provenance, phase/law ambiguity or timeout; no regeneration/retry/precision changes"
+                                                        ],
+                                     "producer_numerical_or_evaluator_imports":  0,
+                                     "terminal_cleanup_and_hashing_before_budget_end":  true,
+                                     "separate_scientific_CPU_admission_wall_seconds":  [
+                                                                                            60,
+                                                                                            45,
+                                                                                            120
+                                                                                        ],
+                                     "disclosed_total_bookkeeping_budget_expansion":  true,
+                                     "original_v2_overall_CPU_admission_wall_seconds":  [
+                                                                                            60,
+                                                                                            45,
+                                                                                            120
+                                                                                        ],
+                                     "all_reference_hash_output_and_retention_work_charged_to_total_clock":  true,
+                                     "original_scientific_clock_starts_after_full_initial_verification":  true,
+                                     "scientific_output_serialization_charged_to_scientific_clock":  true
+                                 },
+    "author_readonly_input_bindings":  [
+                                           {
+                                               "path":  "results/limitation_audit_20261001/gaussian_v3/gaussian_10.qasm",
+                                               "author_readonly_sha256":  "ab496fc17c7f81a338e86fb193f6a252c88b4ee66e69059788f44108bc23abdf"
+                                           },
+                                           {
+                                               "path":  "results/limitation_audit_20261001/gaussian_v3/gaussian_10.json",
+                                               "author_readonly_sha256":  "bf6e691cae170854f202e19989b33e99dd62761985cdaf00dc631a25705daf0a"
+                                           },
+                                           {
+                                               "path":  "results/limitation_audit_20261001/gaussian_v3/summary.json",
+                                               "author_readonly_sha256":  "129784dbfaba06742ec9c73eb69c7fdc4ea1af35b09182f3872076c3acf6b0e7"
+                                           },
+                                           {
+                                               "path":  "research/limitation_audit_20261001/experiment_gaussian.py",
+                                               "author_readonly_sha256":  "70bc18f4f68f88d2959f6866f140214b7da995ae2e37f023a09584cb6b22600f"
+                                           },
+                                           {
+                                               "path":  "results/limitation_program_20261001/A03_prefix_run001/archive_convention_binding.json",
+                                               "author_readonly_sha256":  "f666166e7b231eca0f660d4dbd4dfd40f9ef8333335ea0cbffae00ed9a5ea900"
+                                           },
+                                           {
+                                               "path":  "results/limitation_program_20261001/A03_prefix_run001/full_tree_and_budget.json",
+                                               "author_readonly_sha256":  "06b02116f2d8ea929b5a48f1e33ae4ac9ae09873afce40cccbfad2ba72fecaa6"
+                                           },
+                                           {
+                                               "path":  "results/limitation_program_20261001/A03_prefix_run001/manifest.json",
+                                               "author_readonly_sha256":  "069457ac379a830b66e7092ebcb4e3ede92da9319fc21f3326a184c54ef86e35"
+                                           },
+                                           {
+                                               "path":  "results/limitation_program_20261001/A03_prefix_audit_run001/manifest.json",
+                                               "author_readonly_sha256":  "7a044ec8870fffbb97cc8e26bd2818a7646ea7273ea2ca6038b2faac1fea3544"
+                                           }
+                                       ],
+    "future_freeze_rules":  [
+                                "review fresh independent auditor before preparing protocol",
+                                "freeze author plans, original archived files, existing provenance receipts, fresh auditor original/executed copy, actual invoked/base interpreter and exact dependency origins before scan",
+                                "canonical no-override hashes verified against immutable prior expectations before/after; exclusive output creation, terminal failures and all outcomes retained"
+                            ],
+    "unresolved_prerequisites":  [
+                                     "Fresh v3 auditor code/preflight root and independent peer review; no protocol prepared or proof/slot scan executed; bookkeeping budget expansion explicitly disclosed",
+                                     "Root explicit exclusive execution clearance after all scientific and timing jobs terminal",
+                                     "Historical binary64 target symmetry, all740 emitted literal zero row accuracy and full loader accuracy remain unresolved"
+                                 ],
+    "remaining_gaps":  {
+                           "conditional_nodes_without_angle_certificates":  1020,
+                           "literal_float_QASM_approximation":  true,
+                           "global_phase_correct_full_synthesis":  true,
+                           "full_preparation_error_bound":  null,
+                           "financial_law_adoption":  false,
+                           "A03_remains_partial_even_if47_audit_passes":  true,
+                           "all110_program_obligations_retained":  true
+                       },
+    "author_stage_work":  {
+                              "archive_QASM_and_metadata_parsed_readonly":  true,
+                              "CDF_Walsh_synthesis_or_numerical_law_computation":  0,
+                              "new_protocol_preparation":  0,
+                              "tests_evaluation_or_execution_receipts":  0,
+                              "executed_helpers_or_receipts_modified":  0,
+                              "independent_auditor_authored_without_import_or_evaluation":  true
+                          },
+    "authored_auditor":  "research/limitation_program_20261001/audit_gaussian_prefix47_omissions_v3.py",
+    "failed_WAVE10_run001":  {
+                                 "manifest_sha256":  "1c47fee27c640587c2a52d988112c4411a9928eb7fc4df301ddae3a2ae0d97d5",
+                                 "owned_map_entries":  13,
+                                 "frozen_map_entries":  14987,
+                                 "fixture_credit":  0,
+                                 "all_maps_strict_active_no_archive_waiver":  true
+                             },
+    "symbolic_checker_contract":  {
+                                      "original_functions_AST_matched_without_import":  true,
+                                      "rational_edge_and_Gaussian_exponent_polynomial_identities":  true,
+                                      "ten_generic_prefix_interval_reflection_identities":  true,
+                                      "conditional_ratio_complement_and_principal_trigonometric_obligations_explicit":  true,
+                                      "four_bit_butterfly_induction_kernel_not_Walsh_table":  true,
+                                      "each_actual_absence_nonzero_even_parity_and_toggle_witness":  true,
+                                      "stored_candidate_boolean_not_accepted_as_proof":  true,
+                                      "standard_analysis_premises_explicit_not_numerically_evaluated":  true
+                                  },
+    "interpreter_and_hash_contract":  {
+                                          "launcher":  "C:/Users/prith/quantum_option_pricing/.context/frontier_t0_env/Scripts/python.exe",
+                                          "startup_bytecode_writes_disabled_required":  true,
+                                          "actual_base_interpreter_SHA_separately_scoped_if_external":  true,
+                                          "standard_library_only_no_numerical_dependencies":  true,
+                                          "invocation_local_confined_lexical_resolution_cache":  true,
+                                          "unchanged_stat_actual_SHA_cache_no_expected_hash_override":  true,
+                                          "final_fresh_unique_path_resolution_and_full_SHA_bypass_caches":  true,
+                                          "hard_budget_charged_per_reference_and_hash_chunk":  true,
+                                          "exclusive_partial_failure_or_failed_unsealed_no_retry":  true,
+                                          "final_fresh_every_original_lexical_alias_and_all_observed_actual_paths":  true,
+                                          "conflicting_observed_actual_SHA_rejected":  true
+                                      },
+    "original_admission_failure_manifest_sha256":  "44bb90f7b2be50ab2c6692861f92e387b2af5673e338b224965d22735b3d16ab",
+    "original_root_review_manifest_sha256":  "2f96122496445a19ca6019b510bd87addcb374b8b2d12249ae84bc0a68afc852",
+    "original_author_sha256":  {
+                                   "audit_gaussian_prefix47_omissions_v2.py":  "4054a3807a45f3a3fac7fe8a092b42dca322f5f859dddd54e8bf757f6ef0b2c1",
+                                   "gaussian_prefix47_omission_audit_preflight_v2.json":  "959eeaca8fef00857eb8eb513866d56b9fd24bb8723f38fdc953c52b199d8f4d",
+                                   "GAUSSIAN_PREFIX47_OMISSION_AUDIT_PREFLIGHT_V2.md":  "8d10cabb222391516bd1564ccf4ac21690594a819c054770deb3e34961f35b09"
+                               },
+    "failed_prefix47_run001":  {
+                                   "manifest_sha256":  "44bb90f7b2be50ab2c6692861f92e387b2af5673e338b224965d22735b3d16ab",
+                                   "owned_map_entries":  5,
+                                   "frozen_map_entries":  5,
+                                   "original_intended_receipt_absent":  true,
+                                   "protocol_AST_slot_symbolic_or_numerical_work":  false,
+                                   "fixture_credit":  0,
+                                   "all_maps_strict_active_no_archive_waiver":  true,
+                                   "original_CPU_admission_wall_seconds":  [
+                                                                               60,
+                                                                               45,
+                                                                               120
+                                                                           ],
+                                   "exact_final_CPU_seconds":  null
+                               }
+}
