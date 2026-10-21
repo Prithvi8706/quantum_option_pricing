@@ -1,0 +1,333 @@
+{
+ "card": "N1 estimator card (plan110 branch N, R1)",
+ "date": "2026-10-12",
+ "items": [
+  "E01",
+  "C11",
+  "E03",
+  "E04",
+  "E08",
+  "E25",
+  "E20"
+ ],
+ "receipt": {
+  "script": "research/plan110_n1/estimator/recompute_estimator.py",
+  "script_sha256": "1633e8a6df17d3417ec44be0c56e74215eb07e3d0635edf3e4076162f9cbcfde",
+  "output": "results/plan110_n1/estimator/estimator_recompute.json",
+  "output_sha256": "2020d1d0bce2a70441e9b68a099399537c4a5fd98f0a0d5e076254bb5c01afe3",
+  "inputs_sha256": {
+   "sigma_dev": "9d3c4e361ec0a9f4d24fbebea7e1d6adb40e39326cf67d5fd44cca6a4fa27677",
+   "c1_summary": "5d91aecc5ae26140be4e8c6a86ce304ac97870470f04bedce11a3ad55a2b9123",
+   "ws_k_bracket": "4780a16c21bf23da796f7633f858bb514fd60be6c592e142e08666117143f2ed",
+   "ws_floor": "469b2a19ccf5e7c678c44a155f64dfc4c3ea3f0032d368032d3c3f66a49e8229",
+   "decision_run002": "ae43981a0d12090e63661f3a2041461f694a4a2a24e4d6d4086bb6750c89717b"
+  },
+  "interpreter": ".context/frontier_t0_env/Scripts/python.exe -I -S -B (3.12.4)",
+  "independent_path": [
+   "Euler pi enclosure",
+   "exact DP median tail",
+   "closed-form least M + exact check",
+   "prolate power iteration for c",
+   "floor design table + shared T supply for lanes"
+  ]
+ },
+ "units": {
+  "k": "controlled Grover calls / (sigma_q/e)",
+  "sigma_q": {
+   "B4x12": 5.663566959060668,
+   "B8x52": 5.183395545396595,
+   "label": "measured"
+  },
+  "split": "e = 0.45 eps",
+  "estimator_failure": 0.003
+ },
+ "access_model": {
+  "statement": "Black-box estimator: access to the payoff only via A (A|0> = sqrt(1-a)|psi0>|0> + sqrt(a)|psi1>|1>, mean = S a), preparing A|0> and controlled Q = -A S0 A^dag S_chi, Q^-1 or direction-select; output within e of the mean with probability >= 1-delta for every payoff law on [0,S]; cost = controlled Grover calls.",
+  "counting_lower_bound": {
+   "hard_family": "A_theta = R_y(2 theta) on one payoff qubit (theta-independent eigenvectors: Mande-de Wolf Claim 5.3 premise holds)",
+   "inequality": "(1-delta) K <= 2N+2, K = ceil(S/(2e))",
+   "k_LB_support_Q_access_delta0.01": {
+    "B4x12": [
+     1.691,
+     1.696
+    ],
+    "B8x52": [
+     1.848,
+     1.854
+    ]
+   },
+   "k_LB_A_access": {
+    "B4x12": 0.85,
+    "B8x52": 0.93
+   },
+   "k_LB_mean_bounded_class_assumed": [
+    0.15,
+    0.16
+   ],
+   "min_any_cell": 0.0742,
+   "label": "modelled (rigorous analytic)",
+   "direction": "quantum-favourable",
+   "does_not_bind": [
+    "white-box estimators using source structure (F04/F05/F20)",
+    "estimators promised a narrower class"
+   ]
+  }
+ },
+ "bracket": {
+  "certified_today": {
+   "k": [
+    585.8,
+    1066.7
+   ],
+   "label": "modelled (exact)",
+   "direction": "neutral",
+   "schedule": "E07: BHMT Thm12 k_B=1, 15 medians, span 64, dyadic M, M-1 calls/shot"
+  },
+  "best_explicit": {
+   "k": [
+    186.6,
+    198.2
+   ],
+   "label": "modelled (exact; mean assumed)",
+   "direction": "quantum-favourable",
+   "conditional_credits": [
+    {
+     "credit": "U2 support-tight wrapper (211,53), span 38.82",
+     "needs": [
+      "E03 audited support sup g <= 38.818 (exists)",
+      "wrapper circuit emitted and verified",
+      "readout bound for new span (2^-39 placeholder)"
+     ],
+     "status": "design only"
+    },
+    {
+     "credit": "U1 mean certificate m <= price + L1",
+     "needs": [
+      "certified upper bound on E[payoff] (price is uncertified RQMC orientation: assumed)",
+      "B8x52 L1 bridge (B4x12 #43 L1 borrowed)"
+     ],
+     "status": "open"
+    },
+    {
+     "credit": "non-dyadic M",
+     "needs": [
+      "exact or error-budgeted QFT over Z_M with certified rotations (BHMT Thm 12 covers any M: verified)"
+     ],
+     "status": "not built"
+    }
+   ],
+   "partial": {
+    "span_plus_nondyadic_no_mean": [
+     323.0,
+     353.3
+    ],
+    "span_plus_mean_dyadic": [
+     195.3,
+     341.4
+    ]
+   }
+  },
+  "N1_direction_select_credit": {
+   "factor": "(M-1)/(M/2) ~ 2",
+   "certified_schedule_k": [
+    292.9,
+    533.4
+   ],
+   "best_with_all_credits_k": [
+    97.6,
+    170.7
+   ],
+   "argument": "Q^j -> Q^(j-c) is a per-branch global phase; BHMT output distribution unchanged; M/2 calls per shot",
+   "needs": "call-cost certificate: direction-select iterate <= one controlled Grover iterate (assumed)",
+   "label": "modelled",
+   "direction": "quantum-favourable"
+  },
+  "window_QSP": {
+   "k_delta0.003_no_credits": [
+    23.5,
+    25.7
+   ],
+   "k_delta0.003_U1U2": [
+    8.25,
+    8.74
+   ],
+   "k_delta0.01_U1U2_DP1_row": [
+    6.93,
+    7.34
+   ],
+   "c_DPSS": {
+    "0.003": 4.168,
+    "0.01": 3.502
+   },
+   "explicit_worst_case_constant": "none usable in any checked primary source (Patel Thm 2 + random offset: explicit worst-case but k 6.8e5-9.3e5)",
+   "label": "modelled",
+   "direction": "quantum-favourable"
+  },
+  "E04": "IQAE/modified-IQAE explicit theorems k 2,997-5,755 (adverse); toy controller residual <=1.6x uncredited",
+  "E08": "k_B=1 with 15 reps optimal at 0.003; 11 reps at 0.01 (x1.36)",
+  "E25": "no worst-case coverage theorem with explicit constant: no credit"
+ },
+ "lanes_W1e7": {
+  "rows": [
+   {
+    "case": "B4x12",
+    "supply": "supply_1e12",
+    "single_lane_eff_depth": 364,
+    "best_15_shot_latency_layers": 4234.9367999999995,
+    "best_config": [
+     "W1e6 depth-optimal",
+     3
+    ],
+    "lane_credit": 1.2892754385378316,
+    "supply_bound_credit_cap": 1.2892754385378313,
+    "label": "modelled (WS-floor designs; widths modelled)",
+    "direction": "quantum-favourable"
+   },
+   {
+    "case": "B4x12",
+    "supply": "unlimited",
+    "single_lane_eff_depth": 326,
+    "best_15_shot_latency_layers": 1456,
+    "best_config": [
+     "W1e7 supply-aware",
+     4
+    ],
+    "lane_credit": 3.3585164835164836,
+    "supply_bound_credit_cap": null,
+    "label": "modelled (WS-floor designs; widths modelled)",
+    "direction": "quantum-favourable"
+   },
+   {
+    "case": "B8x52",
+    "supply": "supply_1e12",
+    "single_lane_eff_depth": 2296.03168,
+    "best_15_shot_latency_layers": 34440.4752,
+    "best_config": [
+     "1 lane",
+     1
+    ],
+    "lane_credit": 1.0,
+    "supply_bound_credit_cap": 1.0,
+    "label": "modelled (WS-floor designs; widths modelled)",
+    "direction": "quantum-favourable"
+   },
+   {
+    "case": "B8x52",
+    "supply": "unlimited",
+    "single_lane_eff_depth": 740,
+    "best_15_shot_latency_layers": 11100,
+    "best_config": [
+     "1 lane",
+     1
+    ],
+    "lane_credit": 1.0,
+    "supply_bound_credit_cap": null,
+    "label": "modelled (WS-floor designs; widths modelled)",
+    "direction": "quantum-favourable"
+   }
+  ],
+  "floor_design_width": {
+   "B4x12": 5279689,
+   "B8x52": 10000000
+  },
+  "reading": "decision-critical B8x52 gets 1.00x under any modelled supply; B4x12 1.29x at 1e12 T/s (supply-capped), 3.36x unlimited; window chains 1x"
+ },
+ "M_primary": [
+  {
+   "case": "B4x12",
+   "eps": 0.01,
+   "k_10x": 0.2715501357269937,
+   "M_certified_today": 2876.31875406357,
+   "M_certified_today_dirsel": 1438.1813219372102,
+   "M_W0_explicit_best": 687.2266582914074,
+   "M_N1_explicit_best_dirsel": 359.54533048430255,
+   "M_window_fail0.003": 30.390261577704653,
+   "M_window_fail0.01": 25.53541360785134,
+   "lane_credit_supply_1e12": 1.2892754385378316,
+   "label": "modelled (k_10x from WS-floor, not recomputed here)",
+   "direction": "neutral"
+  },
+  {
+   "case": "B4x12",
+   "eps": 0.001,
+   "k_10x": 0.5867480619265077,
+   "M_certified_today": 1064.954759620798,
+   "M_certified_today_dirsel": 532.4783954323386,
+   "M_W0_explicit_best": 317.95263563316115,
+   "M_N1_explicit_best_dirsel": 266.2391977161693,
+   "M_window_fail0.003": 14.060379127879381,
+   "M_window_fail0.01": 11.814231858306952,
+   "lane_credit_supply_1e12": 1.2892754385378316,
+   "label": "modelled (k_10x from WS-floor, not recomputed here)",
+   "direction": "neutral"
+  },
+  {
+   "case": "B8x52",
+   "eps": 0.01,
+   "k_10x": 0.2092914683670796,
+   "M_certified_today": 4077.6617792552397,
+   "M_certified_today_dirsel": 2038.8620001928082,
+   "M_W0_explicit_best": 944.4545379921458,
+   "M_N1_explicit_best_dirsel": 509.71550004820205,
+   "M_window_fail0.003": 41.76525647639358,
+   "M_window_fail0.01": 35.093251693006756,
+   "lane_credit_supply_1e12": 1.0,
+   "label": "modelled (k_10x from WS-floor, not recomputed here)",
+   "direction": "neutral"
+  },
+  {
+   "case": "B8x52",
+   "eps": 0.001,
+   "k_10x": 0.8518589955265252,
+   "M_certified_today": 801.4765075667698,
+   "M_certified_today_dirsel": 400.7390181324032,
+   "M_W0_explicit_best": 231.96311139065833,
+   "M_N1_explicit_best_dirsel": 200.3695090662016,
+   "M_window_fail0.003": 10.257806231575845,
+   "M_window_fail0.01": 8.619120442999094,
+   "lane_credit_supply_1e12": 1.0,
+   "label": "modelled (k_10x from WS-floor, not recomputed here)",
+   "direction": "neutral"
+  }
+ ],
+ "literature": [
+  {
+   "source": "Mande & de Wolf arXiv:2305.04908v3",
+   "verdict": "verified"
+  },
+  {
+   "source": "Grinko et al. arXiv:1912.05559v3 Thm 1",
+   "verdict": "verified"
+  },
+  {
+   "source": "Fukuzawa et al. arXiv:2208.14612v4 Lemma 3.7",
+   "verdict": "verified"
+  },
+  {
+   "source": "Berry et al. arXiv:2209.13581v3 Lemma 4 / App. D",
+   "verdict": "verified (no finite worst-case constant)"
+  },
+  {
+   "source": "Patel et al. arXiv:2403.18927v3 Thms 2-3",
+   "verdict": "verified (average-case / asymptotic)"
+  },
+  {
+   "source": "BHMT quant-ph/0005055 Thm 12",
+   "verdict": "verified"
+  },
+  {
+   "source": "Rall & Fuller arXiv:2207.08628v3",
+   "verdict": "verified (empirical, a=0.5, 95%)"
+  },
+  {
+   "source": "Nakaji arXiv:2003.02417v3 Thm 1",
+   "verdict": "verified (constant and form)"
+  },
+  {
+   "source": "Kothari-O'Donnell, Nayak-Wu, Suzuki MLAE",
+   "verdict": "not verified (no number depends on them)"
+  }
+ ],
+ "open_problem": "Explicit non-asymptotic worst-case-over-amplitude bound N <= c(delta)/Delta + c0 controlled Q/Q^-1/direction-select calls for |phi_hat - 2theta| <= Delta w.p. >= 1-delta (delta=0.003), c(0.003) ~ 4.2, valid for N >= N0 <= ~8e2, with certified window concentration, finite-readout/offset term, state-prep and QFT errors inside delta; or a QSP/ChebAE schedule with proven worst-case 99% coverage and explicit constants. Target k ~ 8.7 (with U1/U2) / ~26 (without).",
+ "rows": "results/plan110_n1/estimator/rows.jsonl"
+}

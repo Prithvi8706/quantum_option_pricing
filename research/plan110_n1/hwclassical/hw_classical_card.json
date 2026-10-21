@@ -1,0 +1,490 @@
+{
+ "C09": {
+  "M_minima_nonoverhead": {
+   "all_free_and_narrow|certified_today": {
+    "at_distfree": [
+     "B8x52",
+     0.001
+    ],
+    "at_practice": [
+     "B8x52",
+     0.001
+    ],
+    "min_M_distfree": 1.078422423663909,
+    "min_M_practice": 39.79401619694191
+   },
+   "all_free_and_narrow|explicit_best": {
+    "at_distfree": [
+     "B8x52",
+     0.001
+    ],
+    "at_practice": [
+     "B8x52",
+     0.001
+    ],
+    "min_M_distfree": 0.312116722604867,
+    "min_M_practice": 11.517173272859653
+   },
+   "all_free_and_narrow|no_explicit_constant": {
+    "at_distfree": [
+     "B8x52",
+     0.001
+    ],
+    "at_practice": [
+     "B8x52",
+     0.001
+    ],
+    "min_M_distfree": 0.011597411365442761,
+    "min_M_practice": 0.4279469395221483
+   },
+   "box_muller_current_law|certified_today": {
+    "at_distfree": [
+     "B8x52",
+     0.001
+    ],
+    "at_practice": [
+     "B8x52",
+     0.001
+    ],
+    "min_M_distfree": 21.72010569433962,
+    "min_M_practice": 801.4765075667697
+   },
+   "box_muller_current_law|explicit_best": {
+    "at_distfree": [
+     "B8x52",
+     0.001
+    ],
+    "at_practice": [
+     "B8x52",
+     0.001
+    ],
+    "min_M_distfree": 6.286227043496024,
+    "min_M_practice": 231.9631113906583
+   },
+   "box_muller_current_law|no_explicit_constant": {
+    "at_distfree": [
+     "B8x52",
+     0.001
+    ],
+    "at_practice": [
+     "B8x52",
+     0.001
+    ],
+    "min_M_distfree": 0.23357915702674242,
+    "min_M_practice": 8.619120442999092
+   }
+  },
+  "direction": "quantum-favourable if adopted; EB route conservative (betting CS up to ~12% fewer samples; better variance reduction lowers factor further)",
+  "distribution_free": "empirical Bernstein (Maurer-Pontil 2009 Thm 4), two-sided delta=0.01, S=$40 (assumed from contract), iid preintegration (sigma measured), measured per-point cost",
+  "factors": {
+   "B4x12|0.001": {
+    "T_C_practice_s": 2.6880081000053906,
+    "T_df_s": 108.36829063867961,
+    "best_route": "iid_preint_EB",
+    "factor": 40.31546282857641,
+    "factor_S64": 40.94027654766993,
+    "overhead": false
+   },
+   "B4x12|0.01": {
+    "T_C_practice_s": 0.12440245000470895,
+    "T_df_s": 1.3247697980053081,
+    "best_route": "iid_preint_EB",
+    "factor": 10.649065174802926,
+    "factor_S64": 11.862415885153181,
+    "overhead": false
+   },
+   "B4x12|0.03": {
+    "T_C_practice_s": 0.12440245000470895,
+    "T_df_s": 0.2009525967928703,
+    "best_route": "iid_preint_EB",
+    "factor": 1.6153427588063076,
+    "factor_S64": 1.9744500086523633,
+    "overhead": true
+   },
+   "B4x12|0.1": {
+    "T_C_practice_s": 0.06323299999348819,
+    "T_df_s": 0.032855101888256556,
+    "best_route": "iid_preint_EB",
+    "factor": 0.5195879033359165,
+    "factor_S64": 0.7026010866067142,
+    "overhead": true
+   },
+   "B8x52|0.001": {
+    "T_C_practice_s": 22.529285950004123,
+    "T_df_s": 831.3354306506931,
+    "best_route": "iid_preint_EB",
+    "factor": 36.900212128140744,
+    "factor_S64": 37.57318128453186,
+    "overhead": false
+   },
+   "B8x52|0.01": {
+    "T_C_practice_s": 0.5535173499956727,
+    "T_df_s": 10.47644041120578,
+    "best_route": "iid_preint_EB",
+    "factor": 18.927031666284144,
+    "factor_S64": 21.357492184703133,
+    "overhead": false
+   },
+   "B8x52|0.03": {
+    "T_C_practice_s": 0.5535173499956727,
+    "T_df_s": 1.6420423363130774,
+    "best_route": "iid_preint_EB",
+    "factor": 2.966559831098184,
+    "factor_S64": 3.6821020659105734,
+    "overhead": true
+   },
+   "B8x52|0.1": {
+    "T_C_practice_s": 0.4137297999986913,
+    "T_df_s": 0.27873778581922404,
+    "best_route": "iid_preint_EB",
+    "factor": 0.6737193835689519,
+    "factor_S64": 0.9221626489410062,
+    "overhead": true
+   }
+  },
+  "label": "modelled from measured inputs",
+  "per_point_cost_s_16w": {
+   "B4x12|preint": 1.1453357696526723e-06,
+   "B4x12|rqmc": 4.2668247222932276e-07,
+   "B8x52|preint": 1.0370095086097847e-05,
+   "B8x52|rqmc": 4.689842748643869e-06
+  },
+  "practice": "Stage C C2: 16 RQMC scrambles, Student-t 99% (t=2.947), hw <= 0.45 eps, 16 workers (measured)"
+ },
+ "C10": {
+  "direction": "against quantum",
+  "label_text": "strongest tested classical method (preintegration + RQMC, 16-core CPU, numba, practice CI)",
+  "untested": [
+   "GPU (C6 missing)",
+   "PDE / finite-difference / sparse grid",
+   "MLMC / multi-index MC and QMC",
+   "control variates (geometric basket)",
+   "importance sampling / further conditional MC",
+   "compiled C/Fortran kernels",
+   "regression / neural surrogates"
+  ],
+  "why_only_strengthens": "faster eligible challenger lowers T_C -> lowers D_max and k_10x -> raises M; exclusion cannot raise T_C above the measured baseline"
+ },
+ "H16": [
+  {
+   "cell": "B4x12/0.01",
+   "direction": "quantum-favourable if 1-core convention used (factor 6.4-10.2, not 16)",
+   "label": "measured (H16 grid run001, preint, idle machine)",
+   "parallel_efficiency_16": 0.40242298971087104,
+   "speedup_16_vs_1": 6.438767835373937,
+   "t_c_by_workers": {
+    "1": 0.8816688500228338,
+    "16": 0.13693129998864606,
+    "2": 0.5484290500171483,
+    "4": 0.3931702499394305,
+    "8": 0.1931971000158228
+   },
+   "w16_vs_c2": 1.1007122446821815
+  },
+  {
+   "cell": "B4x12/0.001",
+   "direction": "quantum-favourable if 1-core convention used (factor 6.4-10.2, not 16)",
+   "label": "measured (H16 grid run001, preint, idle machine)",
+   "parallel_efficiency_16": 0.5850672856194392,
+   "speedup_16_vs_1": 9.361076569911027,
+   "t_c_by_workers": {
+    "1": 26.10747339995578,
+    "16": 2.7889391999924555,
+    "2": 14.736842699931003,
+    "4": 10.337673400063068,
+    "8": 4.911665800027549
+   },
+   "w16_vs_c2": 1.0375486591676797
+  },
+  {
+   "cell": "B8x52/0.01",
+   "direction": "quantum-favourable if 1-core convention used (factor 6.4-10.2, not 16)",
+   "label": "measured (H16 grid run001, preint, idle machine)",
+   "parallel_efficiency_16": 0.4613439681437961,
+   "speedup_16_vs_1": 7.381503490300737,
+   "t_c_by_workers": {
+    "1": 4.358857900020666,
+    "16": 0.5905108499573544,
+    "2": 2.4269424499943852,
+    "4": 1.7227460000431165,
+    "8": 0.9505590499611571
+   },
+   "w16_vs_c2": 1.0668334966590856
+  },
+  {
+   "cell": "B8x52/0.001",
+   "direction": "quantum-favourable if 1-core convention used (factor 6.4-10.2, not 16)",
+   "label": "measured (H16 grid run001, preint, idle machine)",
+   "parallel_efficiency_16": 0.63985082359618,
+   "speedup_16_vs_1": 10.23761317753888,
+   "t_c_by_workers": {
+    "1": 240.18072379997466,
+    "16": 23.4606172000058,
+    "2": 131.19607300008647,
+    "4": 81.94367830001283,
+    "8": 42.97215129993856
+   },
+   "w16_vs_c2": 1.041338693648278
+  }
+ ],
+ "anchors_rate": [
+  {
+   "cite": "arXiv:2505.15917 (derived: 6 x 1/25us)",
+   "id": "A04d",
+   "status": "projected",
+   "value": 240000.0,
+   "what": "CCZ states per second, 6 factories at one CCZ per 25 us (derived)"
+  },
+  {
+   "cite": "arXiv:2510.26078 Table I (derived)",
+   "id": "A05b",
+   "status": "projected",
+   "value": 31281.28128128128,
+   "what": "options-pricing T rate implied by 1e10 T in 3.7 days"
+  }
+ ],
+ "anchors_time": [
+  {
+   "cite": "Yang et al., arXiv:2605.04892",
+   "d": 3,
+   "id": "A01",
+   "over_100ns": 5.500000000000001,
+   "platform": "superconducting",
+   "status": "demonstrated",
+   "value_s": 5.5e-07,
+   "what": "complete readout-end -> feedback-start loop, live d=3 surface code (FPGA NN decoder)",
+   "year": 2026
+  },
+  {
+   "cite": "Liu et al., arXiv:2603.16203",
+   "d": 3,
+   "id": "A02",
+   "over_100ns": 4.46,
+   "platform": "RFSoC control prototype (loopback)",
+   "status": "demonstrated (partial loop)",
+   "value_s": 4.46e-07,
+   "what": "decoding-feedback pipeline, syndrome bits -> correction ready; NO qubits, no readout/DAC",
+   "year": 2026
+  },
+  {
+   "cite": "Google Quantum AI, arXiv:2408.13687",
+   "d": 7,
+   "id": "A03a",
+   "over_100ns": 11.000000000000002,
+   "platform": "superconducting (Willow)",
+   "status": "demonstrated",
+   "value_s": 1.1e-06,
+   "what": "surface-code QEC cycle (memory)",
+   "year": 2024
+  },
+  {
+   "cite": "arXiv:2408.13687",
+   "d": 5,
+   "id": "A03b",
+   "over_100ns": 630.0,
+   "platform": "superconducting (Willow)",
+   "status": "demonstrated",
+   "value_s": 6.3e-05,
+   "what": "average real-time decoder latency (no logical feedback loop closed)",
+   "year": 2024
+  },
+  {
+   "cite": "Caune et al., arXiv:2410.05202",
+   "d": null,
+   "id": "A06",
+   "over_100ns": 96.0,
+   "platform": "superconducting (Rigetti Ankaa-2)",
+   "status": "demonstrated",
+   "value_s": 9.6e-06,
+   "what": "fast-feedback response time (8-qubit stability experiment)",
+   "year": 2024
+  },
+  {
+   "cite": "McArdle et al., arXiv:2510.26078",
+   "d": null,
+   "id": "A05a",
+   "over_100ns": 10.0,
+   "platform": "superconducting (projection)",
+   "status": "projected",
+   "value_s": 1e-06,
+   "what": "assumed syndrome round = reaction time (options-pricing table I)",
+   "year": 2025
+  },
+  {
+   "cite": "Gidney, arXiv:2505.15917",
+   "d": 25,
+   "id": "A04a",
+   "over_100ns": 10.0,
+   "platform": "superconducting (projection)",
+   "status": "projected",
+   "value_s": 1e-06,
+   "what": "surface-code cycle",
+   "year": 2025
+  },
+  {
+   "cite": "arXiv:2505.15917",
+   "d": 25,
+   "id": "A04b",
+   "over_100ns": 100.00000000000001,
+   "platform": "superconducting (projection)",
+   "status": "projected",
+   "value_s": 1e-05,
+   "what": "reaction time",
+   "year": 2025
+  },
+  {
+   "cite": "arXiv:2505.15917",
+   "d": 25,
+   "id": "A04c",
+   "over_100ns": 250.00000000000003,
+   "platform": "superconducting (projection)",
+   "status": "projected",
+   "value_s": 2.5e-05,
+   "what": "lattice-surgery / CCZ period",
+   "year": 2025
+  },
+  {
+   "cite": "Gouzien et al., arXiv:2302.06639",
+   "d": null,
+   "id": "A07",
+   "over_100ns": 5.0,
+   "platform": "repetition-cat (projection)",
+   "status": "projected",
+   "value_s": 5e-07,
+   "what": "cat-qubit cycle (a logical gate spans >= 1 cycle)",
+   "year": 2023
+  }
+ ],
+ "anchors_unverified_repo_citations": [
+  "neutral-atom 0.5-4 ms logical layer",
+  "active-volume reaction ~1 us",
+  "cat-qubit Toffoli duration beyond 500 ns cycle"
+ ],
+ "anchors_width": [
+  {
+   "cite": "Bluvstein et al., arXiv:2312.03982",
+   "id": "A09",
+   "status": "demonstrated",
+   "value": 48,
+   "what": "largest demonstrated logical-qubit count (d=3-7 codes, 280 atoms)"
+  },
+  {
+   "cite": "arXiv:2510.26078 Table I",
+   "id": "A05c",
+   "status": "projected",
+   "value": 10000.0,
+   "what": "logical qubits in the options-pricing projection"
+  }
+ ],
+ "card": "N1 hardware/classical (plan110 branch N, R1)",
+ "date": "2026-10-12",
+ "discrepancies_vs_W0": [
+  "C09 net factor: W0 used modelled 2-5x; Stage C data give 10.6-40.3x (36.9x binding cell); M_distfree explicit-best 6.29 (W0 46-116), certified 21.7 (W0 160-401)",
+  "Two departures (distribution-free classical + all-free oracle) give explicit-best M=0.31 (DP1: three needed)",
+  "Register H01 wording calls Liu 446 ns a complete readout-to-feedback loop; it is a partial pipeline without qubits",
+  "Repo neutral-atom 0.5-4 ms and active-volume ~1 us reaction not verified"
+ ],
+ "lines": {
+  "H04": "constant-round AFT (arXiv:2406.17653) still >= 1 syndrome round + decode per layer (~1 us SC) -> >= 10x above 100 ns",
+  "H07": "cat cycle 500 ns projected (arXiv:2302.06639) -> logical gate >= 5x above 100 ns; acts on supply/space only",
+  "H14": "GHz photonic clock is not a logical-layer time; binding-cell certified/explicit need 0.39-1.34 ns (< 1 ns clock); no reaction loop anchor < 446 ns"
+ },
+ "necessary_conditions_all_cells": "see numbers_file necessary_conditions",
+ "necessary_conditions_binding_cell_B8x52_0.001": [
+  {
+   "T_per_s_required": 1126834059530490.8,
+   "T_per_s_required_over_budget": 1126.8340595304908,
+   "direction": "quantum-favourable (idealized floor, zero Clifford/routing cost)",
+   "floor_design": "box_muller_current_law",
+   "k": 682.7449726739359,
+   "k_class": "certified_today",
+   "label": "modelled (floor modelled; T_C measured; k modelled)",
+   "logical_width": 10000000,
+   "loop_550ns_over_required": 1420.7161922943296,
+   "t_layer_required_over_100ns": 0.0038712869113696753,
+   "t_layer_required_s": 3.871286911369675e-10
+  },
+  {
+   "T_per_s_required": 326128005003170.3,
+   "T_per_s_required_over_budget": 326.1280050031703,
+   "direction": "quantum-favourable (idealized floor, zero Clifford/routing cost)",
+   "floor_design": "box_muller_current_law",
+   "k": 197.59986306845366,
+   "k_class": "explicit_best",
+   "label": "modelled (floor modelled; T_C measured; k modelled)",
+   "logical_width": 10000000,
+   "loop_550ns_over_required": 411.183291408235,
+   "t_layer_required_over_100ns": 0.013376029899375063,
+   "t_layer_required_s": 1.3376029899375062e-09
+  },
+  {
+   "T_per_s_required": 12118032639350.682,
+   "T_per_s_required_over_budget": 12.118032639350682,
+   "direction": "quantum-favourable (idealized floor, zero Clifford/routing cost)",
+   "floor_design": "box_muller_current_law",
+   "k": 7.342275282895345,
+   "k_class": "no_explicit_constant",
+   "label": "modelled (floor modelled; T_C measured; k modelled)",
+   "logical_width": 10000000,
+   "loop_550ns_over_required": 15.278456525045117,
+   "t_layer_required_over_100ns": 0.35998400695673405,
+   "t_layer_required_s": 3.5998400695673405e-08
+  },
+  {
+   "T_per_s_required": 43396142617463.695,
+   "T_per_s_required_over_budget": 43.396142617463696,
+   "direction": "quantum-favourable (idealized floor, zero Clifford/routing cost)",
+   "floor_design": "all_free_and_narrow",
+   "k": 682.7449726739359,
+   "k_class": "certified_today",
+   "label": "modelled (floor modelled; T_C measured; k modelled)",
+   "logical_width": 1847537,
+   "loop_550ns_over_required": 215.02731559049315,
+   "t_layer_required_over_100ns": 0.02557814566440678,
+   "t_layer_required_s": 2.557814566440678e-09
+  },
+  {
+   "T_per_s_required": 12559699715292.05,
+   "T_per_s_required_over_budget": 12.559699715292052,
+   "direction": "quantum-favourable (idealized floor, zero Clifford/routing cost)",
+   "floor_design": "all_free_and_narrow",
+   "k": 197.59986306845366,
+   "k_class": "explicit_best",
+   "label": "modelled (floor modelled; T_C measured; k modelled)",
+   "logical_width": 1847537,
+   "loop_550ns_over_required": 62.23314680773286,
+   "t_layer_required_over_100ns": 0.08837734040658524,
+   "t_layer_required_s": 8.837734040658523e-09
+  },
+  {
+   "T_per_s_required": 466684396174.05133,
+   "T_per_s_required_over_budget": 0.46668439617405133,
+   "direction": "quantum-favourable (idealized floor, zero Clifford/routing cost)",
+   "floor_design": "all_free_and_narrow",
+   "k": 7.342275282895345,
+   "k_class": "no_explicit_constant",
+   "label": "modelled (floor modelled; T_C measured; k modelled)",
+   "logical_width": 1847537,
+   "loop_550ns_over_required": 2.3124150416284506,
+   "t_layer_required_over_100ns": 2.37846576024985,
+   "t_layer_required_s": 2.3784657602498498e-07
+  }
+ ],
+ "numbers_file": "results\\plan110_n1\\hwclassical\\hw_classical_card_v2.json",
+ "numbers_sha256": "915ab62ae97448325d8a952b522d00ffdc78f686e675e6bdd2dc0954de919067",
+ "script": "research/plan110_n1/hwclassical/hw_classical_v2.py",
+ "self_check_max_rel_err": 2.220446049250313e-16,
+ "superseded": {
+  "results/plan110_n1/hwclassical/hw_classical_card.json": "v1, raw T_C instead of T_C_env; self-check failed in eps=0.03 overhead cells"
+ },
+ "where_100ns_sits": {
+  "below_ccz_period_25us": 250,
+  "below_complete_d3_550ns": 5.5,
+  "below_d7_cycle": 11,
+  "below_partial_446ns": 4.46,
+  "below_projected_1us": 10,
+  "below_projected_reaction_10us": 100,
+  "demonstrated_d_ge_15_complete_loop": false,
+  "label": "assumed convention, quantum-favourable"
+ }
+}

@@ -1,0 +1,35 @@
+{
+ "caveat": "direction-select call cost is assumed equal to one controlled Grover iterate (estimator card 2b); the 1-lane and distribution-free columns are applied as multiplicative T_C factors exactly as in the N1 files; the cross-products of the H16 ratio with the Stage-C C09 factor were not formed because the C09 factor was measured at 16 workers",
+ "certified_dirsel": {
+  "all_free+distfree_stageC": 0.5392122402976839,
+  "all_free+one_lane_one_core": 1.943523915586912,
+  "distfree_stageC": 10.860073561116268,
+  "primary": 400.7390181324032
+ },
+ "dirsel_ratio_certified": 0.5000009536761354,
+ "dirsel_ratio_explicit": 0.8637990233229426,
+ "explicit_dirsel": {
+  "all_free": 9.948523024537264,
+  "all_free+distfree_stageC": 0.2696061201488419,
+  "all_free+one_lane_one_core": 0.9717619577934559,
+  "distfree_stageC": 5.430036780558134,
+  "one_lane_one_core": 19.571896846601735,
+  "primary": 200.3695090662016
+ },
+ "meta": {
+  "cell": "B8x52 $0.001 (binding cell)",
+  "direction": "quantum-favourable",
+  "flags": {
+   "isolated": 1,
+   "no_site": 1
+  },
+  "inputs_sha256": {
+   "estimator": "2020d1d0bce2a70441e9b68a099399537c4a5fd98f0a0d5e076254bb5c01afe3",
+   "headline_table": "9d4fb7be3e85f7151952d428ff35b1f6b63ec1b2e8a6f1441247af7f1c85537a",
+   "hw_v2": "915ab62ae97448325d8a952b522d00ffdc78f686e675e6bdd2dc0954de919067"
+  },
+  "label": "modelled, derived arithmetic on N1 values (not an N1 result)",
+  "python": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]",
+  "script": "research/plan110_n1/drafter/draft_addendum.py"
+ }
+}

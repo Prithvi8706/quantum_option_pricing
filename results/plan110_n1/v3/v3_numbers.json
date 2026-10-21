@@ -1,0 +1,220 @@
+{
+ "meta": {
+  "script": "research/plan110_n1/v3/v3_numbers.py",
+  "python": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]",
+  "flags": {
+   "isolated": 1,
+   "no_site": 1,
+   "dont_write_bytecode": 1
+  },
+  "inputs_sha256": {
+   "HT": "9d4fb7be3e85f7151952d428ff35b1f6b63ec1b2e8a6f1441247af7f1c85537a",
+   "ES": "2020d1d0bce2a70441e9b68a099399537c4a5fd98f0a0d5e076254bb5c01afe3",
+   "HW": "915ab62ae97448325d8a952b522d00ffdc78f686e675e6bdd2dc0954de919067",
+   "DC": "ba336be743c9d390092623912cc51061e3279c4f2ca842540c5b17a98cc0de22",
+   "RK": "cdbf995dd539754520015e68ecee52c2abaa136aba53e6457c7a151e1d6cdfe0",
+   "REG": "c6348b46af4128008b9b7881453a6e6a575de7dc7e332903867d8ffd6f25b453"
+  },
+  "label": "modelled (derived) unless a direct file copy",
+  "direction": "see each N3 item"
+ },
+ "max_rel_diff_vs_probes": 1.4184647935137447e-16,
+ "values": {
+  "N3_1_combined_reading": {
+   "k_certified_dirsel_e_eq_eps": 379.30348606061665,
+   "certified_M": 200.36950906620157,
+   "dirsel_ratio_explicit_at_0.45eps (DC)": 0.8637990233229426,
+   "explicit_M_e_eq_eps (HT)": 104.38714543598617,
+   "explicit_M_e_eq_eps_fail001 (HT)": 76.55057331972318,
+   "explicit_M_approx": 90.16951427507482,
+   "explicit_M_fail001_approx": 66.12431046838819,
+   "window_M_e_eq_eps_fail001 (HT, already uses dirsel)": 3.878779492630138,
+   "note": "explicit values approximate: HT has no explicit k with direction-select at e = eps"
+  },
+  "N3_2_allfree_stacks": {
+   "D_eff_allfree_layers": {
+    "1e12|100ns": 114.0,
+    "1e13|100ns": 112.0,
+    "1e12|10ns": 724.024
+   },
+   "M_allfree": 11.517173272859651,
+   "M_allfree_supply1e13": 11.315117601405973,
+   "M_allfree_10ns": 7.314657773428892
+  },
+  "N3_3_N3_4_limits": {
+   "per_cell": {
+    "B4x12|0.01": {
+     "D_max_k1": 98.84424940462571,
+     "explicit_max_layers": 0.5296651339239109,
+     "explicit_max_T": 52966.51339239108,
+     "certified_max_layers": 0.12655064724163573,
+     "certified_dirsel_max_layers": 0.25309743246400745,
+     "certified_dirsel_max_T": 25309.743246400743,
+     "W0_allfree_D_eff": 94.0
+    },
+    "B4x12|0.001": {
+     "D_max_k1": 213.5762945412488,
+     "explicit_max_layers": 1.1448246034354819,
+     "explicit_max_T": 114482.46034354818,
+     "certified_max_layers": 0.34179855689795746,
+     "certified_dirsel_max_layers": 0.6835958099378945,
+     "certified_dirsel_max_T": 68359.58099378945,
+     "W0_allfree_D_eff": 94.0
+    },
+    "B8x52|0.01": {
+     "D_max_k1": 480.5398417245326,
+     "explicit_max_layers": 2.431066385557559,
+     "explicit_max_T": 243106.6385557559,
+     "certified_max_layers": 0.5630755575856898,
+     "certified_dirsel_max_layers": 1.1261339314690608,
+     "certified_dirsel_max_T": 112613.39314690608,
+     "W0_allfree_D_eff": 114.0
+    },
+    "B8x52|0.001": {
+     "D_max_k1": 1955.8952406218802,
+     "explicit_max_layers": 9.898262125537547,
+     "explicit_max_T": 989826.2125537547,
+     "certified_max_layers": 2.8647523144135594,
+     "certified_dirsel_max_layers": 5.729493700664298,
+     "certified_dirsel_max_T": 572949.3700664297,
+     "W0_allfree_D_eff": 114.0
+    }
+   },
+   "binding_allfree_over_certified_limit": 39.79401619694191,
+   "binding_allfree_over_certified_dirsel_limit": 19.897046049074536
+  },
+  "N3_5_explicit_dirsel": {
+   "primary_M": 200.3695090662016,
+   "symmetric_BM_M_approx": 5.430036780558134
+  },
+  "N3_6_E20_register": {
+   "tier": "T2",
+   "disposition": "credited screen value / branch-A lever",
+   "kill_or_defer": "State the width bound (P~1e3-1e4 lanes, >=4e9 logical qubits) and stop. No lane schedules unless width headroom >=2x and a parallel-matching rule exists.",
+   "optimistic_max_factor": ">10x only with >=15x logical width: the 15 independent canonical shots could run as parallel lanes (~67M logical qubits for B8x52) and entangled lanes cut latency by <=1/P at P x width; 1x under the declared memory cap, which P=2 already exceeds"
+  },
+  "N3_8_best_explicit_dirsel_k_B8": 170.6865687272775,
+  "cross_check_vs_recheck_probes": {
+   "certified_M": {
+    "v3": 200.36950906620157,
+    "probe": 200.3695090662016,
+    "rel_diff": 1.4184647935137447e-16
+   },
+   "explicit_M_approx": {
+    "v3": 90.16951427507482,
+    "probe": 90.16951427507482,
+    "rel_diff": 0.0
+   },
+   "explicit_M_fail001_approx": {
+    "v3": 66.12431046838819,
+    "probe": 66.12431046838819,
+    "rel_diff": 0.0
+   },
+   "allfree+supply1e13": {
+    "v3": 11.315117601405973,
+    "probe": 11.315117601405973,
+    "rel_diff": 0.0
+   },
+   "allfree+10ns": {
+    "v3": 7.314657773428892,
+    "probe": 7.314657773428892,
+    "rel_diff": 0.0
+   },
+   "best_explicit_dirsel_k_B8": {
+    "v3": 170.6865687272775,
+    "probe": 170.6865687272775,
+    "rel_diff": 0.0
+   },
+   "explicit_dirsel_primary": {
+    "v3": 200.3695090662016,
+    "probe": 200.3695090662016,
+    "rel_diff": 0.0
+   },
+   "explicit_dirsel_symmetric": {
+    "v3": 5.430036780558134,
+    "probe": 5.430036780558134,
+    "rel_diff": 0.0
+   },
+   "B4x12|0.01|explicit_max_layers": {
+    "v3": 0.5296651339239109,
+    "probe": 0.5296651339239109,
+    "rel_diff": 0.0
+   },
+   "B4x12|0.001|explicit_max_layers": {
+    "v3": 1.1448246034354819,
+    "probe": 1.1448246034354819,
+    "rel_diff": 0.0
+   },
+   "B8x52|0.01|explicit_max_layers": {
+    "v3": 2.431066385557559,
+    "probe": 2.431066385557559,
+    "rel_diff": 0.0
+   },
+   "B8x52|0.001|explicit_max_layers": {
+    "v3": 9.898262125537547,
+    "probe": 9.898262125537547,
+    "rel_diff": 0.0
+   },
+   "B4x12|0.01|explicit_max_T": {
+    "v3": 52966.51339239108,
+    "probe": 52966.51339239109,
+    "rel_diff": 1.3736901200728562e-16
+   },
+   "B4x12|0.001|explicit_max_T": {
+    "v3": 114482.46034354818,
+    "probe": 114482.46034354818,
+    "rel_diff": 0.0
+   },
+   "B8x52|0.01|explicit_max_T": {
+    "v3": 243106.6385557559,
+    "probe": 243106.63855575593,
+    "rel_diff": 1.1971631309467022e-16
+   },
+   "B8x52|0.001|explicit_max_T": {
+    "v3": 989826.2125537547,
+    "probe": 989826.2125537547,
+    "rel_diff": 0.0
+   },
+   "B4x12|0.01|certified_max_layers": {
+    "v3": 0.12655064724163573,
+    "probe": 0.12655064724163573,
+    "rel_diff": 0.0
+   },
+   "B4x12|0.001|certified_max_layers": {
+    "v3": 0.34179855689795746,
+    "probe": 0.34179855689795746,
+    "rel_diff": 0.0
+   },
+   "B8x52|0.01|certified_max_layers": {
+    "v3": 0.5630755575856898,
+    "probe": 0.5630755575856898,
+    "rel_diff": 0.0
+   },
+   "B8x52|0.001|certified_max_layers": {
+    "v3": 2.8647523144135594,
+    "probe": 2.8647523144135594,
+    "rel_diff": 0.0
+   },
+   "B4x12|0.01|W0_allfree_D_eff": {
+    "v3": 94.0,
+    "probe": 94.0,
+    "rel_diff": 0.0
+   },
+   "B4x12|0.001|W0_allfree_D_eff": {
+    "v3": 94.0,
+    "probe": 94.0,
+    "rel_diff": 0.0
+   },
+   "B8x52|0.01|W0_allfree_D_eff": {
+    "v3": 114.0,
+    "probe": 114.0,
+    "rel_diff": 0.0
+   },
+   "B8x52|0.001|W0_allfree_D_eff": {
+    "v3": 114.0,
+    "probe": 114.0,
+    "rel_diff": 0.0
+   }
+  }
+ }
+}

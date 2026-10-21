@@ -1,0 +1,5612 @@
+{
+ "meta": {
+  "script": "research/plan110_n1/headline/floor_sheet.py",
+  "python": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]",
+  "labels": "all modelled from literature structures (cited in script docstring); direction: idealized floor = quantum-favourable",
+  "t_layer_s": 1e-07
+ },
+ "cases": {
+  "B4x12": {
+   "primary_n72": {
+    "compute_depth": 270,
+    "compute_toffolis": 5659586,
+    "compute_T": 22638344,
+    "persistent_outputs": 433482,
+    "stages": {
+     "1_uniform_prep": {
+      "d": 0,
+      "t": 0,
+      "o": 1920,
+      "note": "Hadamards on N*nu qubits; Clifford"
+     },
+     "2_box_muller": {
+      "d": 144,
+      "t": 3836580,
+      "o": 362550,
+      "per_pair_depth_parts": {
+       "ln": 61,
+       "sqrt": 64,
+       "trig": 45,
+       "final_mul": 19
+      },
+      "poly": {
+       "ln": {
+        "d": 42,
+        "t": 29247,
+        "o": 944,
+        "degree": 3,
+        "segments_log2": 8
+       },
+       "sqrt": {
+        "d": 43,
+        "t": 29503,
+        "o": 1200,
+        "degree": 3,
+        "segments_log2": 9
+       },
+       "cos": {
+        "d": 43,
+        "t": 25821,
+        "o": 4632,
+        "degree": 2,
+        "segments_log2": 12
+       }
+      }
+     },
+     "3_correlation": {
+      "d": 9,
+      "t": 162432,
+      "o": 6912
+     },
+     "4a_prefix_logspot": {
+      "d": 15,
+      "t": 81120,
+      "o": 3504
+     },
+     "4b_clip": {
+      "d": 9,
+      "t": 24000,
+      "o": 3552
+     },
+     "4c_exp": {
+      "d": 62,
+      "t": 1536816,
+      "o": 52224,
+      "poly": {
+       "d": 42,
+       "t": 29247,
+       "o": 944,
+       "degree": 3,
+       "segments_log2": 8
+      }
+     },
+     "5_6_basket_barrier_vs_payoff_sum": {
+      "d": 22,
+      "t": 18429,
+      "o": 2700,
+      "payoff_branch": 17,
+      "barrier_branch": 22
+     },
+     "7a_flag_mask": {
+      "d": 2,
+      "t": 73,
+      "o": 73
+     },
+     "7b_encode_cmp": {
+      "d": 7,
+      "t": 136,
+      "o": 47
+     }
+    },
+    "refl": {
+     "d": 23,
+     "t": 1966
+    },
+    "by_width": {
+     "W1e6": {
+      "1e11|10ns": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 1387,
+       "T": 44139792,
+       "max_batching": 2,
+       "width": 1000000,
+       "D_eff": 44139.792,
+       "binding": "supply",
+       "rate_needed_T_per_s": 3182393078586.878
+      },
+      "1e11|100ns": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 1387,
+       "T": 44139792,
+       "max_batching": 2,
+       "width": 1000000,
+       "D_eff": 4413.9792,
+       "binding": "supply",
+       "rate_needed_T_per_s": 318239307858.68787
+      },
+      "1e11|1us": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "5_6_basket_barrier_vs_payoff_sum"
+       ],
+       "depth": 811,
+       "T": 45210836,
+       "max_batching": 1,
+       "width": 1000000,
+       "D_eff": 811,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 55747023427.86683
+      },
+      "1e11|10us": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "5_6_basket_barrier_vs_payoff_sum"
+       ],
+       "depth": 811,
+       "T": 45210836,
+       "max_batching": 1,
+       "width": 1000000,
+       "D_eff": 811,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 5574702342.786682
+      },
+      "1e12|10ns": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 1387,
+       "T": 44139792,
+       "max_batching": 2,
+       "width": 1000000,
+       "D_eff": 4413.9792,
+       "binding": "supply",
+       "rate_needed_T_per_s": 3182393078586.878
+      },
+      "1e12|100ns": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "5_6_basket_barrier_vs_payoff_sum"
+       ],
+       "depth": 811,
+       "T": 45210836,
+       "max_batching": 1,
+       "width": 1000000,
+       "D_eff": 811,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 557470234278.6683
+      },
+      "1e12|1us": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "5_6_basket_barrier_vs_payoff_sum"
+       ],
+       "depth": 811,
+       "T": 45210836,
+       "max_batching": 1,
+       "width": 1000000,
+       "D_eff": 811,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 55747023427.86683
+      },
+      "1e12|10us": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "5_6_basket_barrier_vs_payoff_sum"
+       ],
+       "depth": 811,
+       "T": 45210836,
+       "max_batching": 1,
+       "width": 1000000,
+       "D_eff": 811,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 5574702342.786682
+      },
+      "1e13|10ns": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "5_6_basket_barrier_vs_payoff_sum"
+       ],
+       "depth": 811,
+       "T": 45210836,
+       "max_batching": 1,
+       "width": 1000000,
+       "D_eff": 811,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 5574702342786.683
+      },
+      "1e13|100ns": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "5_6_basket_barrier_vs_payoff_sum"
+       ],
+       "depth": 811,
+       "T": 45210836,
+       "max_batching": 1,
+       "width": 1000000,
+       "D_eff": 811,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 557470234278.6683
+      },
+      "1e13|1us": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "5_6_basket_barrier_vs_payoff_sum"
+       ],
+       "depth": 811,
+       "T": 45210836,
+       "max_batching": 1,
+       "width": 1000000,
+       "D_eff": 811,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 55747023427.86683
+      },
+      "1e13|10us": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "5_6_basket_barrier_vs_payoff_sum"
+       ],
+       "depth": 811,
+       "T": 45210836,
+       "max_batching": 1,
+       "width": 1000000,
+       "D_eff": 811,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 5574702342.786682
+      }
+     },
+     "W1e7": {
+      "1e11|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 563,
+       "T": 22646208,
+       "max_batching": 1,
+       "width": 6093068,
+       "D_eff": 22646.208,
+       "binding": "supply",
+       "rate_needed_T_per_s": 4022417051509.769
+      },
+      "1e11|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 563,
+       "T": 22646208,
+       "max_batching": 1,
+       "width": 6093068,
+       "D_eff": 2264.6208,
+       "binding": "supply",
+       "rate_needed_T_per_s": 402241705150.9769
+      },
+      "1e11|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 563,
+       "T": 22646208,
+       "max_batching": 1,
+       "width": 6093068,
+       "D_eff": 563,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 40224170515.09769
+      },
+      "1e11|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 563,
+       "T": 22646208,
+       "max_batching": 1,
+       "width": 6093068,
+       "D_eff": 563,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 4022417051.509769
+      },
+      "1e12|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 563,
+       "T": 22646208,
+       "max_batching": 1,
+       "width": 6093068,
+       "D_eff": 2264.6208,
+       "binding": "supply",
+       "rate_needed_T_per_s": 4022417051509.769
+      },
+      "1e12|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 563,
+       "T": 22646208,
+       "max_batching": 1,
+       "width": 6093068,
+       "D_eff": 563,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 402241705150.9769
+      },
+      "1e12|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 563,
+       "T": 22646208,
+       "max_batching": 1,
+       "width": 6093068,
+       "D_eff": 563,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 40224170515.09769
+      },
+      "1e12|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 563,
+       "T": 22646208,
+       "max_batching": 1,
+       "width": 6093068,
+       "D_eff": 563,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 4022417051.509769
+      },
+      "1e13|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 563,
+       "T": 22646208,
+       "max_batching": 1,
+       "width": 6093068,
+       "D_eff": 563,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 4022417051509.769
+      },
+      "1e13|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 563,
+       "T": 22646208,
+       "max_batching": 1,
+       "width": 6093068,
+       "D_eff": 563,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 402241705150.9769
+      },
+      "1e13|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 563,
+       "T": 22646208,
+       "max_batching": 1,
+       "width": 6093068,
+       "D_eff": 563,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 40224170515.09769
+      },
+      "1e13|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 563,
+       "T": 22646208,
+       "max_batching": 1,
+       "width": 6093068,
+       "D_eff": 563,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 4022417051.509769
+      }
+     },
+     "W1e8": {
+      "1e11|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 563,
+       "T": 22646208,
+       "max_batching": 1,
+       "width": 6093068,
+       "D_eff": 22646.208,
+       "binding": "supply",
+       "rate_needed_T_per_s": 4022417051509.769
+      },
+      "1e11|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 563,
+       "T": 22646208,
+       "max_batching": 1,
+       "width": 6093068,
+       "D_eff": 2264.6208,
+       "binding": "supply",
+       "rate_needed_T_per_s": 402241705150.9769
+      },
+      "1e11|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 563,
+       "T": 22646208,
+       "max_batching": 1,
+       "width": 6093068,
+       "D_eff": 563,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 40224170515.09769
+      },
+      "1e11|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 563,
+       "T": 22646208,
+       "max_batching": 1,
+       "width": 6093068,
+       "D_eff": 563,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 4022417051.509769
+      },
+      "1e12|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 563,
+       "T": 22646208,
+       "max_batching": 1,
+       "width": 6093068,
+       "D_eff": 2264.6208,
+       "binding": "supply",
+       "rate_needed_T_per_s": 4022417051509.769
+      },
+      "1e12|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 563,
+       "T": 22646208,
+       "max_batching": 1,
+       "width": 6093068,
+       "D_eff": 563,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 402241705150.9769
+      },
+      "1e12|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 563,
+       "T": 22646208,
+       "max_batching": 1,
+       "width": 6093068,
+       "D_eff": 563,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 40224170515.09769
+      },
+      "1e12|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 563,
+       "T": 22646208,
+       "max_batching": 1,
+       "width": 6093068,
+       "D_eff": 563,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 4022417051.509769
+      },
+      "1e13|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 563,
+       "T": 22646208,
+       "max_batching": 1,
+       "width": 6093068,
+       "D_eff": 563,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 4022417051509.769
+      },
+      "1e13|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 563,
+       "T": 22646208,
+       "max_batching": 1,
+       "width": 6093068,
+       "D_eff": 563,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 402241705150.9769
+      },
+      "1e13|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 563,
+       "T": 22646208,
+       "max_batching": 1,
+       "width": 6093068,
+       "D_eff": 563,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 40224170515.09769
+      },
+      "1e13|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 563,
+       "T": 22646208,
+       "max_batching": 1,
+       "width": 6093068,
+       "D_eff": 563,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 4022417051.509769
+      }
+     },
+     "unlimited": {
+      "1e11|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 563,
+       "T": 22646208,
+       "max_batching": 1,
+       "width": 6093068,
+       "D_eff": 22646.208,
+       "binding": "supply",
+       "rate_needed_T_per_s": 4022417051509.769
+      },
+      "1e11|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 563,
+       "T": 22646208,
+       "max_batching": 1,
+       "width": 6093068,
+       "D_eff": 2264.6208,
+       "binding": "supply",
+       "rate_needed_T_per_s": 402241705150.9769
+      },
+      "1e11|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 563,
+       "T": 22646208,
+       "max_batching": 1,
+       "width": 6093068,
+       "D_eff": 563,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 40224170515.09769
+      },
+      "1e11|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 563,
+       "T": 22646208,
+       "max_batching": 1,
+       "width": 6093068,
+       "D_eff": 563,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 4022417051.509769
+      },
+      "1e12|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 563,
+       "T": 22646208,
+       "max_batching": 1,
+       "width": 6093068,
+       "D_eff": 2264.6208,
+       "binding": "supply",
+       "rate_needed_T_per_s": 4022417051509.769
+      },
+      "1e12|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 563,
+       "T": 22646208,
+       "max_batching": 1,
+       "width": 6093068,
+       "D_eff": 563,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 402241705150.9769
+      },
+      "1e12|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 563,
+       "T": 22646208,
+       "max_batching": 1,
+       "width": 6093068,
+       "D_eff": 563,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 40224170515.09769
+      },
+      "1e12|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 563,
+       "T": 22646208,
+       "max_batching": 1,
+       "width": 6093068,
+       "D_eff": 563,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 4022417051.509769
+      },
+      "1e13|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 563,
+       "T": 22646208,
+       "max_batching": 1,
+       "width": 6093068,
+       "D_eff": 563,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 4022417051509.769
+      },
+      "1e13|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 563,
+       "T": 22646208,
+       "max_batching": 1,
+       "width": 6093068,
+       "D_eff": 563,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 402241705150.9769
+      },
+      "1e13|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 563,
+       "T": 22646208,
+       "max_batching": 1,
+       "width": 6093068,
+       "D_eff": 563,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 40224170515.09769
+      },
+      "1e13|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 563,
+       "T": 22646208,
+       "max_batching": 1,
+       "width": 6093068,
+       "D_eff": 563,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 4022417051.509769
+      }
+     }
+    }
+   },
+   "free_loader_exp_n72": {
+    "compute_depth": 64,
+    "compute_toffolis": 286190,
+    "compute_T": 1144760,
+    "persistent_outputs": 26484,
+    "stages": {
+     "1_uniform_prep": {
+      "d": 0,
+      "t": 0,
+      "o": 1920,
+      "note": "Hadamards on N*nu qubits; Clifford"
+     },
+     "2_box_muller": {
+      "d": 0,
+      "t": 0,
+      "o": 4320,
+      "note": "free loader (departure)"
+     },
+     "3_correlation": {
+      "d": 9,
+      "t": 162432,
+      "o": 6912
+     },
+     "4a_prefix_logspot": {
+      "d": 15,
+      "t": 81120,
+      "o": 3504
+     },
+     "4b_clip": {
+      "d": 9,
+      "t": 24000,
+      "o": 3552
+     },
+     "4c_exp": {
+      "d": 0,
+      "t": 0,
+      "o": 3456,
+      "note": "free exponential (departure)"
+     },
+     "5_6_basket_barrier_vs_payoff_sum": {
+      "d": 22,
+      "t": 18429,
+      "o": 2700,
+      "payoff_branch": 17,
+      "barrier_branch": 22
+     },
+     "7a_flag_mask": {
+      "d": 2,
+      "t": 73,
+      "o": 73
+     },
+     "7b_encode_cmp": {
+      "d": 7,
+      "t": 136,
+      "o": 47
+     }
+    },
+    "refl": {
+     "d": 23,
+     "t": 1966
+    },
+    "by_width": {
+     "W1e6": {
+      "1e11|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 1152.624,
+       "binding": "supply",
+       "rate_needed_T_per_s": 763327152317.8809
+      },
+      "1e11|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 76332715231.78809
+      },
+      "1e11|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 7633271523.178809
+      },
+      "1e11|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 763327152.3178807
+      },
+      "1e12|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 763327152317.8809
+      },
+      "1e12|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 76332715231.78809
+      },
+      "1e12|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 7633271523.178809
+      },
+      "1e12|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 763327152.3178807
+      },
+      "1e13|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 763327152317.8809
+      },
+      "1e13|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 76332715231.78809
+      },
+      "1e13|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 7633271523.178809
+      },
+      "1e13|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 763327152.3178807
+      }
+     },
+     "W1e7": {
+      "1e11|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 1152.624,
+       "binding": "supply",
+       "rate_needed_T_per_s": 763327152317.8809
+      },
+      "1e11|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 76332715231.78809
+      },
+      "1e11|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 7633271523.178809
+      },
+      "1e11|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 763327152.3178807
+      },
+      "1e12|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 763327152317.8809
+      },
+      "1e12|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 76332715231.78809
+      },
+      "1e12|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 7633271523.178809
+      },
+      "1e12|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 763327152.3178807
+      },
+      "1e13|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 763327152317.8809
+      },
+      "1e13|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 76332715231.78809
+      },
+      "1e13|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 7633271523.178809
+      },
+      "1e13|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 763327152.3178807
+      }
+     },
+     "W1e8": {
+      "1e11|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 1152.624,
+       "binding": "supply",
+       "rate_needed_T_per_s": 763327152317.8809
+      },
+      "1e11|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 76332715231.78809
+      },
+      "1e11|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 7633271523.178809
+      },
+      "1e11|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 763327152.3178807
+      },
+      "1e12|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 763327152317.8809
+      },
+      "1e12|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 76332715231.78809
+      },
+      "1e12|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 7633271523.178809
+      },
+      "1e12|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 763327152.3178807
+      },
+      "1e13|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 763327152317.8809
+      },
+      "1e13|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 76332715231.78809
+      },
+      "1e13|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 7633271523.178809
+      },
+      "1e13|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 763327152.3178807
+      }
+     },
+     "unlimited": {
+      "1e11|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 1152.624,
+       "binding": "supply",
+       "rate_needed_T_per_s": 763327152317.8809
+      },
+      "1e11|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 76332715231.78809
+      },
+      "1e11|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 7633271523.178809
+      },
+      "1e11|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 763327152.3178807
+      },
+      "1e12|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 763327152317.8809
+      },
+      "1e12|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 76332715231.78809
+      },
+      "1e12|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 7633271523.178809
+      },
+      "1e12|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 763327152.3178807
+      },
+      "1e13|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 763327152317.8809
+      },
+      "1e13|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 76332715231.78809
+      },
+      "1e13|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 7633271523.178809
+      },
+      "1e13|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 151,
+       "T": 1152624,
+       "max_batching": 1,
+       "width": 312674,
+       "D_eff": 151,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 763327152.3178807
+      }
+     }
+    }
+   },
+   "all_free_n48_f32": {
+    "compute_depth": 59,
+    "compute_toffolis": 150694,
+    "compute_T": 602776,
+    "persistent_outputs": 18372,
+    "stages": {
+     "1_uniform_prep": {
+      "d": 0,
+      "t": 0,
+      "o": 1920,
+      "note": "Hadamards on N*nu qubits; Clifford"
+     },
+     "2_box_muller": {
+      "d": 0,
+      "t": 0,
+      "o": 2880,
+      "note": "free loader (departure)"
+     },
+     "3_correlation": {
+      "d": 8,
+      "t": 71424,
+      "o": 4608
+     },
+     "4a_prefix_logspot": {
+      "d": 14,
+      "t": 51552,
+      "o": 2352
+     },
+     "4b_clip": {
+      "d": 8,
+      "t": 15936,
+      "o": 2400
+     },
+     "4c_exp": {
+      "d": 0,
+      "t": 0,
+      "o": 2304,
+      "note": "free exponential (departure)"
+     },
+     "5_6_basket_barrier_vs_payoff_sum": {
+      "d": 20,
+      "t": 11597,
+      "o": 1812,
+      "payoff_branch": 16,
+      "barrier_branch": 20
+     },
+     "7a_flag_mask": {
+      "d": 2,
+      "t": 49,
+      "o": 49
+     },
+     "7b_encode_cmp": {
+      "d": 7,
+      "t": 136,
+      "o": 47
+     }
+    },
+    "refl": {
+     "d": 23,
+     "t": 1966
+    },
+    "by_width": {
+     "W1e6": {
+      "1e11|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 610.64,
+       "binding": "supply",
+       "rate_needed_T_per_s": 433078014184.39716
+      },
+      "1e11|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 43307801418.43972
+      },
+      "1e11|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 4330780141.843972
+      },
+      "1e11|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 433078014.18439716
+      },
+      "1e12|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 433078014184.39716
+      },
+      "1e12|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 43307801418.43972
+      },
+      "1e12|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 4330780141.843972
+      },
+      "1e12|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 433078014.18439716
+      },
+      "1e13|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 433078014184.39716
+      },
+      "1e13|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 43307801418.43972
+      },
+      "1e13|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 4330780141.843972
+      },
+      "1e13|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 433078014.18439716
+      }
+     },
+     "W1e7": {
+      "1e11|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 610.64,
+       "binding": "supply",
+       "rate_needed_T_per_s": 433078014184.39716
+      },
+      "1e11|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 43307801418.43972
+      },
+      "1e11|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 4330780141.843972
+      },
+      "1e11|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 433078014.18439716
+      },
+      "1e12|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 433078014184.39716
+      },
+      "1e12|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 43307801418.43972
+      },
+      "1e12|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 4330780141.843972
+      },
+      "1e12|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 433078014.18439716
+      },
+      "1e13|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 433078014184.39716
+      },
+      "1e13|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 43307801418.43972
+      },
+      "1e13|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 4330780141.843972
+      },
+      "1e13|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 433078014.18439716
+      }
+     },
+     "W1e8": {
+      "1e11|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 610.64,
+       "binding": "supply",
+       "rate_needed_T_per_s": 433078014184.39716
+      },
+      "1e11|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 43307801418.43972
+      },
+      "1e11|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 4330780141.843972
+      },
+      "1e11|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 433078014.18439716
+      },
+      "1e12|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 433078014184.39716
+      },
+      "1e12|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 43307801418.43972
+      },
+      "1e12|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 4330780141.843972
+      },
+      "1e12|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 433078014.18439716
+      },
+      "1e13|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 433078014184.39716
+      },
+      "1e13|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 43307801418.43972
+      },
+      "1e13|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 4330780141.843972
+      },
+      "1e13|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 433078014.18439716
+      }
+     },
+     "unlimited": {
+      "1e11|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 610.64,
+       "binding": "supply",
+       "rate_needed_T_per_s": 433078014184.39716
+      },
+      "1e11|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 43307801418.43972
+      },
+      "1e11|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 4330780141.843972
+      },
+      "1e11|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 433078014.18439716
+      },
+      "1e12|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 433078014184.39716
+      },
+      "1e12|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 43307801418.43972
+      },
+      "1e12|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 4330780141.843972
+      },
+      "1e12|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 433078014.18439716
+      },
+      "1e13|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 433078014184.39716
+      },
+      "1e13|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 43307801418.43972
+      },
+      "1e13|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 4330780141.843972
+      },
+      "1e13|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 141,
+       "T": 610640,
+       "max_batching": 1,
+       "width": 169066,
+       "D_eff": 141,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 433078014.18439716
+      }
+     }
+    }
+   }
+  },
+  "B8x52": {
+   "primary_n72": {
+    "compute_depth": 278,
+    "compute_toffolis": 46868770,
+    "compute_T": 187475080,
+    "persistent_outputs": 3428110,
+    "stages": {
+     "1_uniform_prep": {
+      "d": 0,
+      "t": 0,
+      "o": 14976,
+      "note": "Hadamards on N*nu qubits; Clifford"
+     },
+     "2_box_muller": {
+      "d": 144,
+      "t": 29925324,
+      "o": 2827890,
+      "per_pair_depth_parts": {
+       "ln": 61,
+       "sqrt": 64,
+       "trig": 45,
+       "final_mul": 19
+      },
+      "poly": {
+       "ln": {
+        "d": 42,
+        "t": 29247,
+        "o": 944,
+        "degree": 3,
+        "segments_log2": 8
+       },
+       "sqrt": {
+        "d": 43,
+        "t": 29503,
+        "o": 1200,
+        "degree": 3,
+        "segments_log2": 9
+       },
+       "cos": {
+        "d": 43,
+        "t": 25821,
+        "o": 4632,
+        "degree": 2,
+        "segments_log2": 12
+       }
+      }
+     },
+     "3_correlation": {
+      "d": 9,
+      "t": 1407744,
+      "o": 59904
+     },
+     "4a_prefix_logspot": {
+      "d": 19,
+      "t": 1901120,
+      "o": 30368
+     },
+     "4b_clip": {
+      "d": 9,
+      "t": 208000,
+      "o": 30784
+     },
+     "4c_exp": {
+      "d": 62,
+      "t": 13319072,
+      "o": 452608,
+      "poly": {
+       "d": 42,
+       "t": 29247,
+       "o": 944,
+       "degree": 3,
+       "segments_log2": 8
+      }
+     },
+     "5_6_basket_barrier_vs_payoff_sum": {
+      "d": 26,
+      "t": 107301,
+      "o": 11460,
+      "payoff_branch": 22,
+      "barrier_branch": 26
+     },
+     "7a_flag_mask": {
+      "d": 2,
+      "t": 73,
+      "o": 73
+     },
+     "7b_encode_cmp": {
+      "d": 7,
+      "t": 136,
+      "o": 47
+     }
+    },
+    "refl": {
+     "d": 29,
+     "t": 15022
+    },
+    "by_width": {
+     "W1e6": {
+      "1e11|10ns": {
+       "model": "infeasible: persistent registers alone exceed W (needs output serialisation)",
+       "kept_stages": [],
+       "depth": null,
+       "T": null,
+       "max_batching": null,
+       "width": 3428110,
+       "D_eff": null,
+       "binding": null,
+       "rate_needed_T_per_s": null
+      },
+      "1e11|100ns": {
+       "model": "infeasible: persistent registers alone exceed W (needs output serialisation)",
+       "kept_stages": [],
+       "depth": null,
+       "T": null,
+       "max_batching": null,
+       "width": 3428110,
+       "D_eff": null,
+       "binding": null,
+       "rate_needed_T_per_s": null
+      },
+      "1e11|1us": {
+       "model": "infeasible: persistent registers alone exceed W (needs output serialisation)",
+       "kept_stages": [],
+       "depth": null,
+       "T": null,
+       "max_batching": null,
+       "width": 3428110,
+       "D_eff": null,
+       "binding": null,
+       "rate_needed_T_per_s": null
+      },
+      "1e11|10us": {
+       "model": "infeasible: persistent registers alone exceed W (needs output serialisation)",
+       "kept_stages": [],
+       "depth": null,
+       "T": null,
+       "max_batching": null,
+       "width": 3428110,
+       "D_eff": null,
+       "binding": null,
+       "rate_needed_T_per_s": null
+      },
+      "1e12|10ns": {
+       "model": "infeasible: persistent registers alone exceed W (needs output serialisation)",
+       "kept_stages": [],
+       "depth": null,
+       "T": null,
+       "max_batching": null,
+       "width": 3428110,
+       "D_eff": null,
+       "binding": null,
+       "rate_needed_T_per_s": null
+      },
+      "1e12|100ns": {
+       "model": "infeasible: persistent registers alone exceed W (needs output serialisation)",
+       "kept_stages": [],
+       "depth": null,
+       "T": null,
+       "max_batching": null,
+       "width": 3428110,
+       "D_eff": null,
+       "binding": null,
+       "rate_needed_T_per_s": null
+      },
+      "1e12|1us": {
+       "model": "infeasible: persistent registers alone exceed W (needs output serialisation)",
+       "kept_stages": [],
+       "depth": null,
+       "T": null,
+       "max_batching": null,
+       "width": 3428110,
+       "D_eff": null,
+       "binding": null,
+       "rate_needed_T_per_s": null
+      },
+      "1e12|10us": {
+       "model": "infeasible: persistent registers alone exceed W (needs output serialisation)",
+       "kept_stages": [],
+       "depth": null,
+       "T": null,
+       "max_batching": null,
+       "width": 3428110,
+       "D_eff": null,
+       "binding": null,
+       "rate_needed_T_per_s": null
+      },
+      "1e13|10ns": {
+       "model": "infeasible: persistent registers alone exceed W (needs output serialisation)",
+       "kept_stages": [],
+       "depth": null,
+       "T": null,
+       "max_batching": null,
+       "width": 3428110,
+       "D_eff": null,
+       "binding": null,
+       "rate_needed_T_per_s": null
+      },
+      "1e13|100ns": {
+       "model": "infeasible: persistent registers alone exceed W (needs output serialisation)",
+       "kept_stages": [],
+       "depth": null,
+       "T": null,
+       "max_batching": null,
+       "width": 3428110,
+       "D_eff": null,
+       "binding": null,
+       "rate_needed_T_per_s": null
+      },
+      "1e13|1us": {
+       "model": "infeasible: persistent registers alone exceed W (needs output serialisation)",
+       "kept_stages": [],
+       "depth": null,
+       "T": null,
+       "max_batching": null,
+       "width": 3428110,
+       "D_eff": null,
+       "binding": null,
+       "rate_needed_T_per_s": null
+      },
+      "1e13|10us": {
+       "model": "infeasible: persistent registers alone exceed W (needs output serialisation)",
+       "kept_stages": [],
+       "depth": null,
+       "T": null,
+       "max_batching": null,
+       "width": 3428110,
+       "D_eff": null,
+       "binding": null,
+       "rate_needed_T_per_s": null
+      }
+     },
+     "W1e7": {
+      "1e11|10ns": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 1409,
+       "T": 360512752,
+       "max_batching": 2,
+       "width": 10000000,
+       "D_eff": 360512.752,
+       "binding": "supply",
+       "rate_needed_T_per_s": 25586426685592.617
+      },
+      "1e11|100ns": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 1409,
+       "T": 360512752,
+       "max_batching": 2,
+       "width": 10000000,
+       "D_eff": 36051.2752,
+       "binding": "supply",
+       "rate_needed_T_per_s": 2558642668559.262
+      },
+      "1e11|1us": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 1409,
+       "T": 360512752,
+       "max_batching": 2,
+       "width": 10000000,
+       "D_eff": 3605.12752,
+       "binding": "supply",
+       "rate_needed_T_per_s": 255864266855.9262
+      },
+      "1e11|10us": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "4a_prefix_logspot",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 809,
+       "T": 366975728,
+       "max_batching": 1,
+       "width": 10000000,
+       "D_eff": 809,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 45361647466.007416
+      },
+      "1e12|10ns": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 1409,
+       "T": 360512752,
+       "max_batching": 2,
+       "width": 10000000,
+       "D_eff": 36051.2752,
+       "binding": "supply",
+       "rate_needed_T_per_s": 25586426685592.617
+      },
+      "1e12|100ns": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 1409,
+       "T": 360512752,
+       "max_batching": 2,
+       "width": 10000000,
+       "D_eff": 3605.12752,
+       "binding": "supply",
+       "rate_needed_T_per_s": 2558642668559.262
+      },
+      "1e12|1us": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "4a_prefix_logspot",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 809,
+       "T": 366975728,
+       "max_batching": 1,
+       "width": 10000000,
+       "D_eff": 809,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 453616474660.0742
+      },
+      "1e12|10us": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "4a_prefix_logspot",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 809,
+       "T": 366975728,
+       "max_batching": 1,
+       "width": 10000000,
+       "D_eff": 809,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 45361647466.007416
+      },
+      "1e13|10ns": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 1409,
+       "T": 360512752,
+       "max_batching": 2,
+       "width": 10000000,
+       "D_eff": 3605.12752,
+       "binding": "supply",
+       "rate_needed_T_per_s": 25586426685592.617
+      },
+      "1e13|100ns": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "4a_prefix_logspot",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 809,
+       "T": 366975728,
+       "max_batching": 1,
+       "width": 10000000,
+       "D_eff": 809,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 4536164746600.741
+      },
+      "1e13|1us": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "4a_prefix_logspot",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 809,
+       "T": 366975728,
+       "max_batching": 1,
+       "width": 10000000,
+       "D_eff": 809,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 453616474660.0742
+      },
+      "1e13|10us": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "4a_prefix_logspot",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 809,
+       "T": 366975728,
+       "max_batching": 1,
+       "width": 10000000,
+       "D_eff": 809,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 45361647466.007416
+      }
+     },
+     "W1e8": {
+      "1e11|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 585,
+       "T": 187535168,
+       "max_batching": 1,
+       "width": 50296880,
+       "D_eff": 187535.168,
+       "binding": "supply",
+       "rate_needed_T_per_s": 32057293675213.676
+      },
+      "1e11|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 585,
+       "T": 187535168,
+       "max_batching": 1,
+       "width": 50296880,
+       "D_eff": 18753.5168,
+       "binding": "supply",
+       "rate_needed_T_per_s": 3205729367521.3677
+      },
+      "1e11|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 585,
+       "T": 187535168,
+       "max_batching": 1,
+       "width": 50296880,
+       "D_eff": 1875.35168,
+       "binding": "supply",
+       "rate_needed_T_per_s": 320572936752.1367
+      },
+      "1e11|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 585,
+       "T": 187535168,
+       "max_batching": 1,
+       "width": 50296880,
+       "D_eff": 585,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 32057293675.213673
+      },
+      "1e12|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 585,
+       "T": 187535168,
+       "max_batching": 1,
+       "width": 50296880,
+       "D_eff": 18753.5168,
+       "binding": "supply",
+       "rate_needed_T_per_s": 32057293675213.676
+      },
+      "1e12|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 585,
+       "T": 187535168,
+       "max_batching": 1,
+       "width": 50296880,
+       "D_eff": 1875.35168,
+       "binding": "supply",
+       "rate_needed_T_per_s": 3205729367521.3677
+      },
+      "1e12|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 585,
+       "T": 187535168,
+       "max_batching": 1,
+       "width": 50296880,
+       "D_eff": 585,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 320572936752.1367
+      },
+      "1e12|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 585,
+       "T": 187535168,
+       "max_batching": 1,
+       "width": 50296880,
+       "D_eff": 585,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 32057293675.213673
+      },
+      "1e13|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 585,
+       "T": 187535168,
+       "max_batching": 1,
+       "width": 50296880,
+       "D_eff": 1875.35168,
+       "binding": "supply",
+       "rate_needed_T_per_s": 32057293675213.676
+      },
+      "1e13|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 585,
+       "T": 187535168,
+       "max_batching": 1,
+       "width": 50296880,
+       "D_eff": 585,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 3205729367521.3677
+      },
+      "1e13|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 585,
+       "T": 187535168,
+       "max_batching": 1,
+       "width": 50296880,
+       "D_eff": 585,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 320572936752.1367
+      },
+      "1e13|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 585,
+       "T": 187535168,
+       "max_batching": 1,
+       "width": 50296880,
+       "D_eff": 585,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 32057293675.213673
+      }
+     },
+     "unlimited": {
+      "1e11|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 585,
+       "T": 187535168,
+       "max_batching": 1,
+       "width": 50296880,
+       "D_eff": 187535.168,
+       "binding": "supply",
+       "rate_needed_T_per_s": 32057293675213.676
+      },
+      "1e11|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 585,
+       "T": 187535168,
+       "max_batching": 1,
+       "width": 50296880,
+       "D_eff": 18753.5168,
+       "binding": "supply",
+       "rate_needed_T_per_s": 3205729367521.3677
+      },
+      "1e11|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 585,
+       "T": 187535168,
+       "max_batching": 1,
+       "width": 50296880,
+       "D_eff": 1875.35168,
+       "binding": "supply",
+       "rate_needed_T_per_s": 320572936752.1367
+      },
+      "1e11|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 585,
+       "T": 187535168,
+       "max_batching": 1,
+       "width": 50296880,
+       "D_eff": 585,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 32057293675.213673
+      },
+      "1e12|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 585,
+       "T": 187535168,
+       "max_batching": 1,
+       "width": 50296880,
+       "D_eff": 18753.5168,
+       "binding": "supply",
+       "rate_needed_T_per_s": 32057293675213.676
+      },
+      "1e12|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 585,
+       "T": 187535168,
+       "max_batching": 1,
+       "width": 50296880,
+       "D_eff": 1875.35168,
+       "binding": "supply",
+       "rate_needed_T_per_s": 3205729367521.3677
+      },
+      "1e12|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 585,
+       "T": 187535168,
+       "max_batching": 1,
+       "width": 50296880,
+       "D_eff": 585,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 320572936752.1367
+      },
+      "1e12|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 585,
+       "T": 187535168,
+       "max_batching": 1,
+       "width": 50296880,
+       "D_eff": 585,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 32057293675.213673
+      },
+      "1e13|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 585,
+       "T": 187535168,
+       "max_batching": 1,
+       "width": 50296880,
+       "D_eff": 1875.35168,
+       "binding": "supply",
+       "rate_needed_T_per_s": 32057293675213.676
+      },
+      "1e13|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 585,
+       "T": 187535168,
+       "max_batching": 1,
+       "width": 50296880,
+       "D_eff": 585,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 3205729367521.3677
+      },
+      "1e13|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 585,
+       "T": 187535168,
+       "max_batching": 1,
+       "width": 50296880,
+       "D_eff": 585,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 320572936752.1367
+      },
+      "1e13|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "2_box_muller",
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "4c_exp",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 585,
+       "T": 187535168,
+       "max_batching": 1,
+       "width": 50296880,
+       "D_eff": 585,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 32057293675.213673
+      }
+     }
+    }
+   },
+   "free_loader_exp_n72": {
+    "compute_depth": 72,
+    "compute_toffolis": 3624374,
+    "compute_T": 14497496,
+    "persistent_outputs": 211260,
+    "stages": {
+     "1_uniform_prep": {
+      "d": 0,
+      "t": 0,
+      "o": 14976,
+      "note": "Hadamards on N*nu qubits; Clifford"
+     },
+     "2_box_muller": {
+      "d": 0,
+      "t": 0,
+      "o": 33696,
+      "note": "free loader (departure)"
+     },
+     "3_correlation": {
+      "d": 9,
+      "t": 1407744,
+      "o": 59904
+     },
+     "4a_prefix_logspot": {
+      "d": 19,
+      "t": 1901120,
+      "o": 30368
+     },
+     "4b_clip": {
+      "d": 9,
+      "t": 208000,
+      "o": 30784
+     },
+     "4c_exp": {
+      "d": 0,
+      "t": 0,
+      "o": 29952,
+      "note": "free exponential (departure)"
+     },
+     "5_6_basket_barrier_vs_payoff_sum": {
+      "d": 26,
+      "t": 107301,
+      "o": 11460,
+      "payoff_branch": 22,
+      "barrier_branch": 26
+     },
+     "7a_flag_mask": {
+      "d": 2,
+      "t": 73,
+      "o": 73
+     },
+     "7b_encode_cmp": {
+      "d": 7,
+      "t": 136,
+      "o": 47
+     }
+    },
+    "refl": {
+     "d": 29,
+     "t": 15022
+    },
+    "by_width": {
+     "W1e6": {
+      "1e11|10ns": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 483,
+       "T": 27793040,
+       "max_batching": 5,
+       "width": 1000000,
+       "D_eff": 27793.04,
+       "binding": "supply",
+       "rate_needed_T_per_s": 5754252587991.718
+      },
+      "1e11|100ns": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 483,
+       "T": 27793040,
+       "max_batching": 5,
+       "width": 1000000,
+       "D_eff": 2779.304,
+       "binding": "supply",
+       "rate_needed_T_per_s": 575425258799.1719
+      },
+      "1e11|1us": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 377,
+       "T": 29054244,
+       "max_batching": 3,
+       "width": 1000000,
+       "D_eff": 377,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 77066960212.20158
+      },
+      "1e11|10us": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 377,
+       "T": 29054244,
+       "max_batching": 3,
+       "width": 1000000,
+       "D_eff": 377,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 7706696021.220159
+      },
+      "1e12|10ns": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 483,
+       "T": 27793040,
+       "max_batching": 5,
+       "width": 1000000,
+       "D_eff": 2779.304,
+       "binding": "supply",
+       "rate_needed_T_per_s": 5754252587991.718
+      },
+      "1e12|100ns": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 377,
+       "T": 29054244,
+       "max_batching": 3,
+       "width": 1000000,
+       "D_eff": 377,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 770669602122.0159
+      },
+      "1e12|1us": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 377,
+       "T": 29054244,
+       "max_batching": 3,
+       "width": 1000000,
+       "D_eff": 377,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 77066960212.20158
+      },
+      "1e12|10us": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 377,
+       "T": 29054244,
+       "max_batching": 3,
+       "width": 1000000,
+       "D_eff": 377,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 7706696021.220159
+      },
+      "1e13|10ns": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 377,
+       "T": 29054244,
+       "max_batching": 3,
+       "width": 1000000,
+       "D_eff": 377,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 7706696021220.159
+      },
+      "1e13|100ns": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 377,
+       "T": 29054244,
+       "max_batching": 3,
+       "width": 1000000,
+       "D_eff": 377,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 770669602122.0159
+      },
+      "1e13|1us": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 377,
+       "T": 29054244,
+       "max_batching": 3,
+       "width": 1000000,
+       "D_eff": 377,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 77066960212.20158
+      },
+      "1e13|10us": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 377,
+       "T": 29054244,
+       "max_batching": 3,
+       "width": 1000000,
+       "D_eff": 377,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 7706696021.220159
+      }
+     },
+     "W1e7": {
+      "1e11|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 173,
+       "T": 14557584,
+       "max_batching": 1,
+       "width": 3835634,
+       "D_eff": 14557.584,
+       "binding": "supply",
+       "rate_needed_T_per_s": 8414788439306.358
+      },
+      "1e11|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 173,
+       "T": 14557584,
+       "max_batching": 1,
+       "width": 3835634,
+       "D_eff": 1455.7584,
+       "binding": "supply",
+       "rate_needed_T_per_s": 841478843930.6359
+      },
+      "1e11|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 173,
+       "T": 14557584,
+       "max_batching": 1,
+       "width": 3835634,
+       "D_eff": 173,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 84147884393.06358
+      },
+      "1e11|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 173,
+       "T": 14557584,
+       "max_batching": 1,
+       "width": 3835634,
+       "D_eff": 173,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 8414788439.306357
+      },
+      "1e12|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 173,
+       "T": 14557584,
+       "max_batching": 1,
+       "width": 3835634,
+       "D_eff": 1455.7584,
+       "binding": "supply",
+       "rate_needed_T_per_s": 8414788439306.358
+      },
+      "1e12|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 173,
+       "T": 14557584,
+       "max_batching": 1,
+       "width": 3835634,
+       "D_eff": 173,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 841478843930.6359
+      },
+      "1e12|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 173,
+       "T": 14557584,
+       "max_batching": 1,
+       "width": 3835634,
+       "D_eff": 173,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 84147884393.06358
+      },
+      "1e12|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 173,
+       "T": 14557584,
+       "max_batching": 1,
+       "width": 3835634,
+       "D_eff": 173,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 8414788439.306357
+      },
+      "1e13|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 173,
+       "T": 14557584,
+       "max_batching": 1,
+       "width": 3835634,
+       "D_eff": 173,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 8414788439306.358
+      },
+      "1e13|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 173,
+       "T": 14557584,
+       "max_batching": 1,
+       "width": 3835634,
+       "D_eff": 173,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 841478843930.6359
+      },
+      "1e13|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 173,
+       "T": 14557584,
+       "max_batching": 1,
+       "width": 3835634,
+       "D_eff": 173,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 84147884393.06358
+      },
+      "1e13|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 173,
+       "T": 14557584,
+       "max_batching": 1,
+       "width": 3835634,
+       "D_eff": 173,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 8414788439.306357
+      }
+     },
+     "W1e8": {
+      "1e11|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 173,
+       "T": 14557584,
+       "max_batching": 1,
+       "width": 3835634,
+       "D_eff": 14557.584,
+       "binding": "supply",
+       "rate_needed_T_per_s": 8414788439306.358
+      },
+      "1e11|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 173,
+       "T": 14557584,
+       "max_batching": 1,
+       "width": 3835634,
+       "D_eff": 1455.7584,
+       "binding": "supply",
+       "rate_needed_T_per_s": 841478843930.6359
+      },
+      "1e11|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 173,
+       "T": 14557584,
+       "max_batching": 1,
+       "width": 3835634,
+       "D_eff": 173,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 84147884393.06358
+      },
+      "1e11|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 173,
+       "T": 14557584,
+       "max_batching": 1,
+       "width": 3835634,
+       "D_eff": 173,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 8414788439.306357
+      },
+      "1e12|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 173,
+       "T": 14557584,
+       "max_batching": 1,
+       "width": 3835634,
+       "D_eff": 1455.7584,
+       "binding": "supply",
+       "rate_needed_T_per_s": 8414788439306.358
+      },
+      "1e12|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 173,
+       "T": 14557584,
+       "max_batching": 1,
+       "width": 3835634,
+       "D_eff": 173,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 841478843930.6359
+      },
+      "1e12|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 173,
+       "T": 14557584,
+       "max_batching": 1,
+       "width": 3835634,
+       "D_eff": 173,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 84147884393.06358
+      },
+      "1e12|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 173,
+       "T": 14557584,
+       "max_batching": 1,
+       "width": 3835634,
+       "D_eff": 173,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 8414788439.306357
+      },
+      "1e13|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 173,
+       "T": 14557584,
+       "max_batching": 1,
+       "width": 3835634,
+       "D_eff": 173,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 8414788439306.358
+      },
+      "1e13|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 173,
+       "T": 14557584,
+       "max_batching": 1,
+       "width": 3835634,
+       "D_eff": 173,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 841478843930.6359
+      },
+      "1e13|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 173,
+       "T": 14557584,
+       "max_batching": 1,
+       "width": 3835634,
+       "D_eff": 173,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 84147884393.06358
+      },
+      "1e13|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 173,
+       "T": 14557584,
+       "max_batching": 1,
+       "width": 3835634,
+       "D_eff": 173,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 8414788439.306357
+      }
+     },
+     "unlimited": {
+      "1e11|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 173,
+       "T": 14557584,
+       "max_batching": 1,
+       "width": 3835634,
+       "D_eff": 14557.584,
+       "binding": "supply",
+       "rate_needed_T_per_s": 8414788439306.358
+      },
+      "1e11|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 173,
+       "T": 14557584,
+       "max_batching": 1,
+       "width": 3835634,
+       "D_eff": 1455.7584,
+       "binding": "supply",
+       "rate_needed_T_per_s": 841478843930.6359
+      },
+      "1e11|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 173,
+       "T": 14557584,
+       "max_batching": 1,
+       "width": 3835634,
+       "D_eff": 173,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 84147884393.06358
+      },
+      "1e11|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 173,
+       "T": 14557584,
+       "max_batching": 1,
+       "width": 3835634,
+       "D_eff": 173,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 8414788439.306357
+      },
+      "1e12|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 173,
+       "T": 14557584,
+       "max_batching": 1,
+       "width": 3835634,
+       "D_eff": 1455.7584,
+       "binding": "supply",
+       "rate_needed_T_per_s": 8414788439306.358
+      },
+      "1e12|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 173,
+       "T": 14557584,
+       "max_batching": 1,
+       "width": 3835634,
+       "D_eff": 173,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 841478843930.6359
+      },
+      "1e12|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 173,
+       "T": 14557584,
+       "max_batching": 1,
+       "width": 3835634,
+       "D_eff": 173,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 84147884393.06358
+      },
+      "1e12|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 173,
+       "T": 14557584,
+       "max_batching": 1,
+       "width": 3835634,
+       "D_eff": 173,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 8414788439.306357
+      },
+      "1e13|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 173,
+       "T": 14557584,
+       "max_batching": 1,
+       "width": 3835634,
+       "D_eff": 173,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 8414788439306.358
+      },
+      "1e13|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 173,
+       "T": 14557584,
+       "max_batching": 1,
+       "width": 3835634,
+       "D_eff": 173,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 841478843930.6359
+      },
+      "1e13|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 173,
+       "T": 14557584,
+       "max_batching": 1,
+       "width": 3835634,
+       "D_eff": 173,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 84147884393.06358
+      },
+      "1e13|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 173,
+       "T": 14557584,
+       "max_batching": 1,
+       "width": 3835634,
+       "D_eff": 173,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 8414788439.306357
+      }
+     }
+    }
+   },
+   "all_free_n48_f32": {
+    "compute_depth": 67,
+    "compute_toffolis": 2071534,
+    "compute_T": 8286136,
+    "persistent_outputs": 146316,
+    "stages": {
+     "1_uniform_prep": {
+      "d": 0,
+      "t": 0,
+      "o": 14976,
+      "note": "Hadamards on N*nu qubits; Clifford"
+     },
+     "2_box_muller": {
+      "d": 0,
+      "t": 0,
+      "o": 22464,
+      "note": "free loader (departure)"
+     },
+     "3_correlation": {
+      "d": 8,
+      "t": 619008,
+      "o": 39936
+     },
+     "4a_prefix_logspot": {
+      "d": 18,
+      "t": 1245504,
+      "o": 20384
+     },
+     "4b_clip": {
+      "d": 8,
+      "t": 138112,
+      "o": 20800
+     },
+     "4c_exp": {
+      "d": 0,
+      "t": 0,
+      "o": 19968,
+      "note": "free exponential (departure)"
+     },
+     "5_6_basket_barrier_vs_payoff_sum": {
+      "d": 24,
+      "t": 68725,
+      "o": 7692,
+      "payoff_branch": 21,
+      "barrier_branch": 24
+     },
+     "7a_flag_mask": {
+      "d": 2,
+      "t": 49,
+      "o": 49
+     },
+     "7b_encode_cmp": {
+      "d": 7,
+      "t": 136,
+      "o": 47
+     }
+    },
+    "refl": {
+     "d": 29,
+     "t": 15022
+    },
+    "by_width": {
+     "W1e6": {
+      "1e11|10ns": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "3_correlation",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 2611,
+       "T": 13328240,
+       "max_batching": 46,
+       "width": 1000000,
+       "D_eff": 13328.24,
+       "binding": "supply",
+       "rate_needed_T_per_s": 510464955955.5726
+      },
+      "1e11|100ns": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "3_correlation",
+        "4b_clip",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 853,
+       "T": 13603140,
+       "max_batching": 13,
+       "width": 1000000,
+       "D_eff": 1360.314,
+       "binding": "supply",
+       "rate_needed_T_per_s": 159474091441.9695
+      },
+      "1e11|1us": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 243,
+       "T": 15804272,
+       "max_batching": 2,
+       "width": 1000000,
+       "D_eff": 243,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 65038156378.60082
+      },
+      "1e11|10us": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 243,
+       "T": 15804272,
+       "max_batching": 2,
+       "width": 1000000,
+       "D_eff": 243,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 6503815637.860082
+      },
+      "1e12|10ns": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "3_correlation",
+        "4b_clip",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 853,
+       "T": 13603140,
+       "max_batching": 13,
+       "width": 1000000,
+       "D_eff": 1360.314,
+       "binding": "supply",
+       "rate_needed_T_per_s": 1594740914419.6953
+      },
+      "1e12|100ns": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 243,
+       "T": 15804272,
+       "max_batching": 2,
+       "width": 1000000,
+       "D_eff": 243,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 650381563786.0083
+      },
+      "1e12|1us": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 243,
+       "T": 15804272,
+       "max_batching": 2,
+       "width": 1000000,
+       "D_eff": 243,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 65038156378.60082
+      },
+      "1e12|10us": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 243,
+       "T": 15804272,
+       "max_batching": 2,
+       "width": 1000000,
+       "D_eff": 243,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 6503815637.860082
+      },
+      "1e13|10ns": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 243,
+       "T": 15804272,
+       "max_batching": 2,
+       "width": 1000000,
+       "D_eff": 243,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 6503815637860.082
+      },
+      "1e13|100ns": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 243,
+       "T": 15804272,
+       "max_batching": 2,
+       "width": 1000000,
+       "D_eff": 243,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 650381563786.0083
+      },
+      "1e13|1us": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 243,
+       "T": 15804272,
+       "max_batching": 2,
+       "width": 1000000,
+       "D_eff": 243,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 65038156378.60082
+      },
+      "1e13|10us": {
+       "model": "hybrid keep/clean",
+       "kept_stages": [
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 243,
+       "T": 15804272,
+       "max_batching": 2,
+       "width": 1000000,
+       "D_eff": 243,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 6503815637.860082
+      }
+     },
+     "W1e7": {
+      "1e11|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 163,
+       "T": 8346224,
+       "max_batching": 1,
+       "width": 2217850,
+       "D_eff": 8346.224,
+       "binding": "supply",
+       "rate_needed_T_per_s": 5120382822085.89
+      },
+      "1e11|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 163,
+       "T": 8346224,
+       "max_batching": 1,
+       "width": 2217850,
+       "D_eff": 834.6224,
+       "binding": "supply",
+       "rate_needed_T_per_s": 512038282208.589
+      },
+      "1e11|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 163,
+       "T": 8346224,
+       "max_batching": 1,
+       "width": 2217850,
+       "D_eff": 163,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 51203828220.858894
+      },
+      "1e11|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 163,
+       "T": 8346224,
+       "max_batching": 1,
+       "width": 2217850,
+       "D_eff": 163,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 5120382822.085889
+      },
+      "1e12|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 163,
+       "T": 8346224,
+       "max_batching": 1,
+       "width": 2217850,
+       "D_eff": 834.6224,
+       "binding": "supply",
+       "rate_needed_T_per_s": 5120382822085.89
+      },
+      "1e12|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 163,
+       "T": 8346224,
+       "max_batching": 1,
+       "width": 2217850,
+       "D_eff": 163,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 512038282208.589
+      },
+      "1e12|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 163,
+       "T": 8346224,
+       "max_batching": 1,
+       "width": 2217850,
+       "D_eff": 163,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 51203828220.858894
+      },
+      "1e12|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 163,
+       "T": 8346224,
+       "max_batching": 1,
+       "width": 2217850,
+       "D_eff": 163,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 5120382822.085889
+      },
+      "1e13|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 163,
+       "T": 8346224,
+       "max_batching": 1,
+       "width": 2217850,
+       "D_eff": 163,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 5120382822085.89
+      },
+      "1e13|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 163,
+       "T": 8346224,
+       "max_batching": 1,
+       "width": 2217850,
+       "D_eff": 163,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 512038282208.589
+      },
+      "1e13|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 163,
+       "T": 8346224,
+       "max_batching": 1,
+       "width": 2217850,
+       "D_eff": 163,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 51203828220.858894
+      },
+      "1e13|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 163,
+       "T": 8346224,
+       "max_batching": 1,
+       "width": 2217850,
+       "D_eff": 163,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 5120382822.085889
+      }
+     },
+     "W1e8": {
+      "1e11|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 163,
+       "T": 8346224,
+       "max_batching": 1,
+       "width": 2217850,
+       "D_eff": 8346.224,
+       "binding": "supply",
+       "rate_needed_T_per_s": 5120382822085.89
+      },
+      "1e11|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 163,
+       "T": 8346224,
+       "max_batching": 1,
+       "width": 2217850,
+       "D_eff": 834.6224,
+       "binding": "supply",
+       "rate_needed_T_per_s": 512038282208.589
+      },
+      "1e11|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 163,
+       "T": 8346224,
+       "max_batching": 1,
+       "width": 2217850,
+       "D_eff": 163,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 51203828220.858894
+      },
+      "1e11|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 163,
+       "T": 8346224,
+       "max_batching": 1,
+       "width": 2217850,
+       "D_eff": 163,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 5120382822.085889
+      },
+      "1e12|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 163,
+       "T": 8346224,
+       "max_batching": 1,
+       "width": 2217850,
+       "D_eff": 834.6224,
+       "binding": "supply",
+       "rate_needed_T_per_s": 5120382822085.89
+      },
+      "1e12|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 163,
+       "T": 8346224,
+       "max_batching": 1,
+       "width": 2217850,
+       "D_eff": 163,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 512038282208.589
+      },
+      "1e12|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 163,
+       "T": 8346224,
+       "max_batching": 1,
+       "width": 2217850,
+       "D_eff": 163,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 51203828220.858894
+      },
+      "1e12|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 163,
+       "T": 8346224,
+       "max_batching": 1,
+       "width": 2217850,
+       "D_eff": 163,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 5120382822.085889
+      },
+      "1e13|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 163,
+       "T": 8346224,
+       "max_batching": 1,
+       "width": 2217850,
+       "D_eff": 163,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 5120382822085.89
+      },
+      "1e13|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 163,
+       "T": 8346224,
+       "max_batching": 1,
+       "width": 2217850,
+       "D_eff": 163,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 512038282208.589
+      },
+      "1e13|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 163,
+       "T": 8346224,
+       "max_batching": 1,
+       "width": 2217850,
+       "D_eff": 163,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 51203828220.858894
+      },
+      "1e13|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 163,
+       "T": 8346224,
+       "max_batching": 1,
+       "width": 2217850,
+       "D_eff": 163,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 5120382822.085889
+      }
+     },
+     "unlimited": {
+      "1e11|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 163,
+       "T": 8346224,
+       "max_batching": 1,
+       "width": 2217850,
+       "D_eff": 8346.224,
+       "binding": "supply",
+       "rate_needed_T_per_s": 5120382822085.89
+      },
+      "1e11|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 163,
+       "T": 8346224,
+       "max_batching": 1,
+       "width": 2217850,
+       "D_eff": 834.6224,
+       "binding": "supply",
+       "rate_needed_T_per_s": 512038282208.589
+      },
+      "1e11|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 163,
+       "T": 8346224,
+       "max_batching": 1,
+       "width": 2217850,
+       "D_eff": 163,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 51203828220.858894
+      },
+      "1e11|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 163,
+       "T": 8346224,
+       "max_batching": 1,
+       "width": 2217850,
+       "D_eff": 163,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 5120382822.085889
+      },
+      "1e12|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 163,
+       "T": 8346224,
+       "max_batching": 1,
+       "width": 2217850,
+       "D_eff": 834.6224,
+       "binding": "supply",
+       "rate_needed_T_per_s": 5120382822085.89
+      },
+      "1e12|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 163,
+       "T": 8346224,
+       "max_batching": 1,
+       "width": 2217850,
+       "D_eff": 163,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 512038282208.589
+      },
+      "1e12|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 163,
+       "T": 8346224,
+       "max_batching": 1,
+       "width": 2217850,
+       "D_eff": 163,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 51203828220.858894
+      },
+      "1e12|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 163,
+       "T": 8346224,
+       "max_batching": 1,
+       "width": 2217850,
+       "D_eff": 163,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 5120382822.085889
+      },
+      "1e13|10ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 163,
+       "T": 8346224,
+       "max_batching": 1,
+       "width": 2217850,
+       "D_eff": 163,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 5120382822085.89
+      },
+      "1e13|100ns": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 163,
+       "T": 8346224,
+       "max_batching": 1,
+       "width": 2217850,
+       "D_eff": 163,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 512038282208.589
+      },
+      "1e13|1us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 163,
+       "T": 8346224,
+       "max_batching": 1,
+       "width": 2217850,
+       "D_eff": 163,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 51203828220.858894
+      },
+      "1e13|10us": {
+       "model": "keep all garbage",
+       "kept_stages": [
+        "3_correlation",
+        "4a_prefix_logspot",
+        "4b_clip",
+        "5_6_basket_barrier_vs_payoff_sum",
+        "7a_flag_mask",
+        "7b_encode_cmp"
+       ],
+       "depth": 163,
+       "T": 8346224,
+       "max_batching": 1,
+       "width": 2217850,
+       "D_eff": 163,
+       "binding": "reaction",
+       "rate_needed_T_per_s": 5120382822.085889
+      }
+     }
+    }
+   }
+  }
+ }
+}

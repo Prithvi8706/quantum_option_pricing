@@ -1,0 +1,1661 @@
+{
+ "meta": {
+  "script": "research/plan110_n1/review/check_draft.py",
+  "python": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]",
+  "flags": {
+   "isolated": 1,
+   "no_site": 1
+  },
+  "inputs_sha256": {
+   "HT": "9d4fb7be3e85f7151952d428ff35b1f6b63ec1b2e8a6f1441247af7f1c85537a",
+   "KF": "5cf9deb264ac6327408beec98e234369dc26db051121d9fac5762d3bc41c58ce",
+   "FS": "8e728e2282e62d28e55bae56dd2ea0390be9c29d0a468390cb0f6f9fa87b99ee",
+   "ES": "2020d1d0bce2a70441e9b68a099399537c4a5fd98f0a0d5e076254bb5c01afe3",
+   "HW": "915ab62ae97448325d8a952b522d00ffdc78f686e675e6bdd2dc0954de919067",
+   "DN": "84568820ac489e8432f9fa54ae19dd26b2a485bd30245a587e5d42b69fff46f4",
+   "AD": "73abefadc060adfc8f13b9b7a230dbcd07b0ff4c29acbaeb5a9309c917b8a054",
+   "REG": "c6348b46af4128008b9b7881453a6e6a575de7dc7e332903867d8ffd6f25b453",
+   "WSK": "4780a16c21bf23da796f7633f858bb514fd60be6c592e142e08666117143f2ed",
+   "W0DEC": "ae43981a0d12090e63661f3a2041461f694a4a2a24e4d6d4086bb6750c89717b",
+   "draft": "3d8e590044016b3208402e7e16a76e49eabe14ec01081ebfba08938221c62b1c"
+  },
+  "label": "checks compare quoted draft numbers to file values; derived values are modelled arithmetic on N1 values"
+ },
+ "n_checks": 78,
+ "n_fail_or_missing_snippet": 4,
+ "checks": [
+  {
+   "id": "M_cert",
+   "where": "abstract/3/5.1",
+   "snippet": "**801.5**",
+   "snippet_in_draft": true,
+   "quoted": 801.5,
+   "file_value": 801.4765075667697,
+   "tol": [
+    "abs",
+    0.05
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "M_expl",
+   "where": "abstract/3/5.1",
+   "snippet": "**232.0**",
+   "snippet_in_draft": true,
+   "quoted": 232.0,
+   "file_value": 231.9631113906583,
+   "tol": [
+    "abs",
+    0.05
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "M_win001",
+   "where": "abstract",
+   "snippet": "**8.62**",
+   "snippet_in_draft": true,
+   "quoted": 8.62,
+   "file_value": 8.619120442999092,
+   "tol": [
+    "abs",
+    0.005
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "M_win0003",
+   "where": "3",
+   "snippet": "10.26",
+   "snippet_in_draft": true,
+   "quoted": 10.26,
+   "file_value": 10.257806231575845,
+   "tol": [
+    "abs",
+    0.005
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "M_allfree_distfree",
+   "where": "abstract",
+   "snippet": "M = 0.31",
+   "snippet_in_draft": true,
+   "quoted": 0.31,
+   "file_value": 0.312116722604867,
+   "tol": [
+    "abs",
+    0.005
+   ],
+   "match": true,
+   "source": "HW",
+   "label": "modelled"
+  },
+  {
+   "id": "M_pair",
+   "where": "abstract",
+   "snippet": "M = 1.125",
+   "snippet_in_draft": true,
+   "quoted": 1.125,
+   "file_value": 1.1249861733522126,
+   "tol": [
+    "abs",
+    0.0005
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "M_pair_dirsel",
+   "where": "abstract",
+   "snippet": "becomes 0.97",
+   "snippet_in_draft": true,
+   "quoted": 0.97,
+   "file_value": 0.9717619577934559,
+   "tol": [
+    "abs",
+    0.005
+   ],
+   "match": true,
+   "source": "AD",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "sigma_q",
+   "where": "2",
+   "snippet": "\u03c3_q = 5.66357",
+   "snippet_in_draft": true,
+   "quoted": [
+    5.66357,
+    5.1834
+   ],
+   "file_value": [
+    5.663566959060668,
+    5.183395545396595
+   ],
+   "tol": [
+    "abs",
+    5e-06
+   ],
+   "match": true,
+   "source": "HW",
+   "label": "measured"
+  },
+  {
+   "id": "T_C",
+   "where": "2",
+   "snippet": "**22.529 s**",
+   "snippet_in_draft": true,
+   "quoted": [
+    0.1244,
+    2.688,
+    0.5535,
+    22.529
+   ],
+   "file_value": [
+    0.12440245000470895,
+    2.6880081000053906,
+    0.5535173499956727,
+    22.529285950004123
+   ],
+   "tol": [
+    "rel",
+    0.0005
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "measured"
+  },
+  {
+   "id": "sigma_over_e",
+   "where": "3",
+   "snippet": "11,518.7",
+   "snippet_in_draft": true,
+   "quoted": 11518.7,
+   "file_value": 11518.65676754799,
+   "tol": [
+    "abs",
+    0.05
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled (sigma measured)"
+  },
+  {
+   "id": "D_max",
+   "where": "3",
+   "snippet": "1,955.9 layers",
+   "snippet_in_draft": true,
+   "quoted": 1955.9,
+   "file_value": 1955.8952406218802,
+   "tol": [
+    "abs",
+    0.05
+   ],
+   "match": true,
+   "source": "DN",
+   "label": "modelled"
+  },
+  {
+   "id": "D_eff_W0",
+   "where": "3",
+   "snippet": "2,296 layers",
+   "snippet_in_draft": true,
+   "quoted": 2296,
+   "file_value": 2296.03168,
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "D_eff_N1",
+   "where": "3",
+   "snippet": "3,605 layers",
+   "snippet_in_draft": true,
+   "quoted": 3605,
+   "file_value": 3605.12752,
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "k10x",
+   "where": "3",
+   "snippet": "| k_10x | 0.852",
+   "snippet_in_draft": true,
+   "quoted": 0.852,
+   "file_value": 0.8518589955265252,
+   "tol": [
+    "abs",
+    0.0005
+   ],
+   "match": true,
+   "source": "DN",
+   "label": "modelled"
+  },
+  {
+   "id": "k_B8",
+   "where": "3",
+   "snippet": "682.7 / 197.6 / 7.34 / 8.74",
+   "snippet_in_draft": true,
+   "quoted": [
+    682.7,
+    197.6,
+    7.34,
+    8.74
+   ],
+   "file_value": [
+    682.7449726739359,
+    197.59986306845366,
+    7.342275282895345,
+    8.73820451273593
+   ],
+   "tol": [
+    "rel",
+    0.0008
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "split",
+   "where": "3",
+   "snippet": "74.8 \u00d7 3.10",
+   "snippet_in_draft": true,
+   "quoted": [
+    74.8,
+    3.1
+   ],
+   "file_value": [
+    74.76059843786089,
+    3.1027455135135136
+   ],
+   "tol": [
+    "abs",
+    0.05
+   ],
+   "match": true,
+   "source": "DN",
+   "label": "modelled"
+  },
+  {
+   "id": "t_req_expl",
+   "where": "3",
+   "snippet": "1.34 ns",
+   "snippet_in_draft": true,
+   "quoted": 1.34e-09,
+   "file_value": 1.3376029899375062e-09,
+   "tol": [
+    "rel",
+    0.004
+   ],
+   "match": true,
+   "source": "HW",
+   "label": "modelled"
+  },
+  {
+   "id": "floor740",
+   "where": "3",
+   "snippet": "740 layers",
+   "snippet_in_draft": true,
+   "quoted": 740,
+   "file_value": 740,
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "HW",
+   "label": "modelled"
+  },
+  {
+   "id": "M10ns_B8",
+   "where": "3",
+   "snippet": "binding-cell M stays\n   232.0",
+   "snippet_in_draft": true,
+   "quoted": 232.0,
+   "file_value": 231.96311139065833,
+   "tol": [
+    "abs",
+    0.05
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "M10ns_min",
+   "where": "3",
+   "snippet": "minimum of 197.8",
+   "snippet_in_draft": true,
+   "quoted": 197.8,
+   "file_value": 197.81377804112037,
+   "tol": [
+    "abs",
+    0.05
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "compute_depth",
+   "where": "4.1",
+   "snippet": "| Compute critical path | 270 layers | 278 layers |",
+   "snippet_in_draft": true,
+   "quoted": [
+    270,
+    278
+   ],
+   "file_value": [
+    270,
+    278
+   ],
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "DN/FS",
+   "label": "modelled"
+  },
+  {
+   "id": "compute_T",
+   "where": "4.1",
+   "snippet": "| T per compute | 2.26e7 | 1.87e8 |",
+   "snippet_in_draft": true,
+   "quoted": [
+    22600000.0,
+    187000000.0
+   ],
+   "file_value": [
+    22638344,
+    187475080
+   ],
+   "tol": [
+    "rel",
+    0.003
+   ],
+   "match": true,
+   "source": "DN/FS",
+   "label": "modelled"
+  },
+  {
+   "id": "bm_share",
+   "where": "4.1",
+   "snippet": "| 53% | 52% |",
+   "snippet_in_draft": true,
+   "quoted": [
+    0.53,
+    0.52
+   ],
+   "file_value": [
+    0.5333333333333333,
+    0.5179856115107914
+   ],
+   "tol": [
+    "abs",
+    0.005
+   ],
+   "match": true,
+   "source": "DN/FS",
+   "label": "modelled"
+  },
+  {
+   "id": "bm_depth",
+   "where": "4.1",
+   "snippet": "(144 layers)",
+   "snippet_in_draft": true,
+   "quoted": 144,
+   "file_value": 144,
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "DN/FS",
+   "label": "modelled"
+  },
+  {
+   "id": "iter_B4",
+   "where": "4.1",
+   "snippet": "563 layers, reaction-bound",
+   "snippet_in_draft": true,
+   "quoted": 563,
+   "file_value": 563,
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "DN/FS",
+   "label": "modelled"
+  },
+  {
+   "id": "iter_B8",
+   "where": "4.1",
+   "snippet": "1,409 layers and 3.61e8 T",
+   "snippet_in_draft": true,
+   "quoted": [
+    1409,
+    361000000.0
+   ],
+   "file_value": [
+    1409,
+    360512752
+   ],
+   "tol": [
+    "rel",
+    0.002
+   ],
+   "match": true,
+   "source": "DN/FS",
+   "label": "modelled"
+  },
+  {
+   "id": "iter_B8_unl",
+   "where": "4.1",
+   "snippet": "585 layers and 1.88e8 T",
+   "snippet_in_draft": true,
+   "quoted": [
+    585,
+    188000000.0,
+    1875,
+    50300000.0
+   ],
+   "file_value": [
+    585,
+    187535168,
+    1875.35168,
+    50296880
+   ],
+   "tol": [
+    "rel",
+    0.003
+   ],
+   "match": true,
+   "source": "DN/FS",
+   "label": "modelled"
+  },
+  {
+   "id": "allfree_path",
+   "where": "4.1",
+   "snippet": "| 59 layers | 67 layers |",
+   "snippet_in_draft": true,
+   "quoted": [
+    59,
+    67
+   ],
+   "file_value": [
+    59,
+    67
+   ],
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "DN/FS",
+   "label": "modelled"
+  },
+  {
+   "id": "floor_disagree",
+   "where": "4.1/8/9",
+   "snippet": "165 of 180",
+   "snippet_in_draft": true,
+   "quoted": [
+    165,
+    180
+   ],
+   "file_value": [
+    165,
+    180
+   ],
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "floor_N1_fav",
+   "where": "4.1",
+   "snippet": "more favourable in 33 pairs",
+   "snippet_in_draft": true,
+   "quoted": 33,
+   "file_value": 33,
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "N1_only_M",
+   "where": "4.1",
+   "snippet": "1,258 (certified), 364.2 (explicit)",
+   "snippet_in_draft": true,
+   "quoted": [
+    1258,
+    364.2,
+    13.5
+   ],
+   "file_value": [
+    1258.4430080957982,
+    364.21823086486665,
+    13.533362182202387
+   ],
+   "tol": [
+    "rel",
+    0.004
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "rate_req",
+   "where": "4.1/4.3",
+   "snippet": "3.3e14",
+   "snippet_in_draft": true,
+   "quoted": 330000000000000.0,
+   "file_value": 326128005003170.3,
+   "tol": [
+    "rel",
+    0.02
+   ],
+   "match": true,
+   "source": "HW",
+   "label": "modelled"
+  },
+  {
+   "id": "N1_ratio",
+   "where": "8",
+   "snippet": "1.55-1.57\u00d7",
+   "snippet_in_draft": true,
+   "quoted": [
+    1.55,
+    1.57
+   ],
+   "file_value": [
+    1.5467032967032968,
+    1.5701558264213498
+   ],
+   "tol": [
+    "abs",
+    0.005
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "e07",
+   "where": "4.2",
+   "snippet": "983,025",
+   "snippet_in_draft": true,
+   "quoted": 983025,
+   "file_value": 983025,
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "DN/KF",
+   "label": "modelled exact"
+  },
+  {
+   "id": "cert_range",
+   "where": "4.2",
+   "snippet": "**585.8-1,066.7**",
+   "snippet_in_draft": true,
+   "quoted": [
+    585.8,
+    1066.7
+   ],
+   "file_value": [
+    585.7717449058348,
+    1066.6608310280837
+   ],
+   "tol": [
+    "abs",
+    0.05
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled"
+  },
+  {
+   "id": "cert_dirsel",
+   "where": "4.2",
+   "snippet": "Certified-schedule k: 293-533",
+   "snippet_in_draft": true,
+   "quoted": [
+    293,
+    533
+   ],
+   "file_value": [
+    292.9037498790575,
+    533.3955272727421
+   ],
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled"
+  },
+  {
+   "id": "calls_dirsel",
+   "where": "4.2",
+   "snippet": "491,520 calls",
+   "snippet_in_draft": true,
+   "quoted": 491520,
+   "file_value": 491520,
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled"
+  },
+  {
+   "id": "expl_range",
+   "where": "4.2",
+   "snippet": "k = 186.6-198.2",
+   "snippet_in_draft": true,
+   "quoted": [
+    186.6,
+    198.2
+   ],
+   "file_value": [
+    186.5580927421824,
+    198.20019348367032
+   ],
+   "tol": [
+    "abs",
+    0.05
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled"
+  },
+  {
+   "id": "no_mean",
+   "where": "4.2",
+   "snippet": "323-353 without the mean certificate",
+   "snippet_in_draft": true,
+   "quoted": [
+    323,
+    353
+   ],
+   "file_value": [
+    323.045090351231,
+    353.2964027077513
+   ],
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled"
+  },
+  {
+   "id": "dyadic",
+   "where": "4.2",
+   "snippet": "195-341 with dyadic M",
+   "snippet_in_draft": true,
+   "quoted": [
+    195,
+    341
+   ],
+   "file_value": [
+    195.25724830194494,
+    341.371835219381
+   ],
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled"
+  },
+  {
+   "id": "best_dirsel",
+   "where": "4.2",
+   "snippet": "Best k: 98-171",
+   "snippet_in_draft": true,
+   "quoted": [
+    98,
+    171
+   ],
+   "file_value": [
+    97.63458329301916,
+    170.6865687272775
+   ],
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled"
+  },
+  {
+   "id": "M_dirsel",
+   "where": "4.2",
+   "snippet": "801.5 \u2192 400.7",
+   "snippet_in_draft": true,
+   "quoted": [
+    400.7,
+    200.4
+   ],
+   "file_value": [
+    400.7390181324032,
+    200.3695090662016
+   ],
+   "tol": [
+    "abs",
+    0.05
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled"
+  },
+  {
+   "id": "c_window",
+   "where": "4.2",
+   "snippet": "c = 4.168",
+   "snippet_in_draft": true,
+   "quoted": [
+    4.168,
+    3.502
+   ],
+   "file_value": [
+    4.167780977916077,
+    3.5019774616254025
+   ],
+   "tol": [
+    "abs",
+    0.0005
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled"
+  },
+  {
+   "id": "win_nocred",
+   "where": "4.2",
+   "snippet": "| 23.5-25.7 |",
+   "snippet_in_draft": true,
+   "quoted": [
+    23.5,
+    25.7
+   ],
+   "file_value": [
+    23.548751262326032,
+    25.74812193258147
+   ],
+   "tol": [
+    "abs",
+    0.05
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled"
+  },
+  {
+   "id": "win_0003",
+   "where": "4.2",
+   "snippet": "| 8.25-8.74 |",
+   "snippet_in_draft": true,
+   "quoted": [
+    8.25,
+    8.74
+   ],
+   "file_value": [
+    8.249900203235148,
+    8.770079957077346
+   ],
+   "tol": [
+    "abs",
+    0.005
+   ],
+   "match": false,
+   "source": "ES",
+   "label": "modelled"
+  },
+  {
+   "id": "win_001",
+   "where": "4.2",
+   "snippet": "| 6.93-7.34 |",
+   "snippet_in_draft": true,
+   "quoted": [
+    6.93,
+    7.34
+   ],
+   "file_value": [
+    6.931977646012008,
+    7.369058621140427
+   ],
+   "tol": [
+    "abs",
+    0.005
+   ],
+   "match": false,
+   "source": "ES",
+   "label": "modelled"
+  },
+  {
+   "id": "patel",
+   "where": "4.2",
+   "snippet": "k = 6.8e5-9.3e5",
+   "snippet_in_draft": true,
+   "quoted": [
+    680000.0,
+    930000.0
+   ],
+   "file_value": [
+    682515.2053276171,
+    932176.2464744147
+   ],
+   "tol": [
+    "rel",
+    0.01
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled"
+  },
+  {
+   "id": "grinko",
+   "where": "4.2",
+   "snippet": "k = 2,997-5,755",
+   "snippet_in_draft": true,
+   "quoted": [
+    2997,
+    5755
+   ],
+   "file_value": [
+    2996.889915837109,
+    5754.892638697586
+   ],
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "WSK (W0 file, quoted via EC card)",
+   "label": "modelled from literature"
+  },
+  {
+   "id": "lb_B4",
+   "where": "4.2",
+   "snippet": "k_LB = 1.687-1.696",
+   "snippet_in_draft": true,
+   "quoted": [
+    1.687,
+    1.696
+   ],
+   "file_value": [
+    1.6866579081788295,
+    1.696277331837773
+   ],
+   "tol": [
+    "abs",
+    0.0005
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled (rigorous)"
+  },
+  {
+   "id": "lb_B8",
+   "where": "4.2",
+   "snippet": "1.843-1.853 for B8x52",
+   "snippet_in_draft": true,
+   "quoted": [
+    1.843,
+    1.853
+   ],
+   "file_value": [
+    1.8429039258799442,
+    1.8534144588930739
+   ],
+   "tol": [
+    "abs",
+    0.0005
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled (rigorous)"
+  },
+  {
+   "id": "lb_AA",
+   "where": "4.2",
+   "snippet": "0.85 / 0.93",
+   "snippet_in_draft": true,
+   "quoted": [
+    0.85,
+    0.93
+   ],
+   "file_value": [
+    0.8481585297257089,
+    0.9267289333661036
+   ],
+   "tol": [
+    "abs",
+    0.005
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled"
+  },
+  {
+   "id": "lb_mean",
+   "where": "4.2",
+   "snippet": "0.15-0.16",
+   "snippet_in_draft": true,
+   "quoted": [
+    0.15,
+    0.16
+   ],
+   "file_value": [
+    0.13966463285731004,
+    0.15878717778560458
+   ],
+   "tol": [
+    "abs",
+    0.0051
+   ],
+   "match": false,
+   "source": "ES",
+   "label": "modelled"
+  },
+  {
+   "id": "lanes",
+   "where": "4.2",
+   "snippet": "1.29\u00d7 for B4x12",
+   "snippet_in_draft": true,
+   "quoted": [
+    1.0,
+    1.29,
+    3.36,
+    1.0
+   ],
+   "file_value": [
+    1.0,
+    1.2892754385378316,
+    3.3585164835164836,
+    1.0
+   ],
+   "tol": [
+    "abs",
+    0.005
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled"
+  },
+  {
+   "id": "lane_width",
+   "where": "4.2",
+   "snippet": "5.28M qubits wide",
+   "snippet_in_draft": true,
+   "quoted": [
+    5280000.0,
+    10000000.0
+   ],
+   "file_value": [
+    5279689,
+    10000000
+   ],
+   "tol": [
+    "rel",
+    0.002
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled"
+  },
+  {
+   "id": "h16",
+   "where": "4.3",
+   "snippet": "| B8x52 $0.001 | 10.24\u00d7 |",
+   "snippet_in_draft": true,
+   "quoted": [
+    6.44,
+    9.36,
+    7.38,
+    10.24
+   ],
+   "file_value": [
+    6.438767835373937,
+    9.361076569911027,
+    7.381503490300737,
+    10.23761317753888
+   ],
+   "tol": [
+    "abs",
+    0.005
+   ],
+   "match": true,
+   "source": "HW",
+   "label": "measured"
+  },
+  {
+   "id": "h16_eff",
+   "where": "4.3",
+   "snippet": "0.40-0.64",
+   "snippet_in_draft": true,
+   "quoted": [
+    0.4,
+    0.64
+   ],
+   "file_value": [
+    0.40242298971087104,
+    0.63985082359618
+   ],
+   "tol": [
+    "abs",
+    0.005
+   ],
+   "match": true,
+   "source": "HW",
+   "label": "measured"
+  },
+  {
+   "id": "h16_repro",
+   "where": "4.3",
+   "snippet": "within\n4-10%",
+   "snippet_in_draft": true,
+   "quoted": [
+    0.04,
+    0.1
+   ],
+   "file_value": [
+    0.03754865916767969,
+    0.10071224468218154
+   ],
+   "tol": [
+    "abs",
+    0.005
+   ],
+   "match": true,
+   "source": "HW",
+   "label": "measured"
+  },
+  {
+   "id": "M_1lane",
+   "where": "4.3/5.2",
+   "snippet": "22.7",
+   "snippet_in_draft": true,
+   "quoted": 22.7,
+   "file_value": 22.65792889104081,
+   "tol": [
+    "abs",
+    0.05
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "sig_preint",
+   "where": "4.3",
+   "snippet": "1.248 (B4) and 1.146 (B8)",
+   "snippet_in_draft": true,
+   "quoted": [
+    1.248,
+    1.146
+   ],
+   "file_value": [
+    1.2478834503988405,
+    1.1458902106952196
+   ],
+   "tol": [
+    "abs",
+    0.0005
+   ],
+   "match": true,
+   "source": "HW",
+   "label": "measured"
+  },
+  {
+   "id": "pp_cost",
+   "where": "4.3",
+   "snippet": "1.15 \u00b5s and 10.4 \u00b5s",
+   "snippet_in_draft": true,
+   "quoted": [
+    1.15e-06,
+    1.04e-05
+   ],
+   "file_value": [
+    1.1453357696526723e-06,
+    1.0370095086097847e-05
+   ],
+   "tol": [
+    "rel",
+    0.005
+   ],
+   "match": true,
+   "source": "HW",
+   "label": "measured"
+  },
+  {
+   "id": "c09",
+   "where": "4.3",
+   "snippet": "| B8x52 $0.001 | **36.9** |",
+   "snippet_in_draft": true,
+   "quoted": [
+    40.3,
+    36.9,
+    10.6,
+    18.9
+   ],
+   "file_value": [
+    40.31546282857641,
+    36.900212128140744,
+    10.649065174802926,
+    18.927031666284144
+   ],
+   "tol": [
+    "abs",
+    0.05
+   ],
+   "match": true,
+   "source": "HW",
+   "label": "modelled from measured"
+  },
+  {
+   "id": "M_df",
+   "where": "4.3",
+   "snippet": "| Box-Muller | 21.7 | **6.29** |",
+   "snippet_in_draft": true,
+   "quoted": [
+    21.7,
+    6.29,
+    1.08,
+    0.31
+   ],
+   "file_value": [
+    21.72010569433962,
+    6.286227043496024,
+    1.078422423663909,
+    0.312116722604867
+   ],
+   "tol": [
+    "abs",
+    0.051
+   ],
+   "match": true,
+   "source": "HW",
+   "label": "modelled"
+  },
+  {
+   "id": "anchors",
+   "where": "4.3",
+   "snippet": "| 446 ns | 4.5\u00d7 |",
+   "snippet_in_draft": true,
+   "quoted": [
+    4.46e-07,
+    5.5e-07,
+    1.1e-06,
+    1e-06,
+    1e-05,
+    2.5e-05
+   ],
+   "file_value": [
+    4.46e-07,
+    5.5e-07,
+    1.1e-06,
+    1e-06,
+    1e-05,
+    2.5e-05
+   ],
+   "tol": [
+    "rel",
+    0.001
+   ],
+   "match": true,
+   "source": "HW",
+   "label": "literature"
+  },
+  {
+   "id": "nec_table",
+   "where": "4.3",
+   "snippet": "| Explicit constant, all-free floor | 8.8 ns | 1.3e13 T/s | 1.85e6 qubits |",
+   "snippet_in_draft": true,
+   "quoted": [
+    3.9e-10,
+    1100000000000000.0,
+    3.6e-08,
+    12000000000000.0,
+    8.8e-09,
+    13000000000000.0,
+    1850000.0
+   ],
+   "file_value": [
+    3.871286911369675e-10,
+    1126834059530490.8,
+    3.5998400695673405e-08,
+    12118032639350.682,
+    8.837734040658523e-09,
+    12559699715292.05,
+    1847537
+   ],
+   "tol": [
+    "rel",
+    0.04
+   ],
+   "match": true,
+   "source": "HW",
+   "label": "modelled"
+  },
+  {
+   "id": "nec_326",
+   "where": "4.3",
+   "snippet": "326\u00d7 the budget",
+   "snippet_in_draft": true,
+   "quoted": 326,
+   "file_value": 326.1280050031703,
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "HW",
+   "label": "modelled"
+  },
+  {
+   "id": "rate_anchors",
+   "where": "4.3",
+   "snippet": "about 2.4e5 CCZ/s",
+   "snippet_in_draft": true,
+   "quoted": [
+    240000.0,
+    30000.0,
+    48
+   ],
+   "file_value": [
+    240000.0,
+    31281.28128128128,
+    48
+   ],
+   "tol": [
+    "rel",
+    0.05
+   ],
+   "match": true,
+   "source": "HW",
+   "label": "literature (derived)"
+  },
+  {
+   "id": "dep_table",
+   "where": "5.2",
+   "snippet": "| All-free oracle (free loader and exponential, narrow words) | 11.5 |",
+   "snippet_in_draft": true,
+   "quoted": [
+    11.5,
+    46.4,
+    116.0,
+    74.8,
+    104.4,
+    189.5,
+    318.0,
+    1978,
+    648,
+    748,
+    7476
+   ],
+   "file_value": [
+    11.517173272859651,
+    46.39262227813166,
+    115.98155569532915,
+    74.76059843786089,
+    104.38714543598617,
+    189.46272145709162,
+    317.9526356331612,
+    1978.1377804112035,
+    648.1342187906748,
+    747.605984378609,
+    7476.05984378609
+   ],
+   "tol": [
+    "abs",
+    0.51
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "dep_fail001",
+   "where": "5.2",
+   "snippet": "| Estimator failure 0.01 | 170.1 |",
+   "snippet_in_draft": true,
+   "quoted": 170.1,
+   "file_value": 170.10628168648276,
+   "tol": [
+    "abs",
+    0.05
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "win_dep",
+   "where": "5.2",
+   "snippet": "0.43 at failure 0.01, or 0.51 at 0.003",
+   "snippet_in_draft": true,
+   "quoted": [
+    0.43,
+    0.51,
+    0.84,
+    1.002
+   ],
+   "file_value": [
+    0.4279469395221482,
+    0.5093091356647336,
+    0.8419072193418355,
+    1.001972437685111
+   ],
+   "tol": [
+    "abs",
+    0.005
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "stack3",
+   "where": "5.3",
+   "snippet": "| All-free + 1 lane vs 1 core + distribution-free \u00d75 | 0.225 |",
+   "snippet_in_draft": true,
+   "quoted": [
+    0.225,
+    0.506,
+    0.714,
+    0.825
+   ],
+   "file_value": [
+    0.22499723467044255,
+    0.5062619421991437,
+    0.7144885869957566,
+    0.8249898604582894
+   ],
+   "tol": [
+    "abs",
+    0.0005
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "cert_stack",
+   "where": "5.3",
+   "snippet": "gives 0.777",
+   "snippet_in_draft": true,
+   "quoted": [
+    0.777,
+    3.89
+   ],
+   "file_value": [
+    0.7774080834436916,
+    3.8870404172184574
+   ],
+   "tol": [
+    "abs",
+    0.005
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "ad_table",
+   "where": "5.3",
+   "snippet": "| All-free + distribution-free (Stage C), certified schedule | 0.54 |",
+   "snippet_in_draft": true,
+   "quoted": [
+    0.97,
+    0.27,
+    0.54
+   ],
+   "file_value": [
+    0.9717619577934559,
+    0.2696061201488419,
+    0.5392122402976839
+   ],
+   "tol": [
+    "abs",
+    0.005
+   ],
+   "match": true,
+   "source": "AD",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "quirk",
+   "where": "9",
+   "snippet": "0.12677 s",
+   "snippet_in_draft": true,
+   "quoted": [
+    0.12677,
+    0.1244
+   ],
+   "file_value": [
+    0.12676690000807866,
+    0.12440245000470895
+   ],
+   "tol": [
+    "abs",
+    5e-06
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "measured"
+  },
+  {
+   "id": "W1e6",
+   "where": "9",
+   "snippet": "D_eff of 11,034",
+   "snippet_in_draft": true,
+   "quoted": 11034,
+   "file_value": 11034.0,
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "persist",
+   "where": "9",
+   "snippet": "3.4e6\n    qubits",
+   "snippet_in_draft": true,
+   "quoted": 3400000.0,
+   "file_value": 3428110,
+   "tol": [
+    "rel",
+    0.02
+   ],
+   "match": true,
+   "source": "DN/FS",
+   "label": "modelled"
+  },
+  {
+   "id": "register",
+   "where": "App A",
+   "snippet": "| T6 | Parked as a different task | 25 |",
+   "snippet_in_draft": true,
+   "quoted": [
+    4,
+    8,
+    12,
+    26,
+    35,
+    25
+   ],
+   "file_value": [
+    4,
+    8,
+    12,
+    26,
+    35,
+    25
+   ],
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "REG (W0)",
+   "label": "register record"
+  },
+  {
+   "id": "T6_list",
+   "where": "7",
+   "match": true,
+   "quoted": [
+    "E10",
+    "E14",
+    "E15",
+    "E16",
+    "E17",
+    "E18",
+    "E19",
+    "F09",
+    "F10",
+    "F11",
+    "F12",
+    "F13",
+    "F14",
+    "F15",
+    "F16",
+    "F17",
+    "F18",
+    "F19",
+    "F21",
+    "F22",
+    "F26",
+    "F27",
+    "F28",
+    "F29",
+    "F32"
+   ],
+   "file_value": [
+    "E10",
+    "E14",
+    "E15",
+    "E16",
+    "E17",
+    "E18",
+    "E19",
+    "F09",
+    "F10",
+    "F11",
+    "F12",
+    "F13",
+    "F14",
+    "F15",
+    "F16",
+    "F17",
+    "F18",
+    "F19",
+    "F21",
+    "F22",
+    "F26",
+    "F27",
+    "F28",
+    "F29",
+    "F32"
+   ],
+   "source": "REG",
+   "label": "register record",
+   "snippet": "E10, E14-E19",
+   "snippet_in_draft": true
+  },
+  {
+   "id": "closed_escapes_dispositions",
+   "where": "7/App A",
+   "match": false,
+   "quoted": "listed as closed escapes",
+   "file_value": {
+    "E22": [
+     "T4",
+     "closed or folded into N1"
+    ],
+    "C12": [
+     "T4",
+     "closed or folded into N1"
+    ],
+    "F04": [
+     "T4",
+     "closed or folded into N1"
+    ],
+    "F05": [
+     "T2",
+     "credited screen value / branch-A lever"
+    ],
+    "F20": [
+     "T2",
+     "credited screen value / branch-A lever"
+    ],
+    "C14": [
+     "T1",
+     "decision-critical (W0 done)"
+    ]
+   },
+   "source": "REG",
+   "label": "register record",
+   "snippet": "**\u00a77 (closed escapes):** E22, C12, F04, F05 and F20",
+   "snippet_in_draft": true
+  }
+ ],
+ "derived_for_review": {
+  "explicit_M_le_1_needs_D_eff_layers_at_most": 9.898262125537546,
+  "explicit_M_le_1_needs_T_per_iterate_at_most_at_1e12_100ns": 989826.2125537544,
+  "W0_all_free_D_eff_B8": 114.0,
+  "factor_below_all_free_floor_needed": 11.517173272859653,
+  "no_mean_cert_k_B8_0.001": 352.97084391424994,
+  "distfree_M_without_U1_mean_credit_BM": 11.229030375444664,
+  "distfree_M_without_U1_mean_credit_allfree": 0.5575312718684663,
+  "e_eq_eps_explicit_M_B8": 104.38714543598617,
+  "N1_floor_allfree_D_eff_B8": 163,
+  "iid_CLT_points_B8_0.001_over_EB_points": 0.5366629315194062,
+  "practice_points_B8_0.001": 1425132.020747869,
+  "EB_points_B8_0.001": 80166616
+ }
+}

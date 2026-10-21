@@ -1,0 +1,129 @@
+{
+ "meta": {
+  "script": "research/plan110_n1/review/confirm_dirsel.py",
+  "python": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]",
+  "flags": {
+   "isolated": 1,
+   "no_site": 1
+  },
+  "inputs_sha256": {
+   "HT": "9d4fb7be3e85f7151952d428ff35b1f6b63ec1b2e8a6f1441247af7f1c85537a",
+   "ES": "2020d1d0bce2a70441e9b68a099399537c4a5fd98f0a0d5e076254bb5c01afe3",
+   "HW": "915ab62ae97448325d8a952b522d00ffdc78f686e675e6bdd2dc0954de919067",
+   "AD": "73abefadc060adfc8f13b9b7a230dbcd07b0ff4c29acbaeb5a9309c917b8a054"
+  },
+  "label": "modelled (per-cell arithmetic on N1 values; T_C, H16 measured; dirsel call cost assumed)",
+  "direction": "quantum-favourable departures"
+ },
+ "per_cell": {
+  "B4x12|0.01": {
+   "dirsel_ratio_explicit": 0.5231830374249585,
+   "dirsel_ratio_certified": 0.5000076295109485,
+   "explicit_allfree_1lane": 27.562823367038554,
+   "explicit_allfree_1lane_dirsel": 14.420401649174853,
+   "explicit_allfree_distfree_dirsel": 8.719039351132398,
+   "certified_allfree_distfree": 69.75125047320088,
+   "certified_allfree_distfree_dirsel": 34.87615740452959,
+   "certified_allfree_1lane_dirsel": 57.681606596699424,
+   "explicit_no_U1_distfree_BM": 111.72070817348671,
+   "explicit_no_U1_distfree_allfree": 28.850952110735587,
+   "explicit_eq_eps_allfree_1lane": 12.408375393680855
+  },
+  "B4x12|0.001": {
+   "dirsel_ratio_explicit": 0.8373549009461385,
+   "dirsel_ratio_certified": 0.5000009536761355,
+   "explicit_allfree_1lane": 8.77128256032298,
+   "explicit_allfree_1lane_dirsel": 7.344676439469842,
+   "explicit_allfree_distfree_dirsel": 1.7054021883227497,
+   "certified_allfree_distfree": 6.821595742104869,
+   "certified_allfree_distfree_dirsel": 3.4108043766455,
+   "certified_allfree_1lane_dirsel": 14.689352878939683,
+   "explicit_no_U1_distfree_BM": 13.656513277803526,
+   "explicit_no_U1_distfree_allfree": 3.5266820003118995,
+   "explicit_eq_eps_allfree_1lane": 3.947248060219837
+  },
+  "B8x52|0.01": {
+   "dirsel_ratio_explicit": 0.5396929969036168,
+   "dirsel_ratio_certified": 0.5000076295109483,
+   "explicit_allfree_1lane": 6.352771044490032,
+   "explicit_allfree_1lane_dirsel": 3.4285460436433453,
+   "explicit_allfree_distfree_dirsel": 1.3371259177894483,
+   "certified_allfree_distfree": 10.696844118936953,
+   "certified_allfree_distfree_dirsel": 5.348503671157795,
+   "certified_allfree_1lane_dirsel": 13.714184174573385,
+   "explicit_no_U1_distfree_BM": 89.11213395036627,
+   "explicit_no_U1_distfree_allfree": 4.424496124697092,
+   "explicit_eq_eps_allfree_1lane": 2.8597723530535872
+  },
+  "B8x52|0.001": {
+   "dirsel_ratio_explicit": 0.8637990233229426,
+   "dirsel_ratio_certified": 0.5000009536761354,
+   "explicit_allfree_1lane": 1.1249861733522126,
+   "explicit_allfree_1lane_dirsel": 0.9717619577934559,
+   "explicit_allfree_distfree_dirsel": 0.26960612014884183,
+   "certified_allfree_distfree": 1.0784224236639088,
+   "certified_allfree_distfree_dirsel": 0.5392122402976838,
+   "certified_allfree_1lane_dirsel": 1.943523915586912,
+   "explicit_no_U1_distfree_BM": 11.229030375444664,
+   "explicit_no_U1_distfree_allfree": 0.5575312718684663,
+   "explicit_eq_eps_allfree_1lane": 0.5062619421991437
+  }
+ },
+ "min_over_eligible_non_overhead": {
+  "explicit_allfree_1lane": [
+   1.1249861733522126,
+   "B8x52|0.001"
+  ],
+  "explicit_allfree_1lane_dirsel": [
+   0.9717619577934559,
+   "B8x52|0.001"
+  ],
+  "explicit_allfree_distfree_dirsel": [
+   0.26960612014884183,
+   "B8x52|0.001"
+  ],
+  "certified_allfree_distfree": [
+   1.0784224236639088,
+   "B8x52|0.001"
+  ],
+  "certified_allfree_distfree_dirsel": [
+   0.5392122402976838,
+   "B8x52|0.001"
+  ],
+  "certified_allfree_1lane_dirsel": [
+   1.943523915586912,
+   "B8x52|0.001"
+  ],
+  "explicit_no_U1_distfree_BM": [
+   11.229030375444664,
+   "B8x52|0.001"
+  ],
+  "explicit_no_U1_distfree_allfree": [
+   0.5575312718684663,
+   "B8x52|0.001"
+  ],
+  "explicit_eq_eps_allfree_1lane": [
+   0.5062619421991437,
+   "B8x52|0.001"
+  ]
+ },
+ "compare_to_drafter": {
+  "explicit_allfree_1lane_dirsel": [
+   0.9717619577934559,
+   0.9717619577934559
+  ],
+  "explicit_allfree_distfree_dirsel": [
+   0.26960612014884183,
+   0.2696061201488419
+  ],
+  "certified_allfree_distfree_dirsel": [
+   0.5392122402976838,
+   0.5392122402976839
+  ],
+  "explicit_allfree_1lane_vs_headline_pair": [
+   1.1249861733522126,
+   1.1249861733522126
+  ]
+ },
+ "drafter_values_confirmed": true
+}

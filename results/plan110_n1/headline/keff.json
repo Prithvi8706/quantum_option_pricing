@@ -1,0 +1,610 @@
+{
+ "meta": {
+  "script": "research/plan110_n1/headline/e07_keff.py",
+  "python": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]",
+  "inputs_sha256": {
+   "sigma_dev.json": "9d3c4e361ec0a9f4d24fbebea7e1d6adb40e39326cf67d5fd44cca6a4fa27677",
+   "E07 schedule.json": "4fdd33add8e18f83680bcda21f38fb0bb67cc1017323717b89a52165cb59b335"
+  },
+  "pi_enclosure": [
+   3.141592653589793,
+   3.141592653589793
+  ],
+  "pi_method": "BBP 30 terms + tail bound",
+  "span": 64,
+  "failure": "3/1000",
+  "labels": "schedule arithmetic modelled-exact; sigma measured; neutral direction"
+ },
+ "cells": [
+  {
+   "case": "B4x12",
+   "eps": 0.1,
+   "split": "0.45eps",
+   "e": [
+    9,
+    200
+   ],
+   "M_rule": "dyadic (E07)",
+   "M": 8192,
+   "reps": 15,
+   "calls": 122865,
+   "sigma_q": 5.663566959060668,
+   "sigma_over_e": 125.85704353468151,
+   "k_eff": 976.2266500892578,
+   "label": "modelled (exact rational schedule) x measured sigma",
+   "direction": "neutral"
+  },
+  {
+   "case": "B8x52",
+   "eps": 0.1,
+   "split": "0.45eps",
+   "e": [
+    9,
+    200
+   ],
+   "M_rule": "dyadic (E07)",
+   "M": 8192,
+   "reps": 15,
+   "calls": 122865,
+   "sigma_q": 5.183395545396595,
+   "sigma_over_e": 115.1865676754799,
+   "k_eff": 1066.6608310280837,
+   "label": "modelled (exact rational schedule) x measured sigma",
+   "direction": "neutral"
+  },
+  {
+   "case": "B4x12",
+   "eps": 0.1,
+   "split": "0.45eps",
+   "e": [
+    9,
+    200
+   ],
+   "M_rule": "non-dyadic integer M (conditional credit)",
+   "M": 4472,
+   "reps": 15,
+   "calls": 67065,
+   "sigma_q": 5.663566959060668,
+   "sigma_over_e": 125.85704353468151,
+   "k_eff": 532.8664818152938,
+   "label": "modelled (exact rational schedule) x measured sigma",
+   "direction": "neutral"
+  },
+  {
+   "case": "B8x52",
+   "eps": 0.1,
+   "split": "0.45eps",
+   "e": [
+    9,
+    200
+   ],
+   "M_rule": "non-dyadic integer M (conditional credit)",
+   "M": 4472,
+   "reps": 15,
+   "calls": 67065,
+   "sigma_q": 5.183395545396595,
+   "sigma_over_e": 115.1865676754799,
+   "k_eff": 582.2293462979566,
+   "label": "modelled (exact rational schedule) x measured sigma",
+   "direction": "neutral"
+  },
+  {
+   "case": "B4x12",
+   "eps": 0.03,
+   "split": "0.45eps",
+   "e": [
+    27,
+    2000
+   ],
+   "M_rule": "dyadic (E07)",
+   "M": 16384,
+   "reps": 15,
+   "calls": 245745,
+   "sigma_q": 5.663566959060668,
+   "sigma_over_e": 419.52347844893836,
+   "k_eff": 585.7717449058348,
+   "label": "modelled (exact rational schedule) x measured sigma",
+   "direction": "neutral"
+  },
+  {
+   "case": "B8x52",
+   "eps": 0.03,
+   "split": "0.45eps",
+   "e": [
+    27,
+    2000
+   ],
+   "M_rule": "dyadic (E07)",
+   "M": 16384,
+   "reps": 15,
+   "calls": 245745,
+   "sigma_q": 5.183395545396595,
+   "sigma_over_e": 383.955225584933,
+   "k_eff": 640.0355656720704,
+   "label": "modelled (exact rational schedule) x measured sigma",
+   "direction": "neutral"
+  },
+  {
+   "case": "B4x12",
+   "eps": 0.03,
+   "split": "0.45eps",
+   "e": [
+    27,
+    2000
+   ],
+   "M_rule": "non-dyadic integer M (conditional credit)",
+   "M": 14897,
+   "reps": 15,
+   "calls": 223440,
+   "sigma_q": 5.663566959060668,
+   "sigma_over_e": 419.52347844893836,
+   "k_eff": 532.6042795652393,
+   "label": "modelled (exact rational schedule) x measured sigma",
+   "direction": "neutral"
+  },
+  {
+   "case": "B8x52",
+   "eps": 0.03,
+   "split": "0.45eps",
+   "e": [
+    27,
+    2000
+   ],
+   "M_rule": "non-dyadic integer M (conditional credit)",
+   "M": 14897,
+   "reps": 15,
+   "calls": 223440,
+   "sigma_q": 5.183395545396595,
+   "sigma_over_e": 383.955225584933,
+   "k_eff": 581.9428545596754,
+   "label": "modelled (exact rational schedule) x measured sigma",
+   "direction": "neutral"
+  },
+  {
+   "case": "B4x12",
+   "eps": 0.01,
+   "split": "0.45eps",
+   "e": [
+    9,
+    2000
+   ],
+   "M_rule": "dyadic (E07)",
+   "M": 65536,
+   "reps": 15,
+   "calls": 983025,
+   "sigma_q": 5.663566959060668,
+   "sigma_over_e": 1258.5704353468152,
+   "k_eff": 781.0647480600599,
+   "label": "modelled (exact rational schedule) x measured sigma",
+   "direction": "neutral"
+  },
+  {
+   "case": "B8x52",
+   "eps": 0.01,
+   "split": "0.45eps",
+   "e": [
+    9,
+    2000
+   ],
+   "M_rule": "dyadic (E07)",
+   "M": 65536,
+   "reps": 15,
+   "calls": 983025,
+   "sigma_q": 5.183395545396595,
+   "sigma_over_e": 1151.865676754799,
+   "k_eff": 853.4198212846474,
+   "label": "modelled (exact rational schedule) x measured sigma",
+   "direction": "neutral"
+  },
+  {
+   "case": "B4x12",
+   "eps": 0.01,
+   "split": "0.45eps",
+   "e": [
+    9,
+    2000
+   ],
+   "M_rule": "non-dyadic integer M (conditional credit)",
+   "M": 44684,
+   "reps": 15,
+   "calls": 670245,
+   "sigma_q": 5.663566959060668,
+   "sigma_over_e": 1258.5704353468152,
+   "k_eff": 532.5446881447723,
+   "label": "modelled (exact rational schedule) x measured sigma",
+   "direction": "neutral"
+  },
+  {
+   "case": "B8x52",
+   "eps": 0.01,
+   "split": "0.45eps",
+   "e": [
+    9,
+    2000
+   ],
+   "M_rule": "non-dyadic integer M (conditional credit)",
+   "M": 44684,
+   "reps": 15,
+   "calls": 670245,
+   "sigma_q": 5.183395545396595,
+   "sigma_over_e": 1151.865676754799,
+   "k_eff": 581.877742800975,
+   "label": "modelled (exact rational schedule) x measured sigma",
+   "direction": "neutral"
+  },
+  {
+   "case": "B4x12",
+   "eps": 0.001,
+   "split": "0.45eps",
+   "e": [
+    9,
+    20000
+   ],
+   "M_rule": "dyadic (E07)",
+   "M": 524288,
+   "reps": 15,
+   "calls": 7864305,
+   "sigma_q": 5.663566959060668,
+   "sigma_over_e": 12585.70435346815,
+   "k_eff": 624.8601412469133,
+   "label": "modelled (exact rational schedule) x measured sigma",
+   "direction": "neutral"
+  },
+  {
+   "case": "B8x52",
+   "eps": 0.001,
+   "split": "0.45eps",
+   "e": [
+    9,
+    20000
+   ],
+   "M_rule": "dyadic (E07)",
+   "M": 524288,
+   "reps": 15,
+   "calls": 7864305,
+   "sigma_q": 5.183395545396595,
+   "sigma_over_e": 11518.656767547991,
+   "k_eff": 682.7449726739359,
+   "label": "modelled (exact rational schedule) x measured sigma",
+   "direction": "neutral"
+  },
+  {
+   "case": "B4x12",
+   "eps": 0.001,
+   "split": "0.45eps",
+   "e": [
+    9,
+    20000
+   ],
+   "M_rule": "non-dyadic integer M (conditional credit)",
+   "M": 446808,
+   "reps": 15,
+   "calls": 6702105,
+   "sigma_q": 5.663566959060668,
+   "sigma_over_e": 12585.70435346815,
+   "k_eff": 532.5172760913575,
+   "label": "modelled (exact rational schedule) x measured sigma",
+   "direction": "neutral"
+  },
+  {
+   "case": "B8x52",
+   "eps": 0.001,
+   "split": "0.45eps",
+   "e": [
+    9,
+    20000
+   ],
+   "M_rule": "non-dyadic integer M (conditional credit)",
+   "M": 446808,
+   "reps": 15,
+   "calls": 6702105,
+   "sigma_q": 5.183395545396595,
+   "sigma_over_e": 11518.656767547991,
+   "k_eff": 581.8477913919729,
+   "label": "modelled (exact rational schedule) x measured sigma",
+   "direction": "neutral"
+  },
+  {
+   "case": "B4x12",
+   "eps": 0.1,
+   "split": "eps",
+   "e": [
+    1,
+    10
+   ],
+   "M_rule": "dyadic (E07)",
+   "M": 2048,
+   "reps": 15,
+   "calls": 30705,
+   "sigma_q": 5.663566959060668,
+   "sigma_over_e": 56.635669590606675,
+   "k_eff": 542.1495008702534,
+   "label": "modelled (exact rational schedule) x measured sigma",
+   "direction": "neutral"
+  },
+  {
+   "case": "B8x52",
+   "eps": 0.1,
+   "split": "eps",
+   "e": [
+    1,
+    10
+   ],
+   "M_rule": "dyadic (E07)",
+   "M": 2048,
+   "reps": 15,
+   "calls": 30705,
+   "sigma_q": 5.183395545396595,
+   "sigma_over_e": 51.83395545396595,
+   "k_eff": 592.3723113754901,
+   "label": "modelled (exact rational schedule) x measured sigma",
+   "direction": "neutral"
+  },
+  {
+   "case": "B4x12",
+   "eps": 0.1,
+   "split": "eps",
+   "e": [
+    1,
+    10
+   ],
+   "M_rule": "non-dyadic integer M (conditional credit)",
+   "M": 2014,
+   "reps": 15,
+   "calls": 30195,
+   "sigma_q": 5.663566959060668,
+   "sigma_over_e": 56.635669590606675,
+   "k_eff": 533.1445751108062,
+   "label": "modelled (exact rational schedule) x measured sigma",
+   "direction": "neutral"
+  },
+  {
+   "case": "B8x52",
+   "eps": 0.1,
+   "split": "eps",
+   "e": [
+    1,
+    10
+   ],
+   "M_rule": "non-dyadic integer M (conditional credit)",
+   "M": 2014,
+   "reps": 15,
+   "calls": 30195,
+   "sigma_q": 5.183395545396595,
+   "sigma_over_e": 51.83395545396595,
+   "k_eff": 582.5332011718913,
+   "label": "modelled (exact rational schedule) x measured sigma",
+   "direction": "neutral"
+  },
+  {
+   "case": "B4x12",
+   "eps": 0.03,
+   "split": "eps",
+   "e": [
+    3,
+    100
+   ],
+   "M_rule": "dyadic (E07)",
+   "M": 8192,
+   "reps": 15,
+   "calls": 122865,
+   "sigma_q": 5.663566959060668,
+   "sigma_over_e": 188.78556530202226,
+   "k_eff": 650.8177667261718,
+   "label": "modelled (exact rational schedule) x measured sigma",
+   "direction": "neutral"
+  },
+  {
+   "case": "B8x52",
+   "eps": 0.03,
+   "split": "eps",
+   "e": [
+    3,
+    100
+   ],
+   "M_rule": "dyadic (E07)",
+   "M": 8192,
+   "reps": 15,
+   "calls": 122865,
+   "sigma_q": 5.183395545396595,
+   "sigma_over_e": 172.77985151321985,
+   "k_eff": 711.1072206853892,
+   "label": "modelled (exact rational schedule) x measured sigma",
+   "direction": "neutral"
+  },
+  {
+   "case": "B4x12",
+   "eps": 0.03,
+   "split": "eps",
+   "e": [
+    3,
+    100
+   ],
+   "M_rule": "non-dyadic integer M (conditional credit)",
+   "M": 6706,
+   "reps": 15,
+   "calls": 100575,
+   "sigma_q": 5.663566959060668,
+   "sigma_over_e": 188.78556530202226,
+   "k_eff": 532.7472989743599,
+   "label": "modelled (exact rational schedule) x measured sigma",
+   "direction": "neutral"
+  },
+  {
+   "case": "B8x52",
+   "eps": 0.03,
+   "split": "eps",
+   "e": [
+    3,
+    100
+   ],
+   "M_rule": "non-dyadic integer M (conditional credit)",
+   "M": 6706,
+   "reps": 15,
+   "calls": 100575,
+   "sigma_q": 5.183395545396595,
+   "sigma_over_e": 172.77985151321985,
+   "k_eff": 582.0991227805561,
+   "label": "modelled (exact rational schedule) x measured sigma",
+   "direction": "neutral"
+  },
+  {
+   "case": "B4x12",
+   "eps": 0.01,
+   "split": "eps",
+   "e": [
+    1,
+    100
+   ],
+   "M_rule": "dyadic (E07)",
+   "M": 32768,
+   "reps": 15,
+   "calls": 491505,
+   "sigma_q": 5.663566959060668,
+   "sigma_over_e": 566.3566959060668,
+   "k_eff": 867.8364775288517,
+   "label": "modelled (exact rational schedule) x measured sigma",
+   "direction": "neutral"
+  },
+  {
+   "case": "B8x52",
+   "eps": 0.01,
+   "split": "eps",
+   "e": [
+    1,
+    100
+   ],
+   "M_rule": "dyadic (E07)",
+   "M": 32768,
+   "reps": 15,
+   "calls": 491505,
+   "sigma_q": 5.183395545396595,
+   "sigma_over_e": 518.3395545396595,
+   "k_eff": 948.2297765921194,
+   "label": "modelled (exact rational schedule) x measured sigma",
+   "direction": "neutral"
+  },
+  {
+   "case": "B4x12",
+   "eps": 0.01,
+   "split": "eps",
+   "e": [
+    1,
+    100
+   ],
+   "M_rule": "non-dyadic integer M (conditional credit)",
+   "M": 20110,
+   "reps": 15,
+   "calls": 301635,
+   "sigma_q": 5.663566959060668,
+   "sigma_over_e": 566.3566959060668,
+   "k_eff": 532.5883885197815,
+   "label": "modelled (exact rational schedule) x measured sigma",
+   "direction": "neutral"
+  },
+  {
+   "case": "B8x52",
+   "eps": 0.01,
+   "split": "eps",
+   "e": [
+    1,
+    100
+   ],
+   "M_rule": "non-dyadic integer M (conditional credit)",
+   "M": 20110,
+   "reps": 15,
+   "calls": 301635,
+   "sigma_q": 5.183395545396595,
+   "sigma_over_e": 518.3395545396595,
+   "k_eff": 581.925491424022,
+   "label": "modelled (exact rational schedule) x measured sigma",
+   "direction": "neutral"
+  },
+  {
+   "case": "B4x12",
+   "eps": 0.001,
+   "split": "eps",
+   "e": [
+    1,
+    1000
+   ],
+   "M_rule": "dyadic (E07)",
+   "M": 262144,
+   "reps": 15,
+   "calls": 3932145,
+   "sigma_q": 5.663566959060668,
+   "sigma_over_e": 5663.566959060668,
+   "k_eff": 694.2877215761155,
+   "label": "modelled (exact rational schedule) x measured sigma",
+   "direction": "neutral"
+  },
+  {
+   "case": "B8x52",
+   "eps": 0.001,
+   "split": "eps",
+   "e": [
+    1,
+    1000
+   ],
+   "M_rule": "dyadic (E07)",
+   "M": 262144,
+   "reps": 15,
+   "calls": 3932145,
+   "sigma_q": 5.183395545396595,
+   "sigma_over_e": 5183.3955453965955,
+   "k_eff": 758.604078265291,
+   "label": "modelled (exact rational schedule) x measured sigma",
+   "direction": "neutral"
+  },
+  {
+   "case": "B4x12",
+   "eps": 0.001,
+   "split": "eps",
+   "e": [
+    1,
+    1000
+   ],
+   "M_rule": "non-dyadic integer M (conditional credit)",
+   "M": 201066,
+   "reps": 15,
+   "calls": 3015975,
+   "sigma_q": 5.663566959060668,
+   "sigma_over_e": 5663.566959060668,
+   "k_eff": 532.5221758303737,
+   "label": "modelled (exact rational schedule) x measured sigma",
+   "direction": "neutral"
+  },
+  {
+   "case": "B8x52",
+   "eps": 0.001,
+   "split": "eps",
+   "e": [
+    1,
+    1000
+   ],
+   "M_rule": "non-dyadic integer M (conditional credit)",
+   "M": 201066,
+   "reps": 15,
+   "calls": 3015975,
+   "sigma_q": 5.183395545396595,
+   "sigma_over_e": 5183.3955453965955,
+   "k_eff": 581.853145025466,
+   "label": "modelled (exact rational schedule) x measured sigma",
+   "direction": "neutral"
+  }
+ ],
+ "reproduction_eps0.01": {
+  "saved": {
+   "M": 65536,
+   "reps": 15,
+   "calls": 983025
+  },
+  "recomputed": {
+   "M": 65536,
+   "reps": 15,
+   "calls": 983025
+  },
+  "match": true,
+  "label": "measured (saved certificate) vs modelled (this script)"
+ }
+}

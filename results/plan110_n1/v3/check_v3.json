@@ -1,0 +1,4358 @@
+{
+ "meta": {
+  "script": "research/plan110_n1/v3/check_v3.py",
+  "adapted_from": "research/plan110_n1/recheck/recheck_draft.py",
+  "python": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]",
+  "flags": {
+   "isolated": 1,
+   "no_site": 1,
+   "dont_write_bytecode": 1
+  },
+  "inputs_sha256": {
+   "HT": "9d4fb7be3e85f7151952d428ff35b1f6b63ec1b2e8a6f1441247af7f1c85537a",
+   "KF": "5cf9deb264ac6327408beec98e234369dc26db051121d9fac5762d3bc41c58ce",
+   "FS": "8e728e2282e62d28e55bae56dd2ea0390be9c29d0a468390cb0f6f9fa87b99ee",
+   "ES": "2020d1d0bce2a70441e9b68a099399537c4a5fd98f0a0d5e076254bb5c01afe3",
+   "HW": "915ab62ae97448325d8a952b522d00ffdc78f686e675e6bdd2dc0954de919067",
+   "DN": "84568820ac489e8432f9fa54ae19dd26b2a485bd30245a587e5d42b69fff46f4",
+   "AD": "73abefadc060adfc8f13b9b7a230dbcd07b0ff4c29acbaeb5a9309c917b8a054",
+   "DC": "ba336be743c9d390092623912cc51061e3279c4f2ca842540c5b17a98cc0de22",
+   "NC": "c665456aa39e990b74d7b9431b0beceab225bb83d861f50f5ae10d3412c5fe46",
+   "FX": "19e9b3a6ea5df852f1c138034d56d58b573140d00215442d4c9be43b05abcae6",
+   "FX2": "df84967ca05652f90b10fcaf8502d1a91eacb9e3e4e461fb801a22d21b24eb26",
+   "REG": "c6348b46af4128008b9b7881453a6e6a575de7dc7e332903867d8ffd6f25b453",
+   "WSK": "4780a16c21bf23da796f7633f858bb514fd60be6c592e142e08666117143f2ed",
+   "BD": "5bc61e9b3003a6d1e23e9ad5f4477c3b3187c33cec38f636fb6b86f792bd835d",
+   "v1": "3d8e590044016b3208402e7e16a76e49eabe14ec01081ebfba08938221c62b1c",
+   "v2": "51dcf89b8ad127187843a1e734e2a9e7f59f45dc4b7d66571100ece5b8132d00",
+   "v3": "c7ab400d320afb8fdd6b634dde9d11d52cf3505db777ec521798ad5e07f03e91",
+   "RK": "cdbf995dd539754520015e68ecee52c2abaa136aba53e6457c7a151e1d6cdfe0",
+   "V3N": "cd6b07536298b3aa3e9b791dd7a9759efd17fa609c9a60998000baa9997517ae",
+   "DP1": "7bf110888ca40bbc534eae5df8e958c05ac51e84beff6f727b6db0cb5a110bc2"
+  },
+  "label": "checks compare quoted v3 numbers to file values or to values re-derived here from primary files"
+ },
+ "summary": {
+  "sha_checks_ok": true,
+  "n3_status": {
+   "N3-1": "fixed",
+   "N3-2": "fixed",
+   "N3-3": "fixed",
+   "N3-4": "fixed",
+   "N3-5": "fixed",
+   "N3-6": "fixed",
+   "N3-7": "fixed",
+   "N3-8": "fixed"
+  },
+  "general_ok": true,
+  "number_check": {
+   "n_checks": 193,
+   "n_pass": 193,
+   "n_bad": 0,
+   "recheck_carried_129": {
+    "n": 129,
+    "pass": 129
+   },
+   "by_part": {
+    "part1_carried_v1": {
+     "n": 85,
+     "pass": 85
+    },
+    "part2_new_in_v2": {
+     "n": 22,
+     "pass": 22
+    },
+    "part3_text_register": {
+     "n": 22,
+     "pass": 22
+    },
+    "part4_probe_match": {
+     "n": 39,
+     "pass": 39
+    },
+    "part5_new_in_v3": {
+     "n": 25,
+     "pass": 25
+    }
+   }
+  },
+  "diff_hunks_v2_to_v3": 27
+ },
+ "sha_checks": {
+  "v1_unchanged": {
+   "expected": "3d8e590044016b3208402e7e16a76e49eabe14ec01081ebfba08938221c62b1c",
+   "actual": "3d8e590044016b3208402e7e16a76e49eabe14ec01081ebfba08938221c62b1c",
+   "ok": true
+  },
+  "v2_unchanged": {
+   "expected": "51dcf89b8ad127187843a1e734e2a9e7f59f45dc4b7d66571100ece5b8132d00",
+   "actual": "51dcf89b8ad127187843a1e734e2a9e7f59f45dc4b7d66571100ece5b8132d00",
+   "ok": true
+  },
+  "recheck_was_run_on_this_v2_and_v1": {
+   "actual": [
+    "51dcf89b8ad127187843a1e734e2a9e7f59f45dc4b7d66571100ece5b8132d00",
+    "3d8e590044016b3208402e7e16a76e49eabe14ec01081ebfba08938221c62b1c"
+   ],
+   "ok": true
+  },
+  "v3_matches_build_row": {
+   "actual": "c7ab400d320afb8fdd6b634dde9d11d52cf3505db777ec521798ad5e07f03e91",
+   "build_rows": [
+    "c7ab400d320afb8fdd6b634dde9d11d52cf3505db777ec521798ad5e07f03e91"
+   ],
+   "ok": true
+  },
+  "v3_numbers_inputs_unchanged": {
+   "ok": true
+  },
+  "v3_numbers_flags": {
+   "actual": {
+    "isolated": 1,
+    "no_site": 1,
+    "dont_write_bytecode": 1
+   },
+   "ok": true
+  }
+ },
+ "n3_phrase_checks": {
+  "N3-1": {
+   "items": [
+    {
+     "kind": "gone",
+     "phrase": "Under every reading above",
+     "in_v2_body": true,
+     "in_v3_body": false,
+     "ok": true
+    },
+    {
+     "kind": "gone",
+     "phrase": "under every reading of the primary",
+     "in_v2_body": true,
+     "in_v3_body": false,
+     "ok": true
+    },
+    {
+     "kind": "gone",
+     "phrase": "the certified class stays at M \u2265 400.7",
+     "in_v2_body": true,
+     "in_v3_body": false,
+     "ok": true
+    },
+    {
+     "kind": "present",
+     "phrase": "Taken one at a time, the readings above keep the certified class at M \u2265 400.7",
+     "count_v3_body": 1,
+     "need": 1,
+     "ok": true
+    },
+    {
+     "kind": "present",
+     "phrase": "certified M = 200.4 (k = 379.3 at e = \u03b5 [ES]) and best explicit M \u2248 90, or \u2248 66 at failure 0.01",
+     "count_v3_body": 1,
+     "need": 1,
+     "ok": true
+    },
+    {
+     "kind": "present",
+     "phrase": "The two explicit values are approximate",
+     "count_v3_body": 1,
+     "need": 1,
+     "ok": true
+    },
+    {
+     "kind": "present",
+     "phrase": "| Strict zero-bias reading + direction-select (the lowest combination) | 200.4 | \u2248 90 (approximate; \u2248 66 at failure 0.01) |",
+     "count_v3_body": 1,
+     "need": 1,
+     "ok": true
+    },
+    {
+     "kind": "present",
+     "phrase": "gives certified 200.4 and explicit \u2248 90, or \u2248 66 at failure 0.01 (mod, derived, q+; the explicit values approximate) [RK]",
+     "count_v3_body": 1,
+     "need": 1,
+     "ok": true
+    }
+   ],
+   "ok": true
+  },
+  "N3-2": {
+   "items": [
+    {
+     "kind": "gone",
+     "phrase": "Any one of these, stacked with lever 2's all-free floor, reaches or nearly reaches",
+     "in_v2_body": true,
+     "in_v3_body": false,
+     "ok": true
+    },
+    {
+     "kind": "present",
+     "phrase": "the first two reach or nearly reach M = 1: 0.31 (distribution-free) and 1.125 (one lane)",
+     "count_v3_body": 1,
+     "need": 1,
+     "ok": true
+    },
+    {
+     "kind": "present",
+     "phrase": "The other two do not",
+     "count_v3_body": 1,
+     "need": 1,
+     "ok": true
+    },
+    {
+     "kind": "present",
+     "phrase": "the all-free M is 11.3",
+     "count_v3_body": 1,
+     "need": 1,
+     "ok": true
+    },
+    {
+     "kind": "present",
+     "phrase": "it is 7.3, because the iterate becomes supply-bound at 724 layers of 10 ns",
+     "count_v3_body": 1,
+     "need": 1,
+     "ok": true
+    }
+   ],
+   "ok": true
+  },
+  "N3-3": {
+   "items": [
+    {
+     "kind": "gone",
+     "phrase": "Any design above either limit is covered by the claim.",
+     "in_v2_body": true,
+     "in_v3_body": false,
+     "ok": true
+    },
+    {
+     "kind": "present",
+     "phrase": "above the corresponding per-cell limit in the other decision cells (B4x12 $0.001: 1.1 layers / 1.1e5 T",
+     "count_v3_body": 2,
+     "need": 2,
+     "ok": true
+    },
+    {
+     "kind": "present",
+     "phrase": "These limits are for the binding cell.",
+     "count_v3_body": 1,
+     "need": 1,
+     "ok": true
+    },
+    {
+     "kind": "present",
+     "phrase": "A design is covered by the claim only if its iterate is above the limit in every decision cell",
+     "count_v3_body": 1,
+     "need": 1,
+     "ok": true
+    }
+   ],
+   "ok": true
+  },
+  "N3-4": {
+   "items": [
+    {
+     "kind": "gone",
+     "phrase": "2.9 layers and 2.9e5 T",
+     "in_v2_body": true,
+     "in_v3_body": false,
+     "ok": true
+    },
+    {
+     "kind": "gone",
+     "phrase": "about 3 layers or 3e5 T",
+     "in_v2_body": true,
+     "in_v3_body": false,
+     "ok": true
+    },
+    {
+     "kind": "gone",
+     "phrase": "a further 11.5\u00d7 (explicit) or 40\u00d7",
+     "in_v2_body": true,
+     "in_v3_body": false,
+     "ok": true
+    },
+    {
+     "kind": "present",
+     "phrase": "2.9-5.7 layers and 2.9e5-5.7e5 T",
+     "count_v3_body": 3,
+     "need": 3,
+     "ok": true
+    },
+    {
+     "kind": "present",
+     "phrase": "2.9-5.7 layers or 2.9e5-5.7e5 T",
+     "count_v3_body": 1,
+     "need": 1,
+     "ok": true
+    },
+    {
+     "kind": "present",
+     "phrase": "or 20-40\u00d7 (certified)",
+     "count_v3_body": 1,
+     "need": 1,
+     "ok": true
+    },
+    {
+     "kind": "present",
+     "phrase": "the 5.7 / 5.7e5 values if direction-select is granted and 2.9 / 2.9e5 if not",
+     "count_v3_body": 1,
+     "need": 1,
+     "ok": true
+    }
+   ],
+   "ok": true
+  },
+  "N3-5": {
+   "items": [
+    {
+     "kind": "gone",
+     "phrase": "(every conditional credit granted)",
+     "in_v2_body": true,
+     "in_v3_body": false,
+     "ok": true
+    },
+    {
+     "kind": "present",
+     "phrase": "| Best explicit worst-case constant (U1 + U2 + non-dyadic M) | **232.0** (200.4 with direction-select) |",
+     "count_v3_body": 1,
+     "need": 1,
+     "ok": true
+    },
+    {
+     "kind": "present",
+     "phrase": "about 5.43 with direction-select",
+     "count_v3_body": 1,
+     "need": 1,
+     "ok": true
+    }
+   ],
+   "ok": true
+  },
+  "N3-6": {
+   "items": [
+    {
+     "kind": "gone",
+     "phrase": "**Lanes, E20.**",
+     "in_v2_body": true,
+     "in_v3_body": false,
+     "ok": true
+    },
+    {
+     "kind": "gone",
+     "phrase": "reads three dispositions differently",
+     "in_v2_body": true,
+     "in_v3_body": false,
+     "ok": true
+    },
+    {
+     "kind": "present",
+     "phrase": "reads four dispositions differently",
+     "count_v3_body": 1,
+     "need": 1,
+     "ok": true
+    },
+    {
+     "kind": "present",
+     "phrase": "- **E20** stays T2 in the register",
+     "count_v3_body": 1,
+     "need": 1,
+     "ok": true
+    },
+    {
+     "kind": "present",
+     "phrase": "F05 and E20 (both T2 in the register)",
+     "count_v3_body": 1,
+     "need": 1,
+     "ok": true
+    },
+    {
+     "kind": "present",
+     "phrase": "**E20: entangled parallel amplitude estimation (lanes).**",
+     "count_v3_body": 1,
+     "need": 1,
+     "ok": true
+    },
+    {
+     "kind": "section",
+     "phrase": "E20 absent from 7.1 and present in 7.2",
+     "ok": true
+    }
+   ],
+   "ok": true
+  },
+  "N3-7": {
+   "items": [
+    {
+     "kind": "gone",
+     "phrase": "The primary therefore keeps e = 0.45\u03b5 (mod, q+)",
+     "in_v2_body": true,
+     "in_v3_body": false,
+     "ok": true
+    },
+    {
+     "kind": "present",
+     "phrase": "clamp tightening (admission: mod, q+)",
+     "count_v3_body": 1,
+     "need": 1,
+     "ok": true
+    },
+    {
+     "kind": "present",
+     "phrase": "keeps e = 0.45\u03b5, which is q\u2212 relative to the strict zero-bias reading",
+     "count_v3_body": 1,
+     "need": 1,
+     "ok": true
+    }
+   ],
+   "ok": true
+  },
+  "N3-8": {
+   "items": [
+    {
+     "kind": "gone",
+     "phrase": "the user",
+     "in_v2_body": true,
+     "in_v3_body": false,
+     "ok": true
+    },
+    {
+     "kind": "gone",
+     "phrase": "user's",
+     "in_v2_body": true,
+     "in_v3_body": false,
+     "ok": true
+    },
+    {
+     "kind": "gone",
+     "phrase": "Undisclosed-in-v1",
+     "in_v2_body": true,
+     "in_v3_body": false,
+     "ok": true
+    },
+    {
+     "kind": "gone",
+     "phrase": "| Best explicit with direction-select | n/a |",
+     "in_v2_body": true,
+     "in_v3_body": false,
+     "ok": true
+    },
+    {
+     "kind": "gone",
+     "phrase": "has not been re-checked by a reviewer",
+     "in_v2_body": true,
+     "in_v3_body": false,
+     "ok": true
+    },
+    {
+     "kind": "present",
+     "phrase": "the primary convention fixed in [W0C]",
+     "count_v3_body": 2,
+     "need": 2,
+     "ok": true
+    },
+    {
+     "kind": "present",
+     "phrase": "**Further quantum-favourable conventions**",
+     "count_v3_body": 1,
+     "need": 1,
+     "ok": true
+    },
+    {
+     "kind": "present",
+     "phrase": "| Best explicit with direction-select | 170.7 | 200.4 |",
+     "count_v3_body": 1,
+     "need": 1,
+     "ok": true
+    },
+    {
+     "kind": "present",
+     "phrase": "checked only by the script `research/plan110_n1/v3/check_v3.py`",
+     "count_v3_body": 1,
+     "need": 1,
+     "ok": true
+    },
+    {
+     "kind": "regex",
+     "phrase": "\\buser (case-insensitive, whole v3 file)",
+     "ok": true
+    }
+   ],
+   "ok": true
+  }
+ },
+ "general_checks": {
+  "claim_verbatim_from_N1_card": true,
+  "affiliation_VIT_Vellore": true,
+  "AI_assisted_statement": true,
+  "no_author_or_approval_claims": true,
+  "v2_changelog_kept_verbatim": true,
+  "v3_changelog_rows_N3_1_to_8": true
+ },
+ "n_checks": 193,
+ "n_bad": 0,
+ "bad_ids": [],
+ "checks": [
+  {
+   "id": "M_cert",
+   "where": "abstract/3/5.1",
+   "snippet": "**801.5**",
+   "snippet_in_v3": true,
+   "quoted": 801.5,
+   "file_value": 801.4765075667697,
+   "tol": [
+    "abs",
+    0.05
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "M_expl",
+   "where": "abstract/3/5.1",
+   "snippet": "**232.0**",
+   "snippet_in_v3": true,
+   "quoted": 232.0,
+   "file_value": 231.9631113906583,
+   "tol": [
+    "abs",
+    0.05
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "M_win001",
+   "where": "abstract",
+   "snippet": "**8.62** (failure 0.01)",
+   "snippet_in_v3": true,
+   "quoted": 8.62,
+   "file_value": 8.619120442999092,
+   "tol": [
+    "abs",
+    0.005
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "M_win0003",
+   "where": "abstract/3",
+   "snippet": "10.26 (failure 0.003, like for like)",
+   "snippet_in_v3": true,
+   "quoted": 10.26,
+   "file_value": 10.257806231575845,
+   "tol": [
+    "abs",
+    0.005
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "M_allfree_distfree",
+   "where": "abstract",
+   "snippet": "gives M = 0.31",
+   "snippet_in_v3": true,
+   "quoted": 0.31,
+   "file_value": 0.312116722604867,
+   "tol": [
+    "abs",
+    0.005
+   ],
+   "match": true,
+   "source": "HW",
+   "label": "modelled"
+  },
+  {
+   "id": "M_pair",
+   "where": "abstract",
+   "snippet": "M = 1.125, or 0.97 with direction-select",
+   "snippet_in_v3": true,
+   "quoted": [
+    1.125,
+    0.97
+   ],
+   "file_value": [
+    1.1249861733522126,
+    0.9717619577934559
+   ],
+   "tol": [
+    "abs",
+    0.005
+   ],
+   "match": true,
+   "source": "HT/AD",
+   "label": "modelled"
+  },
+  {
+   "id": "sigma_q",
+   "where": "2",
+   "snippet": "\u03c3_q = 5.66357",
+   "snippet_in_v3": true,
+   "quoted": [
+    5.66357,
+    5.1834
+   ],
+   "file_value": [
+    5.663566959060668,
+    5.183395545396595
+   ],
+   "tol": [
+    "abs",
+    5e-06
+   ],
+   "match": true,
+   "source": "HW",
+   "label": "measured"
+  },
+  {
+   "id": "T_C",
+   "where": "2",
+   "snippet": "| B8x52 $0.001 | **22.529 s** |",
+   "snippet_in_v3": true,
+   "quoted": [
+    0.1244,
+    2.688,
+    0.5535,
+    22.529
+   ],
+   "file_value": [
+    0.12440245000470895,
+    2.6880081000053906,
+    0.5535173499956727,
+    22.529285950004123
+   ],
+   "tol": [
+    "rel",
+    0.0005
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "measured"
+  },
+  {
+   "id": "sigma_over_e",
+   "where": "3",
+   "snippet": "11,518.7 = 5.18340 / (0.45 \u00d7 $0.001)",
+   "snippet_in_v3": true,
+   "quoted": 11518.7,
+   "file_value": 11518.65676754799,
+   "tol": [
+    "abs",
+    0.05
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled (sigma measured)"
+  },
+  {
+   "id": "D_max",
+   "where": "3",
+   "snippet": "| D_max(k=1) | 1,955.9 layers |",
+   "snippet_in_v3": true,
+   "quoted": 1955.9,
+   "file_value": 1955.8952406218802,
+   "tol": [
+    "abs",
+    0.05
+   ],
+   "match": true,
+   "source": "HT (re-derived)",
+   "label": "modelled"
+  },
+  {
+   "id": "D_eff_W0",
+   "where": "3",
+   "snippet": "2,296 layers, supply-bound",
+   "snippet_in_v3": true,
+   "quoted": 2296,
+   "file_value": 2296.03168,
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "D_eff_N1",
+   "where": "3",
+   "snippet": "3,605 layers, supply-bound",
+   "snippet_in_v3": true,
+   "quoted": 3605,
+   "file_value": 3605.12752,
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "k10x",
+   "where": "3",
+   "snippet": "| k_10x | 0.852 |",
+   "snippet_in_v3": true,
+   "quoted": 0.852,
+   "file_value": 0.8518589955265252,
+   "tol": [
+    "abs",
+    0.0005
+   ],
+   "match": true,
+   "source": "HT (re-derived)",
+   "label": "modelled"
+  },
+  {
+   "id": "k_B8",
+   "where": "3",
+   "snippet": "682.7 / 197.6 / 7.34 / 8.74",
+   "snippet_in_v3": true,
+   "quoted": [
+    682.7,
+    197.6,
+    7.34,
+    8.74
+   ],
+   "file_value": [
+    682.7449726739359,
+    197.59986306845366,
+    7.342275282895345,
+    8.73820451273593
+   ],
+   "tol": [
+    "rel",
+    0.0008
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "M_ledger",
+   "where": "3",
+   "snippet": "**801.5 / 232.0 / 8.62 / 10.26**",
+   "snippet_in_v3": true,
+   "quoted": [
+    801.5,
+    232.0,
+    8.62,
+    10.26
+   ],
+   "file_value": [
+    801.4765075667697,
+    231.9631113906583,
+    8.619120442999092,
+    10.257806231575845
+   ],
+   "tol": [
+    "rel",
+    0.0007
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "split",
+   "where": "3",
+   "snippet": "M = 232.0 = 74.8 \u00d7 3.10",
+   "snippet_in_v3": true,
+   "quoted": [
+    74.8,
+    3.1
+   ],
+   "file_value": [
+    74.76059843786089,
+    3.102745513513514
+   ],
+   "tol": [
+    "sig",
+    3
+   ],
+   "match": true,
+   "source": "HT (re-derived)",
+   "label": "modelled",
+   "fixer_value": [
+    74.76059843786089,
+    3.102745513513514
+   ]
+  },
+  {
+   "id": "t_req_expl",
+   "where": "3",
+   "snippet": "1.34 ns layer",
+   "snippet_in_v3": true,
+   "quoted": 1.34e-09,
+   "file_value": 1.3376029899375062e-09,
+   "tol": [
+    "rel",
+    0.004
+   ],
+   "match": true,
+   "source": "HW",
+   "label": "modelled"
+  },
+  {
+   "id": "t_req_expl_2",
+   "where": "3 (re-derived)",
+   "snippet": "1.34 ns layer",
+   "snippet_in_v3": true,
+   "quoted": 1.34,
+   "file_value": 1.3376029899375064,
+   "tol": [
+    "abs",
+    0.005
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "floor740",
+   "where": "3",
+   "snippet": "740-layer Box-Muller floor",
+   "snippet_in_v3": true,
+   "quoted": 740,
+   "file_value": 740,
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "HW",
+   "label": "modelled"
+  },
+  {
+   "id": "M10ns_B8",
+   "where": "3",
+   "snippet": "At 10 ns the binding-cell M stays\n   232.0",
+   "snippet_in_v3": true,
+   "quoted": 232.0,
+   "file_value": 231.96311139065833,
+   "tol": [
+    "abs",
+    0.05
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "M10ns_min",
+   "where": "3",
+   "snippet": "to a minimum of 197.8",
+   "snippet_in_v3": true,
+   "quoted": 197.8,
+   "file_value": 197.81377804112037,
+   "tol": [
+    "abs",
+    0.05
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "compute_depth",
+   "where": "4.1",
+   "snippet": "| Compute critical path | 270 layers | 278 layers |",
+   "snippet_in_v3": true,
+   "quoted": [
+    270,
+    278
+   ],
+   "file_value": [
+    270,
+    278
+   ],
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "DN/FS",
+   "label": "modelled"
+  },
+  {
+   "id": "compute_T",
+   "where": "4.1",
+   "snippet": "| T per compute | 2.26e7 | 1.87e8 |",
+   "snippet_in_v3": true,
+   "quoted": [
+    22600000.0,
+    187000000.0
+   ],
+   "file_value": [
+    22638344,
+    187475080
+   ],
+   "tol": [
+    "rel",
+    0.003
+   ],
+   "match": true,
+   "source": "DN/FS",
+   "label": "modelled"
+  },
+  {
+   "id": "bm_share",
+   "where": "4.1",
+   "snippet": "(144 layers) | 53% | 52% |",
+   "snippet_in_v3": true,
+   "quoted": [
+    0.53,
+    0.52
+   ],
+   "file_value": [
+    0.5333333333333333,
+    0.5179856115107914
+   ],
+   "tol": [
+    "abs",
+    0.005
+   ],
+   "match": true,
+   "source": "DN/FS",
+   "label": "modelled"
+  },
+  {
+   "id": "bm_depth",
+   "where": "4.1",
+   "snippet": "(144 layers)",
+   "snippet_in_v3": true,
+   "quoted": 144,
+   "file_value": 144,
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "DN/FS",
+   "label": "modelled"
+  },
+  {
+   "id": "iter_B4",
+   "where": "4.1",
+   "snippet": "563 layers, reaction-bound",
+   "snippet_in_v3": true,
+   "quoted": 563,
+   "file_value": 563,
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "DN/FS",
+   "label": "modelled"
+  },
+  {
+   "id": "iter_B8",
+   "where": "4.1",
+   "snippet": "1,409 layers and 3.61e8 T",
+   "snippet_in_v3": true,
+   "quoted": [
+    1409,
+    361000000.0
+   ],
+   "file_value": [
+    1409,
+    360512752
+   ],
+   "tol": [
+    "rel",
+    0.002
+   ],
+   "match": true,
+   "source": "DN/FS",
+   "label": "modelled"
+  },
+  {
+   "id": "iter_B8_unl",
+   "where": "4.1",
+   "snippet": "585 layers and 1.88e8 T: supply-bound, D_eff = 1,875 (5.03e7 qubits)",
+   "snippet_in_v3": true,
+   "quoted": [
+    585,
+    188000000.0,
+    1875,
+    50300000.0
+   ],
+   "file_value": [
+    585,
+    187535168,
+    1875.35168,
+    50296880
+   ],
+   "tol": [
+    "rel",
+    0.003
+   ],
+   "match": true,
+   "source": "DN/FS",
+   "label": "modelled"
+  },
+  {
+   "id": "allfree_path",
+   "where": "4.1",
+   "snippet": "| 59 layers | 67 layers |",
+   "snippet_in_v3": true,
+   "quoted": [
+    59,
+    67
+   ],
+   "file_value": [
+    59,
+    67
+   ],
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "DN/FS",
+   "label": "modelled"
+  },
+  {
+   "id": "floor_disagree",
+   "where": "4.1/8/9",
+   "snippet": "165 of 180",
+   "snippet_in_v3": true,
+   "quoted": [
+    165,
+    180
+   ],
+   "file_value": [
+    165,
+    180
+   ],
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "floor_N1_fav",
+   "where": "4.1",
+   "snippet": "more favourable in 33 pairs",
+   "snippet_in_v3": true,
+   "quoted": 33,
+   "file_value": 33,
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "floor_B4_vs",
+   "where": "4.1",
+   "snippet": "563 against 364 (B4x12)",
+   "snippet_in_v3": true,
+   "quoted": [
+    563,
+    364
+   ],
+   "file_value": [
+    563,
+    364.0
+   ],
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "floor_ratio",
+   "where": "4.1",
+   "snippet": "ratios 1.547\u00d7 and 1.570\u00d7",
+   "snippet_in_v3": true,
+   "quoted": [
+    1.547,
+    1.57
+   ],
+   "file_value": [
+    1.5467032967032968,
+    1.5701558264213498
+   ],
+   "tol": [
+    "abs",
+    0.0005
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "floor_ratio_8",
+   "where": "8",
+   "snippet": "1.55-1.57\u00d7",
+   "snippet_in_v3": true,
+   "quoted": [
+    1.55,
+    1.57
+   ],
+   "file_value": [
+    1.5467032967032968,
+    1.5701558264213498
+   ],
+   "tol": [
+    "abs",
+    0.005
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "N1_unl",
+   "where": "4.1",
+   "snippet": "1,875 against 2,296",
+   "snippet_in_v3": true,
+   "quoted": [
+    1875,
+    2296
+   ],
+   "file_value": [
+    1875.35168,
+    2296.03168
+   ],
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "N1_only_M",
+   "where": "4.1",
+   "snippet": "1,258 (certified), 364.2\n  (explicit) and 13.5",
+   "snippet_in_v3": true,
+   "quoted": [
+    1258,
+    364.2,
+    13.5
+   ],
+   "file_value": [
+    1258.4430080957982,
+    364.21823086486665,
+    13.533362182202387
+   ],
+   "tol": [
+    "rel",
+    0.004
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "N1_only_M_abs",
+   "where": "abstract",
+   "snippet": "M is 1,258 / 364 / 13.5",
+   "snippet_in_v3": true,
+   "quoted": [
+    1258,
+    364,
+    13.5
+   ],
+   "file_value": [
+    1258.4430080957982,
+    364.21823086486665,
+    13.533362182202387
+   ],
+   "tol": [
+    "rel",
+    0.004
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "rate_req",
+   "where": "4.1/4.3",
+   "snippet": "3.3e14 T/s",
+   "snippet_in_v3": true,
+   "quoted": 330000000000000.0,
+   "file_value": 326128005003170.3,
+   "tol": [
+    "rel",
+    0.02
+   ],
+   "match": true,
+   "source": "HW",
+   "label": "modelled"
+  },
+  {
+   "id": "e07",
+   "where": "4.2",
+   "snippet": "983,025\n  controlled Grover calls",
+   "snippet_in_v3": true,
+   "quoted": 983025,
+   "file_value": 983025,
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "DN/KF",
+   "label": "modelled exact"
+  },
+  {
+   "id": "cert_range",
+   "where": "4.2",
+   "snippet": "**585.8-1,066.7**",
+   "snippet_in_v3": true,
+   "quoted": [
+    585.8,
+    1066.7
+   ],
+   "file_value": [
+    585.7717449058348,
+    1066.6608310280837
+   ],
+   "tol": [
+    "abs",
+    0.05
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled"
+  },
+  {
+   "id": "cert_dirsel",
+   "where": "4.2",
+   "snippet": "Certified-schedule k: 293-533",
+   "snippet_in_v3": true,
+   "quoted": [
+    293,
+    533
+   ],
+   "file_value": [
+    292.9037498790575,
+    533.3955272727421
+   ],
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled"
+  },
+  {
+   "id": "cert_dirsel_b8",
+   "where": "4.2/5.1",
+   "snippet": "341.4 at the binding cell",
+   "snippet_in_v3": true,
+   "quoted": 341.4,
+   "file_value": 341.373137454555,
+   "tol": [
+    "abs",
+    0.05
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled"
+  },
+  {
+   "id": "calls_dirsel",
+   "where": "4.2",
+   "snippet": "491,520 calls",
+   "snippet_in_v3": true,
+   "quoted": 491520,
+   "file_value": 491520,
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled"
+  },
+  {
+   "id": "expl_range",
+   "where": "4.2",
+   "snippet": "k = 186.6-198.2",
+   "snippet_in_v3": true,
+   "quoted": [
+    186.6,
+    198.2
+   ],
+   "file_value": [
+    186.5580927421824,
+    198.20019348367032
+   ],
+   "tol": [
+    "abs",
+    0.05
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled"
+  },
+  {
+   "id": "no_mean",
+   "where": "4.2",
+   "snippet": "323-353 without the mean certificate (353.0 at the binding cell)",
+   "snippet_in_v3": true,
+   "quoted": [
+    323,
+    353,
+    353.0
+   ],
+   "file_value": [
+    323.045090351231,
+    353.2964027077513,
+    352.97084391424994
+   ],
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled"
+  },
+  {
+   "id": "dyadic",
+   "where": "4.2",
+   "snippet": "195-341 with dyadic M",
+   "snippet_in_v3": true,
+   "quoted": [
+    195,
+    341
+   ],
+   "file_value": [
+    195.25724830194494,
+    341.371835219381
+   ],
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled"
+  },
+  {
+   "id": "best_dirsel",
+   "where": "4.2",
+   "snippet": "Best k: 98-171",
+   "snippet_in_v3": true,
+   "quoted": [
+    98,
+    171
+   ],
+   "file_value": [
+    97.63458329301916,
+    170.6865687272775
+   ],
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled"
+  },
+  {
+   "id": "M_dirsel",
+   "where": "4.2",
+   "snippet": "801.5 \u2192 400.7 (certified) and 232.0 \u2192 200.4",
+   "snippet_in_v3": true,
+   "quoted": [
+    400.7,
+    200.4
+   ],
+   "file_value": [
+    400.7390181324032,
+    200.3695090662016
+   ],
+   "tol": [
+    "abs",
+    0.05
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled"
+  },
+  {
+   "id": "c_window",
+   "where": "4.2",
+   "snippet": "c = 4.168 at \u03b4 = 0.003 and 3.502 at \u03b4 = 0.01",
+   "snippet_in_v3": true,
+   "quoted": [
+    4.168,
+    3.502
+   ],
+   "file_value": [
+    4.167780977916077,
+    3.5019774616254025
+   ],
+   "tol": [
+    "abs",
+    0.0005
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled"
+  },
+  {
+   "id": "c_window_N",
+   "where": "4.2",
+   "snippet": "only at N = 50, 100 and 200",
+   "snippet_in_v3": true,
+   "quoted": [
+    50,
+    100,
+    200
+   ],
+   "file_value": [
+    50,
+    100,
+    200
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled"
+  },
+  {
+   "id": "win_nocred",
+   "where": "4.2",
+   "snippet": "| 23.5-25.7 |",
+   "snippet_in_v3": true,
+   "quoted": [
+    23.5,
+    25.7
+   ],
+   "file_value": [
+    23.548751262326032,
+    25.74812193258147
+   ],
+   "tol": [
+    "abs",
+    0.05
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled"
+  },
+  {
+   "id": "win_0003",
+   "where": "4.2",
+   "snippet": "| 8.25-8.77 | 8.25 / 8.74 |",
+   "snippet_in_v3": true,
+   "quoted": [
+    8.25,
+    8.77,
+    8.25,
+    8.74
+   ],
+   "file_value": [
+    8.249900203235148,
+    8.770079957077346,
+    8.249900203235148,
+    8.73820451273593
+   ],
+   "tol": [
+    "abs",
+    0.005
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled"
+  },
+  {
+   "id": "win_001",
+   "where": "4.2",
+   "snippet": "| 6.93-7.37 | 6.93 / 7.34 |",
+   "snippet_in_v3": true,
+   "quoted": [
+    6.93,
+    7.37,
+    6.93,
+    7.34
+   ],
+   "file_value": [
+    6.931977646012008,
+    7.369058621140427,
+    6.931977646012008,
+    7.342275282895347
+   ],
+   "tol": [
+    "abs",
+    0.005
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled"
+  },
+  {
+   "id": "patel",
+   "where": "4.2",
+   "snippet": "k = 6.8e5-9.3e5",
+   "snippet_in_v3": true,
+   "quoted": [
+    680000.0,
+    930000.0
+   ],
+   "file_value": [
+    682515.2053276171,
+    932176.2464744147
+   ],
+   "tol": [
+    "rel",
+    0.01
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled"
+  },
+  {
+   "id": "grinko",
+   "where": "4.2",
+   "snippet": "k = 2,997-5,755",
+   "snippet_in_v3": true,
+   "quoted": [
+    2997,
+    5755
+   ],
+   "file_value": [
+    2996.889915837109,
+    5754.892638697586
+   ],
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "WSK via EC",
+   "label": "modelled from literature"
+  },
+  {
+   "id": "lb_B4_prim",
+   "where": "4.2",
+   "snippet": "k_LB = 1.691-1.696 for B4x12",
+   "snippet_in_v3": true,
+   "quoted": [
+    1.691,
+    1.696
+   ],
+   "file_value": [
+    1.6911250576242023,
+    1.696277331837773
+   ],
+   "tol": [
+    "abs",
+    0.0005
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled (rigorous)"
+  },
+  {
+   "id": "lb_B8_prim",
+   "where": "4.2",
+   "snippet": "1.848-1.853 for B8x52",
+   "snippet_in_v3": true,
+   "quoted": [
+    1.848,
+    1.853
+   ],
+   "file_value": [
+    1.847784896235847,
+    1.8534144588930739
+   ],
+   "tol": [
+    "abs",
+    0.0005
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled (rigorous)"
+  },
+  {
+   "id": "lb_both",
+   "where": "4.2",
+   "snippet": "1.687-1.696 and 1.843-1.853",
+   "snippet_in_v3": true,
+   "quoted": [
+    1.687,
+    1.696,
+    1.843,
+    1.853
+   ],
+   "file_value": [
+    1.6866579081788295,
+    1.696277331837773,
+    1.8429039258799442,
+    1.8534144588930739
+   ],
+   "tol": [
+    "abs",
+    0.0005
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled (rigorous)"
+  },
+  {
+   "id": "lb_AA",
+   "where": "4.2",
+   "snippet": "halves to 0.85 / 0.93",
+   "snippet_in_v3": true,
+   "quoted": [
+    0.85,
+    0.93
+   ],
+   "file_value": [
+    0.8481585297257089,
+    0.9267289333661036
+   ],
+   "tol": [
+    "abs",
+    0.005
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled"
+  },
+  {
+   "id": "lb_mean",
+   "where": "4.2",
+   "snippet": "0.15-0.16 at the primary split (0.14-0.16 over both",
+   "snippet_in_v3": true,
+   "quoted": [
+    0.15,
+    0.16,
+    0.14,
+    0.16
+   ],
+   "file_value": [
+    0.1493758273037728,
+    0.15878717778560458,
+    0.13966463285731004,
+    0.15878717778560458
+   ],
+   "tol": [
+    "abs",
+    0.005
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled"
+  },
+  {
+   "id": "lb_lowest",
+   "where": "4.2",
+   "snippet": "the lowest value in any cell or access model is 0.074",
+   "snippet_in_v3": true,
+   "quoted": 0.074,
+   "file_value": 0.07424649572250173,
+   "tol": [
+    "abs",
+    0.0005
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled"
+  },
+  {
+   "id": "lanes",
+   "where": "4.2",
+   "snippet": "1.29\u00d7 for B4x12",
+   "snippet_in_v3": true,
+   "quoted": [
+    1.0,
+    1.29,
+    3.36,
+    1.0
+   ],
+   "file_value": [
+    1.0,
+    1.2892754385378316,
+    3.3585164835164836,
+    1.0
+   ],
+   "tol": [
+    "abs",
+    0.005
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled"
+  },
+  {
+   "id": "lane_width",
+   "where": "4.2",
+   "snippet": "5.28M\n  qubits wide (B4x12) and 10M wide",
+   "snippet_in_v3": true,
+   "quoted": [
+    5280000.0,
+    10000000.0
+   ],
+   "file_value": [
+    5279689,
+    10000000
+   ],
+   "tol": [
+    "rel",
+    0.002
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled"
+  },
+  {
+   "id": "h16",
+   "where": "4.3",
+   "snippet": "| B8x52 $0.001 | 10.24\u00d7 |",
+   "snippet_in_v3": true,
+   "quoted": [
+    6.44,
+    9.36,
+    7.38,
+    10.24
+   ],
+   "file_value": [
+    6.438767835373937,
+    9.361076569911027,
+    7.381503490300737,
+    10.23761317753888
+   ],
+   "tol": [
+    "abs",
+    0.005
+   ],
+   "match": true,
+   "source": "HW",
+   "label": "measured"
+  },
+  {
+   "id": "h16_eff",
+   "where": "4.3",
+   "snippet": "0.40-0.64",
+   "snippet_in_v3": true,
+   "quoted": [
+    0.4,
+    0.64
+   ],
+   "file_value": [
+    0.40242298971087104,
+    0.63985082359618
+   ],
+   "tol": [
+    "abs",
+    0.005
+   ],
+   "match": true,
+   "source": "HW",
+   "label": "measured"
+  },
+  {
+   "id": "h16_repro",
+   "where": "4.3",
+   "snippet": "within\n4-10%",
+   "snippet_in_v3": true,
+   "quoted": [
+    0.04,
+    0.1
+   ],
+   "file_value": [
+    0.03754865916767969,
+    0.10071224468218154
+   ],
+   "tol": [
+    "abs",
+    0.005
+   ],
+   "match": true,
+   "source": "HW",
+   "label": "measured"
+  },
+  {
+   "id": "M_1lane",
+   "where": "4.3/5.2",
+   "snippet": "The minimum explicit M becomes 22.7",
+   "snippet_in_v3": true,
+   "quoted": 22.7,
+   "file_value": 22.65792889104081,
+   "tol": [
+    "abs",
+    0.05
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "TC_is_preint",
+   "where": "4.3 direction note",
+   "snippet": "In all four decision cells T_C is `preint`",
+   "snippet_in_v3": true,
+   "quoted": "preint in all four",
+   "file_value": {
+    "B4x12|0.01": {
+     "source": "C2",
+     "method": "preint",
+     "t": 0.12440245000470895,
+     "convention": "measured confirmation"
+    },
+    "B4x12|0.001": {
+     "source": "C2",
+     "method": "preint",
+     "t": 2.6880081000053906,
+     "convention": "measured confirmation"
+    },
+    "B8x52|0.01": {
+     "source": "C2",
+     "method": "preint",
+     "t": 0.5535173499956727,
+     "convention": "measured confirmation"
+    },
+    "B8x52|0.001": {
+     "source": "C2",
+     "method": "preint",
+     "t": 22.529285950004123,
+     "convention": "measured confirmation"
+    }
+   },
+   "match": true,
+   "source": "HT",
+   "label": "measured"
+  },
+  {
+   "id": "sig_preint",
+   "where": "4.3",
+   "snippet": "1.248 (B4) and 1.146 (B8)",
+   "snippet_in_v3": true,
+   "quoted": [
+    1.248,
+    1.146
+   ],
+   "file_value": [
+    1.2478834503988405,
+    1.1458902106952196
+   ],
+   "tol": [
+    "abs",
+    0.0005
+   ],
+   "match": true,
+   "source": "HW",
+   "label": "measured"
+  },
+  {
+   "id": "pp_cost",
+   "where": "4.3",
+   "snippet": "1.15 \u00b5s and 10.4 \u00b5s",
+   "snippet_in_v3": true,
+   "quoted": [
+    1.15e-06,
+    1.04e-05
+   ],
+   "file_value": [
+    1.1453357696526723e-06,
+    1.0370095086097847e-05
+   ],
+   "tol": [
+    "rel",
+    0.005
+   ],
+   "match": true,
+   "source": "HW",
+   "label": "measured"
+  },
+  {
+   "id": "c09",
+   "where": "4.3",
+   "snippet": "| B8x52 $0.001 | **36.9** |",
+   "snippet_in_v3": true,
+   "quoted": [
+    40.3,
+    36.9,
+    10.6,
+    18.9
+   ],
+   "file_value": [
+    40.31546282857641,
+    36.900212128140744,
+    10.649065174802926,
+    18.927031666284144
+   ],
+   "tol": [
+    "abs",
+    0.05
+   ],
+   "match": true,
+   "source": "HW",
+   "label": "modelled from measured"
+  },
+  {
+   "id": "anchors",
+   "where": "4.3",
+   "snippet": "| 446 ns | 4.5\u00d7 |",
+   "snippet_in_v3": true,
+   "quoted": [
+    4.46e-07,
+    5.5e-07,
+    1.1e-06,
+    1e-06,
+    1e-05,
+    2.5e-05
+   ],
+   "file_value": [
+    4.46e-07,
+    5.5e-07,
+    1.1e-06,
+    1e-06,
+    1e-05,
+    2.5e-05
+   ],
+   "tol": [
+    "rel",
+    0.001
+   ],
+   "match": true,
+   "source": "HW",
+   "label": "literature"
+  },
+  {
+   "id": "nec_table",
+   "where": "4.3",
+   "snippet": "| Explicit constant, all-free floor | 8.8 ns | 1.3e13 T/s | 1.85e6 qubits |",
+   "snippet_in_v3": true,
+   "quoted": [
+    1.34e-09,
+    330000000000000.0,
+    3.9e-10,
+    1100000000000000.0,
+    3.6e-08,
+    12000000000000.0,
+    8.8e-09,
+    13000000000000.0,
+    1850000.0
+   ],
+   "file_value": [
+    1.3376029899375062e-09,
+    326128005003170.3,
+    3.871286911369675e-10,
+    1126834059530490.8,
+    3.5998400695673405e-08,
+    12118032639350.682,
+    8.837734040658523e-09,
+    12559699715292.05,
+    1847537
+   ],
+   "tol": [
+    "rel",
+    0.04
+   ],
+   "match": true,
+   "source": "HW",
+   "label": "modelled"
+  },
+  {
+   "id": "nec_326",
+   "where": "4.3",
+   "snippet": "326\u00d7 the budget",
+   "snippet_in_v3": true,
+   "quoted": 326,
+   "file_value": 326.1280050031703,
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "HW",
+   "label": "modelled"
+  },
+  {
+   "id": "rate_anchors",
+   "where": "4.3",
+   "snippet": "about 2.4e5 CCZ/s",
+   "snippet_in_v3": true,
+   "quoted": [
+    240000.0,
+    30000.0,
+    48
+   ],
+   "file_value": [
+    240000.0,
+    31281.28128128128,
+    48
+   ],
+   "tol": [
+    "rel",
+    0.05
+   ],
+   "match": true,
+   "source": "HW",
+   "label": "literature (derived)"
+  },
+  {
+   "id": "dep_table",
+   "where": "5.2",
+   "snippet": "| All-free oracle (free loader and exponential, narrow words) | 11.5 |",
+   "snippet_in_v3": true,
+   "quoted": [
+    11.5,
+    46.4,
+    116.0,
+    74.8,
+    104.4,
+    189.5,
+    197.8,
+    318.0,
+    1978,
+    648,
+    748,
+    7476
+   ],
+   "file_value": [
+    11.517173272859651,
+    46.39262227813166,
+    115.98155569532915,
+    74.76059843786089,
+    104.38714543598617,
+    189.46272145709162,
+    197.81377804112037,
+    317.9526356331612,
+    1978.1377804112035,
+    648.1342187906748,
+    747.605984378609,
+    7476.05984378609
+   ],
+   "tol": [
+    "abs",
+    0.51
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "dep_fail001",
+   "where": "5.2",
+   "snippet": "| Estimator failure 0.01 | 170.1 |",
+   "snippet_in_v3": true,
+   "quoted": 170.1,
+   "file_value": 170.10628168648276,
+   "tol": [
+    "abs",
+    0.05
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "win_dep",
+   "where": "5.2",
+   "snippet": "0.43 at failure 0.01, or 0.51 at 0.003",
+   "snippet_in_v3": true,
+   "quoted": [
+    0.43,
+    0.51,
+    0.84,
+    1.002
+   ],
+   "file_value": [
+    0.4279469395221482,
+    0.5093091356647336,
+    0.8419072193418355,
+    1.001972437685111
+   ],
+   "tol": [
+    "abs",
+    0.005
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "stack3",
+   "where": "5.3",
+   "snippet": "| All-free + 1 lane vs 1 core + distribution-free \u00d75 | 0.225 |",
+   "snippet_in_v3": true,
+   "quoted": [
+    0.225,
+    0.506,
+    0.714,
+    0.825
+   ],
+   "file_value": [
+    0.22499723467044255,
+    0.5062619421991437,
+    0.7144885869957566,
+    0.8249898604582894
+   ],
+   "tol": [
+    "abs",
+    0.0005
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "cert_stack",
+   "where": "5.3",
+   "snippet": "gives 0.777. Its best pair gives\n3.89",
+   "snippet_in_v3": true,
+   "quoted": [
+    0.777,
+    3.89
+   ],
+   "file_value": [
+    0.7774080834436916,
+    3.8870404172184574
+   ],
+   "tol": [
+    "abs",
+    0.005
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "ad_table",
+   "where": "5.3",
+   "snippet": "| All-free + distribution-free (Stage C), certified schedule | 0.54 |",
+   "snippet_in_v3": true,
+   "quoted": [
+    0.97,
+    0.27,
+    0.54
+   ],
+   "file_value": [
+    0.9717619577934559,
+    0.2696061201488419,
+    0.5392122402976839
+   ],
+   "tol": [
+    "abs",
+    0.005
+   ],
+   "match": true,
+   "source": "AD",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "dc_digits",
+   "where": "9.2",
+   "snippet": "0.9718, 0.2696 and 0.5392",
+   "snippet_in_v3": true,
+   "quoted": [
+    0.9718,
+    0.2696,
+    0.5392
+   ],
+   "file_value": [
+    0.9717619577934559,
+    0.26960612014884183,
+    0.5392122402976838
+   ],
+   "tol": [
+    "abs",
+    5e-05
+   ],
+   "match": true,
+   "source": "DC",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "quirk",
+   "where": "9",
+   "snippet": "0.12677 s",
+   "snippet_in_v3": true,
+   "quoted": [
+    0.12677,
+    0.1244
+   ],
+   "file_value": [
+    0.12676690000807866,
+    0.12440245000470895
+   ],
+   "tol": [
+    "abs",
+    5e-06
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "measured"
+  },
+  {
+   "id": "W1e6",
+   "where": "9",
+   "snippet": "D_eff of 11,034",
+   "snippet_in_v3": true,
+   "quoted": 11034,
+   "file_value": 11034.0,
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "persist",
+   "where": "9",
+   "snippet": "3.4e6\n    qubits",
+   "snippet_in_v3": true,
+   "quoted": 3400000.0,
+   "file_value": 3428110,
+   "tol": [
+    "rel",
+    0.02
+   ],
+   "match": true,
+   "source": "DN/FS",
+   "label": "modelled"
+  },
+  {
+   "id": "thr_layers",
+   "where": "abstract/3/6/8",
+   "snippet": "| Best explicit (197.6) | 9.90 | 9.9e5 | 11.5\u00d7 |",
+   "snippet_in_v3": true,
+   "quoted": [
+    9.9,
+    990000.0,
+    2.86,
+    290000.0,
+    5.73,
+    570000.0,
+    266,
+    27000000.0
+   ],
+   "file_value": [
+    9.898262125537547,
+    989826.2125537547,
+    2.8647523144135594,
+    286475.23144135595,
+    5.729493700664298,
+    572949.3700664297,
+    266.3881651479832,
+    26638816.51479832
+   ],
+   "tol": [
+    "sig",
+    [
+     3,
+     2,
+     3,
+     2,
+     3,
+     2,
+     3,
+     2
+    ]
+   ],
+   "match": true,
+   "source": "HT, ES (re-derived)",
+   "label": "modelled (derived)",
+   "fixer_value": [
+    9.898262125537547,
+    2.8647523144135594,
+    5.729493700664298
+   ]
+  },
+  {
+   "id": "thr_over",
+   "where": "3",
+   "snippet": "| Certified today (682.7) | 2.86 | 2.9e5 | 39.8\u00d7 |",
+   "snippet_in_v3": true,
+   "quoted": [
+    11.5,
+    39.8,
+    19.9,
+    0.43,
+    16.5
+   ],
+   "file_value": [
+    11.517173272859651,
+    39.79401619694191,
+    19.897046049074536,
+    0.4279469395221482,
+    16.467537223474764
+   ],
+   "tol": [
+    "abs",
+    0.05
+   ],
+   "match": true,
+   "source": "HT (re-derived)",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "thr_af_114",
+   "where": "abstract/3",
+   "snippet": "oracle floor is 114 layers",
+   "snippet_in_v3": true,
+   "quoted": 114,
+   "file_value": 114.0,
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "thr_af_N1",
+   "where": "3",
+   "snippet": "The N1 all-free floor is 163 layers",
+   "snippet_in_v3": true,
+   "quoted": 163,
+   "file_value": 163,
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "sym_thr",
+   "where": "3",
+   "snippet": "365 layers\n   and 3.7e7 T (explicit), 106 layers and 1.1e7 T (certified)",
+   "snippet_in_v3": true,
+   "quoted": [
+    365,
+    37000000.0,
+    106,
+    11000000.0
+   ],
+   "file_value": [
+    365.2479721322768,
+    36524797.21322768,
+    105.7099680964425,
+    10570996.80964425
+   ],
+   "tol": [
+    "sig",
+    [
+     3,
+     2,
+     3,
+     2
+    ]
+   ],
+   "match": true,
+   "source": "HT, HW (re-derived)",
+   "label": "modelled (derived)",
+   "fixer_value": [
+    365.2479721322768,
+    105.7099680964425
+   ]
+  },
+  {
+   "id": "c09_dec",
+   "where": "4.3",
+   "snippet": "30.2 \u00d7 1.86 \u00d7 0.66 = 36.9",
+   "snippet_in_v3": true,
+   "quoted": [
+    30.2,
+    1.86,
+    0.66,
+    36.9
+   ],
+   "file_value": [
+    30.188396952847604,
+    1.8633670061183263,
+    0.6559797145011366,
+    36.900212128140744
+   ],
+   "tol": [
+    "sig",
+    [
+     3,
+     3,
+     2,
+     3
+    ]
+   ],
+   "match": true,
+   "source": "HW (re-derived)",
+   "label": "modelled from measured",
+   "fixer_value": 36.90021212814075
+  },
+  {
+   "id": "c09_n",
+   "where": "4.3",
+   "snippet": "needs 4.30e7 points against 1.43e6 RQMC",
+   "snippet_in_v3": true,
+   "quoted": [
+    43000000.0,
+    1430000.0,
+    80200000.0,
+    1.58e-05
+   ],
+   "file_value": [
+    43022451.15255052,
+    1425132.020747869,
+    80166616,
+    1.580856062597021e-05
+   ],
+   "tol": [
+    "rel",
+    0.004
+   ],
+   "match": true,
+   "source": "HW (re-derived)",
+   "label": "modelled from measured"
+  },
+  {
+   "id": "c09_total_vs_factor",
+   "where": "4.3",
+   "snippet": "**36.9**",
+   "snippet_in_v3": true,
+   "quoted": 36.9,
+   "file_value": 36.900212128140744,
+   "tol": [
+    "abs",
+    0.05
+   ],
+   "match": true,
+   "source": "HW (re-derived)",
+   "label": "modelled"
+  },
+  {
+   "id": "df_table",
+   "where": "4.3",
+   "snippet": "| Box-Muller | 21.7 | 10.9 | **6.29** | 11.2 | 0.23 |",
+   "snippet_in_v3": true,
+   "quoted": [
+    21.7,
+    10.9,
+    6.29,
+    11.2,
+    0.23,
+    1.08,
+    0.54,
+    0.31,
+    0.56,
+    0.012
+   ],
+   "file_value": [
+    21.72010569433962,
+    10.86007356111627,
+    6.286227043496024,
+    11.229030375444664,
+    0.23357915702674242,
+    1.078422423663909,
+    0.5392122402976839,
+    0.312116722604867,
+    0.5575312718684663,
+    0.011597411365442761
+   ],
+   "tol": [
+    "sig",
+    [
+     3,
+     3,
+     3,
+     3,
+     2,
+     3,
+     2,
+     2,
+     2,
+     2
+    ]
+   ],
+   "match": true,
+   "source": "HW, ES (re-derived)",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "df_at_binding_cell",
+   "where": "abstract table",
+   "snippet": "M at the binding cell (all\nmod)",
+   "snippet_in_v3": true,
+   "quoted": "symmetric column is at the binding cell",
+   "file_value": {
+    "all_free_and_narrow|certified_today": [
+     "B8x52",
+     0.001
+    ],
+    "all_free_and_narrow|explicit_best": [
+     "B8x52",
+     0.001
+    ],
+    "all_free_and_narrow|no_explicit_constant": [
+     "B8x52",
+     0.001
+    ],
+    "box_muller_current_law|certified_today": [
+     "B8x52",
+     0.001
+    ],
+    "box_muller_current_law|explicit_best": [
+     "B8x52",
+     0.001
+    ],
+    "box_muller_current_law|no_explicit_constant": [
+     "B8x52",
+     0.001
+    ]
+   },
+   "match": true,
+   "source": "HW",
+   "label": "modelled"
+  },
+  {
+   "id": "noU1",
+   "where": "4.3/8",
+   "snippet": "Without\n  U1 the primary explicit M is 414.4",
+   "snippet_in_v3": true,
+   "quoted": [
+    414.4,
+    11.2,
+    0.56
+   ],
+   "file_value": [
+    414.35360284724385,
+    11.229030375444664,
+    0.5575312718684663
+   ],
+   "tol": [
+    "abs",
+    0.051
+   ],
+   "match": true,
+   "source": "ES, HT, HW (re-derived)",
+   "label": "modelled (derived)",
+   "fixer_value": {
+    "k_noU1": 352.97084391424994,
+    "M_primary_noU1": 414.35360284724385,
+    "M_distfree_noU1_BM": 11.229030375444664,
+    "M_distfree_noU1_allfree": 0.5575312718684663
+   }
+  },
+  {
+   "id": "readings",
+   "where": "5.1",
+   "snippet": "| Strict zero-bias reading of the binding cell (e = \u03b5) | 400.7 | 104.4 | 3.88 |",
+   "snippet_in_v3": true,
+   "quoted": [
+    400.7,
+    104.4,
+    3.88,
+    1065,
+    318.0,
+    11.8,
+    76.6
+   ],
+   "file_value": [
+    400.7374894343666,
+    104.38714543598617,
+    3.878779492630138,
+    1064.9547596207983,
+    317.9526356331612,
+    11.814231858306954,
+    76.55057331972318
+   ],
+   "tol": [
+    "abs",
+    0.51
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "ds_row",
+   "where": "5.1",
+   "snippet": "| Direction-select (condition met in this cost model) | 400.7 | 200.4 | 8.62 (already uses it) |",
+   "snippet_in_v3": true,
+   "quoted": [
+    400.7,
+    200.4
+   ],
+   "file_value": [
+    400.7390181324032,
+    200.3695090662016
+   ],
+   "tol": [
+    "abs",
+    0.05
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled"
+  },
+  {
+   "id": "fail001_row",
+   "where": "5.1",
+   "snippet": "| Best explicit at a consistent failure of 0.01 | 144.9 | 170.1 |",
+   "snippet_in_v3": true,
+   "quoted": [
+    144.9,
+    170.1
+   ],
+   "file_value": [
+    144.90656625019935,
+    170.10628168648276
+   ],
+   "tol": [
+    "abs",
+    0.05
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "dirsel_k_expl_b8",
+   "where": "5.1 (k now 170.7, N3-8)",
+   "snippet": "| Best explicit with direction-select | 170.7 | 200.4 |",
+   "snippet_in_v3": true,
+   "quoted": [
+    170.7,
+    200.4
+   ],
+   "file_value": [
+    170.6865687272775,
+    200.3695090662016
+   ],
+   "tol": [
+    "abs",
+    0.05
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled"
+  },
+  {
+   "id": "pair_zb",
+   "where": "5.3",
+   "snippet": "is a **pair** that gives 0.506",
+   "snippet_in_v3": true,
+   "quoted": 0.506,
+   "file_value": 0.5062619421991437,
+   "tol": [
+    "abs",
+    0.0005
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "bias",
+   "where": "2/8",
+   "snippet": "bias $0.000473 = 0.47\u03b5 \u2264 0.55\u03b5",
+   "snippet_in_v3": true,
+   "quoted": [
+    0.00047,
+    0.47
+   ],
+   "file_value": [
+    0.00047289651586620744,
+    0.4728965158662074
+   ],
+   "tol": [
+    "sig",
+    2
+   ],
+   "match": true,
+   "source": "BD (W0)",
+   "label": "modelled"
+  },
+  {
+   "id": "bias_ok",
+   "where": "2",
+   "snippet": "\u2264 0.55\u03b5",
+   "snippet_in_v3": true,
+   "quoted": 1.0,
+   "file_value": 1.0,
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "BD (W0)",
+   "label": "modelled"
+  },
+  {
+   "id": "bias_bound",
+   "where": "2",
+   "snippet": "current certified bias bound of $0.00124",
+   "snippet_in_v3": true,
+   "quoted": 0.00124,
+   "file_value": 0.0012395575054614566,
+   "tol": [
+    "abs",
+    5e-06
+   ],
+   "match": true,
+   "source": "BD (W0)",
+   "label": "measured (certified record terms)"
+  },
+  {
+   "id": "tc_h16",
+   "where": "2/8",
+   "snippet": "23.46 s, 4.1% higher",
+   "snippet_in_v3": true,
+   "quoted": [
+    23.46,
+    4.1,
+    222.8
+   ],
+   "file_value": [
+    23.4606172000058,
+    4.133869364827802,
+    222.75472217207943
+   ],
+   "tol": [
+    "abs",
+    0.05
+   ],
+   "match": true,
+   "source": "HW, HT (re-derived)",
+   "label": "measured / modelled",
+   "fixer_value": {
+    "T_C": 22.529285950004123,
+    "H16_16w": 23.4606172000058,
+    "ratio": 1.041338693648278,
+    "M_explicit_with_H16_T_C": 222.75472217207943
+   }
+  },
+  {
+   "id": "res_span",
+   "where": "6 lever 5",
+   "snippet": "\u2264 $0.17 against the $38.82 support-tight span",
+   "snippet_in_v3": true,
+   "quoted": [
+    0.17,
+    3.37,
+    6.18,
+    38.82
+   ],
+   "file_value": [
+    0.16737421875833053,
+    3.371022006003309,
+    6.17614417696423,
+    38.824644549763036
+   ],
+   "tol": [
+    "abs",
+    0.005
+   ],
+   "match": true,
+   "source": "HT, HW (re-derived)",
+   "label": "modelled (derived, first order)"
+  },
+  {
+   "id": "f20_cap",
+   "where": "6 lever 5",
+   "snippet": "about 4.5\u00d7 (\u03c3 5.15 \u2192 1.14, F20)",
+   "snippet_in_v3": true,
+   "quoted": 4.5,
+   "file_value": 4.517543859649123,
+   "tol": [
+    "abs",
+    0.05
+   ],
+   "match": true,
+   "source": "REG F20",
+   "label": "register record"
+  },
+  {
+   "id": "register",
+   "where": "App A",
+   "snippet": "| T6 | Parked as a different task | 25 |",
+   "snippet_in_v3": true,
+   "quoted": [
+    4,
+    8,
+    12,
+    26,
+    35,
+    25
+   ],
+   "file_value": [
+    4,
+    8,
+    12,
+    26,
+    35,
+    25
+   ],
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "REG (W0)",
+   "label": "register record"
+  },
+  {
+   "id": "T6_list",
+   "where": "7",
+   "match": true,
+   "quoted": [
+    "E10",
+    "E14",
+    "E15",
+    "E16",
+    "E17",
+    "E18",
+    "E19",
+    "F09",
+    "F10",
+    "F11",
+    "F12",
+    "F13",
+    "F14",
+    "F15",
+    "F16",
+    "F17",
+    "F18",
+    "F19",
+    "F21",
+    "F22",
+    "F26",
+    "F27",
+    "F28",
+    "F29",
+    "F32"
+   ],
+   "file_value": [
+    "E10",
+    "E14",
+    "E15",
+    "E16",
+    "E17",
+    "E18",
+    "E19",
+    "F09",
+    "F10",
+    "F11",
+    "F12",
+    "F13",
+    "F14",
+    "F15",
+    "F16",
+    "F17",
+    "F18",
+    "F19",
+    "F21",
+    "F22",
+    "F26",
+    "F27",
+    "F28",
+    "F29",
+    "F32"
+   ],
+   "source": "REG",
+   "label": "register record",
+   "snippet": "E10, E14-E19",
+   "snippet_in_v3": true
+  },
+  {
+   "id": "reg_F05",
+   "where": "6/7/App A",
+   "snippet": "F05",
+   "snippet_in_v3": true,
+   "quoted": [
+    "T2",
+    "Close as a standalone route if >=10x miss remains"
+   ],
+   "file_value": [
+    "T2",
+    true
+   ],
+   "match": true,
+   "source": "REG",
+   "label": "register record"
+  },
+  {
+   "id": "reg_F20",
+   "where": "6/7/App A",
+   "snippet": "F20",
+   "snippet_in_v3": true,
+   "quoted": [
+    "T2",
+    "Cost coherent preintegration only if the other levers reach miss <=4x"
+   ],
+   "file_value": [
+    "T2",
+    true
+   ],
+   "match": true,
+   "source": "REG",
+   "label": "register record"
+  },
+  {
+   "id": "reg_F04",
+   "where": "6/7/App A",
+   "snippet": "F04",
+   "snippet_in_v3": true,
+   "quoted": [
+    "T4",
+    "closes on the F20 zero-depth credit. Reopen if the other levers bring miss <=4x"
+   ],
+   "file_value": [
+    "T4",
+    true
+   ],
+   "match": true,
+   "source": "REG",
+   "label": "register record"
+  },
+  {
+   "id": "reg_E22",
+   "where": "6/7/App A",
+   "snippet": "E22",
+   "snippet_in_v3": true,
+   "quoted": [
+    "T4",
+    "0 of 3,106"
+   ],
+   "file_value": [
+    "T4",
+    true
+   ],
+   "match": true,
+   "source": "REG",
+   "label": "register record"
+  },
+  {
+   "id": "reg_C12",
+   "where": "6/7/App A",
+   "snippet": "C12",
+   "snippet_in_v3": true,
+   "quoted": [
+    "T4",
+    "six constructions, three contracts, one toolchain"
+   ],
+   "file_value": [
+    "T4",
+    true
+   ],
+   "match": true,
+   "source": "REG",
+   "label": "register record"
+  },
+  {
+   "id": "reg_C14",
+   "where": "6/7/App A",
+   "snippet": "C14",
+   "snippet_in_v3": true,
+   "quoted": [
+    "T1",
+    ""
+   ],
+   "file_value": [
+    "T1",
+    true
+   ],
+   "match": true,
+   "source": "REG",
+   "label": "register record"
+  },
+  {
+   "id": "dp1_errata",
+   "where": "5.3/9.1",
+   "snippet": "the DP1\nerrata block corrects it [DP1]",
+   "snippet_in_v3": true,
+   "quoted": "DP1 errata records two departures",
+   "file_value": true,
+   "match": true,
+   "source": "DP1",
+   "label": "record"
+  },
+  {
+   "id": "claim_verbatim",
+   "where": "abstract",
+   "snippet": "\"No design with certified constants reaches a 10\u00d7 complete-latency advantage for the fixed B4x12/B8x52 knock-out task under the stated conventions.\"",
+   "snippet_in_v3": true,
+   "quoted": "verbatim N1 claim",
+   "file_value": true,
+   "match": true,
+   "source": "N1_CARD",
+   "label": "record"
+  },
+  {
+   "id": "v1_unchanged",
+   "where": "front matter",
+   "snippet": "(`FRONTIER_NEGATIVE_RESULT_DRAFT.md`, unchanged)",
+   "snippet_in_v3": true,
+   "quoted": "3d8e5900\u2026c62b1c",
+   "file_value": "3d8e590044016b3208402e7e16a76e49eabe14ec01081ebfba08938221c62b1c",
+   "match": true,
+   "source": "v1 file",
+   "label": "record"
+  },
+  {
+   "id": "v1_phrase_gone_d1",
+   "where": "v3 body (before changelog)",
+   "snippet": "(absence) two R1 recomputes along different paths confirm them",
+   "snippet_in_v3": true,
+   "quoted": "absent",
+   "file_value": false,
+   "match": true,
+   "source": "v3",
+   "label": "text"
+  },
+  {
+   "id": "v1_phrase_gone_d5",
+   "where": "v3 body (before changelog)",
+   "snippet": "(absence) one idealized change on each side",
+   "snippet_in_v3": true,
+   "quoted": "absent",
+   "file_value": false,
+   "match": true,
+   "source": "v3",
+   "label": "text"
+  },
+  {
+   "id": "v1_phrase_gone_d11",
+   "where": "v3 body (before changelog)",
+   "snippet": "(absence) 74.8 is layer time",
+   "snippet_in_v3": true,
+   "quoted": "absent",
+   "file_value": false,
+   "match": true,
+   "source": "v3",
+   "label": "text"
+  },
+  {
+   "id": "v1_phrase_gone_d19",
+   "where": "v3 body (before changelog)",
+   "snippet": "(absence) closes the last open",
+   "snippet_in_v3": true,
+   "quoted": "absent",
+   "file_value": false,
+   "match": true,
+   "source": "v3",
+   "label": "text"
+  },
+  {
+   "id": "v1_phrase_gone_d18",
+   "where": "v3 body (before changelog)",
+   "snippet": "(absence) Only one primary floor design fits",
+   "snippet_in_v3": true,
+   "quoted": "absent",
+   "file_value": false,
+   "match": true,
+   "source": "v3",
+   "label": "text"
+  },
+  {
+   "id": "v1_phrase_gone_d3",
+   "where": "v3 body (before changelog)",
+   "snippet": "(absence) Eligible at zero deterministic bias",
+   "snippet_in_v3": true,
+   "quoted": "absent",
+   "file_value": false,
+   "match": true,
+   "source": "v3",
+   "label": "text"
+  },
+  {
+   "id": "v1_phrase_gone_d7",
+   "where": "v3 body (before changelog)",
+   "snippet": "(absence) This draft changes none of them",
+   "snippet_in_v3": true,
+   "quoted": "absent",
+   "file_value": false,
+   "match": true,
+   "source": "v3",
+   "label": "text"
+  },
+  {
+   "id": "v1_phrase_gone_d6",
+   "where": "v3 body (before changelog)",
+   "snippet": "(absence) That cost is assumed here",
+   "snippet_in_v3": true,
+   "quoted": "absent",
+   "file_value": false,
+   "match": true,
+   "source": "v3",
+   "label": "text"
+  },
+  {
+   "id": "v1_phrase_gone_d16",
+   "where": "v3 body (before changelog)",
+   "snippet": "(absence) the only demonstrated complete readout-to-feedback loop, d = 3",
+   "snippet_in_v3": true,
+   "quoted": "absent",
+   "file_value": false,
+   "match": true,
+   "source": "v3",
+   "label": "text"
+  },
+  {
+   "id": "v1_phrase_gone_d14",
+   "where": "v3 body (before changelog)",
+   "snippet": "(absence) (Python 3.12.4, standard library only). All scripts",
+   "snippet_in_v3": true,
+   "quoted": "absent",
+   "file_value": false,
+   "match": true,
+   "source": "v3",
+   "label": "text"
+  },
+  {
+   "id": "provenance_flags",
+   "where": "front matter/App B",
+   "snippet": "-I -S -B",
+   "snippet_in_v3": true,
+   "quoted": "3.12.4; isolated=1, no_site=1 where recorded",
+   "file_value": {
+    "HT": {
+     "isolated": "not recorded (README claims -I -S -B)",
+     "no_site": "not recorded (README claims -I -S -B)",
+     "python": "3.12.4"
+    },
+    "KF": {
+     "isolated": "not recorded (README claims -I -S -B)",
+     "no_site": "not recorded (README claims -I -S -B)",
+     "python": "3.12.4"
+    },
+    "FS": {
+     "isolated": "not recorded (README claims -I -S -B)",
+     "no_site": "not recorded (README claims -I -S -B)",
+     "python": "3.12.4"
+    },
+    "ES": {
+     "isolated": "not recorded (README claims -I -S -B)",
+     "no_site": "not recorded (README claims -I -S -B)",
+     "python": "3.12.4"
+    },
+    "HW": {
+     "isolated": 1,
+     "no_site": 1,
+     "python": "3.12.4"
+    },
+    "DN": {
+     "isolated": 1,
+     "no_site": 1,
+     "python": "3.12.4"
+    },
+    "AD": {
+     "isolated": 1,
+     "no_site": 1,
+     "python": "3.12.4"
+    },
+    "DC": {
+     "isolated": 1,
+     "no_site": 1,
+     "python": "3.12.4"
+    },
+    "NC": {
+     "isolated": 1,
+     "no_site": 1,
+     "python": "3.12.4"
+    },
+    "FX": {
+     "isolated": 1,
+     "no_site": 1,
+     "python": "3.12.4"
+    },
+    "FX2": {
+     "isolated": 1,
+     "no_site": 1,
+     "python": "3.12.4"
+    }
+   },
+   "match": true,
+   "source": "meta of each file",
+   "label": "record"
+  },
+  {
+   "id": "probe_match/allfree_stacks_explicit_B8/allfree+10ns",
+   "where": "Part 4 (probes vs number_recheck.json)",
+   "snippet": "(probe)",
+   "snippet_in_v3": true,
+   "quoted": 7.314657773428892,
+   "file_value": 7.314657773428892,
+   "match": true,
+   "source": "RK",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "probe_match/allfree_stacks_explicit_B8/allfree+1lane",
+   "where": "Part 4 (probes vs number_recheck.json)",
+   "snippet": "(probe)",
+   "snippet_in_v3": true,
+   "quoted": 1.1249861733522126,
+   "file_value": 1.1249861733522126,
+   "match": true,
+   "source": "RK",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "probe_match/allfree_stacks_explicit_B8/allfree+distfree_stageC",
+   "where": "Part 4 (probes vs number_recheck.json)",
+   "snippet": "(probe)",
+   "snippet_in_v3": true,
+   "quoted": 0.312116722604867,
+   "file_value": 0.312116722604867,
+   "match": true,
+   "source": "RK",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "probe_match/allfree_stacks_explicit_B8/allfree+supply1e13",
+   "where": "Part 4 (probes vs number_recheck.json)",
+   "snippet": "(probe)",
+   "snippet_in_v3": true,
+   "quoted": 11.315117601405973,
+   "file_value": 11.315117601405973,
+   "match": true,
+   "source": "RK",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "probe_match/best_explicit_dirsel_k_B8",
+   "where": "Part 4 (probes vs number_recheck.json)",
+   "snippet": "(probe)",
+   "snippet_in_v3": true,
+   "quoted": 170.6865687272775,
+   "file_value": 170.6865687272775,
+   "match": true,
+   "source": "RK",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "probe_match/explicit_all_credits_incl_dirsel/primary",
+   "where": "Part 4 (probes vs number_recheck.json)",
+   "snippet": "(probe)",
+   "snippet_in_v3": true,
+   "quoted": 200.3695090662016,
+   "file_value": 200.3695090662016,
+   "match": true,
+   "source": "RK",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "probe_match/explicit_all_credits_incl_dirsel/symmetric_BM",
+   "where": "Part 4 (probes vs number_recheck.json)",
+   "snippet": "(probe)",
+   "snippet_in_v3": true,
+   "quoted": 5.430036780558134,
+   "file_value": 5.430036780558134,
+   "match": true,
+   "source": "RK",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "probe_match/per_cell_thresholds/B4x12|0.001/D_max_k1",
+   "where": "Part 4 (probes vs number_recheck.json)",
+   "snippet": "(probe)",
+   "snippet_in_v3": true,
+   "quoted": 213.5762945412488,
+   "file_value": 213.5762945412488,
+   "match": true,
+   "source": "RK",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "probe_match/per_cell_thresholds/B4x12|0.001/W0_allfree_D_eff",
+   "where": "Part 4 (probes vs number_recheck.json)",
+   "snippet": "(probe)",
+   "snippet_in_v3": true,
+   "quoted": 94.0,
+   "file_value": 94.0,
+   "match": true,
+   "source": "RK",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "probe_match/per_cell_thresholds/B4x12|0.001/W0_primary_D_eff",
+   "where": "Part 4 (probes vs number_recheck.json)",
+   "snippet": "(probe)",
+   "snippet_in_v3": true,
+   "quoted": 364.0,
+   "file_value": 364.0,
+   "match": true,
+   "source": "RK",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "probe_match/per_cell_thresholds/B4x12|0.001/certified_max_layers",
+   "where": "Part 4 (probes vs number_recheck.json)",
+   "snippet": "(probe)",
+   "snippet_in_v3": true,
+   "quoted": 0.34179855689795746,
+   "file_value": 0.34179855689795746,
+   "match": true,
+   "source": "RK",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "probe_match/per_cell_thresholds/B4x12|0.001/explicit_max_T",
+   "where": "Part 4 (probes vs number_recheck.json)",
+   "snippet": "(probe)",
+   "snippet_in_v3": true,
+   "quoted": 114482.46034354818,
+   "file_value": 114482.46034354818,
+   "match": true,
+   "source": "RK",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "probe_match/per_cell_thresholds/B4x12|0.001/explicit_max_layers",
+   "where": "Part 4 (probes vs number_recheck.json)",
+   "snippet": "(probe)",
+   "snippet_in_v3": true,
+   "quoted": 1.1448246034354819,
+   "file_value": 1.1448246034354819,
+   "match": true,
+   "source": "RK",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "probe_match/per_cell_thresholds/B4x12|0.01/D_max_k1",
+   "where": "Part 4 (probes vs number_recheck.json)",
+   "snippet": "(probe)",
+   "snippet_in_v3": true,
+   "quoted": 98.84424940462571,
+   "file_value": 98.84424940462571,
+   "match": true,
+   "source": "RK",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "probe_match/per_cell_thresholds/B4x12|0.01/W0_allfree_D_eff",
+   "where": "Part 4 (probes vs number_recheck.json)",
+   "snippet": "(probe)",
+   "snippet_in_v3": true,
+   "quoted": 94.0,
+   "file_value": 94.0,
+   "match": true,
+   "source": "RK",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "probe_match/per_cell_thresholds/B4x12|0.01/W0_primary_D_eff",
+   "where": "Part 4 (probes vs number_recheck.json)",
+   "snippet": "(probe)",
+   "snippet_in_v3": true,
+   "quoted": 364.0,
+   "file_value": 364.0,
+   "match": true,
+   "source": "RK",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "probe_match/per_cell_thresholds/B4x12|0.01/certified_max_layers",
+   "where": "Part 4 (probes vs number_recheck.json)",
+   "snippet": "(probe)",
+   "snippet_in_v3": true,
+   "quoted": 0.12655064724163573,
+   "file_value": 0.12655064724163573,
+   "match": true,
+   "source": "RK",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "probe_match/per_cell_thresholds/B4x12|0.01/explicit_max_T",
+   "where": "Part 4 (probes vs number_recheck.json)",
+   "snippet": "(probe)",
+   "snippet_in_v3": true,
+   "quoted": 52966.51339239109,
+   "file_value": 52966.51339239109,
+   "match": true,
+   "source": "RK",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "probe_match/per_cell_thresholds/B4x12|0.01/explicit_max_layers",
+   "where": "Part 4 (probes vs number_recheck.json)",
+   "snippet": "(probe)",
+   "snippet_in_v3": true,
+   "quoted": 0.5296651339239109,
+   "file_value": 0.5296651339239109,
+   "match": true,
+   "source": "RK",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "probe_match/per_cell_thresholds/B8x52|0.001/D_max_k1",
+   "where": "Part 4 (probes vs number_recheck.json)",
+   "snippet": "(probe)",
+   "snippet_in_v3": true,
+   "quoted": 1955.8952406218802,
+   "file_value": 1955.8952406218802,
+   "match": true,
+   "source": "RK",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "probe_match/per_cell_thresholds/B8x52|0.001/W0_allfree_D_eff",
+   "where": "Part 4 (probes vs number_recheck.json)",
+   "snippet": "(probe)",
+   "snippet_in_v3": true,
+   "quoted": 114.0,
+   "file_value": 114.0,
+   "match": true,
+   "source": "RK",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "probe_match/per_cell_thresholds/B8x52|0.001/W0_primary_D_eff",
+   "where": "Part 4 (probes vs number_recheck.json)",
+   "snippet": "(probe)",
+   "snippet_in_v3": true,
+   "quoted": 2296.03168,
+   "file_value": 2296.03168,
+   "match": true,
+   "source": "RK",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "probe_match/per_cell_thresholds/B8x52|0.001/certified_max_layers",
+   "where": "Part 4 (probes vs number_recheck.json)",
+   "snippet": "(probe)",
+   "snippet_in_v3": true,
+   "quoted": 2.8647523144135594,
+   "file_value": 2.8647523144135594,
+   "match": true,
+   "source": "RK",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "probe_match/per_cell_thresholds/B8x52|0.001/explicit_max_T",
+   "where": "Part 4 (probes vs number_recheck.json)",
+   "snippet": "(probe)",
+   "snippet_in_v3": true,
+   "quoted": 989826.2125537547,
+   "file_value": 989826.2125537547,
+   "match": true,
+   "source": "RK",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "probe_match/per_cell_thresholds/B8x52|0.001/explicit_max_layers",
+   "where": "Part 4 (probes vs number_recheck.json)",
+   "snippet": "(probe)",
+   "snippet_in_v3": true,
+   "quoted": 9.898262125537547,
+   "file_value": 9.898262125537547,
+   "match": true,
+   "source": "RK",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "probe_match/per_cell_thresholds/B8x52|0.01/D_max_k1",
+   "where": "Part 4 (probes vs number_recheck.json)",
+   "snippet": "(probe)",
+   "snippet_in_v3": true,
+   "quoted": 480.5398417245326,
+   "file_value": 480.5398417245326,
+   "match": true,
+   "source": "RK",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "probe_match/per_cell_thresholds/B8x52|0.01/W0_allfree_D_eff",
+   "where": "Part 4 (probes vs number_recheck.json)",
+   "snippet": "(probe)",
+   "snippet_in_v3": true,
+   "quoted": 114.0,
+   "file_value": 114.0,
+   "match": true,
+   "source": "RK",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "probe_match/per_cell_thresholds/B8x52|0.01/W0_primary_D_eff",
+   "where": "Part 4 (probes vs number_recheck.json)",
+   "snippet": "(probe)",
+   "snippet_in_v3": true,
+   "quoted": 2296.03168,
+   "file_value": 2296.03168,
+   "match": true,
+   "source": "RK",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "probe_match/per_cell_thresholds/B8x52|0.01/certified_max_layers",
+   "where": "Part 4 (probes vs number_recheck.json)",
+   "snippet": "(probe)",
+   "snippet_in_v3": true,
+   "quoted": 0.5630755575856898,
+   "file_value": 0.5630755575856898,
+   "match": true,
+   "source": "RK",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "probe_match/per_cell_thresholds/B8x52|0.01/explicit_max_T",
+   "where": "Part 4 (probes vs number_recheck.json)",
+   "snippet": "(probe)",
+   "snippet_in_v3": true,
+   "quoted": 243106.63855575593,
+   "file_value": 243106.63855575593,
+   "match": true,
+   "source": "RK",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "probe_match/per_cell_thresholds/B8x52|0.01/explicit_max_layers",
+   "where": "Part 4 (probes vs number_recheck.json)",
+   "snippet": "(probe)",
+   "snippet_in_v3": true,
+   "quoted": 2.431066385557559,
+   "file_value": 2.431066385557559,
+   "match": true,
+   "source": "RK",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "probe_match/zero_bias_plus_dirsel/certified_M",
+   "where": "Part 4 (probes vs number_recheck.json)",
+   "snippet": "(probe)",
+   "snippet_in_v3": true,
+   "quoted": 200.3695090662016,
+   "file_value": 200.3695090662016,
+   "match": true,
+   "source": "RK",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "probe_match/zero_bias_plus_dirsel/certified_M_without_dirsel_check_vs_400.7",
+   "where": "Part 4 (probes vs number_recheck.json)",
+   "snippet": "(probe)",
+   "snippet_in_v3": true,
+   "quoted": 400.7374894343665,
+   "file_value": 400.7374894343665,
+   "match": true,
+   "source": "RK",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "probe_match/zero_bias_plus_dirsel/direction",
+   "where": "Part 4 (probes vs number_recheck.json)",
+   "snippet": "(probe)",
+   "snippet_in_v3": true,
+   "quoted": "q+",
+   "file_value": "q+",
+   "match": true,
+   "source": "RK",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "probe_match/zero_bias_plus_dirsel/explicit_M_approx (e=eps explicit x dirsel ratio at 0.45eps)",
+   "where": "Part 4 (probes vs number_recheck.json)",
+   "snippet": "(probe)",
+   "snippet_in_v3": true,
+   "quoted": 90.16951427507482,
+   "file_value": 90.16951427507482,
+   "match": true,
+   "source": "RK",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "probe_match/zero_bias_plus_dirsel/explicit_fail001_e_eq_eps_x_dirsel_ratio_approx",
+   "where": "Part 4 (probes vs number_recheck.json)",
+   "snippet": "(probe)",
+   "snippet_in_v3": true,
+   "quoted": 66.12431046838819,
+   "file_value": 66.12431046838819,
+   "match": true,
+   "source": "RK",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "probe_match/zero_bias_plus_dirsel/ineligible_B4x12_dirsel/certified",
+   "where": "Part 4 (probes vs number_recheck.json)",
+   "snippet": "(probe)",
+   "snippet_in_v3": true,
+   "quoted": 532.4783954323386,
+   "file_value": 532.4783954323386,
+   "match": true,
+   "source": "RK",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "probe_match/zero_bias_plus_dirsel/ineligible_B4x12_dirsel/explicit",
+   "where": "Part 4 (probes vs number_recheck.json)",
+   "snippet": "(probe)",
+   "snippet_in_v3": true,
+   "quoted": 266.2391977161693,
+   "file_value": 266.2391977161693,
+   "match": true,
+   "source": "RK",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "probe_match/zero_bias_plus_dirsel/label",
+   "where": "Part 4 (probes vs number_recheck.json)",
+   "snippet": "(probe)",
+   "snippet_in_v3": true,
+   "quoted": "modelled (derived)",
+   "file_value": "modelled (derived)",
+   "match": true,
+   "source": "RK",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "v3_comb_cert",
+   "where": "5.1 verdict",
+   "snippet": "certified M = 200.4 (k = 379.3 at e = \u03b5 [ES])",
+   "snippet_in_v3": true,
+   "quoted": [
+    200.4,
+    379.3
+   ],
+   "file_value": [
+    200.3695090662016,
+    379.30348606061665
+   ],
+   "tol": [
+    "abs",
+    0.05
+   ],
+   "match": true,
+   "source": "ES, HT (re-derived)",
+   "label": "modelled (derived), q+",
+   "snippet_matching": "whitespace-normalised",
+   "recheck_probe_value": [
+    200.3695090662016
+   ],
+   "v3_numbers_value": [
+    200.36950906620157,
+    379.30348606061665
+   ]
+  },
+  {
+   "id": "v3_comb_expl",
+   "where": "5.1 verdict",
+   "snippet": "best explicit M \u2248 90, or \u2248 66 at failure 0.01",
+   "snippet_in_v3": true,
+   "quoted": [
+    90,
+    66
+   ],
+   "file_value": [
+    90.16951427507482,
+    66.12431046838819
+   ],
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "HT, DC (re-derived)",
+   "label": "modelled (derived, approximate), q+",
+   "snippet_matching": "whitespace-normalised",
+   "recheck_probe_value": [
+    90.16951427507482,
+    66.12431046838819
+   ],
+   "v3_numbers_value": [
+    90.16951427507482,
+    66.12431046838819
+   ]
+  },
+  {
+   "id": "v3_comb_inputs",
+   "where": "5.1 verdict",
+   "snippet": "the zero-bias values 104.4 and 76.6 multiplied by the binding-cell direction-select ratio at e = 0.45\u03b5, 0.864 [DC]",
+   "snippet_in_v3": true,
+   "quoted": [
+    104.4,
+    76.6,
+    0.864
+   ],
+   "file_value": [
+    104.38714543598617,
+    76.55057331972318,
+    0.8637990233229426
+   ],
+   "tol": [
+    "abs",
+    [
+     0.05,
+     0.05,
+     0.0005
+    ]
+   ],
+   "match": true,
+   "source": "HT, DC",
+   "label": "modelled",
+   "snippet_matching": "whitespace-normalised"
+  },
+  {
+   "id": "v3_comb_row",
+   "where": "5.1 readings table",
+   "snippet": "| Strict zero-bias reading + direction-select (the lowest combination) | 200.4 | \u2248 90 (approximate; \u2248 66 at failure 0.01) | 3.88 (already uses it) |",
+   "snippet_in_v3": true,
+   "quoted": [
+    200.4,
+    90,
+    66,
+    3.88
+   ],
+   "file_value": [
+    200.3695090662016,
+    90.16951427507482,
+    66.12431046838819,
+    3.878779492630138
+   ],
+   "tol": [
+    "abs",
+    [
+     0.05,
+     0.5,
+     0.5,
+     0.005
+    ]
+   ],
+   "match": true,
+   "source": "ES, HT, DC (re-derived)",
+   "label": "modelled (derived), q+",
+   "snippet_matching": "whitespace-normalised"
+  },
+  {
+   "id": "v3_comb_s8",
+   "where": "8 rigour",
+   "snippet": "gives certified 200.4 and explicit \u2248 90, or \u2248 66 at failure 0.01",
+   "snippet_in_v3": true,
+   "quoted": [
+    200.4,
+    90,
+    66
+   ],
+   "file_value": [
+    200.3695090662016,
+    90.16951427507482,
+    66.12431046838819
+   ],
+   "tol": [
+    "abs",
+    [
+     0.05,
+     0.5,
+     0.5
+    ]
+   ],
+   "match": true,
+   "source": "ES, HT, DC (re-derived)",
+   "label": "modelled (derived), q+",
+   "snippet_matching": "whitespace-normalised"
+  },
+  {
+   "id": "v3_one_at_a_time",
+   "where": "5.1 verdict / 8",
+   "snippet": "Taken one at a time, the readings above keep the certified class at M \u2265 400.7 and the best explicit class at M \u2265 104.4",
+   "snippet_in_v3": true,
+   "quoted": [
+    400.7,
+    104.4
+   ],
+   "file_value": [
+    400.7374894343666,
+    104.38714543598617
+   ],
+   "tol": [
+    "abs",
+    0.05
+   ],
+   "match": true,
+   "source": "HT, ES",
+   "label": "modelled",
+   "snippet_matching": "whitespace-normalised"
+  },
+  {
+   "id": "v3_above_30",
+   "where": "5.1 verdict",
+   "snippet": "All of these are above the 30\u00d7 threshold that justifies R1",
+   "snippet_in_v3": true,
+   "quoted": 1.0,
+   "file_value": 1.0,
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "derived",
+   "label": "modelled (derived)",
+   "snippet_matching": "whitespace-normalised"
+  },
+  {
+   "id": "v3_lever3_first_two",
+   "where": "6 lever 3",
+   "snippet": "0.31 (distribution-free) and 1.125 (one lane)",
+   "snippet_in_v3": true,
+   "quoted": [
+    0.31,
+    1.125
+   ],
+   "file_value": [
+    0.312116722604867,
+    1.1249861733522126
+   ],
+   "tol": [
+    "abs",
+    [
+     0.005,
+     0.0005
+    ]
+   ],
+   "match": true,
+   "source": "HW, HT",
+   "label": "modelled",
+   "snippet_matching": "whitespace-normalised"
+  },
+  {
+   "id": "v3_lever3_other_two",
+   "where": "6 lever 3",
+   "snippet": "with 1e13 T/s the all-free M is 11.3, because D_eff only drops from 114 to 112 layers, and with a 10 ns layer it is 7.3, because the iterate becomes supply-bound at 724 layers of 10 ns",
+   "snippet_in_v3": true,
+   "quoted": [
+    11.3,
+    114,
+    112,
+    7.3,
+    724
+   ],
+   "file_value": [
+    11.315117601405973,
+    114.0,
+    112.0,
+    7.314657773428892,
+    724.024
+   ],
+   "tol": [
+    "abs",
+    [
+     0.05,
+     0.5,
+     0.5,
+     0.05,
+     0.5
+    ]
+   ],
+   "match": true,
+   "source": "HT (re-derived)",
+   "label": "modelled (derived), q+",
+   "snippet_matching": "whitespace-normalised",
+   "recheck_probe_value": [
+    11.315117601405973,
+    7.314657773428892
+   ],
+   "v3_numbers_value": [
+    11.315117601405973,
+    7.314657773428892
+   ]
+  },
+  {
+   "id": "v3_lever3_supply_bound_10ns",
+   "where": "6 lever 3",
+   "snippet": "supply-bound at 724 layers of 10 ns",
+   "snippet_in_v3": true,
+   "quoted": "D_eff at 10 ns exceeds the 100 ns reaction-bound depth",
+   "file_value": [
+    724.024,
+    114.0
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled"
+  },
+  {
+   "id": "v3_per_cell_explicit",
+   "where": "3 item 3",
+   "snippet": "For the best explicit constant they are 1.14 layers / 1.1e5 T at B4x12 $0.001, 0.53 / 5.3e4 at B4x12 $0.01 and 2.43 / 2.4e5 at B8x52 $0.01",
+   "snippet_in_v3": true,
+   "quoted": [
+    1.14,
+    110000.0,
+    0.53,
+    53000.0,
+    2.43,
+    240000.0
+   ],
+   "file_value": [
+    1.1448246034354819,
+    114482.46034354818,
+    0.5296651339239109,
+    52966.51339239109,
+    2.431066385557559,
+    243106.63855575593
+   ],
+   "tol": [
+    "sig",
+    [
+     3,
+     2,
+     2,
+     2,
+     3,
+     2
+    ]
+   ],
+   "match": true,
+   "source": "HT (re-derived)",
+   "label": "modelled (derived)",
+   "snippet_matching": "whitespace-normalised",
+   "recheck_probe_value": [
+    1.1448246034354819
+   ],
+   "v3_numbers_value": [
+    1.1448246034354819
+   ]
+  },
+  {
+   "id": "v3_per_cell_certified",
+   "where": "3 item 3",
+   "snippet": "(at B4x12 $0.001: 0.34 layers, or 0.68 with direction-select)",
+   "snippet_in_v3": true,
+   "quoted": [
+    0.34,
+    0.68
+   ],
+   "file_value": [
+    0.34179855689795746,
+    0.6835958099378945
+   ],
+   "tol": [
+    "abs",
+    0.005
+   ],
+   "match": true,
+   "source": "HT, ES (re-derived)",
+   "label": "modelled (derived)",
+   "snippet_matching": "whitespace-normalised",
+   "recheck_probe_value": [
+    0.34179855689795746
+   ],
+   "v3_numbers_value": [
+    0.34179855689795746,
+    0.6835958099378945
+   ]
+  },
+  {
+   "id": "v3_per_cell_loosest_B4",
+   "where": "3 item 3",
+   "snippet": "for B4x12 the loosest limit is 1.1 layers / 1.1e5 T at $0.001 (explicit)",
+   "snippet_in_v3": true,
+   "quoted": [
+    1.1,
+    110000.0
+   ],
+   "file_value": [
+    1.1448246034354819,
+    114482.46034354818
+   ],
+   "tol": [
+    "sig",
+    2
+   ],
+   "match": true,
+   "source": "HT (re-derived)",
+   "label": "modelled (derived)",
+   "snippet_matching": "whitespace-normalised"
+  },
+  {
+   "id": "v3_per_cell_scope1",
+   "where": "1 scope item 1",
+   "snippet": "(B4x12 $0.001: 1.1 layers / 1.1e5 T for the best explicit constant",
+   "snippet_in_v3": true,
+   "quoted": [
+    1.1,
+    110000.0
+   ],
+   "file_value": [
+    1.1448246034354819,
+    114482.46034354818
+   ],
+   "tol": [
+    "sig",
+    2
+   ],
+   "match": true,
+   "source": "HT (re-derived)",
+   "label": "modelled (derived)",
+   "snippet_matching": "whitespace-normalised"
+  },
+  {
+   "id": "v3_per_cell_s8",
+   "where": "8",
+   "snippet": "(B4x12 $0.001: 1.1 layers / 1.1e5 T for the explicit constant",
+   "snippet_in_v3": true,
+   "quoted": [
+    1.1,
+    110000.0
+   ],
+   "file_value": [
+    1.1448246034354819,
+    114482.46034354818
+   ],
+   "tol": [
+    "sig",
+    2
+   ],
+   "match": true,
+   "source": "HT (re-derived)",
+   "label": "modelled (derived)",
+   "snippet_matching": "whitespace-normalised"
+  },
+  {
+   "id": "v3_certified_lower_every_cell",
+   "where": "1 / 3",
+   "snippet": "lower for the certified constant",
+   "snippet_in_v3": true,
+   "quoted": "certified limits < explicit limits in every cell",
+   "file_value": {
+    "B4x12|0.01": [
+     0.12655064724163573,
+     0.25309743246400745,
+     0.5296651339239109
+    ],
+    "B4x12|0.001": [
+     0.34179855689795746,
+     0.6835958099378945,
+     1.1448246034354819
+    ],
+    "B8x52|0.01": [
+     0.5630755575856898,
+     1.1261339314690608,
+     2.431066385557559
+    ],
+    "B8x52|0.001": [
+     2.8647523144135594,
+     5.729493700664298,
+     9.898262125537547
+    ]
+   },
+   "match": true,
+   "source": "V3 / HT, ES",
+   "label": "modelled (derived)"
+  },
+  {
+   "id": "v3_B4_allfree_floor",
+   "where": "3 item 3",
+   "snippet": "the B4x12 all-free floor is 94 layers [HT]",
+   "snippet_in_v3": true,
+   "quoted": 94,
+   "file_value": 94.0,
+   "tol": [
+    "abs",
+    0.5
+   ],
+   "match": true,
+   "source": "HT",
+   "label": "modelled",
+   "snippet_matching": "whitespace-normalised"
+  },
+  {
+   "id": "v3_cert_thr_abstract",
+   "where": "abstract",
+   "snippet": "today's certified constant the limits are 2.9-5.7 layers and 2.9e5-5.7e5 T",
+   "snippet_in_v3": true,
+   "quoted": [
+    2.9,
+    5.7,
+    290000.0,
+    570000.0
+   ],
+   "file_value": [
+    2.8647523144135594,
+    5.729493700664298,
+    286475.23144135595,
+    572949.3700664297
+   ],
+   "tol": [
+    "sig",
+    2
+   ],
+   "match": true,
+   "source": "HT, ES (re-derived)",
+   "label": "modelled (derived)",
+   "snippet_matching": "whitespace-normalised",
+   "v3_numbers_value": [
+    2.8647523144135594,
+    5.729493700664298
+   ]
+  },
+  {
+   "id": "v3_cert_thr_scope1",
+   "where": "1 scope item 1",
+   "snippet": "more than 2.9-5.7 layers or 2.9e5-5.7e5 T",
+   "snippet_in_v3": true,
+   "quoted": [
+    2.9,
+    5.7,
+    290000.0,
+    570000.0
+   ],
+   "file_value": [
+    2.8647523144135594,
+    5.729493700664298,
+    286475.23144135595,
+    572949.3700664297
+   ],
+   "tol": [
+    "sig",
+    2
+   ],
+   "match": true,
+   "source": "HT, ES (re-derived)",
+   "label": "modelled (derived)",
+   "snippet_matching": "whitespace-normalised"
+  },
+  {
+   "id": "v3_cert_thr_lever2",
+   "where": "6 lever 2",
+   "snippet": "or 2.9-5.7 layers and 2.9e5-5.7e5 T (certified; the upper values with direction-select) [FX]",
+   "snippet_in_v3": true,
+   "quoted": [
+    2.9,
+    5.7,
+    290000.0,
+    570000.0
+   ],
+   "file_value": [
+    2.8647523144135594,
+    5.729493700664298,
+    286475.23144135595,
+    572949.3700664297
+   ],
+   "tol": [
+    "sig",
+    2
+   ],
+   "match": true,
+   "source": "HT, ES (re-derived)",
+   "label": "modelled (derived)",
+   "snippet_matching": "whitespace-normalised"
+  },
+  {
+   "id": "v3_cert_thr_s8",
+   "where": "8",
+   "snippet": "the 5.7 / 5.7e5 values if direction-select is granted and 2.9 / 2.9e5 if not",
+   "snippet_in_v3": true,
+   "quoted": [
+    5.7,
+    570000.0,
+    2.9,
+    290000.0
+   ],
+   "file_value": [
+    5.729493700664298,
+    572949.3700664297,
+    2.8647523144135594,
+    286475.23144135595
+   ],
+   "tol": [
+    "sig",
+    2
+   ],
+   "match": true,
+   "source": "HT, ES (re-derived)",
+   "label": "modelled (derived)",
+   "snippet_matching": "whitespace-normalised"
+  },
+  {
+   "id": "v3_cert_over",
+   "where": "abstract",
+   "snippet": "a further 11.5\u00d7 (explicit) or 20-40\u00d7 (certified)",
+   "snippet_in_v3": true,
+   "quoted": [
+    11.5,
+    20,
+    40
+   ],
+   "file_value": [
+    11.517173272859651,
+    19.897046049074536,
+    39.79401619694191
+   ],
+   "tol": [
+    "sig",
+    [
+     3,
+     1,
+     1
+    ]
+   ],
+   "match": true,
+   "source": "HT, ES (re-derived)",
+   "label": "modelled (derived)",
+   "snippet_matching": "whitespace-normalised",
+   "v3_numbers_value": [
+    19.897046049074536,
+    39.79401619694191
+   ]
+  },
+  {
+   "id": "v3_abstract_row",
+   "where": "abstract table",
+   "snippet": "| Best explicit worst-case constant (U1 + U2 + non-dyadic M) | **232.0** (200.4 with direction-select) | **6.29** (11.2 without the U1 mean credit; about 5.43 with direction-select, derived) |",
+   "snippet_in_v3": true,
+   "quoted": [
+    232.0,
+    200.4,
+    6.29,
+    11.2,
+    5.43
+   ],
+   "file_value": [
+    231.9631113906583,
+    200.3695090662016,
+    6.286227043496024,
+    11.229030375444664,
+    5.430036780558134
+   ],
+   "tol": [
+    "abs",
+    [
+     0.05,
+     0.05,
+     0.005,
+     0.05,
+     0.005
+    ]
+   ],
+   "match": true,
+   "source": "HT, ES, HW, DC (re-derived)",
+   "label": "modelled (derived)",
+   "snippet_matching": "whitespace-normalised",
+   "recheck_probe_value": [
+    200.3695090662016,
+    5.430036780558134
+   ],
+   "v3_numbers_value": [
+    200.3695090662016,
+    5.430036780558134
+   ]
+  },
+  {
+   "id": "v3_E20_register",
+   "where": "7.2 / App A",
+   "snippet": "The register file keeps E20 at T2 (\"credited screen value / branch-A lever\")",
+   "snippet_in_v3": true,
+   "quoted": [
+    "T2",
+    "credited screen value / branch-A lever",
+    "State the width bound \u2026 and stop",
+    ">10x only with >=15x"
+   ],
+   "file_value": [
+    "T2",
+    "credited screen value / branch-A lever",
+    "State the width bound (P~1e3-1e4 lanes, >=4e9 logical qubits) and stop. No lane schedules unless width headroom >=2x and a parallel-matching rule exists.",
+    ">10x only with >=15x logical width: the "
+   ],
+   "match": true,
+   "source": "REG",
+   "label": "register record"
+  },
+  {
+   "id": "v3_E20_lane",
+   "where": "7.2",
+   "snippet": "the binding cell gets a lane credit of 1.00\u00d7 under every modelled supply",
+   "snippet_in_v3": true,
+   "quoted": [
+    1.0,
+    1.0
+   ],
+   "file_value": [
+    1.0,
+    1.0
+   ],
+   "tol": [
+    "abs",
+    0.005
+   ],
+   "match": true,
+   "source": "ES",
+   "label": "modelled",
+   "snippet_matching": "whitespace-normalised"
+  }
+ ],
+ "probes": {
+  "zero_bias_plus_dirsel": {
+   "certified_M": 200.3695090662016,
+   "certified_M_without_dirsel_check_vs_400.7": 400.7374894343665,
+   "explicit_M_approx (e=eps explicit x dirsel ratio at 0.45eps)": 90.16951427507482,
+   "explicit_fail001_e_eq_eps_x_dirsel_ratio_approx": 66.12431046838819,
+   "ineligible_B4x12_dirsel": {
+    "certified": 532.4783954323386,
+    "explicit": 266.2391977161693
+   },
+   "label": "modelled (derived)",
+   "direction": "q+"
+  },
+  "per_cell_thresholds": {
+   "B4x12|0.01": {
+    "D_max_k1": 98.84424940462571,
+    "explicit_max_layers": 0.5296651339239109,
+    "explicit_max_T": 52966.51339239109,
+    "certified_max_layers": 0.12655064724163573,
+    "W0_primary_D_eff": 364.0,
+    "W0_allfree_D_eff": 94.0
+   },
+   "B4x12|0.001": {
+    "D_max_k1": 213.5762945412488,
+    "explicit_max_layers": 1.1448246034354819,
+    "explicit_max_T": 114482.46034354818,
+    "certified_max_layers": 0.34179855689795746,
+    "W0_primary_D_eff": 364.0,
+    "W0_allfree_D_eff": 94.0
+   },
+   "B8x52|0.01": {
+    "D_max_k1": 480.5398417245326,
+    "explicit_max_layers": 2.431066385557559,
+    "explicit_max_T": 243106.63855575593,
+    "certified_max_layers": 0.5630755575856898,
+    "W0_primary_D_eff": 2296.03168,
+    "W0_allfree_D_eff": 114.0
+   },
+   "B8x52|0.001": {
+    "D_max_k1": 1955.8952406218802,
+    "explicit_max_layers": 9.898262125537547,
+    "explicit_max_T": 989826.2125537547,
+    "certified_max_layers": 2.8647523144135594,
+    "W0_primary_D_eff": 2296.03168,
+    "W0_allfree_D_eff": 114.0
+   }
+  },
+  "allfree_stacks_explicit_B8": {
+   "allfree+supply1e13": 11.315117601405973,
+   "allfree+10ns": 7.314657773428892,
+   "allfree+1lane": 1.1249861733522126,
+   "allfree+distfree_stageC": 0.312116722604867
+  },
+  "best_explicit_dirsel_k_B8": 170.6865687272775,
+  "explicit_all_credits_incl_dirsel": {
+   "primary": 200.3695090662016,
+   "symmetric_BM": 5.430036780558134
+  },
+  "user_mentions_lines": []
+ }
+}
