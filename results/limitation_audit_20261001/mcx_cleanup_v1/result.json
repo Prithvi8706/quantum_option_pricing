@@ -1,0 +1,33 @@
+{
+  "real_fragment": "primitives.mcx with five quantum controls and arbitrary target",
+  "baseline": {
+    "qubits": 10,
+    "source_gates": 7,
+    "x": 0,
+    "cx": 0,
+    "ccx": 7,
+    "t_count": 49,
+    "t_depth": 25,
+    "clifford_t_depth": 65,
+    "clifford_cx": 42,
+    "clifford_h": 14,
+    "schedule": "exact seven-T Toffoli; all-to-all ASAP within each leaf"
+  },
+  "candidate": {
+    "qubits": 10,
+    "retained_ccx": 4,
+    "t_count": 28,
+    "measurements": 3,
+    "conditional_cz_max": 3,
+    "conditional_reset_x_max": 3,
+    "sequential_cleanup_feedback_rounds": 3
+  },
+  "full_kraus_columns": 128,
+  "branches": 8,
+  "max_forward_branch_error": 5.551115123125783e-17,
+  "max_inverse_branch_error": 5.551115123125783e-17,
+  "negative_control_fidelity_without_corrections": 0.5859374999999998,
+  "passed": true,
+  "disposition": "Verified dynamic backend candidate; do not insert measurements into the existing unitary Program or reverse their instruction sequence.",
+  "timing": "No hardware latency measured. T-count savings do not include measurement/feedback/routing time. Reference qubit counted equally in both."
+}

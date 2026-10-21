@@ -1,0 +1,104 @@
+{
+  "created_utc": "2026-10-01T07:33:37.903265+00:00",
+  "artifact_checks_passed": true,
+  "cases": [
+    {
+      "case": "B4x12",
+      "reused_leaf_keys": 53,
+      "changed_calls": 78,
+      "accepted_t_depth": 2436454,
+      "further_depth_reduction": 0.12512038125578562,
+      "depth_gain_vs_stage_a": 2.4760073451007076,
+      "t_count_reduction_vs_stage_a": 0.3032838031739995,
+      "full_replays": 3,
+      "fixed_batch_diagnostics": [
+        {
+          "strategy": "binary-shift-add",
+          "logical_qubits": 550158,
+          "within_cap": true,
+          "scope": "Fixed old batches: arithmetic-only diagnostic, not the accepted schedule"
+        },
+        {
+          "strategy": "signed-digit-shift-add",
+          "logical_qubits": 550158,
+          "within_cap": true,
+          "scope": "Fixed old batches: arithmetic-only diagnostic, not the accepted schedule"
+        },
+        {
+          "strategy": "binary-carry-save",
+          "logical_qubits": 588251,
+          "within_cap": false,
+          "scope": "Fixed old batches: arithmetic-only diagnostic, not the accepted schedule"
+        },
+        {
+          "strategy": "signed-digit-carry-save",
+          "logical_qubits": 569531,
+          "within_cap": false,
+          "scope": "Fixed old batches: arithmetic-only diagnostic, not the accepted schedule"
+        }
+      ]
+    },
+    {
+      "case": "B8x52",
+      "reused_leaf_keys": 53,
+      "changed_calls": 650,
+      "accepted_t_depth": 2624696,
+      "further_depth_reduction": 0.1237156356585214,
+      "depth_gain_vs_stage_a": 2.435765513415649,
+      "t_count_reduction_vs_stage_a": 0.303921174587782,
+      "full_replays": 1,
+      "fixed_batch_diagnostics": [
+        {
+          "strategy": "binary-shift-add",
+          "logical_qubits": 4460490,
+          "within_cap": true,
+          "scope": "Fixed old batches: arithmetic-only diagnostic, not the accepted schedule"
+        },
+        {
+          "strategy": "signed-digit-shift-add",
+          "logical_qubits": 4460490,
+          "within_cap": true,
+          "scope": "Fixed old batches: arithmetic-only diagnostic, not the accepted schedule"
+        },
+        {
+          "strategy": "binary-carry-save",
+          "logical_qubits": 4780943,
+          "within_cap": false,
+          "scope": "Fixed old batches: arithmetic-only diagnostic, not the accepted schedule"
+        },
+        {
+          "strategy": "signed-digit-carry-save",
+          "logical_qubits": 4623695,
+          "within_cap": false,
+          "scope": "Fixed old batches: arithmetic-only diagnostic, not the accepted schedule"
+        }
+      ]
+    }
+  ],
+  "executed_producer_sha256": "2a0aeaa2d0d440ea0113869fdbe93a40b16bdb181f047859202a18841ca79c44",
+  "maintained_producer_sha256": "aa5f505c2fffc09d03b8bb8315d2057493b4d6f73a635b9936b2bb848f501e01",
+  "producer_asts_identical": true,
+  "tests": {
+    "command": ".context/frontier_t0_env/Scripts/python.exe -m pytest research/limitation_audit_20261001/test_constant_multiplier.py research/limitation_audit_20261001/test_carry_save_multiplier.py research/limitation_audit_20261001/test_budget_schedule.py research/controlled_source_completion/test_completion.py research/controlled_priority_completion/test_parallel_source.py -q",
+    "observed_passes": 61,
+    "new_tests": 16,
+    "observed_warnings": 3,
+    "observed_seconds": 42.2,
+    "warning_kind": "Pre-existing Qiskit QFT PendingDeprecationWarning",
+    "evidence": "Observed terminal run; this finalizer checks artifacts, not test execution"
+  },
+  "ruff": "The four new Python files passed ruff check",
+  "python_version": "3.12.4",
+  "packages": {
+    "numpy": "2.0.2",
+    "numba": "0.60.0",
+    "scipy": "1.13.1",
+    "qiskit": "1.4.6",
+    "pytest": "8.4.2"
+  },
+  "historical_manifest_sha256": "8212663f1d103cf6a8523f2cc087ddf3ccafd17763b2be48f952659f1a84f55a",
+  "changed_since_historical_snapshot": [
+    "docs/limitation_audit_20261001/README.md"
+  ],
+  "scope": "Exact arithmetic-source improvement. Full-source input replays are sampled. No physical timing, continuous-price certification or quantum advantage established."
+}

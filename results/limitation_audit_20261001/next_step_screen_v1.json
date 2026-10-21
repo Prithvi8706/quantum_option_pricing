@@ -1,0 +1,221 @@
+{
+  "cases": [
+    {
+      "case": "B4x12",
+      "depth": 2784902,
+      "qubits": 550158,
+      "batch_max_depth_attribution": {
+        "mul": 1249248,
+        "cmul": 948288,
+        "sqrt": 450386,
+        "shift": 69888,
+        "lt": 30368,
+        "add": 25344,
+        "sub": 4608,
+        "select": 4040,
+        "add/sub": 2304,
+        "positive": 428,
+        "bits/const": 0
+      },
+      "fixed_schedule_zero_cost_diagnostics": {
+        "bits": {
+          "counterfactual_t_depth": 2784902,
+          "depth_reduction_fraction": 0.0
+        },
+        "const": {
+          "counterfactual_t_depth": 2784902,
+          "depth_reduction_fraction": 0.0
+        },
+        "add": {
+          "counterfactual_t_depth": 2759558,
+          "depth_reduction_fraction": 0.0091004997662395
+        },
+        "lt": {
+          "counterfactual_t_depth": 2779752,
+          "depth_reduction_fraction": 0.001849257173142882
+        },
+        "select": {
+          "counterfactual_t_depth": 2781290,
+          "depth_reduction_fraction": 0.0012969935746393046
+        },
+        "msb": {
+          "counterfactual_t_depth": 2784902,
+          "depth_reduction_fraction": 0.0
+        },
+        "sub": {
+          "counterfactual_t_depth": 2782314,
+          "depth_reduction_fraction": 0.0009292966143871206
+        },
+        "shift": {
+          "counterfactual_t_depth": 2735494,
+          "depth_reduction_fraction": 0.017741378332163937
+        },
+        "lookup": {
+          "counterfactual_t_depth": 2784902,
+          "depth_reduction_fraction": 0.0
+        },
+        "mul": {
+          "counterfactual_t_depth": 1593738,
+          "depth_reduction_fraction": 0.4277220526970069
+        },
+        "cmul": {
+          "counterfactual_t_depth": 1887178,
+          "depth_reduction_fraction": 0.3223538925247639
+        },
+        "positive": {
+          "counterfactual_t_depth": 2784474,
+          "depth_reduction_fraction": 0.00015368583885533305
+        },
+        "sqrt": {
+          "counterfactual_t_depth": 2334516,
+          "depth_reduction_fraction": 0.16172418275400713
+        }
+      },
+      "t_count_shares": {
+        "bits": 0.0,
+        "const": 0.0,
+        "add": 0.011041051115171894,
+        "lt": 0.002021475807524137,
+        "select": 0.000996892179052999,
+        "msb": 0.00018809286397226396,
+        "sub": 0.001435775528321615,
+        "shift": 0.00899972106089513,
+        "lookup": 0.0002011548684147823,
+        "mul": 0.8890522703755677,
+        "cmul": 0.042419904387433684,
+        "positive": 4.7915786296638075e-05,
+        "sqrt": 0.04359574602734918
+      },
+      "historical_sensitivity": [
+        {
+          "epsilon": 0.01,
+          "hypothetical_source_calls": 3817.222920280398,
+          "historical_classical_model_seconds": 0.38259502228547326,
+          "improved_source_only_model_seconds": 1063.059174513472,
+          "historical_depth_budget_for_10x": 100.22862962830825,
+          "ratio_to_10x_depth_budget": 27785.494128051425,
+          "source_only_model_quantum_over_classical": 2778.5494128051423
+        },
+        {
+          "epsilon": 0.001,
+          "hypothetical_source_calls": 38172.229202803974,
+          "historical_classical_model_seconds": 5.860783245975945,
+          "improved_source_only_model_seconds": 10630.59174513472,
+          "historical_depth_budget_for_10x": 153.5352628959232,
+          "ratio_to_10x_depth_budget": 18138.517155422454,
+          "source_only_model_quantum_over_classical": 1813.8517155422458
+        }
+      ]
+    },
+    {
+      "case": "B8x52",
+      "depth": 2995256,
+      "qubits": 4460490,
+      "batch_max_depth_attribution": {
+        "mul": 1241856,
+        "cmul": 1123072,
+        "sqrt": 450386,
+        "shift": 104832,
+        "lt": 37376,
+        "add": 25344,
+        "select": 5050,
+        "sub": 4608,
+        "add/sub": 2304,
+        "positive": 428,
+        "bits/const": 0
+      },
+      "fixed_schedule_zero_cost_diagnostics": {
+        "bits": {
+          "counterfactual_t_depth": 2995256,
+          "depth_reduction_fraction": 0.0
+        },
+        "const": {
+          "counterfactual_t_depth": 2995256,
+          "depth_reduction_fraction": 0.0
+        },
+        "add": {
+          "counterfactual_t_depth": 2969912,
+          "depth_reduction_fraction": 0.008461380262655305
+        },
+        "lt": {
+          "counterfactual_t_depth": 2989000,
+          "depth_reduction_fraction": 0.002088636163319557
+        },
+        "select": {
+          "counterfactual_t_depth": 2990634,
+          "depth_reduction_fraction": 0.0015431068329384567
+        },
+        "msb": {
+          "counterfactual_t_depth": 2995256,
+          "depth_reduction_fraction": 0.0
+        },
+        "sub": {
+          "counterfactual_t_depth": 2992668,
+          "depth_reduction_fraction": 0.0008640329908361499
+        },
+        "shift": {
+          "counterfactual_t_depth": 2926840,
+          "depth_reduction_fraction": 0.022841453284794366
+        },
+        "lookup": {
+          "counterfactual_t_depth": 2995256,
+          "depth_reduction_fraction": 0.0
+        },
+        "mul": {
+          "counterfactual_t_depth": 2082052,
+          "depth_reduction_fraction": 0.30488345570462094
+        },
+        "cmul": {
+          "counterfactual_t_depth": 1944888,
+          "depth_reduction_fraction": 0.3506772042189382
+        },
+        "positive": {
+          "counterfactual_t_depth": 2994828,
+          "depth_reduction_fraction": 0.00014289262754163534
+        },
+        "sqrt": {
+          "counterfactual_t_depth": 2544870,
+          "depth_reduction_fraction": 0.15036644614016292
+        }
+      },
+      "t_count_shares": {
+        "bits": 0.0,
+        "const": 0.0,
+        "add": 0.011747992712087795,
+        "lt": 0.0019520400089635052,
+        "select": 0.0009626498674340574,
+        "msb": 0.00017863605787436118,
+        "sub": 0.0013901549632017592,
+        "shift": 0.009131665767111441,
+        "lookup": 0.0001910413396711918,
+        "mul": 0.8912616057872293,
+        "cmul": 0.041736118021157904,
+        "positive": 4.422695016669213e-05,
+        "sqrt": 0.04140386852510193
+      },
+      "historical_sensitivity": [
+        {
+          "epsilon": 0.01,
+          "hypothetical_source_calls": 3435.166157273246,
+          "historical_classical_model_seconds": 0.7825489838673616,
+          "improved_source_only_model_seconds": 1028.9202043569633,
+          "historical_depth_budget_for_10x": 227.8052787084193,
+          "ratio_to_10x_depth_budget": 13148.316917773425,
+          "source_only_model_quantum_over_classical": 1314.8316917773425
+        },
+        {
+          "epsilon": 0.001,
+          "hypothetical_source_calls": 34351.66157273246,
+          "historical_classical_model_seconds": 27.118838962453555,
+          "improved_source_only_model_seconds": 10289.202043569632,
+          "historical_depth_budget_for_10x": 789.4476633986128,
+          "ratio_to_10x_depth_budget": 3794.1159862393774,
+          "source_only_model_quantum_over_classical": 379.4115986239377
+        }
+      ]
+    }
+  ],
+  "attribution_scope": "Assign each batch's max T-depth to the operation family setting that maximum. This is schedule attribution, not a causal global critical-path decomposition; reordering may change it.",
+  "zero_cost_scope": "Set one operation family's depth to zero in the same schedule. No gates removed, new circuit emitted, or performance gain verified. Does not predict changing the Gaussian law or changing dependencies.",
+  "historical_scope": "Unchanged archived fitted classical times, hypothetical variance estimator k=3, 100ns per T layer, and source only. Not fresh pricing timings, a proven estimator schedule, or a physical hardware forecast."
+}

@@ -1,0 +1,611 @@
+{
+  "case": "B4x12",
+  "archived_baseline": {
+    "source_gates": 285639680,
+    "x": 120550,
+    "cx": 155878656,
+    "ccx": 129640474,
+    "t_count": 907483318,
+    "t_depth": 6032678,
+    "clifford_t_depth": 18068093,
+    "clifford_cx": 933721500,
+    "clifford_h": 259280948,
+    "logical_qubits": 550158,
+    "random_hadamards": 1920,
+    "ssa_words": 5698,
+    "max_reused_scratch_qubits": 139830,
+    "output_words": 1,
+    "t_depth_schedule": "Serial wave batches, disjoint private leaf workspaces; ASAP inside leaves, shared-control copies in separate rounds.",
+    "ccx_expansion": "exact 7 T and 6 CX, 2 H per CCX; no relative-phase substitution"
+  },
+  "lookup_only_baseline": {
+    "source_gates": 285235640,
+    "x": 118270,
+    "cx": 155623536,
+    "ccx": 129493834,
+    "t_count": 906456838,
+    "t_depth": 6026790,
+    "clifford_t_depth": 18058677,
+    "clifford_cx": 932586540,
+    "clifford_h": 258987668,
+    "logical_qubits": 550158,
+    "random_hadamards": 1920,
+    "ssa_words": 5698,
+    "max_reused_scratch_qubits": 139830,
+    "output_words": 1,
+    "t_depth_schedule": "Serial wave batches, disjoint private leaf workspaces; ASAP inside leaves, shared-control copies in separate rounds.",
+    "ccx_expansion": "exact 7 T and 6 CX, 2 H per CCX; no relative-phase substitution"
+  },
+  "candidate": {
+    "source_gates": 202009400,
+    "x": 118270,
+    "cx": 110021616,
+    "ccx": 91869514,
+    "t_count": 643086598,
+    "t_depth": 2784902,
+    "clifford_t_depth": 8277427,
+    "clifford_cx": 661238700,
+    "clifford_h": 183739028,
+    "logical_qubits": 550158,
+    "random_hadamards": 1920,
+    "ssa_words": 5698,
+    "max_reused_scratch_qubits": 139830,
+    "output_words": 1,
+    "t_depth_schedule": "Memory-capped wave batches; shared-control copies paid separately",
+    "ccx_expansion": "exact 7 T and 6 CX, 2 H per CCX; no relative-phase substitution"
+  },
+  "chosen_parallel_limit": null,
+  "chosen_packing": "First fit by decreasing leaf T-depth within each dependency wave",
+  "uniform_limit_best_depth": 6079060,
+  "faster_at_same_cap": true,
+  "tested_schedules": [
+    {
+      "limit": 1,
+      "qubits": 424404,
+      "t_depth": 46874036,
+      "t_count": 643086598,
+      "within_cap": true
+    },
+    {
+      "limit": 2,
+      "qubits": 438480,
+      "t_depth": 23520998,
+      "t_count": 643086598,
+      "within_cap": true
+    },
+    {
+      "limit": 3,
+      "qubits": 452556,
+      "t_depth": 16047302,
+      "t_count": 643086598,
+      "within_cap": true
+    },
+    {
+      "limit": 4,
+      "qubits": 466632,
+      "t_depth": 12165950,
+      "t_count": 643086598,
+      "within_cap": true
+    },
+    {
+      "limit": 5,
+      "qubits": 480708,
+      "t_depth": 9797006,
+      "t_count": 643086598,
+      "within_cap": true
+    },
+    {
+      "limit": 6,
+      "qubits": 494784,
+      "t_depth": 8264462,
+      "t_count": 643086598,
+      "within_cap": true
+    },
+    {
+      "limit": 7,
+      "qubits": 508860,
+      "t_depth": 7751594,
+      "t_count": 643086598,
+      "within_cap": true
+    },
+    {
+      "limit": 8,
+      "qubits": 522936,
+      "t_depth": 6384778,
+      "t_count": 643086598,
+      "within_cap": true
+    },
+    {
+      "limit": 9,
+      "qubits": 537012,
+      "t_depth": 6079060,
+      "t_count": 643086598,
+      "within_cap": true
+    },
+    {
+      "limit": 10,
+      "qubits": 551088,
+      "t_depth": 5105060,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 11,
+      "qubits": 565164,
+      "t_depth": 5029020,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 12,
+      "qubits": 579240,
+      "t_depth": 4696894,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 13,
+      "qubits": 593316,
+      "t_depth": 4622214,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 14,
+      "qubits": 607392,
+      "t_depth": 4556376,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 15,
+      "qubits": 621468,
+      "t_depth": 3748612,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 16,
+      "qubits": 635544,
+      "t_depth": 3526624,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 17,
+      "qubits": 649620,
+      "t_depth": 3512320,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 18,
+      "qubits": 663696,
+      "t_depth": 3446688,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 19,
+      "qubits": 677772,
+      "t_depth": 3434688,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 20,
+      "qubits": 691848,
+      "t_depth": 3158218,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 21,
+      "qubits": 705924,
+      "t_depth": 3142826,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 22,
+      "qubits": 720000,
+      "t_depth": 3119110,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 23,
+      "qubits": 734076,
+      "t_depth": 3074812,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 24,
+      "qubits": 748152,
+      "t_depth": 2970402,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 25,
+      "qubits": 762228,
+      "t_depth": 2963010,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 26,
+      "qubits": 776304,
+      "t_depth": 2948706,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 27,
+      "qubits": 790380,
+      "t_depth": 2943618,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 28,
+      "qubits": 804456,
+      "t_depth": 2911398,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 29,
+      "qubits": 818532,
+      "t_depth": 2909094,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 30,
+      "qubits": 832608,
+      "t_depth": 2127350,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 31,
+      "qubits": 846684,
+      "t_depth": 2125046,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 32,
+      "qubits": 860760,
+      "t_depth": 2120438,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 33,
+      "qubits": 874836,
+      "t_depth": 2113046,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 34,
+      "qubits": 888912,
+      "t_depth": 2110742,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 35,
+      "qubits": 902988,
+      "t_depth": 2095958,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 36,
+      "qubits": 917064,
+      "t_depth": 2092644,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 37,
+      "qubits": 931140,
+      "t_depth": 2092644,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 38,
+      "qubits": 945216,
+      "t_depth": 2082948,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 39,
+      "qubits": 959292,
+      "t_depth": 2080644,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 40,
+      "qubits": 973368,
+      "t_depth": 2059556,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 41,
+      "qubits": 987444,
+      "t_depth": 2059556,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 42,
+      "qubits": 1001520,
+      "t_depth": 2052644,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 43,
+      "qubits": 1015596,
+      "t_depth": 2050340,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 44,
+      "qubits": 1029672,
+      "t_depth": 2036320,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 45,
+      "qubits": 1043748,
+      "t_depth": 2001718,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 46,
+      "qubits": 1057824,
+      "t_depth": 2001718,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 47,
+      "qubits": 1071900,
+      "t_depth": 1996630,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 48,
+      "qubits": 1085976,
+      "t_depth": 1988992,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 49,
+      "qubits": 1100052,
+      "t_depth": 1983904,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 50,
+      "qubits": 1114128,
+      "t_depth": 1983904,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 51,
+      "qubits": 1128204,
+      "t_depth": 1979296,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 52,
+      "qubits": 1142280,
+      "t_depth": 1969600,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 53,
+      "qubits": 1156356,
+      "t_depth": 1969600,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 54,
+      "qubits": 1170432,
+      "t_depth": 1969600,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 55,
+      "qubits": 1184508,
+      "t_depth": 1969600,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 56,
+      "qubits": 1198584,
+      "t_depth": 1962208,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 57,
+      "qubits": 1212660,
+      "t_depth": 1962208,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 58,
+      "qubits": 1226736,
+      "t_depth": 1959904,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 59,
+      "qubits": 1240812,
+      "t_depth": 1959904,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 60,
+      "qubits": 1254888,
+      "t_depth": 1813684,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 61,
+      "qubits": 1268964,
+      "t_depth": 1811380,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 62,
+      "qubits": 1283040,
+      "t_depth": 1811380,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 63,
+      "qubits": 1297116,
+      "t_depth": 1809076,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 64,
+      "qubits": 1311192,
+      "t_depth": 1809076,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 128,
+      "qubits": 2212056,
+      "t_depth": 1719974,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": 256,
+      "qubits": 3182244,
+      "t_depth": 1700582,
+      "t_count": 643086598,
+      "within_cap": false
+    },
+    {
+      "limit": null,
+      "qubits": 3192660,
+      "t_depth": 1698278,
+      "t_count": 643086598,
+      "within_cap": false
+    }
+  ],
+  "qubit_cap": 550158,
+  "source_target_sha256": "a7a682731b3cdb6f16b32a9b1a467d6bfeccb32ea97e583ab79e5252bb7a9384",
+  "gate_replay": {
+    "inputs": {
+      "uniform_0": 1822491620,
+      "uniform_1": 210612232,
+      "uniform_2": 1864868849,
+      "uniform_3": 1745292549,
+      "uniform_4": 3520126376,
+      "uniform_5": 2675600412,
+      "uniform_6": 3075312865,
+      "uniform_7": 4007060813,
+      "uniform_8": 51851689,
+      "uniform_9": 374726264,
+      "uniform_10": 4112056853,
+      "uniform_11": 4082795982,
+      "uniform_12": 2750233522,
+      "uniform_13": 1099149158,
+      "uniform_14": 2635849755,
+      "uniform_15": 4107625368,
+      "uniform_16": 926381737,
+      "uniform_17": 4201817329,
+      "uniform_18": 3618039713,
+      "uniform_19": 3972412970,
+      "uniform_20": 1635776862,
+      "uniform_21": 34698418,
+      "uniform_22": 2374545711,
+      "uniform_23": 376323810,
+      "uniform_24": 2645482645,
+      "uniform_25": 1941877722,
+      "uniform_26": 2775131331,
+      "uniform_27": 999319769,
+      "uniform_28": 96823965,
+      "uniform_29": 201765764,
+      "uniform_30": 3812871856,
+      "uniform_31": 3600099397,
+      "uniform_32": 3587174283,
+      "uniform_33": 3812407564,
+      "uniform_34": 1091311584,
+      "uniform_35": 454593438,
+      "uniform_36": 4060259824,
+      "uniform_37": 375939204,
+      "uniform_38": 411626383,
+      "uniform_39": 3831599526,
+      "uniform_40": 2374860073,
+      "uniform_41": 3113776782,
+      "uniform_42": 441474360,
+      "uniform_43": 3248191955,
+      "uniform_44": 1831365031,
+      "uniform_45": 2449508197,
+      "uniform_46": 3006995051,
+      "uniform_47": 1804866382,
+      "uniform_48": 2581258005,
+      "uniform_49": 646378535,
+      "uniform_50": 2754599436,
+      "uniform_51": 2798493055,
+      "uniform_52": 3794274641,
+      "uniform_53": 3292232063,
+      "uniform_54": 3365874297,
+      "uniform_55": 3419595910,
+      "uniform_56": 1692462341,
+      "uniform_57": 3180124451,
+      "uniform_58": 136536878,
+      "uniform_59": 3742939139
+    },
+    "initial": {
+      "Y": 3055648900680358667685
+    },
+    "expected": {
+      "Y": 3055648900680358667685
+    },
+    "actual": {
+      "values": {
+        "Y": 3055648900680358667685
+      },
+      "all_input_and_workspace_bits_restored": true
+    },
+    "passed": true
+  }
+}

@@ -1,0 +1,118 @@
+[
+  {
+    "strategy": "binary-shift-add",
+    "baseline": {
+      "qubits": 433,
+      "source_gates": 34992,
+      "x": 0,
+      "cx": 23448,
+      "ccx": 11544,
+      "t_count": 80808,
+      "t_depth": 46176,
+      "clifford_t_depth": 138532,
+      "clifford_cx": 92712,
+      "clifford_h": 23088,
+      "schedule": "exact seven-T Toffoli; all-to-all ASAP within each leaf"
+    },
+    "candidate": {
+      "qubits": 289,
+      "source_gates": 14976,
+      "x": 0,
+      "cx": 10056,
+      "ccx": 4920,
+      "t_count": 34440,
+      "t_depth": 19680,
+      "clifford_t_depth": 59045,
+      "clifford_cx": 39576,
+      "clifford_h": 9840,
+      "schedule": "exact seven-T Toffoli; all-to-all ASAP within each leaf"
+    }
+  },
+  {
+    "strategy": "signed-digit-shift-add",
+    "baseline": {
+      "qubits": 433,
+      "source_gates": 34992,
+      "x": 0,
+      "cx": 23448,
+      "ccx": 11544,
+      "t_count": 80808,
+      "t_depth": 46176,
+      "clifford_t_depth": 138532,
+      "clifford_cx": 92712,
+      "clifford_h": 23088,
+      "schedule": "exact seven-T Toffoli; all-to-all ASAP within each leaf"
+    },
+    "candidate": {
+      "qubits": 289,
+      "source_gates": 7932,
+      "x": 0,
+      "cx": 5360,
+      "ccx": 2572,
+      "t_count": 18004,
+      "t_depth": 10288,
+      "clifford_t_depth": 30881,
+      "clifford_cx": 20792,
+      "clifford_h": 5144,
+      "schedule": "exact seven-T Toffoli; all-to-all ASAP within each leaf"
+    }
+  },
+  {
+    "strategy": "binary-carry-save",
+    "baseline": {
+      "qubits": 433,
+      "source_gates": 34992,
+      "x": 0,
+      "cx": 23448,
+      "ccx": 11544,
+      "t_count": 80808,
+      "t_depth": 46176,
+      "clifford_t_depth": 138532,
+      "clifford_cx": 92712,
+      "clifford_h": 23088,
+      "schedule": "exact seven-T Toffoli; all-to-all ASAP within each leaf"
+    },
+    "candidate": {
+      "qubits": 2341,
+      "source_gates": 9190,
+      "x": 82,
+      "cx": 6224,
+      "ccx": 2884,
+      "t_count": 20188,
+      "t_depth": 1184,
+      "clifford_t_depth": 3540,
+      "clifford_cx": 23528,
+      "clifford_h": 5768,
+      "schedule": "exact seven-T Toffoli; all-to-all ASAP within each leaf"
+    }
+  },
+  {
+    "strategy": "signed-digit-carry-save",
+    "baseline": {
+      "qubits": 433,
+      "source_gates": 34992,
+      "x": 0,
+      "cx": 23448,
+      "ccx": 11544,
+      "t_count": 80808,
+      "t_depth": 46176,
+      "clifford_t_depth": 138532,
+      "clifford_cx": 92712,
+      "clifford_h": 23088,
+      "schedule": "exact seven-T Toffoli; all-to-all ASAP within each leaf"
+    },
+    "candidate": {
+      "qubits": 1405,
+      "source_gates": 5846,
+      "x": 506,
+      "cx": 3712,
+      "ccx": 1628,
+      "t_count": 11396,
+      "t_depth": 1152,
+      "clifford_t_depth": 3459,
+      "clifford_cx": 13480,
+      "clifford_h": 3256,
+      "schedule": "exact seven-T Toffoli; all-to-all ASAP within each leaf"
+    }
+  }
+]

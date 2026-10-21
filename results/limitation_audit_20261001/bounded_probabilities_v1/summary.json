@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "finite_grid": {
+    "points": 16384,
+    "cutoff": 6
+  },
+  "direct_price": 3.2189620657820788,
+  "decomposed_price": 3.218962065782082,
+  "identity_error": 3.1086244689504383e-15,
+  "finite_normalization": 103.04884928817364,
+  "continuous_normalization": 103.04545339535176,
+  "probabilities": {
+    "original": 0.2841655990367953,
+    "tilted": 0.30794670855806383
+  },
+  "mixture_max_probability_error": 8.673617379884035e-19,
+  "sampled_paths": 131072,
+  "sampled_tilted_probability": 0.30902862548828125,
+  "sampler_standard_error": 0.0012751244974016818,
+  "naive_shifted_grid_negative_control": {
+    "total_variation": 7.410845746320283e-05,
+    "price_error": -0.0010267823283354183
+  },
+  "joint_ledger": {
+    "dollar_target": 0.01,
+    "total_failure_probability": 0.01,
+    "coefficient_values": [
+      100.00329552902147,
+      97.04455335485082
+    ],
+    "absolute_probability_errors": [
+      5.037374479867328e-05,
+      5.1135889036957656e-05
+    ],
+    "per_estimate_failure_probabilities": [
+      0.005,
+      0.005
+    ],
+    "triangle_bound": 0.01,
+    "required_extra_errors": "If m is approximate, add discount*|m_hat-m|; also add preparation, grid, arithmetic and continuous-law errors."
+  },
+  "simple_query_screen": {
+    "assumption": "Equal source cost and equal constants for a 1/probability-error bounded estimator; not an executed quantum estimator",
+    "decomposition_inverse_precision_sum": 39407.348324272454,
+    "direct_inverse_precision": 3881.782134194032,
+    "decomposition_over_direct": 10.15187018795802
+  },
+  "disposition": "Keep the exact identity and finite sampler. Do not replace the current pricing source: this bounded barrier example worsens the simple query precision budget, and both indicators still need the asset arithmetic.",
+  "certification": "Algebraic finite-law identity and numerical checks completed. A certified rotation sampler, normalizer intervals and dollar-error bridge are not."
+}

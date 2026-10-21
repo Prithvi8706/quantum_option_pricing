@@ -1,0 +1,411 @@
+{
+  "cases": [
+    {
+      "model": {
+        "name": "A1",
+        "assets": 1,
+        "dates": 12,
+        "spot": 100.0,
+        "strike": 100.0,
+        "rate": 0.03,
+        "maturity": 1.0,
+        "kappa": 2.0,
+        "theta": 0.09,
+        "v0": 0.09,
+        "xi": 0.3,
+        "leverage": -0.5,
+        "correlation": 0.3
+      },
+      "eta": 8.0,
+      "eta_at_least_five": true,
+      "variance_covariance": [
+        [
+          1.0
+        ]
+      ],
+      "equity_variance_cross_covariance": [
+        [
+          -0.5
+        ]
+      ],
+      "largest_offdiagonal_variance_covariance": 0.0,
+      "largest_cross_asset_equity_variance_covariance": 0.0,
+      "correlation_form_matches": true,
+      "tail_middle": -0.6224999999999999,
+      "native_time_delta": 0.041666666666666664,
+      "literal_truncation_conditions": {
+        "delta_at_least_one": false,
+        "sum_exponentials_less_than_one": false,
+        "kappa_squared_gt_middle_ge_zero": false,
+        "final_inequality": false
+      },
+      "direct_transfer_of_full_stated_bound": false
+    },
+    {
+      "model": {
+        "name": "A4",
+        "assets": 4,
+        "dates": 12,
+        "spot": 100.0,
+        "strike": 100.0,
+        "rate": 0.03,
+        "maturity": 1.0,
+        "kappa": 2.0,
+        "theta": 0.09,
+        "v0": 0.09,
+        "xi": 0.3,
+        "leverage": -0.5,
+        "correlation": 0.3
+      },
+      "eta": 8.0,
+      "eta_at_least_five": true,
+      "variance_covariance": [
+        [
+          0.9999999999999999,
+          0.07500000000000011,
+          0.07500000000000007,
+          0.075
+        ],
+        [
+          0.07500000000000011,
+          0.9999999999999998,
+          0.0750000000000001,
+          0.07500000000000012
+        ],
+        [
+          0.07500000000000007,
+          0.0750000000000001,
+          1.0,
+          0.07500000000000004
+        ],
+        [
+          0.07499999999999998,
+          0.07500000000000012,
+          0.07500000000000004,
+          0.9999999999999999
+        ]
+      ],
+      "equity_variance_cross_covariance": [
+        [
+          -0.4999999999999999,
+          -0.15000000000000002,
+          -0.15000000000000002,
+          -0.14999999999999997
+        ],
+        [
+          -0.15000000000000002,
+          -0.49999999999999983,
+          -0.15000000000000005,
+          -0.15000000000000005
+        ],
+        [
+          -0.15000000000000005,
+          -0.15000000000000005,
+          -0.5,
+          -0.15000000000000005
+        ],
+        [
+          -0.14999999999999997,
+          -0.15000000000000005,
+          -0.15000000000000002,
+          -0.5
+        ]
+      ],
+      "largest_offdiagonal_variance_covariance": 0.07500000000000012,
+      "largest_cross_asset_equity_variance_covariance": 0.15000000000000005,
+      "correlation_form_matches": false,
+      "tail_middle": -0.6224999999999999,
+      "native_time_delta": 0.041666666666666664,
+      "literal_truncation_conditions": {
+        "delta_at_least_one": false,
+        "sum_exponentials_less_than_one": false,
+        "kappa_squared_gt_middle_ge_zero": false,
+        "final_inequality": false
+      },
+      "direct_transfer_of_full_stated_bound": false
+    },
+    {
+      "model": {
+        "name": "S4",
+        "assets": 4,
+        "dates": 12,
+        "spot": 100.0,
+        "strike": 100.0,
+        "rate": 0.03,
+        "maturity": 1.0,
+        "kappa": 2.0,
+        "theta": 0.04,
+        "v0": 0.04,
+        "xi": 0.5,
+        "leverage": -0.7,
+        "correlation": 0.3
+      },
+      "eta": 1.28,
+      "eta_at_least_five": false,
+      "variance_covariance": [
+        [
+          0.9999999999999998,
+          0.14700000000000008,
+          0.14700000000000002,
+          0.14699999999999983
+        ],
+        [
+          0.14700000000000008,
+          0.9999999999999997,
+          0.14700000000000005,
+          0.14700000000000005
+        ],
+        [
+          0.147,
+          0.14700000000000008,
+          0.9999999999999998,
+          0.14700000000000005
+        ],
+        [
+          0.14699999999999983,
+          0.14700000000000008,
+          0.14700000000000008,
+          0.9999999999999998
+        ]
+      ],
+      "equity_variance_cross_covariance": [
+        [
+          -0.6999999999999998,
+          -0.21000000000000002,
+          -0.21000000000000005,
+          -0.20999999999999994
+        ],
+        [
+          -0.21,
+          -0.6999999999999997,
+          -0.21000000000000002,
+          -0.21000000000000002
+        ],
+        [
+          -0.21000000000000005,
+          -0.21000000000000005,
+          -0.7,
+          -0.21000000000000005
+        ],
+        [
+          -0.20999999999999994,
+          -0.21000000000000005,
+          -0.21000000000000005,
+          -0.7
+        ]
+      ],
+      "largest_offdiagonal_variance_covariance": 0.14700000000000008,
+      "largest_cross_asset_equity_variance_covariance": 0.21000000000000005,
+      "correlation_form_matches": false,
+      "tail_middle": -1.5225,
+      "native_time_delta": 0.041666666666666664,
+      "literal_truncation_conditions": {
+        "delta_at_least_one": false,
+        "sum_exponentials_less_than_one": false,
+        "kappa_squared_gt_middle_ge_zero": false,
+        "final_inequality": false
+      },
+      "direct_transfer_of_full_stated_bound": false
+    },
+    {
+      "model": {
+        "name": "B8",
+        "assets": 8,
+        "dates": 12,
+        "spot": 100.0,
+        "strike": 100.0,
+        "rate": 0.03,
+        "maturity": 2.0,
+        "kappa": 1.5,
+        "theta": 0.12,
+        "v0": 0.12,
+        "xi": 0.5,
+        "leverage": -0.7,
+        "correlation": 0.6
+      },
+      "eta": 2.88,
+      "eta_at_least_five": false,
+      "variance_covariance": [
+        [
+          0.9999999999999998,
+          0.2939999999999999,
+          0.2939999999999999,
+          0.2939999999999998,
+          0.2939999999999999,
+          0.29399999999999976,
+          0.2939999999999998,
+          0.2940000000000001
+        ],
+        [
+          0.2939999999999999,
+          0.9999999999999998,
+          0.2939999999999999,
+          0.2939999999999999,
+          0.2939999999999999,
+          0.2939999999999999,
+          0.2939999999999999,
+          0.2939999999999999
+        ],
+        [
+          0.2939999999999999,
+          0.2939999999999999,
+          0.9999999999999998,
+          0.2939999999999999,
+          0.2939999999999999,
+          0.2939999999999999,
+          0.2939999999999999,
+          0.2939999999999999
+        ],
+        [
+          0.2939999999999998,
+          0.2939999999999999,
+          0.2939999999999999,
+          0.9999999999999998,
+          0.29399999999999993,
+          0.29399999999999993,
+          0.29399999999999993,
+          0.29399999999999993
+        ],
+        [
+          0.2939999999999999,
+          0.2939999999999999,
+          0.2939999999999999,
+          0.29399999999999993,
+          0.9999999999999999,
+          0.2939999999999999,
+          0.2939999999999999,
+          0.2939999999999999
+        ],
+        [
+          0.29399999999999976,
+          0.2939999999999999,
+          0.2939999999999999,
+          0.29399999999999993,
+          0.2939999999999999,
+          1.0000000000000002,
+          0.2939999999999998,
+          0.2939999999999998
+        ],
+        [
+          0.2939999999999998,
+          0.2939999999999999,
+          0.2939999999999999,
+          0.29399999999999993,
+          0.2939999999999999,
+          0.2939999999999998,
+          1.0,
+          0.29399999999999993
+        ],
+        [
+          0.2940000000000001,
+          0.2939999999999999,
+          0.2939999999999999,
+          0.29399999999999993,
+          0.2939999999999999,
+          0.2939999999999998,
+          0.29399999999999993,
+          0.9999999999999998
+        ]
+      ],
+      "equity_variance_cross_covariance": [
+        [
+          -0.6999999999999998,
+          -0.41999999999999993,
+          -0.4199999999999999,
+          -0.4199999999999999,
+          -0.41999999999999993,
+          -0.4199999999999999,
+          -0.41999999999999993,
+          -0.42
+        ],
+        [
+          -0.41999999999999993,
+          -0.6999999999999998,
+          -0.41999999999999993,
+          -0.41999999999999993,
+          -0.41999999999999993,
+          -0.41999999999999993,
+          -0.41999999999999993,
+          -0.41999999999999993
+        ],
+        [
+          -0.4199999999999999,
+          -0.41999999999999993,
+          -0.6999999999999998,
+          -0.41999999999999993,
+          -0.41999999999999993,
+          -0.41999999999999993,
+          -0.41999999999999993,
+          -0.41999999999999993
+        ],
+        [
+          -0.4199999999999999,
+          -0.41999999999999993,
+          -0.41999999999999993,
+          -0.6999999999999998,
+          -0.41999999999999993,
+          -0.41999999999999993,
+          -0.41999999999999993,
+          -0.41999999999999993
+        ],
+        [
+          -0.41999999999999993,
+          -0.41999999999999993,
+          -0.41999999999999993,
+          -0.41999999999999993,
+          -0.6999999999999998,
+          -0.4199999999999999,
+          -0.4199999999999999,
+          -0.4199999999999999
+        ],
+        [
+          -0.4199999999999999,
+          -0.41999999999999993,
+          -0.41999999999999993,
+          -0.41999999999999993,
+          -0.4199999999999999,
+          -0.7,
+          -0.4199999999999999,
+          -0.4199999999999999
+        ],
+        [
+          -0.41999999999999993,
+          -0.41999999999999993,
+          -0.41999999999999993,
+          -0.41999999999999993,
+          -0.4199999999999999,
+          -0.4199999999999999,
+          -0.7,
+          -0.4199999999999999
+        ],
+        [
+          -0.42,
+          -0.41999999999999993,
+          -0.41999999999999993,
+          -0.41999999999999993,
+          -0.4199999999999999,
+          -0.4199999999999999,
+          -0.4199999999999999,
+          -0.6999999999999998
+        ]
+      ],
+      "largest_offdiagonal_variance_covariance": 0.2940000000000001,
+      "largest_cross_asset_equity_variance_covariance": 0.42,
+      "correlation_form_matches": false,
+      "tail_middle": -1.1724999999999999,
+      "native_time_delta": 0.08333333333333333,
+      "literal_truncation_conditions": {
+        "delta_at_least_one": false,
+        "sum_exponentials_less_than_one": false,
+        "kappa_squared_gt_middle_ge_zero": false,
+        "final_inequality": false
+      },
+      "direct_transfer_of_full_stated_bound": false
+    }
+  ],
+  "passed": true,
+  "paper": "https://arxiv.org/html/2602.03725v1#S6.SS2.SSS2",
+  "disposition": "Reject a direct use of this paper's stated full bound for the current cases. A1 passes eta and covariance, but not the literal sufficient truncation hypotheses. A4 additionally has incompatible variance correlations.",
+  "scope": "Failure of sufficient hypotheses is not an impossibility result. A new negative-leverage tail proof may apply. Time rescaling must transform all SDE parameters; it cannot change the negative sign of tail_middle.",
+  "payoff": "Vanilla arithmetic basket/Asian calls are piecewise linear in spots; the knock-out contracts additionally fail the cited Lipschitz payoff premise."
+}

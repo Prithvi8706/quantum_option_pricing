@@ -1,0 +1,33 @@
+{
+  "experiment": "temporary_and_measurement_cleanup",
+  "python": "3.9.13",
+  "basis_columns": 16,
+  "seeded_complex_superpositions_with_reference": 64,
+  "measurement_branches_per_input": 2,
+  "max_kraus_column_or_state_error": 0.0,
+  "max_branch_probability_error": 2.7755575615628914e-16,
+  "max_unitary_reference_error": 0.0,
+  "negative_control_fidelity_without_phase_correction": 0.6249999999999999,
+  "passed": true,
+  "scope": "Ideal five-qubit channel on the temporary=0 subspace only.",
+  "cleanup_resources": {
+    "baseline": {
+      "ccx": 1,
+      "t_under_existing_exact_7t_lowering": 7
+    },
+    "replacement": {
+      "h": 1,
+      "measurement": 1,
+      "conditional_cz_max": 1,
+      "conditional_reset_x_max": 1,
+      "t": 0
+    }
+  },
+  "not_measured": [
+    "4T temporary-AND preparation circuit",
+    "production compiler occurrence count and eligibility",
+    "full-source T count or depth savings",
+    "fault-tolerant measurement, feedback and routing latency",
+    "end-to-end price or quantum advantage"
+  ]
+}
