@@ -1,4 +1,31 @@
-# Does the NO-GO change? (frontier probe, 21 October 2026, round 2)
+# Does the NO-GO change? (frontier probe, 21 October 2026, round 2; round-3 update first)
+
+> **Current numbers:** see [CURRENT_NUMBERS.md](../plan110_status_20261022/CURRENT_NUMBERS.md) (headline run006; window 26.1, all-free 1.30, symmetric 1.50, no single departure reaches M <= 1). Figures below may be from earlier runs.
+
+> **Round-3 update (22 Oct; current numbers; [../c10_challengers_20261022/STATUS.md](../c10_challengers_20261022/STATUS.md) section 6).**
+> Three checklist results changed the classical side, and an independent R2 review then adjusted them:
+> - **C10:** the same Stage C estimator with faster arithmetic is 2.08-2.25× faster. Primary T_C is 10.84 s, the QF
+>   end; it was 22.53 s.
+> - **C09/C09b:** a measured, timed distribution-free price. The cheapest method is replicated RQMC, with factor
+>   17.3× (iid 33.8×; N1 modelled 36.9×).
+> - **H16:** the one-core ratio is re-measured.
+>
+> With every input measured (headline run005), the binding cell gives (mod):
+> - **window certified 21.4** at the primary conventions (round 2: 10.29);
+> - all-free 1.06; 1 lane vs 1 core 2.22; **symmetric 1.23**;
+> - canonical 482; certified today 1,666.
+>
+> The U1 credit can be replaced by a quantum-only first stage (`p2/run003_self_mean`, k 9.058). That variant gives
+> 22.1 / 1.10 / 2.30 / 1.27.
+>
+> **Answer, updated: the NO-GO holds with a 21× margin at the primary conventions, and no single favourable
+> departure overturns it** for any explicit class (closest: all-free 1.06). Two departures do, for example all-free
+> + symmetric 0.061.
+>
+> The round-2 text below is unchanged; its 10.29 / 0.28 / 0.51 / 1.005 are superseded by 21.4 / 1.23 / 1.06 / 2.22.
+> When v3 is edited, the abstract and §8 should say the negative is robust to any single departure at the primary
+> conventions, and is overturned only by two departures together, for example the idealized all-free oracle plus the
+> symmetric distribution-free convention.
 
 **Short answer: the verdict stands as worded, but its margin and robustness do not.**
 

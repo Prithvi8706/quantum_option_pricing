@@ -1,0 +1,32 @@
+{
+ "B4x12_H140": {
+  "n": 4096,
+  "max_abs_diff": 6.927791673660977e-14,
+  "max_rel_diff": 4.0977773152117706e-13,
+  "mean_old": 3.5214099181765146,
+  "mean_new": 3.5214099181765217,
+  "profile_s_per_chunk": {
+   "sobol": 0.0005103799980133772,
+   "ndtri": 0.004634820000501349,
+   "gemm": 0.0013952600012999028,
+   "kernel_stageC": 0.011359600001014769,
+   "kernel_fast": 0.0029462800011970103
+  },
+  "label": "meas (one process, one 2^12 chunk, warm)"
+ },
+ "B8x52_H140": {
+  "n": 4096,
+  "max_abs_diff": 1.1723955140041653e-13,
+  "max_rel_diff": 6.021278804863144e-13,
+  "mean_old": 3.280474169654645,
+  "mean_new": 3.2804741696546444,
+  "profile_s_per_chunk": {
+   "sobol": 0.003664299997035414,
+   "ndtri": 0.040350900002522394,
+   "gemm": 0.03261388000100851,
+   "kernel_stageC": 0.09008603999973275,
+   "kernel_fast": 0.015494919999036938
+  },
+  "label": "meas (one process, one 2^12 chunk, warm)"
+ }
+}

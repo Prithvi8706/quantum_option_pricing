@@ -32,12 +32,15 @@ from pathlib import Path
 
 ROOT = str(Path(__file__).resolve().parents[2]).replace("\\", "/") + "/"
 N1H = ROOT + "results/plan110_n1/headline/"
-RUN = sys.argv[1] if len(sys.argv) > 1 else "run001"  # run002 reads P2 run002 (parts 3-4 explicit)
+RUN = sys.argv[1] if len(sys.argv) > 1 else "run001"  # run002+ read P2 run002 (parts 3-4 explicit)
+# run003+: optional argv[2] = C10 paired-timing JSON; measured-cell T_C is divided by the paired speedup of
+# preint_fast over Stage C preint (same points, same machine state); see research/c10_challengers_20261022/.
+C10 = sys.argv[2] if len(sys.argv) > 2 else None
 OUT = ROOT + f"results/frontier_probe_20261021/headline/{RUN}/"
 IN = dict(
     keff=N1H + "keff.json",
     floor_n1=N1H + "floor_sheet.json",
-    p2=ROOT + f"results/frontier_probe_20261021/p2/{RUN}/p2_window.json",
+    p2=ROOT + f"results/frontier_probe_20261021/p2/{'run001' if RUN == 'run001' else 'run002'}/p2_window.json",
     hw=ROOT + "results/plan110_n1/hwclassical/hw_classical_card_v2.json",
     c2=ROOT + "results/frontier_classical_20261001/c2/c2_timing.json",
     c5=ROOT + "results/frontier_classical_20261001/c5/timing/c5_timing.json",
@@ -81,8 +84,11 @@ def t_c_table():
         for blk, v in d["blocks"].items():
             case, meth = blk.split("/")
             for e, t in v["t_c"].items():
+                tt = t["primary"]
+                if C10_BEFORE_ENV and meth == "preint" and f"{case}_H140|{float(e)}" in C10_SPEED:
+                    tt = tt / C10_SPEED[f"{case}_H140|{float(e)}"]  # run005+: speedup before the envelope
                 raw.setdefault((case, float(e)), []).append(
-                    dict(source=src, method=meth, t=t["primary"], convention=t["convention"]))
+                    dict(source=src, method=meth, t=tt, convention=t["convention"]))
     out = {}
     for case in CASES:
         for e in EPS:
@@ -90,7 +96,10 @@ def t_c_table():
             # monotone envelope: a run meeting a tighter tolerance also meets this one
             tighter = [min(raw[(case, e2)], key=lambda r: r["t"]) for e2 in EPS if e2 <= e]
             env = min(tighter, key=lambda r: r["t"])
-            out[(case, e)] = dict(raw_best=best, T_C=env["t"], envelope_from=env,
+            tcv = env["t"]
+            if C10 and not C10_BEFORE_ENV and best["method"] == "preint" and f"{case}_H140|{e}" in C10_SPEED:
+                tcv = env["t"] / C10_SPEED[f"{case}_H140|{e}"]
+            out[(case, e)] = dict(raw_best=best, T_C=tcv, T_C_stageC=env["t"], envelope_from=env,
                                   envelope_applied=env is not best and env["t"] < best["t"],
                                   overhead=best["convention"] != "measured confirmation",
                                   label="measured (C2/C5 'primary' wall at 16 workers) + envelope",
@@ -98,12 +107,29 @@ def t_c_table():
     return out
 
 
+C10_SPEED, OV_H16, OV_DF, C10_BEFORE_ENV = {}, {}, {}, False
+if C10:
+    _j = json.load(open(C10, encoding="utf-8"))
+    if "overrides" in _j:  # run004+: {"overrides": {"tc_speedup": {}, "h16_ratio": {}, "distfree_factor": {}}}
+        C10_SPEED = _j["overrides"]["tc_speedup"]
+        OV_H16 = _j["overrides"].get("h16_ratio", {})
+        OV_DF = _j["overrides"].get("distfree_factor", {})
+        C10_BEFORE_ENV = bool(_j["overrides"].get("apply_before_envelope", False))
+    else:  # run003: the C10 paired-timing JSON itself
+        for _k, _v in _j["cells"].items():
+            C10_SPEED[_k] = _v["speedup_median"]["preint_fast"]
+
+
 def h16_ratio():
     walls = {}
     for p in glob.glob(H16 + "*.json"):
         r = load(p)
         walls[(r["case"], float(r["eps"]), int(r["workers"]))] = median([x["wall"] for x in r["runs"]])
-    return {(c, e): walls[(c, e, 1)] / walls[(c, e, 16)] for (c, e, w) in walls if w == 1}
+    out = {(c, e): walls[(c, e, 1)] / walls[(c, e, 16)] for (c, e, w) in walls if w == 1}
+    for k, v in OV_H16.items():  # run004+: measured 1/16-worker ratio of the C10 fast method
+        c, e = k.split("|")
+        out[(c.replace("_H140", ""), float(e))] = v
+    return out
 
 
 # ---------------- estimator k classes ----------------
@@ -234,6 +260,9 @@ def main():
 
     dfc = {(r["case"], float(r["eps"])): r["factor_df_over_practice"]
            for r in load(IN["hw"])["classical"]["rows"]}
+    for k, v in OV_DF.items():  # run004+: measured C09 distribution-free factor (same-state ratio)
+        c, e = k.split("|")
+        dfc[(c.replace("_H140", ""), float(e))] = v
 
     def M_of(case, e, split, kname, design="primary", W="W1e7", sup="1e12", tl="100ns",
              one_core=False, distfree=1.0, distfree_cell=False):

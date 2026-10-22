@@ -1,0 +1,66 @@
+{
+ "meta": {
+  "script": "research/c10_challengers_20261022/f32_consistency.py",
+  "python": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]",
+  "m": 16,
+  "root": 2026102234
+ },
+ "machine": [
+  {
+   "cpu_percent_30s": 15.5118699007115,
+   "busy_python": [],
+   "python_cpu_5s": [
+    "2232 0.00",
+    "31476 0.00"
+   ],
+   "battery_status": "2",
+   "physical_logical_cores": [
+    "16",
+    "22"
+   ],
+   "idle": false
+  },
+  {
+   "cpu_percent_30s": 8.17626036766022,
+   "busy_python": [],
+   "python_cpu_5s": [
+    "2232 0.00",
+    "31476 0.00"
+   ],
+   "battery_status": "2",
+   "physical_logical_cores": [
+    "16",
+    "22"
+   ],
+   "idle": true
+  }
+ ],
+ "pilot": {
+  "n": 2048,
+  "mean": 3.279025450741357,
+  "var": 0.015664772994895042
+ },
+ "n_rep": 1882249,
+ "main": {
+  "n": 1882249,
+  "mean": 3.2815127884878357,
+  "var": 0.01564220634675115
+ },
+ "eb_bound": 0.00044406014959899056,
+ "success": true,
+ "wall_df": 73.02184199998737,
+ "practice": [
+  4.453209200000856,
+  4.04324909998104,
+  4.032119100011187,
+  4.159804499999154,
+  4.2750512000056915,
+  4.1909289000032
+ ],
+ "practice_median": 4.175366700001177,
+ "factor_df_over_practice": 17.488725481277317,
+ "w1": 40.4579046999861,
+ "w16": 4.231886299996404,
+ "ratio_1_over_16": 9.56025323743232,
+ "label": "meas (float32-GEMM method; pilot is 1 m only)"
+}

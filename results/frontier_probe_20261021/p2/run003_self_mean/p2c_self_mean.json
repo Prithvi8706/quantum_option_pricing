@@ -1,0 +1,166 @@
+{
+ "meta": {
+  "script": "research/frontier_probe_20261021/p2c_self_mean.py",
+  "python": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]",
+  "inputs_sha256": {
+   "sigma": "9d3c4e361ec0a9f4d24fbebea7e1d6adb40e39326cf67d5fd44cca6a4fa27677",
+   "c1": "5d91aecc5ae26140be4e8c6a86ce304ac97870470f04bedce11a3ad55a2b9123",
+   "kb": "4780a16c21bf23da796f7633f858bb514fd60be6c592e142e08666117143f2ed"
+  },
+  "delta34": "1/250000"
+ },
+ "constants": {
+  "1/10000": {
+   "c": 6.052,
+   "beta": "5.72",
+   "lambda_lower_N0": "0.99990405123266776644302976247913569629606314622853"
+  },
+  "29/10000": {
+   "c": 4.197,
+   "beta": "3.88",
+   "lambda_lower_N0": "0.99710545585834048818300063394691202430734728998775"
+  },
+  "3/10000": {
+   "c": 5.433,
+   "beta": "5.14",
+   "lambda_lower_N0": "0.99970440162115178191565587953970455969639590914045"
+  },
+  "27/10000": {
+   "c": 4.236,
+   "beta": "3.92",
+   "lambda_lower_N0": "0.99730458672213993131175418102171812265175878570211"
+  },
+  "1/1000": {
+   "c": 4.777,
+   "beta": "4.48",
+   "lambda_lower_N0": "0.99900409173551982148972903529797235591483443295634"
+  },
+  "1/500": {
+   "c": 4.4,
+   "beta": "4.10",
+   "lambda_lower_N0": "0.99800474542425235309140650786127966543979647134097"
+  }
+ },
+ "cells": {
+  "B4x12|0.1": {
+   "best": {
+    "delta1": "1/10000",
+    "delta2": "29/10000",
+    "D1": 0.00775,
+    "m_U_worst": 3.8209421752566124,
+    "N1": 800,
+    "N2": 1083,
+    "N_total": 1883,
+    "k": 14.961419298564053,
+    "c1": 6.052,
+    "c2": 4.197
+   },
+   "label": "mod (certified constants; worst case over stage-1 outcomes; evaluated at the task's mean)"
+  },
+  "B4x12|0.03": {
+   "best": {
+    "delta1": "1/10000",
+    "delta2": "29/10000",
+    "D1": 0.00775,
+    "m_U_worst": 3.8209421752566124,
+    "N1": 800,
+    "N2": 3599,
+    "N_total": 4399,
+    "k": 10.485706345361114,
+    "c1": 6.052,
+    "c2": 4.197
+   },
+   "label": "mod (certified constants; worst case over stage-1 outcomes; evaluated at the task's mean)"
+  },
+  "B4x12|0.01": {
+   "best": {
+    "delta1": "1/10000",
+    "delta2": "29/10000",
+    "D1": 0.0075,
+    "m_U_worst": 3.8111620046404986,
+    "N1": 807,
+    "N2": 10778,
+    "N_total": 11585,
+    "k": 9.204888081458552,
+    "c1": 6.052,
+    "c2": 4.197
+   },
+   "label": "mod (certified constants; worst case over stage-1 outcomes; evaluated at the task's mean)"
+  },
+  "B4x12|0.001": {
+   "best": {
+    "delta1": "1/10000",
+    "delta2": "29/10000",
+    "D1": 0.0035,
+    "m_U_worst": 3.6550092842613515,
+    "N1": 1730,
+    "N2": 105748,
+    "N_total": 107478,
+    "k": 8.53968891859303,
+    "c1": 6.052,
+    "c2": 4.197
+   },
+   "label": "mod (certified constants; worst case over stage-1 outcomes; evaluated at the task's mean)"
+  },
+  "B8x52|0.1": {
+   "best": {
+    "delta1": "1/10000",
+    "delta2": "29/10000",
+    "D1": 0.00775,
+    "m_U_worst": 3.5836763058919843,
+    "N1": 800,
+    "N2": 1052,
+    "N_total": 1852,
+    "k": 16.078263615057267,
+    "c1": 6.052,
+    "c2": 4.197
+   },
+   "label": "mod (certified constants; worst case over stage-1 outcomes; evaluated at the task's mean)"
+  },
+  "B8x52|0.03": {
+   "best": {
+    "delta1": "1/10000",
+    "delta2": "29/10000",
+    "D1": 0.00775,
+    "m_U_worst": 3.5836763058919843,
+    "N1": 800,
+    "N2": 3498,
+    "N_total": 4298,
+    "k": 11.194013555753154,
+    "c1": 6.052,
+    "c2": 4.197
+   },
+   "label": "mod (certified constants; worst case over stage-1 outcomes; evaluated at the task's mean)"
+  },
+  "B8x52|0.01": {
+   "best": {
+    "delta1": "1/10000",
+    "delta2": "29/10000",
+    "D1": 0.0075,
+    "m_U_worst": 3.5738961352758705,
+    "N1": 807,
+    "N2": 10473,
+    "N_total": 11280,
+    "k": 9.792808508523002,
+    "c1": 6.052,
+    "c2": 4.197
+   },
+   "label": "mod (certified constants; worst case over stage-1 outcomes; evaluated at the task's mean)"
+  },
+  "B8x52|0.001": {
+   "best": {
+    "delta1": "1/10000",
+    "delta2": "29/10000",
+    "D1": 0.0035,
+    "m_U_worst": 3.4177434148967234,
+    "N1": 1730,
+    "N2": 102602,
+    "N_total": 104332,
+    "k": 9.05765334495764,
+    "c1": 6.052,
+    "c2": 4.197
+   },
+   "label": "mod (certified constants; worst case over stage-1 outcomes; evaluated at the task's mean)"
+  }
+ }
+}

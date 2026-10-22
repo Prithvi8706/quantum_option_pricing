@@ -1,0 +1,2351 @@
+{
+ "meta": {
+  "script": "research/frontier_probe_20261021/register_run002.py",
+  "python": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]",
+  "base": "run001",
+  "base_sha256": "c6348b46af4128008b9b7881453a6e6a575de7dc7e332903867d8ffd6f25b453",
+  "count": 110,
+  "tiers": {
+   "T1": 4,
+   "T2": 6,
+   "T3": 12,
+   "T4": 28,
+   "T5": 35,
+   "T6": 25
+  },
+  "tiers_run001": {
+   "T1": 4,
+   "T2": 8,
+   "T3": 12,
+   "T4": 26,
+   "T5": 35,
+   "T6": 25
+  },
+  "changed": 37,
+  "evidence": {
+   "p1": "results/frontier_probe_20261021/p1/run001/p1_span.json; p1/run002/p1b_hybrid.json",
+   "p2": "results/frontier_probe_20261021/p2/run002/p2_window.json; docs/frontier_probe_20261021/P2_DERIVATION.md",
+   "lit": "results/frontier_probe_20261021/p2/lit_check.jsonl",
+   "head": "results/frontier_probe_20261021/headline/run002/headline_table.json; derived/run001/derived.json",
+   "p3": "results/frontier_probe_20261021/p3/run002/p3_desk.json",
+   "rev": "results/frontier_probe_20261021/review/p1_review.jsonl; review/p2_review.jsonl",
+   "status": "docs/frontier_probe_20261021/STATUS.md"
+  }
+ },
+ "items": [
+  {
+   "id": "A01",
+   "title": "Separate uniform preparation, normal loading, correlation and payoff costs",
+   "live_status": "ready",
+   "tier": "T1",
+   "disposition": "decision-critical (W0 done)",
+   "wave_or_trigger": "W0-WS2; W1 recompute; N1 (R2)",
+   "key_dependency": "A01_run014 DAG on accepted A10 source",
+   "cost": "M",
+   "kill_or_defer": "Floor decides DP1. If Tier-O miss >3x at 100 ns on every eligible cell, freeze all A items as frontier evidence. Stop the 46-leaf reconciliation now.",
+   "inequality_lever": "accounting_or_evidence",
+   "optimistic_max_factor": "n/a (accounting) - but it fixes the family ceiling: B8 forward dependency T-depth 184,525 = scalar normals 71,886 (39%) + correlation 38,176 (21%) + path/payoff 74,463 (40%); capped clean source 663,704 vs unlimited-width 2x184,525=369,050, so width-only gain <=1.8x (B4 1.9x)",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row A01",
+   "reopen_rule": "Floor decides DP1. If Tier-O miss >3x at 100 ns on every eligible cell, freeze all A items as frontier evidence. Stop the 46-leaf reconciliation now.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "A02",
+   "title": "Replace Box-Muller only after a complete scalar-loader comparison",
+   "live_status": "partial",
+   "tier": "T5",
+   "disposition": "dormant until trigger",
+   "wave_or_trigger": "W0-WS2 (parameter only); TRIG-R2",
+   "key_dependency": "A01 floor",
+   "cost": "S / M",
+   "kill_or_defer": "Free-loader ceiling (<=1.64x B8) is a floor parameter. AS241 stays killed. Reopen loaders only at TRIG-R2.",
+   "inequality_lever": "oracle_depth_rho",
+   "optimistic_max_factor": "1.1-2x: a zero-cost Gaussian loader removes only scalar normals = 39% of B8 forward critical path (<=1.64x on dependency depth; B4 49% => <=1.97x) and 53% of B8 T-count (<=~2.1x supply side); measured AS241 scalar is worse than Box-Muller (46.7M T per scalar vs ~4.9M T per Box-Muller normal; paired comparison strict-T rejected)",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row A02",
+   "reopen_rule": "Free-loader ceiling (<=1.64x B8) is a floor parameter. AS241 stays killed. Reopen loaders only at TRIG-R2.",
+   "rigour_tier": "R0 register record",
+   "note": "TRIG-R2/R1.5 not fired at the primary floor (residual 10.29). P3: M <= 1 at the primary conventions needs BOTH the loader and the exponential near-free (0.965); either alone >= 4.36.",
+   "updated": "run002 (22 Oct 2026, frontier probe)"
+  },
+  {
+   "id": "A03",
+   "title": "Certify recursive-loading integrals and conditional angles",
+   "live_status": "partial",
+   "tier": "T5",
+   "disposition": "dormant until trigger",
+   "wave_or_trigger": "TRIG-R2",
+   "key_dependency": "A02 slot decision",
+   "cost": "S",
+   "kill_or_defer": "No more interval levels. At TRIG-R2, proceed only if an analytic T-count beats Box-Muller.",
+   "inequality_lever": "oracle_depth_rho",
+   "optimistic_max_factor": "1.1-2x: bounded by the same free-loader ceiling as A02 (<=1.64x B8 dependency depth); a prefix-rotation loader at the A05 per-scalar allowance (1/18,720,000 for B8) needs a fine grid whose last levels carry ~2^(n-1) multiplexed rotations, so its T-count likely exceeds Box-Muller",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row A03",
+   "reopen_rule": "No more interval levels. At TRIG-R2, proceed only if an analytic T-count beats Box-Muller.",
+   "rigour_tier": "R0 register record",
+   "note": "TRIG-R2/R1.5 not fired at the primary floor (residual 10.29). P3: M <= 1 at the primary conventions needs BOTH the loader and the exponential near-free (0.965); either alone >= 4.36.",
+   "updated": "run002 (22 Oct 2026, frontier probe)"
+  },
+  {
+   "id": "A04",
+   "title": "Turn Gaussian MPS compression into an emitted, synthesized circuit",
+   "live_status": "partial",
+   "tier": "T5",
+   "disposition": "dormant until trigger",
+   "wave_or_trigger": "TRIG-R2",
+   "key_dependency": "A05, A02",
+   "cost": "S / M",
+   "kill_or_defer": "At TRIG-R2, this is the first loader to cost analytically (q10 bond-8). Stop if not emittable within the A05 allowance.",
+   "inequality_lever": "oracle_depth_rho",
+   "optimistic_max_factor": "1.1-2x: q10 bond-8 MPS could cut scalar-normal T-count by ~10-100x (rough: ~10 sites x tens of rotations x ~60 T per normal vs ~4.9M T), but the whole slot is capped by the free-loader ceiling (<=1.64x B8 dependency depth, <=~2.1x T-count)",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row A04",
+   "reopen_rule": "At TRIG-R2, this is the first loader to cost analytically (q10 bond-8). Stop if not emittable within the A05 allowance.",
+   "rigour_tier": "R0 register record",
+   "note": "TRIG-R2/R1.5 not fired at the primary floor (residual 10.29). P3: M <= 1 at the primary conventions needs BOTH the loader and the exponential near-free (0.965); either alone >= 4.36.",
+   "updated": "run002 (22 Oct 2026, frontier probe)"
+  },
+  {
+   "id": "A05",
+   "title": "Allocate and compose loading error across independent draws",
+   "live_status": "ready",
+   "tier": "T3",
+   "disposition": "deferred certification debt",
+   "wave_or_trigger": "TRIG-R2",
+   "key_dependency": "adoption of an A02-A04 loader",
+   "cost": "S",
+   "kill_or_defer": "Done for scope. Reopen only if a replacement loader is adopted.",
+   "inequality_lever": "certification_only",
+   "optimistic_max_factor": "n/a (certification): error allocation enabling a <=2x loader lever",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row A05",
+   "reopen_rule": "Done for scope. Reopen only if a replacement loader is adopted.",
+   "rigour_tier": "R0 register record",
+   "note": "TRIG-R2/R1.5 not fired at the primary floor (residual 10.29). P3: M <= 1 at the primary conventions needs BOTH the loader and the exponential near-free (0.965); either alone >= 4.36.",
+   "updated": "run002 (22 Oct 2026, frontier probe)"
+  },
+  {
+   "id": "A06",
+   "title": "Combine exact compact storage with the latest arithmetic schedule",
+   "live_status": "partial",
+   "tier": "T4",
+   "disposition": "closed or folded into N1",
+   "wave_or_trigger": "W1-REG",
+   "key_dependency": "A10 manifest",
+   "cost": "S",
+   "kill_or_defer": "Confirm the accepted manifest uses compact SSA, then close. Width questions go to H15/G5.",
+   "inequality_lever": "oracle_depth_rho",
+   "optimistic_max_factor": "<1.1x remaining: compact storage is already in the accepted source; the entire width-to-depth lever (A06+A18+A19+H15, or simply a larger qubit cap) is bounded by capped/unlimited-width = 663,704/369,050 = 1.80x (B8) and 555,774/291,572 = 1.91x (B4)",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row A06",
+   "reopen_rule": "Confirm the accepted manifest uses compact SSA, then close. Width questions go to H15/G5.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "A07",
+   "title": "Prove reachable ranges before narrowing arithmetic",
+   "live_status": "ready",
+   "tier": "T5",
+   "disposition": "dormant until trigger",
+   "wave_or_trigger": "W0-WS2 (parameter); TRIG-R2",
+   "key_dependency": "A01 DAG",
+   "cost": "S",
+   "kill_or_defer": "Unproved-width screen as a floor parameter. Stop proofs if <1.3x or residual >2x. Precision changes belong to C02/G2.",
+   "inequality_lever": "oracle_depth_rho",
+   "optimistic_max_factor": "1.1-2x: exact proved narrowing has delivered 4-6% depth; narrowing the remaining 72-bit multiplier operands could cut T-count by tens of percent (quadratic cost) but depth by <=~1.1-1.3x; anything larger needs a changed precision/law and therefore G2/C02, not range proofs",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row A07",
+   "reopen_rule": "Unproved-width screen as a floor parameter. Stop proofs if <1.3x or residual >2x. Precision changes belong to C02/G2.",
+   "rigour_tier": "R0 register record",
+   "note": "TRIG-R2/R1.5 not fired at the primary floor (residual 10.29). P3: M <= 1 at the primary conventions needs BOTH the loader and the exponential near-free (0.965); either alone >= 4.36.",
+   "updated": "run002 (22 Oct 2026, frontier probe)"
+  },
+  {
+   "id": "A08",
+   "title": "Benchmark a matching clean carry-lookahead adder",
+   "live_status": "ready",
+   "tier": "T5",
+   "disposition": "dormant until trigger",
+   "wave_or_trigger": "W0-WS2 (parameter); TRIG-WIDTH",
+   "key_dependency": "A01 floor; H15 width",
+   "cost": "S",
+   "kill_or_defer": "Log-depth adder constants go into the floor, with no circuits. Closed negative under the cap.",
+   "inequality_lever": "oracle_depth_rho",
+   "optimistic_max_factor": "<1.1x under the frozen qubit cap (measured <2%); log-depth adders matter only in an unlimited-width idealization, where they sit inside the joint arithmetic floor computed under A01 (and their real payoff is reaction-limited physical latency, H17), not as a separate factor",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row A08",
+   "reopen_rule": "Log-depth adder constants go into the floor, with no circuits. Closed negative under the cap.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "A09",
+   "title": "Extend the measured multiplier frontier without assuming Karatsuba wins",
+   "live_status": "partial",
+   "tier": "T2",
+   "disposition": "credited screen value / branch-A lever",
+   "wave_or_trigger": "W0-WS2",
+   "key_dependency": "A01 floor",
+   "cost": "S",
+   "kill_or_defer": "Literature 40-72-bit multiplier constants feed the floor. Stop new families if the best is <1.5x the adopted leaf.",
+   "inequality_lever": "oracle_depth_rho",
+   "optimistic_max_factor": "1.1-2x: multipliers own ~95% of B8 T-count (4.05e9 of 4.27e9) and ~40% of exclusive batch depth (267,620/663,704), but exact 72-bit alternatives (Karatsuba-type) do not beat schoolbook/CSA at these widths; bigger gains need lower precision (G2/C02)",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row A09",
+   "reopen_rule": "Literature 40-72-bit multiplier constants feed the floor. Stop new families if the best is <1.5x the adopted leaf.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "A10",
+   "title": "Finish constant-product and square specialization after the ln(2) win",
+   "live_status": "partial",
+   "tier": "T5",
+   "disposition": "dormant until trigger",
+   "wave_or_trigger": "TRIG-R1.1",
+   "key_dependency": "A01_run014 zero-cost bound",
+   "cost": "S",
+   "kill_or_defer": "Closed: <=10% even at zero cost. Reopen only if residual <=1.1x.",
+   "inequality_lever": "oracle_depth_rho",
+   "optimistic_max_factor": "<1.1x: per A01_run014, the largest remaining B8 constant-multiply depth owner has an optimistic zero-cost saving of 67,584/663,704 (~10%); the next is 3,616 (~0.5%)",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row A10",
+   "reopen_rule": "Closed: <=10% even at zero cost. Reopen only if residual <=1.1x.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "A11",
+   "title": "Match square-root interfaces and charge remainder cleanup",
+   "live_status": "ready",
+   "tier": "T5",
+   "disposition": "dormant until trigger",
+   "wave_or_trigger": "TRIG-R1.1",
+   "key_dependency": "A01_run014; G2 for Newton",
+   "cost": "S",
+   "kill_or_defer": "Exact part complete. The Newton branch only if residual <=1.1x (needs G2).",
+   "inequality_lever": "oracle_depth_rho",
+   "optimistic_max_factor": "<1.1x: the remaining sqrt exclusive batch depth is 61,920/663,704 (~9%) on B8 even if the root were free; the Newton branch changes the law and needs G2",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row A11",
+   "reopen_rule": "Exact part complete. The Newton branch only if residual <=1.1x (needs G2).",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "A12",
+   "title": "Screen reciprocal division with exact quotient correction",
+   "live_status": "ready",
+   "tier": "T5",
+   "disposition": "dormant until trigger",
+   "wave_or_trigger": "TRIG-LOADER-DIV",
+   "key_dependency": "a dividing loader (none)",
+   "cost": "S",
+   "kill_or_defer": "Closed: 0 divide sites. Reopen only if a dividing loader is adopted.",
+   "inequality_lever": "none",
+   "optimistic_max_factor": "<1.1x (zero on the accepted source: no divide sites)",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row A12",
+   "reopen_rule": "Closed: 0 divide sites. Reopen only if a dividing loader is adopted.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "A13",
+   "title": "Search a bounded exponential degree/segment frontier",
+   "live_status": "partial",
+   "tier": "T5",
+   "disposition": "dormant until trigger",
+   "wave_or_trigger": "W0-WS2 (parameter); TRIG-R1.5",
+   "key_dependency": "A01 DAG",
+   "cost": "S",
+   "kill_or_defer": "Free-exponential bound as a floor parameter. No screen v3 or root re-verification. Reopen if residual <=1.5x.",
+   "inequality_lever": "oracle_depth_rho",
+   "optimistic_max_factor": "1.1-2x: exponentials sit inside path/payoff, which is 40% of the B8 forward critical path (<=1.67x even if all path/payoff were free; a free exponential alone is lower). A degree-4 change also requires a fresh financial G2.",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row A13",
+   "reopen_rule": "Free-exponential bound as a floor parameter. No screen v3 or root re-verification. Reopen if residual <=1.5x.",
+   "rigour_tier": "R0 register record",
+   "note": "TRIG-R2/R1.5 not fired at the primary floor (residual 10.29). P3: M <= 1 at the primary conventions needs BOTH the loader and the exponential near-free (0.965); either alone >= 4.36.",
+   "updated": "run002 (22 Oct 2026, frontier probe)"
+  },
+  {
+   "id": "A14",
+   "title": "Bound CORDIC/log-cosine transfer before circuit work",
+   "live_status": "partial",
+   "tier": "T5",
+   "disposition": "dormant until trigger",
+   "wave_or_trigger": "TRIG-R2",
+   "key_dependency": "A02 keeps Box-Muller",
+   "cost": "S",
+   "kill_or_defer": "Closed negative by its own stop rule. No F44/V7 stages.",
+   "inequality_lever": "oracle_depth_rho",
+   "optimistic_max_factor": "<1.1x: the cosine is one of three transcendental blocks inside the scalar-normal slot (39% of the B8 forward critical path) and the bounded screen already found no improvement",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row A14",
+   "reopen_rule": "Closed negative by its own stop rule. No F44/V7 stages.",
+   "rigour_tier": "R0 register record",
+   "note": "TRIG-R2/R1.5 not fired at the primary floor (residual 10.29). P3: M <= 1 at the primary conventions needs BOTH the loader and the exponential near-free (0.965); either alone >= 4.36.",
+   "updated": "run002 (22 Oct 2026, frontier probe)"
+  },
+  {
+   "id": "A15",
+   "title": "Preserve the completed exact coefficient-lookup replacement",
+   "live_status": "complete",
+   "tier": "T4",
+   "disposition": "closed or folded into N1",
+   "wave_or_trigger": "W1-REG",
+   "key_dependency": "none",
+   "cost": "S",
+   "kill_or_defer": "Complete. Carry the leaf hashes into any new manifest; no runs.",
+   "inequality_lever": "none",
+   "optimistic_max_factor": "<1.1x (already in the accepted source; the 86.61% log-lookup T reduction is leaf-local)",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row A15",
+   "reopen_rule": "Complete. Carry the leaf hashes into any new manifest; no runs.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "A16",
+   "title": "Extend measured cleanup into a verified dynamic arithmetic backend",
+   "live_status": "partial",
+   "tier": "T2",
+   "disposition": "credited screen value / branch-A lever",
+   "wave_or_trigger": "W0-WS2 (analytic); A2 (backend)",
+   "key_dependency": "H03/H17 reaction model",
+   "cost": "S / L",
+   "kill_or_defer": "Temporary-AND is costed analytically in the floor. Build the verified backend only on branch A, when residual <=3x and G5 has a reaction model.",
+   "inequality_lever": "oracle_depth_rho",
+   "optimistic_max_factor": "2-10x (<=~3x): temporary-AND compute (4 T, T-depth ~2) with measured uncompute (0 T) vs exact 7-T CCX pairs gives <=~3.5x T-count and <=~3x leaf T-depth. Each removed T-layer is replaced by a reaction-limited feed-forward (H17), so the realized latency gain may be ~1x; the T-supply gain is real but tiny next to the C04 thresholds.",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row A16",
+   "reopen_rule": "Temporary-AND is costed analytically in the floor. Build the verified backend only on branch A, when residual <=3x and G5 has a reaction model.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "A17",
+   "title": "Audit existing fusion and phase-check remaining controlled boundaries",
+   "live_status": "audit",
+   "tier": "T4",
+   "disposition": "closed or folded into N1",
+   "wave_or_trigger": "W1-REG",
+   "key_dependency": "E05, E06",
+   "cost": "S",
+   "kill_or_defer": "One tiny matrix check, then close (0 duplicate work).",
+   "inequality_lever": "accounting_or_evidence",
+   "optimistic_max_factor": "<1.1x: fused compute/uncompute (E06) and factored external controls (E05) are complete; the census found 0 additional duplicate work",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row A17",
+   "reopen_rule": "One tiny matrix check, then close (0 duplicate work).",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "A18",
+   "title": "Apply paid reversible pebbling to a real financial subgraph",
+   "live_status": "partial",
+   "tier": "T5",
+   "disposition": "dormant until trigger",
+   "wave_or_trigger": "TRIG-WIDTH",
+   "key_dependency": "A06; G5 qubit budget",
+   "cost": "S",
+   "kill_or_defer": "Bounded scope closed. Reopen only if the G5 schedule is width-bound.",
+   "inequality_lever": "oracle_depth_rho",
+   "optimistic_max_factor": "<1.1x on latency: pebbling trades T-work for width, and the whole width-to-depth lever shared with A06/A19/H15 is <=1.8x (B8)",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row A18",
+   "reopen_rule": "Bounded scope closed. Reopen only if the G5 schedule is width-bound.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "A19",
+   "title": "Test reversible streaming on the unchanged monitored payoff",
+   "live_status": "conditional",
+   "tier": "T5",
+   "disposition": "dormant until trigger",
+   "wave_or_trigger": "TRIG-WIDTH",
+   "key_dependency": "A18; G5",
+   "cost": "S",
+   "kill_or_defer": "No B4/B8 scaling. Reopen only if width-bound.",
+   "inequality_lever": "oracle_depth_rho",
+   "optimistic_max_factor": "<1.1x on latency: streaming lowers width but raises T-depth 7.2x on the harness; it helps only in a width-bound regime",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row A19",
+   "reopen_rule": "No B4/B8 scaling. Reopen only if width-bound.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "A20",
+   "title": "Test arithmetic-free loading on the actual sum-of-exponentials threshold",
+   "live_status": "partial",
+   "tier": "T5",
+   "disposition": "dormant until trigger",
+   "wave_or_trigger": "TRIG-LIT",
+   "key_dependency": "E22/E23",
+   "cost": "S",
+   "kill_or_defer": "Stop, including metadata timing. Reopen on a composable multi-date threshold block-encoding that removes >=2 of 3 cost categories.",
+   "inequality_lever": "oracle_depth_rho",
+   "optimistic_max_factor": "1.1-2x: even an arithmetic-free payoff removes at most the path/payoff block (40% of the B8 forward critical path => <=1.67x) while Gaussian loading and correlation remain; E22 found 64 monitored arithmetic-basket conditions (62 max-tree comparisons) and 0 single-log replacements, and the 52-date knock-out AND of amplitude-encoded predicates has no identified composable builder",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row A20",
+   "reopen_rule": "Stop, including metadata timing. Reopen on a composable multi-date threshold block-encoding that removes >=2 of 3 cost categories.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "C01",
+   "title": "One classical price is the current output",
+   "live_status": "ready",
+   "tier": "T4",
+   "disposition": "closed or folded into N1",
+   "wave_or_trigger": "W1-REG",
+   "key_dependency": "none",
+   "cost": "S",
+   "kill_or_defer": "Desk record of the 7 contract fields, then close. No lifecycle.",
+   "inequality_lever": "accounting_or_evidence",
+   "optimistic_max_factor": "n/a (certification): it fixes the task definition; no term of rho <= z^2(sigma/e)/(10k) moves",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row C01",
+   "reopen_rule": "Desk record of the 7 contract fields, then close. No lifecycle.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "C02",
+   "title": "Dollar accuracy cannot be silently weakened",
+   "live_status": "ready",
+   "tier": "T4",
+   "disposition": "closed or folded into N1",
+   "wave_or_trigger": "DONE in W0: bias desk + depth convention closed",
+   "key_dependency": "C01, E02",
+   "cost": "S",
+   "kill_or_defer": "Dimensional audit, including the clean-vs-forward depth convention (<=2x). Record B8 eps=0.001 as ineligible (bias 1.24 eps), then close.",
+   "inequality_lever": "accounting_or_evidence",
+   "optimistic_max_factor": "n/a (certification). It can only hurt quantum. The B8 native law/arithmetic bias bound of $0.00124 exceeds epsilon = $0.001, so at the Stage C primary decision point the certified B8 source has no feasible statistical share (e_Q <= 0). For B4 at $0.001 the bias takes 20.5% of epsilon.",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row C02",
+   "reopen_rule": "Dimensional audit, including the clean-vs-forward depth convention (<=2x). Record B8 eps=0.001 as ineligible (bias 1.24 eps), then close.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "C03",
+   "title": "The complete price needs the complete confidence allowance",
+   "live_status": "ready",
+   "tier": "T3",
+   "disposition": "deferred certification debt",
+   "wave_or_trigger": "A3; TRIGGER FIRED (plausible-tier miss 10.29 <= 30)",
+   "key_dependency": "E07, H18, E24",
+   "cost": "M",
+   "kill_or_defer": "Freeze the skeleton with explicit 'unknown' rows. Complete only if some cell reaches plausible-tier miss <=30.",
+   "inequality_lever": "certification_only",
+   "optimistic_max_factor": "n/a (certification). Completing the ledger only adds failure entries (hardware, pilots, stopping) or shrinks e_Q, so it can only raise k or T_Q.",
+   "evidence": "results/frontier_probe_20261021/headline/run002/headline_table.json; derived/run001/derived.json",
+   "reopen_rule": "Trigger fired: a cell now reaches plausible-tier miss <= 30 (window class 10.29). Completing the confidence-allowance skeleton is claim-grade (R2) work; needs user authorization.",
+   "rigour_tier": "R0 register record",
+   "trigger_fired": [
+    "C03-30"
+   ],
+   "updated": "run002 (22 Oct 2026, frontier probe)"
+  },
+  {
+   "id": "C04",
+   "title": "Tenfold advantage is a chosen threshold",
+   "live_status": "audit",
+   "tier": "T4",
+   "disposition": "closed or folded into N1",
+   "wave_or_trigger": "W0-WS1",
+   "key_dependency": "C14/F31",
+   "cost": "S",
+   "kill_or_defer": "One identity pass folded into the F31 table. No separate table.",
+   "inequality_lever": "accounting_or_evidence",
+   "optimistic_max_factor": "n/a (reporting). Lowering the bar from 10x to 1x moves the target by exactly 10x, but that changes the claim, not the inequality. The zero-cost grid minimum of oracle/D_max is 16.8 (>10), so even break-even fails at every archived grid corner.",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row C04",
+   "reopen_rule": "One identity pass folded into the F31 table. No separate table.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "C05",
+   "title": "The statistical allowance of 0.45 epsilon is adjustable",
+   "live_status": "partial",
+   "tier": "T4",
+   "disposition": "closed or folded into N1",
+   "wave_or_trigger": "W0-WS1",
+   "key_dependency": "E24",
+   "cost": "S",
+   "kill_or_defer": "Killed as a lever: two-sided allocation cannot help. One paragraph in F31.",
+   "inequality_lever": "sigma_over_e_or_variance",
+   "optimistic_max_factor": "<1.1x. One-sided, quantum gains at most (epsilon - b_Q)/(0.45 epsilon) = 1.77-2.18x fewer calls. A fair comparison also gives classical its best share (e_C ~ 0.99 epsilon; exact-date float64 RQMC has negligible bias), which gains (2.2)^p_C = 2.2-4.5x. The net factor is 0.39-0.99, i.e. worse for quantum for p_C in [1, 1.9]. B8 at $0.001 has no feasible quantum share at all (bias 1.24 epsilon).",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row C05",
+   "reopen_rule": "Killed as a lever: two-sided allocation cannot help. One paragraph in F31.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "C06",
+   "title": "Correct digital arithmetic is not a continuous financial-law certificate",
+   "live_status": "complete",
+   "tier": "T3",
+   "disposition": "deferred certification debt",
+   "wave_or_trigger": "DONE",
+   "key_dependency": "C03",
+   "cost": "S",
+   "kill_or_defer": "Complete. Re-certify only if the C13 product screen shows >=2x.",
+   "inequality_lever": "certification_only",
+   "optimistic_max_factor": "n/a (certification): eligibility only, no cost term moves",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row C06",
+   "reopen_rule": "Complete. Re-certify only if the C13 product screen shows >=2x.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "C07",
+   "title": "A few draws without barrier flips do not certify rare flips",
+   "live_status": "complete",
+   "tier": "T3",
+   "disposition": "deferred certification debt",
+   "wave_or_trigger": "DONE",
+   "key_dependency": "C06",
+   "cost": "S",
+   "kill_or_defer": "Complete. Reuse its union-bound formula as a zero-cost kill screen for precision routes.",
+   "inequality_lever": "certification_only",
+   "optimistic_max_factor": "n/a (certification). Its negative finding (the barrier-band union bound blows the headroom) acts as a kill screen for A-family precision-reduction routes, which could buy at most about 1.2-2x of per-call depth anyway.",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row C07",
+   "reopen_rule": "Complete. Reuse its union-bound formula as a zero-cost kill screen for precision routes.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "C08",
+   "title": "Fitted convergence exponents are not lower bounds",
+   "live_status": "ready",
+   "tier": "T5",
+   "disposition": "dormant until trigger",
+   "wave_or_trigger": "register only; no eps-extrapolated crossover planned",
+   "key_dependency": "F01",
+   "cost": "M",
+   "kill_or_defer": "Run the scramble bootstrap only if the paper states an eps-extrapolated crossover. Never acquire new timings.",
+   "inequality_lever": "classical_cost_T_C_or_exponent",
+   "optimistic_max_factor": "1.1-2x on T_C at the fixed epsilon grid. Stage C has measured preint T_C at all four epsilons, so exponent uncertainty only enters interpolation or extrapolation (+/-0.15 in p_C over one decade is about 1.4x). For a frontier crossover statement the sensitivity is extreme: the epsilon reduction needed to close a 2,000x gap is 2000^(1/(p_C-1)), about 4.6e3 for p_C-1 = 0.9 and about 5e5 for p_C-1 = 0.58.",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row C08",
+   "reopen_rule": "Run the scramble bootstrap only if the paper states an eps-extrapolated crossover. Never acquire new timings.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "C09",
+   "title": "Modelled classical time is not a timed successful price",
+   "live_status": "ready",
+   "tier": "T3",
+   "disposition": "deferred certification debt",
+   "wave_or_trigger": "N1 envelope slice (done); A1 full G4; TRIGGER FIRED (miss <= 30)",
+   "key_dependency": "C01, F01",
+   "cost": "M",
+   "kill_or_defer": "Branch N: practice vs symmetric-rigour envelope from existing runs, no timings. Full G4 stays frozen until miss <=30.",
+   "inequality_lever": "classical_cost_T_C_or_exponent",
+   "optimistic_max_factor": "1.1-2x under the current practice convention: completing confirmations or out-of-sample runs moves T_C by tens of percent. A symmetric distribution-free 99% convention would shift the net up to ~2-5x in quantum's favour. Classical would become ~10-50x slower (Maurer-Pontil plain MC, compiled) and quantum would need ~10-20x more calls (bounded AE on the $40 range with pi and log(1/delta) constants). The archived-grid minimum oracle/D_max of 16.8 stays >1 under either convention.",
+   "evidence": "results/frontier_probe_20261021/headline/run002/headline_table.json; derived/run001/derived.json",
+   "reopen_rule": "Envelope slice done in N1 (36.9x). Trigger fired (miss 10.29 <= 30): a full G4 timed successful price is now due before any claim at the symmetric convention.",
+   "rigour_tier": "R0 register record",
+   "trigger_fired": [
+    "C09-30"
+   ],
+   "updated": "run002 (22 Oct 2026, frontier probe)"
+  },
+  {
+   "id": "C10",
+   "title": "The strongest tested classical method is not automatically the strongest applicable one",
+   "live_status": "partial (challenger wave started 22 Oct)",
+   "tier": "T3",
+   "disposition": "deferred certification debt",
+   "wave_or_trigger": "N1 label; TRIGGER FIRED (scenario miss <= 3); C10 challenger wave",
+   "key_dependency": "C09",
+   "cost": "S / L",
+   "kill_or_defer": "Branch N: label 'strongest tested'. Implement challengers (CPU) only if a scenario reaches miss <=3.",
+   "inequality_lever": "classical_cost_T_C_or_exponent",
+   "optimistic_max_factor": "<1.1x. It is monotone against quantum: a stronger eligible challenger can only lower T_C and shrink D_max, and an exclusion cannot raise T_C above the measured preint baseline.",
+   "evidence": "results/frontier_probe_20261021/headline/run002/headline_table.json; derived/run001/derived.json",
+   "reopen_rule": "Trigger fired: scenarios reach miss <= 3 (all-free 0.511, symmetric 0.279). Implement CPU challengers on the binding cell B8x52 $0.001 (with F06/F07). A faster eligible challenger lowers T_C and raises M.",
+   "rigour_tier": "R0 register record",
+   "trigger_fired": [
+    "C10-3"
+   ],
+   "updated": "run002 (22 Oct 2026, frontier probe)"
+  },
+  {
+   "id": "C11",
+   "title": "A clean source is not an entire mean-estimation algorithm",
+   "live_status": "partial (bracket updated)",
+   "tier": "T3",
+   "disposition": "deferred certification debt",
+   "wave_or_trigger": "W0-WS3 (bracket); probe P2; A3 (compile)",
+   "key_dependency": "E02, E03, H17",
+   "cost": "S / L",
+   "kill_or_defer": "Zero-cost k bracket in W0. Defer the full iterate compile until per-call depth is within 30x of k*D_max.",
+   "inequality_lever": "estimator_constant_k",
+   "optimistic_max_factor": "<1.1x. It measures k rather than reducing it. Reflection, rotation and IQFT wrapper costs are additive per iterate and small next to the 1.1-1.3M clean per-call depth. If the bounded (range-normalised, M = $40) schedule is used instead of variance-sensitive estimation, effective k rises by up to M/sigma ~ 7.7x.",
+   "evidence": "results/frontier_probe_20261021/p2/run002/p2_window.json; docs/frontier_probe_20261021/P2_DERIVATION.md; results/frontier_probe_20261021/headline/run002/headline_table.json; derived/run001/derived.json",
+   "reopen_rule": "Bracket now 1.85 (counting floor) to 8.762 (certified Kaiser-window constant, parts 1-4 explicit, AI R2 reviewed, conditional on U1/U2 + direction-select). TRIGGER FIRED: per-call depth (2,296) is 10.3x k*D_max, inside 30x; the full iterate compile is now due but needs circuit work (not authorized; branch A).",
+   "rigour_tier": "R0 register record",
+   "trigger_fired": [
+    "C11-30x"
+   ],
+   "updated": "run002 (22 Oct 2026, frontier probe)"
+  },
+  {
+   "id": "C12",
+   "title": "Six constructions share three contracts and one toolchain",
+   "live_status": "partial",
+   "tier": "T4",
+   "disposition": "closed or folded into N1",
+   "wave_or_trigger": "N2",
+   "key_dependency": "none",
+   "cost": "S",
+   "kill_or_defer": "Labelling ('six constructions, three contracts, one toolchain'). No new backend unless the floor brings miss <=10.",
+   "inequality_lever": "accounting_or_evidence",
+   "optimistic_max_factor": "n/a (labelling). Its optional 'independent backend' sub-action is really an A-family depth lever: log-depth or wide arithmetic could in principle cut per-call depth by 10-100x at enormous width. Triage it there, not here.",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row C12",
+   "reopen_rule": "Labelling stands. Trigger formally fired (all-free floor brings miss <= 10 under the window class), but a new backend is circuit work: not authorized.",
+   "rigour_tier": "R0 register record",
+   "trigger_fired": [
+    "C12-10"
+   ],
+   "updated": "run002 (22 Oct 2026, frontier probe)"
+  },
+  {
+   "id": "C13",
+   "title": "Optimizations interact and cannot be multiplied without a compatible schedule",
+   "live_status": "partial",
+   "tier": "T4",
+   "disposition": "closed or folded into N1",
+   "wave_or_trigger": "W0-WS1",
+   "key_dependency": "A-family candidates",
+   "cost": "S",
+   "kill_or_defer": "Optimistic product screen inside F31 before any combined emission. Skip unless it moves the table >=2x.",
+   "inequality_lever": "oracle_depth_rho",
+   "optimistic_max_factor": "<1.1x by itself. It is an adoption discipline that prevents double counting; the pending A-family changes it would combine are percent-level each.",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row C13",
+   "reopen_rule": "Optimistic product screen inside F31 before any combined emission. Skip unless it moves the table >=2x.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "C14",
+   "title": "A classical cubic exponent is not necessary for a crossover",
+   "live_status": "audit",
+   "tier": "T1",
+   "disposition": "decision-critical (W0 done)",
+   "wave_or_trigger": "W0-WS1; N1 (R2)",
+   "key_dependency": "F31 inputs",
+   "cost": "S",
+   "kill_or_defer": "Merged into F31 as its decision view. If min miss >10 at every corner >=100 ns, publish the scoped 'no tenfold'.",
+   "inequality_lever": "accounting_or_evidence",
+   "optimistic_max_factor": "n/a: this is the evaluation of the inequality itself. Zero-cost screen inputs: accepted A10 depths with per-call = 2 x forward (B4 1.11M, B8 1.33M), measured preint T_C, sigma_Q and e = 0.45 epsilon. Over epsilon in {0.1, 0.03, 0.01, 0.001}, k in {1, 3, 10} and t_layer in {10 ns, 100 ns, 1 us, 10 us}, the minimum oracle/D_max is 16.8 (B8, $0.1 with setup-dominated T_C, k=1, 10 ns). So there is no tenfold and no break-even anywhere on the archived grid. Primary corner (k=3, 100 ns, $0.001): B4 15,600x, B8 2,040x. A realistic 1-10 us t_layer adds 10-100x.",
+   "evidence": "results/frontier_probe_20261021/headline/run002/headline_table.json; derived/run001/derived.json",
+   "reopen_rule": "Rule 'publish the scoped no-tenfold if min miss > 10 at every corner >= 100 ns' NO LONGER HOLDS: window class 10.29 (failure 0.003) / 8.64 (failure 0.01) at the primary corner, 0.511 at the all-free corner. The scoped negative must be restated as conditional on the primary convention and the current-law oracle (MEMO edits 1-3).",
+   "rigour_tier": "R0 register record",
+   "trigger_fired": [
+    "C14-10"
+   ],
+   "updated": "run002 (22 Oct 2026, frontier probe)"
+  },
+  {
+   "id": "C15",
+   "title": "References and stale numerical summaries need individual checking",
+   "live_status": "partial",
+   "tier": "T4",
+   "disposition": "closed or folded into N1",
+   "wave_or_trigger": "W0-WS4",
+   "key_dependency": "H01 anchors",
+   "cost": "S",
+   "kill_or_defer": "Verify only the ~10-20 anchors cited by F31 or the manuscript. If an anchor fails, state the negative only at the hypothetical 100/10 ns.",
+   "inequality_lever": "accounting_or_evidence",
+   "optimistic_max_factor": "n/a (certification). The t_layer anchors it checks set the H-family term: 100 ns (hypothetical) versus 1-25 us (cycle, reaction time, CCZ period) is a 10-250x swing in the inequality. Verification changes only the evidence status, not the value.",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row C15",
+   "reopen_rule": "Verify only the ~10-20 anchors cited by F31 or the manuscript. If an anchor fails, state the negative only at the hypothetical 100/10 ns.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "E01",
+   "title": "Generic quadratic query scaling versus exploitable structure",
+   "live_status": "partial",
+   "tier": "T1",
+   "disposition": "decision-critical (W0 done)",
+   "wave_or_trigger": "W0-WS3; N1",
+   "key_dependency": "E02; literature query lower bound",
+   "cost": "S",
+   "kill_or_defer": "Access-model card with the k* threshold. Route structural escapes to F04/F05/F20. No universal impossibility proof.",
+   "inequality_lever": "estimator_constant_k",
+   "optimistic_max_factor": "2-10x: only via sigma-reducing structural transforms (e.g. coherent preintegration/conditioning, sigma 5.18->1.15 on B8x52, <=4.5x before its added oracle depth), which are F-family formulations; the black-box access-model k itself has no material room below the k=3 headline",
+   "evidence": "research/plan110_n1/estimator/estimator_card.md; results/frontier_probe_20261021/p2/run002/p2_window.json; docs/frontier_probe_20261021/P2_DERIVATION.md",
+   "reopen_rule": "Access-model card stands. Achievability bracket 1.85 to 8.762 (was ~198): gap ~4.7x. Structural escapes F04/F20 closed (probe P1); F05 live again under the window class.",
+   "rigour_tier": "R0 register record",
+   "updated": "run002 (22 Oct 2026, frontier probe)"
+  },
+  {
+   "id": "E02",
+   "title": "Replace hypothetical k with executable source and inverse counts",
+   "live_status": "ready",
+   "tier": "T4",
+   "disposition": "closed or folded into N1",
+   "wave_or_trigger": "N1 headline scope input",
+   "key_dependency": "G1 hashes; E07 formula",
+   "cost": "S",
+   "kill_or_defer": "Exact-rational k_eff table (4 eps x 2 cases). Stop on any mismatch with the audited $0.01 row.",
+   "inequality_lever": "accounting_or_evidence",
+   "optimistic_max_factor": "n/a (certification): it replaces hypothetical k=3 with the audited k_eff~781 (B4x12) / 853 (B8x52) at $0.01 (983,025 controlled Grover calls = 15 shots x 65,535), so the honest inequality is ~260-285x worse than the k=3 headline; complete logical T-depth 5.61e11/7.57e11 -> 56,134/75,728 s at 100 ns vs T_C 0.124/0.554 s, i.e. a tenfold miss of ~4.5e6/1.4e6",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row E02",
+   "reopen_rule": "Exact-rational k_eff table (4 eps x 2 cases). Stop on any mismatch with the audited $0.01 row.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "E03",
+   "title": "Match range or variance normalization to the actual amplitude oracle",
+   "live_status": "partial",
+   "tier": "T2",
+   "disposition": "credited screen value / branch-A lever",
+   "wave_or_trigger": "W0-WS3 (credit); A1 (certify)",
+   "key_dependency": "E02; price upper bound (U1) or support-tight wrapper (U2)",
+   "cost": "S / M",
+   "kill_or_defer": "Credit <=2x analytically now. Certify p_max or the support-tight wrapper only on branch A, and only if >=1.5x fewer calls.",
+   "inequality_lever": "sigma_over_e_or_variance",
+   "optimistic_max_factor": "2-10x (realistically ~2x): the canonical bound with sqrt(p(1-p)) at p=E[Y]/64~0.051-0.055 (~0.22 instead of the worst-case 0.5) halves M at $0.01 and $0.001 (983,025 -> 491,505 calls) and quarters it at $0.10; tightening span 64 -> ~40 (support <$38.82) adds <=1.3x",
+   "evidence": "results/frontier_probe_20261021/headline/run002/headline_table.json; derived/run001/derived.json",
+   "reopen_rule": "Credit <=2x stands; U2 now also enters the window constant (without U2: k 25.8, M 30.3 at the primary convention). Certify the support-tight wrapper only on branch A.",
+   "rigour_tier": "R0 register record",
+   "updated": "run002 (22 Oct 2026, frontier probe)"
+  },
+  {
+   "id": "E04",
+   "title": "Remove QFT/QPE only when the complete bounded-estimator schedule improves",
+   "live_status": "ready",
+   "tier": "T2",
+   "disposition": "credited screen value / branch-A lever",
+   "wave_or_trigger": "W0-WS3 (screen); A1",
+   "key_dependency": "E03 baseline",
+   "cost": "S / M",
+   "kill_or_defer": "Zero-cost: archived 280,800 vs p-aware 491,505 (1.75x). Kill if the certified worst case is >=0.5x of canonical.",
+   "inequality_lever": "estimator_constant_k",
+   "optimistic_max_factor": "2-10x: archived toy controllers delivered with 280,800-525,056 source pairs vs 983,025 canonical (1.9-3.5x, partly the same p-awareness as E03); the general original/modified IQAE theorem bounds (6.47M/6.49M) are 6.6x worse than canonical, so a certified worst-case gain is not shown; QFT removal itself saves negligible depth",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row E04",
+   "reopen_rule": "Zero-cost screen stands (1.75x). The window class keeps a QFT readout; E04's QFT-removal question does not apply to it.",
+   "rigour_tier": "R0 register record",
+   "updated": "run002 (22 Oct 2026, frontier probe)"
+  },
+  {
+   "id": "E05",
+   "title": "Factored external controls already avoid controlling every arithmetic gate",
+   "live_status": "complete",
+   "tier": "T4",
+   "disposition": "closed or folded into N1",
+   "wave_or_trigger": "W1-REG",
+   "key_dependency": "E02 wrappers",
+   "cost": "S",
+   "kill_or_defer": "Closed. Reopen on a wrapper change.",
+   "inequality_lever": "oracle_depth_rho",
+   "optimistic_max_factor": "<1.1x: already implemented and banked in the audited wrappers; zero new credit by the item's own acceptance rule",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row E05",
+   "reopen_rule": "Closed. Reopen on a wrapper change.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "E06",
+   "title": "Fused graph compute and uncompute is already implemented",
+   "live_status": "complete",
+   "tier": "T4",
+   "disposition": "closed or folded into N1",
+   "wave_or_trigger": "W1-REG",
+   "key_dependency": "E02 wrappers",
+   "cost": "S",
+   "kill_or_defer": "Closed. Reopen on a new caller.",
+   "inequality_lever": "oracle_depth_rho",
+   "optimistic_max_factor": "<1.1x: fusion already present in the current wrappers; existing fused callers receive zero additional gain",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row E06",
+   "reopen_rule": "Closed. Reopen on a new caller.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "E07",
+   "title": "One complete-price error and confidence ledger",
+   "live_status": "partial",
+   "tier": "T3",
+   "disposition": "deferred certification debt",
+   "wave_or_trigger": "A3; TRIGGER FIRED (favourable miss <= 1)",
+   "key_dependency": "G2, C03, H18",
+   "cost": "L",
+   "kill_or_defer": "Favourable-ledger gate check only. Defer the 4 open obligations until favourable miss <=1.",
+   "inequality_lever": "certification_only",
+   "optimistic_max_factor": "n/a (certification): closing the ledger moves no cost term; any gain in e from shrinking deterministic headroom is counted under E24 (<=2x)",
+   "evidence": "results/frontier_probe_20261021/headline/run002/headline_table.json; derived/run001/derived.json",
+   "reopen_rule": "Trigger fired: the favourable ledger reaches miss <= 1 (all-free + window 0.511). The 4 open ledger obligations are now live certification debt (claim-grade; needs authorization).",
+   "rigour_tier": "R0 register record",
+   "trigger_fired": [
+    "E07-1"
+   ],
+   "updated": "run002 (22 Oct 2026, frontier probe)"
+  },
+  {
+   "id": "E08",
+   "title": "Further confidence allocation optimization against the already optimized schedule",
+   "live_status": "partial",
+   "tier": "T4",
+   "disposition": "closed or folded into N1",
+   "wave_or_trigger": "W0-WS3",
+   "key_dependency": "E04",
+   "cost": "S",
+   "kill_or_defer": "One exact-binomial line (15 vs 11 shots, <=1.4x) credited, then close.",
+   "inequality_lever": "estimator_constant_k",
+   "optimistic_max_factor": "<1.1x: the 20-candidate fixed-geometry screen is done; reallocating stage failures inside alpha=0.003 moves the 15-shot median by at most a shot or two; even granting the estimator the full 0.01 budget gives <=~1.4x",
+   "evidence": "results/frontier_probe_20261021/p2/run002/p2_window.json; docs/frontier_probe_20261021/P2_DERIVATION.md",
+   "reopen_rule": "Closed for the canonical schedule (15 vs 11 shots). Window class at failure 0.01: k 7.359 (M 8.64) vs 8.762 at 0.003.",
+   "rigour_tier": "R0 register record",
+   "updated": "run002 (22 Oct 2026, frontier probe)"
+  },
+  {
+   "id": "E09",
+   "title": "Unknown variance without treating unknown sigma as an absolute-error certificate",
+   "live_status": "partial",
+   "tier": "T5",
+   "disposition": "dormant until trigger",
+   "wave_or_trigger": "TRIG-G0",
+   "key_dependency": "E11 screen",
+   "cost": "S",
+   "kill_or_defer": "Killed for B4/B8. Reopen for a task with sqrt(E[Y^2]) below ~0.025 x half-span.",
+   "inequality_lever": "sigma_over_e_or_variance",
+   "optimistic_max_factor": "<1.1x on the fixed task: unknown-variance/quantile estimators carry at least the known-moment schedule's constants (archived Hadamard k_H~5,540-5,840 calls per s/e) plus calibration, and for B4/B8 even the known-moment route is ~8x worse than the bounded schedule",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row E09",
+   "reopen_rule": "Killed for B4/B8. Reopen for a task with sqrt(E[Y^2]) below ~0.025 x half-span.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "E10",
+   "title": "Acquire analytic moment bounds with outward rounding",
+   "live_status": "partial",
+   "tier": "T6",
+   "disposition": "parked: different task (TRIG-G0)",
+   "wave_or_trigger": "PARK",
+   "key_dependency": "compound-residual contract",
+   "cost": "S",
+   "kill_or_defer": "Frozen. Valid for the C4/H8 compound residual only.",
+   "inequality_lever": "sigma_over_e_or_variance",
+   "optimistic_max_factor": "<1.1x for the fixed task: the executed bounds (0.786 and 118.41 dollars^2) are for the archived C4/H8 compound residual, not the B4/B8 knock-out; any B4/B8 moment feeds the dominated known-moment route",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row E10",
+   "reopen_rule": "Frozen. Valid for the C4/H8 compound residual only.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "E11",
+   "title": "Transfer second moments to the identical finite source with an L2 bridge",
+   "live_status": "partial",
+   "tier": "T3",
+   "disposition": "deferred certification debt",
+   "wave_or_trigger": "STOP",
+   "key_dependency": "E10; U1-U5 designs",
+   "cost": "S",
+   "kill_or_defer": "STOP all scopes, including #44/U4. The known-moment route needs ~7.6-8.3M calls vs 983,025 bounded. Reopen only if a known-moment design comes in below 0.5x bounded calls at b=0.",
+   "inequality_lever": "sigma_over_e_or_variance",
+   "optimistic_max_factor": "<1.1x: even with b=0 and the exact continuous moment, the archived known-moment Hadamard design (k_H~5,540-5,840 calls per s/e on all four archived rows) needs ~7.6M (B8x52) / ~8.3M (B4x12) calls vs 983,025 for the existing bounded schedule; the certified RMS bridge (<= $1.275) only enlarges s. Its L1 by-product (E|Y_N-Y| <= $0.045) exceeds eps at $0.03/$0.01/$0.001 and the any-h certificate route is ruled out at all four eps",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row E11",
+   "reopen_rule": "STOP all scopes, including #44/U4. The known-moment route needs ~7.6-8.3M calls vs 983,025 bounded. Reopen only if a known-moment design comes in below 0.5x bounded calls at b=0.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "E12",
+   "title": "Anytime-valid statistical moment acquisition",
+   "live_status": "partial",
+   "tier": "T5",
+   "disposition": "dormant until trigger",
+   "wave_or_trigger": "TRIG-G0",
+   "key_dependency": "E11 screen",
+   "cost": "S",
+   "kill_or_defer": "Kill the finance acquisition. Keep the toy confidence sequence as method evidence.",
+   "inequality_lever": "sigma_over_e_or_variance",
+   "optimistic_max_factor": "<1.1x: it serves the same dominated moment route as E11; in addition any classical moment acquisition is charged to quantum latency against a total budget of T_C/10 ~12 ms (B4x12) / 55 ms (B8x52) at $0.01",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row E12",
+   "reopen_rule": "Kill the finance acquisition. Keep the toy confidence sequence as method evidence.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "E13",
+   "title": "Exact uniform-selector payoff loading is already implemented",
+   "live_status": "complete",
+   "tier": "T4",
+   "disposition": "closed or folded into N1",
+   "wave_or_trigger": "W1-REG",
+   "key_dependency": "E03 span",
+   "cost": "S",
+   "kill_or_defer": "Closed. Re-verify the binding only if E03 changes the span.",
+   "inequality_lever": "none",
+   "optimistic_max_factor": "<1.1x: the span-64 46-bit selector is already in the audited B4/B8 wrappers; zero new credit",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row E13",
+   "reopen_rule": "Closed. Re-verify the binding only if E03 changes the span.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "E14",
+   "title": "Replace prohibitive nested constants only with an explicit coherent schedule",
+   "live_status": "partial",
+   "tier": "T6",
+   "disposition": "parked: different task (TRIG-G0)",
+   "wave_or_trigger": "PARK",
+   "key_dependency": "G0 nested contract; F18/F19",
+   "cost": "S",
+   "kill_or_defer": "Not applicable (single-level task). Re-scope with F18/F19 if G0 changes.",
+   "inequality_lever": "task_scope_change",
+   "optimistic_max_factor": "<1.1x on the fixed task: the B4/B8 knock-out has no inner conditional expectation; the item applies only to archived compound/nested contracts",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row E14",
+   "reopen_rule": "Not applicable (single-level task). Re-scope with F18/F19 if G0 changes.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "E15",
+   "title": "Measured adaptive inner estimation is not a coherent outer oracle",
+   "live_status": "partial",
+   "tier": "T6",
+   "disposition": "parked: different task (TRIG-G0)",
+   "wave_or_trigger": "PARK",
+   "key_dependency": "G0 nested contract",
+   "cost": "S",
+   "kill_or_defer": "Closed for the fixed task. Cite the rule in the frontier paper.",
+   "inequality_lever": "task_scope_change",
+   "optimistic_max_factor": "<1.1x on the fixed task: no inner estimator exists in the single-level knock-out source",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row E15",
+   "reopen_rule": "Closed for the fixed task. Cite the rule in the frontier paper.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "E16",
+   "title": "Finite-variance heavy tails have query alternatives with explicit bias and weights",
+   "live_status": "partial",
+   "tier": "T6",
+   "disposition": "parked: different task (TRIG-G0)",
+   "wave_or_trigger": "PARK",
+   "key_dependency": "G0 unbounded payoff",
+   "cost": "S",
+   "kill_or_defer": "Closed: payoff bounded on [0, $38.82].",
+   "inequality_lever": "task_scope_change",
+   "optimistic_max_factor": "<1.1x on the fixed task: the B4/B8 payoff is proved bounded on [0, $38.82] for every input word (E03 support), so heavy-tail estimators and tail caps are inapplicable",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row E16",
+   "reopen_rule": "Closed: payoff bounded on [0, $38.82].",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "E17",
+   "title": "Infinite variance and undefined mean require different contracts",
+   "live_status": "partial",
+   "tier": "T6",
+   "disposition": "parked: different task (TRIG-G0)",
+   "wave_or_trigger": "PARK",
+   "key_dependency": "G0 infinite-variance contract",
+   "cost": "S",
+   "kill_or_defer": "Not-applicable record.",
+   "inequality_lever": "task_scope_change",
+   "optimistic_max_factor": "<1.1x: a bounded payoff has finite moments of every order; the branch cannot activate for B4/B8",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row E17",
+   "reopen_rule": "Not-applicable record.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "E18",
+   "title": "Multi-output tasks need their own norm, confidence and access contract",
+   "live_status": "conditional",
+   "tier": "T6",
+   "disposition": "parked: different task (TRIG-G0)",
+   "wave_or_trigger": "PARK",
+   "key_dependency": "G0 multi-output (with F27/F29)",
+   "cost": "S",
+   "kill_or_defer": "Re-tiered from dormant: needs a different output contract.",
+   "inequality_lever": "task_scope_change",
+   "optimistic_max_factor": "n/a (certification): a different output contract; zero effect on the fixed single-price inequality",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row E18",
+   "reopen_rule": "Re-tiered from dormant: needs a different output contract.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "E19",
+   "title": "Quantum Greeks must compete with classical adjoint differentiation",
+   "live_status": "conditional",
+   "tier": "T6",
+   "disposition": "parked: different task (TRIG-G0)",
+   "wave_or_trigger": "PARK",
+   "key_dependency": "G0 Greeks (with F28)",
+   "cost": "S",
+   "kill_or_defer": "Re-tiered from dormant: needs a different deliverable.",
+   "inequality_lever": "task_scope_change",
+   "optimistic_max_factor": "n/a (certification): a different deliverable (sensitivities); zero effect on the fixed single-price inequality",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row E19",
+   "reopen_rule": "Re-tiered from dormant: needs a different deliverable.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "E20",
+   "title": "Entangled parallel AE must pay for all source lanes and physical scheduling",
+   "live_status": "partial",
+   "tier": "T2",
+   "disposition": "credited screen value / branch-A lever",
+   "wave_or_trigger": "W0-WS3 (bound only)",
+   "key_dependency": "H15, H16, H17",
+   "cost": "S / L",
+   "kill_or_defer": "State the width bound (P~1e3-1e4 lanes, >=4e9 logical qubits) and stop. No lane schedules unless width headroom >=2x and a parallel-matching rule exists.",
+   "inequality_lever": "estimator_constant_k",
+   "optimistic_max_factor": ">10x only with >=15x logical width: the 15 independent canonical shots could run as parallel lanes (~67M logical qubits for B8x52) and entangled lanes cut latency by <=1/P at P x width; 1x under the declared memory cap, which P=2 already exceeds",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row E20",
+   "reopen_rule": "Width bound stands; the window class is one coherent chain (no lane credit).",
+   "rigour_tier": "R0 register record",
+   "updated": "run002 (22 Oct 2026, frontier probe)"
+  },
+  {
+   "id": "E21",
+   "title": "Convert RMSE to the allocated high-probability dollar guarantee",
+   "live_status": "ready",
+   "tier": "T4",
+   "disposition": "closed or folded into N1",
+   "wave_or_trigger": "W1-REG",
+   "key_dependency": "E07",
+   "cost": "S",
+   "kill_or_defer": "Closed penalty screen. Apply it mechanically to any RMSE candidate.",
+   "inequality_lever": "certification_only",
+   "optimistic_max_factor": "n/a (certification): the proved converter imposes a 1/sqrt(0.003)~18x RMSE tightening or a 27-run median on any RMSE-only estimator, so it is a penalty screen rather than a gain",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row E21",
+   "reopen_rule": "Closed penalty screen. Apply it mechanically to any RMSE candidate.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "E22",
+   "title": "Classify actual payoff predicates before importing log-domain QSP",
+   "live_status": "ready",
+   "tier": "T4",
+   "disposition": "closed or folded into N1",
+   "wave_or_trigger": "N2",
+   "key_dependency": "A20",
+   "cost": "S",
+   "kill_or_defer": "Closed negative (0 of 3,106 predicates). Cite as a closed escape.",
+   "inequality_lever": "oracle_depth_rho",
+   "optimistic_max_factor": "<1.1x: the complete census of 3,106 predicates found 0 whole-domain single-log replacements; the 64 monitored conditions are sums of asset prices (62 max-tree comparisons + 2 strict-survival comparators) that cannot become a one-log-return threshold",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row E22",
+   "reopen_rule": "Closed negative (0 of 3,106 predicates). Cite as a closed escape.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "E23",
+   "title": "QSP approximation, rotation synthesis and dollar bias are one budget",
+   "live_status": "conditional",
+   "tier": "T5",
+   "disposition": "dormant until trigger",
+   "wave_or_trigger": "TRIG-LIT",
+   "key_dependency": "E22, A20",
+   "cost": "S",
+   "kill_or_defer": "Dormant. Kill permanently if A20 finds no threshold.",
+   "inequality_lever": "oracle_depth_rho",
+   "optimistic_max_factor": "<1.1x: no eligible factor exists (E22), and the payoff/predicate tail is a small part of a source whose depth is dominated by the 464 coherent exponentials (estimate, not separately measured here)",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row E23",
+   "reopen_rule": "Dormant. Kill permanently if A20 finds no threshold.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "E24",
+   "title": "Optimize the error split only over supported certificates",
+   "live_status": "ready",
+   "tier": "T4",
+   "disposition": "closed or folded into N1",
+   "wave_or_trigger": "W0-WS1",
+   "key_dependency": "E07, C05",
+   "cost": "S",
+   "kill_or_defer": "e=eps as a labelled favourable sensitivity in F31. No new split certificates unless within 2x.",
+   "inequality_lever": "sigma_over_e_or_variance",
+   "optimistic_max_factor": "1.1-2x: raising the statistical share 0.45 -> 0.65 halves calls through the power-of-two M step (983,025 -> 491,505 at $0.01); even zero deterministic bias (e=eps) gives the same single M step, so <=2x",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row E24",
+   "reopen_rule": "e=eps as a labelled favourable sensitivity in F31. No new split certificates unless within 2x.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "E25",
+   "title": "Adaptive Bayesian/likelihood designs need a coverage proof",
+   "live_status": "closed (kill rule met)",
+   "tier": "T4",
+   "disposition": "closed or folded into N1",
+   "wave_or_trigger": "CLOSED 22 Oct (literature check)",
+   "key_dependency": "E04; literature 99% coverage theorem",
+   "cost": "M",
+   "kill_or_defer": "Folded into E04. Kill if the literature has no worst-case coverage theorem.",
+   "inequality_lever": "estimator_constant_k",
+   "optimistic_max_factor": "1.1-2x over the best certified IQAE-class schedule; the archived design left all 18 truths uncertified at its cap and has no worst-case frequentist coverage proof",
+   "evidence": "results/frontier_probe_20261021/p2/lit_check.jsonl",
+   "reopen_rule": "Kill rule met: none of 8 further primary sources (KO, Hamoudi, Rall, Kimmel-Low-Yoder, Belliardo-Giovannetti, AQAE, RQAE, Labib) gives a worst-case coverage theorem below canonical; the best explicit is AQAE Thm 2, c(0.003) ~ 409. The window estimator (C11) supersedes this route. Reopen on TRIG-LIT.",
+   "rigour_tier": "R0 register record",
+   "updated": "run002 (22 Oct 2026, frontier probe)"
+  },
+  {
+   "id": "F01",
+   "title": "Keep measured classical slopes inside their validated range",
+   "live_status": "ready",
+   "tier": "T4",
+   "disposition": "closed or folded into N1",
+   "wave_or_trigger": "W0-WS1",
+   "key_dependency": "archived C2/C5 rows",
+   "cost": "S",
+   "kill_or_defer": "Label T_C rows measured/fitted/assumed and compute eps*. Kill the 32-scramble acquisition.",
+   "inequality_lever": "classical_cost_T_C_or_exponent",
+   "optimistic_max_factor": "<1.1x - T_C at the decisive eps=$0.001 is already directly measured (C2 continuous preintegration n=131072: 2.688 s B4x12, 22.53 s B8x52, halfwidths 0.00033/0.00035 < e=0.00045); slope validation only changes statements outside the fixed eps set",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row F01",
+   "reopen_rule": "Label T_C rows measured/fitted/assumed and compute eps*. Kill the 32-scramble acquisition.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "F02",
+   "title": "Separate path variance from randomized-quadrature variance",
+   "live_status": "audit",
+   "tier": "T4",
+   "disposition": "closed or folded into N1",
+   "wave_or_trigger": "W0-WS1",
+   "key_dependency": "12-row ledger",
+   "cost": "S",
+   "kill_or_defer": "Wire it in as the sole sigma/T_C source, then mark complete.",
+   "inequality_lever": "sigma_over_e_or_variance",
+   "optimistic_max_factor": "n/a (accounting) - it can only remove quantum variance credit; the frozen ledger already sets sigma_Q to the plain one-path payoff sigma (5.66 B4x12, 5.18 B8x52) and T_C to measured RQMC time",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row F02",
+   "reopen_rule": "Wire it in as the sole sigma/T_C source, then mark complete.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "F03",
+   "title": "Verify smoothness of the transformed Gaussian integrand",
+   "live_status": "ready",
+   "tier": "T5",
+   "disposition": "dormant until trigger",
+   "wave_or_trigger": "TRIG-CLAIM",
+   "key_dependency": "F01, C08",
+   "cost": "S",
+   "kill_or_defer": "Barrier transfer closed on the documented kink. Reopen only if a claim needs a theorem rate.",
+   "inequality_lever": "certification_only",
+   "optimistic_max_factor": "n/a (certification) - a theorem rate replaces nothing in the measured T_C at the fixed eps and never moves a term toward quantum",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row F03",
+   "reopen_rule": "Barrier transfer closed on the documented kink. Reopen only if a claim needs a theorem rate.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "F04",
+   "title": "Test structured integration of a certified residual",
+   "live_status": "closed (probe P1)",
+   "tier": "T4",
+   "disposition": "closed or folded into N1",
+   "wave_or_trigger": "CLOSED 22 Oct (frontier probe P1 run002)",
+   "key_dependency": "F20 credit",
+   "cost": "S",
+   "kill_or_defer": "Re-tiered: closes on the F20 zero-depth credit. Reopen if the other levers bring miss <=4x.",
+   "inequality_lever": "sigma_over_e_or_variance",
+   "optimistic_max_factor": "1.1-2x - hard cap is sigma_Q/sigma_res <= ~4.5x (5.15 -> 1.14, the best measured smoothing) before charging coherent interpolant evaluation (each multiply 11,088-79,312 T-depth) and before the classical side reuses the identical interpolant; realistic net ~1x",
+   "evidence": "results/frontier_probe_20261021/p1/run001/p1_span.json; p1/run002/p1b_hybrid.json; results/frontier_probe_20261021/review/p1_review.jsonl; review/p2_review.jsonl",
+   "reopen_rule": "Closed on evaluated costs, not on the withdrawn F20 zero-depth credit. Coherent preintegration nets 1.70; clipped/hybrid 3.42 at D ratio 1 and 2.62 at the structure-aware 1.30; k = 2-3 directions <= 0.70 (consistent gain pairing; kill threshold 4). Reopen only with a coherent preintegration oracle cheaper than the plain payoff oracle.",
+   "rigour_tier": "R0 register record",
+   "updated": "run002 (22 Oct 2026, frontier probe)"
+  },
+  {
+   "id": "F05",
+   "title": "Charge the whole payoff in coherent Sobol integration",
+   "live_status": "partial (lever live again)",
+   "tier": "T2",
+   "disposition": "credited screen value / branch-A lever",
+   "wave_or_trigger": "W0-WS2 (parameter); probe P3",
+   "key_dependency": "A01 cost split",
+   "cost": "S",
+   "kill_or_defer": "Free-loading bound in the floor and F31. Close as a standalone route if >=10x miss remains.",
+   "inequality_lever": "oracle_depth_rho",
+   "optimistic_max_factor": "2-10x as a hard upper bound, realistic 1.1-2x - the H1 score shows entirely free Gaussian preparation cuts oracle/D_max about 5x (1,138x -> 230x B8x52; 5,765x -> 1,095x B4x12); the Sobol XOR network is Clifford but an inverse-normal transform per coordinate remains, and the amplitude-estimation query count is unchanged by QMC",
+   "evidence": "results/frontier_probe_20261021/p3/run002/p3_desk.json",
+   "reopen_rule": "Kill rule (close if >=10x miss remains) no longer met under the window class: free loader alone gives M 5.43, loader + free exponential 0.965, all-free 0.511. Stays closed for the canonical class (122). Costing a real loader is A02-A04 work (TRIG-R2 not fired at primary).",
+   "rigour_tier": "R0 register record",
+   "updated": "run002 (22 Oct 2026, frontier probe)"
+  },
+  {
+   "id": "F06",
+   "title": "Isolate the active barrier-date switching surface",
+   "live_status": "ready (activated)",
+   "tier": "T5",
+   "disposition": "dormant until trigger",
+   "wave_or_trigger": "TRIG-F31-10x FIRED; C10 challenger wave",
+   "key_dependency": "F02, C10",
+   "cost": "M",
+   "kill_or_defer": "Defer until optimistic T_Q is within 10x of T_C. CPU-only when activated.",
+   "inequality_lever": "classical_cost_T_C_or_exponent",
+   "optimistic_max_factor": "<1.1x toward quantum - it can only lower T_C (by up to ~10-30x at eps=$0.001 if the knock-out p_C fell from 1.58-1.90 toward 1); it strengthens the negative and never helps the quantum side",
+   "evidence": "results/frontier_probe_20261021/headline/run002/headline_table.json; derived/run001/derived.json",
+   "reopen_rule": "Activated (optimistic T_Q within 10x of T_C: window 8.64-10.29 at primary). CPU-only screen of the active barrier-date switching surface, as a classical challenger input.",
+   "rigour_tier": "R0 register record",
+   "trigger_fired": [
+    "TRIG-F31-10x"
+   ],
+   "updated": "run002 (22 Oct 2026, frontier probe)"
+  },
+  {
+   "id": "F07",
+   "title": "Screen rare-event proposals with their likelihood-ratio costs",
+   "live_status": "ready (activated)",
+   "tier": "T5",
+   "disposition": "dormant until trigger",
+   "wave_or_trigger": "TRIG-F31-10x FIRED; C10 challenger wave",
+   "key_dependency": "F02, C10",
+   "cost": "S",
+   "kill_or_defer": "Archived survival/tail-share screen only when activated.",
+   "inequality_lever": "classical_cost_T_C_or_exponent",
+   "optimistic_max_factor": "<1.1x toward quantum - a frozen Gaussian tilt mainly lowers classical variance; reused coherently it adds an exp-of-linear-form likelihood ratio (about one exponential leaf) per call for at most a symmetric 1.1-2x sigma gain; the knock-out call (price ~3.28, sigma ~5.2) is not a rare-event estimand",
+   "evidence": "results/frontier_probe_20261021/headline/run002/headline_table.json; derived/run001/derived.json",
+   "reopen_rule": "Activated with F06. Archived survival/tail-share screen of rare-event proposals, CPU-only.",
+   "rigour_tier": "R0 register record",
+   "trigger_fired": [
+    "TRIG-F31-10x"
+   ],
+   "updated": "run002 (22 Oct 2026, frontier probe)"
+  },
+  {
+   "id": "F08",
+   "title": "Keep the exact bounded rewrite; reject the losing two-probability shortcut",
+   "live_status": "partial",
+   "tier": "T4",
+   "disposition": "closed or folded into N1",
+   "wave_or_trigger": "W0-WS3",
+   "key_dependency": "E03, A01 split",
+   "cost": "S",
+   "kill_or_defer": "Re-tiered from lever (<1.1x). Close when R*(1-s) >= 0.8.",
+   "inequality_lever": "estimator_constant_k",
+   "optimistic_max_factor": "<1.1x - for a payoff in [0,m], sigma <= m*sqrt(p(1-p)), so the single-indicator rewrite never needs fewer queries than variance-normalised estimation of the payoff itself; it saves only payoff-rotation arithmetic, a small slice of a path-dominated call; the two-probability variant was already 10.15x worse",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row F08",
+   "reopen_rule": "Re-tiered from lever (<1.1x). Close when R*(1-s) >= 0.8.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "F09",
+   "title": "Do not retain variance-based quantum rates in an infinite-variance model",
+   "live_status": "conditional",
+   "tier": "T6",
+   "disposition": "parked: different task (TRIG-G0)",
+   "wave_or_trigger": "PARK",
+   "key_dependency": "G0 heavy-tail contract",
+   "cost": "S",
+   "kill_or_defer": "Defer indefinitely.",
+   "inequality_lever": "task_scope_change",
+   "optimistic_max_factor": "n/a (different task) - GBM payoffs have finite moments of all orders; a heavy-tail contract is a separate benchmark and at p=3/2 the quantum exponent worsens to 3/2",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row F09",
+   "reopen_rule": "Defer indefinitely.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "F10",
+   "title": "Reallocate multilevel work using separate classical and quantum costs",
+   "live_status": "partial",
+   "tier": "T6",
+   "disposition": "parked: different task (TRIG-G0)",
+   "wave_or_trigger": "PARK",
+   "key_dependency": "Heston A4",
+   "cost": "S",
+   "kill_or_defer": "Closed: free-correction floors reject tenfold (<=1.35x).",
+   "inequality_lever": "task_scope_change",
+   "optimistic_max_factor": "n/a on the fixed task (GBM is simulated exactly at the monitoring dates, so there are no discretization levels to reallocate); on the Heston A4 contract even free corrections give <=1.35x (base level 10.17 of 13.75 s)",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row F10",
+   "reopen_rule": "Closed: free-correction floors reject tenfold (<=1.35x).",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "F11",
+   "title": "Reduce the base cost before spending on fine corrections",
+   "live_status": "partial",
+   "tier": "T6",
+   "disposition": "parked: different task (TRIG-G0)",
+   "wave_or_trigger": "PARK",
+   "key_dependency": "F10",
+   "cost": "S",
+   "kill_or_defer": "Closed with F10. No matched timing.",
+   "inequality_lever": "task_scope_change",
+   "optimistic_max_factor": "n/a on the fixed task; on Heston A4 a cheaper base is used equally by classical (training-inclusive matched timing), so the hybrid ratio is bounded by the 1.35x free-correction cap against a 32-523x coherent-step miss",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row F11",
+   "reopen_rule": "Closed with F10. No matched timing.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "F12",
+   "title": "Separate positivity, coupling quality and Heston convergence proofs",
+   "live_status": "partial",
+   "tier": "T6",
+   "disposition": "parked: different task (TRIG-G0)",
+   "wave_or_trigger": "PARK",
+   "key_dependency": "F10",
+   "cost": "S",
+   "kill_or_defer": "Closed: a coupling gain cannot beat a free correction.",
+   "inequality_lever": "task_scope_change",
+   "optimistic_max_factor": "n/a on the fixed task; on Heston a better coupling (beta above the measured 1.24) only lowers correction variance, which F10 shows cannot matter because free corrections already fail",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row F12",
+   "reopen_rule": "Closed: a coupling gain cannot beat a free correction.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "F13",
+   "title": "Audit non-Lipschitz antithetic theory at the square-root boundary",
+   "live_status": "partial",
+   "tier": "T6",
+   "disposition": "parked: different task (TRIG-G0)",
+   "wave_or_trigger": "PARK",
+   "key_dependency": "F12",
+   "cost": "S",
+   "kill_or_defer": "Closed (rejected transfer on a named hypothesis).",
+   "inequality_lever": "certification_only",
+   "optimistic_max_factor": "n/a (certification) - a theorem-transfer audit on a different contract",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row F13",
+   "reopen_rule": "Closed (rejected transfer on a named hypothesis).",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "F14",
+   "title": "Screen exact Heston transitions at contractual dates",
+   "live_status": "partial",
+   "tier": "T6",
+   "disposition": "parked: different task (TRIG-G0)",
+   "wave_or_trigger": "PARK",
+   "key_dependency": "F15; inversion certificate",
+   "cost": "S",
+   "kill_or_defer": "Frozen on the missing inverse certificate.",
+   "inequality_lever": "task_scope_change",
+   "optimistic_max_factor": "n/a on the fixed task (GBM transitions are already exact Gaussians in the current source); on Heston an exact Broadie-Kaya/Poisson-conditioned transition needs coherent characteristic-function or Bessel inversion, plausibly costlier than the square-root step that already misses 32-523x",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row F14",
+   "reopen_rule": "Frozen on the missing inverse certificate.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "F15",
+   "title": "Repair the actual fast-forwarding assumptions before compilation",
+   "live_status": "partial",
+   "tier": "T6",
+   "disposition": "parked: different task (TRIG-G0)",
+   "wave_or_trigger": "PARK",
+   "key_dependency": "F14",
+   "cost": "S",
+   "kill_or_defer": "Frozen. Reopen only with F10's trigger.",
+   "inequality_lever": "task_scope_change",
+   "optimistic_max_factor": "n/a on the fixed task; on Heston A1 a certified fast-forward still faces the 32-523x coherent arithmetic miss and A4 violates the decoupled covariance form",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row F15",
+   "reopen_rule": "Frozen. Reopen only with F10's trigger.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "F16",
+   "title": "Identify the exact failed factorization before changing a nested model",
+   "live_status": "partial",
+   "tier": "T6",
+   "disposition": "parked: different task (TRIG-G0)",
+   "wave_or_trigger": "PARK",
+   "key_dependency": "D1 contract",
+   "cost": "S",
+   "kill_or_defer": "Closed: GBM factor reuse holds.",
+   "inequality_lever": "task_scope_change",
+   "optimistic_max_factor": "n/a on the fixed task (no nested estimand); the GBM future-factor reuse audit already explains Failure 2",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row F16",
+   "reopen_rule": "Closed: GBM factor reuse holds.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "F17",
+   "title": "Certify exercise-policy error near the continuation boundary",
+   "live_status": "partial",
+   "tier": "T6",
+   "disposition": "parked: different task (TRIG-G0)",
+   "wave_or_trigger": "PARK",
+   "key_dependency": "D1 contract",
+   "cost": "S",
+   "kill_or_defer": "Closed as done.",
+   "inequality_lever": "task_scope_change",
+   "optimistic_max_factor": "n/a on the fixed task (no exercise decision in a European knock-out basket)",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row F17",
+   "reopen_rule": "Closed as done.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "F18",
+   "title": "Match nested-estimation theorems to the actual contract and costs",
+   "live_status": "partial",
+   "tier": "T6",
+   "disposition": "parked: different task (TRIG-G0)",
+   "wave_or_trigger": "PARK",
+   "key_dependency": "D1; E14/E15",
+   "cost": "S",
+   "kill_or_defer": "Closed on missing interfaces.",
+   "inequality_lever": "task_scope_change",
+   "optimistic_max_factor": "n/a on the fixed task; on D1 the best nested quantum theory has a gap of ~1 in the exponent against nested MLMC, which shrinks with depth",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row F18",
+   "reopen_rule": "Closed on missing interfaces.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "F19",
+   "title": "Expand one deterministic nested schedule instead of hiding depth constants",
+   "live_status": "conditional",
+   "tier": "T6",
+   "disposition": "parked: different task (TRIG-G0)",
+   "wave_or_trigger": "PARK",
+   "key_dependency": "F18",
+   "cost": "S",
+   "kill_or_defer": "Deferred with F18.",
+   "inequality_lever": "task_scope_change",
+   "optimistic_max_factor": "n/a on the fixed task; on D1 the inner loop needed 1.1e15-4.9e16 conditional source calls, so an explicit schedule can only expose larger constants",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row F19",
+   "reopen_rule": "Deferred with F18.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "F20",
+   "title": "Evaluate controls by residual size times full oracle cost",
+   "live_status": "closed (probe P1)",
+   "tier": "T4",
+   "disposition": "closed or folded into N1",
+   "wave_or_trigger": "CLOSED 22 Oct (frontier probe P1)",
+   "key_dependency": "F31, A01 split",
+   "cost": "S / M",
+   "kill_or_defer": "Grant 4.5x sigma at zero depth in F31. Close if the credited miss stays >=10x. Cost coherent preintegration only if the other levers reach miss <=4x.",
+   "inequality_lever": "sigma_over_e_or_variance",
+   "optimistic_max_factor": "1.1-2x - hard cap ~4.5x (B8x52 sigma 5.15 -> 1.14, B4x12 5.73 -> 1.25) if the quantum side alone obtained the preintegration-level sigma for free (classical T_C already includes preintegration, so here the gain is not symmetric); but coherent preintegration of the knock-out needs per-date root solves of sums of exponentials plus normal-CDF evaluations (square-root leaf 225,193, divide 398,256 T-depth), plausibly 1-5x the current 6.6e5 source depth, leaving a net of ~0.75-2x; no geometric control exists for the knock-out",
+   "evidence": "results/frontier_probe_20261021/p1/run001/p1_span.json; p1/run002/p1b_hybrid.json; results/frontier_probe_20261021/review/p1_review.jsonl; review/p2_review.jsonl",
+   "reopen_rule": "Closed. Any control with a closed-form mean is continuous at the arithmetic-basket barrier, where the payoff jumps by $38.6, so the residual span is >= $38.6 of $38.8 for every beta (net <= 1.59 with U1). Reopen only for a control with a certified mean that carries the arithmetic barrier on every date.",
+   "rigour_tier": "R0 register record",
+   "updated": "run002 (22 Oct 2026, frontier probe)"
+  },
+  {
+   "id": "F21",
+   "title": "Treat rough-volatility precision rates as measured contract-specific results",
+   "live_status": "conditional",
+   "tier": "T6",
+   "disposition": "parked: different task (TRIG-G0)",
+   "wave_or_trigger": "PARK",
+   "key_dependency": "G0 rough-vol contract",
+   "cost": "S",
+   "kill_or_defer": "Defer.",
+   "inequality_lever": "task_scope_change",
+   "optimistic_max_factor": "n/a (different task) - rough volatility is not the fixed GBM law",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row F21",
+   "reopen_rule": "Defer.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "F22",
+   "title": "Charge factor rank and bias in a Markovian rough-process lift",
+   "live_status": "conditional",
+   "tier": "T6",
+   "disposition": "parked: different task (TRIG-G0)",
+   "wave_or_trigger": "PARK",
+   "key_dependency": "F21",
+   "cost": "S",
+   "kill_or_defer": "Defer with F21.",
+   "inequality_lever": "task_scope_change",
+   "optimistic_max_factor": "n/a (different task)",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row F22",
+   "reopen_rule": "Defer with F21.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "F23",
+   "title": "Certify dimension compression on both architectures",
+   "live_status": "partial",
+   "tier": "T5",
+   "disposition": "dormant until trigger",
+   "wave_or_trigger": "TRIG-SUPPLY",
+   "key_dependency": "H05/H17 supply binding",
+   "cost": "S",
+   "kill_or_defer": "Re-tiered from lever (<1.1x latency). Keep full rank. Reopen only if supply binds AND a new barrier-mass bound exists.",
+   "inequality_lever": "oracle_depth_rho",
+   "optimistic_max_factor": "<1.1x on latency - Gaussians are generated in parallel, so rank r touches the critical path only through a log-depth matrix-vector product; it could cut T-count/width by up to ~d/r (the binding term if magic-state supply rather than depth limits: a tenfold win already needs ~2e13 T-states/s at k=1), but no rank passed the certified barrier-bias screen",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row F23",
+   "reopen_rule": "Re-tiered from lever (<1.1x latency). Keep full rank. Reopen only if supply binds AND a new barrier-mass bound exists.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "F24",
+   "title": "Specify the exact Asian/barrier PDE before costing a quantum solve",
+   "live_status": "partial",
+   "tier": "T5",
+   "disposition": "dormant until trigger",
+   "wave_or_trigger": "W1-REG record; TRIG-LIT",
+   "key_dependency": "F25",
+   "cost": "S",
+   "kill_or_defer": "Close the quantum PDE route by the per-date-work argument. Log the classical PDE as a candidate C10 comparator.",
+   "inequality_lever": "oracle_depth_rho",
+   "optimistic_max_factor": "<1.1x on the fixed task - GBM transitions between monitoring dates are already exact Gaussians in the path oracle, while the basket barrier test at each of the 12/52 dates still needs coherent exponentials on grid coordinates; a PDE adds time-discretization bias, non-unitary heat-kernel and barrier-projection steps and an overlap-readout normalization (F25)",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row F24",
+   "reopen_rule": "Close the quantum PDE route by the per-date-work argument. Log the classical PDE as a candidate C10 comparator.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "F25",
+   "title": "Propagate overlap readout error into dollars and repeated evolution cost",
+   "live_status": "partial",
+   "tier": "T5",
+   "disposition": "dormant until trigger",
+   "wave_or_trigger": "W1-REG record",
+   "key_dependency": "F24",
+   "cost": "S",
+   "kill_or_defer": "Closes with F24.",
+   "inequality_lever": "estimator_constant_k",
+   "optimistic_max_factor": "<1.1x - the overlap/ratio readout's dollar error scales with the normalization (grid mass, payoff-vector norm) and needs repeated state preparation plus evolution per copy; it can only add to k",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row F25",
+   "reopen_rule": "Closes with F24.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "F26",
+   "title": "Audit one SPDE/BDSDE update only for an independently justified model",
+   "live_status": "conditional",
+   "tier": "T6",
+   "disposition": "parked: different task (TRIG-G0)",
+   "wave_or_trigger": "PARK",
+   "key_dependency": "G0 SPDE contract",
+   "cost": "S",
+   "kill_or_defer": "Defer.",
+   "inequality_lever": "task_scope_change",
+   "optimistic_max_factor": "n/a (different task)",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row F26",
+   "reopen_rule": "Defer.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "F27",
+   "title": "Choose the exact multi-output error norm before pricing its penalty",
+   "live_status": "audit",
+   "tier": "T6",
+   "disposition": "parked: different task (TRIG-G0)",
+   "wave_or_trigger": "PARK",
+   "key_dependency": "G0 multi-output",
+   "cost": "S",
+   "kill_or_defer": "Defer.",
+   "inequality_lever": "task_scope_change",
+   "optimistic_max_factor": "n/a (different task) - the fixed task outputs one price per contract",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row F27",
+   "reopen_rule": "Defer.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "F28",
+   "title": "Match a valid barrier Greek against a classical adjoint or smoothed estimator",
+   "live_status": "conditional",
+   "tier": "T6",
+   "disposition": "parked: different task (TRIG-G0)",
+   "wave_or_trigger": "PARK",
+   "key_dependency": "F27, E19",
+   "cost": "S",
+   "kill_or_defer": "Defer with F27.",
+   "inequality_lever": "task_scope_change",
+   "optimistic_max_factor": "n/a (different task)",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row F28",
+   "reopen_rule": "Defer with F27.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "F29",
+   "title": "Treat an aggregate portfolio as one declared observable",
+   "live_status": "conditional",
+   "tier": "T6",
+   "disposition": "parked: different task (TRIG-G0)",
+   "wave_or_trigger": "PARK",
+   "key_dependency": "F27, E18",
+   "cost": "S",
+   "kill_or_defer": "Defer with F27.",
+   "inequality_lever": "task_scope_change",
+   "optimistic_max_factor": "n/a (different task)",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row F29",
+   "reopen_rule": "Defer with F27.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "F30",
+   "title": "Compare tensor compression with direct classical contraction",
+   "live_status": "partial",
+   "tier": "T5",
+   "disposition": "dormant until trigger",
+   "wave_or_trigger": "W1-REG record",
+   "key_dependency": "A03/A04",
+   "cost": "S",
+   "kill_or_defer": "Closed by the dequantization two-branch argument. A low-rank result goes to C10.",
+   "inequality_lever": "oracle_depth_rho",
+   "optimistic_max_factor": "<1.1x - dequantization trap: a certified low-TT-rank integrand that would make quantum loading cheap also lets classical contraction compute the integral in O(d r^3) operations, far below the 2.7/22.5 s T_C, so the ratio cannot improve; the knock-out's 12/52-date max kinks make a low certified rank unlikely anyway",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row F30",
+   "reopen_rule": "Closed by the dequantization two-branch argument. A low-rank result goes to C10.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "F31",
+   "title": "Replace exponent requirements with the matched complete-time inequality",
+   "live_status": "audit",
+   "tier": "T1",
+   "disposition": "decision-critical (W0 done)",
+   "wave_or_trigger": "W0-WS1; W1 recompute; N1 (R2)",
+   "key_dependency": "F01, F02, E02, H03, H17",
+   "cost": "S",
+   "kill_or_defer": "Never killed: the master ledger. Rerun when an input moves beyond its stated uncertainty.",
+   "inequality_lever": "accounting_or_evidence",
+   "optimistic_max_factor": "n/a (decision ledger) - moves no term; it makes every other row decidable",
+   "evidence": "results/frontier_probe_20261021/headline/run002/headline_table.json; derived/run001/derived.json",
+   "reopen_rule": "Never killed: the master ledger. Rerun 22 Oct with the probe inputs (headline run002): minimum explicit M 10.29 (window) / 232.0 (canonical) / 801.5 (certified today).",
+   "rigour_tier": "R0 register record",
+   "updated": "run002 (22 Oct 2026, frontier probe)"
+  },
+  {
+   "id": "F32",
+   "title": "Use quantum walks only when the financial input has a real mixing bottleneck",
+   "live_status": "conditional",
+   "tier": "T6",
+   "disposition": "parked: different task (TRIG-G0)",
+   "wave_or_trigger": "PARK",
+   "key_dependency": "G0 non-direct-sampling law",
+   "cost": "S",
+   "kill_or_defer": "Closed: no mixing bottleneck.",
+   "inequality_lever": "task_scope_change",
+   "optimistic_max_factor": "n/a - direct GBM Gaussian sampling has no mixing bottleneck",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row F32",
+   "reopen_rule": "Closed: no mixing bottleneck.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "H01",
+   "title": "Decoder latency is not universally tens of microseconds",
+   "live_status": "audit",
+   "tier": "T4",
+   "disposition": "closed or folded into N1",
+   "wave_or_trigger": "W0-WS4",
+   "key_dependency": "C15",
+   "cost": "S",
+   "kill_or_defer": "One anchor table. Close if no d>=15 complete loop below 100 ns exists.",
+   "inequality_lever": "logical_layer_time",
+   "optimistic_max_factor": "<1.1x vs the 100 ns decision point: best primary complete loops are 446-550 ns readout-to-feedback at d=3 (Yang; Liu), 4.5-5.5x SLOWER than the assumed t_layer; the item can only confirm that 100 ns is quantum-favourable",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row H01",
+   "reopen_rule": "One anchor table. Close if no d>=15 complete loop below 100 ns exists.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "H02",
+   "title": "Fast standalone decoding is not the entire reaction loop",
+   "live_status": "audit",
+   "tier": "T4",
+   "disposition": "closed or folded into N1",
+   "wave_or_trigger": "W0-WS4",
+   "key_dependency": "H01",
+   "cost": "S",
+   "kill_or_defer": "Two fields in the H01 table. Close with H01.",
+   "inequality_lever": "logical_layer_time",
+   "optimistic_max_factor": "<1.1x: separating kernel from complete loop can only raise latency above the kernel figure; the decision point (100 ns) is already below the best complete loops (446-550 ns)",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row H02",
+   "reopen_rule": "Two fields in the H01 table. Close with H01.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "H03",
+   "title": "A code cycle and a logical T layer are different quantities",
+   "live_status": "ready",
+   "tier": "T4",
+   "disposition": "closed or folded into N1",
+   "wave_or_trigger": "N1 headline scope input (cite H03 leaf ratio by SHA)",
+   "key_dependency": "accepted-source gate arrays",
+   "cost": "S",
+   "kill_or_defer": "Recount the full B4/B8 source by CCX/Toffoli layers (4.00 on leaves) and adopt that depth in the frontier. No reaction-map retry.",
+   "inequality_lever": "oracle_depth_rho",
+   "optimistic_max_factor": "2-10x: zero-cost screen in this triage measured T-depth / Toffoli-layer depth = 4.00 exactly on emitted add72, mul72 and mul40 leaves (seven-T ASAP charges 4 T-layers per serial Toffoli); a further <=2x only if uncompute Toffolis become measurement-based (A16 credit). Shared with H06/H11, count once. Cannot close: B8 miss 1,018x -> 255x (127x with uncompute credit); B4 7,807x -> 1,952x at 100 ns, eps=0.001, k=3",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row H03",
+   "reopen_rule": "Recount the full B4/B8 source by CCX/Toffoli layers (4.00 on leaves) and adopt that depth in the frontier. No reaction-map retry.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "H04",
+   "title": "Repeating distance-many syndrome rounds per operation is not mandatory in every architecture",
+   "live_status": "conditional",
+   "tier": "T5",
+   "disposition": "dormant until trigger",
+   "wave_or_trigger": "register only (zero-cost line held in triage row)",
+   "key_dependency": "H03, H18",
+   "cost": "M",
+   "kill_or_defer": "Latency branch closed: the per-layer floor is >= one syndrome round, which is >=100 ns.",
+   "inequality_lever": "logical_layer_time",
+   "optimistic_max_factor": "<1.1x vs the 100 ns decision point: constant-round algorithmic fault tolerance still costs >=1 syndrome round + decode per layer (~1 us superconducting, ~ms neutral atoms); 100 ns is already below one round",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row H04",
+   "reopen_rule": "Latency branch closed: the per-layer floor is >= one syndrome round, which is >=100 ns.",
+   "rigour_tier": "R0 register record",
+   "trigger_fired": [
+    "TRIG-HWACT (marginal: window M 8.64-10.29 at 100 ns)"
+   ],
+   "note": "TRIG-HWACT fired marginally on the window class; latency anchors are unchanged and hardware architecture work stays frozen pending user authorization.",
+   "updated": "run002 (22 Oct 2026, frontier probe)"
+  },
+  {
+   "id": "H05",
+   "title": "Fifteen-to-one distillation is not the only magic-state supply",
+   "live_status": "ready",
+   "tier": "T5",
+   "disposition": "dormant until trigger",
+   "wave_or_trigger": "TRIG-HWACT",
+   "key_dependency": "H17, H18",
+   "cost": "S",
+   "kill_or_defer": "Frozen. Necessary-condition (supply) row only.",
+   "inequality_lever": "logical_layer_time",
+   "optimistic_max_factor": "<1.1x on the full inequality: supply is a non-binding term of max(reaction, supply) at the decision point (implicitly unlimited factories); as a standalone necessary condition the tenfold rate is 1.9e15-7.6e16 accepted T/s (C04 frontier run002), so a 2-10x cultivation spacetime saving changes no verdict",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row H05",
+   "reopen_rule": "Frozen. Necessary-condition (supply) row only.",
+   "rigour_tier": "R0 register record",
+   "trigger_fired": [
+    "TRIG-HWACT (marginal: window M 8.64-10.29 at 100 ns)"
+   ],
+   "note": "TRIG-HWACT fired marginally on the window class; latency anchors are unchanged and hardware architecture work stays frozen pending user authorization.",
+   "updated": "run002 (22 Oct 2026, frontier probe)"
+  },
+  {
+   "id": "H06",
+   "title": "T-state supply and Toffoli-state supply must be matched to the circuit",
+   "live_status": "partial",
+   "tier": "T3",
+   "disposition": "deferred certification debt",
+   "wave_or_trigger": "W0-WS4 (folded into H03); TRIG-HWACT",
+   "key_dependency": "H03",
+   "cost": "S",
+   "kill_or_defer": "Fold into the H03 pass. CCZ mapping frozen until HW-ACT.",
+   "inequality_lever": "logical_layer_time",
+   "optimistic_max_factor": "<1.1x incremental: its depth effect is the same <=4x CCZ-layer credit already assigned to H03 (count once); its supply effect (one CCZ state instead of 7 T) acts on a non-binding term",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row H06",
+   "reopen_rule": "Fold into the H03 pass. CCZ mapping frozen until HW-ACT.",
+   "rigour_tier": "R0 register record",
+   "trigger_fired": [
+    "TRIG-HWACT (marginal: window M 8.64-10.29 at 100 ns)"
+   ],
+   "note": "TRIG-HWACT fired marginally on the window class; latency anchors are unchanged and hardware architecture work stays frozen pending user authorization.",
+   "updated": "run002 (22 Oct 2026, frontier probe)"
+  },
+  {
+   "id": "H07",
+   "title": "Distillation is not logically necessary for every non-Clifford implementation",
+   "live_status": "partial",
+   "tier": "T5",
+   "disposition": "dormant until trigger",
+   "wave_or_trigger": "register only",
+   "key_dependency": "H18",
+   "cost": "S",
+   "kill_or_defer": "Latency branch closed (cat gates are microsecond-scale).",
+   "inequality_lever": "logical_layer_time",
+   "optimistic_max_factor": "<1.1x: protected cat-qubit logical gates are microsecond-scale (slower than the 100 ns decision point); the gain is removal of distillation footprint, which acts on the non-binding supply/space terms",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row H07",
+   "reopen_rule": "Latency branch closed (cat gates are microsecond-scale).",
+   "rigour_tier": "R0 register record",
+   "trigger_fired": [
+    "TRIG-HWACT (marginal: window M 8.64-10.29 at 100 ns)"
+   ],
+   "note": "TRIG-HWACT fired marginally on the window class; latency anchors are unchanged and hardware architecture work stays frozen pending user authorization.",
+   "updated": "run002 (22 Oct 2026, frontier probe)"
+  },
+  {
+   "id": "H08",
+   "title": "An alternative physical qubit does not automatically eliminate all factories",
+   "live_status": "conditional",
+   "tier": "T5",
+   "disposition": "dormant until trigger",
+   "wave_or_trigger": "TRIG-HWACT",
+   "key_dependency": "H07",
+   "cost": "L",
+   "kill_or_defer": "Defer. Kill if the H07 duration screen gives >=100 ns.",
+   "inequality_lever": "logical_layer_time",
+   "optimistic_max_factor": "<1.1x: complete cat architectures still pay Toffoli preparation, teleportation, routing and idling at microsecond-scale operation times; no route below 100 ns per layer",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row H08",
+   "reopen_rule": "Defer. Kill if the H07 duration screen gives >=100 ns.",
+   "rigour_tier": "R0 register record",
+   "trigger_fired": [
+    "TRIG-HWACT (marginal: window M 8.64-10.29 at 100 ns)"
+   ],
+   "note": "TRIG-HWACT fired marginally on the window class; latency anchors are unchanged and hardware architecture work stays frozen pending user authorization.",
+   "updated": "run002 (22 Oct 2026, frontier probe)"
+  },
+  {
+   "id": "H09",
+   "title": "Surface-code physical-qubit overhead is not universal",
+   "live_status": "partial",
+   "tier": "T5",
+   "disposition": "dormant until trigger",
+   "wave_or_trigger": "TRIG-HWACT",
+   "key_dependency": "H15/A06",
+   "cost": "S",
+   "kill_or_defer": "Direct integration closed. Reopen only with a binding qubit cap.",
+   "inequality_lever": "none",
+   "optimistic_max_factor": "<1.1x on the time inequality: qLDPC memory compression changes physical-qubit footprint, not reaction depth, k, sigma/e or T_C; only indirect effect is more E20 lanes under a fixed physical budget, which E20 owns",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row H09",
+   "reopen_rule": "Direct integration closed. Reopen only with a binding qubit cap.",
+   "rigour_tier": "R0 register record",
+   "trigger_fired": [
+    "TRIG-HWACT (marginal: window M 8.64-10.29 at 100 ns)"
+   ],
+   "note": "TRIG-HWACT fired marginally on the window class; latency anchors are unchanged and hardware architecture work stays frozen pending user authorization.",
+   "updated": "run002 (22 Oct 2026, frontier probe)"
+  },
+  {
+   "id": "H10",
+   "title": "High-rate codes also have logical-operation research",
+   "live_status": "conditional",
+   "tier": "T5",
+   "disposition": "dormant until trigger",
+   "wave_or_trigger": "TRIG-HWACT",
+   "key_dependency": "H09",
+   "cost": "L",
+   "kill_or_defer": "Defer until H09 reopens.",
+   "inequality_lever": "none",
+   "optimistic_max_factor": "<1.1x: qLDPC logic reduces footprint; inter-block gates, addressability and code conversion add latency, so it cannot beat the 100 ns reaction-limited layer already granted",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row H10",
+   "reopen_rule": "Defer until H09 reopens.",
+   "rigour_tier": "R0 register record",
+   "trigger_fired": [
+    "TRIG-HWACT (marginal: window M 8.64-10.29 at 100 ns)"
+   ],
+   "note": "TRIG-HWACT fired marginally on the window class; latency anchors are unchanged and hardware architecture work stays frozen pending user authorization.",
+   "updated": "run002 (22 Oct 2026, frontier probe)"
+  },
+  {
+   "id": "H11",
+   "title": "Addressable transversal non-Clifford gates are a distinct route",
+   "live_status": "partial",
+   "tier": "T5",
+   "disposition": "dormant until trigger",
+   "wave_or_trigger": "TRIG-HWACT",
+   "key_dependency": "H03",
+   "cost": "S",
+   "kill_or_defer": "Timing branch closed. Reopen with a physical CCZ.",
+   "inequality_lever": "logical_layer_time",
+   "optimistic_max_factor": "<1.1x incremental: the CCZ-per-layer gate-set gain is the same <=4x credit assigned to H03 (count once); physical CCZ plus stabilizer extraction keeps the layer >=~1 us, above the 100 ns decision point; factory removal acts on non-binding supply",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row H11",
+   "reopen_rule": "Timing branch closed. Reopen with a physical CCZ.",
+   "rigour_tier": "R0 register record",
+   "trigger_fired": [
+    "TRIG-HWACT (marginal: window M 8.64-10.29 at 100 ns)"
+   ],
+   "note": "TRIG-HWACT fired marginally on the window class; latency anchors are unchanged and hardware architecture work stays frozen pending user authorization.",
+   "updated": "run002 (22 Oct 2026, frontier probe)"
+  },
+  {
+   "id": "H12",
+   "title": "Constant asymptotic overhead is not a small finite constant",
+   "live_status": "partial",
+   "tier": "T5",
+   "disposition": "dormant until trigger",
+   "wave_or_trigger": "TRIG-LIT",
+   "key_dependency": "H18",
+   "cost": "S",
+   "kill_or_defer": "Closed. No numeric O(1) overhead.",
+   "inequality_lever": "none",
+   "optimistic_max_factor": "<1.1x: space-overhead theorem with unspecified constants; does not reduce logical depth or layer time (logarithmic-time overhead can only add time)",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row H12",
+   "reopen_rule": "Closed. No numeric O(1) overhead.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "H13",
+   "title": "Idle space can dominate a physical mapping",
+   "live_status": "partial",
+   "tier": "T5",
+   "disposition": "dormant until trigger",
+   "wave_or_trigger": "TRIG-HWACT",
+   "key_dependency": "H15/A06",
+   "cost": "S",
+   "kill_or_defer": "Timing branch closed. Reopen with a binding qubit cap.",
+   "inequality_lever": "none",
+   "optimistic_max_factor": "<1.1x: active-volume layouts cut idle spacetime volume (footprint/cost), not reaction depth; Litinski-Nickerson themselves assume ~1 us reaction, slower than the 100 ns already granted",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row H13",
+   "reopen_rule": "Timing branch closed. Reopen with a binding qubit cap.",
+   "rigour_tier": "R0 register record",
+   "trigger_fired": [
+    "TRIG-HWACT (marginal: window M 8.64-10.29 at 100 ns)"
+   ],
+   "note": "TRIG-HWACT fired marginally on the window class; latency anchors are unchanged and hardware architecture work stays frozen pending user authorization.",
+   "updated": "run002 (22 Oct 2026, frontier probe)"
+  },
+  {
+   "id": "H14",
+   "title": "Photonic clock rates cannot be inserted directly as logical-layer rates",
+   "live_status": "conditional",
+   "tier": "T5",
+   "disposition": "dormant until trigger",
+   "wave_or_trigger": "register only",
+   "key_dependency": "H13",
+   "cost": "S",
+   "kill_or_defer": "Required 0.39/0.051 ns vs the photonic floor: closes as non-closing.",
+   "inequality_lever": "logical_layer_time",
+   "optimistic_max_factor": "1.1-2x realistic, <=10x only in a hypothetical ~10 ns complete reaction loop: GHz resource-state clocks do not lower a reaction-limited layer below detection + feedforward + decoding; even 10 ns leaves B8 >=25x and B4 >=195x short of tenfold with the H03 credit",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row H14",
+   "reopen_rule": "Required 0.39/0.051 ns vs the photonic floor: closes as non-closing.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "H15",
+   "title": "Millions of logical qubits in the emitted oracle are not an information lower bound",
+   "live_status": "partial",
+   "tier": "T5",
+   "disposition": "dormant until trigger",
+   "wave_or_trigger": "TRIG-WIDTH",
+   "key_dependency": "A06 (owner), E20",
+   "cost": "M",
+   "kill_or_defer": "Defer the rebuild until HW-ACT, or until E20 lanes become the binding lever.",
+   "inequality_lever": "estimator_constant_k",
+   "optimistic_max_factor": "<1.1x on the single-lane inequality (packing is depth-neutral, recomputation only adds depth); its only time effect is more E20 parallel lanes under a fixed physical budget (up to L, owned by E20), and the supply bound is lane-invariant",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row H15",
+   "reopen_rule": "Defer the rebuild until HW-ACT, or until E20 lanes become the binding lever.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "H16",
+   "title": "Classical parallelism is inexpensive in this benchmark but not literally free",
+   "live_status": "ready",
+   "tier": "T4",
+   "disposition": "closed or folded into N1",
+   "wave_or_trigger": "DONE in W0: 1-16 worker grid run001",
+   "key_dependency": "C09",
+   "cost": "S",
+   "kill_or_defer": "Re-score at T_C x16. Run the 1-16 worker grid only if a miss is <=16x.",
+   "inequality_lever": "classical_cost_T_C",
+   "optimistic_max_factor": "<1.1x on rows that already use measured 16-worker wall time (C2/C09: T_C=22.5 s B8, 2.69 s B4 at eps=0.001, workers=16); a single-worker convention is bounded by T_1 <= 16*T_16, i.e. <=16x quantum-favourable, which this item would only shrink by measuring the real speedup",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row H16",
+   "reopen_rule": "Re-score at T_C x16. Run the 1-16 worker grid only if a miss is <=16x.",
+   "rigour_tier": "R0 register record"
+  },
+  {
+   "id": "H17",
+   "title": "T depth alone does not determine runtime",
+   "live_status": "ready",
+   "tier": "T3",
+   "disposition": "deferred certification debt",
+   "wave_or_trigger": "W0-WS4 (columns); A3",
+   "key_dependency": "H03, G3",
+   "cost": "S / L",
+   "kill_or_defer": "Add the 2 necessary-condition columns. Architecture attachment frozen until HW-ACT.",
+   "inequality_lever": "accounting_or_evidence",
+   "optimistic_max_factor": "n/a (certification): the logical ledger is reconciled (43 fixtures; N_T 5.12e14 B4 / 4.20e15 B8; tenfold supply thresholds 1.9e15-7.6e16 T/s); adding physical reaction/supply/routing terms can only add quantum time",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row H17",
+   "reopen_rule": "Add the 2 necessary-condition columns. Architecture attachment frozen until HW-ACT.",
+   "rigour_tier": "R0 register record",
+   "trigger_fired": [
+    "TRIG-HWACT (marginal: window M 8.64-10.29 at 100 ns)"
+   ],
+   "note": "TRIG-HWACT fired marginally on the window class; latency anchors are unchanged and hardware architecture work stays frozen pending user authorization.",
+   "updated": "run002 (22 Oct 2026, frontier probe)"
+  },
+  {
+   "id": "H18",
+   "title": "Error per operation must fall as the entire computation grows",
+   "live_status": "ready",
+   "tier": "T3",
+   "disposition": "deferred certification debt",
+   "wave_or_trigger": "A3",
+   "key_dependency": "C03, E07, G3",
+   "cost": "S",
+   "kill_or_defer": "Recompute only when G3 fixes the estimator count. No admissibility checks on >100 ns anchors.",
+   "inequality_lever": "certification_only",
+   "optimistic_max_factor": "n/a (certification): union-bound targets (1.95e-18 per T state B4, 2.38e-19 B8; data/control ~1e-19 per op) only raise code distance, layer time and footprint",
+   "evidence": "docs/limitation_program_20261001/STATUS.md row H18",
+   "reopen_rule": "Recompute only when G3 fixes the estimator count. No admissibility checks on >100 ns anchors.",
+   "rigour_tier": "R0 register record",
+   "trigger_fired": [
+    "TRIG-HWACT (marginal: window M 8.64-10.29 at 100 ns)"
+   ],
+   "note": "TRIG-HWACT fired marginally on the window class; latency anchors are unchanged and hardware architecture work stays frozen pending user authorization.",
+   "updated": "run002 (22 Oct 2026, frontier probe)"
+  }
+ ],
+ "changes": [
+  {
+   "id": "A02",
+   "before": {},
+   "after": {
+    "note": "TRIG-R2/R1.5 not fired at the primary floor (residual 10.29). P3: M <= 1 at the primary conventions needs BOTH the loader and the exponential near-free (0.965); either alone >= 4.36."
+   }
+  },
+  {
+   "id": "A03",
+   "before": {},
+   "after": {
+    "note": "TRIG-R2/R1.5 not fired at the primary floor (residual 10.29). P3: M <= 1 at the primary conventions needs BOTH the loader and the exponential near-free (0.965); either alone >= 4.36."
+   }
+  },
+  {
+   "id": "A04",
+   "before": {},
+   "after": {
+    "note": "TRIG-R2/R1.5 not fired at the primary floor (residual 10.29). P3: M <= 1 at the primary conventions needs BOTH the loader and the exponential near-free (0.965); either alone >= 4.36."
+   }
+  },
+  {
+   "id": "A05",
+   "before": {},
+   "after": {
+    "note": "TRIG-R2/R1.5 not fired at the primary floor (residual 10.29). P3: M <= 1 at the primary conventions needs BOTH the loader and the exponential near-free (0.965); either alone >= 4.36."
+   }
+  },
+  {
+   "id": "A07",
+   "before": {},
+   "after": {
+    "note": "TRIG-R2/R1.5 not fired at the primary floor (residual 10.29). P3: M <= 1 at the primary conventions needs BOTH the loader and the exponential near-free (0.965); either alone >= 4.36."
+   }
+  },
+  {
+   "id": "A13",
+   "before": {},
+   "after": {
+    "note": "TRIG-R2/R1.5 not fired at the primary floor (residual 10.29). P3: M <= 1 at the primary conventions needs BOTH the loader and the exponential near-free (0.965); either alone >= 4.36."
+   }
+  },
+  {
+   "id": "A14",
+   "before": {},
+   "after": {
+    "note": "TRIG-R2/R1.5 not fired at the primary floor (residual 10.29). P3: M <= 1 at the primary conventions needs BOTH the loader and the exponential near-free (0.965); either alone >= 4.36."
+   }
+  },
+  {
+   "id": "C03",
+   "before": {
+    "wave_or_trigger": "A3",
+    "reopen_rule": "Freeze the skeleton with explicit 'unknown' rows. Complete only if some cell reaches plausible-tier miss <=30.",
+    "evidence": "docs/limitation_program_20261001/STATUS.md row C03"
+   },
+   "after": {
+    "wave_or_trigger": "A3; TRIGGER FIRED (plausible-tier miss 10.29 <= 30)",
+    "reopen_rule": "Trigger fired: a cell now reaches plausible-tier miss <= 30 (window class 10.29). Completing the confidence-allowance skeleton is claim-grade (R2) work; needs user authorization.",
+    "evidence": "results/frontier_probe_20261021/headline/run002/headline_table.json; derived/run001/derived.json",
+    "trigger_fired": [
+     "C03-30"
+    ]
+   }
+  },
+  {
+   "id": "C09",
+   "before": {
+    "wave_or_trigger": "N1 envelope slice; A1 full G4",
+    "reopen_rule": "Branch N: practice vs symmetric-rigour envelope from existing runs, no timings. Full G4 stays frozen until miss <=30.",
+    "evidence": "docs/limitation_program_20261001/STATUS.md row C09"
+   },
+   "after": {
+    "wave_or_trigger": "N1 envelope slice (done); A1 full G4; TRIGGER FIRED (miss <= 30)",
+    "reopen_rule": "Envelope slice done in N1 (36.9x). Trigger fired (miss 10.29 <= 30): a full G4 timed successful price is now due before any claim at the symmetric convention.",
+    "evidence": "results/frontier_probe_20261021/headline/run002/headline_table.json; derived/run001/derived.json",
+    "trigger_fired": [
+     "C09-30"
+    ]
+   }
+  },
+  {
+   "id": "C10",
+   "before": {
+    "live_status": "partial",
+    "wave_or_trigger": "N1 label; A1 challengers",
+    "reopen_rule": "Branch N: label 'strongest tested'. Implement challengers (CPU) only if a scenario reaches miss <=3.",
+    "evidence": "docs/limitation_program_20261001/STATUS.md row C10"
+   },
+   "after": {
+    "live_status": "partial (challenger wave started 22 Oct)",
+    "wave_or_trigger": "N1 label; TRIGGER FIRED (scenario miss <= 3); C10 challenger wave",
+    "reopen_rule": "Trigger fired: scenarios reach miss <= 3 (all-free 0.511, symmetric 0.279). Implement CPU challengers on the binding cell B8x52 $0.001 (with F06/F07). A faster eligible challenger lowers T_C and raises M.",
+    "evidence": "results/frontier_probe_20261021/headline/run002/headline_table.json; derived/run001/derived.json",
+    "trigger_fired": [
+     "C10-3"
+    ]
+   }
+  },
+  {
+   "id": "C11",
+   "before": {
+    "tier": "T3",
+    "live_status": "partial",
+    "wave_or_trigger": "W0-WS3 (bracket); A3 (compile)",
+    "reopen_rule": "Zero-cost k bracket in W0. Defer the full iterate compile until per-call depth is within 30x of k*D_max.",
+    "evidence": "docs/limitation_program_20261001/STATUS.md row C11"
+   },
+   "after": {
+    "tier": "T3",
+    "live_status": "partial (bracket updated)",
+    "wave_or_trigger": "W0-WS3 (bracket); probe P2; A3 (compile)",
+    "reopen_rule": "Bracket now 1.85 (counting floor) to 8.762 (certified Kaiser-window constant, parts 1-4 explicit, AI R2 reviewed, conditional on U1/U2 + direction-select). TRIGGER FIRED: per-call depth (2,296) is 10.3x k*D_max, inside 30x; the full iterate compile is now due but needs circuit work (not authorized; branch A).",
+    "evidence": "results/frontier_probe_20261021/p2/run002/p2_window.json; docs/frontier_probe_20261021/P2_DERIVATION.md; results/frontier_probe_20261021/headline/run002/headline_table.json; derived/run001/derived.json",
+    "trigger_fired": [
+     "C11-30x"
+    ]
+   }
+  },
+  {
+   "id": "C12",
+   "before": {
+    "reopen_rule": "Labelling ('six constructions, three contracts, one toolchain'). No new backend unless the floor brings miss <=10."
+   },
+   "after": {
+    "reopen_rule": "Labelling stands. Trigger formally fired (all-free floor brings miss <= 10 under the window class), but a new backend is circuit work: not authorized.",
+    "trigger_fired": [
+     "C12-10"
+    ]
+   }
+  },
+  {
+   "id": "C14",
+   "before": {
+    "reopen_rule": "Merged into F31 as its decision view. If min miss >10 at every corner >=100 ns, publish the scoped 'no tenfold'.",
+    "evidence": "docs/limitation_program_20261001/STATUS.md row C14"
+   },
+   "after": {
+    "reopen_rule": "Rule 'publish the scoped no-tenfold if min miss > 10 at every corner >= 100 ns' NO LONGER HOLDS: window class 10.29 (failure 0.003) / 8.64 (failure 0.01) at the primary corner, 0.511 at the all-free corner. The scoped negative must be restated as conditional on the primary convention and the current-law oracle (MEMO edits 1-3).",
+    "evidence": "results/frontier_probe_20261021/headline/run002/headline_table.json; derived/run001/derived.json",
+    "trigger_fired": [
+     "C14-10"
+    ]
+   }
+  },
+  {
+   "id": "E01",
+   "before": {
+    "reopen_rule": "Access-model card with the k* threshold. Route structural escapes to F04/F05/F20. No universal impossibility proof.",
+    "evidence": "docs/limitation_program_20261001/STATUS.md row E01"
+   },
+   "after": {
+    "reopen_rule": "Access-model card stands. Achievability bracket 1.85 to 8.762 (was ~198): gap ~4.7x. Structural escapes F04/F20 closed (probe P1); F05 live again under the window class.",
+    "evidence": "research/plan110_n1/estimator/estimator_card.md; results/frontier_probe_20261021/p2/run002/p2_window.json; docs/frontier_probe_20261021/P2_DERIVATION.md"
+   }
+  },
+  {
+   "id": "E03",
+   "before": {
+    "reopen_rule": "Credit <=2x analytically now. Certify p_max or the support-tight wrapper only on branch A, and only if >=1.5x fewer calls.",
+    "evidence": "docs/limitation_program_20261001/STATUS.md row E03"
+   },
+   "after": {
+    "reopen_rule": "Credit <=2x stands; U2 now also enters the window constant (without U2: k 25.8, M 30.3 at the primary convention). Certify the support-tight wrapper only on branch A.",
+    "evidence": "results/frontier_probe_20261021/headline/run002/headline_table.json; derived/run001/derived.json"
+   }
+  },
+  {
+   "id": "E04",
+   "before": {
+    "reopen_rule": "Zero-cost: archived 280,800 vs p-aware 491,505 (1.75x). Kill if the certified worst case is >=0.5x of canonical."
+   },
+   "after": {
+    "reopen_rule": "Zero-cost screen stands (1.75x). The window class keeps a QFT readout; E04's QFT-removal question does not apply to it."
+   }
+  },
+  {
+   "id": "E07",
+   "before": {
+    "wave_or_trigger": "A3",
+    "reopen_rule": "Favourable-ledger gate check only. Defer the 4 open obligations until favourable miss <=1.",
+    "evidence": "docs/limitation_program_20261001/STATUS.md row E07"
+   },
+   "after": {
+    "wave_or_trigger": "A3; TRIGGER FIRED (favourable miss <= 1)",
+    "reopen_rule": "Trigger fired: the favourable ledger reaches miss <= 1 (all-free + window 0.511). The 4 open ledger obligations are now live certification debt (claim-grade; needs authorization).",
+    "evidence": "results/frontier_probe_20261021/headline/run002/headline_table.json; derived/run001/derived.json",
+    "trigger_fired": [
+     "E07-1"
+    ]
+   }
+  },
+  {
+   "id": "E08",
+   "before": {
+    "reopen_rule": "One exact-binomial line (15 vs 11 shots, <=1.4x) credited, then close.",
+    "evidence": "docs/limitation_program_20261001/STATUS.md row E08"
+   },
+   "after": {
+    "reopen_rule": "Closed for the canonical schedule (15 vs 11 shots). Window class at failure 0.01: k 7.359 (M 8.64) vs 8.762 at 0.003.",
+    "evidence": "results/frontier_probe_20261021/p2/run002/p2_window.json; docs/frontier_probe_20261021/P2_DERIVATION.md"
+   }
+  },
+  {
+   "id": "E20",
+   "before": {
+    "reopen_rule": "State the width bound (P~1e3-1e4 lanes, >=4e9 logical qubits) and stop. No lane schedules unless width headroom >=2x and a parallel-matching rule exists."
+   },
+   "after": {
+    "reopen_rule": "Width bound stands; the window class is one coherent chain (no lane credit)."
+   }
+  },
+  {
+   "id": "E25",
+   "before": {
+    "tier": "T2",
+    "live_status": "partial",
+    "wave_or_trigger": "W0-WS3 (with E04)",
+    "reopen_rule": "Folded into E04. Kill if the literature has no worst-case coverage theorem.",
+    "evidence": "docs/limitation_program_20261001/STATUS.md row E25"
+   },
+   "after": {
+    "tier": "T4",
+    "live_status": "closed (kill rule met)",
+    "wave_or_trigger": "CLOSED 22 Oct (literature check)",
+    "reopen_rule": "Kill rule met: none of 8 further primary sources (KO, Hamoudi, Rall, Kimmel-Low-Yoder, Belliardo-Giovannetti, AQAE, RQAE, Labib) gives a worst-case coverage theorem below canonical; the best explicit is AQAE Thm 2, c(0.003) ~ 409. The window estimator (C11) supersedes this route. Reopen on TRIG-LIT.",
+    "evidence": "results/frontier_probe_20261021/p2/lit_check.jsonl"
+   }
+  },
+  {
+   "id": "F04",
+   "before": {
+    "tier": "T4",
+    "live_status": "conditional",
+    "wave_or_trigger": "W0-WS1",
+    "reopen_rule": "Re-tiered: closes on the F20 zero-depth credit. Reopen if the other levers bring miss <=4x.",
+    "evidence": "docs/limitation_program_20261001/STATUS.md row F04"
+   },
+   "after": {
+    "tier": "T4",
+    "live_status": "closed (probe P1)",
+    "wave_or_trigger": "CLOSED 22 Oct (frontier probe P1 run002)",
+    "reopen_rule": "Closed on evaluated costs, not on the withdrawn F20 zero-depth credit. Coherent preintegration nets 1.70; clipped/hybrid 3.42 at D ratio 1 and 2.62 at the structure-aware 1.30; k = 2-3 directions <= 0.70 (consistent gain pairing; kill threshold 4). Reopen only with a coherent preintegration oracle cheaper than the plain payoff oracle.",
+    "evidence": "results/frontier_probe_20261021/p1/run001/p1_span.json; p1/run002/p1b_hybrid.json; results/frontier_probe_20261021/review/p1_review.jsonl; review/p2_review.jsonl"
+   }
+  },
+  {
+   "id": "F05",
+   "before": {
+    "tier": "T2",
+    "live_status": "conditional",
+    "wave_or_trigger": "W0-WS2 (parameter)",
+    "reopen_rule": "Free-loading bound in the floor and F31. Close as a standalone route if >=10x miss remains.",
+    "evidence": "docs/limitation_program_20261001/STATUS.md row F05"
+   },
+   "after": {
+    "tier": "T2",
+    "live_status": "partial (lever live again)",
+    "wave_or_trigger": "W0-WS2 (parameter); probe P3",
+    "reopen_rule": "Kill rule (close if >=10x miss remains) no longer met under the window class: free loader alone gives M 5.43, loader + free exponential 0.965, all-free 0.511. Stays closed for the canonical class (122). Costing a real loader is A02-A04 work (TRIG-R2 not fired at primary).",
+    "evidence": "results/frontier_probe_20261021/p3/run002/p3_desk.json"
+   }
+  },
+  {
+   "id": "F06",
+   "before": {
+    "live_status": "ready",
+    "wave_or_trigger": "TRIG-F31-10x",
+    "reopen_rule": "Defer until optimistic T_Q is within 10x of T_C. CPU-only when activated.",
+    "evidence": "docs/limitation_program_20261001/STATUS.md row F06"
+   },
+   "after": {
+    "live_status": "ready (activated)",
+    "wave_or_trigger": "TRIG-F31-10x FIRED; C10 challenger wave",
+    "reopen_rule": "Activated (optimistic T_Q within 10x of T_C: window 8.64-10.29 at primary). CPU-only screen of the active barrier-date switching surface, as a classical challenger input.",
+    "evidence": "results/frontier_probe_20261021/headline/run002/headline_table.json; derived/run001/derived.json",
+    "trigger_fired": [
+     "TRIG-F31-10x"
+    ]
+   }
+  },
+  {
+   "id": "F07",
+   "before": {
+    "live_status": "ready",
+    "wave_or_trigger": "TRIG-F31-10x",
+    "reopen_rule": "Archived survival/tail-share screen only when activated.",
+    "evidence": "docs/limitation_program_20261001/STATUS.md row F07"
+   },
+   "after": {
+    "live_status": "ready (activated)",
+    "wave_or_trigger": "TRIG-F31-10x FIRED; C10 challenger wave",
+    "reopen_rule": "Activated with F06. Archived survival/tail-share screen of rare-event proposals, CPU-only.",
+    "evidence": "results/frontier_probe_20261021/headline/run002/headline_table.json; derived/run001/derived.json",
+    "trigger_fired": [
+     "TRIG-F31-10x"
+    ]
+   }
+  },
+  {
+   "id": "F20",
+   "before": {
+    "tier": "T2",
+    "live_status": "partial",
+    "wave_or_trigger": "W0-WS1 (credit)",
+    "reopen_rule": "Grant 4.5x sigma at zero depth in F31. Close if the credited miss stays >=10x. Cost coherent preintegration only if the other levers reach miss <=4x.",
+    "evidence": "docs/limitation_program_20261001/STATUS.md row F20"
+   },
+   "after": {
+    "tier": "T4",
+    "live_status": "closed (probe P1)",
+    "wave_or_trigger": "CLOSED 22 Oct (frontier probe P1)",
+    "reopen_rule": "Closed. Any control with a closed-form mean is continuous at the arithmetic-basket barrier, where the payoff jumps by $38.6, so the residual span is >= $38.6 of $38.8 for every beta (net <= 1.59 with U1). Reopen only for a control with a certified mean that carries the arithmetic barrier on every date.",
+    "evidence": "results/frontier_probe_20261021/p1/run001/p1_span.json; p1/run002/p1b_hybrid.json; results/frontier_probe_20261021/review/p1_review.jsonl; review/p2_review.jsonl"
+   }
+  },
+  {
+   "id": "F31",
+   "before": {
+    "reopen_rule": "Never killed: the master ledger. Rerun when an input moves beyond its stated uncertainty.",
+    "evidence": "docs/limitation_program_20261001/STATUS.md row F31"
+   },
+   "after": {
+    "reopen_rule": "Never killed: the master ledger. Rerun 22 Oct with the probe inputs (headline run002): minimum explicit M 10.29 (window) / 232.0 (canonical) / 801.5 (certified today).",
+    "evidence": "results/frontier_probe_20261021/headline/run002/headline_table.json; derived/run001/derived.json"
+   }
+  },
+  {
+   "id": "H04",
+   "before": {},
+   "after": {
+    "trigger_fired": [
+     "TRIG-HWACT (marginal: window M 8.64-10.29 at 100 ns)"
+    ],
+    "note": "TRIG-HWACT fired marginally on the window class; latency anchors are unchanged and hardware architecture work stays frozen pending user authorization."
+   }
+  },
+  {
+   "id": "H05",
+   "before": {},
+   "after": {
+    "trigger_fired": [
+     "TRIG-HWACT (marginal: window M 8.64-10.29 at 100 ns)"
+    ],
+    "note": "TRIG-HWACT fired marginally on the window class; latency anchors are unchanged and hardware architecture work stays frozen pending user authorization."
+   }
+  },
+  {
+   "id": "H06",
+   "before": {},
+   "after": {
+    "trigger_fired": [
+     "TRIG-HWACT (marginal: window M 8.64-10.29 at 100 ns)"
+    ],
+    "note": "TRIG-HWACT fired marginally on the window class; latency anchors are unchanged and hardware architecture work stays frozen pending user authorization."
+   }
+  },
+  {
+   "id": "H07",
+   "before": {},
+   "after": {
+    "trigger_fired": [
+     "TRIG-HWACT (marginal: window M 8.64-10.29 at 100 ns)"
+    ],
+    "note": "TRIG-HWACT fired marginally on the window class; latency anchors are unchanged and hardware architecture work stays frozen pending user authorization."
+   }
+  },
+  {
+   "id": "H08",
+   "before": {},
+   "after": {
+    "trigger_fired": [
+     "TRIG-HWACT (marginal: window M 8.64-10.29 at 100 ns)"
+    ],
+    "note": "TRIG-HWACT fired marginally on the window class; latency anchors are unchanged and hardware architecture work stays frozen pending user authorization."
+   }
+  },
+  {
+   "id": "H09",
+   "before": {},
+   "after": {
+    "trigger_fired": [
+     "TRIG-HWACT (marginal: window M 8.64-10.29 at 100 ns)"
+    ],
+    "note": "TRIG-HWACT fired marginally on the window class; latency anchors are unchanged and hardware architecture work stays frozen pending user authorization."
+   }
+  },
+  {
+   "id": "H10",
+   "before": {},
+   "after": {
+    "trigger_fired": [
+     "TRIG-HWACT (marginal: window M 8.64-10.29 at 100 ns)"
+    ],
+    "note": "TRIG-HWACT fired marginally on the window class; latency anchors are unchanged and hardware architecture work stays frozen pending user authorization."
+   }
+  },
+  {
+   "id": "H11",
+   "before": {},
+   "after": {
+    "trigger_fired": [
+     "TRIG-HWACT (marginal: window M 8.64-10.29 at 100 ns)"
+    ],
+    "note": "TRIG-HWACT fired marginally on the window class; latency anchors are unchanged and hardware architecture work stays frozen pending user authorization."
+   }
+  },
+  {
+   "id": "H13",
+   "before": {},
+   "after": {
+    "trigger_fired": [
+     "TRIG-HWACT (marginal: window M 8.64-10.29 at 100 ns)"
+    ],
+    "note": "TRIG-HWACT fired marginally on the window class; latency anchors are unchanged and hardware architecture work stays frozen pending user authorization."
+   }
+  },
+  {
+   "id": "H17",
+   "before": {},
+   "after": {
+    "trigger_fired": [
+     "TRIG-HWACT (marginal: window M 8.64-10.29 at 100 ns)"
+    ],
+    "note": "TRIG-HWACT fired marginally on the window class; latency anchors are unchanged and hardware architecture work stays frozen pending user authorization."
+   }
+  },
+  {
+   "id": "H18",
+   "before": {},
+   "after": {
+    "trigger_fired": [
+     "TRIG-HWACT (marginal: window M 8.64-10.29 at 100 ns)"
+    ],
+    "note": "TRIG-HWACT fired marginally on the window class; latency anchors are unchanged and hardware architecture work stays frozen pending user authorization."
+   }
+  }
+ ]
+}

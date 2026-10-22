@@ -1,5 +1,7 @@
 # Frontier probe, 21 October 2026: status
 
+> **Current numbers:** see [CURRENT_NUMBERS.md](../plan110_status_20261022/CURRENT_NUMBERS.md) (headline run006; window 26.1, all-free 1.30, symmetric 1.50, no single departure reaches M <= 1). Figures below may be from earlier runs.
+
 This probe ran P1 and P2 and then, because P2 cleared its target, the P3 desk estimate. It is an AI-assisted
 probe on branch `claude/kind-carson-9eedd7`, which starts from `research/limitation-plan110-backlog` at
 `10110ed9`. Nothing outside the three new `frontier_probe_20261021/` folders was written. The v3 draft, the

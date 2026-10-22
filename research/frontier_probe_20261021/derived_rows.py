@@ -10,9 +10,9 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "results" / "frontier_probe_20261021" / "derived" / "run001"
+OUT = ROOT / "results" / "frontier_probe_20261021" / "derived" / (sys.argv[2] if len(sys.argv) > 2 else "run001")
 IN = dict(p2=ROOT / "results/frontier_probe_20261021/p2/run002/p2_window.json",
-          head=ROOT / "results/frontier_probe_20261021/headline/run002/headline_table.json")
+          head=ROOT / f"results/frontier_probe_20261021/headline/{sys.argv[1] if len(sys.argv) > 1 else 'run002'}/headline_table.json")
 
 
 def main():

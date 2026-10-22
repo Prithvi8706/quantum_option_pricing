@@ -1,0 +1,104 @@
+{
+ "meta": {
+  "script": "research/c10_challengers_20261022/c09b_rep.py",
+  "python": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]",
+  "root": 2026102219,
+  "R": 17.3,
+  "case": "B8x52_H140",
+  "eps": 0.01,
+  "target": 0.0045000000000000005,
+  "ms": [
+   16,
+   64,
+   256,
+   1024
+  ]
+ },
+ "machine": [
+  {
+   "cpu_percent_30s": 7.90294310842391,
+   "busy_python": [],
+   "python_cpu_5s": [
+    "12240 0.00",
+    "30972 0.00"
+   ],
+   "battery_status": "2",
+   "physical_logical_cores": [
+    "16",
+    "22"
+   ],
+   "idle": true
+  },
+  {
+   "cpu_percent_30s": 7.69690796852492,
+   "busy_python": [],
+   "python_cpu_5s": [
+    "12240 0.00",
+    "30972 0.00"
+   ],
+   "battery_status": "2",
+   "physical_logical_cores": [
+    "16",
+    "22"
+   ],
+   "idle": true
+  }
+ ],
+ "practice_before": {
+  "n_run": 2048,
+  "walls": [
+   0.13721010001609102,
+   0.13277639998705126,
+   0.13045820000115782
+  ],
+  "median": 0.13277639998705126
+ },
+ "practice_after": {
+  "n_run": 2048,
+  "walls": [
+   0.12697129999287426,
+   0.12885730000562035,
+   0.13003570001455955
+  ],
+  "median": 0.12885730000562035
+ },
+ "pilots": {
+  "16": {
+   "var": 0.015181877540660438,
+   "sd_rep": 0.12321476186180144,
+   "n_rep_planned": 82281,
+   "points_planned": 1316496
+  },
+  "64": {
+   "var": 0.001822588555502514,
+   "sd_rep": 0.04269178557407167,
+   "n_rep_planned": 63158,
+   "points_planned": 4042112
+  },
+  "256": {
+   "var": 0.0003926599363940695,
+   "sd_rep": 0.019815648775502393,
+   "n_rep_planned": 58547,
+   "points_planned": 14988032
+  },
+  "1024": {
+   "var": 6.379458937147004e-05,
+   "sd_rep": 0.007987151517998769,
+   "n_rep_planned": 56295,
+   "points_planned": 57646080
+  }
+ },
+ "m_best": 16,
+ "main": {
+  "n": 82281,
+  "mean": 3.2815373831899897,
+  "var": 0.015530638319998945
+ },
+ "eb_bound": 0.004443345343715598,
+ "success": true,
+ "wall_df": 10.872604799980763,
+ "practice_median": 0.1302469500078587,
+ "factor_df_over_practice": 83.47684762925155,
+ "points": 1316496,
+ "label": "meas (timed replicated-RQMC distribution-free price; same-state practice); R from P1 (mod)"
+}

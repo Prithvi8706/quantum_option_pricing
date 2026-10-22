@@ -128,3 +128,35 @@ The rotation T cost is about 3.4e7 per shot, against about 2.3e13 T for the shot
 
 **Coverage.** 20 k cells have N < 800: all are ε = 0.10, split e = ε, and overhead-dominated, so none enters a
 reported minimum (`results/frontier_probe_20261021/coverage/run001/coverage.json`).
+
+## 6. Replacing the U1 mean credit with a quantum-only first stage (22 Oct)
+
+The √(m(S−m)) error rule needs an upper bound m_U ≥ m with m_U ≤ S/2. U1 supplies it from an uncertified classical
+price plus L1. The same certified estimator can supply it instead.
+
+**Stage 1.** Run the window estimator with failure δ1 and phase half-width D1, and no mean credit. Worst case over
+a, |â − a| ≤ D1/2 + D1²/4. Set a_U = â + D1/2 + D1²/4. With probability ≥ 1 − δ1,
+a ≤ a_U ≤ a + D1 + D1²/2.
+
+**Stage 2.** Run the estimator with failure δ2 and the mean bound m_U = S·a_U. The union bound gives δ1 + δ2 = 0.003.
+
+**Cost.** N = ⌈c(δ1)/D1⌉ + ⌈c(δ2)/D2(m_U)⌉, taken at the worst stage-1 outcome. Stage 1 is raised to N0 = 800 when it
+would be smaller, so the certificate covers it.
+
+**Certified constants** (γ = 0 Kaiser, parts 1-4, all N ≥ 800):
+- c(1e-4) = 6.052 (β = 5.72) and c(2.9e-3) = 4.197 (β = 3.88);
+- also c(3e-4) = 5.433, c(2.7e-3) = 4.236, c(1e-3) = 4.777 and c(2e-3) = 4.400.
+
+**Binding cell.** The optimum is δ1 = 1e-4 and D1 = 0.0035:
+- 1,730 + 102,602 = 104,332 calls, so **k = 9.058** (U1: 8.762);
+- the worst-case mean bound is 3.418, against the true 3.282.
+
+Output: `results/frontier_probe_20261021/p2/run003_self_mean/p2c_self_mean.json`; M rows in `derived/run003_self_mean`.
+
+**Review notes (r3, `results/frontier_probe_20261021/review/r3_review.jsonl`; minor, adopted as text).**
+- **Cap the mean bound.** Define m_U := min(S·a_U, S/2), so that stage 2 is defined even when stage 1 fails.
+- **Read the cost as a worst case over stage-1 successes.** 104,332 calls (k 9.058) holds with probability ≥ 1 − 1e-4.
+  With probability ≤ 1e-4, stage 1 fails and the capped stage 2 can take up to 182,785 calls (k 15.87). The error
+  guarantee is unaffected (union bound 0.003).
+- **Reproduced.** The reviewer re-certified c(1e-4) = 6.052 and c(0.0029) = 4.197 (each fails at −0.001) and
+  reproduced k = 9.0577.
