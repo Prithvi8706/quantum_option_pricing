@@ -6,6 +6,19 @@ extend-exclude = [
     # Executed evidence, kept byte-identical to what ran (Stage A verifier hashes the first).
     "results/frontier_completion_20260927/stage_a/executed_stage_a.py",
     "results/frontier_replay_20261001/q0_attribution/*.py",
+    # Generated results, executed-code copies and captured runtimes (byte-hashed evidence).
+    "results",
+    # Frozen research and evidence trees from 1-24 October (scripts are hash-pinned by their receipts).
+    "docs/independent_110_20261004",
+    "research/limitation_audit_20261001",
+    "research/limitation_program_20261001",
+    "research/independent_110_20261004",
+    "research/parallel_E11_unblock_20261010",
+    "research/plan110_w0",
+    "research/plan110_n1",
+    "research/frontier_probe_20261021",
+    "research/c10_challengers_20261022",
+    "research/claim_debts_20261022",
 ]
 
 [tool.ruff.lint]
