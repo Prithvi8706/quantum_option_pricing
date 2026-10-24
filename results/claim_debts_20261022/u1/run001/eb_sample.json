@@ -1,0 +1,72 @@
+{
+ "meta": {
+  "script": "research/claim_debts_20261022/u1/eb_sample.py",
+  "python": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]",
+  "numpy": "2.0.2",
+  "script_sha256": "445fab47acb58a35b2788cfa7208811c33ae95a6d465b91b16d22de683159dd0",
+  "rng": "numpy PCG64 default_rng([2026102231, 8, 52]), standard_normal",
+  "n_fixed_in_advance": 8388608,
+  "chunk": 32768,
+  "contract": {
+   "na": 8,
+   "nt": 52,
+   "spot": 100.0,
+   "strike": 100.0,
+   "barrier": 140.0,
+   "sigma": 0.3,
+   "rho": 0.4,
+   "rate": 0.03,
+   "maturity": 1.0,
+   "barrier_rule": "alive iff max_j B_j < 140"
+  },
+  "label": "meas (iid pseudo-random sample; iid-ness of the PRNG stream is assm)"
+ },
+ "machine": [
+  {
+   "cpu_percent_30s": 19.352409744888,
+   "busy_python": [
+    "20908 4.94"
+   ],
+   "python_cpu_5s": [
+    "12180 0.00",
+    "20844 0.00",
+    "20908 4.94",
+    "29340 0.00"
+   ],
+   "battery_status": "2",
+   "physical_logical_cores": [
+    "16",
+    "22"
+   ],
+   "idle": false
+  },
+  {
+   "cpu_percent_30s": 18.379998312233,
+   "busy_python": [
+    "20908 4.95"
+   ],
+   "python_cpu_5s": [
+    "12180 0.00",
+    "20844 0.00",
+    "20908 4.95",
+    "29340 0.00"
+   ],
+   "battery_status": "2",
+   "physical_logical_cores": [
+    "16",
+    "22"
+   ],
+   "idle": false
+  }
+ ],
+ "wall_s": 127.41532499997993,
+ "cpu_s": 125.46875,
+ "n": 8388608,
+ "sum": 27511280.478913397,
+ "sum_sq": 315625799.7501179,
+ "mean": 3.279600200523543,
+ "var_unbiased": 26.869753079958816,
+ "min": 0.0,
+ "max": 30.39805383114557,
+ "range_upper": 38.81782134194032
+}

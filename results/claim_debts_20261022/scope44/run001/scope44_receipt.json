@@ -1,0 +1,132 @@
+{
+ "meta": {
+  "script": "research/claim_debts_20261022/scope44/scope44_recompute.py",
+  "python": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]",
+  "inputs_sha256": {
+   "p2_window": "0447dd06e08262f53cd52d32d3c16c24e21c56044b45339619321719aced1094",
+   "p2_self_mean": "184cfe14576b6b48d443aca6dca7aec44a0a52c64ca84009acf02fcf1cf11dec",
+   "sigma": "9d3c4e361ec0a9f4d24fbebea7e1d6adb40e39326cf67d5fd44cca6a4fa27677",
+   "c2": "234bf8a873020ee8051f0202850aaec14a62c19349486c30c36867d4d61c9290",
+   "c5": "2492cc9129d1f4b1a118bb306cb2cf19e43d3f9c64ba7898875f30c2d90effda",
+   "overrides": "e5eb2ac3764a4ebe9e5e66f01280e023c8efd97e784b8fd8883918931c4681cc",
+   "floor_w0": "469b2a19ccf5e7c678c44a155f64dfc4c3ea3f0032d368032d3c3f66a49e8229",
+   "floor_n1": "8e728e2282e62d28e55bae56dd2ea0390be9c29d0a468390cb0f6f9fa87b99ee",
+   "reference_run006": "fd1eba885642fa61fae7cdc6abf67b875ed395d5c2bfd9c4cbfdd07c73057c7c",
+   "a2a": "5608ee4dbb83f862bdbe4143b238baae7502528ce62448ea2146aa35e5037555",
+   "c03": "37ddd631ad574e0bd11e919ccc37e2b7cb31c8faa94b92d2ac536ca55ec03e66",
+   "c11": "aa1deb635c67fafd1c2e226da3e70259fa17e1e535810312be2d821d61a6b5de"
+  },
+  "inputs": {
+   "p2_window": "results/frontier_probe_20261021/p2/run002/p2_window.json",
+   "p2_self_mean": "results/frontier_probe_20261021/p2/run003_self_mean/p2c_self_mean.json",
+   "sigma": "results/frontier_classical_20261001/sigma_dev/sigma_dev.json",
+   "c2": "results/frontier_classical_20261001/c2/c2_timing.json",
+   "c5": "results/frontier_classical_20261001/c5/timing/c5_timing.json",
+   "overrides": "results/c10_challengers_20261022/overrides_run006.json",
+   "floor_w0": "results/plan110_w0/ws_floor/floor.json",
+   "floor_n1": "results/plan110_n1/headline/floor_sheet.json",
+   "reference_run006": "results/frontier_probe_20261021/headline/run006/headline_table.json",
+   "a2a": "results/claim_debts_20261022/a2a/run001/summary.json",
+   "c03": "results/claim_debts_20261022/c03/run001/c03_ledger.json",
+   "c11": "results/claim_debts_20261022/c11/run001/summary.json"
+  },
+  "prospectus": "docs/claim_debts_20261022/SCOPE44_PROSPECTUS.md",
+  "prospectus_sha256": "6b496d23004fc195ee6825082d7ef8ea3fa568b00ff6ec636d2258a90a9fb760"
+ },
+ "inputs_recomputed": {
+  "k_window": 8.76178551342354,
+  "k_quantum_only_mean": 9.05765334495764,
+  "sigma_q": 5.183395545396595,
+  "sigma_over_e": 11518.65676754799,
+  "T_C": 8.886479314695709,
+  "T_C_source": [
+   "c2",
+   "preint"
+  ],
+  "T_C_stageC": 22.529285950004123,
+  "speedup": 2.5352319126818976,
+  "h16_ratio": 9.621344707967628,
+  "distfree_factor": 17.346359168921165,
+  "D_eff_primary": [
+   2296.03168,
+   {
+    "N1": 3605.12752,
+    "W0": 2296.03168
+   }
+  ],
+  "D_eff_all_free": [
+   114.0,
+   {
+    "N1": 163,
+    "W0": 114.0
+   }
+  ],
+  "D_eff_compiled": 201263
+ },
+ "M_binding_cell": {
+  "window_certified_fail0003": {
+   "primary": 26.07609752594745,
+   "all_free_oracle": 1.294701263859743,
+   "one_lane_one_core": 2.7102342050330357,
+   "symmetric_distfree": 1.503260555832779,
+   "all_free_plus_symmetric": 0.07463821377453154,
+   "compiled_iterate_primary": 2285.749653229855
+  },
+  "window_quantum_only_mean": {
+   "primary": 26.956634765537927,
+   "all_free_oracle": 1.3384207152016838,
+   "one_lane_one_core": 2.8017533498425227,
+   "symmetric_distfree": 1.5540226339735397,
+   "all_free_plus_symmetric": 0.07715859577032644,
+   "compiled_iterate_primary": 2362.934810558215
+  }
+ },
+ "comparison_with_run006": {
+  "primary": {
+   "recomputed": 26.07609752594745,
+   "run006": 26.07609752594745,
+   "rel_diff": 0.0
+  },
+  "all_free_oracle": {
+   "recomputed": 1.294701263859743,
+   "run006": 1.294701263859743,
+   "rel_diff": 0.0
+  },
+  "one_lane_one_core": {
+   "recomputed": 2.7102342050330357,
+   "run006": 2.7102342050330357,
+   "rel_diff": 0.0
+  },
+  "symmetric_distfree": {
+   "recomputed": 1.503260555832779,
+   "run006": 1.503260555832779,
+   "rel_diff": 0.0
+  },
+  "all_free_plus_symmetric": {
+   "recomputed": 0.07463821377453154,
+   "run006": 0.07463821377453154,
+   "rel_diff": 0.0
+  }
+ },
+ "input_rel_diffs": {
+  "T_C": 0.0,
+  "sigma_over_e": 0.0,
+  "D_eff": 0.0,
+  "k_window": 0.0
+ },
+ "independent_agreement_1e-9": true,
+ "eligibility": {
+  "bias_upper": 0.0003633735232206014,
+  "reserve": 0.00055,
+  "eligible_on_certified_bias": true
+ },
+ "c03_status": {
+  "window_quantum_only_mean": "failure budget fully allocated (B4 = 7/1000 explicit hardware premise); dollar side complete and within the 0.55 eps reserve",
+  "window_certified_U1": "failure budget fully allocated (B4 = 69/10000 explicit hardware premise); dollar side complete and within the 0.55 eps reserve"
+ },
+ "decision": {
+  "no_go_holds_all_explicit_single_departures": true,
+  "window_margin_primary": 26.07609752594745,
+  "rigour": "R1 delivered; R2 required by PLAN_110 sec. 4 (margin < 30x)"
+ }
+}

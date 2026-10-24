@@ -1,0 +1,123 @@
+{
+ "D_eff": {
+  "dependency_only_qf": 125129,
+  "floor": 2296.03168,
+  "literal_7T": 776965,
+  "most_favourable_qf": 95101,
+  "qf_floor_convention": 201263,
+  "supply_only_literal": 42676.59718,
+  "supply_only_qf": 24386.62696
+ },
+ "M": {
+  "floor_reference": {
+   "D_eff": 2296.03168,
+   "M": 26.07609752594745,
+   "N": 100924,
+   "T_C": 8.886479314695709,
+   "check": 26.07609752594745,
+   "k": 8.76178551342354
+  },
+  "self_mean_literal": 9125.9326376744,
+  "self_mean_qf": 2366.850554776789,
+  "supply_only_literal": 484.6793360191154,
+  "supply_only_qf": 276.95962058235165,
+  "window_dependency_only_qf": 1424.9403611461169,
+  "window_literal": 8827.877486674399,
+  "window_most_favourable_qf": 1083.9115054340082,
+  "window_qf": 2289.596378889079
+ },
+ "M_over_floor": {
+  "self_mean_literal": 349.9730981061675,
+  "self_mean_qf": 90.76705409701799,
+  "supply_only_literal": 18.587111646473453,
+  "supply_only_qf": 10.621206655127686,
+  "window_dependency_only_qf": 54.645460645643254,
+  "window_literal": 338.5428926966573,
+  "window_most_favourable_qf": 41.56724388514977,
+  "window_qf": 87.80441078695839
+ },
+ "all_checks_pass": true,
+ "case": "B8x52",
+ "checks": {
+  "floor_M_reproduced": true,
+  "pathA_equals_pathB": true,
+  "pathA_financial_equals_iterate_json": true,
+  "pathA_saved_iterate_equals_iterate_json": true,
+  "pathB_dependency_only_equals_recorded": true,
+  "pathB_financial_equals_iterate_json": true,
+  "pathB_reflection_replica_equals_saved": true,
+  "pathB_saved_iterate_equals_iterate_json": true,
+  "step_code_verified_all_n": true,
+  "u2_builder_c1_b46_equals_saved_selector": true,
+  "u2_exhaustive_cases": 40000,
+  "u2_exhaustive_small": true,
+  "u2_full_width_cases": 4281,
+  "u2_full_width_failures": 0,
+  "u2_ir_restatement_equals_saved_selector": true,
+  "u2_readout_within_2_pow_m39": true,
+  "u2_support_holds": true
+ },
+ "eps": 0.001,
+ "interpreter": "3.12.4",
+ "iterate": {
+  "ccx": 609665674,
+  "dependency_only_reaction": 125129,
+  "floor_D_eff": 2296.03168,
+  "floor_T_per_iterate": 229603168.0,
+  "floor_ratio_T_literal": 18.58711164647345,
+  "floor_ratio_T_qf": 10.621206655127684,
+  "most_favourable_reaction": 95101,
+  "t_count_literal": 4267659718,
+  "t_count_qf": 2438662696,
+  "t_depth": 776965,
+  "toffoli_depth": 201263
+ },
+ "outputs": {
+  "estimator_compile.json": "a912724305e947e9b8119fbce30948ba78665b359929351c382b5ba8dd820614",
+  "iterate_compile.json": "f6b25702f4df27e7d128c4ea331bd6381743d1a85190b801a56dd273ccfa5ae6",
+  "iterate_recount_pathB.json": "f9d6d5c0b8403860db41057ef397d8955f2602653b2d056e830ca45dafa075ae",
+  "u2_selector_gates.json": "19f136d51fbb89e6d08e0aa7b0ac99c24741ac0ff6269b8fcecb3f4060d43355",
+  "u2_wrapper.json": "ac79df590e93e37479e594aee08b9054c10b56a84349b9382af655c4361a11e5"
+ },
+ "rigour": "R1 (two independent recount paths; no peer review or lifecycle receipt; not R2)",
+ "run": "run001",
+ "schema": "c11-u2-summary-v1",
+ "scripts": {
+  "c11_common.py": "7d7ee91bbd4d1f4f3415b8de9328967a8f4f844f9a1762ef40752c51287234cb",
+  "estimator_compile.py": "28b99fb937b5477156f29f1f3f7c8c44c127ec258d6ca71f8ef2b541360f3ebb",
+  "iterate_compile.py": "d799570024f58ab6786ecb79c5effbdb18c35cea49626fd2bb06ca2d6700bf82",
+  "recount_independent.py": "c290261a8b32143883de00262648d1cd692907d60f741f415b824580667b5936",
+  "summary.py": "2d0e63cb2a3e9b2ed83d425a7c9249eda699e7b19ff33220410e3529b65a5dbe",
+  "u2_wrapper.py": "2acae3f12946ca9256ca730875e0628a658793a4de8edcad9f266ae68e71584f"
+ },
+ "shot_T_total": {
+  "literal": 430709323925728,
+  "qf": 246119628296176.0
+ },
+ "u2_delta_per_iterate": {
+  "extra_logical_qubits": 0,
+  "relative_t": 2.7129696780203716e-06,
+  "selector_pair": {
+   "ccx": 1640,
+   "clifford_t_depth": 19688,
+   "cx": 3492,
+   "source_gates": 5132,
+   "t_count": 11480,
+   "t_depth": 6560,
+   "toffoli_depth": 1640,
+   "x": 0
+  },
+  "t_count_total": 11578,
+  "t_depth_total": 6609
+ },
+ "width": {
+  "estimator_extra": {
+   "phase_register": 18,
+   "step_code_and_scratch": 130
+  },
+  "iterate_logical_qubits": 4460479,
+  "note": "upper count: the 17 old-buffer wires left after U2 could host part of the code register",
+  "primary_width_1e7_fits": true,
+  "total_upper": 4460627
+ }
+}

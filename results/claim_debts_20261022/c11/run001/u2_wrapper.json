@@ -1,0 +1,240 @@
+{
+ "case": "B8x52",
+ "construction": {
+  "adders": [
+   {
+    "shift": 1,
+    "width": 53
+   },
+   {
+    "shift": 4,
+    "width": 50
+   },
+   {
+    "shift": 6,
+    "width": 48
+   },
+   {
+    "shift": 7,
+    "width": 47
+   }
+  ],
+  "block": "copy sel; partial products of 211*Y into the extended register (copy + 4 Cuccaro adds); subtract; CX(msb, flag); undo",
+  "comparator_width": 54,
+  "shifts": [
+   0,
+   1,
+   4,
+   6,
+   7
+  ]
+ },
+ "delta_selector_pair": {
+  "ccx": 1640,
+  "clifford_t_depth": 19688,
+  "cx": 3492,
+  "source_gates": 5132,
+  "t_count": 11480,
+  "t_depth": 6560,
+  "toffoli_depth": 1640,
+  "x": 0
+ },
+ "design": "flag = [sel_53 < 211*Yraw]; a' = E[211*Yraw]/2^53 = E[Y_dollars]/S', S' = 8192/211 USD",
+ "exhaustive_small": [
+  {
+   "b": 6,
+   "c": 3,
+   "cases": 1024,
+   "passed": true,
+   "word_width": 6,
+   "y_bits": 4
+  },
+  {
+   "b": 8,
+   "c": 13,
+   "cases": 4096,
+   "passed": true,
+   "word_width": 6,
+   "y_bits": 4
+  },
+  {
+   "b": 9,
+   "c": 11,
+   "cases": 16384,
+   "passed": true,
+   "word_width": 7,
+   "y_bits": 5
+  },
+  {
+   "b": 11,
+   "c": 211,
+   "cases": 16384,
+   "passed": true,
+   "word_width": 5,
+   "y_bits": 3
+  },
+  {
+   "b": 7,
+   "c": 5,
+   "cases": 2048,
+   "passed": true,
+   "word_width": 6,
+   "y_bits": 4
+  },
+  {
+   "b": 3,
+   "c": 1,
+   "cases": 64,
+   "passed": true,
+   "word_width": 5,
+   "y_bits": 3
+  }
+ ],
+ "flags": 1,
+ "full_width": {
+  "cases": 4281,
+  "failures": [],
+  "seed": 2026102211
+ },
+ "inputs": {
+  "audit_B8": {
+   "path": "results/limitation_program_20261001/E03_support_audit_run002/B8x52_audit.json",
+   "sha256": "babcab95778dd1b8ca920e265ad30e0e7249ad7fe0f577f75e5624cc2276c00a"
+  },
+  "cert_B8": {
+   "path": "results/limitation_program_20261001/E03_support_run001/B8x52_certificate.json",
+   "sha256": "1bdfff95f143236549e928d305440eb5e522a69822aeb743e87563e8008ec8a8"
+  },
+  "iterate": {
+   "path": "results/limitation_program_20261001/E02_financial_run002/B8x52/iterate.json",
+   "sha256": "47b29f687e8ea4384034512cb0c34dc48f1c9143759301e9e3f7774f0adeaba8"
+  },
+  "lib": {
+   "path": "research/journal_sprint/reversible_fixed_point.py",
+   "sha256": "52584dee87c84541b9f9e2f070114d7276de3d49d306d33c471214795b729b8b"
+  },
+  "selector": {
+   "path": "results/limitation_program_20261001/E02_financial_run002/B8x52/selector.npy",
+   "sha256": "b68fa5ea2cb1b2bbf64300b497ce66eff1042fed5e3557f1f9956de5eef96f74"
+  }
+ },
+ "interpreter": "3.12.4",
+ "ir_equal_saved": true,
+ "labels": {
+  "counts": "meas (exact counts of the emitted list)",
+  "gate_list": "meas (emitted and simulated)",
+  "support": "cert (E03 certificate + independent audit)",
+  "t_convention": "exact seven-T CCX, as in the saved E02 costs; no measurement-based uncompute"
+ },
+ "outside_support": {
+  "c_times_y_ge_2_b": true,
+  "flag_correct_at_sel_0": false,
+  "note": "outside the certified support; the comparator need not be correct there",
+  "y": 70368744177663
+ },
+ "readout": {
+  "allowance_used": 4.547473508864641e-13,
+  "error_bound_statement": "|price_out - S'*sin^2(phi_hat/2)| <= 2^-41 + S'*(enclosure width) (the rounding half-step plus the enclosure); enclosure width observed <= worst_enclosure_width over the samples",
+  "label": "mod (exact for the stated procedure; the width bound is checked on samples, the formula holds for every j,l)",
+  "pi_enclosure_width": 6.849142082082185e-127,
+  "placeholder_2_pow_m39": 1.8189894035458565e-12,
+  "procedure": "exact rational phase r=(jK-l)/(GK); sin(pi r) enclosed with a Machin pi enclosure and a 40-term alternating Taylor series with remainder and Lipschitz terms; price = S'*a_hat rounded to the nearest 2^-40 dollar. No binary64 libm call.",
+  "samples": 404,
+  "within_placeholder": true,
+  "worst_enclosure_width": 2.059039972463021e-103,
+  "worst_observed_error": 4.541226369676144e-13
+ },
+ "resources_saved_recount": {
+  "forward": {
+   "ccx": 188,
+   "clifford_cx": 1689,
+   "clifford_h": 376,
+   "clifford_t_depth": 2260,
+   "cx": 561,
+   "cz": 0,
+   "h": 0,
+   "source_gates": 749,
+   "t_count": 1316,
+   "t_depth": 752,
+   "toffoli_depth": 188,
+   "x": 0,
+   "z": 0
+  },
+  "inverse": {
+   "ccx": 188,
+   "clifford_cx": 1689,
+   "clifford_h": 376,
+   "clifford_t_depth": 2260,
+   "cx": 561,
+   "cz": 0,
+   "h": 0,
+   "source_gates": 749,
+   "t_count": 1316,
+   "t_depth": 752,
+   "toffoli_depth": 188,
+   "x": 0,
+   "z": 0
+  }
+ },
+ "resources_u2": {
+  "forward": {
+   "ccx": 1008,
+   "clifford_cx": 8355,
+   "clifford_h": 2016,
+   "clifford_t_depth": 12104,
+   "cx": 2307,
+   "cz": 0,
+   "h": 0,
+   "source_gates": 3315,
+   "t_count": 7056,
+   "t_depth": 4032,
+   "toffoli_depth": 1008,
+   "x": 0,
+   "z": 0
+  },
+  "inverse": {
+   "ccx": 1008,
+   "clifford_cx": 8355,
+   "clifford_h": 2016,
+   "clifford_t_depth": 12104,
+   "cx": 2307,
+   "cz": 0,
+   "h": 0,
+   "source_gates": 3315,
+   "t_count": 7056,
+   "t_depth": 4032,
+   "toffoli_depth": 1008,
+   "x": 0,
+   "z": 0
+  }
+ },
+ "run": "run001",
+ "saved_recount_matches_iterate_json": true,
+ "schema": "c11-u2-support-tight-selector-v1",
+ "support": {
+  "b": 53,
+  "c": 211,
+  "c_times_sup": 9005616296818124,
+  "holds": true,
+  "slack": 1582957922868,
+  "source": "E03 certificate and independent audit payoff_raw_bounds (all-input support), equal to the E02 wrapper binding",
+  "span_dollars": "8192/211",
+  "span_float": 38.824644549763036,
+  "sup_Yraw": 42680645956484,
+  "two_pow_b": 9007199254740992,
+  "y_below_2_46": true
+ },
+ "u2_c1_equals_saved": true,
+ "width": {
+  "extra_selector_uniform_bits": 7,
+  "fits_private_bank": true,
+  "old_output_buffer_use": 55,
+  "old_output_buffer_width": 72,
+  "private_capacity": 1516959,
+  "qpe_controls_left_in_old_buffer": 17,
+  "saved_private_scratch": 95,
+  "saved_selector_qubits": 214,
+  "u2_private_scratch": 163,
+  "u2_selector_qubits": 289
+ }
+}

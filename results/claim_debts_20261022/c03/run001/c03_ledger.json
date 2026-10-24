@@ -1,0 +1,213 @@
+{
+ "meta": {
+  "script": "research/claim_debts_20261022/c03/c03_allocation.py",
+  "python": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]",
+  "inputs_sha256": {
+   "g2_ledger": "44ae5e0bf42a0683e78c91894af4752261634ec24f05469e0d96afc4bf602a12",
+   "e07_ledger": "0a46f28ef9d51f7d061edfd4d9705cf93f3222c58873f7ff35c52cc41d8461c9",
+   "e07_schedule": "4fdd33add8e18f83680bcda21f38fb0bb67cc1017323717b89a52165cb59b335",
+   "e03_audit": "43209c88565a1281f4c643b075add354078c3511a33ef0fa9caa08688b83cd47",
+   "p2_window": "0447dd06e08262f53cd52d32d3c16c24e21c56044b45339619321719aced1094",
+   "p2_self_mean": "184cfe14576b6b48d443aca6dca7aec44a0a52c64ca84009acf02fcf1cf11dec",
+   "headline": "fd1eba885642fa61fae7cdc6abf67b875ed395d5c2bfd9c4cbfdd07c73057c7c",
+   "bias_desk": "5bc61e9b3003a6d1e23e9ad5f4477c3b3187c33cec38f636fb6b86f792bd835d",
+   "a2a_summary": "5608ee4dbb83f862bdbe4143b238baae7502528ce62448ea2146aa35e5037555",
+   "c11_summary": "aa1deb635c67fafd1c2e226da3e70259fa17e1e535810312be2d821d61a6b5de",
+   "u1_summary": "10e8eae89cfa7a8aed2888da087f4ce1b00e8c14c41c154b06b25d29c95f1fdf"
+  },
+  "inputs": {
+   "g2_ledger": "results/limitation_program_20261001/E07_original_BM_G2_composition_run001/B8x52_G2_composed_ledger.json",
+   "e07_ledger": "results/limitation_program_20261001/E07_complete_run001/B8x52_complete_price_ledger.json",
+   "e07_schedule": "results/limitation_program_20261001/E07_schedule_run001/schedule.json",
+   "e03_audit": "results/limitation_program_20261001/E03_support_audit_run002/summary.json",
+   "p2_window": "results/frontier_probe_20261021/p2/run002/p2_window.json",
+   "p2_self_mean": "results/frontier_probe_20261021/p2/run003_self_mean/p2c_self_mean.json",
+   "headline": "results/frontier_probe_20261021/headline/run006/headline_table.json",
+   "bias_desk": "results/plan110_w0/ws_small/bias_desk_run001/bias_desk.json",
+   "a2a_summary": "results/claim_debts_20261022/a2a/run001/summary.json",
+   "c11_summary": "results/claim_debts_20261022/c11/run001/summary.json",
+   "u1_summary": "results/claim_debts_20261022/u1/run001/summary.json"
+  },
+  "rigour": "R1 desk ledger (exact arithmetic; certificates cited by sha256; no new physics)",
+  "cell": "B8x52, eps = $0.001, primary conventions, window estimator variants"
+ },
+ "variants": {
+  "window_quantum_only_mean": {
+   "k": 9.05765334495764,
+   "iterates": 104332,
+   "failure_ledger": [
+    {
+     "row": "B1",
+     "event": "window estimator (parts 3-4 inside)",
+     "allocation": "3/1000",
+     "status": "cert",
+     "evidence": "results/frontier_probe_20261021/p2/run003_self_mean/p2c_self_mean.json"
+    },
+    {
+     "row": "B2",
+     "event": "U1 classical mean certificate",
+     "allocation": "0",
+     "status": "removed",
+     "evidence": "quantum-only first stage (delta1 = 1/10000) replaces U1; no classical price enters"
+    },
+    {
+     "row": "B3",
+     "event": "source / financial-bridge events",
+     "allocation": "0",
+     "status": "cert (by citation)",
+     "evidence": "results/limitation_program_20261001/E07_original_BM_G2_composition_run001/B8x52_G2_composed_ledger.json: the A02 bridge is a pay-once dollar bound covering finite_input_law_and_joint_Box_Muller, clipped_log_tail, native_arithmetic_and_polynomial; the composed ledger's failure terms are ideal_estimator, QPE_rotation_synthesis, physical_execution, certificate_acquisition only"
+    },
+    {
+     "row": "B3a",
+     "event": "certificate acquisition",
+     "allocation": "0",
+     "status": "cert (by citation)",
+     "evidence": "results/limitation_program_20261001/E07_original_BM_G2_composition_run001/B8x52_G2_composed_ledger.json certificate_acquisition bound 0 (deterministic all-input support)"
+    },
+    {
+     "row": "B5",
+     "event": "direction-select and controlled powers",
+     "allocation": "0",
+     "status": "exact in cost model",
+     "evidence": "v4 sec. 4.2"
+    },
+    {
+     "row": "B4",
+     "event": "physical (logical) failure over the whole computation",
+     "allocation": "7/1000",
+     "status": "assm (explicit hardware premise; H18 condition)",
+     "evidence": "h18_condition"
+    }
+   ],
+   "failure_total": "1/100",
+   "h18_condition": [
+    {
+     "basis": "W0 floor D_eff = 2296.03168 layers (mod, q+)",
+     "iterates": 104332,
+     "T_per_iterate": 229603168.0,
+     "T_total": 23954957723776.0,
+     "logical_layers": 239549577.23776,
+     "qubit_layers": 2395495772377600.0,
+     "required_logical_failure_per_T": 2.9221508469005955e-16,
+     "required_logical_failure_per_qubit_layer": 2.9221508469005955e-18
+    },
+    {
+     "basis": "C11 compiled iterate, 4 T per Toffoli (q+; literal count 4267659718)",
+     "iterates": 104332,
+     "T_per_iterate": 2438662696.0,
+     "T_total": 254430556399072.0,
+     "logical_layers": 2544305563.99072,
+     "qubit_layers": 2.54430556399072e+16,
+     "required_logical_failure_per_T": 2.751241870894062e-17,
+     "required_logical_failure_per_qubit_layer": 2.751241870894062e-19
+    }
+   ],
+   "complete": true,
+   "complete_price_status": "failure budget fully allocated (B4 = 7/1000 explicit hardware premise); dollar side complete and within the 0.55 eps reserve"
+  },
+  "window_certified_U1": {
+   "k": 8.76178551342354,
+   "iterates": 100924,
+   "failure_ledger": [
+    {
+     "row": "B1",
+     "event": "window estimator (parts 3-4 inside)",
+     "allocation": "3/1000",
+     "status": "cert",
+     "evidence": "results/frontier_probe_20261021/p2/run002/p2_window.json"
+    },
+    {
+     "row": "B2",
+     "event": "U1 classical mean certificate",
+     "allocation": "1/10000",
+     "status": "cert (R1)",
+     "evidence": "results/claim_debts_20261022/u1/run001/summary.json: m_cert = 3.2880389500 covers the P2 premise m = 3.3268214100"
+    },
+    {
+     "row": "B3",
+     "event": "source / financial-bridge events",
+     "allocation": "0",
+     "status": "cert (by citation)",
+     "evidence": "results/limitation_program_20261001/E07_original_BM_G2_composition_run001/B8x52_G2_composed_ledger.json: the A02 bridge is a pay-once dollar bound covering finite_input_law_and_joint_Box_Muller, clipped_log_tail, native_arithmetic_and_polynomial; the composed ledger's failure terms are ideal_estimator, QPE_rotation_synthesis, physical_execution, certificate_acquisition only"
+    },
+    {
+     "row": "B3a",
+     "event": "certificate acquisition",
+     "allocation": "0",
+     "status": "cert (by citation)",
+     "evidence": "results/limitation_program_20261001/E07_original_BM_G2_composition_run001/B8x52_G2_composed_ledger.json certificate_acquisition bound 0 (deterministic all-input support)"
+    },
+    {
+     "row": "B5",
+     "event": "direction-select and controlled powers",
+     "allocation": "0",
+     "status": "exact in cost model",
+     "evidence": "v4 sec. 4.2"
+    },
+    {
+     "row": "B4",
+     "event": "physical (logical) failure over the whole computation",
+     "allocation": "69/10000",
+     "status": "assm (explicit hardware premise; H18 condition)",
+     "evidence": "h18_condition"
+    }
+   ],
+   "failure_total": "1/100",
+   "h18_condition": [
+    {
+     "basis": "W0 floor D_eff = 2296.03168 layers (mod, q+)",
+     "iterates": 100924,
+     "T_per_iterate": 229603168.0,
+     "T_total": 23172470127232.0,
+     "logical_layers": 231724701.27232,
+     "qubit_layers": 2317247012723200.0,
+     "required_logical_failure_per_T": 2.977671332453766e-16,
+     "required_logical_failure_per_qubit_layer": 2.977671332453766e-18
+    },
+    {
+     "basis": "C11 compiled iterate, 4 T per Toffoli (q+; literal count 4267659718)",
+     "iterates": 100924,
+     "T_per_iterate": 2438662696.0,
+     "T_total": 246119593931104.0,
+     "logical_layers": 2461195939.31104,
+     "qubit_layers": 2.46119593931104e+16,
+     "required_logical_failure_per_T": 2.8035151081597795e-17,
+     "required_logical_failure_per_qubit_layer": 2.8035151081597794e-19
+    }
+   ],
+   "complete": true,
+   "complete_price_status": "failure budget fully allocated (B4 = 69/10000 explicit hardware premise); dollar side complete and within the 0.55 eps reserve"
+  }
+ },
+ "dollar_ledger": [
+  {
+   "row": "A1",
+   "term": "statistical (window AE, parts 1-4)",
+   "bound": 0.00045,
+   "status": "cert",
+   "evidence": "results/frontier_probe_20261021/p2/run002/p2_window.json"
+  },
+  {
+   "row": "A2a",
+   "term": "finite law + clipped tail + native arithmetic (clip-split certificate)",
+   "bound": 0.0003633735232206014,
+   "status": "cert (R1)",
+   "evidence": "results/claim_debts_20261022/a2a/run001/summary.json"
+  },
+  {
+   "row": "A1a/A2c",
+   "term": "U2 wrapper readout and binary64 post-processing",
+   "bound": 1.8189894035458565e-12,
+   "status": "cert (R1)",
+   "evidence": "results/claim_debts_20261022/c11/run001/summary.json"
+  }
+ ],
+ "dollar_bias_reserve": 0.00055,
+ "dollar_bias_used": 0.0003633735250395908,
+ "dollar_bias_fits_reserve": true,
+ "dollar_ledger_complete": true,
+ "complete_price_status": {
+  "window_quantum_only_mean": "failure budget fully allocated (B4 = 7/1000 explicit hardware premise); dollar side complete and within the 0.55 eps reserve",
+  "window_certified_U1": "failure budget fully allocated (B4 = 69/10000 explicit hardware premise); dollar side complete and within the 0.55 eps reserve"
+ }
+}

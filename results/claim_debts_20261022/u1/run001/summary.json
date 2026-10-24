@@ -1,0 +1,48 @@
+{
+ "schema": "u1-certificate-summary-v1",
+ "rigour": "R1 (two arithmetic paths agree; fixed-n sample); NOT R2: no preregistration, sealed run or human review",
+ "cell": "B8x52, eps = $0.001, window class (S = 8192/211, e = 0.45 eps, failure 3/1000 with the part-4 budget)",
+ "all_checks_pass": true,
+ "m_cert": [
+  "13882508648406783302827186288678482302310664527892974937",
+  "4222124147343360000000000000000000000000000000000000000"
+ ],
+ "m_cert_float": 3.2880389500488563,
+ "pieces": {
+  "sample_mean": 3.279600200523543,
+  "eb_half_width": 0.008075375002092565,
+  "float_slack": "1/1000000000",
+  "ucb_EY": 3.2876755765256354,
+  "a2a_bias": 0.0003633735232206014
+ },
+ "delta_U": "1/10000",
+ "failure_share": "delta_U = 1e-4 is charged to the C03 failure union, taken from the 0.007 physical share (physical becomes 0.0069); the window estimator keeps its 0.003",
+ "p2_assumed_m": 3.3268214100246856,
+ "p2_assumption_covered": true,
+ "margin_to_p2_m": 0.03878245997582938,
+ "window_k_certified_premise": 8.761785513423542,
+ "window_M_certified_premise": 26.076097525947453,
+ "window_k_at_m_cert": 8.71533912555067,
+ "window_M_at_m_cert": 25.937867648253526,
+ "independent": {
+  "m_cert_abs_diff": 9.72053603865438e-41,
+  "N_calls_match": true
+ },
+ "machine_idle": [
+  false,
+  false
+ ],
+ "machine_note": "not idle (another session's python process at ~5 CPU-s per 5 s); irrelevant to correctness, the sample is not a timing measurement",
+ "files_sha256": {
+  "eb_sample.json": "373d66263ac53a0d04483640323c1566f26c7fce1add6e888659f4e6a50531b8",
+  "u1_certificate.json": "a965d569ea8183e2305a2740f25ce66119235dc8bec59f2abc57cebc026a1408",
+  "u1_independent.json": "652c6428878aebeb026dc7961c5165bd23f334321c55067f7f746f23922e04d5"
+ },
+ "producers_sha256": {
+  "eb_sample.py": "445fab47acb58a35b2788cfa7208811c33ae95a6d465b91b16d22de683159dd0",
+  "u1_certificate.py": "713db0df38ff86753063ec86462d7aac44de2ffa8648d57019dd7cbb822d7ee8",
+  "u1_independent.py": "06a772f62c892e2d6e35c6ab59c2cdb118b5e7a0d068ff616fa58488315b7035",
+  "summarize.py": "239b04541a26cc335d7a28a06fba8b40c1d6e45924d64ba43f0df83dfbe363af"
+ },
+ "interpreter": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]"
+}

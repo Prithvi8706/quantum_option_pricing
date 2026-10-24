@@ -1,0 +1,1490 @@
+{
+ "meta": {
+  "script": "research/claim_debts_20261022/v4_check_debts.py",
+  "python": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]",
+  "draft_sha256": "abfa878b6db7625f55f2e6c6d52272c9fe0ff4cc5bed467d42453b0ba4fb7161",
+  "inputs_sha256": {
+   "head": "fd1eba885642fa61fae7cdc6abf67b875ed395d5c2bfd9c4cbfdd07c73057c7c",
+   "p2": "0447dd06e08262f53cd52d32d3c16c24e21c56044b45339619321719aced1094",
+   "sm": "184cfe14576b6b48d443aca6dca7aec44a0a52c64ca84009acf02fcf1cf11dec",
+   "p1": "a704f9fedf7df5f450ffaa8460c6fed98e10311cb91ff70f1e50542b88996738",
+   "p1b": "881a544b17949db4bf3bce34c3f66e07395b0a10776830dfa860494119026463",
+   "p3": "513a8af985a4726cb6d95ba5d60d8b3b6b8f53afb5e16d91c686c3a941bcde36",
+   "h16": "dbbfd4427afdec758d3c66669e7bfc0fd3a2e510af9cf17890bf961e4fd499d1",
+   "f32c": "061250264764d8232aeefe43d3c79d47da7a01351f835df9cca38f6f4ee525a9",
+   "ov": "e5eb2ac3764a4ebe9e5e66f01280e023c8efd97e784b8fd8883918931c4681cc",
+   "c09_b8": "8ce019bf6592de155c5fc33be79391c5ab6cd54a444c41422be2e9cc8aec5552",
+   "c09_b4": "ed8424c8f98354770d7569f516b792902add14c19843d5411d230e7bc50f777e",
+   "c09_b8c": "a693c17a258cdde63ea76cf9f141c22513297cb6dea5edb8d7da61f10545c3cd",
+   "c09_b4c": "65068f30d14e9679275706b11a4399a75d7eac0caf63d8bfb40c9529f74af802",
+   "c09b_b8": "39ac9d7aaf5c107f7af3c914ea6c0fab63eafdd87ece78df48a02f8ab633afc9",
+   "c09b_b4": "a31d81453d75c6c3243c16276406b498e2456a6a46e00b7475e0549a39c5a83c",
+   "c09b_b8c": "6146c6a6432945ea26ec810b390ba2598b82b080bcdfc4e6d12ce3dfcbcb43bd",
+   "c09b_b4c": "b7aa3a9012c6fca8e1f68db4f8fa088db944922af11c0d4eddbdef6cacfc2462",
+   "tf32": "63276f47754e688c9c997c3643c524bfca2c1f2bd8960624d468db86d558e219",
+   "a2a": "5608ee4dbb83f862bdbe4143b238baae7502528ce62448ea2146aa35e5037555",
+   "u1": "10e8eae89cfa7a8aed2888da087f4ce1b00e8c14c41c154b06b25d29c95f1fdf",
+   "c11": "aa1deb635c67fafd1c2e226da3e70259fa17e1e535810312be2d821d61a6b5de",
+   "u2": "ac79df590e93e37479e594aee08b9054c10b56a84349b9382af655c4361a11e5",
+   "c03": "37ddd631ad574e0bd11e919ccc37e2b7cb31c8faa94b92d2ac536ca55ec03e66",
+   "h617": "d2122156617df1f696b1e6821e09e3728e096563b265c912c7d5b6f3f3fcbe13",
+   "s44": "3959e87ae3f93bdb8bcec7729a3164e0c2e9659007923d68db9ede75684a0ee1",
+   "reg9": "c87eeb2df07987a1fa711c2b83bd91099c2aa9b579d6594632c91007df37007f",
+   "e02": "47b29f687e8ea4384034512cb0c34dc48f1c9143759301e9e3f7774f0adeaba8"
+  }
+ },
+ "n_checks": 186,
+ "n_pass": 186,
+ "n_fail": 0,
+ "rows": [
+  {
+   "check": "A2a all checks pass",
+   "assertion": true,
+   "ok": true
+  },
+  {
+   "check": "A2a meets 0.55 eps",
+   "assertion": true,
+   "ok": true
+  },
+  {
+   "check": "U1 all checks pass and covers P2 m",
+   "assertion": true,
+   "ok": true
+  },
+  {
+   "check": "C11 all checks pass",
+   "assertion": true,
+   "ok": true
+  },
+  {
+   "check": "C03 both variants complete",
+   "assertion": true,
+   "ok": true
+  },
+  {
+   "check": "C03 failure totals 1/100",
+   "assertion": true,
+   "ok": true
+  },
+  {
+   "check": "C03 dollar ledger complete and fits",
+   "assertion": true,
+   "ok": true
+  },
+  {
+   "check": "S44 matches run006 exactly",
+   "assertion": true,
+   "ok": true
+  },
+  {
+   "check": "S44 independent agreement",
+   "assertion": true,
+   "ok": true
+  },
+  {
+   "check": "S44 eligible on certified bias",
+   "assertion": true,
+   "ok": true
+  },
+  {
+   "check": "S44 NO-GO under every single departure",
+   "assertion": true,
+   "ok": true
+  },
+  {
+   "check": "REG9 tiers as Appendix A",
+   "assertion": true,
+   "ok": true
+  },
+  {
+   "check": "v3 draft unchanged (sha256 prefix c7ab400d)",
+   "assertion": true,
+   "ok": true
+  },
+  {
+   "check": "T_C binding",
+   "token": "8.886",
+   "recomputed": 8.886479314695709,
+   "rounded": 8.886,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "T_C 8.89",
+   "token": "8.89",
+   "recomputed": 8.886479314695709,
+   "rounded": 8.89,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "T_C B4 0.001",
+   "token": "1.0475",
+   "recomputed": 1.0474785696990334,
+   "rounded": 1.0475,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "T_C B8 0.01",
+   "token": "0.3062",
+   "recomputed": 0.3061930419120425,
+   "rounded": 0.3062,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "T_C B4 0.01",
+   "token": "0.0583",
+   "recomputed": 0.058272500154820085,
+   "rounded": 0.0583,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "speedup product",
+   "token": "2.535",
+   "recomputed": 2.5352319126818976,
+   "rounded": 2.535,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "fast speedup QF",
+   "token": "2.078",
+   "recomputed": 2.0782363591661595,
+   "rounded": 2.078,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "f32 ratio",
+   "token": "1.220",
+   "recomputed": 1.2198958513549905,
+   "rounded": 1.22,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "f32 B8 time",
+   "token": "4.11",
+   "recomputed": 4.107004949983093,
+   "rounded": 4.11,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "sigma/e",
+   "token": "11,518.7",
+   "recomputed": 11518.65676754799,
+   "rounded": 11518.7,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "D_max(k=1)",
+   "token": "771.5",
+   "recomputed": 771.4857291113989,
+   "rounded": 771.5,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "k_10x",
+   "token": "0.336",
+   "recomputed": 0.3360083120070011,
+   "rounded": 0.336,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "D_eff W0",
+   "token": "2,296",
+   "recomputed": 2296.03168,
+   "rounded": 2296.0,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "D_eff N1",
+   "token": "3,605",
+   "recomputed": 3605.12752,
+   "rounded": 3605.0,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "k certified",
+   "token": "682.7",
+   "recomputed": 682.7449726739359,
+   "rounded": 682.7,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "k canonical",
+   "token": "197.6",
+   "recomputed": 197.59986306845366,
+   "rounded": 197.6,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "k window",
+   "token": "8.762",
+   "recomputed": 8.76178551342354,
+   "rounded": 8.762,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "k window 0.01",
+   "token": "7.359",
+   "recomputed": 7.359104599662848,
+   "rounded": 7.359,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "k selfmean",
+   "token": "9.058",
+   "recomputed": 9.05765334495764,
+   "rounded": 9.058,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "k noDS",
+   "token": "17.52",
+   "recomputed": 17.52357102684708,
+   "rounded": 17.52,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "k noU1U2",
+   "token": "25.80",
+   "recomputed": 25.79953600468822,
+   "rounded": 25.8,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "k canonical 0.01",
+   "token": "144.9",
+   "recomputed": 144.90656625019935,
+   "rounded": 144.9,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "M certified",
+   "token": "2,032",
+   "recomputed": 2031.9288192481088,
+   "rounded": 2032.0,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "M canonical",
+   "token": "588.1",
+   "recomputed": 588.0802825625827,
+   "rounded": 588.1,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "M canonical 0.01",
+   "token": "431.3",
+   "recomputed": 431.25887387922734,
+   "rounded": 431.3,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "M window",
+   "token": "26.1",
+   "recomputed": 26.07609752594745,
+   "rounded": 26.1,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "M window 0.01",
+   "token": "21.9",
+   "recomputed": 21.901555219590854,
+   "rounded": 21.9,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "M selfmean",
+   "token": "27.0",
+   "recomputed": 26.956634765537924,
+   "rounded": 27.0,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "M noDS",
+   "token": "52.2",
+   "recomputed": 52.1521950518949,
+   "rounded": 52.2,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "M noU1U2",
+   "token": "76.8",
+   "recomputed": 76.78243389452419,
+   "rounded": 76.8,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "all-free window",
+   "token": "1.29",
+   "recomputed": 1.294701263859743,
+   "rounded": 1.29,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "all-free selfmean",
+   "token": "1.34",
+   "recomputed": 1.3384207152016836,
+   "rounded": 1.34,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "all-free canonical",
+   "token": "29.2",
+   "recomputed": 29.198705225240808,
+   "rounded": 29.2,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "all-free certified",
+   "token": "100.9",
+   "recomputed": 100.88705979626745,
+   "rounded": 100.9,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "symmetric window",
+   "token": "1.50",
+   "recomputed": 1.503260555832779,
+   "rounded": 1.5,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "symmetric selfmean",
+   "token": "1.55",
+   "recomputed": 1.5540226339735395,
+   "rounded": 1.55,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "symmetric canonical",
+   "token": "33.9",
+   "recomputed": 33.902231404053055,
+   "rounded": 33.9,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "symmetric certified",
+   "token": "117.1",
+   "recomputed": 117.13863407651799,
+   "rounded": 117.1,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "allfree+sym window",
+   "token": "0.075",
+   "recomputed": 0.07463821377453154,
+   "rounded": 0.075,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "allfree+sym selfmean",
+   "token": "0.077",
+   "recomputed": 0.07715859577032644,
+   "rounded": 0.077,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "allfree+sym canonical",
+   "token": "1.68",
+   "recomputed": 1.6832757203341586,
+   "rounded": 1.68,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "allfree+sym certified",
+   "token": "5.82",
+   "recomputed": 5.81603659960086,
+   "rounded": 5.82,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "1 lane window",
+   "token": "2.71",
+   "recomputed": 2.7102342050330357,
+   "rounded": 2.71,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "e=eps window",
+   "token": "11.7",
+   "recomputed": 11.734812308603324,
+   "rounded": 11.7,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "ineligible window",
+   "token": "36.2",
+   "recomputed": 36.178691475176024,
+   "rounded": 36.2,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "supply 1e13 window",
+   "token": "8.40",
+   "recomputed": 8.404201186457982,
+   "rounded": 8.4,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "10ns window",
+   "token": "22.5",
+   "recomputed": 22.508521217435803,
+   "rounded": 22.5,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "W1e8 window",
+   "token": "21.3",
+   "recomputed": 21.298422721732386,
+   "rounded": 21.3,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "distfree x5 window",
+   "token": "5.22",
+   "recomputed": 5.2152195051894905,
+   "rounded": 5.22,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "supply 1e11 window",
+   "token": "225",
+   "recomputed": 225.08521217435805,
+   "rounded": 225.0,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "W1e6 window",
+   "token": "73.7",
+   "recomputed": 73.74887108401266,
+   "rounded": 73.7,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "1us window",
+   "token": "84.0",
+   "recomputed": 84.04201186457982,
+   "rounded": 84.0,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "10us window",
+   "token": "840",
+   "recomputed": 840.4201186457983,
+   "rounded": 840.0,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "N1 floor window",
+   "token": "40.9",
+   "recomputed": 40.94353646069773,
+   "rounded": 40.9,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "StageC sensitivity window",
+   "token": "10.3",
+   "recomputed": 10.285488043720159,
+   "rounded": 10.3,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "limit window layers",
+   "token": "88.1",
+   "recomputed": 88.05120005841732,
+   "rounded": 88.1,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "limit window T",
+   "token": "8.8e6",
+   "recomputed": 8805120.005841732,
+   "rounded": 8800000.0,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "limit selfmean layers",
+   "token": "85.2",
+   "recomputed": 85.17501164259969,
+   "rounded": 85.2,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "limit canonical layers",
+   "token": "3.90",
+   "recomputed": 3.9042827111886025,
+   "rounded": 3.9,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "limit certified layers",
+   "token": "1.13",
+   "recomputed": 1.1299764333524338,
+   "rounded": 1.13,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "allfree over limit",
+   "token": "1.29",
+   "recomputed": 1.2947012638597433,
+   "rounded": 1.29,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "hardware t_layer ns",
+   "token": "11.9",
+   "recomputed": 11.898810818705046,
+   "rounded": 11.9,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "hardware T/s",
+   "token": "2.6e13",
+   "recomputed": 26076097525947.45,
+   "rounded": 26000000000000.0,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "P3 free loader",
+   "token": "13.8",
+   "recomputed": 13.756570713361976,
+   "rounded": 13.8,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "P3 best loader+free exp",
+   "token": "2.45",
+   "recomputed": 2.4472888484999173,
+   "rounded": 2.45,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "P3 N1 free loader exp",
+   "token": "1.96",
+   "recomputed": 1.9647659530503119,
+   "rounded": 1.96,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "c(0.003)",
+   "token": "4.179",
+   "recomputed": 4.179,
+   "rounded": 4.179,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "c(0.01)",
+   "token": "3.510",
+   "recomputed": 3.51,
+   "rounded": 3.51,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "N calls",
+   "token": "100,924",
+   "recomputed": 100924,
+   "rounded": 100924,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "SM N1",
+   "token": "1,730",
+   "recomputed": 1730,
+   "rounded": 1730,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "SM N2",
+   "token": "102,602",
+   "recomputed": 102602,
+   "rounded": 102602,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "SM mU",
+   "token": "3.418",
+   "recomputed": 3.4177434148967234,
+   "rounded": 3.418,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "SM c1",
+   "token": "6.052",
+   "recomputed": 6.052,
+   "rounded": 6.052,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "SM c2",
+   "token": "4.197",
+   "recomputed": 4.197,
+   "rounded": 4.197,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "H16 fast ratio",
+   "token": "9.62",
+   "recomputed": 9.621344707967628,
+   "rounded": 9.62,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "H16 f32 ratio",
+   "token": "9.56",
+   "recomputed": 9.56025323743232,
+   "rounded": 9.56,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "C09 iid B8",
+   "token": "33.8",
+   "recomputed": 33.7772140690413,
+   "rounded": 33.8,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "C09 iid B4",
+   "token": "37.6",
+   "recomputed": 37.60397238028498,
+   "rounded": 37.6,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "C09 iid B8c",
+   "token": "16.1",
+   "recomputed": 16.07286910244215,
+   "rounded": 16.1,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "C09 iid B4c",
+   "token": "10.3",
+   "recomputed": 10.300939932458883,
+   "rounded": 10.3,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "C09b B8",
+   "token": "17.3",
+   "recomputed": 17.346359168921165,
+   "rounded": 17.3,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "C09b B4",
+   "token": "17.9",
+   "recomputed": 17.852905644436017,
+   "rounded": 17.9,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "C09b B8c",
+   "token": "83.5",
+   "recomputed": 83.47684762925155,
+   "rounded": 83.5,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "C09b B4c",
+   "token": "49.3",
+   "recomputed": 49.302195453371844,
+   "rounded": 49.3,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "C09 f32",
+   "token": "17.5",
+   "recomputed": 17.488725481277317,
+   "rounded": 17.5,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "P1 span",
+   "token": "38.635",
+   "recomputed": 38.63499483965558,
+   "rounded": 38.635,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "P1 U1 gain max",
+   "token": "1.59",
+   "recomputed": 1.5932877429053958,
+   "rounded": 1.59,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "P1 pre lower",
+   "token": "15.61",
+   "recomputed": 15.612386723938247,
+   "rounded": 15.61,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "P1 pre upper",
+   "token": "17.29",
+   "recomputed": 17.290044432685526,
+   "rounded": 17.29,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "P1 pre gain lin",
+   "token": "2.49",
+   "recomputed": 2.486784707314082,
+   "rounded": 2.49,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "P1 pre gain U1",
+   "token": "1.70",
+   "recomputed": 1.6998213826972692,
+   "rounded": 1.7,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "P1 hybrid D1",
+   "token": "3.42",
+   "recomputed": 3.4155924960386717,
+   "rounded": 3.42,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "P1 hybrid Dstruct",
+   "token": "2.62",
+   "recomputed": 2.6212965407213646,
+   "rounded": 2.62,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "P1 D struct",
+   "token": "1.30",
+   "recomputed": 1.303016443572127,
+   "rounded": 1.3,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "P1 multidir",
+   "token": "0.70",
+   "recomputed": 0.7022870085016403,
+   "rounded": 0.7,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "pair allfree+1lane",
+   "token": "0.135",
+   "recomputed": 0.13456552105316164,
+   "rounded": 0.135,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "pair 1lane+sym",
+   "token": "0.156",
+   "recomputed": 0.15624225110528459,
+   "rounded": 0.156,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "canonical triple",
+   "token": "0.175",
+   "recomputed": 0.17495223083943806,
+   "rounded": 0.175,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "certified triple",
+   "token": "0.604",
+   "recomputed": 0.6044931115277975,
+   "rounded": 0.604,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "A2a B8 bias e",
+   "token": "3.634e-4",
+   "recomputed": 0.00036337352322060134,
+   "rounded": 0.0003634,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "A2a B8 bias $",
+   "token": "0.0003634",
+   "recomputed": 0.00036337352322060134,
+   "rounded": 0.0003634,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "A2a numerator",
+   "token": "6703058386012589",
+   "recomputed": 6703058386012589,
+   "rounded": 6703058386012589,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "A2a paths rel diff",
+   "token": "9.4e-13",
+   "recomputed": 9.394311758738e-13,
+   "rounded": 9.4e-13,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "A2a run002 total",
+   "token": "0.0012396",
+   "recomputed": 0.0012395575054614564,
+   "rounded": 0.0012396,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "A2a spare",
+   "token": "0.000187",
+   "recomputed": 0.0001866264767793987,
+   "rounded": 0.000187,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "A2a B4 bias",
+   "token": "0.00001207",
+   "recomputed": 1.2074279399607644e-05,
+   "rounded": 1.207e-05,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "A2a clip sites",
+   "token": "104",
+   "recomputed": 104,
+   "rounded": 104,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "A2a P_fin(C)",
+   "token": "1e-29",
+   "recomputed": 1e-29,
+   "rounded": 1e-29,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "U1 m_cert",
+   "token": "3.28804",
+   "recomputed": 3.2880389500488563,
+   "rounded": 3.28804,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "U1 sample mean",
+   "token": "3.27960",
+   "recomputed": 3.279600200523543,
+   "rounded": 3.2796,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "U1 EB half-width",
+   "token": "0.00808",
+   "recomputed": 0.008075375002092565,
+   "rounded": 0.00808,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "U1 P2 m",
+   "token": "3.32682",
+   "recomputed": 3.3268214100246856,
+   "rounded": 3.32682,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "U1 margin",
+   "token": "0.0388",
+   "recomputed": 0.03878245997582938,
+   "rounded": 0.0388,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "U1 k at m",
+   "token": "8.715",
+   "recomputed": 8.71533912555067,
+   "rounded": 8.715,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "U1 M at m",
+   "token": "25.94",
+   "recomputed": 25.937867648253526,
+   "rounded": 25.94,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "U1 delta",
+   "token": "1e-4",
+   "recomputed": 0.0001,
+   "rounded": 0.0001,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "C11 T literal",
+   "token": "4,267,659,718",
+   "recomputed": 4267659718,
+   "rounded": 4267659718,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "C11 T qf",
+   "token": "2.44e9",
+   "recomputed": 2438662696,
+   "rounded": 2440000000.0,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "C11 Toffolis",
+   "token": "609,665,674",
+   "recomputed": 609665674,
+   "rounded": 609665674,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "C11 width",
+   "token": "4,460,627",
+   "recomputed": 4460627,
+   "rounded": 4460627,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "C11 Toffoli depth",
+   "token": "201,263",
+   "recomputed": 201263,
+   "rounded": 201263,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "C11 T-depth literal",
+   "token": "776,965",
+   "recomputed": 776965,
+   "rounded": 776965,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "C11 ratio literal",
+   "token": "18.6",
+   "recomputed": 18.58711164647345,
+   "rounded": 18.6,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "C11 ratio qf",
+   "token": "10.6",
+   "recomputed": 10.621206655127684,
+   "rounded": 10.6,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "C11 M window qf",
+   "token": "2,290",
+   "recomputed": 2289.596378889079,
+   "rounded": 2290.0,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "C11 M literal",
+   "token": "8,828",
+   "recomputed": 8827.877486674399,
+   "rounded": 8828.0,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "C11 M most fav",
+   "token": "1,084",
+   "recomputed": 1083.9115054340082,
+   "rounded": 1084.0,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "C11 D most fav",
+   "token": "95,101",
+   "recomputed": 95101,
+   "rounded": 95101,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "C11 M supply only",
+   "token": "277",
+   "recomputed": 276.95962058235165,
+   "rounded": 277.0,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "C11 D supply only",
+   "token": "24,387",
+   "recomputed": 24386.62696,
+   "rounded": 24387.0,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "C11 M over floor",
+   "token": "87.8",
+   "recomputed": 87.80441078695839,
+   "rounded": 87.8,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "C11 M selfmean qf",
+   "token": "2,367",
+   "recomputed": 2366.850554776789,
+   "rounded": 2367.0,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "U2 T delta",
+   "token": "11,578",
+   "recomputed": 11578,
+   "rounded": 11578,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "U2 rel T",
+   "token": "2.7e-6",
+   "recomputed": 2.7129696780203716e-06,
+   "rounded": 2.7e-06,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "U2 qubits",
+   "token": "0",
+   "recomputed": 0,
+   "rounded": 0,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "U2 exhaustive",
+   "token": "40,000",
+   "recomputed": 40000,
+   "rounded": 40000,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "U2 full width",
+   "token": "4,281",
+   "recomputed": 4281,
+   "rounded": 4281,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "U2 readout",
+   "token": "4.55e-13",
+   "recomputed": 4.547473508864641e-13,
+   "rounded": 4.55e-13,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "E03 sup Yraw",
+   "token": "42,680,645,956,484",
+   "recomputed": 42680645956484,
+   "rounded": 42680645956484,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "C03 physical U1",
+   "token": "0.0069",
+   "recomputed": 0.0069,
+   "rounded": 0.0069,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "C03 physical QOM",
+   "token": "0.007",
+   "recomputed": 0.007,
+   "rounded": 0.007,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "H18 floor U1",
+   "token": "2.98e-16",
+   "recomputed": 2.977671332453766e-16,
+   "rounded": 2.98e-16,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "H18 floor QOM",
+   "token": "2.92e-16",
+   "recomputed": 2.9221508469005955e-16,
+   "rounded": 2.92e-16,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "H18 compiled U1",
+   "token": "2.80e-17",
+   "recomputed": 2.8035151081597795e-17,
+   "rounded": 2.8e-17,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "H18 compiled QOM",
+   "token": "2.75e-17",
+   "recomputed": 2.751241870894062e-17,
+   "rounded": 2.75e-17,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "H18 T per estimate",
+   "token": "2.32e13",
+   "recomputed": 23172470127232.0,
+   "rounded": 23200000000000.0,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "H17 floor ns M1",
+   "token": "11.6",
+   "recomputed": 11.585684218212805,
+   "rounded": 11.6,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "H17 floor ns M10",
+   "token": "116",
+   "recomputed": 115.85684218212806,
+   "rounded": 116.0,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "H17 floor T/s M1",
+   "token": "2.61e13",
+   "recomputed": 26076097525947.45,
+   "rounded": 26100000000000.0,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "H17 floor T/s M10",
+   "token": "2.61e12",
+   "recomputed": 2607609752594.745,
+   "rounded": 2610000000000.0,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "H17 saved ps M1",
+   "token": "11.4",
+   "recomputed": 11.429936296779324,
+   "rounded": 11.4,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "H17 saved ps M10",
+   "token": "114",
+   "recomputed": 114.29936296779323,
+   "rounded": 114.0,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "H17 saved T/s M1",
+   "token": "4.85e14",
+   "recomputed": 484653839035559.06,
+   "rounded": 485000000000000.0,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "H17 saved T/s M10",
+   "token": "4.85e13",
+   "recomputed": 48465383903555.91,
+   "rounded": 48500000000000.0,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "H17 saved M",
+   "token": "8,749",
+   "recomputed": 8748.955147560844,
+   "rounded": 8749.0,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "H17 floor T",
+   "token": "229,603,168",
+   "recomputed": 229603168,
+   "rounded": 229603168,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "H17 saved T",
+   "token": "4,267,435,214",
+   "recomputed": 4267435214,
+   "rounded": 4267435214,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "H17 saved layers",
+   "token": "770,356",
+   "recomputed": 770356,
+   "rounded": 770356,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "H17 QOM tighter %",
+   "token": "3.4",
+   "recomputed": 3.376798382941626,
+   "rounded": 3.4,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "H06 AND per call",
+   "token": "57,400,792",
+   "recomputed": 57400792,
+   "rounded": 57400792,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "H06 CCZ/s",
+   "token": "6.5e12",
+   "recomputed": 6519024381486.862,
+   "rounded": 6500000000000.0,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "H06 CCZ 2T M",
+   "token": "13.0",
+   "recomputed": 13.038048762973725,
+   "rounded": 13.0,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "H06 CCZ native M",
+   "token": "8.63",
+   "recomputed": 8.631341759064954,
+   "rounded": 8.63,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "H06 reaction floor M",
+   "token": "8.40",
+   "recomputed": 8.404201186457982,
+   "rounded": 8.4,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "H06 all-free stays",
+   "token": "1.29",
+   "recomputed": 1.2947012638597433,
+   "rounded": 1.29,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "S44 primary",
+   "token": "26.08",
+   "recomputed": 26.07609752594745,
+   "rounded": 26.08,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "S44 QOM primary",
+   "token": "26.96",
+   "recomputed": 26.956634765537927,
+   "rounded": 26.96,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "S44 compiled",
+   "token": "2,286",
+   "recomputed": 2285.749653229855,
+   "rounded": 2286.0,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "S44 all-free",
+   "token": "1.29",
+   "recomputed": 1.294701263859743,
+   "rounded": 1.29,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "S44 one lane",
+   "token": "2.71",
+   "recomputed": 2.7102342050330357,
+   "rounded": 2.71,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "S44 symmetric",
+   "token": "1.50",
+   "recomputed": 1.503260555832779,
+   "rounded": 1.5,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "S44 allfree+sym",
+   "token": "0.075",
+   "recomputed": 0.07463821377453154,
+   "rounded": 0.075,
+   "present_in_draft": true,
+   "ok": true
+  },
+  {
+   "check": "REG9 rows changed",
+   "token": "13",
+   "recomputed": 13,
+   "rounded": 13,
+   "present_in_draft": true,
+   "ok": true
+  }
+ ]
+}

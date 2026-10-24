@@ -1,0 +1,353 @@
+{
+ "M": {
+  "floor_reference": {
+   "D_eff": 2296.03168,
+   "M": 26.07609752594745,
+   "N": 100924,
+   "T_C": 8.886479314695709,
+   "check": 26.07609752594745,
+   "k": 8.76178551342354
+  },
+  "self_mean_literal": 9125.9326376744,
+  "self_mean_qf": 2366.850554776789,
+  "supply_only_literal": 484.6793360191154,
+  "supply_only_qf": 276.95962058235165,
+  "window_dependency_only_qf": 1424.9403611461169,
+  "window_literal": 8827.877486674399,
+  "window_most_favourable_qf": 1083.9115054340082,
+  "window_qf": 2289.596378889079
+ },
+ "M_over_floor": {
+  "self_mean_literal": 349.9730981061675,
+  "self_mean_qf": 90.76705409701799,
+  "supply_only_literal": 18.587111646473453,
+  "supply_only_qf": 10.621206655127686,
+  "window_dependency_only_qf": 54.645460645643254,
+  "window_literal": 338.5428926966573,
+  "window_most_favourable_qf": 41.56724388514977,
+  "window_qf": 87.80441078695839
+ },
+ "case": "B8x52",
+ "direction_select": "Q^{-n} = R Q^{n} R with R the controlled uniform reflection (an involution): two reflections controlled on the sign bit per shot",
+ "eps": 0.001,
+ "inputs": {
+  "head": {
+   "path": "results/frontier_probe_20261021/headline/run006/headline_table.json",
+   "sha256": "fd1eba885642fa61fae7cdc6abf67b875ed395d5c2bfd9c4cbfdd07c73057c7c"
+  },
+  "p2": {
+   "path": "results/frontier_probe_20261021/p2/run002/p2_window.json",
+   "sha256": "0447dd06e08262f53cd52d32d3c16c24e21c56044b45339619321719aced1094"
+  },
+  "pathA": {
+   "path": "results/claim_debts_20261022/c11/run001/iterate_compile.json",
+   "sha256": "f6b25702f4df27e7d128c4ea331bd6381743d1a85190b801a56dd273ccfa5ae6"
+  },
+  "pathB": {
+   "path": "results/claim_debts_20261022/c11/run001/iterate_recount_pathB.json",
+   "sha256": "f9d6d5c0b8403860db41057ef397d8955f2602653b2d056e830ca45dafa075ae"
+  },
+  "sm": {
+   "path": "results/frontier_probe_20261021/p2/run003_self_mean/p2c_self_mean.json",
+   "sha256": "184cfe14576b6b48d443aca6dca7aec44a0a52c64ca84009acf02fcf1cf11dec"
+  },
+  "u2": {
+   "path": "results/claim_debts_20261022/c11/run001/u2_wrapper.json",
+   "sha256": "ac79df590e93e37479e594aee08b9054c10b56a84349b9382af655c4361a11e5"
+  }
+ },
+ "interpreter": "3.12.4",
+ "isolated": true,
+ "iterate": {
+  "ccx": 609665674,
+  "dependency_only_reaction": 125129,
+  "floor_D_eff": 2296.03168,
+  "floor_T_per_iterate": 229603168.0,
+  "most_favourable_reaction": 95101,
+  "t_count_literal": 4267659718,
+  "t_count_qf": 2438662696,
+  "t_depth": 776965,
+  "toffoli_depth": 201263
+ },
+ "labels": {
+  "M": "mod: M = 10 * layers * t_layer / T_C; T_C meas (run006, QF composition assm)",
+  "iterate": "meas (path A = path B)",
+  "literal_7T": "exact seven-T CCX, reaction layer = T layer",
+  "qf_floor_convention": "Toffoli = 4 T, one reaction layer per Toffoli layer (N1 floor conventions)",
+  "rotations": "mod: 130 T per rotation (lit, Ross-Selinger), serial",
+  "step_code": "meas (emitted, verified on every |n| <= N)"
+ },
+ "run": "run001",
+ "schema": "c11-estimator-compile-v1",
+ "self_mean": {
+  "N_total": 104332,
+  "stage1": {
+   "N": 1730,
+   "code_T": 1400,
+   "direction_select_T": 420784,
+   "g": 12,
+   "label": "quantum-only mean, stage 1",
+   "literal_7T": {
+    "D_eff_iterate": 776965,
+    "T_per_iterate": 4267659718,
+    "T_total": 7383052287344,
+    "binding": "reaction",
+    "layers_total": 1344913664,
+    "overhead_T": 975204,
+    "overhead_fraction_of_layers": 0.0005682253221571849,
+    "overhead_layers": 764214,
+    "quantum_seconds": 134.4913664,
+    "reaction_layers_per_iterate": 776965,
+    "supply_layers_per_iterate": 42676.59718
+   },
+   "qf_floor_convention": {
+    "D_eff_iterate": 201263,
+    "T_per_iterate": 2438662696,
+    "T_total": 4218887258348.0,
+    "binding": "reaction",
+    "layers_total": 348798322,
+    "overhead_T": 794268.0,
+    "overhead_fraction_of_layers": 0.001758414422647366,
+    "overhead_layers": 613332,
+    "quantum_seconds": 34.879832199999996,
+    "reaction_layers_per_iterate": 201263,
+    "supply_layers_per_iterate": 24386.62696
+   },
+   "rotation_T": 553020,
+   "rotations": 4254
+  },
+  "stage2": {
+   "N": 102602,
+   "code_T": 2072,
+   "direction_select_T": 420784,
+   "g": 18,
+   "label": "quantum-only mean, stage 2",
+   "literal_7T": {
+    "D_eff_iterate": 776965,
+    "T_per_iterate": 4267659718,
+    "T_total": 437870456932532,
+    "binding": "reaction",
+    "layers_total": 79752497948,
+    "overhead_T": 34546296,
+    "overhead_fraction_of_layers": 0.00043051965622928855,
+    "overhead_layers": 34335018,
+    "quantum_seconds": 7975.2497948,
+    "reaction_layers_per_iterate": 776965,
+    "supply_layers_per_iterate": 42676.59718
+   },
+   "qf_floor_convention": {
+    "D_eff_iterate": 201263,
+    "T_per_iterate": 2438662696,
+    "T_total": 250211704300064.0,
+    "binding": "reaction",
+    "layers_total": 20684170174,
+    "overhead_T": 34365072.0,
+    "overhead_fraction_of_layers": 0.0016526574531362682,
+    "overhead_layers": 34183848,
+    "quantum_seconds": 2068.4170174,
+    "reaction_layers_per_iterate": 201263,
+    "supply_layers_per_iterate": 24386.62696
+   },
+   "rotation_T": 34123440,
+   "rotations": 262488
+  }
+ },
+ "step_code": {
+  "1730": {
+   "N": 1730,
+   "b": 10,
+   "cases": 3461,
+   "extra_qubits_beyond_n": 88,
+   "failures": [],
+   "g": 12,
+   "passed": true,
+   "qubits": 100,
+   "remainder": 707,
+   "resources_once": {
+    "ccx": 100,
+    "clifford_cx": 891,
+    "clifford_h": 200,
+    "clifford_t_depth": 1219,
+    "cx": 291,
+    "cz": 0,
+    "h": 0,
+    "source_gates": 401,
+    "t_count": 700,
+    "t_depth": 400,
+    "toffoli_depth": 100,
+    "x": 10,
+    "z": 0
+   },
+   "weights_sum": 1730
+  },
+  "100924": {
+   "N": 100924,
+   "b": 16,
+   "cases": 201849,
+   "extra_qubits_beyond_n": 130,
+   "failures": [],
+   "g": 18,
+   "passed": true,
+   "qubits": 148,
+   "remainder": 35389,
+   "resources_once": {
+    "ccx": 148,
+    "clifford_cx": 1320,
+    "clifford_h": 296,
+    "clifford_t_depth": 1801,
+    "cx": 432,
+    "cz": 0,
+    "h": 0,
+    "source_gates": 596,
+    "t_count": 1036,
+    "t_depth": 592,
+    "toffoli_depth": 148,
+    "x": 16,
+    "z": 0
+   },
+   "weights_sum": 100924
+  },
+  "102602": {
+   "N": 102602,
+   "b": 16,
+   "cases": 205205,
+   "extra_qubits_beyond_n": 130,
+   "failures": [],
+   "g": 18,
+   "passed": true,
+   "qubits": 148,
+   "remainder": 37067,
+   "resources_once": {
+    "ccx": 148,
+    "clifford_cx": 1319,
+    "clifford_h": 296,
+    "clifford_t_depth": 1801,
+    "cx": 431,
+    "cz": 0,
+    "h": 0,
+    "source_gates": 595,
+    "t_count": 1036,
+    "t_depth": 592,
+    "toffoli_depth": 148,
+    "x": 16,
+    "z": 0
+   },
+   "weights_sum": 102602
+  }
+ },
+ "width": {
+  "estimator_extra": {
+   "phase_register": 18,
+   "step_code_and_scratch": 130
+  },
+  "iterate_logical_qubits": 4460479,
+  "note": "upper count: the 17 old-buffer wires left after U2 could host part of the code register",
+  "primary_width_1e7_fits": true,
+  "total_upper": 4460627
+ },
+ "window_shot": {
+  "N": 100924,
+  "code_T": 2072,
+  "direction_select_T": 420784,
+  "g": 18,
+  "label": "window certified (U1 + U2 + DS)",
+  "literal_7T": {
+   "D_eff_iterate": 776965,
+   "T_per_iterate": 4267659718,
+   "T_total": 430709323925728,
+   "binding": "reaction",
+   "layers_total": 78448750678,
+   "overhead_T": 34546296,
+   "overhead_fraction_of_layers": 0.00043767450345935004,
+   "overhead_layers": 34335018,
+   "quantum_seconds": 7844.8750678,
+   "reaction_layers_per_iterate": 776965,
+   "supply_layers_per_iterate": 42676.59718
+  },
+  "qf_floor_convention": {
+   "D_eff_iterate": 201263,
+   "T_per_iterate": 2438662696,
+   "T_total": 246119628296176.0,
+   "binding": "reaction",
+   "layers_total": 20346450860,
+   "overhead_T": 34365072.0,
+   "overhead_fraction_of_layers": 0.0016800889862911453,
+   "overhead_layers": 34183848,
+   "quantum_seconds": 2034.645086,
+   "reaction_layers_per_iterate": 201263,
+   "supply_layers_per_iterate": 24386.62696
+  },
+  "rotation_T": 34123440,
+  "rotations": 262488
+ },
+ "window_shot_dependency_only": {
+  "N": 100924,
+  "code_T": 2072,
+  "direction_select_T": 420784,
+  "g": 18,
+  "label": "window, dependency-only depth",
+  "literal_7T": {
+   "D_eff_iterate": 776965,
+   "T_per_iterate": 4267659718,
+   "T_total": 430709323925728,
+   "binding": "reaction",
+   "layers_total": 78448750678,
+   "overhead_T": 34546296,
+   "overhead_fraction_of_layers": 0.00043767450345935004,
+   "overhead_layers": 34335018,
+   "quantum_seconds": 7844.8750678,
+   "reaction_layers_per_iterate": 776965,
+   "supply_layers_per_iterate": 42676.59718
+  },
+  "qf_floor_convention": {
+   "D_eff_iterate": 125129,
+   "T_per_iterate": 2438662696,
+   "T_total": 246119628296176.0,
+   "binding": "reaction",
+   "layers_total": 12662703044,
+   "overhead_T": 34365072.0,
+   "overhead_fraction_of_layers": 0.002699569584883965,
+   "overhead_layers": 34183848,
+   "quantum_seconds": 1266.2703044,
+   "reaction_layers_per_iterate": 125129,
+   "supply_layers_per_iterate": 24386.62696
+  },
+  "rotation_T": 34123440,
+  "rotations": 262488
+ },
+ "window_shot_most_favourable": {
+  "N": 100924,
+  "code_T": 2072,
+  "direction_select_T": 420784,
+  "g": 18,
+  "label": "window, dependency-only depth + log-depth reflection (mod)",
+  "literal_7T": {
+   "D_eff_iterate": 776965,
+   "T_per_iterate": 4267659718,
+   "T_total": 430709323925728,
+   "binding": "reaction",
+   "layers_total": 78448750678,
+   "overhead_T": 34546296,
+   "overhead_fraction_of_layers": 0.00043767450345935004,
+   "overhead_layers": 34335018,
+   "quantum_seconds": 7844.8750678,
+   "reaction_layers_per_iterate": 776965,
+   "supply_layers_per_iterate": 42676.59718
+  },
+  "qf_floor_convention": {
+   "D_eff_iterate": 95101,
+   "T_per_iterate": 2438662696,
+   "T_total": 246119628296176.0,
+   "binding": "reaction",
+   "layers_total": 9632157172,
+   "overhead_T": 34365072.0,
+   "overhead_fraction_of_layers": 0.0035489296311910306,
+   "overhead_layers": 34183848,
+   "quantum_seconds": 963.2157172,
+   "reaction_layers_per_iterate": 95101,
+   "supply_layers_per_iterate": 24386.62696
+  },
+  "rotation_T": 34123440,
+  "rotations": 262488
+ }
+}

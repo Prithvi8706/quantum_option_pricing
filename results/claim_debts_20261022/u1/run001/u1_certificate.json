@@ -1,0 +1,107 @@
+{
+ "meta": {
+  "script": "research/claim_debts_20261022/u1/u1_certificate.py",
+  "python": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]",
+  "flags": {
+   "isolated": 1,
+   "no_site": 1
+  },
+  "inputs": {
+   "eb_sample": "results\\claim_debts_20261022\\u1\\run001/eb_sample.json",
+   "a2a_summary": "results/claim_debts_20261022/a2a/run001/summary.json",
+   "c09_saved": "results/c10_challengers_20261022/c09/B8x52_0.001_run001/c09_g4.json",
+   "p2_window": "results/frontier_probe_20261021/p2/run002/p2_window.json",
+   "p2_script": "research/frontier_probe_20261021/p2_window_constant.py",
+   "sigma": "results/frontier_classical_20261001/sigma_dev/sigma_dev.json",
+   "c1": "results/frontier_classical_20261001/c1/c1_summary.json",
+   "eb_script": "research/claim_debts_20261022/u1/eb_sample.py"
+  },
+  "inputs_sha256": {
+   "eb_sample": "373d66263ac53a0d04483640323c1566f26c7fce1add6e888659f4e6a50531b8",
+   "a2a_summary": "5608ee4dbb83f862bdbe4143b238baae7502528ce62448ea2146aa35e5037555",
+   "c09_saved": "8ce019bf6592de155c5fc33be79391c5ab6cd54a444c41422be2e9cc8aec5552",
+   "p2_window": "0447dd06e08262f53cd52d32d3c16c24e21c56044b45339619321719aced1094",
+   "p2_script": "59a010a89f1aa56d60e6ff6e965d4d66754e1d5619a7a65bd253af8db59e58f3",
+   "sigma": "9d3c4e361ec0a9f4d24fbebea7e1d6adb40e39326cf67d5fd44cca6a4fa27677",
+   "c1": "5d91aecc5ae26140be4e8c6a86ce304ac97870470f04bedce11a3ad55a2b9123",
+   "eb_script": "445fab47acb58a35b2788cfa7208811c33ae95a6d465b91b16d22de683159dd0"
+  },
+  "rigour": "R1 (exact/outward arithmetic; independent recompute in u1_independent.py); NOT R2"
+ },
+ "statement": "With probability >= 1 - delta_U over the classical sample (fixed before any quantum run): E[g] = E[Y_N] <= m_cert.",
+ "delta_U": "1/10000",
+ "failure_share": "delta_U = 1e-4 is charged to the C03 failure union, taken from the 0.007 physical share (physical becomes 0.0069); the window estimator keeps its 0.003",
+ "sample": {
+  "n": 8388608,
+  "mean": 3.279600200523543,
+  "var_unbiased": 26.869753079958816,
+  "min": 0.0,
+  "max": 30.39805383114557,
+  "range_used": "40",
+  "float_slack": "1/1000000000"
+ },
+ "eb_half_width": 0.008075375002092565,
+ "ucb_EY": [
+  "211806860966184820076285858629501023199776061926967",
+  "64424501760000000000000000000000000000000000000000"
+ ],
+ "ucb_EY_float": 3.2876755765256354,
+ "a2a_bias": [
+  "6703058386012589",
+  "18446744073709551616"
+ ],
+ "a2a_bias_float": 0.0003633735232206014,
+ "m_cert": [
+  "13882508648406783302827186288678482302310664527892974937",
+  "4222124147343360000000000000000000000000000000000000000"
+ ],
+ "m_cert_float": 3.2880389500488563,
+ "m_cert_display_up": "3.28803895004885611880573890944030163553720879214945522210092",
+ "p2_assumed_m": {
+  "value": 3.3268214100246856,
+  "form": "uncertified RQMC price 3.2816193580247 + B4x12 L1 0.045202052"
+ },
+ "p2_assumption_covered": true,
+ "margin_to_p2_m": 0.03878245997582938,
+ "window_class": {
+  "c": 4.179,
+  "S": "8192/211",
+  "e": 0.00045,
+  "sigma_over_e": 11518.65676754799,
+  "at_p2_m": {
+   "m": 3.3268214100246856,
+   "Delta": 4.140767499077353e-05,
+   "N_calls": 100924,
+   "k": 8.761785513423542,
+   "M": 26.076097525947453
+  },
+  "at_m_cert": {
+   "m": 3.2880389500488563,
+   "Delta": 4.1628410716813826e-05,
+   "N_calls": 100389,
+   "k": 8.71533912555067,
+   "M": 25.937867648253526
+  },
+  "k_certified_premise": 8.761785513423542,
+  "note": "m_U only needs to upper-bound E[g]; since m_cert <= the P2 value and sqrt(m(S-m)) is increasing on [0, S/2], P2's k = 8.7618 is valid with the certified premise (the tighter m_cert would give k = 8.7153)"
+ },
+ "M_inputs": {
+  "D_eff": 2296.03168,
+  "t_layer": 1e-07,
+  "T_C": 8.886479314695709
+ },
+ "crosscheck_preint_C09": {
+  "n": 80419536,
+  "mean": 3.2819351464806994,
+  "ucb": 3.2825090502545127,
+  "half": 0.0005739037738131005,
+  "m_with_bias": 3.282872423777733,
+  "label": "mod (preintegrated estimand; R = 17.30 from a float-evaluated analytic bound; kernel equality to E[Y|y] in float64)"
+ },
+ "labels": {
+  "sample": "meas (PRNG iid-ness assm)",
+  "range": "analytic (A <= max_j B_j < 140 on survival)",
+  "bias": "cert R1 (A2a)",
+  "m_cert": "cert R1, conditional on the PRNG iid assumption"
+ }
+}

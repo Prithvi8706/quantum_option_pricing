@@ -51,3 +51,18 @@ all-free + symmetric distribution-free at 0.075.
 | 22 Oct | with float32 GEMM (run006) | 26.1 |
 
 Older documents quote the numbers current when they were written. Their headers point here.
+
+## Claim-grade debts (22 Oct, user-authorized; R1, not R2)
+
+See [docs/claim_debts_20261022/CLAIM_DEBTS_STATUS.md](../claim_debts_20261022/CLAIM_DEBTS_STATUS.md).
+
+- **Binding-cell bias:** 3.634e-4 ≤ 0.55ε, certified by the A2a clip-split certificate, so B8x52 $0.001 is eligible.
+  The source is unchanged.
+- **U1:** m = 3.28804, which covers P2's 3.32682, at failure 1e-4.
+- **U2:** wrapper built, +11,578 T per iterate.
+- **C03 complete-price ledger:** complete for both window classes. The physical share, 0.0069 or 0.007, is an
+  explicit premise: ≤ 2.9e-16 logical failure per T at the floor, ≤ 2.8e-17 for the compiled iterate.
+- **C11 compiled iterate:** window M 2,290 at floor conventions, 8,828 literal, ≥ 277 in every reading. The floor
+  value of 26.1 stays the quantum-favourable reading.
+- **Scope #44:** an independent recompute reproduces this table exactly. NO-GO holds under every single departure.
+  The catalysed-CCZ supply convention gives 13.0, which does not flip it.

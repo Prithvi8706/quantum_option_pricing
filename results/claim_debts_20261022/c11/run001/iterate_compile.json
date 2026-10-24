@@ -1,0 +1,285 @@
+{
+ "batches": 166,
+ "calls": 41186,
+ "case": "B8x52",
+ "dependency_only_forward_t_depth": 184525,
+ "depth_convention": "Original memory-capped source batches; exact separate forward/inverse leaf ASAP depths; serial selector/marker/reflection; shared-control copy rounds and H/CZ/Z layers charged",
+ "financial_matches_iterate_json": {
+  "ccx": true,
+  "clifford_cx": true,
+  "clifford_h": true,
+  "clifford_t_depth": true,
+  "cx": true,
+  "source_gates": true,
+  "t_count": true,
+  "t_depth": true,
+  "x": true
+ },
+ "financial_recount": {
+  "ccx": 609633602,
+  "clifford_cx": 4361582612,
+  "clifford_h": 1219267204,
+  "clifford_t_depth": 2026726,
+  "cx": 703781000,
+  "source_gates": 1323498448,
+  "t_count": 4267435214,
+  "t_depth": 663704,
+  "toffoli_depth": 169190,
+  "x": 10083846
+ },
+ "inputs": {
+  "capped": {
+   "path": "results/limitation_program_20261001/A10_coefficient_run001/B8x52/min-depth/schedule_capped.json",
+   "sha256": "1a94a9ef56d9d982fa54a97289710129e119fea24c92ce6e835784028d555c71"
+  },
+  "iterate": {
+   "path": "results/limitation_program_20261001/E02_financial_run002/B8x52/iterate.json",
+   "sha256": "47b29f687e8ea4384034512cb0c34dc48f1c9143759301e9e3f7774f0adeaba8"
+  },
+  "reflection": {
+   "path": "results/limitation_program_20261001/E02_financial_run002/B8x52/reflection.npy",
+   "sha256": "837b10dfb1e60da28b7a5a9dcd218ba37c1fb8bc65b30c513a2b452547f101c6"
+  },
+  "selector": {
+   "path": "results/limitation_program_20261001/E02_financial_run002/B8x52/selector.npy",
+   "sha256": "b68fa5ea2cb1b2bbf64300b497ce66eff1042fed5e3557f1f9956de5eef96f74"
+  },
+  "source": {
+   "path": "results/limitation_program_20261001/A10_coefficient_run001/B8x52/min-depth/source.json",
+   "sha256": "b1a920b5cf3f20775ab042f43368bc2fc578bfeef7488c00d8d9ce4ad26a6ef8"
+  },
+  "target": {
+   "path": "results/limitation_program_20261001/A10_coefficient_run001/B8x52/min-depth/target.json",
+   "sha256": "267dcaa74aa9dd5cb1339c65006b122389331f42f0002f483bd6eed05c31090b"
+  },
+  "u2": {
+   "path": "results/claim_debts_20261022/c11/run001/u2_selector_gates.json",
+   "sha256": "19f136d51fbb89e6d08e0aa7b0ac99c24741ac0ff6269b8fcecb3f4060d43355"
+  }
+ },
+ "interpreter": "3.12.4",
+ "labels": {
+  "counts": "meas (exact counts of the emitted gate arrays)",
+  "t_depth": "meas under the E02 depth convention (memory-capped batches, all-to-all ASAP inside leaves; layout and routing unproved)",
+  "toffoli_depth": "meas under the N1 reaction convention (Cliffords free; one layer per CCX layer)"
+ },
+ "leaf_toffoli_depth": {
+  "0438ae0d8932ab7f8f9c": 0,
+  "07d70e16bae003af8a29": 0,
+  "0a09e2fdf256375a278b": 0,
+  "0bdab168c5bee673bae3": 0,
+  "0d5149452181f9ada528": 268,
+  "0e53da079f2257cd8c6b": 288,
+  "0f1f39224399cac3960e": 0,
+  "15c2bc938573a8d1882a": 448,
+  "160a18dba2e09b8e1ad2": 7740,
+  "1e0b2dc8929b29814d9a": 234,
+  "236bb88dde52c7526c0d": 0,
+  "30ad19b1bd1c212d8e38": 0,
+  "39a5ab6c8a23504f7c1e": 0,
+  "44e04a2a2977eac24772": 288,
+  "44e35bf04ba3732a1cd4": 0,
+  "47ff6c19a647c7d51bc8": 0,
+  "51d1cea07a4b87fd2d48": 0,
+  "565c5b167a165be2c6f4": 8516,
+  "586a9cd36e09e9e161d2": 60,
+  "58daa981fc8e68f753f3": 0,
+  "5927b55881bd2d0960cc": 412,
+  "5c80497a1287aaa148bf": 0,
+  "673afa2f337620ea7878": 146,
+  "69042feb3c9a7e644b89": 0,
+  "6df062000b948f6e088d": 288,
+  "703e1e8a74fb803ba042": 188,
+  "72ee8b9fb33e65f8d9e7": 0,
+  "73db3136e18dde0ad8bd": 0,
+  "758b9e23ff5848f03074": 104,
+  "75b084c918b06378bba7": 0,
+  "7c1adb9aaae04a15ed70": 0,
+  "7cc2451f189dd5717985": 144,
+  "7e73d44f95f09f9fe8f6": 0,
+  "7f8858874fe3e7a6cbef": 428,
+  "8b2e87bf9bcf5901ca93": 0,
+  "8b42212b3a9fb0f6bb47": 288,
+  "93051997f64c667ec18e": 0,
+  "98a19c49fb909ba07b5e": 0,
+  "9f090e6325d0f3dd39d1": 0,
+  "a5fb4872ae9fc715297a": 0,
+  "accef7d1ddc50b31e14b": 1156,
+  "ae01c4f7e5019f21e183": 124,
+  "bb37d8eada9f1cbcbe7e": 268,
+  "bc7cb29c7fc457640cb1": 360,
+  "bd6f59b1b0c2959beae8": 0,
+  "bdac9a9b0786d8e79f4a": 71,
+  "d06943546825e1011a49": 8968,
+  "d365794ea864c1d3dc3d": 8740,
+  "d4164765c66703895981": 0,
+  "dfa09b9cc189154d0429": 0,
+  "e00bb3b9ef11d4232104": 292,
+  "e1b714cbd469d30761d3": 0,
+  "e82b3b95aeec6ad90fab": 288,
+  "eb11b809bde6518ebab7": 0,
+  "ec6d343fd3086f538938": 0,
+  "f0288f12be7b71bf94ff": 0,
+  "f0ed255726bf41b96438": 0,
+  "f47e5022aafa123b3b26": 0,
+  "f871f0a6b236ebb448d2": 0,
+  "fd2758dcdb087dfa2b43": 0
+ },
+ "leaves": 60,
+ "numpy": "2.0.2",
+ "run": "run001",
+ "saved_iterate_recount": {
+  "ccx": 609664020,
+  "clifford_cx": 4361766242,
+  "clifford_cz": 2,
+  "clifford_h": 1219358084,
+  "clifford_t_depth": 2301632,
+  "clifford_z": 1,
+  "cx": 703782122,
+  "cz": 2,
+  "h": 30044,
+  "source_gates": 1323590079,
+  "t_count": 4267648140,
+  "t_depth": 770356,
+  "toffoli_depth": 199609,
+  "x": 10113890,
+  "z": 1
+ },
+ "saved_matches_iterate_json": {
+  "ccx": true,
+  "clifford_cx": true,
+  "clifford_cz": true,
+  "clifford_h": true,
+  "clifford_t_depth": true,
+  "clifford_z": true,
+  "cx": true,
+  "cz": true,
+  "h": true,
+  "source_gates": true,
+  "t_count": true,
+  "t_depth": true,
+  "x": true,
+  "z": true
+ },
+ "saved_parts": {
+  "reflection": {
+   "ccx": 30042,
+   "clifford_cx": 180252,
+   "clifford_cz": 1,
+   "clifford_h": 90128,
+   "clifford_t_depth": 270385,
+   "clifford_z": 1,
+   "cx": 0,
+   "cz": 1,
+   "h": 30044,
+   "source_gates": 90132,
+   "t_count": 210294,
+   "t_depth": 105148,
+   "x": 30044,
+   "z": 1
+  },
+  "reflection_random_wires": 15022,
+  "reflection_toffoli_depth": 30042,
+  "selector": {
+   "forward": {
+    "ccx": 188,
+    "clifford_cx": 1689,
+    "clifford_h": 376,
+    "clifford_t_depth": 2260,
+    "cx": 561,
+    "source_gates": 749,
+    "t_count": 1316,
+    "t_depth": 752,
+    "x": 0
+   },
+   "inverse": {
+    "ccx": 188,
+    "clifford_cx": 1689,
+    "clifford_h": 376,
+    "clifford_t_depth": 2260,
+    "cx": 561,
+    "source_gates": 749,
+    "t_count": 1316,
+    "t_depth": 752,
+    "x": 0
+   }
+  },
+  "selector_toffoli_depth": 188
+ },
+ "schema": "c11-iterate-compile-pathA-v1",
+ "u2_iterate": {
+  "ccx": 609665674,
+  "clifford_cx": 4361779658,
+  "clifford_cz": 2,
+  "clifford_h": 1219361406,
+  "clifford_t_depth": 2321446,
+  "clifford_z": 1,
+  "cx": 703785614,
+  "cz": 2,
+  "h": 30058,
+  "source_gates": 1323595253,
+  "t_count": 4267659718,
+  "t_depth": 776965,
+  "toffoli_depth": 201263,
+  "x": 10113904,
+  "z": 1
+ },
+ "u2_parts": {
+  "reflection": {
+   "ccx": 30056,
+   "clifford_cx": 180336,
+   "clifford_cz": 1,
+   "clifford_h": 90170,
+   "clifford_t_depth": 270511,
+   "clifford_z": 1,
+   "cx": 0,
+   "cz": 1,
+   "h": 30058,
+   "source_gates": 90174,
+   "t_count": 210392,
+   "t_depth": 105197,
+   "x": 30058,
+   "z": 1
+  },
+  "reflection_random_wires": 15029,
+  "reflection_toffoli_depth": 30056,
+  "selector": {
+   "forward": {
+    "ccx": 1008,
+    "clifford_cx": 8355,
+    "clifford_h": 2016,
+    "clifford_t_depth": 12104,
+    "cx": 2307,
+    "source_gates": 3315,
+    "t_count": 7056,
+    "t_depth": 4032,
+    "x": 0
+   },
+   "inverse": {
+    "ccx": 1008,
+    "clifford_cx": 8355,
+    "clifford_h": 2016,
+    "clifford_t_depth": 12104,
+    "cx": 2307,
+    "source_gates": 3315,
+    "t_count": 7056,
+    "t_depth": 4032,
+    "x": 0
+   }
+  },
+  "selector_toffoli_depth": 1008
+ },
+ "width": {
+  "note": "reflection scratch (n_random - 1) and selector scratch reuse the financial private bank after F",
+  "saved": 4460479,
+  "u2": 4460479,
+  "u2_scratch_fits_private_bank": true
+ },
+ "ws_small_check": {
+  "f_fwd_plus_inv": 663704,
+  "recorded": 770356,
+  "reflection": 105148,
+  "selector_pair": 1504,
+  "sum": 770356
+ }
+}
