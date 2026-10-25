@@ -1,0 +1,107 @@
+{
+ "schema": "r2-scope44-sealed-receipt-v1",
+ "mode": "dry",
+ "run": "dry_run001",
+ "status": "PASS",
+ "steps": [
+  {
+   "step": "p2",
+   "flags": [
+    "-I",
+    "-S",
+    "-B"
+   ],
+   "returncode": 0,
+   "wall_s": 6.549505200004205
+  },
+  {
+   "step": "a2a",
+   "flags": [
+    "-I",
+    "-S",
+    "-B"
+   ],
+   "returncode": 0,
+   "wall_s": 0.9107526000007056
+  },
+  {
+   "step": "u1_sample",
+   "flags": [
+    "-I",
+    "-B"
+   ],
+   "returncode": 0,
+   "wall_s": 227.48553519998677
+  },
+  {
+   "step": "u1_bound",
+   "flags": [
+    "-I",
+    "-S",
+    "-B"
+   ],
+   "returncode": 0,
+   "wall_s": 0.11598069999308791
+  },
+  {
+   "step": "headline",
+   "flags": [
+    "-I",
+    "-S",
+    "-B"
+   ],
+   "returncode": 0,
+   "wall_s": 0.14306109999597538
+  }
+ ],
+ "decision": {
+  "rule": "NO-GO iff every valid row has M > 1 in every explicit single-departure column",
+  "explicit_columns": [
+   "primary",
+   "all_free_oracle",
+   "one_lane_one_core",
+   "symmetric_distfree"
+  ],
+  "no_go": true,
+  "eligible_on_certified_bias": true,
+  "min_M_primary": 25.88670967482661,
+  "min_M_any_explicit": 1.285297989847524,
+  "headline_M_primary_W_proto": 25.947169097967507,
+  "outcome": "NO_GO_CERTIFIED"
+ },
+ "started": {
+  "schema": "r2-scope44-started-v1",
+  "mode": "dry",
+  "run": "dry_run001",
+  "root": "C:\\Users\\prith\\quantum_option_pricing\\results\\r2_scope44_dryrun\\dry_run001",
+  "created_utc": "2026-10-25T04:10:46.249321+00:00",
+  "python": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]",
+  "prereg_sha256": "a6ddfbc1791329e3fb41d0b602ff9d191bd0357341d188fa206d79f978781d58",
+  "manifest_sha256": "226e74491936a8e24e33a33c3049c10892777b10e403733cc3d7584923b6c840",
+  "manifest_files": 31,
+  "seed_hex": "9b3874b1d51e0b866af8ca1df8a0c3e4c7ebc25fe658c05af257f0d9a79a6f63"
+ },
+ "outputs_sha256": {
+  "a2a/run/certificate.json": "75c682324a539021c0231cdbd5e1e61dc4b6a7c4d9cb77b18f23ab6d6429585d",
+  "a2a/run/independent.json": "4a05126d89cf6ddee3972f51309c623f36e0af8b911f431e5406fd2403220a63",
+  "a2a/run/summary.json": "5608ee4dbb83f862bdbe4143b238baae7502528ce62448ea2146aa35e5037555",
+  "a2a.json": "fa0c71cd53107318c8af1aa15b577f4df1243b22247778b51f369254f89abba4",
+  "headline.json": "5fab371e61a1330ccf23ac675e9fa3b76b35433fb6e4f8195f7f14d41df90e25",
+  "logs/a2a.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "logs/a2a.stdout.txt": "c5a1f30c16a5c319d0f1116a2977ad590a5056b0db10c470243a82acd6231039",
+  "logs/headline.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "logs/headline.stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "logs/p2.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "logs/p2.stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "logs/u1_bound.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "logs/u1_bound.stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "logs/u1_sample.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "logs/u1_sample.stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "p2.json": "597576d3dcadc725d5f45680be4eb8359e1a8da5ca3d2f05c53406c4d867baef",
+  "STARTED.json": "9ae61d8f02e83c0f82f81f76082475c6c71ca61321a12e49c5712d067e2c8d79",
+  "u1_bound.json": "ceaa40a4e683fda285738e60c3bfc832fd3486439b150e3a0f1e0cf4062e1da9",
+  "u1_sample.json": "3660293e6d317d2b5e3a44f74b61e2e8338c97b63ba6e1ea8908f9ef866e3357"
+ },
+ "completed_utc": "2026-10-25T04:14:41.473438+00:00",
+ "note": "DRY RUN: package QA only; not R2 evidence; different U1 seed."
+}

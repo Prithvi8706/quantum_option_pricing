@@ -1,0 +1,204 @@
+{
+ "step": "headline",
+ "classical_inputs": {
+  "sigma_q": 5.183395545396595,
+  "sigma_over_e": 11518.65676754799,
+  "T_C": 8.886479314695709,
+  "T_C_source": [
+   "c2",
+   "preint"
+  ],
+  "speedup": 2.5352319126818976,
+  "h16_ratio": 9.621344707967628,
+  "distfree_factor": 17.346359168921165,
+  "D_primary": 2296.03168,
+  "D_all_free": 114.0,
+  "D_compiled": 201263
+ },
+ "D1": "7/2000",
+ "N1_stage1": 1730,
+ "rows": {
+  "W_cont": {
+   "definition": "window, U1 credit at P2's m = price + L1 (v4 continuity; valid iff m_U <= it)",
+   "m": [
+    "6653642820049371",
+    "2000000000000000"
+   ],
+   "m_float": 3.3268214100246856,
+   "valid": true,
+   "N_total": 100924,
+   "k": 8.761785513423542,
+   "budgets": [
+    {
+     "N": 100924,
+     "c": "4179/1000",
+     "delta_34": 4.795724491506563e-07,
+     "ok": true
+    }
+   ],
+   "M": {
+    "primary": 26.076097525947457,
+    "all_free_oracle": 1.2947012638597435,
+    "one_lane_one_core": 2.7102342050330366,
+    "symmetric_distfree": 1.5032605558327794,
+    "all_free_plus_symmetric": 0.07463821377453156,
+    "compiled_iterate_primary": 2285.749653229856
+   }
+  },
+  "W_proto": {
+   "definition": "window, U1 credit at m_U from this run's fresh sample (the protocol as run)",
+   "m": [
+    "13893590425388964351643419510722729065894893744187657561",
+    "4222124147343360000000000000000000000000000000000000000"
+   ],
+   "m_float": 3.290663642406411,
+   "valid": true,
+   "N_total": 100425,
+   "k": 8.718464489968284,
+   "budgets": [
+    {
+     "N": 100425,
+     "c": "4179/1000",
+     "delta_34": 4.795723878088636e-07,
+     "ok": true
+    }
+   ],
+   "M": {
+    "primary": 25.947169097967507,
+    "all_free_oracle": 1.2882998535840307,
+    "one_lane_one_core": 2.696833954663337,
+    "symmetric_distfree": 1.4958279628186242,
+    "all_free_plus_symmetric": 0.07426917896939608,
+    "compiled_iterate_primary": 2274.4481879989717
+   }
+  },
+  "W_oracle": {
+   "definition": "window with the exact mean known for free (lower bound via m_L)",
+   "m": [
+    "13822319019416915112450325244068530699730106255812342439",
+    "4222124147343360000000000000000000000000000000000000000"
+   ],
+   "m_float": 3.273783180467154,
+   "valid": true,
+   "N_total": 100191,
+   "k": 8.698149621253794,
+   "budgets": [
+    {
+     "N": 100191,
+     "c": "4179/1000",
+     "delta_34": 4.795723590433735e-07,
+     "ok": true
+    }
+   ],
+   "M": {
+    "primary": 25.88670967482661,
+    "all_free_oracle": 1.285297989847524,
+    "one_lane_one_core": 2.6905500697204316,
+    "symmetric_distfree": 1.4923425384392408,
+    "all_free_plus_symmetric": 0.07409612457179748,
+    "compiled_iterate_primary": 2269.1485029007213
+   }
+  },
+  "Q_cont": {
+   "definition": "quantum-only mean, worst case over stage-1 successes at the RQMC price (R1)",
+   "m": [
+    "1442287721086417281",
+    "422000000000000000"
+   ],
+   "m_float": 3.4177434148967234,
+   "valid": true,
+   "N_total": 104332,
+   "k": 9.05765334495764,
+   "budgets": [
+    {
+     "N": 1730,
+     "c": "1513/250",
+     "delta_34": 7.790121179371763e-09,
+     "ok": true
+    },
+    {
+     "N": 102602,
+     "c": "4197/1000",
+     "delta_34": 4.795727066865101e-07,
+     "ok": true
+    }
+   ],
+   "M": {
+    "primary": 26.956634765537927,
+    "all_free_oracle": 1.3384207152016838,
+    "one_lane_one_core": 2.8017533498425227,
+    "symmetric_distfree": 1.5540226339735397,
+    "all_free_plus_symmetric": 0.07715859577032644,
+    "compiled_iterate_primary": 2362.934810558215
+   }
+  },
+  "Q_lower": {
+   "definition": "quantum-only mean, fewest calls over stage-1 successes, at m_L",
+   "m": [
+    "13822319019416915112450325244068530699730106255812342439",
+    "4222124147343360000000000000000000000000000000000000000"
+   ],
+   "m_float": 3.273783180467154,
+   "valid": true,
+   "N_total": 102352,
+   "k": 8.885758301988885,
+   "budgets": [
+    {
+     "N": 1730,
+     "c": "1513/250",
+     "delta_34": 7.790121179371763e-09,
+     "ok": true
+    },
+    {
+     "N": 100622,
+     "c": "4197/1000",
+     "delta_34": 4.795724622970014e-07,
+     "ok": true
+    }
+   ],
+   "M": {
+    "primary": 26.445055031268815,
+    "all_free_oracle": 1.3130203297389367,
+    "one_lane_one_core": 2.7485820157102503,
+    "symmetric_distfree": 1.524530581532605,
+    "all_free_plus_symmetric": 0.07569428932910757,
+    "compiled_iterate_primary": 2318.09132126533
+   }
+  }
+ },
+ "continuity_rel_diff_vs_R1": {
+  "W_cont": {
+   "primary": 2.7248814169875803e-16,
+   "all_free_oracle": 3.4300515666923107e-16,
+   "one_lane_one_core": 3.2771279251465984e-16,
+   "symmetric_distfree": 2.9541732344865875e-16,
+   "all_free_plus_symmetric": 1.8593408263676738e-16,
+   "compiled_iterate_primary": 3.9789777523876076e-16
+  },
+  "Q_cont": {
+   "primary": 0.0,
+   "all_free_oracle": 0.0,
+   "one_lane_one_core": 0.0,
+   "symmetric_distfree": 0.0,
+   "all_free_plus_symmetric": 0.0,
+   "compiled_iterate_primary": 0.0
+  }
+ },
+ "continuity_1e9": true,
+ "budgets_ok": true,
+ "decision": {
+  "rule": "NO-GO iff every valid row has M > 1 in every explicit single-departure column",
+  "explicit_columns": [
+   "primary",
+   "all_free_oracle",
+   "one_lane_one_core",
+   "symmetric_distfree"
+  ],
+  "no_go": true,
+  "eligible_on_certified_bias": true,
+  "min_M_primary": 25.88670967482661,
+  "min_M_any_explicit": 1.285297989847524,
+  "headline_M_primary_W_proto": 25.947169097967507,
+  "outcome": "NO_GO_CERTIFIED"
+ }
+}

@@ -1,0 +1,127 @@
+{
+ "schema": "r2-scope44-verification-v1",
+ "mode": "dry",
+ "run": "dry_run001",
+ "verdict": "VERIFIED",
+ "outcome": "NO_GO_CERTIFIED",
+ "checks": {
+  "V1_outputs_match_receipt": {
+   "ok": true,
+   "missing": [],
+   "unlisted": [],
+   "changed": []
+  },
+  "V1_status_pass": {
+   "ok": true,
+   "status": "PASS"
+  },
+  "V2_prereg_and_manifest_unchanged": {
+   "ok": true
+  },
+  "V2_manifest_files_unchanged": {
+   "ok": true,
+   "n_files": 31
+  },
+  "V2_seed_derivation": {
+   "ok": true,
+   "mode": "dry"
+  },
+  "V3_p2_window": {
+   "ok": true,
+   "c": "4179/1000",
+   "lambda_recorded": "0.997009372325",
+   "lambda_independent": "0.99700973144749",
+   "target": 0.997004
+  },
+  "V3_p2_stage1": {
+   "ok": true,
+   "c": "1513/250",
+   "lambda_recorded": "0.999904051232",
+   "lambda_independent": "0.99990449800026",
+   "target": 0.999904
+  },
+  "V3_p2_stage2": {
+   "ok": true,
+   "c": "4197/1000",
+   "lambda_recorded": "0.997105455858",
+   "lambda_independent": "0.99710581622543",
+   "target": 0.997104
+  },
+  "V4_a2a": {
+   "ok": true,
+   "bias": 0.0003633735232206014
+  },
+  "V5_u1_reproduces_R1": {
+   "ok": true
+  },
+  "V5_u1_fresh_seed_and_n": {
+   "ok": true
+  },
+  "V6_u1_bounds": {
+   "ok": true,
+   "m_U": 3.290663642406411,
+   "m_L": 3.273783180467154
+  },
+  "V7_N_within_one_of_exact": {
+   "ok": true
+  },
+  "V7_M_recomputed": {
+   "ok": true
+  },
+  "V7_continuity_R1": {
+   "ok": true
+  },
+  "V7_decision_agrees": {
+   "ok": true,
+   "step": "NO_GO_CERTIFIED",
+   "verifier_no_go": true
+  },
+  "V8_parts34_budgets_3_rotations_per_cphase": {
+   "ok": true
+  }
+ },
+ "rows": {
+  "W_cont": {
+   "N_step": 100924,
+   "N_verifier": 100924,
+   "M_primary_verifier": 26.07609752594745,
+   "min_explicit_verifier": 1.294701263859743
+  },
+  "W_proto": {
+   "N_step": 100425,
+   "N_verifier": 100425,
+   "M_primary_verifier": 25.947169097967507,
+   "min_explicit_verifier": 1.2882998535840307
+  },
+  "W_oracle": {
+   "N_step": 100191,
+   "N_verifier": 100191,
+   "M_primary_verifier": 25.88670967482661,
+   "min_explicit_verifier": 1.285297989847524
+  },
+  "Q_cont": {
+   "N_step": 104332,
+   "N_verifier": 104332,
+   "M_primary_verifier": 26.956634765537927,
+   "min_explicit_verifier": 1.3384207152016838
+  },
+  "Q_lower": {
+   "N_step": 102352,
+   "N_verifier": 102352,
+   "M_primary_verifier": 26.445055031268815,
+   "min_explicit_verifier": 1.3130203297389367
+  }
+ },
+ "classical_inputs": {
+  "T_C": 8.886479314695709,
+  "sigma_q": 5.183395545396595,
+  "D": 2296.03168,
+  "D_free": 114.0,
+  "h16": 9.621344707967628,
+  "distfree": 17.346359168921165
+ },
+ "receipt_sha256": "d0bb22e545ba1a5022875bbb1f5d19ad56aa95d86a5672905389d1676657c5b3",
+ "verifier_sha256": "53ea953c24891c413380f22c2889a93a89aedd4a5da48adb69844f53cd1241fc",
+ "python": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]",
+ "note": "Software verification only. R2 also needs the human result review."
+}

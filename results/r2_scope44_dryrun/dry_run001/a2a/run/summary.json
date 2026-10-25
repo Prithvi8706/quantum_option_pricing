@@ -1,0 +1,58 @@
+{
+ "schema": "a2a-clip-split-summary-v1",
+ "rigour": "R1 (two independent exact/outward paths agree); NOT R2: no preregistration, sealed run or human peer review",
+ "label": "cert (R1) for B8x52 eps=$0.001 deterministic bias row A2a; inputs are certified run002 bridge records cited by sha256",
+ "all_checks_pass": true,
+ "files_sha256": {
+  "certificate.json": "75c682324a539021c0231cdbd5e1e61dc4b6a7c4d9cb77b18f23ab6d6429585d",
+  "independent.json": "4a05126d89cf6ddee3972f51309c623f36e0af8b911f431e5406fd2403220a63"
+ },
+ "producers_sha256": {
+  "clip_split_certificate.py": "0e31d0c9fc79b6f71ab29ef1813c3076dcddf3107f9c16ca9759a6658ac62a7f",
+  "independent_recompute.py": "c34cccfcb9043fdb781a8f26735620a45315ad03e9cbb99533d75203eb8e2bb6",
+  "summarize.py": "7204d9aff2c1eee50d410dc9a3bb6ac3f1afaef2b64129efc610e8e95a937ed8"
+ },
+ "interpreter": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]",
+ "cases": {
+  "B4x12": {
+   "certified_total_upper_rounded_up_2^-64": [
+    111365570979513,
+    9223372036854775808
+   ],
+   "certified_total_float": 1.2074279399607644e-05,
+   "independent_total_upper": "0.0000120742793996000161",
+   "relative_difference": 6.31648784430648e-13,
+   "paths_agree_1e-9": true,
+   "run002_certified_total": 0.00020506090182237767,
+   "H_price": 4.128691033605832e-06,
+   "zeta_noclip": 8.939451740629641e-09,
+   "switch_noclip": 1.9841622285652954e-07,
+   "P_fin_C_upper_primary_Bernstein_log10_approx": null,
+   "P_fin_C_upper_independent_Bennett": "0",
+   "clipable_sites": 0,
+   "target_0p55eps": 0.00055,
+   "meets_target": true,
+   "margin_to_target": 0.0005379257206003924
+  },
+  "B8x52": {
+   "certified_total_upper_rounded_up_2^-64": [
+    6703058386012589,
+    18446744073709551616
+   ],
+   "certified_total_float": 0.00036337352322060134,
+   "independent_total_upper": "0.0003633735232202599962",
+   "relative_difference": 9.394311758738e-13,
+   "paths_agree_1e-9": true,
+   "run002_certified_total": 0.0012395575054614564,
+   "H_price": 0.00011679926721487199,
+   "zeta_noclip": 4.532327469674849e-08,
+   "switch_noclip": 6.163223318275816e-06,
+   "P_fin_C_upper_primary_Bernstein_log10_approx": -29,
+   "P_fin_C_upper_independent_Bennett": "1.4225621379...10E-67",
+   "clipable_sites": 104,
+   "target_0p55eps": 0.00055,
+   "meets_target": true,
+   "margin_to_target": 0.0001866264767793987
+  }
+ }
+}
